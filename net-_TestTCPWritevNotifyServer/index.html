@@ -3667,8 +3667,8 @@
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
 <hr />
-<h3 id="accepted">accepted</h3>
-<pre><code class="pony">fun ref accepted(
+<h3 id="connect_failed">connect_failed</h3>
+<pre><code class="pony">fun ref connect_failed(
   conn: TCPConnection ref)
 : None val
 </code></pre>
@@ -3682,6 +3682,21 @@
 <li><a href="../builtin-None">None</a> val</li>
 </ul>
 <hr />
+<h3 id="accepted">accepted</h3>
+<pre><code class="pony">fun ref accepted(
+  conn: TCPConnection ref)
+: None val
+</code></pre>
+
+<h4 id="parameters_3">Parameters</h4>
+<ul>
+<li>conn: <a href="../net-TCPConnection">TCPConnection</a> ref</li>
+</ul>
+<h4 id="returns_3">Returns</h4>
+<ul>
+<li><a href="../builtin-None">None</a> val</li>
+</ul>
+<hr />
 <h3 id="connecting">connecting</h3>
 <pre><code class="pony">fun ref connecting(
   conn: TCPConnection ref,
@@ -3689,33 +3704,18 @@
 : None val
 </code></pre>
 
-<h4 id="parameters_3">Parameters</h4>
-<ul>
-<li>conn: <a href="../net-TCPConnection">TCPConnection</a> ref</li>
-<li>count: <a href="../builtin-U32">U32</a> val</li>
-</ul>
-<h4 id="returns_3">Returns</h4>
-<ul>
-<li><a href="../builtin-None">None</a> val</li>
-</ul>
-<hr />
-<h3 id="connected">connected</h3>
-<pre><code class="pony">fun ref connected(
-  conn: TCPConnection ref)
-: None val
-</code></pre>
-
 <h4 id="parameters_4">Parameters</h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection">TCPConnection</a> ref</li>
+<li>count: <a href="../builtin-U32">U32</a> val</li>
 </ul>
 <h4 id="returns_4">Returns</h4>
 <ul>
 <li><a href="../builtin-None">None</a> val</li>
 </ul>
 <hr />
-<h3 id="connect_failed">connect_failed</h3>
-<pre><code class="pony">fun ref connect_failed(
+<h3 id="connected">connected</h3>
+<pre><code class="pony">fun ref connected(
   conn: TCPConnection ref)
 : None val
 </code></pre>

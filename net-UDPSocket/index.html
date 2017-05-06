@@ -3640,6 +3640,9 @@ class MyUDPNotify is UDPNotify
   =&gt;
     sock.write(consume data, from)
 
+  fun ref not_listening(sock: UDPSocket ref) =&gt;
+    None
+
 actor Main
   new create(env: Env) =&gt;
     try
@@ -3663,6 +3666,8 @@ class MyUDPNotify is UDPNotify
   =&gt;
     _out.print(&quot;GOT:&quot; + String.from_array(consume data))
     sock.dispose()
+  fun ref not_listening(sock: UDPSocket ref) =&gt;
+    None
 
 actor Main
   new create(env: Env) =&gt;

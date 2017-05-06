@@ -3647,6 +3647,9 @@ class MyTCPConnectionNotify is TCPConnectionNotify
     _out.print(&quot;GOT:&quot; + String.from_array(consume data))
     conn.close()
 
+  fun ref connect_failed(conn: TCPConnection ref) =&gt;
+    None
+
 actor Main
   new create(env: Env) =&gt;
     try
@@ -3689,6 +3692,9 @@ class SlowDown is TCPConnectionNotify
   fun ref unthrottled(connection: TCPConnection ref) =&gt;
     _coordinator.unthrottled(this)
 
+  fun ref connect_failed(conn: TCPConnection ref) =&gt;
+    None
+
 actor Coordinator
   var _senders: List[Any tag] = _senders.create()
 
@@ -3719,18 +3725,21 @@ like:</p>
       &quot;&quot;
     end
 
-fun ref sentv(conn: TCPConnection ref, data: ByteSeqIter): ByteSeqIter =&gt;
-  if not _throttled then
-    data
-  else
-    Array[String]
-  end
+  fun ref sentv(conn: TCPConnection ref, data: ByteSeqIter): ByteSeqIter =&gt;
+    if not _throttled then
+      data
+    else
+      Array[String]
+    end
 
   fun ref throttled(connection: TCPConnection ref) =&gt;
     _throttled = true
 
   fun ref unthrottled(connection: TCPConnection ref) =&gt;
     _throttled = false
+
+  fun ref connect_failed(conn: TCPConnection ref) =&gt;
+    None
 </code></pre>
 
 <p>In general, unless you have a very specific use case, we strongly advise that

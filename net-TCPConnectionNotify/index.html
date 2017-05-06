@@ -3681,6 +3681,12 @@ count changes, until a connection is made or connect_failed() is called.</p>
 <h3 id="connect_failed">connect_failed</h3>
 <p>Called when we have failed to connect to all possible addresses for the
 server. At this point, the connection will never be established.</p>
+<p>It is expected to implement proper error handling. You need to opt in to
+ignoring errors, which can be implemented like this:</p>
+<pre><code>fun ref connect_failed(conn: TCPConnection ref) =&gt;
+  None
+</code></pre>
+
 <pre><code class="pony">fun ref connect_failed(
   conn: TCPConnection ref)
 : None val

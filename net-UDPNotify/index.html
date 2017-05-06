@@ -3643,6 +3643,12 @@
 <hr />
 <h3 id="not_listening">not_listening</h3>
 <p>Called if it wasn't possible to bind the socket to an address.</p>
+<p>It is expected to implement proper error handling. You need to opt in to
+ignoring errors, which can be implemented like this:</p>
+<pre><code>fun ref not_listening(sock: UDPSocket ref) =&gt;
+  None
+</code></pre>
+
 <pre><code class="pony">fun ref not_listening(
   sock: UDPSocket ref)
 : None val
