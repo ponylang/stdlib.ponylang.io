@@ -3692,7 +3692,7 @@
                 <h1 id="tcpconnectionnotify">TCPConnectionNotify</h1>
 <p>Notifications for TCP connections.</p>
 <p>For an example of using this class please see the documentation for the
-<code>TCPConnection</code> and <code>TCPListener</code> actors.</p>
+  <code>TCPConnection</code> and <code>TCPListener</code> actors.</p>
 <pre><code class="pony">interface ref TCPConnectionNotify
 </code></pre>
 
@@ -3751,14 +3751,17 @@ count changes, until a connection is made or connect_failed() is called.</p>
 </ul>
 <hr />
 <h3 id="connect_failed">connect_failed</h3>
-<p>Called when we have failed to connect to all possible addresses for the
-server. At this point, the connection will never be established.</p>
-<p>It is expected to implement proper error handling. You need to opt in to
-ignoring errors, which can be implemented like this:</p>
-<pre><code>fun ref connect_failed(conn: TCPConnection ref) =&gt;
-  None
-</code></pre>
+<pre><code>Called when we have failed to connect to all possible addresses for the
+server. At this point, the connection will never be established.
 
+It is expected to implement proper error handling. You need to opt in to
+ignoring errors, which can be implemented like this:
+
+```pony
+fun ref connect_failed(conn: TCPConnection ref) =&gt;
+  None
+```
+</code></pre>
 <pre><code class="pony">fun ref connect_failed(
   conn: TCPConnection ref)
 : None val
@@ -3833,12 +3836,14 @@ Array[String].</p>
 </ul>
 <hr />
 <h3 id="received">received</h3>
-<p>Called when new data is received on the connection. Return true if you
+<pre><code>Called when new data is received on the connection. Return true if you
 want to continue receiving messages without yielding until you read
 max_size on the TCPConnection. Return false to cause the TCPConnection
-to yield now.</p>
-<p>Includes the number of times during the current behavior, that received has
-been called. This allows the notifier to end reads on a regular basis.</p>
+to yield now.
+
+Includes the number of times during the current behavior, that received has
+been called. This allows the notifier to end reads on a regular basis.
+</code></pre>
 <pre><code class="pony">fun ref received(
   conn: TCPConnection ref,
   data: Array[U8 val] iso,

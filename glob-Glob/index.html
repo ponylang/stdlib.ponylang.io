@@ -3696,16 +3696,16 @@
                 <h1 id="glob">Glob</h1>
 <p>Filename matching and globbing with shell patterns.</p>
 <p><code>fnmatch(file_name, pattern)</code> matches according to the local convention.
-<code>fnmatchcase(file_name, pattern)</code> always takes case into account. The
-functions operate by translating the pattern into a regular expression.</p>
+  <code>fnmatchcase(file_name, pattern)</code> always takes case into account. The
+  functions operate by translating the pattern into a regular expression.</p>
 <p>The function translate(PATTERN) returns a regular expression corresponding to
-PATTERN.</p>
+  PATTERN.</p>
 <p>Patterns are Unix shell style:
-    *       | matches multiple characters within a directory
-    **      | matches multiple characters across directories
-    ?       | matches any single character
-    [seq]   | matches any character in seq
-    [!seq]  | matches any char not in seq</p>
+      *       | matches multiple characters within a directory
+      **      | matches multiple characters across directories
+      ?       | matches any single character
+      [seq]   | matches any character in seq
+      [!seq]  | matches any char not in seq</p>
 <pre><code class="pony">primitive val Glob
 </code></pre>
 
@@ -3722,10 +3722,13 @@ PATTERN.</p>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
 <h3 id="fnmatch">fnmatch</h3>
-<p>Tests whether <code>name</code> matches <code>pattern</code>.</p>
-<p>An initial period in <code>name</code> is not special.</p>
-<p>Both <code>name</code> and <code>pattern</code> are first case-normalized if the operating system
-requires it. If you don't want this, use <code>fnmatchcase</code>.</p>
+<pre><code>Tests whether `name` matches `pattern`.
+
+An initial period in `name` is not special.
+
+Both `name` and `pattern` are first case-normalized if the operating system
+requires it. If you don't want this, use `fnmatchcase`.
+</code></pre>
 <pre><code class="pony">fun box fnmatch(
   name: String val,
   pattern: String val)
@@ -3761,8 +3764,10 @@ requires it. If you don't want this, use <code>fnmatchcase</code>.</p>
 </ul>
 <hr />
 <h3 id="filter">filter</h3>
-<p>Returns <code>name</code> and the matching subgroups for <code>names</code> that match <code>pattern</code>.</p>
-<p>All strings are first case-normalized if the operating system requires it.</p>
+<pre><code>Returns `name` and the matching subgroups for `names` that match `pattern`.
+
+All strings are first case-normalized if the operating system requires it.
+</code></pre>
 <pre><code class="pony">fun box filter(
   names: Array[String val] ref,
   pattern: String val)
@@ -3797,10 +3802,12 @@ There is no way to quote meta-characters.</p>
 </ul>
 <hr />
 <h3 id="glob_1">glob</h3>
-<p>Returns an Array[FilePath] for each path below <code>root_path</code> that matches
-<code>pattern</code>.</p>
-<p>The pattern may contain shell-style wildcards. See the type documentation
-on <code>Glob</code> for details.</p>
+<pre><code>Returns an Array[FilePath] for each path below `root_path` that matches
+`pattern`.
+
+The pattern may contain shell-style wildcards. See the type documentation
+on `Glob` for details.
+</code></pre>
 <pre><code class="pony">fun box glob(
   root_path: FilePath val,
   pattern: String val)
@@ -3818,10 +3825,12 @@ on <code>Glob</code> for details.</p>
 </ul>
 <hr />
 <h3 id="iglob">iglob</h3>
-<p>Calls <code>GlobHandler.apply</code> for each path below <code>root</code> that matches
-<code>pattern</code>.</p>
-<p>The pattern may contain shell-style wildcards. See the type documentation
-on <code>Glob</code> for details.</p>
+<pre><code>Calls `GlobHandler.apply` for each path below `root` that matches
+`pattern`.
+
+The pattern may contain shell-style wildcards. See the type documentation
+on `Glob` for details.
+</code></pre>
 <pre><code class="pony">fun box iglob(
   root: FilePath val,
   pattern: String val,

@@ -3700,29 +3700,34 @@
                 <h1 id="tcplistener">TCPListener</h1>
 <p>Listens for new network connections.</p>
 <p>The following program creates an echo server that listens for
-connections on port 8989 and echoes back any data it receives.</p>
-<pre><code>use &quot;net&quot;
-
-class MyTCPConnectionNotify is TCPConnectionNotify
-  fun ref received(conn: TCPConnection ref, data: Array[U8] iso): Bool =&gt;
-    conn.write(String.from_array(consume data))
-    true
-  fun ref connect_failed(conn: TCPConnection ref) =&gt;
-    None
-
-
-class MyTCPListenNotify is TCPListenNotify
-  fun ref connected(listen: TCPListener ref): TCPConnectionNotify iso^ =&gt;
-    MyTCPConnectionNotify
-
-actor Main
-  new create(env: Env) =&gt;
-    try
-      TCPListener(env.root as AmbientAuth,
-        recover MyTCPListenNotify end, &quot;&quot;, &quot;8989&quot;)
-    end
+  connections on port 8989 and echoes back any data it receives.</p>
+<p>```pony
+  use "net"</p>
+<p>class MyTCPConnectionNotify is TCPConnectionNotify
+    fun ref received(
+      conn: TCPConnection ref,
+      data: Array[U8] iso,
+      times: USize)
+      : Bool
+    =&gt;
+      conn.write(String.from_array(consume data))
+      true</p>
+<pre><code>fun ref connect_failed(conn: TCPConnection ref) =&gt;
+  None
 </code></pre>
-
+<p>class MyTCPListenNotify is TCPListenNotify
+    fun ref connected(listen: TCPListener ref): TCPConnectionNotify iso^ =&gt;
+      MyTCPConnectionNotify</p>
+<pre><code>fun ref not_listening(listen: TCPListener ref) =&gt;
+  None
+</code></pre>
+<p>actor Main
+    new create(env: Env) =&gt;
+      try
+        TCPListener(env.root as AmbientAuth,
+          recover MyTCPListenNotify end, "", "8989")
+      end
+  ```</p>
 <pre><code class="pony">actor tag TCPListener
 </code></pre>
 

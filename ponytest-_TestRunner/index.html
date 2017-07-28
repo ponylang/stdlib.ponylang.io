@@ -3736,11 +3736,14 @@
 
 <hr />
 <h3 id="log">log</h3>
-<p>Log the given message.</p>
-<p>The verbose parameter allows messages to be printed only when the --verbose
-command line option is used.</p>
-<p>Logs are printed one test at a time to avoid interleaving log lines from
-concurrent tests.</p>
+<pre><code>Log the given message.
+
+The verbose parameter allows messages to be printed only when the --verbose
+command line option is used.
+
+Logs are printed one test at a time to avoid interleaving log lines from
+concurrent tests.
+</code></pre>
 <pre><code class="pony">be log(
   msg: String val,
   verbose: Bool val)
@@ -3764,12 +3767,15 @@ concurrent tests.</p>
 </ul>
 <hr />
 <h3 id="complete">complete</h3>
-<p>MUST be called by each long test to indicate the test has finished, unless
-a timeout occurs.</p>
-<p>The "success" parameter specifies whether the test succeeded. However if
+<pre><code>MUST be called by each long test to indicate the test has finished, unless
+a timeout occurs.
+
+The "success" parameter specifies whether the test succeeded. However if
 the test has already been flagged as failing, then the test is considered a
-failure, regardless of the value of this parameter.</p>
-<p>Once this is called tear_down() may be called at any time.</p>
+failure, regardless of the value of this parameter.
+
+Once this is called tear_down() may be called at any time.
+</code></pre>
 <pre><code class="pony">be complete(
   success: Bool val)
 </code></pre>
@@ -3780,11 +3786,13 @@ failure, regardless of the value of this parameter.</p>
 </ul>
 <hr />
 <h3 id="expect_action">expect_action</h3>
-<p>Can be called in a long test to set up expectations for one or more actions
-that, when all completed, will complete the test.</p>
-<p>This pattern is useful for cases where you have multiple things that need
+<pre><code>Can be called in a long test to set up expectations for one or more actions
+that, when all completed, will complete the test.
+
+This pattern is useful for cases where you have multiple things that need
 to happen to complete your test, but don't want to have to collect them
-all yourself into a single actor that calls the complete method.</p>
+all yourself into a single actor that calls the complete method.
+</code></pre>
 <pre><code class="pony">be expect_action(
   name: String val)
 </code></pre>
@@ -3795,16 +3803,20 @@ all yourself into a single actor that calls the complete method.</p>
 </ul>
 <hr />
 <h3 id="complete_action">complete_action</h3>
-<p>MUST be called for each action expectation that was set up in a long test
+<pre><code>MUST be called for each action expectation that was set up in a long test
 to fulfill the expectations. Any expectations that are still outstanding
-when the long test timeout runs out will be printed by name when it fails.</p>
-<p>Completing all outstanding actions is enough to finish the test. There's no
-need to also call the complete method when the actions are finished.</p>
-<p>Calling the complete method will finish the test immediately, without
-waiting for any outstanding actions to be completed.</p>
-<p>Completing an action with success = false will cause the entire test to
+when the long test timeout runs out will be printed by name when it fails.
+
+Completing all outstanding actions is enough to finish the test. There's no
+need to also call the complete method when the actions are finished.
+
+Calling the complete method will finish the test immediately, without
+waiting for any outstanding actions to be completed.
+
+Completing an action with success = false will cause the entire test to
 fail immediately, without waiting the rest of the outstanding actions.
-The name of the failed action will be included in the failure output.</p>
+The name of the failed action will be included in the failure output.
+</code></pre>
 <pre><code class="pony">be complete_action(
   name: String val,
   success: Bool val)
@@ -3817,9 +3829,11 @@ The name of the failed action will be included in the failure output.</p>
 </ul>
 <hr />
 <h3 id="dispose_when_done">dispose_when_done</h3>
-<p>Pass a disposable actor to be disposed of when the test is complete.
-The actor will be disposed no matter whether the test succeeds or fails.</p>
-<p>If the test is already tearing down, the actor will be disposed immediately.</p>
+<pre><code>Pass a disposable actor to be disposed of when the test is complete.
+The actor will be disposed no matter whether the test succeeds or fails.
+
+If the test is already tearing down, the actor will be disposed immediately.
+</code></pre>
 <pre><code class="pony">be dispose_when_done(
   disposable: DisposableActor tag)
 </code></pre>

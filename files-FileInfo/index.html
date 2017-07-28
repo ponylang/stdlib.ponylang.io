@@ -3693,13 +3693,13 @@
               
                 <h1 id="fileinfo">FileInfo</h1>
 <p>This contains file system metadata for a path. The times are in the same
-format as Time.now(), i.e. seconds and nanoseconds since the epoch.</p>
+  format as Time.now(), i.e. seconds and nanoseconds since the epoch.</p>
 <p>The INODE is UNIX specific. It will be zero on Windows.</p>
 <p>The UID and GID are UNIX-style user and group IDs. These will be zero on
-Windows. The change_time will actually be the file creation time on Windows.</p>
+  Windows. The change_time will actually be the file creation time on Windows.</p>
 <p>A symlink will report information about itself, other than the size which
-will be the size of the target. A broken symlink will report as much as it
-can and will set the broken flag.</p>
+  will be the size of the target. A broken symlink will report as much as it
+  can and will set the broken flag.</p>
 <pre><code class="pony">class val FileInfo
 </code></pre>
 

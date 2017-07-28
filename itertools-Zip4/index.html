@@ -1869,7 +1869,7 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#example-program">Example Program</a></li>
+            <li><a class="toctree-l4" href="#implements">Implements</a></li>
         
             <li><a class="toctree-l4" href="#constructors">Constructors</a></li>
         
@@ -3695,36 +3695,33 @@
               
                 <h1 id="zip491a-a-b-b-c-c-d-d93">Zip4[A: A, B: B, C: C, D: D]</h1>
 <p>Zip four iterators together so that each call to next() results in
-a tuple with the next value of each of the iterators. The number of
-items returned is the minimum of the number of items returned by the
-iterators.</p>
-<h2 id="example-program">Example Program</h2>
+  a tuple with the next value of each of the iterators. The number of
+  items returned is the minimum of the number of items returned by the
+  iterators.</p>
+<p>## Example Program</p>
 <p>Print the following:</p>
-<pre><code>1 a 0.5 m
-2 b 9.8 n
-3 c 3.3 o
+<p><code>1 a 0.5 m
+  2 b 9.8 n
+  3 c 3.3 o</code></p>
+<p>```pony
+  use "itertools"</p>
+<p>actor Main
+    new create(env: Env) =&gt;
+      var i1: Array[I32] ref = [as I32: 1; 2; 3]
+      var i2: Array[String] ref = ["a"; "b"; "c"; "d"]
+      var i3: Array[F32] ref = [as F32: 0.5; 9.8; 3.3]
+      var i4: Array[String] ref = ["m"; "n"; "o"; "p"; "q"; "r"]</p>
+<pre><code>  for (x, y, z, xx) in Zip4[I32, String, F32, String](
+    i1.values(), i2.values(), i3.values(), i4.values())
+  do
+    env.out.print(""
+      .add(x.string()).add(" ")
+      .add(y).add(" ")
+      .add(z.string()).add(" ")
+      .add(xx.string()))
+  end
 </code></pre>
-
-<pre><code class="pony">use &quot;itertools&quot;
-
-actor Main
-  new create(env: Env) =&gt;
-    var i1: Array[I32] ref = [as I32: 1; 2; 3]
-    var i2: Array[String] ref = [&quot;a&quot;; &quot;b&quot;; &quot;c&quot;; &quot;d&quot;]
-    var i3: Array[F32] ref = [as F32: 0.5; 9.8; 3.3]
-    var i4: Array[String] ref = [&quot;m&quot;; &quot;n&quot;; &quot;o&quot;; &quot;p&quot;; &quot;q&quot;; &quot;r&quot;]
-
-    for (x, y, z, xx) in Zip4[I32, String, F32, String](
-      i1.values(), i2.values(), i3.values(), i4.values())
-    do
-      env.out.print(&quot;&quot;
-        .add(x.string()).add(&quot; &quot;)
-        .add(y).add(&quot; &quot;)
-        .add(z.string()).add(&quot; &quot;)
-        .add(xx.string()))
-    end
-</code></pre>
-
+<p>```</p>
 <pre><code class="pony">class ref Zip4[A: A, B: B, C: C, D: D] is
   Iterator[(A , B , C , D)] ref
 </code></pre>

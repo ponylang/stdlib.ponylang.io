@@ -2784,10 +2784,6 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#transfer-modes">Transfer Modes</a></li>
-        
-            <li><a class="toctree-l4" href="#sequence">Sequence</a></li>
-        
             <li><a class="toctree-l4" href="#constructors">Constructors</a></li>
         
             <li><a class="toctree-l4" href="#public-fields">Public fields</a></li>
@@ -3701,41 +3697,41 @@
               
                 <h1 id="payload">Payload</h1>
 <p>This class represent a single HTTP message, which can be either a
-<code>request</code> or a <code>response</code>.</p>
-<h3 id="transfer-modes">Transfer Modes</h3>
+  <code>request</code> or a <code>response</code>.</p>
+<p>### Transfer Modes</p>
 <p>HTTP provides two ways to encode the transmission of a message 'body',
-of any size. This package supports both of them:</p>
+  of any size. This package supports both of them:</p>
 <ol>
 <li>
 <p><strong>StreamTransfer</strong>. This is used for payload bodies where the exact
-  length is known in advance, including most transfers of files. It is
-  selected by calling <code>Payload.set_length</code> with an integer bytecount.
-  Appication buffer sizes determine how much data is fed to the TCP
-  connection at once, but the total amount must match this size.</p>
+    length is known in advance, including most transfers of files. It is
+    selected by calling <code>Payload.set_length</code> with an integer bytecount.
+    Appication buffer sizes determine how much data is fed to the TCP
+    connection at once, but the total amount must match this size.</p>
 </li>
 <li>
 <p><strong>ChunkedTransfer</strong>. This is used when the payload length can not be
-  known in advance, but can be large. It is selected by calling
-  <code>Payload.set_length</code> with a parameter of <code>None</code>. On the TCP link this mode
-  can be detected because there is no <code>Content-Length</code> header at all, being
-  replaced by the <code>Transfer-Encoding: chunked</code> header. In addition, the
-  message body is separated into chunks, each with its own bytecount. As with
-  <code>StreamTransfer</code> mode, transmission can be spread out over time with the
-  difference that it is the original data source that determines the chunk
-  size.</p>
+    known in advance, but can be large. It is selected by calling
+    <code>Payload.set_length</code> with a parameter of <code>None</code>. On the TCP link this mode
+    can be detected because there is no <code>Content-Length</code> header at all, being
+    replaced by the <code>Transfer-Encoding: chunked</code> header. In addition, the
+    message body is separated into chunks, each with its own bytecount. As with
+    <code>StreamTransfer</code> mode, transmission can be spread out over time with the
+    difference that it is the original data source that determines the chunk
+    size.</p>
+<p>If <code>Payload.set_length</code> is never called at all, a variation on
+<code>StreamTransfer</code> called <code>OneshotTransfer</code> is used. In this case, all of
+the message body is placed into the message at once, using
+<code>Payload.add_chunk</code> calls. The size will be determined when the message is
+submitted for transmission. Care must be taken not to consume too much
+memory, especially on a server where there can be multiple messages in
+transit at once.</p>
+<p>The type of transfer being used by an incoming message can be determined
+from its <code>transfer_mode</code> field, which will be one of the
+<a href="../net-http-TransferMode">TransferMode</a> types.</p>
 </li>
 </ol>
-<p>If <code>Payload.set_length</code> is never called at all, a variation on
-  <code>StreamTransfer</code> called <code>OneshotTransfer</code> is used. In this case, all of
-  the message body is placed into the message at once, using
-  <code>Payload.add_chunk</code> calls. The size will be determined when the message is
-  submitted for transmission. Care must be taken not to consume too much
-  memory, especially on a server where there can be multiple messages in
-  transit at once.</p>
-<p>The type of transfer being used by an incoming message can be determined
-  from its <code>transfer_mode</code> field, which will be one of the
-  <a href="../net-http-TransferMode">TransferMode</a> types.</p>
-<h3 id="sequence">Sequence</h3>
+<p>### Sequence</p>
 <p>For example, to send a message of possibly large size:</p>
 <ol>
 <li>Create the message with a call to <code>Payload.request</code> or <code>Payload.response</code>.</li>
@@ -3743,22 +3739,22 @@ of any size. This package supports both of them:</p>
 <li>Call <code>Payload.set_length</code> to indicate the length of the body.</li>
 <li>Add any additional headers that may be required, such as <code>Content-type</code>.</li>
 <li>Submit the message for transmission by calling the either the
-<code>HTTPSession.apply</code> method (in servers) or the <code>HTTPCLient.apply</code> method
-in clients.</li>
+  <code>HTTPSession.apply</code> method (in servers) or the <code>HTTPCLient.apply</code> method
+  in clients.</li>
 <li>Wait for the <code>send_body</code> notification.</li>
 <li>Make any number of calls to <code>Payload.send_chunk</code>.</li>
 <li>Call <code>Payload.finish</code>.</li>
 </ol>
 <p>To send a message of small, reasonable size (say, under 20KB), this
-simplified method can be used instead:</p>
+  simplified method can be used instead:</p>
 <ol>
 <li>Create the message with a call to <code>Payload.request</code> or <code>Payload.response</code>.</li>
 <li>Set the <code>session</code> field of the message.</li>
 <li>Add any additional headers that may be required, such as <code>Content-type</code>.</li>
 <li>Call <code>add_chunk</code> one or more times to add body data.</li>
 <li>Submit the message for transmission by calling the either the
-<a href="../net-http-HTTPSession">HTTPSession</a><code>.apply</code> method (in servers) or the
-<a href="../net-http-HTTPClient">HTTPClient</a><code>.apply</code> method in clients.</li>
+  <a href="../net-http-HTTPSession">HTTPSession</a><code>.apply</code> method (in servers) or the
+  <a href="../net-http-HTTPClient">HTTPClient</a><code>.apply</code> method in clients.</li>
 </ol>
 <pre><code class="pony">class trn Payload
 </code></pre>

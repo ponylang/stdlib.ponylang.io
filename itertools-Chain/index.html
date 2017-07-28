@@ -1993,7 +1993,7 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#example-program">Example program</a></li>
+            <li><a class="toctree-l4" href="#implements">Implements</a></li>
         
             <li><a class="toctree-l4" href="#constructors">Constructors</a></li>
         
@@ -3695,22 +3695,21 @@
               
                 <h1 id="chain91a-a93">Chain[A: A]</h1>
 <p>Take an iterator of iterators and work through them, returning the
-items of the first one, then the second one, and so on.</p>
-<h2 id="example-program">Example program</h2>
+  items of the first one, then the second one, and so on.</p>
+<p>## Example program</p>
 <p>Print the numbers 1 through 14</p>
-<pre><code class="pony">use &quot;itertools&quot;
-
-actor Main
-  new create(env: Env) =&gt;
-    let i1 = [as I32: 1; 2; 3; 4]
-    let i2 = [as I32: 5; 6; 7; 8; 9]
-    let i3 = [as I32: 10; 11; 12; 13; 14]
-
-    for x in Chain[I32]([i1.values(); i2.values(); i3.values()].values()) do
-      env.out.print(x.string())
-    end
+<p>```pony
+  use "itertools"</p>
+<p>actor Main
+    new create(env: Env) =&gt;
+      let i1 = [as I32: 1; 2; 3; 4]
+      let i2 = [as I32: 5; 6; 7; 8; 9]
+      let i3 = [as I32: 10; 11; 12; 13; 14]</p>
+<pre><code>  for x in Chain[I32]([i1.values(); i2.values(); i3.values()].values()) do
+    env.out.print(x.string())
+  end
 </code></pre>
-
+<p>```</p>
 <pre><code class="pony">class ref Chain[A: A] is
   Iterator[A] ref
 </code></pre>

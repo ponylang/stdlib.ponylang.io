@@ -3700,70 +3700,66 @@
                 <h1 id="udpsocket">UDPSocket</h1>
 <p>Creates a UDP socket that can be used for sending and receiving UDP messages.</p>
 <p>The following examples create:
-<em> an echo server that listens for connections and returns whatever message it
-  receives
-</em> a client that connects to the server, sends a message, and prints the
-  message it receives in response</p>
+  * an echo server that listens for connections and returns whatever message it
+    receives
+  * a client that connects to the server, sends a message, and prints the
+    message it receives in response</p>
 <p>The server is implemented like this:</p>
-<pre><code>use &quot;net&quot;
-
-class MyUDPNotify is UDPNotify
-  fun ref received(
-    sock: UDPSocket ref,
-    data: Array[U8] iso,
-    from: NetAddress)
-  =&gt;
-    sock.write(consume data, from)
-
-  fun ref not_listening(sock: UDPSocket ref) =&gt;
-    None
-
-actor Main
-  new create(env: Env) =&gt;
-    try
-      UDPSocket(env.root as AmbientAuth,
-        MyUDPNotify, &quot;&quot;, &quot;8989&quot;)
-    end
+<p>```pony
+  use "net"</p>
+<p>class MyUDPNotify is UDPNotify
+    fun ref received(
+      sock: UDPSocket ref,
+      data: Array[U8] iso,
+      from: NetAddress)
+    =&gt;
+      sock.write(consume data, from)</p>
+<pre><code>fun ref not_listening(sock: UDPSocket ref) =&gt;
+  None
 </code></pre>
-
+<p>actor Main
+    new create(env: Env) =&gt;
+      try
+        UDPSocket(env.root as AmbientAuth,
+          MyUDPNotify, "", "8989")
+      end
+  ```</p>
 <p>The client is implemented like this:</p>
-<pre><code>use &quot;net&quot;
+<p>```pony
+  use "net"</p>
+<p>class MyUDPNotify is UDPNotify
+    let _out: OutStream
+    let _destination: NetAddress</p>
+<pre><code>new create(
+  out: OutStream,
+  destination: NetAddress)
+=&gt;
+  _out = out
+  _destination = destination
 
-class MyUDPNotify is UDPNotify
-  let _out: OutStream
-  let _destination: NetAddress
+fun ref listening(sock: UDPSocket ref) =&gt;
+  sock.write("hello world", _destination)
 
-  new create(
-    out: OutStream,
-    destination: NetAddress)
-  =&gt;
-    _out = out
-    _destination = destination
+fun ref received(
+  sock: UDPSocket ref,
+  data: Array[U8] iso,
+  from: NetAddress)
+=&gt;
+  _out.print("GOT:" + String.from_array(consume data))
+  sock.dispose()
 
-  fun ref listening(sock: UDPSocket ref) =&gt;
-    sock.write(&quot;hello world&quot;, _destination)
-
-  fun ref received(
-    sock: UDPSocket ref,
-    data: Array[U8] iso,
-    from: NetAddress)
-  =&gt;
-    _out.print(&quot;GOT:&quot; + String.from_array(consume data))
-    sock.dispose()
-
-  fun ref not_listening(sock: UDPSocket ref) =&gt;
-    None
-
-actor Main
-  new create(env: Env) =&gt;
-    try
-      let destination =
-        DNS.ip4(env.root as AmbientAuth, &quot;localhost&quot;, &quot;8989&quot;)(0)
-      UDPSocket(env.root as AmbientAuth,
-        recover MyUDPNotify(env.out, consume destination) end)
-    end
+fun ref not_listening(sock: UDPSocket ref) =&gt;
+  None
 </code></pre>
-
+<p>actor Main
+    new create(env: Env) =&gt;
+      try
+        let destination =
+          DNS.ip4(env.root as AmbientAuth, "localhost", "8989")(0)?
+        UDPSocket(env.root as AmbientAuth,
+          recover MyUDPNotify(env.out, consume destination) end)
+      end
+  ```</p>
 <pre><code class="pony">actor tag UDPSocket
 </code></pre>
 

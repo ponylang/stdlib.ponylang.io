@@ -1861,7 +1861,7 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#example-program">Example program</a></li>
+            <li><a class="toctree-l4" href="#implements">Implements</a></li>
         
             <li><a class="toctree-l4" href="#constructors">Constructors</a></li>
         
@@ -3695,28 +3695,25 @@
               
                 <h1 id="zip291a-a-b-b93">Zip2[A: A, B: B]</h1>
 <p>Zip two iterators together so that each call to next() results in
-a tuple with the next value of the first iterator and the next value
-of the second iterator. The number of items returned is the minimum of
-the number of items returned by the two iterators.</p>
-<h2 id="example-program">Example program</h2>
+  a tuple with the next value of the first iterator and the next value
+  of the second iterator. The number of items returned is the minimum of
+  the number of items returned by the two iterators.</p>
+<p>## Example program</p>
 <p>Print the following:</p>
-<pre><code>1 a
-2 b
-3 c
+<p><code>1 a
+  2 b
+  3 c</code></p>
+<p>```pony
+  use "itertools"</p>
+<p>actor Main
+    new create(env: Env) =&gt;
+      var i1: Array[I32] ref = [as I32: 1; 2; 3]
+      var i2: Array[String] ref = ["a"; "b"; "c"; "d"]</p>
+<pre><code>  for (x, y) in Zip2[I32, String](i1.values(), i2.values()) do
+    env.out.print("".add(x.string()).add(" ").add(y))
+  end
 </code></pre>
-
-<pre><code class="pony">use &quot;itertools&quot;
-
-actor Main
-  new create(env: Env) =&gt;
-    var i1: Array[I32] ref = [as I32: 1; 2; 3]
-    var i2: Array[String] ref = [&quot;a&quot;; &quot;b&quot;; &quot;c&quot;; &quot;d&quot;]
-
-    for (x, y) in Zip2[I32, String](i1.values(), i2.values()) do
-      env.out.print(&quot;&quot;.add(x.string()).add(&quot; &quot;).add(y))
-    end
-</code></pre>
-
+<p>```</p>
 <pre><code class="pony">class ref Zip2[A: A, B: B] is
   Iterator[(A , B)] ref
 </code></pre>

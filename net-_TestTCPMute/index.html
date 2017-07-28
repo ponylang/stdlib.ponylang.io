@@ -3695,13 +3695,13 @@
               
                 <h1 id="_testtcpmute">_TestTCPMute</h1>
 <p>Test that the <code>mute</code> behavior stops us from reading incoming data. The
-test assumes that send/recv works correctly and that the absence of
-data received is because we muted the connection.</p>
+  test assumes that send/recv works correctly and that the absence of
+  data received is because we muted the connection.</p>
 <p>Test works as follows:</p>
 <p>Once an incoming connection is established, we set mute on it and then
-verify that within a 2 second long test that received is not called on
-our notifier. A timeout is considering passing and received being called
-is grounds for a failure.</p>
+  verify that within a 2 second long test that received is not called on
+  our notifier. A timeout is considering passing and received being called
+  is grounds for a failure.</p>
 <pre><code class="pony">class iso _TestTCPMute is
   UnitTest ref
 </code></pre>

@@ -3696,51 +3696,50 @@
                 <h1 id="writer">Writer</h1>
 <p>A buffer for building messages.</p>
 <p><code>Writer</code> provides an way to create byte sequences using common
-data encodings. The <code>Writer</code> manages the underlying arrays and
-sizes. It is useful for encoding data to send over a network or
-store in a file. Once a message has been built you can call <code>done()</code>
-to get the message's <code>ByteSeq</code>s, and you can then reuse the
-<code>Writer</code> for creating a new message.</p>
+  data encodings. The <code>Writer</code> manages the underlying arrays and
+  sizes. It is useful for encoding data to send over a network or
+  store in a file. Once a message has been built you can call <code>done()</code>
+  to get the message's <code>ByteSeq</code>s, and you can then reuse the
+  <code>Writer</code> for creating a new message.</p>
 <p>For example, suppose we have a TCP-based network data protocol where
-messages consist of the following:</p>
+  messages consist of the following:</p>
 <ul>
 <li><code>message_length</code> - the number of bytes in the message as a
-  big-endian 32-bit integer</li>
+    big-endian 32-bit integer</li>
 <li><code>list_size</code> - the number of items in the following list of items
-  as a big-endian 32-bit integer</li>
-<li>zero or more items of the following data:</li>
+    as a big-endian 32-bit integer</li>
+<li>zero or more items of the following data:<ul>
 <li>a big-endian 64-bit floating point number</li>
 <li>a string that starts with a big-endian 32-bit integer that
-    specifies the length of the string, followed by a number of
-    bytes that represent the string</li>
+  specifies the length of the string, followed by a number of
+  bytes that represent the string</li>
+</ul>
+</li>
 </ul>
 <p>A message would be something like this:</p>
-<pre><code>[message_length][list_size][float1][string1][float2][string2]...
-</code></pre>
-
+<p><code>[message_length][list_size][float1][string1][float2][string2]...</code></p>
 <p>The following program uses a write buffer to encode an array of
-tuples as a message of this type:</p>
-<pre><code>use &quot;net&quot;
-
-actor Main
-  new create(env: Env) =&gt;
-    let wb = Writer
-    let messages = [[(F32(3597.82), &quot;Anderson&quot;), (F32(-7979.3), &quot;Graham&quot;)],
-                    [(F32(3.14159), &quot;Hopper&quot;), (F32(-83.83), &quot;Jones&quot;)]]
-    for items in messages.values() do
-      wb.i32_be((items.size() / 2).i32())
-      for (f, s) in items.values() do
-        wb.f32_be(f)
-        wb.i32_be(s.size().i32())
-        wb.write(s.array())
+  tuples as a message of this type:</p>
+<p>```pony
+  use "buffered"</p>
+<p>actor Main
+    new create(env: Env) =&gt;
+      let wb = Writer
+      let messages = [[(F32(3597.82), "Anderson"); (F32(-7979.3), "Graham")]
+                      [(F32(3.14159), "Hopper"); (F32(-83.83), "Jones")]]
+      for items in messages.values() do
+        wb.i32_be((items.size() / 2).i32())
+        for (f, s) in items.values() do
+          wb.f32_be(f)
+          wb.i32_be(s.size().i32())
+          wb.write(s.array())
+        end
+        let wb_msg = Writer
+        wb_msg.i32_be(wb.size().i32())
+        wb_msg.writev(wb.done())
+        env.out.writev(wb_msg.done())
       end
-      let wb_msg = Writer
-      wb_msg.i32_be(wb.size().i32())
-      wb_msg.writev(wb.done())
-      env.out.writev(wb_msg.done())
-    end
-</code></pre>
-
+  ```</p>
 <pre><code class="pony">class ref Writer
 </code></pre>
 
@@ -3757,9 +3756,11 @@ actor Main
 <hr />
 <h2 id="public-functions">Public Functions</h2>
 <h3 id="reserve_chunks">reserve_chunks</h3>
-<p>Reserve space for size' chunks.</p>
-<p>This needs to be recalled after every call to <code>done</code>
-as <code>done</code> resets the chunks.</p>
+<pre><code>Reserve space for size' chunks.
+
+This needs to be recalled after every call to `done`
+as `done` resets the chunks.
+</code></pre>
 <pre><code class="pony">fun ref reserve_chunks(
   size': USize val)
 : None val

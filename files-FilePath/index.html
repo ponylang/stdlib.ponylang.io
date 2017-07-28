@@ -3830,10 +3830,12 @@ that path.</p>
 </ul>
 <hr />
 <h3 id="walk">walk</h3>
-<p>Walks a directory structure starting at this.</p>
-<p><code>handler(dir_path, dir_entries)</code> will be called for each directory
+<pre><code>Walks a directory structure starting at this.
+
+`handler(dir_path, dir_entries)` will be called for each directory
 starting with this one. The handler can control which subdirectories are
-expanded by removing them from the <code>dir_entries</code> list.</p>
+expanded by removing them from the `dir_entries` list.
+</code></pre>
 <pre><code class="pony">fun val walk(
   handler: WalkHandler ref,
   follow_links: Bool val = false)

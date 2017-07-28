@@ -969,8 +969,6 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#usage">Usage</a></li>
-        
             <li><a class="toctree-l4" href="#constructors">Constructors</a></li>
         
             <li><a class="toctree-l4" href="#public-functions">Public Functions</a></li>
@@ -3697,19 +3695,24 @@
               
                 <h1 id="hashmap91k-any-share-v-any-share-h-hashfunction91k-share93-val93">HashMap[K: <a href="../builtin-Any">Any</a> #share, V: <a href="../builtin-Any">Any</a> #share, H: <a href="../collections-HashFunction">HashFunction</a>[K #share] val]</h1>
 <p>A persistent map based on the Compressed Hash Array Mapped Prefix-tree from
-'Optimizing Hash-Array Mapped Tries for Fast and Lean Immutable JVM
-Collections' by Michael J. Steindorfer and Jurgen J. Vinju</p>
-<h2 id="usage">Usage</h2>
-<pre><code>let empty = Map[String,U32] // {}
-// Update returns a new map with the provided key set
-// to the provided value. The old map is unchanged.
-let m2 = m1(&quot;a&quot;) = 5 // {a: 5}
-let m3 = m2(&quot;b&quot;) = 10 // {a: 5, b: 10}
-let m4 = m3.remove(&quot;a&quot;) // {b: 10}
-// You can create a new map from key value pairs.
-let m5 = Map[String,U32].concat([(&quot;a&quot;, 2), (&quot;b&quot;, 3)].values()) // {a: 2, b: 3}
-</code></pre>
-
+  'Optimizing Hash-Array Mapped Tries for Fast and Lean Immutable JVM
+  Collections' by Michael J. Steindorfer and Jurgen J. Vinju</p>
+<p>## Usage
+  ```pony
+  use "collections/persistent"</p>
+<p>actor Main
+    new create(env: Env) =&gt;
+      try
+        let m1 = Map[String, U32] // {}
+        // Update returns a new map with the provided key set
+        // to the provided value. The old map is unchanged.
+        let m2 = m1("a") = 5 // {a: 5}
+        let m3 = m2("b") = 10 // {a: 5, b: 10}
+        let m4 = m3.remove("a")? // {b: 10}
+        // You can create a new map from key value pairs.
+        let m5 = Map[String, U32].concat([as (String, U32): ("a", 2); ("b", 3)].values()) // {a: 2, b: 3}
+      end
+  ```</p>
 <pre><code class="pony">class val HashMap[K: Any #share, V: Any #share, H: HashFunction[K #share] val]
 </code></pre>
 

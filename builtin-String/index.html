@@ -4018,9 +4018,11 @@ allocated length, the size will not be changed.</p>
 </ul>
 <hr />
 <h3 id="truncate">truncate</h3>
-<p>Truncates the string at the minimum of len and space. Ensures there is a
-null terminator. Does not check for null terminators inside the string.</p>
-<p>Note that memory is not freed by this operation.</p>
+<pre><code>Truncates the string at the minimum of len and space. Ensures there is a
+null terminator. Does not check for null terminators inside the string.
+
+Note that memory is not freed by this operation.
+</code></pre>
 <pre><code class="pony">fun ref truncate(
   len: USize val)
 : None val
@@ -4311,11 +4313,13 @@ Raise an error if there is no n-th occurrence of <code>s</code> or <code>s</code
 </ul>
 <hr />
 <h3 id="substring">substring</h3>
-<p>Returns a substring. Index range [<code>from</code> .. <code>to</code>) is half-open.
-Returns an empty string if nothing is in the range.</p>
-<p>Note that this operation allocates a new string to be returned. For
-similar operations that don't allocate a new string, see <code>trim</code> and
-<code>trim_in_place</code>.</p>
+<pre><code>Returns a substring. Index range [`from` .. `to`) is half-open.
+Returns an empty string if nothing is in the range.
+
+Note that this operation allocates a new string to be returned. For
+similar operations that don't allocate a new string, see `trim` and
+`trim_in_place`.
+</code></pre>
 <pre><code class="pony">fun box substring(
   from: ISize val,
   to: ISize val = call)
@@ -4639,12 +4643,15 @@ occurrences will be replaced. Returns the count of replaced occurrences.</p>
 </ul>
 <hr />
 <h3 id="split_by">split_by</h3>
-<p>Split the string into an array of strings that are delimited by <code>delim</code> in
-the original string. If <code>n &gt; 0</code>, then the split count is limited to n.</p>
-<p>Adjacent delimiters result in a zero length entry in the array. For
-example, <code>"1,,2".split(",") =&gt; ["1", "", "2"]</code>.</p>
-<p>An empty delimiter results in an array that contains a single element equal
-to the whole string.</p>
+<pre><code>Split the string into an array of strings that are delimited by `delim` in
+the original string. If `n &gt; 0`, then the split count is limited to n.
+
+Adjacent delimiters result in a zero length entry in the array. For
+example, `"1,,2".split(",") =&gt; ["1", "", "2"]`.
+
+An empty delimiter results in an array that contains a single element equal
+to the whole string.
+</code></pre>
 <pre><code class="pony">fun box split_by(
   delim: String val,
   n: USize val = call)
@@ -4662,11 +4669,13 @@ to the whole string.</p>
 </ul>
 <hr />
 <h3 id="split">split</h3>
-<p>Split the string into an array of strings. Any character in the delimiter
-string is accepted as a delimiter. If <code>n &gt; 0</code>, then the split count is
-limited to n.</p>
-<p>Adjacent delimiters result in a zero length entry in the array. For
-example, <code>"1,,2".split(",") =&gt; ["1", "", "2"]</code>.</p>
+<pre><code>Split the string into an array of strings. Any character in the delimiter
+string is accepted as a delimiter. If `n &gt; 0`, then the split count is
+limited to n.
+
+Adjacent delimiters result in a zero length entry in the array. For
+example, `"1,,2".split(",") =&gt; ["1", "", "2"]`.
+</code></pre>
 <pre><code class="pony">fun box split(
   delim: String val= &quot;  
 &quot;,
@@ -4791,18 +4800,23 @@ as a separator.</p>
 </ul>
 <hr />
 <h3 id="compare_sub">compare_sub</h3>
-<p>Lexically compare at most <code>n</code> bytes of the substring of <code>this</code> starting at
-<code>offset</code> with the substring of <code>that</code> starting at <code>that_offset</code>. The
-comparison is case sensitive unless <code>ignore_case</code> is <code>true</code>.</p>
-<p>If the substring of <code>this</code> is a proper prefix of the substring of <code>that</code>,
-then <code>this</code> is <code>Less</code> than <code>that</code>. Likewise, if <code>that</code> is a proper prefix of
-<code>this</code>, then <code>this</code> is <code>Greater</code> than <code>that</code>.</p>
-<p>Both <code>offset</code> and <code>that_offset</code> can be negative, in which case the offsets
-are computed from the end of the string.</p>
-<p>If <code>n + offset</code> is greater than the length of <code>this</code>, or <code>n + that_offset</code>
-is greater than the length of <code>that</code>, then the number of positions compared
-will be reduced to the length of the longest substring.</p>
-<p>Needs to be made UTF-8 safe.</p>
+<pre><code>Lexically compare at most `n` bytes of the substring of `this` starting at
+`offset` with the substring of `that` starting at `that_offset`. The
+comparison is case sensitive unless `ignore_case` is `true`.
+
+If the substring of `this` is a proper prefix of the substring of `that`,
+then `this` is `Less` than `that`. Likewise, if `that` is a proper prefix of
+`this`, then `this` is `Greater` than `that`.
+
+Both `offset` and `that_offset` can be negative, in which case the offsets
+are computed from the end of the string.
+
+If `n + offset` is greater than the length of `this`, or `n + that_offset`
+is greater than the length of `that`, then the number of positions compared
+will be reduced to the length of the longest substring.
+
+Needs to be made UTF-8 safe.
+</code></pre>
 <pre><code class="pony">fun box compare_sub(
   that: String box,
   n: USize val,

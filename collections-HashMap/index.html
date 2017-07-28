@@ -3776,18 +3776,26 @@ returns None. If there was no previous value, this may trigger a resize.</p>
 </ul>
 <hr />
 <h3 id="upsert">upsert</h3>
-<p>Combines a provided value with the current value for the provided key
+<pre><code>Combines a provided value with the current value for the provided key
 using the provided function. If the provided key has not been added to
-the map yet, it sets its value to the provided value.</p>
-<p>As a simple example, say we had a map with I64 values and we wanted to
+the map yet, it sets its value to the provided value.
+
+As a simple example, say we had a map with I64 values and we wanted to
 add 4 to the current value for key "test", which let's say is currently 2.
-We call</p>
-<p>m.upsert("test", 4, {(x: I64, y: I64): I64 =&gt; x - y })</p>
-<p>This changes the value associated with "test" to -2.</p>
-<p>If we have not yet added the key "new-key" to the map and we call</p>
-<p>m.upsert("new-key", 4, {(x: I64, y: I64): I64 =&gt; x - y })</p>
-<p>then "new-key" is added to the map with a value of -4.</p>
-<p>Returns the value that we set the key to</p>
+We call
+
+m.upsert("test", 4, {(x: I64, y: I64): I64 =&gt; x - y })
+
+This changes the value associated with "test" to -2.
+
+If we have not yet added the key "new-key" to the map and we call
+
+m.upsert("new-key", 4, {(x: I64, y: I64): I64 =&gt; x - y })
+
+then "new-key" is added to the map with a value of -4.
+
+Returns the value that we set the key to
+</code></pre>
 <pre><code class="pony">fun ref upsert(
   key: K,
   value: V,
@@ -3825,15 +3833,18 @@ We call</p>
 </ul>
 <hr />
 <h3 id="insert_if_absent">insert_if_absent</h3>
-<p>Set a value in the map if the key doesn't already exist in the Map.
-Saves an extra lookup when doing a pattern like:</p>
-<pre><code class="pony">if not my_map.contains(my_key) then
+<pre><code>Set a value in the map if the key doesn't already exist in the Map.
+Saves an extra lookup when doing a pattern like:
+
+```pony
+if not my_map.contains(my_key) then
   my_map(my_key) = my_value
 end
-</code></pre>
+```
 
-<p>Returns the value, the same as <code>insert</code>, allowing 'insert_if_absent'
-to be used as a drop-in replacement for <code>insert</code>.</p>
+Returns the value, the same as `insert`, allowing 'insert_if_absent'
+to be used as a drop-in replacement for `insert`.
+</code></pre>
 <pre><code class="pony">fun ref insert_if_absent(
   key: K,
   value: V)

@@ -2341,8 +2341,6 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#backpressure-support">Backpressure support</a></li>
-        
             <li><a class="toctree-l4" href="#constructors">Constructors</a></li>
         
             <li><a class="toctree-l4" href="#public-behaviours">Public Behaviours</a></li>
@@ -3702,136 +3700,158 @@
                 <h1 id="tcpconnection">TCPConnection</h1>
 <p>A TCP connection. When connecting, the Happy Eyeballs algorithm is used.</p>
 <p>The following code creates a client that connects to port 8989 of
-the local host, writes "hello world", and listens for a response,
-which it then prints.</p>
-<pre><code>use &quot;net&quot;
+  the local host, writes "hello world", and listens for a response,
+  which it then prints.</p>
+<p>```pony
+  use "net"</p>
+<p>class MyTCPConnectionNotify is TCPConnectionNotify
+    let _out: OutStream</p>
+<pre><code>new create(out: OutStream) =&gt;
+  _out = out
 
-class MyTCPConnectionNotify is TCPConnectionNotify
-  let _out: OutStream
+fun ref connected(conn: TCPConnection ref) =&gt;
+  conn.write("hello world")
 
-  new create(out: OutStream) =&gt;
-    _out = out
+fun ref received(
+  conn: TCPConnection ref,
+  data: Array[U8] iso,
+  times: USize)
+  : Bool
+=&gt;
+  _out.print("GOT:" + String.from_array(consume data))
+  conn.close()
+  true
 
-  fun ref connected(conn: TCPConnection ref) =&gt;
-    conn.write(&quot;hello world&quot;)
-
-  fun ref received(conn: TCPConnection ref, data: Array[U8] iso) =&gt;
-    _out.print(&quot;GOT:&quot; + String.from_array(consume data))
-    conn.close()
-
-  fun ref connect_failed(conn: TCPConnection ref) =&gt;
-    None
-
-actor Main
-  new create(env: Env) =&gt;
-    try
-      TCPConnection(env.root as AmbientAuth,
-        recover MyTCPConnectionNotify(env.out) end, &quot;&quot;, &quot;8989&quot;)
-    end
+fun ref connect_failed(conn: TCPConnection ref) =&gt;
+  None
 </code></pre>
-
+<p>actor Main
+    new create(env: Env) =&gt;
+      try
+        TCPConnection(env.root as AmbientAuth,
+          recover MyTCPConnectionNotify(env.out) end, "", "8989")
+      end
+  ```</p>
 <p>Note: when writing to the connection data will be silently discarded if the
-connection has not yet been established.</p>
-<h2 id="backpressure-support">Backpressure support</h2>
-<h3 id="write">Write</h3>
+  connection has not yet been established.</p>
+<p>## Backpressure support</p>
+<p>### Write</p>
 <p>The TCP protocol has built-in backpressure support. This is generally
-experienced as the outgoing write buffer becoming full and being unable
-to write all requested data to the socket. In <code>TCPConnection</code>, this is
-hidden from the programmer. When this occurs, <code>TCPConnection</code> will buffer
-the extra data until such time as it is able to be sent. Left unchecked,
-this could result in uncontrolled queuing. To address this,
-<code>TCPConnectionNotify</code> implements two methods <code>throttled</code> and <code>unthrottled</code>
-that are called when backpressure is applied and released.</p>
+  experienced as the outgoing write buffer becoming full and being unable
+  to write all requested data to the socket. In <code>TCPConnection</code>, this is
+  hidden from the programmer. When this occurs, <code>TCPConnection</code> will buffer
+  the extra data until such time as it is able to be sent. Left unchecked,
+  this could result in uncontrolled queuing. To address this,
+  <code>TCPConnectionNotify</code> implements two methods <code>throttled</code> and <code>unthrottled</code>
+  that are called when backpressure is applied and released.</p>
 <p>Upon receiving a <code>throttled</code> notification, your application has two choices
-on how to handle it. One is to inform any actors sending the connection to
-stop sending data. For example, you might construct your application like:</p>
-<pre><code class="pony">// Here we have a TCPConnectionNotify that upon construction
-// is given a tag to a &quot;Coordinator&quot;. Any actors that want to
-// &quot;publish&quot; to this connection should register with the
-// coordinator. This allows the notifier to inform the coordinator
-// that backpressure has been applied and then it in turn can
-// notify senders who could then pause sending.
+  on how to handle it. One is to inform any actors sending the connection to
+  stop sending data. For example, you might construct your application like:</p>
+<p>```pony
+  // Here we have a TCPConnectionNotify that upon construction
+  // is given a tag to a "Coordinator". Any actors that want to
+  // "publish" to this connection should register with the
+  // coordinator. This allows the notifier to inform the coordinator
+  // that backpressure has been applied and then it in turn can
+  // notify senders who could then pause sending.</p>
+<p>use "collections"
+  use "net"</p>
+<p>class SlowDown is TCPConnectionNotify
+    let _coordinator: Coordinator</p>
+<pre><code>new create(coordinator: Coordinator) =&gt;
+  _coordinator = coordinator
 
-class SlowDown is TCPConnectionNotify
-  let _coordinator: Coordinator
+fun ref throttled(connection: TCPConnection ref) =&gt;
+  _coordinator.throttled(connection)
 
-  new create(coordinator: Coordinator) =&gt;
-    _coordinator = coordinator
+fun ref unthrottled(connection: TCPConnection ref) =&gt;
+  _coordinator.unthrottled(connection)
 
-  fun ref throttled(connection: TCPConnection ref) =&gt;
-    _coordinator.throttled(this)
-
-  fun ref unthrottled(connection: TCPConnection ref) =&gt;
-    _coordinator.unthrottled(this)
-
-  fun ref connect_failed(conn: TCPConnection ref) =&gt;
-    None
-
-actor Coordinator
-  var _senders: List[Any tag] = _senders.create()
-
-  be register(sender: Any tag) =&gt;
-    _senders.push(sender)
-
-  be throttled(connection: TCPConnection) =&gt;
-    for sender in _senders.values() do
-      sender.pause_sending_to(connection)
-    end
-
-   be unthrottled(connection: TCPConnection) =&gt;
-    for sender in _senders.values() do
-      sender.resume_sending_to(connection)
-    end
+fun ref connect_failed(conn: TCPConnection ref) =&gt;
+  None
 </code></pre>
+<p>actor Coordinator
+    var _senders: List[Sender] = _senders.create()</p>
+<pre><code>be register(sender: Sender) =&gt;
+  _senders.push(sender)
 
+be throttled(connection: TCPConnection) =&gt;
+  for sender in _senders.values() do
+    sender.pause_sending_to(connection)
+  end
+
+ be unthrottled(connection: TCPConnection) =&gt;
+  for sender in _senders.values() do
+    sender.resume_sending_to(connection)
+  end
+</code></pre>
+<p>interface tag Sender
+    be pause_sending_to(connection: TCPConnection)
+    be resume_sending_to(connection: TCPConnection)</p>
+<p>actor Main
+    new create(env: Env) =&gt;
+      let coordinator = Coordinator
+      // Register senders in the coordinator here.
+      try
+        TCPConnection(env.root as AmbientAuth,
+          recover SlowDown(coordinator) end, "", "8989")
+      end
+  ```</p>
 <p>Or if you want, you could handle backpressure by shedding load, that is,
-dropping the extra data rather than carrying out the send. This might look
-like:</p>
-<pre><code class="pony">class ThrowItAway is TCPConnectionNotify
-  var _throttled = false
+  dropping the extra data rather than carrying out the send. This might look
+  like:</p>
+<p>```pony
+  use "net"</p>
+<p>class ThrowItAway is TCPConnectionNotify
+    var _throttled: Bool = false</p>
+<pre><code>fun ref sent(conn: TCPConnection ref, data: ByteSeq): ByteSeq =&gt;
+  if not _throttled then
+    data
+  else
+    ""
+  end
 
-  fun ref sent(conn: TCPConnection ref, data: ByteSeq): ByteSeq =&gt;
-    if not _throttled then
-      data
-    else
-      &quot;&quot;
-    end
+fun ref sentv(conn: TCPConnection ref, data: ByteSeqIter): ByteSeqIter =&gt;
+  if not _throttled then
+    data
+  else
+    recover Array[String] end
+  end
 
-  fun ref sentv(conn: TCPConnection ref, data: ByteSeqIter): ByteSeqIter =&gt;
-    if not _throttled then
-      data
-    else
-      Array[String]
-    end
+fun ref throttled(connection: TCPConnection ref) =&gt;
+  _throttled = true
 
-  fun ref throttled(connection: TCPConnection ref) =&gt;
-    _throttled = true
+fun ref unthrottled(connection: TCPConnection ref) =&gt;
+  _throttled = false
 
-  fun ref unthrottled(connection: TCPConnection ref) =&gt;
-    _throttled = false
-
-  fun ref connect_failed(conn: TCPConnection ref) =&gt;
-    None
+fun ref connect_failed(conn: TCPConnection ref) =&gt;
+  None
 </code></pre>
-
+<p>actor Main
+    new create(env: Env) =&gt;
+      try
+        TCPConnection(env.root as AmbientAuth,
+          recover ThrowItAway end, "", "8989")
+      end
+  ```</p>
 <p>In general, unless you have a very specific use case, we strongly advise that
-you don't implement a load shedding scheme where you drop data.</p>
-<h3 id="read">Read</h3>
+  you don't implement a load shedding scheme where you drop data.</p>
+<p>### Read</p>
 <p>If your application is unable to keep up with data being sent to it over
-a <code>TCPConnection</code> you can use the builtin read backpressure support to
-pause reading the socket which will in turn start to exert backpressure on
-the corresponding writer on the other end of that socket.</p>
+  a <code>TCPConnection</code> you can use the builtin read backpressure support to
+  pause reading the socket which will in turn start to exert backpressure on
+  the corresponding writer on the other end of that socket.</p>
 <p>The <code>mute</code> behavior allow any other actors in your application to request
-the cessation of additional reads until such time as <code>unmute</code> is called.
-Please note that this cessation is not guaranteed to happen immediately as
-it is the result of an asynchronous behavior call and as such will have to
-wait for existing messages in the <code>TCPConnection</code>'s mailbox to be handled.</p>
+  the cessation of additional reads until such time as <code>unmute</code> is called.
+  Please note that this cessation is not guaranteed to happen immediately as
+  it is the result of an asynchronous behavior call and as such will have to
+  wait for existing messages in the <code>TCPConnection</code>'s mailbox to be handled.</p>
 <p>On non-windows platforms, your <code>TCPConnection</code> will not notice if the
-other end of the connection closes until you unmute it. Unix type systems
-like FreeBSD, Linux and OSX learn about a closed connection upon read. On
-these platforms, you <strong>must</strong> call <code>unmute</code> on a muted connection to have
-it close. Without calling <code>unmute</code> the <code>TCPConnection</code> actor will never
-exit.</p>
+  other end of the connection closes until you unmute it. Unix type systems
+  like FreeBSD, Linux and OSX learn about a closed connection upon read. On
+  these platforms, you <strong>must</strong> call <code>unmute</code> on a muted connection to have
+  it close. Without calling <code>unmute</code> the <code>TCPConnection</code> actor will never
+  exit.</p>
 <pre><code class="pony">actor tag TCPConnection
 </code></pre>
 
@@ -3947,7 +3967,7 @@ exit.</p>
 </ul>
 <hr />
 <h2 id="public-behaviours">Public Behaviours</h2>
-<h3 id="write_1">write</h3>
+<h3 id="write">write</h3>
 <p>Write a single sequence of bytes. Data will be silently discarded if the
 connection has not yet been established though.</p>
 <pre><code class="pony">be write(

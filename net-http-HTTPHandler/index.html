@@ -3691,19 +3691,19 @@
               
                 <h1 id="httphandler">HTTPHandler</h1>
 <p>This is the interface through which HTTP messages are delivered <em>to</em>
-application code. On the server, this will be HTTP Requests (GET,
-HEAD, DELETE, POST, etc) sent from a client. On the client, this will
-be the HTTP Responses coming back from the server. The protocol is largely
-symmetrical and the same interface definition is used, though what
-processing happens behind the interface will of course vary.</p>
+  application code. On the server, this will be HTTP Requests (GET,
+  HEAD, DELETE, POST, etc) sent from a client. On the client, this will
+  be the HTTP Responses coming back from the server. The protocol is largely
+  symmetrical and the same interface definition is used, though what
+  processing happens behind the interface will of course vary.</p>
 <p>This interface delivers asynchronous events when receiving an HTTP
-message (called a <code>Payload</code>). Calls to these methods are made in
-the context of the <code>HTTPSession</code> actor so most of them should be
-passing data on to a processing actor.</p>
+  message (called a <code>Payload</code>). Calls to these methods are made in
+  the context of the <code>HTTPSession</code> actor so most of them should be
+  passing data on to a processing actor.</p>
 <p>Each <code>HTTPSession</code> must have a unique instance of the handler. The
-application code does not necessarily know when an <code>HTTPSession</code> is created,
-so the application must provide an instance of <code>HandlerFactory</code> that
-will be called at the appropriate time.</p>
+  application code does not necessarily know when an <code>HTTPSession</code> is created,
+  so the application must provide an instance of <code>HandlerFactory</code> that
+  will be called at the appropriate time.</p>
 <pre><code class="pony">interface ref HTTPHandler
 </code></pre>
 

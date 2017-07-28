@@ -3697,7 +3697,7 @@
               
                 <h1 id="promise91a-any-share93">Promise[A: <a href="../builtin-Any">Any</a> #share]</h1>
 <p>A promise to eventually produce a result of type A. This promise can either
-be fulfilled or rejected.</p>
+  be fulfilled or rejected.</p>
 <p>Any number of promises can be chained after this one.</p>
 <pre><code class="pony">actor tag Promise[A: Any #share]
 </code></pre>
@@ -3733,17 +3733,22 @@ be fulfilled or rejected.</p>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
 <h3 id="next91b-any-share93">next[B: <a href="../builtin-Any">Any</a> #share]</h3>
-<p>Chain a promise after this one.</p>
-<p>When this promise is fulfilled, the result of type A is passed to the
+<pre><code>Chain a promise after this one.
+
+When this promise is fulfilled, the result of type A is passed to the
 fulfill function, generating in an intermediate result of type B. This
-is then used to fulfill the next promise in the chain.</p>
-<p>If there is no fulfill function, or if the fulfill function raises an
-error, then the next promise in the chain will be rejected.</p>
-<p>If this promise is rejected, this step's reject function is called with no
+is then used to fulfill the next promise in the chain.
+
+If there is no fulfill function, or if the fulfill function raises an
+error, then the next promise in the chain will be rejected.
+
+If this promise is rejected, this step's reject function is called with no
 input, generating an intermediate result of type B which is used to
-fulfill the next promise in the chain.</p>
-<p>If there is no reject function, of if the reject function raises an error,
-then the next promise in the chain will be rejected.</p>
+fulfill the next promise in the chain.
+
+If there is no reject function, of if the reject function raises an error,
+then the next promise in the chain will be rejected.
+</code></pre>
 <pre><code class="pony">fun tag next[B: Any #share](
   fulfill: Fulfill[A #share, B #share] iso,
   rejected: Reject[B #share] iso = qualify)

@@ -1885,45 +1885,7 @@
         
             <li><a class="toctree-l4" href="#constructors">Constructors</a></li>
         
-            <li><a class="toctree-l4" href="#example">Example</a></li>
-        
             <li><a class="toctree-l4" href="#public-functions">Public Functions</a></li>
-        
-            <li><a class="toctree-l4" href="#examples">Examples</a></li>
-        
-            <li><a class="toctree-l4" href="#examples_1">Examples</a></li>
-        
-            <li><a class="toctree-l4" href="#example_1">Example</a></li>
-        
-            <li><a class="toctree-l4" href="#example_2">Example</a></li>
-        
-            <li><a class="toctree-l4" href="#example_3">Example</a></li>
-        
-            <li><a class="toctree-l4" href="#example_4">Example</a></li>
-        
-            <li><a class="toctree-l4" href="#example_5">Example</a></li>
-        
-            <li><a class="toctree-l4" href="#examples_2">Examples</a></li>
-        
-            <li><a class="toctree-l4" href="#example_6">Example</a></li>
-        
-            <li><a class="toctree-l4" href="#example_7">Example</a></li>
-        
-            <li><a class="toctree-l4" href="#example_8">Example</a></li>
-        
-            <li><a class="toctree-l4" href="#example_9">Example</a></li>
-        
-            <li><a class="toctree-l4" href="#example_10">Example</a></li>
-        
-            <li><a class="toctree-l4" href="#example_11">Example</a></li>
-        
-            <li><a class="toctree-l4" href="#example_12">Example</a></li>
-        
-            <li><a class="toctree-l4" href="#example_13">Example</a></li>
-        
-            <li><a class="toctree-l4" href="#example_14">Example</a></li>
-        
-            <li><a class="toctree-l4" href="#example_15">Example</a></li>
         
         </ul>
     
@@ -3759,16 +3721,18 @@
 </ul>
 <hr />
 <h3 id="chain">chain</h3>
-<p>Take an iterator of iterators and return an Iter containing the
-items of the first one, then the second one, and so on.</p>
-<h2 id="example">Example</h2>
-<pre><code class="pony">let xs = [as I64: 1; 2].values()
+<pre><code>Take an iterator of iterators and return an Iter containing the
+items of the first one, then the second one, and so on.
+
+## Example
+```pony
+let xs = [as I64: 1; 2].values()
 let ys = [as I64: 3; 4].values()
 
 Iter[I64].chain([xs; ys].values())
+```
+`1 2 3 4`
 </code></pre>
-
-<p><code>1 2 3 4</code></p>
 <pre><code class="pony">new ref chain(
   outer_iterator: Iterator[Iterator[A] ref] ref)
 : Iter[A] ref^
@@ -3805,20 +3769,24 @@ Iter[I64].chain([xs; ys].values())
 </ul>
 <hr />
 <h3 id="all">all</h3>
-<p>Return false if at least one value of the iterator fails to match the
-predicate <code>f</code>. This method short-circuits at the first value where the
-predicate returns false, otherwise true is returned.</p>
-<h2 id="examples">Examples</h2>
-<pre><code class="pony">Iter[I64]([as I64: 2; 4; 6].values())
-  .all({(x: I64): Bool =&gt; (x % 2) == 0 })
-</code></pre>
+<pre><code>Return false if at least one value of the iterator fails to match the
+predicate `f`. This method short-circuits at the first value where the
+predicate returns false, otherwise true is returned.
 
-<p><code>true</code></p>
-<pre><code class="pony">Iter[I64]([as I64: 2; 3; 4].values())
-  .all({(x: I64): Bool =&gt; (x % 2) == 0 })
-</code></pre>
+## Examples
 
-<p><code>false</code></p>
+```pony
+Iter[I64]([as I64: 2; 4; 6].values())
+  .all({(x: I64): Bool =&gt; (x % 2) == 0 })
+```
+`true`
+
+```pony
+Iter[I64]([as I64: 2; 3; 4].values())
+  .all({(x: I64): Bool =&gt; (x % 2) == 0 })
+```
+`false`
+</code></pre>
 <pre><code class="pony">fun ref all(
   f: {(A!): Bool ?}[A] box)
 : Bool val
@@ -3834,20 +3802,24 @@ predicate returns false, otherwise true is returned.</p>
 </ul>
 <hr />
 <h3 id="any">any</h3>
-<p>Return true if at least one value of the iterator matches the predicate
-<code>f</code>. This method short-circuits at the first value where the predicate
-returns true, otherwise false is returned.</p>
-<h2 id="examples_1">Examples</h2>
-<pre><code class="pony">Iter[I64]([as I64: 2; 4; 6].values())
-  .any({(x: I64): Bool =&gt; (x % 2) == 1 })
-</code></pre>
+<pre><code>Return true if at least one value of the iterator matches the predicate
+`f`. This method short-circuits at the first value where the predicate
+returns true, otherwise false is returned.
 
-<p><code>false</code></p>
-<pre><code class="pony">Iter[I64]([as I64: 2; 3; 4].values())
-  .any({(x: I64): Bool =&gt; (x % 2) == 1 })
-</code></pre>
+## Examples
 
-<p><code>true</code></p>
+```pony
+Iter[I64]([as I64: 2; 4; 6].values())
+  .any({(x: I64): Bool =&gt; (x % 2) == 1 })
+```
+`false`
+
+```pony
+Iter[I64]([as I64: 2; 3; 4].values())
+  .any({(x: I64): Bool =&gt; (x % 2) == 1 })
+```
+`true`
+</code></pre>
 <pre><code class="pony">fun ref any(
   f: {(A!): Bool ?}[A] box)
 : Bool val
@@ -3863,13 +3835,16 @@ returns true, otherwise false is returned.</p>
 </ul>
 <hr />
 <h3 id="collect91optional-b-seq91a93-ref93">collect[optional B: <a href="../builtin-Seq">Seq</a>[A!] ref]</h3>
-<p>Push each value from the iterator into the collection <code>coll</code>.</p>
-<h2 id="example_1">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
-  .collect(Array[I64](3))
-</code></pre>
+<pre><code>Push each value from the iterator into the collection `coll`.
 
-<p><code>[1, 2, 3]</code></p>
+## Example
+
+```pony
+Iter[I64]([as I64: 1; 2; 3].values())
+  .collect(Array[I64](3))
+```
+`[1, 2, 3]`
+</code></pre>
 <pre><code class="pony">fun ref collect[optional B: Seq[A!] ref](
   coll: B ref)
 : B ref^
@@ -3885,13 +3860,16 @@ returns true, otherwise false is returned.</p>
 </ul>
 <hr />
 <h3 id="count">count</h3>
-<p>Return the number of values in the iterator.</p>
-<h2 id="example_2">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
-  .count()
-</code></pre>
+<pre><code>Return the number of values in the iterator.
 
-<p><code>3</code></p>
+## Example
+
+```pony
+Iter[I64]([as I64: 1; 2; 3].values())
+  .count()
+```
+`3`
+</code></pre>
 <pre><code class="pony">fun ref count()
 : USize val
 </code></pre>
@@ -3902,15 +3880,19 @@ returns true, otherwise false is returned.</p>
 </ul>
 <hr />
 <h3 id="cycle">cycle</h3>
-<p>Repeatedly cycle through the values from the iterator.</p>
-<p>WARNING: The values returned by the original iterator are cached, so
-the input iterator should be finite.</p>
-<h2 id="example_3">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
-  .cycle()
-</code></pre>
+<pre><code>Repeatedly cycle through the values from the iterator.
 
-<p><code>1 2 3 1 2 3 1 2 3 ...</code></p>
+WARNING: The values returned by the original iterator are cached, so
+the input iterator should be finite.
+
+## Example
+
+```pony
+Iter[I64]([as I64: 1; 2; 3].values())
+  .cycle()
+```
+`1 2 3 1 2 3 1 2 3 ...`
+</code></pre>
 <pre><code class="pony">fun ref cycle()
 : Iter[A!] ref^
 </code></pre>
@@ -3926,15 +3908,18 @@ the input iterator should be finite.</p>
 [U32](builtin-U32) val | [U64](builtin-U64) val | [U128](builtin-U128) val | 
 [ULong](builtin-ULong) val | [USize](builtin-USize) val | [F32](builtin-F32) val | 
 [F64](builtin-F64) val))\]
-</code></pre>
-<p>An iterator which yields the current iteration count as well as the next
-value from the iterator.</p>
-<h2 id="example_4">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
-  .enum()
-</code></pre>
 
-<p><code>(0, 1) (1, 2) (2, 3)</code></p>
+An iterator which yields the current iteration count as well as the next
+value from the iterator.
+
+## Example
+
+```pony
+Iter[I64]([as I64: 1; 2; 3].values())
+  .enum()
+```
+`(0, 1) (1, 2) (2, 3)`
+</code></pre>
 <pre><code class="pony">fun ref enum[optional B: (Real[B val] val &amp; (I8 val | I16 val | I32 val | 
     I64 val | I128 val | ILong val | 
     ISize val | U8 val | U16 val | 
@@ -3950,13 +3935,16 @@ value from the iterator.</p>
 </ul>
 <hr />
 <h3 id="filter">filter</h3>
-<p>Return an iterator that only returns items that match the predicate <code>f</code>.</p>
-<h2 id="example_5">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
-  .filter({(x: I64): Bool =&gt; (x % 2) == 0 })
-</code></pre>
+<pre><code>Return an iterator that only returns items that match the predicate `f`.
 
-<p><code>2 4 6</code></p>
+## Example
+
+```pony
+Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
+  .filter({(x: I64): Bool =&gt; (x % 2) == 0 })
+```
+`2 4 6`
+</code></pre>
 <pre><code class="pony">fun ref filter(
   f: {(A!): Bool ?}[A] box)
 : Iter[A] ref^
@@ -3972,18 +3960,22 @@ value from the iterator.</p>
 </ul>
 <hr />
 <h3 id="find">find</h3>
-<p>Return the nth value in the iterator that satisfies the predicate <code>f</code>.</p>
-<h2 id="examples_2">Examples</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
+<pre><code>Return the nth value in the iterator that satisfies the predicate `f`.
+
+## Examples
+
+```pony
+Iter[I64]([as I64: 1; 2; 3].values())
   .find({(x: I64): Bool =&gt; (x % 2) == 0 })
-</code></pre>
+```
+`2`
 
-<p><code>2</code></p>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4].values())
+```pony
+Iter[I64]([as I64: 1; 2; 3; 4].values())
   .find({(x: I64): Bool =&gt; (x % 2) == 0 }, 2)
+```
+`4`
 </code></pre>
-
-<p><code>4</code></p>
 <pre><code class="pony">fun ref find(
   f: {(A!): Bool ?}[A] box,
   n: USize val = 1)
@@ -4001,13 +3993,16 @@ value from the iterator.</p>
 </ul>
 <hr />
 <h3 id="fold91b-b93">fold[B: B]</h3>
-<p>Apply a function to every element, producing an accumulated value.</p>
-<h2 id="example_6">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
-  .fold[I64]({(sum: I64, x: I64): I64 =&gt; sum + x }, 0)
-</code></pre>
+<pre><code>Apply a function to every element, producing an accumulated value.
 
-<p><code>6</code></p>
+## Example
+
+```pony
+Iter[I64]([as I64: 1; 2; 3].values())
+  .fold[I64]({(sum: I64, x: I64): I64 =&gt; sum + x }, 0)
+```
+`6`
+</code></pre>
 <pre><code class="pony">fun ref fold[B: B](
   f: {(B, A!): B^ ?}[A, B] box,
   acc: B)
@@ -4025,13 +4020,16 @@ value from the iterator.</p>
 </ul>
 <hr />
 <h3 id="last">last</h3>
-<p>Return the last value of the iterator.</p>
-<h2 id="example_7">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
-  .last()
-</code></pre>
+<pre><code>Return the last value of the iterator.
 
-<p><code>3</code></p>
+## Example
+
+```pony
+Iter[I64]([as I64: 1; 2; 3].values())
+  .last()
+```
+`3`
+</code></pre>
 <pre><code class="pony">fun ref last()
 : A ?
 </code></pre>
@@ -4042,14 +4040,17 @@ value from the iterator.</p>
 </ul>
 <hr />
 <h3 id="map91b-b93">map[B: B]</h3>
-<p>Return an iterator where each item's value is the application of the given
-function to the value in the original iterator.</p>
-<h2 id="example_8">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
-  .map[I64]({(x: I64): I64 =&gt; x * x })
-</code></pre>
+<pre><code>Return an iterator where each item's value is the application of the given
+function to the value in the original iterator.
 
-<p><code>1 4 9</code></p>
+## Example
+
+```pony
+Iter[I64]([as I64: 1; 2; 3].values())
+  .map[I64]({(x: I64): I64 =&gt; x * x })
+```
+`1 4 9`
+</code></pre>
 <pre><code class="pony">fun ref map[B: B](
   f: {(A!): B ?}[A, B] box)
 : Iter[B] ref^
@@ -4065,13 +4066,16 @@ function to the value in the original iterator.</p>
 </ul>
 <hr />
 <h3 id="nth">nth</h3>
-<p>Return the nth value of the iterator.</p>
-<h2 id="example_9">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
-  .nth(2)
-</code></pre>
+<pre><code>Return the nth value of the iterator.
 
-<p><code>2</code></p>
+## Example
+
+```pony
+Iter[I64]([as I64: 1; 2; 3].values())
+  .nth(2)
+```
+`2`
+</code></pre>
 <pre><code class="pony">fun ref nth(
   n: USize val)
 : A ?
@@ -4087,20 +4091,23 @@ function to the value in the original iterator.</p>
 </ul>
 <hr />
 <h3 id="run">run</h3>
-<p>Iterate through the values of the iterator without a for loop. The
-function <code>on_error</code> will be called if the iterator's <code>has_next</code> method
-returns true but its <code>next</code> method throws an error.</p>
-<h2 id="example_10">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
+<pre><code>Iterate through the values of the iterator without a for loop. The
+function `on_error` will be called if the iterator's `has_next` method
+returns true but its `next` method throws an error.
+
+## Example
+
+```pony
+Iter[I64]([as I64: 1; 2; 3].values())
   .map[None]({(x: I64) =&gt; env.out.print(x.string()) })
   .run()
-</code></pre>
-
-<pre><code>1
+```
+```
+1
 2
 3
+```
 </code></pre>
-
 <pre><code class="pony">fun ref run(
   on_error: {()}[A] box = lambda)
 : None val
@@ -4116,13 +4123,16 @@ returns true but its <code>next</code> method throws an error.</p>
 </ul>
 <hr />
 <h3 id="skip">skip</h3>
-<p>Skip the first n values of the iterator.</p>
-<h2 id="example_11">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
-  .skip(3)
-</code></pre>
+<pre><code>Skip the first n values of the iterator.
 
-<p><code>4 5 6</code></p>
+## Example
+
+```pony
+Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
+  .skip(3)
+```
+`4 5 6`
+</code></pre>
 <pre><code class="pony">fun ref skip(
   n: USize val)
 : Iter[A] ref^
@@ -4138,13 +4148,16 @@ returns true but its <code>next</code> method throws an error.</p>
 </ul>
 <hr />
 <h3 id="skip_while">skip_while</h3>
-<p>Skip values of the iterator while the predicate <code>f</code> returns true.</p>
-<h2 id="example_12">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
-  .skip_while({(x: I64): Bool =&gt; x &lt; 4 })
-</code></pre>
+<pre><code>Skip values of the iterator while the predicate `f` returns true.
 
-<p><code>4 5 6</code></p>
+## Example
+
+```pony
+Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
+  .skip_while({(x: I64): Bool =&gt; x &lt; 4 })
+```
+`4 5 6`
+</code></pre>
 <pre><code class="pony">fun ref skip_while(
   f: {(A!): Bool ?}[A] box)
 : Iter[A] ref^
@@ -4160,13 +4173,16 @@ returns true but its <code>next</code> method throws an error.</p>
 </ul>
 <hr />
 <h3 id="take">take</h3>
-<p>Return an iterator for the first n elements.</p>
-<h2 id="example_13">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
-  .take(3)
-</code></pre>
+<pre><code>Return an iterator for the first n elements.
 
-<p><code>1 2 3</code></p>
+## Example
+
+```pony
+Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
+  .take(3)
+```
+`1 2 3`
+</code></pre>
 <pre><code class="pony">fun ref take(
   n: USize val)
 : Iter[A] ref^
@@ -4182,14 +4198,17 @@ returns true but its <code>next</code> method throws an error.</p>
 </ul>
 <hr />
 <h3 id="take_while">take_while</h3>
-<p>Return an iterator that returns values while the predicate <code>f</code> returns
-true.</p>
-<h2 id="example_14">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
-  .take_while({(x: I64): Bool =&gt; x &lt; 4 })
-</code></pre>
+<pre><code>Return an iterator that returns values while the predicate `f` returns
+true.
 
-<p><code>1 2 3</code></p>
+## Example
+
+```pony
+Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
+  .take_while({(x: I64): Bool =&gt; x &lt; 4 })
+```
+`1 2 3`
+</code></pre>
 <pre><code class="pony">fun ref take_while(
   f: {(A!): Bool ?}[A] box)
 : Iter[A] ref^
@@ -4205,16 +4224,19 @@ true.</p>
 </ul>
 <hr />
 <h3 id="zip91b-b93">zip[B: B]</h3>
-<p>Zip two iterators together so that each call to next() results in
+<pre><code>Zip two iterators together so that each call to next() results in
 a tuple with the next value of the first iterator and the next value
 of the second iterator. The number of items returned is the minimum of
-the number of items returned by the two iterators.</p>
-<h2 id="example_15">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2].values())
-  .zip[I64]([as I64: 3; 4].values())
-</code></pre>
+the number of items returned by the two iterators.
 
-<p><code>(1, 3) (2, 4)</code></p>
+## Example
+
+```pony
+Iter[I64]([as I64: 1; 2].values())
+  .zip[I64]([as I64: 3; 4].values())
+```
+`(1, 3) (2, 4)`
+</code></pre>
 <pre><code class="pony">fun ref zip[B: B](
   i2: Iterator[B] ref)
 : Iter[(A , B)] ref^

@@ -3880,13 +3880,15 @@ error.</p>
 </ul>
 <hr />
 <h3 id="find">find</h3>
-<p>Find the <code>nth</code> appearance of <code>value</code> from the beginning of the vector,
-starting at <code>offset</code> and examining higher indices, and using the
-supplied <code>predicate</code> for comparisons. Returns the index of the value, or
-raise an error if the value isn't present.</p>
-<p>By default, the search starts at the first element of the vector,
-returns the first instance of <code>value</code> found, and uses object identity
-for comparison.</p>
+<pre><code>Find the `nth` appearance of `value` from the beginning of the vector,
+starting at `offset` and examining higher indices, and using the
+supplied `predicate` for comparisons. Returns the index of the value, or
+raise an error if the value isn't present.
+
+By default, the search starts at the first element of the vector,
+returns the first instance of `value` found, and uses object identity
+for comparison.
+</code></pre>
 <pre><code class="pony">fun val find(
   value: A #share,
   offset: USize val = 0,

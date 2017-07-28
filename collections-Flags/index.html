@@ -3698,13 +3698,13 @@
 [USize](builtin-USize) val) &amp; [Integer](builtin-Integer)\[B val\] val)\]
 </code></pre>
 <p>Flags is a set of flags. The flags that are recognised should be passed as
-a union type for type parameter A. For example:</p>
+  a union type for type parameter A. For example:</p>
 <p>primitive SSE
-  fun value(): U64 =&gt; 1</p>
+    fun value(): U64 =&gt; 1</p>
 <p>primitive AVX
-  fun value(): U64 =&gt; 2</p>
+    fun value(): U64 =&gt; 2</p>
 <p>primitive RDTSCP
-  fun value(): U64 =&gt; 4</p>
+    fun value(): U64 =&gt; 4</p>
 <p>type Features is Flags[(SSE | AVX | RDTSCP)]</p>
 <p>Type parameter B is the unlying field used to store the flags.</p>
 <pre><code class="pony">class ref Flags[A: Flag[B val] val, optional B: ((U8 val | U16 val | U32 val | 

@@ -3691,15 +3691,15 @@
               
                 <h1 id="handlerfactory">HandlerFactory</h1>
 <p>The TCP connections that underlie HTTP sessions get created within
-the <code>net/http</code> package at times that the application code can not
-predict. Yet, the application code has to provide custom hooks into
-these connections as they are created. To accomplish this, the
-application code provides an instance of a <code>class</code> that implements
-this interface.</p>
+  the <code>net/http</code> package at times that the application code can not
+  predict. Yet, the application code has to provide custom hooks into
+  these connections as they are created. To accomplish this, the
+  application code provides an instance of a <code>class</code> that implements
+  this interface.</p>
 <p>The <code>HandlerFactory.apply</code> method will be called when a new
-<code>HTTPSession</code> is created, giving the application a chance to create
-an instance of its own <code>HTTPHandler</code>. This happens on both
-client and server ends.</p>
+  <code>HTTPSession</code> is created, giving the application a chance to create
+  an instance of its own <code>HTTPHandler</code>. This happens on both
+  client and server ends.</p>
 <pre><code class="pony">interface ref HandlerFactory
 </code></pre>
 

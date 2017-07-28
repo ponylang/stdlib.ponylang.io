@@ -3693,9 +3693,9 @@
               
                 <h1 id="maybepointer91a-a93">MaybePointer[A: A]</h1>
 <p>A MaybePointer[A] is used to encode a possibly-null type. It should
-<em>only</em> be used for structs that need to be passed to and from the C FFI.</p>
+  <em>only</em> be used for structs that need to be passed to and from the C FFI.</p>
 <p>An optional type for anything that isn't a struct should be encoded as a
-union type, for example (A | None).</p>
+  union type, for example (A | None).</p>
 <pre><code class="pony">struct ref MaybePointer[A: A]
 </code></pre>
 

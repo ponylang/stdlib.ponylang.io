@@ -1989,7 +1989,7 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#example-program">Example program</a></li>
+            <li><a class="toctree-l4" href="#implements">Implements</a></li>
         
             <li><a class="toctree-l4" href="#constructors">Constructors</a></li>
         
@@ -3695,20 +3695,19 @@
               
                 <h1 id="take91a-a93">Take[A: A]</h1>
 <p>Create an iterator from the original iterator that only returns a
-specified number of items.</p>
-<h2 id="example-program">Example program</h2>
+  specified number of items.</p>
+<p>## Example program</p>
 <p>Prints the numbers 10 through 12.</p>
-<pre><code class="pony">use &quot;itertools&quot;
-
-actor Main
-  new create(env: Env) =&gt;
-    let i1 = [as I32: 10; 11; 12; 13; 14]
-
-    for x in Take[I32](i1.values(), 3) do
-      env.out.print(x.string())
-    end
+<p>```pony
+  use "itertools"</p>
+<p>actor Main
+    new create(env: Env) =&gt;
+      let i1 = [as I32: 10; 11; 12; 13; 14]</p>
+<pre><code>  for x in Take[I32](i1.values(), 3) do
+    env.out.print(x.string())
+  end
 </code></pre>
-
+<p>```</p>
 <pre><code class="pony">class ref Take[A: A] is
   Iterator[A] ref
 </code></pre>

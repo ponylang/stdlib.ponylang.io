@@ -3695,13 +3695,13 @@
               
                 <h1 id="_testtcpunmute">_TestTCPUnmute</h1>
 <p>Test that the <code>unmute</code> behavior will allow a connection to start reading
-incoming data again. The test assumes that <code>mute</code> works correctly and that
-after muting, <code>unmute</code> successfully reset the mute state rather than <code>mute</code>
-being broken and never actually muting the connection.</p>
+  incoming data again. The test assumes that <code>mute</code> works correctly and that
+  after muting, <code>unmute</code> successfully reset the mute state rather than <code>mute</code>
+  being broken and never actually muting the connection.</p>
 <p>Test works as follows:</p>
 <p>Once an incoming connection is established, we set mute on it, request
-that data be sent to us and then unmute the connection such that we should
-receive the return data.</p>
+  that data be sent to us and then unmute the connection such that we should
+  receive the return data.</p>
 <pre><code class="pony">class iso _TestTCPUnmute is
   UnitTest ref
 </code></pre>

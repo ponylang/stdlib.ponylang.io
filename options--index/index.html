@@ -3710,7 +3710,7 @@ actor Main
   new create(env: Env) =&gt;
     _env = env
     try
-      arguments()
+      arguments()?
     end
 
     _env.out.print(&quot;The String is &quot; + _a_string)

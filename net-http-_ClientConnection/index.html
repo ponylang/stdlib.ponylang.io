@@ -2364,9 +2364,7 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#receiving-responses">Receiving Responses</a></li>
-        
-            <li><a class="toctree-l4" href="#the-handlerfactory">The HandlerFactory</a></li>
+            <li><a class="toctree-l4" href="#implements">Implements</a></li>
         
             <li><a class="toctree-l4" href="#constructors">Constructors</a></li>
         
@@ -3702,34 +3700,34 @@
                 <h1 id="_clientconnection">_ClientConnection</h1>
 <p>Manages a persistent and possibly pipelined TCP connection to an HTTP server.</p>
 <p>This is where pipelining happens, if it has been enabled by the <code>Client</code>.
-Only "safe" requests (GET, HEAD, OPTIONS) are sent to the server if
-<em>any</em> responses are still pending.</p>
+  Only "safe" requests (GET, HEAD, OPTIONS) are sent to the server if
+  <em>any</em> responses are still pending.</p>
 <p>The <code>HTTPHandler.send_body</code> notification function will be called if/when
-the <code>HTTPSession</code> is ready to receive body data for <code>POST</code> operations in
-transfer modes other than <code>Oneshot</code>.</p>
-<h3 id="receiving-responses">Receiving Responses</h3>
+  the <code>HTTPSession</code> is ready to receive body data for <code>POST</code> operations in
+  transfer modes other than <code>Oneshot</code>.</p>
+<p>### Receiving Responses</p>
 <p>Reception is handled through an <code>HTTPHandler</code> instance.
-<code>HTTPHandler.apply</code> signals the arrival of a message with headers.
-How the body data is obtained depends on the <code>transfer</code> mode.</p>
+  <code>HTTPHandler.apply</code> signals the arrival of a message with headers.
+  How the body data is obtained depends on the <code>transfer</code> mode.</p>
 <ul>
 <li>
 <p>For <code>StreamTranfer</code> and <code>ChunkedTransfer</code> modes, there will be
-any number of <code>HTTPHandler.chunk</code> notifications, followed by
-an <code>HTTPHandler.finished</code> notification.</p>
+  any number of <code>HTTPHandler.chunk</code> notifications, followed by
+  an <code>HTTPHandler.finished</code> notification.</p>
 </li>
 <li>
 <p>For <code>OneShotTransfer</code> mode, the client application just needs to
-call <code>Payload.body</code> once to get the entire body.</p>
+  call <code>Payload.body</code> once to get the entire body.</p>
 </li>
 </ul>
-<h2 id="the-handlerfactory">The HandlerFactory</h2>
+<p>## The HandlerFactory</p>
 <p>The <code>Client</code> class will try to re-use sessions. If it needs to create
-a new session, based on the request URL, it will do that, and then it
-will need a new instance of the caller's <code>HTTPHandler</code> class.
-Since the client application code does not know in advance when this
- will be necessary, it passes in a <code>HandlerFactory</code> that creates the
-actual <code>HTTPHandler</code>, customized
-for the client application's needs.</p>
+  a new session, based on the request URL, it will do that, and then it
+  will need a new instance of the caller's <code>HTTPHandler</code> class.
+  Since the client application code does not know in advance when this
+   will be necessary, it passes in a <code>HandlerFactory</code> that creates the
+  actual <code>HTTPHandler</code>, customized
+  for the client application's needs.</p>
 <pre><code class="pony">actor tag _ClientConnection is
   HTTPSession tag
 </code></pre>
@@ -3830,12 +3828,14 @@ We set a local flag too so we do not send anything on the queue.</p>
 <hr />
 <h2 id="private-behaviours">Private Behaviours</h2>
 <h3 id="_deliver">_deliver</h3>
-<p>Deal with a new Response coming back from the server.</p>
-<p>Since the session operates in a FIFO manner, the Request corresponding
-to this Response is the oldest one on the <code>_sent</code> list. We take it
+<pre><code>Deal with a new Response coming back from the server.
+
+Since the session operates in a FIFO manner, the Request corresponding
+to this Response is the oldest one on the `_sent` list. We take it
 off that list and call its handler. It becomes the 'currently being
 delivered' response and subsequent body data has to go there as well,
-if there is any.</p>
+if there is any.
+</code></pre>
 <pre><code class="pony">be _deliver(
   response: Payload val)
 </code></pre>

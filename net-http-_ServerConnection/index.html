@@ -3794,14 +3794,16 @@ Request.</p>
 <hr />
 <h2 id="private-behaviours">Private Behaviours</h2>
 <h3 id="_deliver">_deliver</h3>
-<p>Dispatch requests. At the time this behavior is called for StreamTransfer
+<pre><code>Dispatch requests. At the time this behavior is called for StreamTransfer
 and ChunkTransfer encodings, only the headers of the request may have
 been received. Receiving and dealing with the body, which could be
-quite large in POST methods, is up to the chosen application handler.</p>
-<p>The client can send several requests without waiting for a response,
+quite large in POST methods, is up to the chosen application handler.
+
+The client can send several requests without waiting for a response,
 but they are only passed to the back end one at a time. Only when all
 of the response to a processed request has been sent is the next request
-processed.</p>
+processed.
+</code></pre>
 <pre><code class="pony">be _deliver(
   request: Payload val)
 </code></pre>

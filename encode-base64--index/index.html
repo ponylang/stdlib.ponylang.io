@@ -3705,7 +3705,7 @@ actor Main
   new create(env: Env) =&gt;
     env.out.print(Base64.encode(&quot;foobar&quot;))
     try
-      env.out.print(Base64.decode[String iso](&quot;Zm9vYmFy&quot;))
+      env.out.print(Base64.decode[String iso](&quot;Zm9vYmFy&quot;)?)
     end
 </code></pre>
 

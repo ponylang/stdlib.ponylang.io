@@ -3715,7 +3715,7 @@ fulfilled + bar
 fulfilled + baz
 </code></pre>
 
-<pre><code>use &quot;promises&quot;
+<pre><code class="pony">use &quot;promises&quot;
 
 class PrintFulfill is Fulfill[String, String]
   let _env: Env
@@ -3724,7 +3724,7 @@ class PrintFulfill is Fulfill[String, String]
     _env = env
     _msg = msg
   fun apply(s: String): String =&gt;
-    _env.out.print(&quot; + &quot;.join([s, _msg]))
+    _env.out.print(&quot; + &quot;.join([s; _msg]))
     s
 
 actor Main
@@ -3743,7 +3743,7 @@ value which fulfills the third one, which in turn is used to compute a
 value which fulfills the fourth one. The output is the average length
 of the words passed on the command line or <code>0</code> if there are no command
 line arguments.</p>
-<pre><code>use &quot;promises&quot;
+<pre><code class="pony">use &quot;promises&quot;
 
 primitive Computation
   fun tag string_to_strings(s: String): Array[String] val =&gt;

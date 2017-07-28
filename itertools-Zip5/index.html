@@ -1873,7 +1873,7 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#example-program">Example Program</a></li>
+            <li><a class="toctree-l4" href="#implements">Implements</a></li>
         
             <li><a class="toctree-l4" href="#constructors">Constructors</a></li>
         
@@ -3695,38 +3695,35 @@
               
                 <h1 id="zip591a-a-b-b-c-c-d-d-e-e93">Zip5[A: A, B: B, C: C, D: D, E: E]</h1>
 <p>Zip five iterators together so that each call to next() results in
-a tuple with the next value of each of the iterators. The number of
-items returned is the minimum of the number of items returned by the
-iterators.</p>
-<h2 id="example-program">Example Program</h2>
+  a tuple with the next value of each of the iterators. The number of
+  items returned is the minimum of the number of items returned by the
+  iterators.</p>
+<p>## Example Program</p>
 <p>Print the following:</p>
-<pre><code>1 a 0.5 m 2
-2 b 9.8 n 6
-3 c 3.3 o 5
+<p><code>1 a 0.5 m 2
+  2 b 9.8 n 6
+  3 c 3.3 o 5</code></p>
+<p>```pony
+  use "itertools"</p>
+<p>actor Main
+    new create(env: Env) =&gt;
+      var i1: Array[I32] ref = [as I32: 1; 2; 3]
+      var i2: Array[String] ref = ["a"; "b"; "c"; "d"]
+      var i3: Array[F32] ref = [as F32: 0.5; 9.8; 3.3]
+      var i4: Array[String] ref = ["m"; "n"; "o"; "p"; "q"; "r"]
+      var i5: Array[I32] ref = [as I32: 2; 6; 5; 3; 5]</p>
+<pre><code>  for (x, y, z, xx, yy) in Zip5[I32, String, F32, String, I32](
+    i1.values(), i2.values(), i3.values(), i4.values(), i5.values())
+  do
+    env.out.print(""
+      .add(x.string()).add(" ")
+      .add(y).add(" ")
+      .add(z.string()).add(" ")
+      .add(xx.string()).add(" ")
+      .add(yy.string()))
+  end
 </code></pre>
-
-<pre><code class="pony">use &quot;itertools&quot;
-
-actor Main
-  new create(env: Env) =&gt;
-    var i1: Array[I32] ref = [as I32: 1; 2; 3]
-    var i2: Array[String] ref = [&quot;a&quot;; &quot;b&quot;; &quot;c&quot;; &quot;d&quot;]
-    var i3: Array[F32] ref = [as F32: 0.5; 9.8; 3.3]
-    var i4: Array[String] ref = [&quot;m&quot;; &quot;n&quot;; &quot;o&quot;; &quot;p&quot;; &quot;q&quot;; &quot;r&quot;]
-    var i5: Array[I32] ref = [as I32: 2; 6; 5; 3; 5]
-
-    for (x, y, z, xx, yy) in Zip5[I32, String, F32, String, I32](
-      i1.values(), i2.values(), i3.values(), i4.values(), i5.values())
-    do
-      env.out.print(&quot;&quot;
-        .add(x.string()).add(&quot; &quot;)
-        .add(y).add(&quot; &quot;)
-        .add(z.string()).add(&quot; &quot;)
-        .add(xx.string()).add(&quot; &quot;)
-        .add(yy.string()))
-    end
-</code></pre>
-
+<p>```</p>
 <pre><code class="pony">class ref Zip5[A: A, B: B, C: C, D: D, E: E] is
   Iterator[(A , B , C , D , E)] ref
 </code></pre>

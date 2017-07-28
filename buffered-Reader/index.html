@@ -3696,57 +3696,55 @@
                 <h1 id="reader">Reader</h1>
 <p>Store network data and provide a parsing interface.</p>
 <p><code>Reader</code> provides a way to extract typed data from a sequence of
-bytes. The <code>Reader</code> manages the underlying data structures to
-provide a read cursor over a contiguous sequence of bytes. It is
-useful for decoding data that is received over a network or stored
-in a file. Chunk of bytes are added to the <code>Reader</code> using the
-<code>append</code> method, and typed data is extracted using the getter
-methods.</p>
+  bytes. The <code>Reader</code> manages the underlying data structures to
+  provide a read cursor over a contiguous sequence of bytes. It is
+  useful for decoding data that is received over a network or stored
+  in a file. Chunk of bytes are added to the <code>Reader</code> using the
+  <code>append</code> method, and typed data is extracted using the getter
+  methods.</p>
 <p>For example, suppose we have a UDP-based network data protocol where
-messages consist of the following:</p>
+  messages consist of the following:</p>
 <ul>
 <li><code>list_size</code> - the number of items in the following list of items
-  as a big-endian 32-bit integer</li>
-<li>zero or more items of the following data:</li>
+    as a big-endian 32-bit integer</li>
+<li>zero or more items of the following data:<ul>
 <li>a big-endian 64-bit floating point number</li>
 <li>a string that starts with a big-endian 32-bit integer that
-    specifies the length of the string, followed by a number of
-    bytes that represent the string</li>
+  specifies the length of the string, followed by a number of
+  bytes that represent the string</li>
+</ul>
+</li>
 </ul>
 <p>A message would be something like this:</p>
-<pre><code>[message_length][list_size][float1][string1][float2][string2]...
-</code></pre>
-
+<p><code>[message_length][list_size][float1][string1][float2][string2]...</code></p>
 <p>The following program uses a <code>Reader</code> to decode a message of
-this type and print them:</p>
-<pre><code>use &quot;net&quot;
-use &quot;collections&quot;
-
-class Notify is StdinNotify
-  let _env: Env
-  new create(env: Env) =&gt;
-    _env = env
-  fun ref apply(data: Array[U8] iso) =&gt;
-    let rb = Reader
-    rb.append(consume data)
-    try
-      while true do
-        let len = rb.i32_be()
-        let items = rb.i32_be().usize()
-        for range in Range(0, items) do
-          let f = rb.f32_be()
-          let str_len = rb.i32_be().usize()
-          let str = String.from_array(rb.block(str_len))
-          _env.out.print(&quot;[(&quot; + f.string() + &quot;), (&quot; + str + &quot;)]&quot;)
+  this type and print them:</p>
+<p>```pony
+  use "buffered"
+  use "collections"</p>
+<p>class Notify is StdinNotify
+    let _env: Env
+    new create(env: Env) =&gt;
+      _env = env
+    fun ref apply(data: Array[U8] iso) =&gt;
+      let rb = Reader
+      rb.append(consume data)
+      try
+        while true do
+          let len = rb.i32_be()?
+          let items = rb.i32_be()?.usize()
+          for range in Range(0, items) do
+            let f = rb.f32_be()?
+            let str_len = rb.i32_be()?.usize()
+            let str = String.from_array(rb.block(str_len)?)
+            _env.out.print("[(" + f.string() + "), (" + str + ")]")
+          end
         end
-      end
-    end
-
-actor Main
-  new create(env: Env) =&gt;
-    env.input(recover Notify(env) end, 1024)
-</code></pre>
-
+      end</p>
+<p>actor Main
+    new create(env: Env) =&gt;
+      env.input(recover Notify(env) end, 1024)
+  ```</p>
 <pre><code class="pony">class ref Reader
 </code></pre>
 

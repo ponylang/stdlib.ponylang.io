@@ -1845,7 +1845,7 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#example-program">Example program</a></li>
+            <li><a class="toctree-l4" href="#implements">Implements</a></li>
         
             <li><a class="toctree-l4" href="#constructors">Constructors</a></li>
         
@@ -3695,21 +3695,20 @@
               
                 <h1 id="cycle91a-a93">Cycle[A: A]</h1>
 <p>Create an iterator that repeatedly cycles through the values from the
-original iterator.</p>
+  original iterator.</p>
 <p>WARNING: The values returned by the original iterator are cached, so
-the input iterator should be finite.</p>
-<h2 id="example-program">Example program</h2>
+  the input iterator should be finite.</p>
+<p>## Example program</p>
 <p>Print the numbers 1 through 4 forever.</p>
-<pre><code class="pony">use &quot;itertools&quot;
-
-actor Main
-  new create(env: Env) =&gt;
-    let i1 = [as I32: 1; 2; 3; 4]
-    for x in Cycle[I32](i1.values()) do
-      env.out.print(x.string())
-    end
-</code></pre>
-
+<p>```pony
+  use "itertools"</p>
+<p>actor Main
+    new create(env: Env) =&gt;
+      let i1 = [as I32: 1; 2; 3; 4]
+      for x in Cycle<a href="../i1.values()">I32</a> do
+        env.out.print(x.string())
+      end
+  ```</p>
 <pre><code class="pony">class ref Cycle[A: A] is
   Iterator[A] ref
 </code></pre>

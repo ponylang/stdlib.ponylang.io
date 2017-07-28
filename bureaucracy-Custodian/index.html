@@ -680,8 +680,6 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#example-program">Example program</a></li>
-        
             <li><a class="toctree-l4" href="#constructors">Constructors</a></li>
         
             <li><a class="toctree-l4" href="#public-behaviours">Public Behaviours</a></li>
@@ -3695,36 +3693,42 @@
               
                 <h1 id="custodian">Custodian</h1>
 <p>A Custodian keeps a set of actors to dispose. When the Custodian is disposed,
-it disposes of the actors in its set and then clears the set.</p>
-<h2 id="example-program">Example program</h2>
+  it disposes of the actors in its set and then clears the set.</p>
+<p>## Example program</p>
 <p>Imagine you have a program with 3 actors that you need to shutdown when it
-receives a TERM signal. We can set up a Custodian that knows about each
-of our actors and when a TERM signal is received, is disposed of.</p>
-<pre><code class="pony">use &quot;bureaucracy&quot;
-use &quot;signals&quot;
+  receives a TERM signal. We can set up a Custodian that knows about each
+  of our actors and when a TERM signal is received, is disposed of.</p>
+<p>```pony
+  use "bureaucracy"
+  use "signals"</p>
+<p>actor Actor1
+    be dispose() =&gt; None // dispose of resources here.</p>
+<p>actor Actor2
+    be dispose() =&gt; None // dispose of resources here.</p>
+<p>actor Actor3
+    be dispose() =&gt; None // dispose of resources here.</p>
+<p>actor Main
+    new create(env: Env) =&gt;
+      let actor1 = Actor1
+      let actor2 = Actor2
+      let actor3 = Actor3</p>
+<pre><code>  let custodian = Custodian
+  custodian(actor1)
+  custodian(actor2)
+  custodian(actor3)
 
-actor Main
-  new create(env: Env) =&gt;
-    let actor1 = Actor1
-    let actor2 = Actor2
-    let actor3 = Actor3
-
-    let custodian = Custodian
-    custodian(actor1)(actor2)(actor3)
-
-    SignalHandler(TermHandler(custodian), Sig.term())
-
-class TermHandler is SignalNotify
-  let _custodian: Custodian
-
-  new iso create(custodian: Custodian) =&gt;
-    _custodian = custodian
-
-  fun ref apply(count: U32): Bool =&gt;
-    _custodian.dispose()
-    true
+  SignalHandler(TermHandler(custodian), Sig.term())
 </code></pre>
+<p>class TermHandler is SignalNotify
+    let _custodian: Custodian</p>
+<pre><code>new iso create(custodian: Custodian) =&gt;
+  _custodian = custodian
 
+fun ref apply(count: U32): Bool =&gt;
+  _custodian.dispose()
+  true
+</code></pre>
+<p>```</p>
 <pre><code class="pony">actor tag Custodian
 </code></pre>
 

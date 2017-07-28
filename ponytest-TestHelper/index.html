@@ -3698,14 +3698,14 @@
                 <h1 id="testhelper">TestHelper</h1>
 <p>Per unit test class that provides control, logging and assertion functions.</p>
 <p>Each unit test is given a TestHelper when it is run. This is val and so can
-be passed between methods and actors within the test without restriction.</p>
+  be passed between methods and actors within the test without restriction.</p>
 <p>The assertion functions check the relevant condition and mark the test as a
-failure if appropriate. The success or failure of the condition is reported
-back as a Bool which can be checked if a different code path is needed when
-that condition fails.</p>
+  failure if appropriate. The success or failure of the condition is reported
+  back as a Bool which can be checked if a different code path is needed when
+  that condition fails.</p>
 <p>All assert functions take an optional message argument. This is simply a
-string that is printed as part of the error message when the condition fails.
-It is intended to aid identifying what failed.</p>
+  string that is printed as part of the error message when the condition fails.
+  It is intended to aid identifying what failed.</p>
 <pre><code class="pony">class val TestHelper
 </code></pre>
 
@@ -3735,13 +3735,16 @@ It is intended to aid identifying what failed.</p>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
 <h3 id="log">log</h3>
-<p>Log the given message.</p>
-<p>The verbose parameter allows messages to be printed only when the --verbose
+<pre><code>Log the given message.
+
+The verbose parameter allows messages to be printed only when the --verbose
 command line option is used. For example, by default assert failures are
 logged, but passes are not. With --verbose both passes and fails are
-reported.</p>
-<p>Logs are printed one test at a time to avoid interleaving log lines from
-concurrent tests.</p>
+reported.
+
+Logs are printed one test at a time to avoid interleaving log lines from
+concurrent tests.
+</code></pre>
 <pre><code class="pony">fun box log(
   msg: String val,
   verbose: Bool val = false)
@@ -4007,12 +4010,15 @@ The timeout is specified in nanseconds.</p>
 </ul>
 <hr />
 <h3 id="complete">complete</h3>
-<p>MUST be called by each long test to indicate the test has finished, unless
-a timeout occurs.</p>
-<p>The "success" parameter specifies whether the test succeeded. However if
+<pre><code>MUST be called by each long test to indicate the test has finished, unless
+a timeout occurs.
+
+The "success" parameter specifies whether the test succeeded. However if
 any asserts fail the test will be considered a failure, regardless of the
-value of this parameter.</p>
-<p>Once this is called tear_down() may be called at any time.</p>
+value of this parameter.
+
+Once this is called tear_down() may be called at any time.
+</code></pre>
 <pre><code class="pony">fun box complete(
   success: Bool val)
 : None val
@@ -4028,13 +4034,16 @@ value of this parameter.</p>
 </ul>
 <hr />
 <h3 id="expect_action">expect_action</h3>
-<p>Can be called in a long test to set up expectations for one or more actions
-that, when all completed, will complete the test.</p>
-<p>This pattern is useful for cases where you have multiple things that need
+<pre><code>Can be called in a long test to set up expectations for one or more actions
+that, when all completed, will complete the test.
+
+This pattern is useful for cases where you have multiple things that need
 to happen to complete your test, but don't want to have to collect them
-all yourself into a single actor that calls the complete method.</p>
-<p>The order of calls to expect_action don't matter - the actions may be
-completed in any other order to complete the test.</p>
+all yourself into a single actor that calls the complete method.
+
+The order of calls to expect_action don't matter - the actions may be
+completed in any other order to complete the test.
+</code></pre>
 <pre><code class="pony">fun box expect_action(
   name: String val)
 : None val
@@ -4050,13 +4059,16 @@ completed in any other order to complete the test.</p>
 </ul>
 <hr />
 <h3 id="complete_action">complete_action</h3>
-<p>MUST be called for each action expectation that was set up in a long test
+<pre><code>MUST be called for each action expectation that was set up in a long test
 to fulfill the expectations. Any expectations that are still outstanding
-when the long test timeout runs out will be printed by name when it fails.</p>
-<p>Completing all outstanding actions is enough to finish the test. There's no
-need to also call the complete method when the actions are finished.</p>
-<p>Calling the complete method will finish the test immediately, without
-waiting for any outstanding actions to be completed.</p>
+when the long test timeout runs out will be printed by name when it fails.
+
+Completing all outstanding actions is enough to finish the test. There's no
+need to also call the complete method when the actions are finished.
+
+Calling the complete method will finish the test immediately, without
+waiting for any outstanding actions to be completed.
+</code></pre>
 <pre><code class="pony">fun box complete_action(
   name: String val)
 : None val
@@ -4072,11 +4084,14 @@ waiting for any outstanding actions to be completed.</p>
 </ul>
 <hr />
 <h3 id="fail_action">fail_action</h3>
-<p>Call to fail an action, which will also cause the entire test to fail
-immediately, without waiting the rest of the outstanding actions.</p>
-<p>The name of the failed action will be included in the failure output.</p>
-<p>Usually the action name should be an expected action set up by a call to
-expect_action, but failing unexpected actions will also fail the test.</p>
+<pre><code>Call to fail an action, which will also cause the entire test to fail
+immediately, without waiting the rest of the outstanding actions.
+
+The name of the failed action will be included in the failure output.
+
+Usually the action name should be an expected action set up by a call to
+expect_action, but failing unexpected actions will also fail the test.
+</code></pre>
 <pre><code class="pony">fun box fail_action(
   name: String val)
 : None val
@@ -4092,9 +4107,11 @@ expect_action, but failing unexpected actions will also fail the test.</p>
 </ul>
 <hr />
 <h3 id="dispose_when_done">dispose_when_done</h3>
-<p>Pass a disposable actor to be disposed of when the test is complete.
-The actor will be disposed no matter whether the test succeeds or fails.</p>
-<p>If the test is already tearing down, the actor will be disposed immediately.</p>
+<pre><code>Pass a disposable actor to be disposed of when the test is complete.
+The actor will be disposed no matter whether the test succeeds or fails.
+
+If the test is already tearing down, the actor will be disposed immediately.
+</code></pre>
 <pre><code class="pony">fun box dispose_when_done(
   disposable: DisposableActor tag)
 : None val

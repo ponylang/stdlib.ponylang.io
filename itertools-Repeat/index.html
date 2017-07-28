@@ -1877,7 +1877,7 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#example-program">Example program</a></li>
+            <li><a class="toctree-l4" href="#implements">Implements</a></li>
         
             <li><a class="toctree-l4" href="#constructors">Constructors</a></li>
         
@@ -3695,17 +3695,16 @@
               
                 <h1 id="repeat91a-a93">Repeat[A: A]</h1>
 <p>Create an iterator that returns the specified value forever.</p>
-<h2 id="example-program">Example program</h2>
+<p>## Example program</p>
 <p>Print the number 7 forever.</p>
-<pre><code class="pony">use &quot;itertools&quot;
-
-actor Main
-  new create(env: Env) =&gt;
-    for x in Repeat[U32](7) do
-      env.out.print(x.string())
-    end
-</code></pre>
-
+<p>```pony
+  use "itertools"</p>
+<p>actor Main
+    new create(env: Env) =&gt;
+      for x in Repeat<a href="../7">U32</a> do
+        env.out.print(x.string())
+      end
+  ```</p>
 <pre><code class="pony">class ref Repeat[A: A] is
   Iterator[A] ref
 </code></pre>

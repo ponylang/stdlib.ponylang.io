@@ -3693,31 +3693,29 @@
               
                 <h1 id="timer">Timer</h1>
 <p>The <code>Timer</code> class represents a timer that fires after an expiration
-time, and then fires at an interval. When a <code>Timer</code> fires, it calls
-the <code>apply</code> method of the <code>TimerNotify</code> object that was passed to it
-when it was created.</p>
+  time, and then fires at an interval. When a <code>Timer</code> fires, it calls
+  the <code>apply</code> method of the <code>TimerNotify</code> object that was passed to it
+  when it was created.</p>
 <p>The following example waits 5 seconds and then fires every 2
-seconds, and when it fires the <code>TimerNotify</code> object prints how many
-times it has been called:</p>
-<pre><code>use &quot;time&quot;
-
-actor Main
-  new create(env: Env) =&gt;
-    let timers = Timers
-    let timer = Timer(Notify(env), 5_000_000_000, 2_000_000_000)
-    timers(consume timer)
-
-class Notify is TimerNotify
-  let _env: Env
-  var _counter: U32 = 0
-  new iso create(env: Env) =&gt;
-    _env = env
-  fun ref apply(timer: Timer, count: U64): Bool =&gt;
-    _env.out.print(_counter.string())
-    _counter = _counter + 1
-    true
-</code></pre>
-
+  seconds, and when it fires the <code>TimerNotify</code> object prints how many
+  times it has been called:</p>
+<p>```pony
+  use "time"</p>
+<p>actor Main
+    new create(env: Env) =&gt;
+      let timers = Timers
+      let timer = Timer(Notify(env), 5_000_000_000, 2_000_000_000)
+      timers(consume timer)</p>
+<p>class Notify is TimerNotify
+    let _env: Env
+    var _counter: U32 = 0
+    new iso create(env: Env) =&gt;
+      _env = env
+    fun ref apply(timer: Timer, count: U64): Bool =&gt;
+      _env.out.print(_counter.string())
+      _counter = _counter + 1
+      true
+  ```</p>
 <pre><code class="pony">class ref Timer
 </code></pre>
 

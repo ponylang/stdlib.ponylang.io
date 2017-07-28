@@ -2680,8 +2680,6 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#server-operation">Server operation</a></li>
-        
             <li><a class="toctree-l4" href="#constructors">Constructors</a></li>
         
             <li><a class="toctree-l4" href="#public-behaviours">Public Behaviours</a></li>
@@ -3699,7 +3697,7 @@
               
                 <h1 id="httpserver">HTTPServer</h1>
 <p>Runs an HTTP server.</p>
-<h3 id="server-operation">Server operation</h3>
+<p>### Server operation</p>
 <p>Information flow into the Server is as follows:</p>
 <ol>
 <li>
@@ -3707,56 +3705,56 @@
 </li>
 <li>
 <p><code>RequestBuilder</code> is the notification class for new connections. It creates
-a <code>ServerConnection</code> actor and receives all the raw data from TCP. It uses
-the <code>HTTPParser</code> to assemble complete <code>Payload</code> objects which are passed off
-to the <code>ServerConnection</code>.</p>
+  a <code>ServerConnection</code> actor and receives all the raw data from TCP. It uses
+  the <code>HTTPParser</code> to assemble complete <code>Payload</code> objects which are passed off
+  to the <code>ServerConnection</code>.</p>
 </li>
 <li>
 <p>The <code>ServerConnection</code> actor deals with <em>completely formed</em> requests
-that have been parsed by the <code>HTTPParser</code>. This is where requests get
-dispatched to the caller-provided Handler.</p>
+  that have been parsed by the <code>HTTPParser</code>. This is where requests get
+  dispatched to the caller-provided Handler.</p>
 </li>
 </ol>
 <p>With streaming content, dispatch to the application's back end Handler
-has to happen <em>before</em> all of the body has been received. This has to be
-carefully choreographed because a <code>Payload</code> is an <code>iso</code> object and can only
-belong to one actor at a time, yet the <code>RequestBuilder</code> is running within
-the <code>TCPConnection</code> actor while the <code>RequestHandler</code> is running under the
-<code>ServerConnection</code> actor. Each incoming bufferful of body data, a
-<code>ByteSeq val</code>, is handed off to <code>ServerConnection</code>, to be passed on to the
-back end Handler.</p>
+  has to happen <em>before</em> all of the body has been received. This has to be
+  carefully choreographed because a <code>Payload</code> is an <code>iso</code> object and can only
+  belong to one actor at a time, yet the <code>RequestBuilder</code> is running within
+  the <code>TCPConnection</code> actor while the <code>RequestHandler</code> is running under the
+  <code>ServerConnection</code> actor. Each incoming bufferful of body data, a
+  <code>ByteSeq val</code>, is handed off to <code>ServerConnection</code>, to be passed on to the
+  back end Handler.</p>
 <ol>
 <li>
 <p>It turns out that the issues in sending a request and a response are the
-same, as are the issues in receiving them. Therefore the same notification
-interface, <code>HTTPHandler</code> is used on both ends, and the same sending
-interface <code>HTTPSession</code> is used. This makes the code easier to read as well.</p>
+  same, as are the issues in receiving them. Therefore the same notification
+  interface, <code>HTTPHandler</code> is used on both ends, and the same sending
+  interface <code>HTTPSession</code> is used. This makes the code easier to read as well.</p>
 </li>
 <li>
 <p><code>HTTPHandler.apply()</code> will be the way the client/server is informed of a
-new response/request message. All of the headers will be present so that the
-request can be dispatched for correct processing. Subsequent calls to a new
-function <code>HTTPHandler.chunk</code> will provide the body data, if any. This
-stream will be terminated by a call to the new function
-<code>HTTPHandler.finished</code>.</p>
+  new response/request message. All of the headers will be present so that the
+  request can be dispatched for correct processing. Subsequent calls to a new
+  function <code>HTTPHandler.chunk</code> will provide the body data, if any. This
+  stream will be terminated by a call to the new function
+  <code>HTTPHandler.finished</code>.</p>
 </li>
 <li>
 <p>Pipelining of requests is to optimize the transmission of requests over
-slow links (such as over satellites), not to cause simultaneous execution
-on the server within one session. Multiple received simple requests (<code>GET</code>,
-<code>HEAD</code>, and <code>OPTIONS</code>) are queued in the server and passed to the back end
-application one at a time. If a client wants true parallel execution of
-requests, it should use multiple sessions (which many browsers actually
-do already).</p>
+  slow links (such as over satellites), not to cause simultaneous execution
+  on the server within one session. Multiple received simple requests (<code>GET</code>,
+  <code>HEAD</code>, and <code>OPTIONS</code>) are queued in the server and passed to the back end
+  application one at a time. If a client wants true parallel execution of
+  requests, it should use multiple sessions (which many browsers actually
+  do already).</p>
 </li>
 </ol>
 <p>Since processing of a streaming response can take a relatively long time,
-acting on additional requests in the meantime does nothing but use up memory
-since responses would have to be queued. And if the server is being used to
-stream media, it is possible that these additional requests will themselves
-generate large responses.  Instead we will just let the requests queue up
-until a maximum queue length is reached (a small number) at which point we
-will back-pressure the inbound TCP stream.</p>
+  acting on additional requests in the meantime does nothing but use up memory
+  since responses would have to be queued. And if the server is being used to
+  stream media, it is possible that these additional requests will themselves
+  generate large responses.  Instead we will just let the requests queue up
+  until a maximum queue length is reached (a small number) at which point we
+  will back-pressure the inbound TCP stream.</p>
 <pre><code class="pony">actor tag HTTPServer
 </code></pre>
 

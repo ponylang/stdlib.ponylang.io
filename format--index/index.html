@@ -3712,14 +3712,14 @@ actor Main
 
   new create(env: Env) =&gt;
     try
-      (let x, let y) = (env.args(1).i32(), env.args(2).i32())
+      (let x, let y) = (env.args(1)?.i32()?, env.args(2)?.i32()?)
       env.out.print(disp(&quot;x&quot;, x))
       env.out.print(disp(&quot;y&quot;, y))
       env.out.print(disp(&quot;hex(x)&quot;, x, FormatHex))
       env.out.print(disp(&quot;hex(y)&quot;, y, FormatHex))
       env.out.print(disp(&quot;x * y&quot;, x * y))
     else
-      let exe = try env.args(0) else &quot;fmt_example&quot; end
+      let exe = try env.args(0)? else &quot;fmt_example&quot; end
       env.err.print(&quot;Usage: &quot; + exe + &quot; NUMBER1 NUMBER2&quot;)
     end
 </code></pre>

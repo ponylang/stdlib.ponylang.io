@@ -3703,7 +3703,7 @@
 actor Main
   new create(env: Env) =&gt;
     try
-      let r = Regex(&quot;\\d+&quot;)
+      let r = Regex(&quot;\\d+&quot;)?
 
       if r == &quot;1234&quot; then
         env.out.print(&quot;1234 is a series of numbers&quot;)
@@ -3713,18 +3713,18 @@ actor Main
         env.out.print(&quot;'Not a number' is not a series of numbers&quot;)
       end
 
-      let matched = r(&quot;There are 02 numbers in here.&quot;)
-      env.out.print(matched(0) + &quot; was matched&quot;)
+      let matched = r(&quot;There are 02 numbers in here.&quot;)?
+      env.out.print(matched(0)? + &quot; was matched&quot;)
       env.out.print(&quot;The match started at &quot; + matched.start_pos().string())
       env.out.print(&quot;The match ended at &quot; + matched.end_pos().string())
     end
 
     try
-      let r = Regex(&quot;(\\d+)?\\.(\\d+)?&quot;)
-      let matched = r(&quot;123.456&quot;)
-      env.out.print(matched(0) + &quot; was matched&quot;)
-      env.out.print(&quot;The first match was &quot; + matched(1))
-      env.out.print(&quot;The second match was &quot; + matched(2))
+      let r = Regex(&quot;(\\d+)?\\.(\\d+)?&quot;)?
+      let matched = r(&quot;123.456&quot;)?
+      env.out.print(matched(0)? + &quot; was matched&quot;)
+      env.out.print(&quot;The first match was &quot; + matched(1)?)
+      env.out.print(&quot;The second match was &quot; + matched(2)?)
     end
 </code></pre>
 

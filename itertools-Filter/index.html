@@ -1857,7 +1857,7 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#example-program">Example program</a></li>
+            <li><a class="toctree-l4" href="#implements">Implements</a></li>
         
             <li><a class="toctree-l4" href="#constructors">Constructors</a></li>
         
@@ -3697,19 +3697,18 @@
               
                 <h1 id="filter91a-a93">Filter[A: A]</h1>
 <p>Take an iterator and a predicate function and return an iterator
-that only returns items that match the predicate.</p>
-<h2 id="example-program">Example program</h2>
+  that only returns items that match the predicate.</p>
+<p>## Example program</p>
 <p>Only print command line arguments that are more than 3 characters long.</p>
-<pre><code class="pony">use &quot;itertools&quot;
-
-actor Main
-  new create(env: Env) =&gt;
-    let fn = {(s: String): Bool =&gt; x.size() &gt; 3 }
-    for x in Filter[String](env.args.slice(1).values(), fn) do
-      env.out.print(x)
-    end
-</code></pre>
-
+<p>```pony
+  use "itertools"</p>
+<p>actor Main
+    new create(env: Env) =&gt;
+      let fn = {(s: String): Bool =&gt; s.size() &gt; 3 }
+      for x in Filter<a href="../env.args.slice(1).values(), fn">String</a> do
+        env.out.print(x)
+      end
+  ```</p>
 <pre><code class="pony">class ref Filter[A: A] is
   Iterator[A] ref
 </code></pre>
