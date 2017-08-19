@@ -3631,13 +3631,13 @@ leading whitespace is removed.</p>
 <p>Return a string that is a concatenation of the strings in data, using this
 as a separator.</p>
 <pre><code class="pony">fun box join(
-  data: ReadSeq[Stringable box] box)
+  data: Iterator[Stringable box] ref)
 : String iso^
 </code></pre>
 
 <h4 id="parameters_44">Parameters</h4>
 <ul>
-<li>data: <a href="../builtin-ReadSeq">ReadSeq</a>[<a href="../builtin-Stringable">Stringable</a> box] box</li>
+<li>data: <a href="../builtin-Iterator">Iterator</a>[<a href="../builtin-Stringable">Stringable</a> box] ref</li>
 </ul>
 <h4 id="returns_61">Returns</h4>
 <ul>
