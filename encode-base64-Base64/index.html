@@ -2599,7 +2599,7 @@
 <pre><code class="pony">fun box encode_url[optional A: Seq[U8 val] iso](
   data: ReadSeq[U8 val] box,
   pad: Bool val = false)
-: A iso^
+: A^
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
@@ -2609,7 +2609,7 @@
 </ul>
 <h4 id="returns_3">Returns</h4>
 <ul>
-<li>A iso^</li>
+<li>A^</li>
 </ul>
 <hr />
 <h3 id="encode91optional-a-seq91u8-val93-iso93">encode[optional A: <a href="../builtin-Seq">Seq</a>[<a href="../builtin-U8">U8</a> val] iso]</h3>
@@ -2622,7 +2622,7 @@
   linelen: USize val = 0,
   linesep: String val= &quot;
 &quot;)
-: A iso^
+: A^
 </code></pre>
 
 <h4 id="parameters_3">Parameters</h4>
@@ -2637,14 +2637,14 @@
 </ul>
 <h4 id="returns_4">Returns</h4>
 <ul>
-<li>A iso^</li>
+<li>A^</li>
 </ul>
 <hr />
 <h3 id="decode_url91optional-a-seq91u8-val93-iso93">decode_url[optional A: <a href="../builtin-Seq">Seq</a>[<a href="../builtin-U8">U8</a> val] iso]</h3>
 <p>Decode for URLs (RFC 4648).</p>
 <pre><code class="pony">fun box decode_url[optional A: Seq[U8 val] iso](
   data: ReadSeq[U8 val] box)
-: A iso^ ?
+: A^ ?
 </code></pre>
 
 <h4 id="parameters_4">Parameters</h4>
@@ -2653,7 +2653,7 @@
 </ul>
 <h4 id="returns_5">Returns</h4>
 <ul>
-<li>A iso^ ?</li>
+<li>A^ ?</li>
 </ul>
 <hr />
 <h3 id="decode91optional-a-seq91u8-val93-iso93">decode[optional A: <a href="../builtin-Seq">Seq</a>[<a href="../builtin-U8">U8</a> val] iso]</h3>
@@ -2665,7 +2665,7 @@ any time), is an error.</p>
   at62: U8 val = 43,
   at63: U8 val = 47,
   pad: U8 val = 61)
-: A iso^ ?
+: A^ ?
 </code></pre>
 
 <h4 id="parameters_5">Parameters</h4>
@@ -2677,7 +2677,7 @@ any time), is an error.</p>
 </ul>
 <h4 id="returns_6">Returns</h4>
 <ul>
-<li>A iso^ ?</li>
+<li>A^ ?</li>
 </ul>
 <hr />
 <h3 id="eq">eq</h3>

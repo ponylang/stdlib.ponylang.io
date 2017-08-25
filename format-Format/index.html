@@ -2606,14 +2606,14 @@ end of the generated string, or both.
 <pre><code>[I64](builtin-I64) val | [I128](builtin-I128) val | [ILong](builtin-ILong) val | 
 [ISize](builtin-ISize) val | [U8](builtin-U8) val | [U16](builtin-U16) val | 
 [U32](builtin-U32) val | [U64](builtin-U64) val | [U128](builtin-U128) val | 
-[ULong](builtin-ULong) val | [USize](builtin-USize) val) &amp; [Integer](builtin-Integer)\[A val\])\]
+[ULong](builtin-ULong) val | [USize](builtin-USize) val) &amp; [Integer](builtin-Integer)\[A\])\]
 </code></pre>
 <pre><code class="pony">fun box int[A: ((I8 val | I16 val | I32 val | 
     I64 val | I128 val | ILong val | 
     ISize val | U8 val | U16 val | 
     U32 val | U64 val | U128 val | 
-    ULong val | USize val) &amp; Integer[A val])](
-  x: A val,
+    ULong val | USize val) &amp; Integer[A])](
+  x: A,
   fmt: (FormatDefault val | FormatUTF32 val | FormatBinary val | 
     FormatBinaryBare val | FormatOctal val | FormatOctalBare val | 
     FormatHex val | FormatHexBare val | FormatHexSmall val | 
@@ -2628,7 +2628,7 @@ end of the generated string, or both.
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
-<li>x: A val</li>
+<li>x: A</li>
 <li>fmt: (<a href="../format-FormatDefault">FormatDefault</a> val | <a href="../format-FormatUTF32">FormatUTF32</a> val | <a href="../format-FormatBinary">FormatBinary</a> val | 
     <a href="../format-FormatBinaryBare">FormatBinaryBare</a> val | <a href="../format-FormatOctal">FormatOctal</a> val | <a href="../format-FormatOctalBare">FormatOctalBare</a> val | 
     <a href="../format-FormatHex">FormatHex</a> val | <a href="../format-FormatHexBare">FormatHexBare</a> val | <a href="../format-FormatHexSmall">FormatHexSmall</a> val | 
@@ -2644,9 +2644,9 @@ end of the generated string, or both.
 <li><a href="../builtin-String">String</a> iso^</li>
 </ul>
 <hr />
-<h3 id="float91a-f32-val-f64-val-floatingpoint91a-val9393">float[A: ((<a href="../builtin-F32">F32</a> val | <a href="../builtin-F64">F64</a> val) &amp; <a href="../builtin-FloatingPoint">FloatingPoint</a>[A val])]</h3>
-<pre><code class="pony">fun box float[A: ((F32 val | F64 val) &amp; FloatingPoint[A val])](
-  x: A val,
+<h3 id="float91a-f32-val-f64-val-floatingpoint91a9393">float[A: ((<a href="../builtin-F32">F32</a> val | <a href="../builtin-F64">F64</a> val) &amp; <a href="../builtin-FloatingPoint">FloatingPoint</a>[A])]</h3>
+<pre><code class="pony">fun box float[A: ((F32 val | F64 val) &amp; FloatingPoint[A])](
+  x: A,
   fmt: (FormatDefault val | FormatExp val | FormatExpLarge val | 
     FormatFix val | FormatFixLarge val | FormatGeneral val | 
     FormatGeneralLarge val) = reference,
@@ -2660,7 +2660,7 @@ end of the generated string, or both.
 
 <h4 id="parameters_2">Parameters</h4>
 <ul>
-<li>x: A val</li>
+<li>x: A</li>
 <li>fmt: (<a href="../format-FormatDefault">FormatDefault</a> val | <a href="../format-FormatExp">FormatExp</a> val | <a href="../format-FormatExpLarge">FormatExpLarge</a> val | 
     <a href="../format-FormatFix">FormatFix</a> val | <a href="../format-FormatFixLarge">FormatFixLarge</a> val | <a href="../format-FormatGeneral">FormatGeneral</a> val | 
     <a href="../format-FormatGeneralLarge">FormatGeneralLarge</a> val) = reference</li>

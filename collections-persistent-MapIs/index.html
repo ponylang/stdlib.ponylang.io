@@ -2545,12 +2545,12 @@
                 <h1 id="mapis91k-any-share-v-any-share93">MapIs[K: <a href="../builtin-Any">Any</a> #share, V: <a href="../builtin-Any">Any</a> #share]</h1>
 <p>A map that uses identity comparison on the key.</p>
 <pre><code class="pony">type MapIs[K: Any #share, V: Any #share] is
-  HashMap[K #share, V #share, HashIs[K #share] val] ref
+  HashMap[K, V, HashIs[K] val] ref
 </code></pre>
 
 <h4 id="type-alias-for">Type Alias For</h4>
 <ul>
-<li><a href="../collections-HashMap">HashMap</a>[K #share, V #share, <a href="../collections-HashIs">HashIs</a>[K #share] val] ref</li>
+<li><a href="../collections-HashMap">HashMap</a>[K, V, <a href="../collections-HashIs">HashIs</a>[K] val] ref</li>
 </ul>
 <hr />
               

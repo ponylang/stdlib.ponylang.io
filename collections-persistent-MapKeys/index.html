@@ -606,7 +606,7 @@
     <a class="current" href="./">class MapKeys</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#mapkeys91k-any-share-v-any-share-h-hashfunction91k-share93-val93">MapKeys[K: Any #share, V: Any #share, H: HashFunction[K #share] val]</a></li>
+    <li class="toctree-l3"><a href="#mapkeys91k-any-share-v-any-share-h-hashfunction91k93-val93">MapKeys[K: Any #share, V: Any #share, H: HashFunction[K] val]</a></li>
     
         <ul>
         
@@ -2544,24 +2544,24 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="mapkeys91k-any-share-v-any-share-h-hashfunction91k-share93-val93">MapKeys[K: <a href="../builtin-Any">Any</a> #share, V: <a href="../builtin-Any">Any</a> #share, H: <a href="../collections-HashFunction">HashFunction</a>[K #share] val]</h1>
-<pre><code class="pony">class ref MapKeys[K: Any #share, V: Any #share, H: HashFunction[K #share] val]
+                <h1 id="mapkeys91k-any-share-v-any-share-h-hashfunction91k93-val93">MapKeys[K: <a href="../builtin-Any">Any</a> #share, V: <a href="../builtin-Any">Any</a> #share, H: <a href="../collections-HashFunction">HashFunction</a>[K] val]</h1>
+<pre><code class="pony">class ref MapKeys[K: Any #share, V: Any #share, H: HashFunction[K] val]
 </code></pre>
 
 <h2 id="constructors">Constructors</h2>
 <h3 id="create">create</h3>
 <pre><code class="pony">new ref create(
-  m: HashMap[K #share, V #share, H val] val)
-: MapKeys[K #share, V #share, H val] ref^
+  m: HashMap[K, V, H] val)
+: MapKeys[K, V, H] ref^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>m: <a href="../collections-persistent-HashMap">HashMap</a>[K #share, V #share, H val] val</li>
+<li>m: <a href="../collections-persistent-HashMap">HashMap</a>[K, V, H] val</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-MapKeys">MapKeys</a>[K #share, V #share, H val] ref^</li>
+<li><a href="../collections-persistent-MapKeys">MapKeys</a>[K, V, H] ref^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
@@ -2577,12 +2577,12 @@
 <hr />
 <h3 id="next">next</h3>
 <pre><code class="pony">fun ref next()
-: K #share ?
+: K ?
 </code></pre>
 
 <h4 id="returns_2">Returns</h4>
 <ul>
-<li>K #share ?</li>
+<li>K ?</li>
 </ul>
 <hr />
               

@@ -3104,13 +3104,13 @@ not.</p>
 <h3 id="contains91optional-b-a-haseq91a93-read93">contains[optional B: (A &amp; <a href="../builtin-HasEq">HasEq</a>[A!] #read)]</h3>
 <p>Returns true if the list contains the provided element, false otherwise.</p>
 <pre><code class="pony">fun box contains[optional B: (A &amp; HasEq[A!] #read)](
-  a: box-&gt;B #read)
+  a: box-&gt;B)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_27">Parameters</h4>
 <ul>
-<li>a: box-&gt;B #read</li>
+<li>a: box-&gt;B</li>
 </ul>
 <h4 id="returns_35">Returns</h4>
 <ul>
@@ -3300,14 +3300,14 @@ not.</p>
 <p>Private helper for contains, recursively working with ListNodes.</p>
 <pre><code class="pony">fun box _contains[optional B: (A &amp; HasEq[A!] #read)](
   ln: this-&gt;ListNode[A] ref,
-  a: box-&gt;B #read)
+  a: box-&gt;B)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_35">Parameters</h4>
 <ul>
 <li>ln: this-&gt;<a href="../collections-ListNode">ListNode</a>[A] ref</li>
-<li>a: box-&gt;B #read</li>
+<li>a: box-&gt;B</li>
 </ul>
 <h4 id="returns_47">Returns</h4>
 <ul>

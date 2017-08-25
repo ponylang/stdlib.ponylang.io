@@ -614,7 +614,7 @@
     <a class="current" href="./">class MapPairs</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#mappairs91k-any-share-v-any-share-h-hashfunction91k-share93-val93">MapPairs[K: Any #share, V: Any #share, H: HashFunction[K #share] val]</a></li>
+    <li class="toctree-l3"><a href="#mappairs91k-any-share-v-any-share-h-hashfunction91k93-val93">MapPairs[K: Any #share, V: Any #share, H: HashFunction[K] val]</a></li>
     
         <ul>
         
@@ -2546,24 +2546,24 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="mappairs91k-any-share-v-any-share-h-hashfunction91k-share93-val93">MapPairs[K: <a href="../builtin-Any">Any</a> #share, V: <a href="../builtin-Any">Any</a> #share, H: <a href="../collections-HashFunction">HashFunction</a>[K #share] val]</h1>
-<pre><code class="pony">class ref MapPairs[K: Any #share, V: Any #share, H: HashFunction[K #share] val]
+                <h1 id="mappairs91k-any-share-v-any-share-h-hashfunction91k93-val93">MapPairs[K: <a href="../builtin-Any">Any</a> #share, V: <a href="../builtin-Any">Any</a> #share, H: <a href="../collections-HashFunction">HashFunction</a>[K] val]</h1>
+<pre><code class="pony">class ref MapPairs[K: Any #share, V: Any #share, H: HashFunction[K] val]
 </code></pre>
 
 <h2 id="constructors">Constructors</h2>
 <h3 id="create">create</h3>
 <pre><code class="pony">new ref create(
-  m: HashMap[K #share, V #share, H val] val)
-: MapPairs[K #share, V #share, H val] ref^
+  m: HashMap[K, V, H] val)
+: MapPairs[K, V, H] ref^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>m: <a href="../collections-persistent-HashMap">HashMap</a>[K #share, V #share, H val] val</li>
+<li>m: <a href="../collections-persistent-HashMap">HashMap</a>[K, V, H] val</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-MapPairs">MapPairs</a>[K #share, V #share, H val] ref^</li>
+<li><a href="../collections-persistent-MapPairs">MapPairs</a>[K, V, H] ref^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
@@ -2579,24 +2579,24 @@
 <hr />
 <h3 id="next">next</h3>
 <pre><code class="pony">fun ref next()
-: (K #share , V #share) ?
+: (K , V) ?
 </code></pre>
 
 <h4 id="returns_2">Returns</h4>
 <ul>
-<li>(K #share , V #share) ?</li>
+<li>(K , V) ?</li>
 </ul>
 <hr />
 <h2 id="private-functions">Private Functions</h2>
 <h3 id="_push">_push</h3>
 <pre><code class="pony">fun ref _push(
-  n: _MapNode[K #share, V #share, H val] val)
+  n: _MapNode[K, V, H] val)
 : None val
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
-<li>n: <a href="../collections-persistent-_MapNode">_MapNode</a>[K #share, V #share, H val] val</li>
+<li>n: <a href="../collections-persistent-_MapNode">_MapNode</a>[K, V, H] val</li>
 </ul>
 <h4 id="returns_3">Returns</h4>
 <ul>
@@ -2625,12 +2625,12 @@
 <hr />
 <h3 id="_cur">_cur</h3>
 <pre><code class="pony">fun box _cur()
-: (_MapNode[K #share, V #share, H val] val , USize val) ?
+: (_MapNode[K, V, H] val , USize val) ?
 </code></pre>
 
 <h4 id="returns_6">Returns</h4>
 <ul>
-<li>(<a href="../collections-persistent-_MapNode">_MapNode</a>[K #share, V #share, H val] val , <a href="../builtin-USize">USize</a> val) ?</li>
+<li>(<a href="../collections-persistent-_MapNode">_MapNode</a>[K, V, H] val , <a href="../builtin-USize">USize</a> val) ?</li>
 </ul>
 <hr />
               

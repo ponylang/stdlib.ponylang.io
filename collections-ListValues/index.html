@@ -2549,31 +2549,31 @@
                 <h1 id="listvalues91a-a-n-listnode91a93-read93">ListValues[A: A, N: <a href="../collections-ListNode">ListNode</a>[A] #read]</h1>
 <p>Iterate over the values in a list.</p>
 <pre><code class="pony">class ref ListValues[A: A, N: ListNode[A] #read] is
-  Iterator[N #read-&gt;A] ref
+  Iterator[N-&gt;A] ref
 </code></pre>
 
 <h4 id="implements">Implements</h4>
 <ul>
-<li><a href="../builtin-Iterator">Iterator</a>[N #read-&gt;A] ref</li>
+<li><a href="../builtin-Iterator">Iterator</a>[N-&gt;A] ref</li>
 </ul>
 <hr />
 <h2 id="constructors">Constructors</h2>
 <h3 id="create">create</h3>
 <p>Keep the next list node to be examined.</p>
 <pre><code class="pony">new ref create(
-  head: (N #read | None val),
+  head: (N | None val),
   reverse: Bool val = false)
-: ListValues[A, N #read] ref^
+: ListValues[A, N] ref^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>head: (N #read | <a href="../builtin-None">None</a> val)</li>
+<li>head: (N | <a href="../builtin-None">None</a> val)</li>
 <li>reverse: <a href="../builtin-Bool">Bool</a> val = false</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../collections-ListValues">ListValues</a>[A, N #read] ref^</li>
+<li><a href="../collections-ListValues">ListValues</a>[A, N] ref^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
@@ -2591,12 +2591,12 @@
 <h3 id="next">next</h3>
 <p>Get the value of the list node and replace it with the next one.</p>
 <pre><code class="pony">fun ref next()
-: N #read-&gt;A ?
+: N-&gt;A ?
 </code></pre>
 
 <h4 id="returns_2">Returns</h4>
 <ul>
-<li>N #read-&gt;A ?</li>
+<li>N-&gt;A ?</li>
 </ul>
 <hr />
               

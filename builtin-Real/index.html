@@ -194,7 +194,7 @@
     <a class="current" href="./">trait Real</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#real91a-real91a-val93-val93">Real[A: Real[A val] val]</a></li>
+    <li class="toctree-l3"><a href="#real91a-real91a93-val93">Real[A: Real[A] val]</a></li>
     
         <ul>
         
@@ -2548,34 +2548,34 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="real91a-real91a-val93-val93">Real[A: <a href="../builtin-Real">Real</a>[A val] val]</h1>
-<pre><code class="pony">trait val Real[A: Real[A val] val] is
+                <h1 id="real91a-real91a93-val93">Real[A: <a href="../builtin-Real">Real</a>[A] val]</h1>
+<pre><code class="pony">trait val Real[A: Real[A] val] is
   Stringable box,
   _ArithmeticConvertible val,
-  Comparable[A val] ref
+  Comparable[A] ref
 </code></pre>
 
 <h4 id="implements">Implements</h4>
 <ul>
 <li><a href="../builtin-Stringable">Stringable</a> box</li>
 <li><a href="../builtin-_ArithmeticConvertible">_ArithmeticConvertible</a> val</li>
-<li><a href="../builtin-Comparable">Comparable</a>[A val] ref</li>
+<li><a href="../builtin-Comparable">Comparable</a>[A] ref</li>
 </ul>
 <hr />
 <h2 id="constructors">Constructors</h2>
 <h3 id="create">create</h3>
 <pre><code class="pony">new val create(
-  value: A val)
-: Real[A val] val^
+  value: A)
+: Real[A] val^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>value: A val</li>
+<li>value: A</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../builtin-Real">Real</a>[A val] val^</li>
+<li><a href="../builtin-Real">Real</a>[A] val^</li>
 </ul>
 <hr />
 <h3 id="from91b-i8-val-i16-val-i32-val">from[B: ((<a href="../builtin-I8">I8</a> val | <a href="../builtin-I16">I16</a> val | <a href="../builtin-I32">I32</a> val |</h3>
@@ -2583,157 +2583,157 @@
 [ISize](builtin-ISize) val | [U8](builtin-U8) val | [U16](builtin-U16) val | 
 [U32](builtin-U32) val | [U64](builtin-U64) val | [U128](builtin-U128) val | 
 [ULong](builtin-ULong) val | [USize](builtin-USize) val | [F32](builtin-F32) val | 
-[F64](builtin-F64) val) &amp; [Real](builtin-Real)\[B val\] val)\]
+[F64](builtin-F64) val) &amp; [Real](builtin-Real)\[B\] val)\]
 </code></pre>
 <pre><code class="pony">new val from[B: ((I8 val | I16 val | I32 val | 
     I64 val | I128 val | ILong val | 
     ISize val | U8 val | U16 val | 
     U32 val | U64 val | U128 val | 
     ULong val | USize val | F32 val | 
-    F64 val) &amp; Real[B val] val)](
-  a: B val)
-: Real[A val] val^
+    F64 val) &amp; Real[B] val)](
+  a: B)
+: Real[A] val^
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
-<li>a: B val</li>
+<li>a: B</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>
-<li><a href="../builtin-Real">Real</a>[A val] val^</li>
+<li><a href="../builtin-Real">Real</a>[A] val^</li>
 </ul>
 <hr />
 <h3 id="min_value">min_value</h3>
 <pre><code class="pony">new val min_value()
-: Real[A val] val^
+: Real[A] val^
 </code></pre>
 
 <h4 id="returns_2">Returns</h4>
 <ul>
-<li><a href="../builtin-Real">Real</a>[A val] val^</li>
+<li><a href="../builtin-Real">Real</a>[A] val^</li>
 </ul>
 <hr />
 <h3 id="max_value">max_value</h3>
 <pre><code class="pony">new val max_value()
-: Real[A val] val^
+: Real[A] val^
 </code></pre>
 
 <h4 id="returns_3">Returns</h4>
 <ul>
-<li><a href="../builtin-Real">Real</a>[A val] val^</li>
+<li><a href="../builtin-Real">Real</a>[A] val^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
 <h3 id="add">add</h3>
 <pre><code class="pony">fun box add(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_4">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="sub">sub</h3>
 <pre><code class="pony">fun box sub(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_3">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_5">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="mul">mul</h3>
 <pre><code class="pony">fun box mul(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_4">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_6">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="div">div</h3>
 <pre><code class="pony">fun box div(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_5">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_7">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="divmod">divmod</h3>
 <pre><code class="pony">fun box divmod(
-  y: A val)
-: (A val , A val)
+  y: A)
+: (A , A)
 </code></pre>
 
 <h4 id="parameters_6">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_8">Returns</h4>
 <ul>
-<li>(A val , A val)</li>
+<li>(A , A)</li>
 </ul>
 <hr />
 <h3 id="mod">mod</h3>
 <pre><code class="pony">fun box mod(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_7">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_9">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="neg">neg</h3>
 <pre><code class="pony">fun box neg()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_10">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="eq">eq</h3>
 <pre><code class="pony">fun box eq(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_8">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_11">Returns</h4>
 <ul>
@@ -2742,13 +2742,13 @@
 <hr />
 <h3 id="ne">ne</h3>
 <pre><code class="pony">fun box ne(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_9">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_12">Returns</h4>
 <ul>
@@ -2757,13 +2757,13 @@
 <hr />
 <h3 id="lt">lt</h3>
 <pre><code class="pony">fun box lt(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_10">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_13">Returns</h4>
 <ul>
@@ -2772,13 +2772,13 @@
 <hr />
 <h3 id="le">le</h3>
 <pre><code class="pony">fun box le(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_11">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_14">Returns</h4>
 <ul>
@@ -2787,13 +2787,13 @@
 <hr />
 <h3 id="ge">ge</h3>
 <pre><code class="pony">fun box ge(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_12">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_15">Returns</h4>
 <ul>
@@ -2802,13 +2802,13 @@
 <hr />
 <h3 id="gt">gt</h3>
 <pre><code class="pony">fun box gt(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_13">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_16">Returns</h4>
 <ul>
@@ -2817,32 +2817,32 @@
 <hr />
 <h3 id="min">min</h3>
 <pre><code class="pony">fun box min(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_14">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_17">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="max">max</h3>
 <pre><code class="pony">fun box max(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_15">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_18">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="hash">hash</h3>
@@ -3187,13 +3187,13 @@
 <hr />
 <h3 id="compare">compare</h3>
 <pre><code class="pony">fun box compare(
-  that: A val)
+  that: A)
 : (Less val | Equal val | Greater val)
 </code></pre>
 
 <h4 id="parameters_16">Parameters</h4>
 <ul>
-<li>that: A val</li>
+<li>that: A</li>
 </ul>
 <h4 id="returns_53">Returns</h4>
 <ul>
@@ -3203,12 +3203,12 @@
 <h2 id="private-functions">Private Functions</h2>
 <h3 id="_value">_value</h3>
 <pre><code class="pony">fun box _value()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_54">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
               

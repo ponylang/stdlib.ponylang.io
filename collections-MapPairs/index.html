@@ -487,7 +487,7 @@
     <a class="current" href="./">class MapPairs</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#mappairs91k-k-v-v-h-hashfunction91k93-val-m-hashmap91k-v-h-val93-read93">MapPairs[K: K, V: V, H: HashFunction[K] val, M: HashMap[K, V, H val] #read]</a></li>
+    <li class="toctree-l3"><a href="#mappairs91k-k-v-v-h-hashfunction91k93-val-m-hashmap91k-v-h93-read93">MapPairs[K: K, V: V, H: HashFunction[K] val, M: HashMap[K, V, H] #read]</a></li>
     
         <ul>
         
@@ -2546,31 +2546,31 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="mappairs91k-k-v-v-h-hashfunction91k93-val-m-hashmap91k-v-h-val93-read93">MapPairs[K: K, V: V, H: <a href="../collections-HashFunction">HashFunction</a>[K] val, M: <a href="../collections-HashMap">HashMap</a>[K, V, H val] #read]</h1>
+                <h1 id="mappairs91k-k-v-v-h-hashfunction91k93-val-m-hashmap91k-v-h93-read93">MapPairs[K: K, V: V, H: <a href="../collections-HashFunction">HashFunction</a>[K] val, M: <a href="../collections-HashMap">HashMap</a>[K, V, H] #read]</h1>
 <p>An iterator over the keys and values in a map.</p>
-<pre><code class="pony">class ref MapPairs[K: K, V: V, H: HashFunction[K] val, M: HashMap[K, V, H val] #read] is
-  Iterator[(M #read-&gt;K , M #read-&gt;V)] ref
+<pre><code class="pony">class ref MapPairs[K: K, V: V, H: HashFunction[K] val, M: HashMap[K, V, H] #read] is
+  Iterator[(M-&gt;K , M-&gt;V)] ref
 </code></pre>
 
 <h4 id="implements">Implements</h4>
 <ul>
-<li><a href="../builtin-Iterator">Iterator</a>[(M #read-&gt;K , M #read-&gt;V)] ref</li>
+<li><a href="../builtin-Iterator">Iterator</a>[(M-&gt;K , M-&gt;V)] ref</li>
 </ul>
 <hr />
 <h2 id="constructors">Constructors</h2>
 <h3 id="create">create</h3>
 <pre><code class="pony">new ref create(
-  map: M #read)
-: MapPairs[K, V, H val, M #read] ref^
+  map: M)
+: MapPairs[K, V, H, M] ref^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>map: M #read</li>
+<li>map: M</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../collections-MapPairs">MapPairs</a>[K, V, H val, M #read] ref^</li>
+<li><a href="../collections-MapPairs">MapPairs</a>[K, V, H, M] ref^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
@@ -2590,12 +2590,12 @@ were added or removed from the map.</p>
 <p>Returns the next entry, or raises an error if there isn't one. If entries
 are added during iteration, this may not return all entries.</p>
 <pre><code class="pony">fun ref next()
-: (M #read-&gt;K , M #read-&gt;V) ?
+: (M-&gt;K , M-&gt;V) ?
 </code></pre>
 
 <h4 id="returns_2">Returns</h4>
 <ul>
-<li>(M #read-&gt;K , M #read-&gt;V) ?</li>
+<li>(M-&gt;K , M-&gt;V) ?</li>
 </ul>
 <hr />
               

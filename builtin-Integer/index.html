@@ -198,7 +198,7 @@
     <a class="current" href="./">trait Integer</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#integer91a-integer91a-val93-val93">Integer[A: Integer[A val] val]</a></li>
+    <li class="toctree-l3"><a href="#integer91a-integer91a93-val93">Integer[A: Integer[A] val]</a></li>
     
         <ul>
         
@@ -2548,30 +2548,30 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="integer91a-integer91a-val93-val93">Integer[A: <a href="../builtin-Integer">Integer</a>[A val] val]</h1>
-<pre><code class="pony">trait val Integer[A: Integer[A val] val] is
-  Real[A val] val
+                <h1 id="integer91a-integer91a93-val93">Integer[A: <a href="../builtin-Integer">Integer</a>[A] val]</h1>
+<pre><code class="pony">trait val Integer[A: Integer[A] val] is
+  Real[A] val
 </code></pre>
 
 <h4 id="implements">Implements</h4>
 <ul>
-<li><a href="../builtin-Real">Real</a>[A val] val</li>
+<li><a href="../builtin-Real">Real</a>[A] val</li>
 </ul>
 <hr />
 <h2 id="constructors">Constructors</h2>
 <h3 id="create">create</h3>
 <pre><code class="pony">new val create(
-  value: A val)
-: Real[A val] val^
+  value: A)
+: Real[A] val^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>value: A val</li>
+<li>value: A</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../builtin-Real">Real</a>[A val] val^</li>
+<li><a href="../builtin-Real">Real</a>[A] val^</li>
 </ul>
 <hr />
 <h3 id="from91b-i8-val-i16-val-i32-val">from[B: ((<a href="../builtin-I8">I8</a> val | <a href="../builtin-I16">I16</a> val | <a href="../builtin-I32">I32</a> val |</h3>
@@ -2579,45 +2579,45 @@
 [ISize](builtin-ISize) val | [U8](builtin-U8) val | [U16](builtin-U16) val | 
 [U32](builtin-U32) val | [U64](builtin-U64) val | [U128](builtin-U128) val | 
 [ULong](builtin-ULong) val | [USize](builtin-USize) val | [F32](builtin-F32) val | 
-[F64](builtin-F64) val) &amp; [Real](builtin-Real)\[B val\] val)\]
+[F64](builtin-F64) val) &amp; [Real](builtin-Real)\[B\] val)\]
 </code></pre>
 <pre><code class="pony">new val from[B: ((I8 val | I16 val | I32 val | 
     I64 val | I128 val | ILong val | 
     ISize val | U8 val | U16 val | 
     U32 val | U64 val | U128 val | 
     ULong val | USize val | F32 val | 
-    F64 val) &amp; Real[B val] val)](
-  a: B val)
-: Real[A val] val^
+    F64 val) &amp; Real[B] val)](
+  a: B)
+: Real[A] val^
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
-<li>a: B val</li>
+<li>a: B</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>
-<li><a href="../builtin-Real">Real</a>[A val] val^</li>
+<li><a href="../builtin-Real">Real</a>[A] val^</li>
 </ul>
 <hr />
 <h3 id="min_value">min_value</h3>
 <pre><code class="pony">new val min_value()
-: Real[A val] val^
+: Real[A] val^
 </code></pre>
 
 <h4 id="returns_2">Returns</h4>
 <ul>
-<li><a href="../builtin-Real">Real</a>[A val] val^</li>
+<li><a href="../builtin-Real">Real</a>[A] val^</li>
 </ul>
 <hr />
 <h3 id="max_value">max_value</h3>
 <pre><code class="pony">new val max_value()
-: Real[A val] val^
+: Real[A] val^
 </code></pre>
 
 <h4 id="returns_3">Returns</h4>
 <ul>
-<li><a href="../builtin-Real">Real</a>[A val] val^</li>
+<li><a href="../builtin-Real">Real</a>[A] val^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
@@ -2625,51 +2625,51 @@
 <p>Unsafe operation.
 If the operation overflows, the result is undefined.</p>
 <pre><code class="pony">fun box add_unsafe(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_4">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="sub_unsafe">sub_unsafe</h3>
 <p>Unsafe operation.
 If the operation overflows, the result is undefined.</p>
 <pre><code class="pony">fun box sub_unsafe(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_3">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_5">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="mul_unsafe">mul_unsafe</h3>
 <p>Unsafe operation.
 If the operation overflows, the result is undefined.</p>
 <pre><code class="pony">fun box mul_unsafe(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_4">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_6">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="div_unsafe">div_unsafe</h3>
@@ -2677,17 +2677,17 @@ If the operation overflows, the result is undefined.</p>
 If y is 0, the result is undefined.
 If the operation overflows, the result is undefined.</p>
 <pre><code class="pony">fun box div_unsafe(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_5">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_7">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="divmod_unsafe">divmod_unsafe</h3>
@@ -2695,17 +2695,17 @@ If the operation overflows, the result is undefined.</p>
 If y is 0, the result is undefined.
 If the operation overflows, the result is undefined.</p>
 <pre><code class="pony">fun box divmod_unsafe(
-  y: A val)
-: (A val , A val)
+  y: A)
+: (A , A)
 </code></pre>
 
 <h4 id="parameters_6">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_8">Returns</h4>
 <ul>
-<li>(A val , A val)</li>
+<li>(A , A)</li>
 </ul>
 <hr />
 <h3 id="mod_unsafe">mod_unsafe</h3>
@@ -2713,205 +2713,205 @@ If the operation overflows, the result is undefined.</p>
 If y is 0, the result is undefined.
 If the operation overflows, the result is undefined.</p>
 <pre><code class="pony">fun box mod_unsafe(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_7">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_9">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="neg_unsafe">neg_unsafe</h3>
 <p>Unsafe operation.
 If the operation overflows, the result is undefined.</p>
 <pre><code class="pony">fun box neg_unsafe()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_10">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="op_and">op_and</h3>
 <pre><code class="pony">fun box op_and(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_8">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_11">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="op_or">op_or</h3>
 <pre><code class="pony">fun box op_or(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_9">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_12">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="op_xor">op_xor</h3>
 <pre><code class="pony">fun box op_xor(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_10">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_13">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="op_not">op_not</h3>
 <pre><code class="pony">fun box op_not()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_14">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="bswap">bswap</h3>
 <pre><code class="pony">fun box bswap()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_15">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="add">add</h3>
 <pre><code class="pony">fun box add(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_11">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_16">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="sub">sub</h3>
 <pre><code class="pony">fun box sub(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_12">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_17">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="mul">mul</h3>
 <pre><code class="pony">fun box mul(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_13">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_18">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="div">div</h3>
 <pre><code class="pony">fun box div(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_14">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_19">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="divmod">divmod</h3>
 <pre><code class="pony">fun box divmod(
-  y: A val)
-: (A val , A val)
+  y: A)
+: (A , A)
 </code></pre>
 
 <h4 id="parameters_15">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_20">Returns</h4>
 <ul>
-<li>(A val , A val)</li>
+<li>(A , A)</li>
 </ul>
 <hr />
 <h3 id="mod">mod</h3>
 <pre><code class="pony">fun box mod(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_16">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_21">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="neg">neg</h3>
 <pre><code class="pony">fun box neg()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_22">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="eq">eq</h3>
 <pre><code class="pony">fun box eq(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_17">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_23">Returns</h4>
 <ul>
@@ -2920,13 +2920,13 @@ If the operation overflows, the result is undefined.</p>
 <hr />
 <h3 id="ne">ne</h3>
 <pre><code class="pony">fun box ne(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_18">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_24">Returns</h4>
 <ul>
@@ -2935,13 +2935,13 @@ If the operation overflows, the result is undefined.</p>
 <hr />
 <h3 id="lt">lt</h3>
 <pre><code class="pony">fun box lt(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_19">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_25">Returns</h4>
 <ul>
@@ -2950,13 +2950,13 @@ If the operation overflows, the result is undefined.</p>
 <hr />
 <h3 id="le">le</h3>
 <pre><code class="pony">fun box le(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_20">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_26">Returns</h4>
 <ul>
@@ -2965,13 +2965,13 @@ If the operation overflows, the result is undefined.</p>
 <hr />
 <h3 id="ge">ge</h3>
 <pre><code class="pony">fun box ge(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_21">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_27">Returns</h4>
 <ul>
@@ -2980,13 +2980,13 @@ If the operation overflows, the result is undefined.</p>
 <hr />
 <h3 id="gt">gt</h3>
 <pre><code class="pony">fun box gt(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_22">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_28">Returns</h4>
 <ul>
@@ -2995,32 +2995,32 @@ If the operation overflows, the result is undefined.</p>
 <hr />
 <h3 id="min">min</h3>
 <pre><code class="pony">fun box min(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_23">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_29">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="max">max</h3>
 <pre><code class="pony">fun box max(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_24">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_30">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="hash">hash</h3>
@@ -3365,13 +3365,13 @@ If the operation overflows, the result is undefined.</p>
 <hr />
 <h3 id="compare">compare</h3>
 <pre><code class="pony">fun box compare(
-  that: A val)
+  that: A)
 : (Less val | Equal val | Greater val)
 </code></pre>
 
 <h4 id="parameters_25">Parameters</h4>
 <ul>
-<li>that: A val</li>
+<li>that: A</li>
 </ul>
 <h4 id="returns_65">Returns</h4>
 <ul>
@@ -3381,12 +3381,12 @@ If the operation overflows, the result is undefined.</p>
 <h2 id="private-functions">Private Functions</h2>
 <h3 id="_value">_value</h3>
 <pre><code class="pony">fun box _value()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_66">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
               

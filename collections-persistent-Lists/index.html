@@ -2623,18 +2623,18 @@ testing Lists.</p>
 <li>(<a href="../collections-persistent-Cons">Cons</a>[A] val | <a href="../collections-persistent-Nil">Nil</a>[A] val)</li>
 </ul>
 <hr />
-<h3 id="eq91optional-t-equatable91t-val93-val93">eq[optional T: <a href="../builtin-Equatable">Equatable</a>[T val] val]</h3>
+<h3 id="eq91optional-t-equatable91t93-val93">eq[optional T: <a href="../builtin-Equatable">Equatable</a>[T] val]</h3>
 <p>Checks whether two lists are equal.</p>
-<pre><code class="pony">fun box eq[optional T: Equatable[T val] val](
-  l1: (Cons[T val] val | Nil[T val] val),
-  l2: (Cons[T val] val | Nil[T val] val))
+<pre><code class="pony">fun box eq[optional T: Equatable[T] val](
+  l1: (Cons[T] val | Nil[T] val),
+  l2: (Cons[T] val | Nil[T] val))
 : Bool val ?
 </code></pre>
 
 <h4 id="parameters_3">Parameters</h4>
 <ul>
-<li>l1: (<a href="../collections-persistent-Cons">Cons</a>[T val] val | <a href="../collections-persistent-Nil">Nil</a>[T val] val)</li>
-<li>l2: (<a href="../collections-persistent-Cons">Cons</a>[T val] val | <a href="../collections-persistent-Nil">Nil</a>[T val] val)</li>
+<li>l1: (<a href="../collections-persistent-Cons">Cons</a>[T] val | <a href="../collections-persistent-Nil">Nil</a>[T] val)</li>
+<li>l2: (<a href="../collections-persistent-Cons">Cons</a>[T] val | <a href="../collections-persistent-Nil">Nil</a>[T] val)</li>
 </ul>
 <h4 id="returns_5">Returns</h4>
 <ul>

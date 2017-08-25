@@ -210,7 +210,7 @@
     <a class="current" href="./">trait FloatingPoint</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#floatingpoint91a-floatingpoint91a-val93-val93">FloatingPoint[A: FloatingPoint[A val] val]</a></li>
+    <li class="toctree-l3"><a href="#floatingpoint91a-floatingpoint91a93-val93">FloatingPoint[A: FloatingPoint[A] val]</a></li>
     
         <ul>
         
@@ -2548,50 +2548,50 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="floatingpoint91a-floatingpoint91a-val93-val93">FloatingPoint[A: <a href="../builtin-FloatingPoint">FloatingPoint</a>[A val] val]</h1>
-<pre><code class="pony">trait val FloatingPoint[A: FloatingPoint[A val] val] is
-  Real[A val] val
+                <h1 id="floatingpoint91a-floatingpoint91a93-val93">FloatingPoint[A: <a href="../builtin-FloatingPoint">FloatingPoint</a>[A] val]</h1>
+<pre><code class="pony">trait val FloatingPoint[A: FloatingPoint[A] val] is
+  Real[A] val
 </code></pre>
 
 <h4 id="implements">Implements</h4>
 <ul>
-<li><a href="../builtin-Real">Real</a>[A val] val</li>
+<li><a href="../builtin-Real">Real</a>[A] val</li>
 </ul>
 <hr />
 <h2 id="constructors">Constructors</h2>
 <h3 id="min_normalised">min_normalised</h3>
 <pre><code class="pony">new val min_normalised()
-: FloatingPoint[A val] val^
+: FloatingPoint[A] val^
 </code></pre>
 
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../builtin-FloatingPoint">FloatingPoint</a>[A val] val^</li>
+<li><a href="../builtin-FloatingPoint">FloatingPoint</a>[A] val^</li>
 </ul>
 <hr />
 <h3 id="epsilon">epsilon</h3>
 <pre><code class="pony">new val epsilon()
-: FloatingPoint[A val] val^
+: FloatingPoint[A] val^
 </code></pre>
 
 <h4 id="returns_1">Returns</h4>
 <ul>
-<li><a href="../builtin-FloatingPoint">FloatingPoint</a>[A val] val^</li>
+<li><a href="../builtin-FloatingPoint">FloatingPoint</a>[A] val^</li>
 </ul>
 <hr />
 <h3 id="create">create</h3>
 <pre><code class="pony">new val create(
-  value: A val)
-: Real[A val] val^
+  value: A)
+: Real[A] val^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>value: A val</li>
+<li>value: A</li>
 </ul>
 <h4 id="returns_2">Returns</h4>
 <ul>
-<li><a href="../builtin-Real">Real</a>[A val] val^</li>
+<li><a href="../builtin-Real">Real</a>[A] val^</li>
 </ul>
 <hr />
 <h3 id="from91b-i8-val-i16-val-i32-val">from[B: ((<a href="../builtin-I8">I8</a> val | <a href="../builtin-I16">I16</a> val | <a href="../builtin-I32">I32</a> val |</h3>
@@ -2599,45 +2599,45 @@
 [ISize](builtin-ISize) val | [U8](builtin-U8) val | [U16](builtin-U16) val | 
 [U32](builtin-U32) val | [U64](builtin-U64) val | [U128](builtin-U128) val | 
 [ULong](builtin-ULong) val | [USize](builtin-USize) val | [F32](builtin-F32) val | 
-[F64](builtin-F64) val) &amp; [Real](builtin-Real)\[B val\] val)\]
+[F64](builtin-F64) val) &amp; [Real](builtin-Real)\[B\] val)\]
 </code></pre>
 <pre><code class="pony">new val from[B: ((I8 val | I16 val | I32 val | 
     I64 val | I128 val | ILong val | 
     ISize val | U8 val | U16 val | 
     U32 val | U64 val | U128 val | 
     ULong val | USize val | F32 val | 
-    F64 val) &amp; Real[B val] val)](
-  a: B val)
-: Real[A val] val^
+    F64 val) &amp; Real[B] val)](
+  a: B)
+: Real[A] val^
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
-<li>a: B val</li>
+<li>a: B</li>
 </ul>
 <h4 id="returns_3">Returns</h4>
 <ul>
-<li><a href="../builtin-Real">Real</a>[A val] val^</li>
+<li><a href="../builtin-Real">Real</a>[A] val^</li>
 </ul>
 <hr />
 <h3 id="min_value">min_value</h3>
 <pre><code class="pony">new val min_value()
-: Real[A val] val^
+: Real[A] val^
 </code></pre>
 
 <h4 id="returns_4">Returns</h4>
 <ul>
-<li><a href="../builtin-Real">Real</a>[A val] val^</li>
+<li><a href="../builtin-Real">Real</a>[A] val^</li>
 </ul>
 <hr />
 <h3 id="max_value">max_value</h3>
 <pre><code class="pony">new val max_value()
-: Real[A val] val^
+: Real[A] val^
 </code></pre>
 
 <h4 id="returns_5">Returns</h4>
 <ul>
-<li><a href="../builtin-Real">Real</a>[A val] val^</li>
+<li><a href="../builtin-Real">Real</a>[A] val^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
@@ -2717,17 +2717,17 @@ If any input or output of the operation is +/- infinity or NaN, the result
 is undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <pre><code class="pony">fun box add_unsafe(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_13">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="sub_unsafe">sub_unsafe</h3>
@@ -2736,17 +2736,17 @@ If any input or output of the operation is +/- infinity or NaN, the result
 is undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <pre><code class="pony">fun box sub_unsafe(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_3">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_14">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="mul_unsafe">mul_unsafe</h3>
@@ -2755,17 +2755,17 @@ If any input or output of the operation is +/- infinity or NaN, the result
 is undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <pre><code class="pony">fun box mul_unsafe(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_4">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_15">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="div_unsafe">div_unsafe</h3>
@@ -2774,17 +2774,17 @@ If any input or output of the operation is +/- infinity or NaN, the result
 is undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <pre><code class="pony">fun box div_unsafe(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_5">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_16">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="divmod_unsafe">divmod_unsafe</h3>
@@ -2793,17 +2793,17 @@ If any input or output of the operation is +/- infinity or NaN, the result
 is undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <pre><code class="pony">fun box divmod_unsafe(
-  y: A val)
-: (A val , A val)
+  y: A)
+: (A , A)
 </code></pre>
 
 <h4 id="parameters_6">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_17">Returns</h4>
 <ul>
-<li>(A val , A val)</li>
+<li>(A , A)</li>
 </ul>
 <hr />
 <h3 id="mod_unsafe">mod_unsafe</h3>
@@ -2812,17 +2812,17 @@ If any input or output of the operation is +/- infinity or NaN, the result
 is undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <pre><code class="pony">fun box mod_unsafe(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_7">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_18">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="neg_unsafe">neg_unsafe</h3>
@@ -2831,12 +2831,12 @@ If any input or output of the operation is +/- infinity or NaN, the result
 is undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <pre><code class="pony">fun box neg_unsafe()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_19">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="eq_unsafe">eq_unsafe</h3>
@@ -2845,13 +2845,13 @@ If any input of the operation is +/- infinity or NaN, the result is
 undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <pre><code class="pony">fun box eq_unsafe(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_8">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_20">Returns</h4>
 <ul>
@@ -2864,13 +2864,13 @@ If any input of the operation is +/- infinity or NaN, the result is
 undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <pre><code class="pony">fun box ne_unsafe(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_9">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_21">Returns</h4>
 <ul>
@@ -2883,13 +2883,13 @@ If any input of the operation is +/- infinity or NaN, the result is
 undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <pre><code class="pony">fun box lt_unsafe(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_10">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_22">Returns</h4>
 <ul>
@@ -2902,13 +2902,13 @@ If any input of the operation is +/- infinity or NaN, the result is
 undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <pre><code class="pony">fun box le_unsafe(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_11">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_23">Returns</h4>
 <ul>
@@ -2921,13 +2921,13 @@ If any input of the operation is +/- infinity or NaN, the result is
 undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <pre><code class="pony">fun box ge_unsafe(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_12">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_24">Returns</h4>
 <ul>
@@ -2940,13 +2940,13 @@ If any input of the operation is +/- infinity or NaN, the result is
 undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <pre><code class="pony">fun box gt_unsafe(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_13">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_25">Returns</h4>
 <ul>
@@ -2955,52 +2955,52 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="abs">abs</h3>
 <pre><code class="pony">fun box abs()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_26">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="ceil">ceil</h3>
 <pre><code class="pony">fun box ceil()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_27">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="floor">floor</h3>
 <pre><code class="pony">fun box floor()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_28">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="round">round</h3>
 <pre><code class="pony">fun box round()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_29">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="trunc">trunc</h3>
 <pre><code class="pony">fun box trunc()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_30">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="finite">finite</h3>
@@ -3035,90 +3035,90 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="ldexp">ldexp</h3>
 <pre><code class="pony">fun box ldexp(
-  x: A val,
+  x: A,
   exponent: I32 val)
-: A val
+: A
 </code></pre>
 
 <h4 id="parameters_14">Parameters</h4>
 <ul>
-<li>x: A val</li>
+<li>x: A</li>
 <li>exponent: <a href="../builtin-I32">I32</a> val</li>
 </ul>
 <h4 id="returns_34">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="frexp">frexp</h3>
 <pre><code class="pony">fun box frexp()
-: (A val , U32 val)
+: (A , U32 val)
 </code></pre>
 
 <h4 id="returns_35">Returns</h4>
 <ul>
-<li>(A val , <a href="../builtin-U32">U32</a> val)</li>
+<li>(A , <a href="../builtin-U32">U32</a> val)</li>
 </ul>
 <hr />
 <h3 id="log">log</h3>
 <pre><code class="pony">fun box log()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_36">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="log2">log2</h3>
 <pre><code class="pony">fun box log2()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_37">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="log10">log10</h3>
 <pre><code class="pony">fun box log10()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_38">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="logb">logb</h3>
 <pre><code class="pony">fun box logb()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_39">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="pow">pow</h3>
 <pre><code class="pony">fun box pow(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_15">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_40">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="powi">powi</h3>
 <pre><code class="pony">fun box powi(
   y: I32 val)
-: A val
+: A
 </code></pre>
 
 <h4 id="parameters_16">Parameters</h4>
@@ -3127,209 +3127,209 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 </ul>
 <h4 id="returns_41">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="sqrt">sqrt</h3>
 <pre><code class="pony">fun box sqrt()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_42">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="sqrt_unsafe">sqrt_unsafe</h3>
 <p>Unsafe operation.
 If this is negative, the result is undefined.</p>
 <pre><code class="pony">fun box sqrt_unsafe()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_43">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="cbrt">cbrt</h3>
 <pre><code class="pony">fun box cbrt()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_44">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="exp">exp</h3>
 <pre><code class="pony">fun box exp()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_45">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="exp2">exp2</h3>
 <pre><code class="pony">fun box exp2()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_46">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="cos">cos</h3>
 <pre><code class="pony">fun box cos()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_47">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="sin">sin</h3>
 <pre><code class="pony">fun box sin()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_48">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="tan">tan</h3>
 <pre><code class="pony">fun box tan()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_49">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="cosh">cosh</h3>
 <pre><code class="pony">fun box cosh()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_50">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="sinh">sinh</h3>
 <pre><code class="pony">fun box sinh()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_51">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="tanh">tanh</h3>
 <pre><code class="pony">fun box tanh()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_52">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="acos">acos</h3>
 <pre><code class="pony">fun box acos()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_53">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="asin">asin</h3>
 <pre><code class="pony">fun box asin()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_54">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="atan">atan</h3>
 <pre><code class="pony">fun box atan()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_55">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="atan2">atan2</h3>
 <pre><code class="pony">fun box atan2(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_17">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_56">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="acosh">acosh</h3>
 <pre><code class="pony">fun box acosh()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_57">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="asinh">asinh</h3>
 <pre><code class="pony">fun box asinh()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_58">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="atanh">atanh</h3>
 <pre><code class="pony">fun box atanh()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_59">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="copysign">copysign</h3>
 <pre><code class="pony">fun box copysign(
-  sign: A val)
-: A val
+  sign: A)
+: A
 </code></pre>
 
 <h4 id="parameters_18">Parameters</h4>
 <ul>
-<li>sign: A val</li>
+<li>sign: A</li>
 </ul>
 <h4 id="returns_60">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="string">string</h3>
@@ -3344,113 +3344,113 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="add">add</h3>
 <pre><code class="pony">fun box add(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_19">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_62">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="sub">sub</h3>
 <pre><code class="pony">fun box sub(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_20">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_63">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="mul">mul</h3>
 <pre><code class="pony">fun box mul(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_21">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_64">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="div">div</h3>
 <pre><code class="pony">fun box div(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_22">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_65">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="divmod">divmod</h3>
 <pre><code class="pony">fun box divmod(
-  y: A val)
-: (A val , A val)
+  y: A)
+: (A , A)
 </code></pre>
 
 <h4 id="parameters_23">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_66">Returns</h4>
 <ul>
-<li>(A val , A val)</li>
+<li>(A , A)</li>
 </ul>
 <hr />
 <h3 id="mod">mod</h3>
 <pre><code class="pony">fun box mod(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_24">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_67">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="neg">neg</h3>
 <pre><code class="pony">fun box neg()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_68">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="eq">eq</h3>
 <pre><code class="pony">fun box eq(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_25">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_69">Returns</h4>
 <ul>
@@ -3459,13 +3459,13 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="ne">ne</h3>
 <pre><code class="pony">fun box ne(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_26">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_70">Returns</h4>
 <ul>
@@ -3474,13 +3474,13 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="lt">lt</h3>
 <pre><code class="pony">fun box lt(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_27">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_71">Returns</h4>
 <ul>
@@ -3489,13 +3489,13 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="le">le</h3>
 <pre><code class="pony">fun box le(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_28">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_72">Returns</h4>
 <ul>
@@ -3504,13 +3504,13 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="ge">ge</h3>
 <pre><code class="pony">fun box ge(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_29">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_73">Returns</h4>
 <ul>
@@ -3519,13 +3519,13 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="gt">gt</h3>
 <pre><code class="pony">fun box gt(
-  y: A val)
+  y: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_30">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_74">Returns</h4>
 <ul>
@@ -3534,32 +3534,32 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="min">min</h3>
 <pre><code class="pony">fun box min(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_31">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_75">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="max">max</h3>
 <pre><code class="pony">fun box max(
-  y: A val)
-: A val
+  y: A)
+: A
 </code></pre>
 
 <h4 id="parameters_32">Parameters</h4>
 <ul>
-<li>y: A val</li>
+<li>y: A</li>
 </ul>
 <h4 id="returns_76">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="hash">hash</h3>
@@ -3894,13 +3894,13 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="compare">compare</h3>
 <pre><code class="pony">fun box compare(
-  that: A val)
+  that: A)
 : (Less val | Equal val | Greater val)
 </code></pre>
 
 <h4 id="parameters_33">Parameters</h4>
 <ul>
-<li>that: A val</li>
+<li>that: A</li>
 </ul>
 <h4 id="returns_110">Returns</h4>
 <ul>
@@ -3910,12 +3910,12 @@ If this is negative, the result is undefined.</p>
 <h2 id="private-functions">Private Functions</h2>
 <h3 id="_value">_value</h3>
 <pre><code class="pony">fun box _value()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_111">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
               

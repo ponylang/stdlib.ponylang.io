@@ -2729,11 +2729,11 @@ concurrent tests.</p>
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
 <hr />
-<h3 id="assert_eq91a-equatable91a-read93-read-stringable-read93">assert_eq[A: (<a href="../builtin-Equatable">Equatable</a>[A #read] #read &amp; <a href="../builtin-Stringable">Stringable</a> #read)]</h3>
+<h3 id="assert_eq91a-equatable91a93-read-stringable-read93">assert_eq[A: (<a href="../builtin-Equatable">Equatable</a>[A] #read &amp; <a href="../builtin-Stringable">Stringable</a> #read)]</h3>
 <p>Assert that the 2 given expressions are equal.</p>
-<pre><code class="pony">fun box assert_eq[A: (Equatable[A #read] #read &amp; Stringable #read)](
-  expect: A #read,
-  actual: A #read,
+<pre><code class="pony">fun box assert_eq[A: (Equatable[A] #read &amp; Stringable #read)](
+  expect: A,
+  actual: A,
   msg: String val= &quot;&quot;,
   loc: SourceLoc val = __loc)
 : Bool val
@@ -2741,8 +2741,8 @@ concurrent tests.</p>
 
 <h4 id="parameters_8">Parameters</h4>
 <ul>
-<li>expect: A #read</li>
-<li>actual: A #read</li>
+<li>expect: A</li>
+<li>actual: A</li>
 <li>msg: <a href="../builtin-String">String</a> val= ""</li>
 <li>loc: <a href="../builtin-SourceLoc">SourceLoc</a> val = __loc</li>
 </ul>
@@ -2773,11 +2773,11 @@ concurrent tests.</p>
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
 <hr />
-<h3 id="assert_ne91a-equatable91a-read93-read-stringable-read93">assert_ne[A: (<a href="../builtin-Equatable">Equatable</a>[A #read] #read &amp; <a href="../builtin-Stringable">Stringable</a> #read)]</h3>
+<h3 id="assert_ne91a-equatable91a93-read-stringable-read93">assert_ne[A: (<a href="../builtin-Equatable">Equatable</a>[A] #read &amp; <a href="../builtin-Stringable">Stringable</a> #read)]</h3>
 <p>Assert that the 2 given expressions are not equal.</p>
-<pre><code class="pony">fun box assert_ne[A: (Equatable[A #read] #read &amp; Stringable #read)](
-  not_expect: A #read,
-  actual: A #read,
+<pre><code class="pony">fun box assert_ne[A: (Equatable[A] #read &amp; Stringable #read)](
+  not_expect: A,
+  actual: A,
   msg: String val= &quot;&quot;,
   loc: SourceLoc val = __loc)
 : Bool val
@@ -2785,8 +2785,8 @@ concurrent tests.</p>
 
 <h4 id="parameters_10">Parameters</h4>
 <ul>
-<li>not_expect: A #read</li>
-<li>actual: A #read</li>
+<li>not_expect: A</li>
+<li>actual: A</li>
 <li>msg: <a href="../builtin-String">String</a> val= ""</li>
 <li>loc: <a href="../builtin-SourceLoc">SourceLoc</a> val = __loc</li>
 </ul>
@@ -2795,11 +2795,11 @@ concurrent tests.</p>
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
 <hr />
-<h3 id="assert_array_eq91a-equatable91a-read93-read-stringable-read93">assert_array_eq[A: (<a href="../builtin-Equatable">Equatable</a>[A #read] #read &amp; <a href="../builtin-Stringable">Stringable</a> #read)]</h3>
+<h3 id="assert_array_eq91a-equatable91a93-read-stringable-read93">assert_array_eq[A: (<a href="../builtin-Equatable">Equatable</a>[A] #read &amp; <a href="../builtin-Stringable">Stringable</a> #read)]</h3>
 <p>Assert that the contents of the 2 given ReadSeqs are equal.</p>
-<pre><code class="pony">fun box assert_array_eq[A: (Equatable[A #read] #read &amp; Stringable #read)](
-  expect: ReadSeq[A #read] box,
-  actual: ReadSeq[A #read] box,
+<pre><code class="pony">fun box assert_array_eq[A: (Equatable[A] #read &amp; Stringable #read)](
+  expect: ReadSeq[A] box,
+  actual: ReadSeq[A] box,
   msg: String val= &quot;&quot;,
   loc: SourceLoc val = __loc)
 : Bool val
@@ -2807,8 +2807,8 @@ concurrent tests.</p>
 
 <h4 id="parameters_11">Parameters</h4>
 <ul>
-<li>expect: <a href="../builtin-ReadSeq">ReadSeq</a>[A #read] box</li>
-<li>actual: <a href="../builtin-ReadSeq">ReadSeq</a>[A #read] box</li>
+<li>expect: <a href="../builtin-ReadSeq">ReadSeq</a>[A] box</li>
+<li>actual: <a href="../builtin-ReadSeq">ReadSeq</a>[A] box</li>
 <li>msg: <a href="../builtin-String">String</a> val= ""</li>
 <li>loc: <a href="../builtin-SourceLoc">SourceLoc</a> val = __loc</li>
 </ul>
@@ -2817,11 +2817,11 @@ concurrent tests.</p>
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
 <hr />
-<h3 id="assert_array_eq_unordered91a-equatable91a-read93-read-stringable-read93">assert_array_eq_unordered[A: (<a href="../builtin-Equatable">Equatable</a>[A #read] #read &amp; <a href="../builtin-Stringable">Stringable</a> #read)]</h3>
+<h3 id="assert_array_eq_unordered91a-equatable91a93-read-stringable-read93">assert_array_eq_unordered[A: (<a href="../builtin-Equatable">Equatable</a>[A] #read &amp; <a href="../builtin-Stringable">Stringable</a> #read)]</h3>
 <p>Assert that the contents of the 2 given ReadSeqs are equal ignoring order.</p>
-<pre><code class="pony">fun box assert_array_eq_unordered[A: (Equatable[A #read] #read &amp; Stringable #read)](
-  expect: ReadSeq[A #read] box,
-  actual: ReadSeq[A #read] box,
+<pre><code class="pony">fun box assert_array_eq_unordered[A: (Equatable[A] #read &amp; Stringable #read)](
+  expect: ReadSeq[A] box,
+  actual: ReadSeq[A] box,
   msg: String val= &quot;&quot;,
   loc: SourceLoc val = __loc)
 : Bool val
@@ -2829,8 +2829,8 @@ concurrent tests.</p>
 
 <h4 id="parameters_12">Parameters</h4>
 <ul>
-<li>expect: <a href="../builtin-ReadSeq">ReadSeq</a>[A #read] box</li>
-<li>actual: <a href="../builtin-ReadSeq">ReadSeq</a>[A #read] box</li>
+<li>expect: <a href="../builtin-ReadSeq">ReadSeq</a>[A] box</li>
+<li>actual: <a href="../builtin-ReadSeq">ReadSeq</a>[A] box</li>
 <li>msg: <a href="../builtin-String">String</a> val= ""</li>
 <li>loc: <a href="../builtin-SourceLoc">SourceLoc</a> val = __loc</li>
 </ul>
@@ -2987,12 +2987,12 @@ The actor will be disposed no matter whether the test succeeds or fails.</p>
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
 <hr />
-<h3 id="_check_eq91a-equatable91a-read93-read-stringable93">_check_eq[A: (<a href="../builtin-Equatable">Equatable</a>[A #read] #read &amp; <a href="../builtin-Stringable">Stringable</a>)]</h3>
+<h3 id="_check_eq91a-equatable91a93-read-stringable93">_check_eq[A: (<a href="../builtin-Equatable">Equatable</a>[A] #read &amp; <a href="../builtin-Stringable">Stringable</a>)]</h3>
 <p>Check that the 2 given expressions are equal.</p>
-<pre><code class="pony">fun box _check_eq[A: (Equatable[A #read] #read &amp; Stringable)](
+<pre><code class="pony">fun box _check_eq[A: (Equatable[A] #read &amp; Stringable)](
   check: String val,
-  expect: A #read,
-  actual: A #read,
+  expect: A,
+  actual: A,
   msg: String val,
   loc: SourceLoc val)
 : Bool val
@@ -3001,8 +3001,8 @@ The actor will be disposed no matter whether the test succeeds or fails.</p>
 <h4 id="parameters_20">Parameters</h4>
 <ul>
 <li>check: <a href="../builtin-String">String</a> val</li>
-<li>expect: A #read</li>
-<li>actual: A #read</li>
+<li>expect: A</li>
+<li>actual: A</li>
 <li>msg: <a href="../builtin-String">String</a> val</li>
 <li>loc: <a href="../builtin-SourceLoc">SourceLoc</a> val</li>
 </ul>
@@ -3035,12 +3035,12 @@ The actor will be disposed no matter whether the test succeeds or fails.</p>
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
 <hr />
-<h3 id="_check_ne91a-equatable91a-read93-read-stringable93">_check_ne[A: (<a href="../builtin-Equatable">Equatable</a>[A #read] #read &amp; <a href="../builtin-Stringable">Stringable</a>)]</h3>
+<h3 id="_check_ne91a-equatable91a93-read-stringable93">_check_ne[A: (<a href="../builtin-Equatable">Equatable</a>[A] #read &amp; <a href="../builtin-Stringable">Stringable</a>)]</h3>
 <p>Check that the 2 given expressions are not equal.</p>
-<pre><code class="pony">fun box _check_ne[A: (Equatable[A #read] #read &amp; Stringable)](
+<pre><code class="pony">fun box _check_ne[A: (Equatable[A] #read &amp; Stringable)](
   check: String val,
-  not_expect: A #read,
-  actual: A #read,
+  not_expect: A,
+  actual: A,
   msg: String val,
   loc: SourceLoc val)
 : Bool val
@@ -3049,8 +3049,8 @@ The actor will be disposed no matter whether the test succeeds or fails.</p>
 <h4 id="parameters_22">Parameters</h4>
 <ul>
 <li>check: <a href="../builtin-String">String</a> val</li>
-<li>not_expect: A #read</li>
-<li>actual: A #read</li>
+<li>not_expect: A</li>
+<li>actual: A</li>
 <li>msg: <a href="../builtin-String">String</a> val</li>
 <li>loc: <a href="../builtin-SourceLoc">SourceLoc</a> val</li>
 </ul>
@@ -3078,13 +3078,13 @@ The actor will be disposed no matter whether the test succeeds or fails.</p>
 <p>Generate a printable string of the contents of the given readseq to use in
 error messages.</p>
 <pre><code class="pony">fun box _print_array[A: Stringable #read](
-  array: ReadSeq[A #read] box)
+  array: ReadSeq[A] box)
 : String val
 </code></pre>
 
 <h4 id="parameters_24">Parameters</h4>
 <ul>
-<li>array: <a href="../builtin-ReadSeq">ReadSeq</a>[A #read] box</li>
+<li>array: <a href="../builtin-ReadSeq">ReadSeq</a>[A] box</li>
 </ul>
 <h4 id="returns_24">Returns</h4>
 <ul>

@@ -515,7 +515,7 @@
     <a class="current" href="./">type Set</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#set91a-hashable-read-equatable91a-read93-read93">Set[A: (Hashable #read &amp; Equatable[A #read] #read)]</a></li>
+    <li class="toctree-l3"><a href="#set91a-hashable-read-equatable91a93-read93">Set[A: (Hashable #read &amp; Equatable[A] #read)]</a></li>
     
         <ul>
         
@@ -2542,14 +2542,14 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="set91a-hashable-read-equatable91a-read93-read93">Set[A: (<a href="../collections-Hashable">Hashable</a> #read &amp; <a href="../builtin-Equatable">Equatable</a>[A #read] #read)]</h1>
-<pre><code class="pony">type Set[A: (Hashable #read &amp; Equatable[A #read] #read)] is
-  HashSet[A #read, HashEq[A #read] val] ref
+                <h1 id="set91a-hashable-read-equatable91a93-read93">Set[A: (<a href="../collections-Hashable">Hashable</a> #read &amp; <a href="../builtin-Equatable">Equatable</a>[A] #read)]</h1>
+<pre><code class="pony">type Set[A: (Hashable #read &amp; Equatable[A] #read)] is
+  HashSet[A, HashEq[A] val] ref
 </code></pre>
 
 <h4 id="type-alias-for">Type Alias For</h4>
 <ul>
-<li><a href="../collections-HashSet">HashSet</a>[A #read, <a href="../collections-HashEq">HashEq</a>[A #read] val] ref</li>
+<li><a href="../collections-HashSet">HashSet</a>[A, <a href="../collections-HashEq">HashEq</a>[A] val] ref</li>
 </ul>
 <hr />
               

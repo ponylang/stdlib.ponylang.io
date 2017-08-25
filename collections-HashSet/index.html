@@ -2550,12 +2550,12 @@
 <p>A set, built on top of a HashMap. This is implemented as map of an alias of
 a type to itself</p>
 <pre><code class="pony">class ref HashSet[A: A, H: HashFunction[A!] val] is
-  Comparable[HashSet[A, H val] box] ref
+  Comparable[HashSet[A, H] box] ref
 </code></pre>
 
 <h4 id="implements">Implements</h4>
 <ul>
-<li><a href="../builtin-Comparable">Comparable</a>[<a href="../collections-HashSet">HashSet</a>[A, H val] box] ref</li>
+<li><a href="../builtin-Comparable">Comparable</a>[<a href="../collections-HashSet">HashSet</a>[A, H] box] ref</li>
 </ul>
 <hr />
 <h2 id="constructors">Constructors</h2>
@@ -2563,7 +2563,7 @@ a type to itself</p>
 <p>Defaults to a prealloc of 8.</p>
 <pre><code class="pony">new ref create(
   prealloc: USize val = 8)
-: HashSet[A, H val] ref^
+: HashSet[A, H] ref^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
@@ -2572,7 +2572,7 @@ a type to itself</p>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../collections-HashSet">HashSet</a>[A, H val] ref^</li>
+<li><a href="../collections-HashSet">HashSet</a>[A, H] ref^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
@@ -2709,13 +2709,13 @@ wasn't in the set.</p>
 <h3 id="intersect91optional-k-hashfunction91box-a93-val93">intersect[optional K: <a href="../collections-HashFunction">HashFunction</a>[box-&gt;A!] val]</h3>
 <p>Remove everything that isn't in that.</p>
 <pre><code class="pony">fun ref intersect[optional K: HashFunction[box-&gt;A!] val](
-  that: HashSet[box-&gt;A!, K val] ref)
+  that: HashSet[box-&gt;A!, K] ref)
 : None val
 </code></pre>
 
 <h4 id="parameters_7">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-HashSet">HashSet</a>[box-&gt;A!, K val] ref</li>
+<li>that: <a href="../collections-HashSet">HashSet</a>[box-&gt;A!, K] ref</li>
 </ul>
 <h4 id="returns_10">Returns</h4>
 <ul>
@@ -2759,7 +2759,7 @@ are not in this.</p>
 <p>Add a value to the set.</p>
 <pre><code class="pony">fun box add[optional K: HashFunction[this-&gt;A!] val](
   value: this-&gt;A!)
-: HashSet[this-&gt;A!, K val] ref^
+: HashSet[this-&gt;A!, K] ref^
 </code></pre>
 
 <h4 id="parameters_10">Parameters</h4>
@@ -2768,14 +2768,14 @@ are not in this.</p>
 </ul>
 <h4 id="returns_13">Returns</h4>
 <ul>
-<li><a href="../collections-HashSet">HashSet</a>[this-&gt;A!, K val] ref^</li>
+<li><a href="../collections-HashSet">HashSet</a>[this-&gt;A!, K] ref^</li>
 </ul>
 <hr />
 <h3 id="sub91optional-k-hashfunction91this-a93-val93">sub[optional K: <a href="../collections-HashFunction">HashFunction</a>[this-&gt;A!] val]</h3>
 <p>Remove a value from the set.</p>
 <pre><code class="pony">fun box sub[optional K: HashFunction[this-&gt;A!] val](
   value: box-&gt;this-&gt;A!)
-: HashSet[this-&gt;A!, K val] ref^
+: HashSet[this-&gt;A!, K] ref^
 </code></pre>
 
 <h4 id="parameters_11">Parameters</h4>
@@ -2784,95 +2784,95 @@ are not in this.</p>
 </ul>
 <h4 id="returns_14">Returns</h4>
 <ul>
-<li><a href="../collections-HashSet">HashSet</a>[this-&gt;A!, K val] ref^</li>
+<li><a href="../collections-HashSet">HashSet</a>[this-&gt;A!, K] ref^</li>
 </ul>
 <hr />
 <h3 id="op_or91optional-k-hashfunction91this-a93-val93">op_or[optional K: <a href="../collections-HashFunction">HashFunction</a>[this-&gt;A!] val]</h3>
 <p>Create a set with the elements of both this and that.</p>
 <pre><code class="pony">fun box op_or[optional K: HashFunction[this-&gt;A!] val](
-  that: this-&gt;HashSet[A, H val] ref)
-: HashSet[this-&gt;A!, K val] ref^
+  that: this-&gt;HashSet[A, H] ref)
+: HashSet[this-&gt;A!, K] ref^
 </code></pre>
 
 <h4 id="parameters_12">Parameters</h4>
 <ul>
-<li>that: this-&gt;<a href="../collections-HashSet">HashSet</a>[A, H val] ref</li>
+<li>that: this-&gt;<a href="../collections-HashSet">HashSet</a>[A, H] ref</li>
 </ul>
 <h4 id="returns_15">Returns</h4>
 <ul>
-<li><a href="../collections-HashSet">HashSet</a>[this-&gt;A!, K val] ref^</li>
+<li><a href="../collections-HashSet">HashSet</a>[this-&gt;A!, K] ref^</li>
 </ul>
 <hr />
 <h3 id="op_and91optional-k-hashfunction91this-a93-val93">op_and[optional K: <a href="../collections-HashFunction">HashFunction</a>[this-&gt;A!] val]</h3>
 <p>Create a set with the elements that are in both this and that.</p>
 <pre><code class="pony">fun box op_and[optional K: HashFunction[this-&gt;A!] val](
-  that: this-&gt;HashSet[A, H val] ref)
-: HashSet[this-&gt;A!, K val] ref^
+  that: this-&gt;HashSet[A, H] ref)
+: HashSet[this-&gt;A!, K] ref^
 </code></pre>
 
 <h4 id="parameters_13">Parameters</h4>
 <ul>
-<li>that: this-&gt;<a href="../collections-HashSet">HashSet</a>[A, H val] ref</li>
+<li>that: this-&gt;<a href="../collections-HashSet">HashSet</a>[A, H] ref</li>
 </ul>
 <h4 id="returns_16">Returns</h4>
 <ul>
-<li><a href="../collections-HashSet">HashSet</a>[this-&gt;A!, K val] ref^</li>
+<li><a href="../collections-HashSet">HashSet</a>[this-&gt;A!, K] ref^</li>
 </ul>
 <hr />
 <h3 id="op_xor91optional-k-hashfunction91this-a93-val93">op_xor[optional K: <a href="../collections-HashFunction">HashFunction</a>[this-&gt;A!] val]</h3>
 <p>Create a set with the elements that are in either set but not both.</p>
 <pre><code class="pony">fun box op_xor[optional K: HashFunction[this-&gt;A!] val](
-  that: this-&gt;HashSet[A, H val] ref)
-: HashSet[this-&gt;A!, K val] ref^
+  that: this-&gt;HashSet[A, H] ref)
+: HashSet[this-&gt;A!, K] ref^
 </code></pre>
 
 <h4 id="parameters_14">Parameters</h4>
 <ul>
-<li>that: this-&gt;<a href="../collections-HashSet">HashSet</a>[A, H val] ref</li>
+<li>that: this-&gt;<a href="../collections-HashSet">HashSet</a>[A, H] ref</li>
 </ul>
 <h4 id="returns_17">Returns</h4>
 <ul>
-<li><a href="../collections-HashSet">HashSet</a>[this-&gt;A!, K val] ref^</li>
+<li><a href="../collections-HashSet">HashSet</a>[this-&gt;A!, K] ref^</li>
 </ul>
 <hr />
 <h3 id="without91optional-k-hashfunction91this-a93-val93">without[optional K: <a href="../collections-HashFunction">HashFunction</a>[this-&gt;A!] val]</h3>
 <p>Create a set with the elements of this that are not in that.</p>
 <pre><code class="pony">fun box without[optional K: HashFunction[this-&gt;A!] val](
-  that: this-&gt;HashSet[A, H val] ref)
-: HashSet[this-&gt;A!, K val] ref^
+  that: this-&gt;HashSet[A, H] ref)
+: HashSet[this-&gt;A!, K] ref^
 </code></pre>
 
 <h4 id="parameters_15">Parameters</h4>
 <ul>
-<li>that: this-&gt;<a href="../collections-HashSet">HashSet</a>[A, H val] ref</li>
+<li>that: this-&gt;<a href="../collections-HashSet">HashSet</a>[A, H] ref</li>
 </ul>
 <h4 id="returns_18">Returns</h4>
 <ul>
-<li><a href="../collections-HashSet">HashSet</a>[this-&gt;A!, K val] ref^</li>
+<li><a href="../collections-HashSet">HashSet</a>[this-&gt;A!, K] ref^</li>
 </ul>
 <hr />
 <h3 id="clone91optional-k-hashfunction91this-a93-val93">clone[optional K: <a href="../collections-HashFunction">HashFunction</a>[this-&gt;A!] val]</h3>
 <p>Create a clone. The element type may be different due to aliasing and
 viewpoint adaptation.</p>
 <pre><code class="pony">fun box clone[optional K: HashFunction[this-&gt;A!] val]()
-: HashSet[this-&gt;A!, K val] ref^
+: HashSet[this-&gt;A!, K] ref^
 </code></pre>
 
 <h4 id="returns_19">Returns</h4>
 <ul>
-<li><a href="../collections-HashSet">HashSet</a>[this-&gt;A!, K val] ref^</li>
+<li><a href="../collections-HashSet">HashSet</a>[this-&gt;A!, K] ref^</li>
 </ul>
 <hr />
 <h3 id="eq">eq</h3>
 <p>Returns true if the sets contain the same elements.</p>
 <pre><code class="pony">fun box eq(
-  that: HashSet[A, H val] box)
+  that: HashSet[A, H] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_16">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-HashSet">HashSet</a>[A, H val] box</li>
+<li>that: <a href="../collections-HashSet">HashSet</a>[A, H] box</li>
 </ul>
 <h4 id="returns_20">Returns</h4>
 <ul>
@@ -2882,13 +2882,13 @@ viewpoint adaptation.</p>
 <h3 id="ne">ne</h3>
 <p>Returns false if the sets contain the same elements.</p>
 <pre><code class="pony">fun box ne(
-  that: HashSet[A, H val] box)
+  that: HashSet[A, H] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_17">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-HashSet">HashSet</a>[A, H val] box</li>
+<li>that: <a href="../collections-HashSet">HashSet</a>[A, H] box</li>
 </ul>
 <h4 id="returns_21">Returns</h4>
 <ul>
@@ -2899,13 +2899,13 @@ viewpoint adaptation.</p>
 <p>Returns true if every element in this is also in that, and this has fewer
 elements than that.</p>
 <pre><code class="pony">fun box lt(
-  that: HashSet[A, H val] box)
+  that: HashSet[A, H] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_18">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-HashSet">HashSet</a>[A, H val] box</li>
+<li>that: <a href="../collections-HashSet">HashSet</a>[A, H] box</li>
 </ul>
 <h4 id="returns_22">Returns</h4>
 <ul>
@@ -2915,13 +2915,13 @@ elements than that.</p>
 <h3 id="le">le</h3>
 <p>Returns true if every element in this is also in that.</p>
 <pre><code class="pony">fun box le(
-  that: HashSet[A, H val] box)
+  that: HashSet[A, H] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_19">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-HashSet">HashSet</a>[A, H val] box</li>
+<li>that: <a href="../collections-HashSet">HashSet</a>[A, H] box</li>
 </ul>
 <h4 id="returns_23">Returns</h4>
 <ul>
@@ -2932,13 +2932,13 @@ elements than that.</p>
 <p>Returns true if every element in that is also in this, and this has more
 elements than that.</p>
 <pre><code class="pony">fun box gt(
-  that: HashSet[A, H val] box)
+  that: HashSet[A, H] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_20">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-HashSet">HashSet</a>[A, H val] box</li>
+<li>that: <a href="../collections-HashSet">HashSet</a>[A, H] box</li>
 </ul>
 <h4 id="returns_24">Returns</h4>
 <ul>
@@ -2948,13 +2948,13 @@ elements than that.</p>
 <h3 id="ge">ge</h3>
 <p>Returns true if every element in that is also in this.</p>
 <pre><code class="pony">fun box ge(
-  that: HashSet[A, H val] box)
+  that: HashSet[A, H] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_21">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-HashSet">HashSet</a>[A, H val] box</li>
+<li>that: <a href="../collections-HashSet">HashSet</a>[A, H] box</li>
 </ul>
 <h4 id="returns_25">Returns</h4>
 <ul>
@@ -2998,23 +2998,23 @@ populated.</p>
 <h3 id="values">values</h3>
 <p>Return an iterator over the values.</p>
 <pre><code class="pony">fun box values()
-: SetValues[A, H val, this-&gt;HashSet[A, H val] ref] ref^
+: SetValues[A, H, this-&gt;HashSet[A, H] ref] ref^
 </code></pre>
 
 <h4 id="returns_28">Returns</h4>
 <ul>
-<li><a href="../collections-SetValues">SetValues</a>[A, H val, this-&gt;<a href="../collections-HashSet">HashSet</a>[A, H val] ref] ref^</li>
+<li><a href="../collections-SetValues">SetValues</a>[A, H, this-&gt;<a href="../collections-HashSet">HashSet</a>[A, H] ref] ref^</li>
 </ul>
 <hr />
 <h3 id="compare">compare</h3>
 <pre><code class="pony">fun box compare(
-  that: HashSet[A, H val] box)
+  that: HashSet[A, H] box)
 : (Less val | Equal val | Greater val)
 </code></pre>
 
 <h4 id="parameters_24">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-HashSet">HashSet</a>[A, H val] box</li>
+<li>that: <a href="../collections-HashSet">HashSet</a>[A, H] box</li>
 </ul>
 <h4 id="returns_29">Returns</h4>
 <ul>

@@ -439,7 +439,7 @@
     <a class="current" href="./">class Reverse</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#reverse91optional-a-real91a-val93-val-i8-val-i16-val-i32-val">Reverse[optional A: (Real[A val] val &amp; (I8 val | I16 val | I32 val |</a></li>
+    <li class="toctree-l3"><a href="#reverse91optional-a-real91a93-val-i8-val-i16-val-i32-val">Reverse[optional A: (Real[A] val &amp; (I8 val | I16 val | I32 val |</a></li>
     
         <ul>
         
@@ -2546,7 +2546,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="reverse91optional-a-real91a-val93-val-i8-val-i16-val-i32-val">Reverse[optional A: (<a href="../builtin-Real">Real</a>[A val] val &amp; (<a href="../builtin-I8">I8</a> val | <a href="../builtin-I16">I16</a> val | <a href="../builtin-I32">I32</a> val |</h1>
+                <h1 id="reverse91optional-a-real91a93-val-i8-val-i16-val-i32-val">Reverse[optional A: (<a href="../builtin-Real">Real</a>[A] val &amp; (<a href="../builtin-I8">I8</a> val | <a href="../builtin-I16">I16</a> val | <a href="../builtin-I32">I32</a> val |</h1>
 <pre><code>[I64](builtin-I64) val | [I128](builtin-I128) val | [ILong](builtin-ILong) val | 
 [ISize](builtin-ISize) val | [U8](builtin-U8) val | [U16](builtin-U16) val | 
 [U32](builtin-U32) val | [U64](builtin-U64) val | [U128](builtin-U128) val | 
@@ -2554,38 +2554,38 @@
 [F64](builtin-F64) val))\]
 </code></pre>
 <p>Produces [max, min].</p>
-<pre><code class="pony">class ref Reverse[optional A: (Real[A val] val &amp; (I8 val | I16 val | I32 val | 
+<pre><code class="pony">class ref Reverse[optional A: (Real[A] val &amp; (I8 val | I16 val | I32 val | 
     I64 val | I128 val | ILong val | 
     ISize val | U8 val | U16 val | 
     U32 val | U64 val | U128 val | 
     ULong val | USize val | F32 val | 
     F64 val))] is
-  Iterator[A val] ref
+  Iterator[A] ref
 </code></pre>
 
 <h4 id="implements">Implements</h4>
 <ul>
-<li><a href="../builtin-Iterator">Iterator</a>[A val] ref</li>
+<li><a href="../builtin-Iterator">Iterator</a>[A] ref</li>
 </ul>
 <hr />
 <h2 id="constructors">Constructors</h2>
 <h3 id="create">create</h3>
 <pre><code class="pony">new ref create(
-  max: A val,
-  min: A val,
-  dec: A val = 1)
-: Reverse[A val] ref^
+  max: A,
+  min: A,
+  dec: A = 1)
+: Reverse[A] ref^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>max: A val</li>
-<li>min: A val</li>
-<li>dec: A val = 1</li>
+<li>max: A</li>
+<li>min: A</li>
+<li>dec: A = 1</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../collections-Reverse">Reverse</a>[A val] ref^</li>
+<li><a href="../collections-Reverse">Reverse</a>[A] ref^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
@@ -2601,12 +2601,12 @@
 <hr />
 <h3 id="next">next</h3>
 <pre><code class="pony">fun ref next()
-: A val
+: A
 </code></pre>
 
 <h4 id="returns_2">Returns</h4>
 <ul>
-<li>A val</li>
+<li>A</li>
 </ul>
 <hr />
 <h3 id="rewind">rewind</h3>

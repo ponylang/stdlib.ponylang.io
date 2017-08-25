@@ -527,7 +527,7 @@
     <a class="current" href="./">class SetValues</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#setvalues91a-a-h-hashfunction91a93-val-s-hashset91a-h-val93-read93">SetValues[A: A, H: HashFunction[A!] val, S: HashSet[A, H val] #read]</a></li>
+    <li class="toctree-l3"><a href="#setvalues91a-a-h-hashfunction91a93-val-s-hashset91a-h93-read93">SetValues[A: A, H: HashFunction[A!] val, S: HashSet[A, H] #read]</a></li>
     
         <ul>
         
@@ -2546,31 +2546,31 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="setvalues91a-a-h-hashfunction91a93-val-s-hashset91a-h-val93-read93">SetValues[A: A, H: <a href="../collections-HashFunction">HashFunction</a>[A!] val, S: <a href="../collections-HashSet">HashSet</a>[A, H val] #read]</h1>
+                <h1 id="setvalues91a-a-h-hashfunction91a93-val-s-hashset91a-h93-read93">SetValues[A: A, H: <a href="../collections-HashFunction">HashFunction</a>[A!] val, S: <a href="../collections-HashSet">HashSet</a>[A, H] #read]</h1>
 <p>An iterator over the values in a set.</p>
-<pre><code class="pony">class ref SetValues[A: A, H: HashFunction[A!] val, S: HashSet[A, H val] #read] is
-  Iterator[S #read-&gt;A] ref
+<pre><code class="pony">class ref SetValues[A: A, H: HashFunction[A!] val, S: HashSet[A, H] #read] is
+  Iterator[S-&gt;A] ref
 </code></pre>
 
 <h4 id="implements">Implements</h4>
 <ul>
-<li><a href="../builtin-Iterator">Iterator</a>[S #read-&gt;A] ref</li>
+<li><a href="../builtin-Iterator">Iterator</a>[S-&gt;A] ref</li>
 </ul>
 <hr />
 <h2 id="constructors">Constructors</h2>
 <h3 id="create">create</h3>
 <pre><code class="pony">new ref create(
-  set: S #read)
-: SetValues[A, H val, S #read] ref^
+  set: S)
+: SetValues[A, H, S] ref^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>set: S #read</li>
+<li>set: S</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../collections-SetValues">SetValues</a>[A, H val, S #read] ref^</li>
+<li><a href="../collections-SetValues">SetValues</a>[A, H, S] ref^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
@@ -2590,12 +2590,12 @@ were added or removed from the set.</p>
 <p>Returns the next value, or raises an error if there isn't one. If values
 are added during iteration, this may not return all values.</p>
 <pre><code class="pony">fun ref next()
-: S #read-&gt;A ?
+: S-&gt;A ?
 </code></pre>
 
 <h4 id="returns_2">Returns</h4>
 <ul>
-<li>S #read-&gt;A ?</li>
+<li>S-&gt;A ?</li>
 </ul>
 <hr />
               

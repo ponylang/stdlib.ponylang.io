@@ -2724,17 +2724,17 @@ returns true, otherwise false is returned.</p>
 
 <p><code>[1, 2, 3]</code></p>
 <pre><code class="pony">fun ref collect[optional B: Seq[A!] ref](
-  coll: B ref)
-: B ref^
+  coll: B)
+: B^
 </code></pre>
 
 <h4 id="parameters_4">Parameters</h4>
 <ul>
-<li>coll: B ref</li>
+<li>coll: B</li>
 </ul>
 <h4 id="returns_6">Returns</h4>
 <ul>
-<li>B ref^</li>
+<li>B^</li>
 </ul>
 <hr />
 <h3 id="count">count</h3>
@@ -2773,7 +2773,7 @@ the input iterator should be finite.</p>
 <li><a href="../itertools-Iter">Iter</a>[A!] ref^</li>
 </ul>
 <hr />
-<h3 id="enum91optional-b-real91b-val93-val-i8-val-i16-val-i32-val">enum[optional B: (<a href="../builtin-Real">Real</a>[B val] val &amp; (<a href="../builtin-I8">I8</a> val | <a href="../builtin-I16">I16</a> val | <a href="../builtin-I32">I32</a> val |</h3>
+<h3 id="enum91optional-b-real91b93-val-i8-val-i16-val-i32-val">enum[optional B: (<a href="../builtin-Real">Real</a>[B] val &amp; (<a href="../builtin-I8">I8</a> val | <a href="../builtin-I16">I16</a> val | <a href="../builtin-I32">I32</a> val |</h3>
 <pre><code>[I64](builtin-I64) val | [I128](builtin-I128) val | [ILong](builtin-ILong) val | 
 [ISize](builtin-ISize) val | [U8](builtin-U8) val | [U16](builtin-U16) val | 
 [U32](builtin-U32) val | [U64](builtin-U64) val | [U128](builtin-U128) val | 
@@ -2788,18 +2788,18 @@ value from the iterator.</p>
 </code></pre>
 
 <p><code>(0, 1) (1, 2) (2, 3)</code></p>
-<pre><code class="pony">fun ref enum[optional B: (Real[B val] val &amp; (I8 val | I16 val | I32 val | 
+<pre><code class="pony">fun ref enum[optional B: (Real[B] val &amp; (I8 val | I16 val | I32 val | 
     I64 val | I128 val | ILong val | 
     ISize val | U8 val | U16 val | 
     U32 val | U64 val | U128 val | 
     ULong val | USize val | F32 val | 
     F64 val))]()
-: Iter[(B val , A)] ref^
+: Iter[(B , A)] ref^
 </code></pre>
 
 <h4 id="returns_9">Returns</h4>
 <ul>
-<li><a href="../itertools-Iter">Iter</a>[(B val , A)] ref^</li>
+<li><a href="../itertools-Iter">Iter</a>[(B , A)] ref^</li>
 </ul>
 <hr />
 <h3 id="filter">filter</h3>

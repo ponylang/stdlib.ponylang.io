@@ -3984,7 +3984,7 @@ made UTF-8 safe.</p>
 <pre><code>[I64](builtin-I64) val | [I128](builtin-I128) val | [ILong](builtin-ILong) val | 
 [ISize](builtin-ISize) val | [U8](builtin-U8) val | [U16](builtin-U16) val | 
 [U32](builtin-U32) val | [U64](builtin-U64) val | [U128](builtin-U128) val | 
-[ULong](builtin-ULong) val | [USize](builtin-USize) val) &amp; [Integer](builtin-Integer)\[A val\] val)\]
+[ULong](builtin-ULong) val | [USize](builtin-USize) val) &amp; [Integer](builtin-Integer)\[A\] val)\]
 </code></pre>
 <p>Read an integer from the specified location in this string. The integer
 value read and the number of characters consumed are reported.
@@ -3999,10 +3999,10 @@ Underscore characters are allowed throughout the integer and are ignored.</p>
     I64 val | I128 val | ILong val | 
     ISize val | U8 val | U16 val | 
     U32 val | U64 val | U128 val | 
-    ULong val | USize val) &amp; Integer[A val] val)](
+    ULong val | USize val) &amp; Integer[A] val)](
   offset: ISize val = 0,
   base: U8 val = 0)
-: (A val , USize val) ?
+: (A , USize val) ?
 </code></pre>
 
 <h4 id="parameters_65">Parameters</h4>
@@ -4012,7 +4012,7 @@ Underscore characters are allowed throughout the integer and are ignored.</p>
 </ul>
 <h4 id="returns_83">Returns</h4>
 <ul>
-<li>(A val , <a href="../builtin-USize">USize</a> val) ?</li>
+<li>(A , <a href="../builtin-USize">USize</a> val) ?</li>
 </ul>
 <hr />
 <h3 id="f32">f32</h3>
@@ -4174,7 +4174,7 @@ Underscore characters are allowed throughout the integer and are ignored.</p>
 <pre><code>[I64](builtin-I64) val | [I128](builtin-I128) val | [ILong](builtin-ILong) val | 
 [ISize](builtin-ISize) val | [U8](builtin-U8) val | [U16](builtin-U16) val | 
 [U32](builtin-U32) val | [U64](builtin-U64) val | [U128](builtin-U128) val | 
-[ULong](builtin-ULong) val | [USize](builtin-USize) val) &amp; [Integer](builtin-Integer)\[A val\] val)\]
+[ULong](builtin-ULong) val | [USize](builtin-USize) val) &amp; [Integer](builtin-Integer)\[A\] val)\]
 </code></pre>
 <p>Convert the <em>whole</em> string to the specified type.
 If there are any other characters in the string, or the integer found is
@@ -4183,9 +4183,9 @@ out of range for the target type then an error is thrown.</p>
     I64 val | I128 val | ILong val | 
     ISize val | U8 val | U16 val | 
     U32 val | U64 val | U128 val | 
-    ULong val | USize val) &amp; Integer[A val] val)](
+    ULong val | USize val) &amp; Integer[A] val)](
   base: U8 val)
-: A val ?
+: A ?
 </code></pre>
 
 <h4 id="parameters_73">Parameters</h4>
@@ -4194,14 +4194,14 @@ out of range for the target type then an error is thrown.</p>
 </ul>
 <h4 id="returns_95">Returns</h4>
 <ul>
-<li>A val ?</li>
+<li>A ?</li>
 </ul>
 <hr />
 <h3 id="_read_int_base91a-i8-val-i16-val-i32-val">_read_int_base[A: ((<a href="../builtin-I8">I8</a> val | <a href="../builtin-I16">I16</a> val | <a href="../builtin-I32">I32</a> val |</h3>
 <pre><code>[I64](builtin-I64) val | [I128](builtin-I128) val | [ILong](builtin-ILong) val | 
 [ISize](builtin-ISize) val | [U8](builtin-U8) val | [U16](builtin-U16) val | 
 [U32](builtin-U32) val | [U64](builtin-U64) val | [U128](builtin-U128) val | 
-[ULong](builtin-ULong) val | [USize](builtin-USize) val) &amp; [Integer](builtin-Integer)\[A val\] val)\]
+[ULong](builtin-ULong) val | [USize](builtin-USize) val) &amp; [Integer](builtin-Integer)\[A\] val)\]
 </code></pre>
 <p>Determine the base of an integer starting at the specified index.
 If a non-0 base is given use that. If given base is 0 read the base
@@ -4213,10 +4213,10 @@ Report the base found and the number of characters in the prefix.</p>
     I64 val | I128 val | ILong val | 
     ISize val | U8 val | U16 val | 
     U32 val | U64 val | U128 val | 
-    ULong val | USize val) &amp; Integer[A val] val)](
+    ULong val | USize val) &amp; Integer[A] val)](
   base: U8 val,
   index: USize val)
-: (A val , USize val)
+: (A , USize val)
 </code></pre>
 
 <h4 id="parameters_74">Parameters</h4>
@@ -4226,7 +4226,7 @@ Report the base found and the number of characters in the prefix.</p>
 </ul>
 <h4 id="returns_96">Returns</h4>
 <ul>
-<li>(A val , <a href="../builtin-USize">USize</a> val)</li>
+<li>(A , <a href="../builtin-USize">USize</a> val)</li>
 </ul>
 <hr />
 <h3 id="_set">_set</h3>

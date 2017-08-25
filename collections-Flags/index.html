@@ -447,7 +447,7 @@
     <a class="current" href="./">class Flags</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#flags91a-flag91b-val93-val-optional-b-u8-val-u16-val-u32-val">Flags[A: Flag[B val] val, optional B: ((U8 val | U16 val | U32 val |</a></li>
+    <li class="toctree-l3"><a href="#flags91a-flag91b93-val-optional-b-u8-val-u16-val-u32-val">Flags[A: Flag[B] val, optional B: ((U8 val | U16 val | U32 val |</a></li>
     
         <ul>
         
@@ -2546,9 +2546,9 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="flags91a-flag91b-val93-val-optional-b-u8-val-u16-val-u32-val">Flags[A: <a href="../collections-Flag">Flag</a>[B val] val, optional B: ((<a href="../builtin-U8">U8</a> val | <a href="../builtin-U16">U16</a> val | <a href="../builtin-U32">U32</a> val |</h1>
+                <h1 id="flags91a-flag91b93-val-optional-b-u8-val-u16-val-u32-val">Flags[A: <a href="../collections-Flag">Flag</a>[B] val, optional B: ((<a href="../builtin-U8">U8</a> val | <a href="../builtin-U16">U16</a> val | <a href="../builtin-U32">U32</a> val |</h1>
 <pre><code>[U64](builtin-U64) val | [U128](builtin-U128) val | [ULong](builtin-ULong) val | 
-[USize](builtin-USize) val) &amp; [Integer](builtin-Integer)\[B val\] val)\]
+[USize](builtin-USize) val) &amp; [Integer](builtin-Integer)\[B\] val)\]
 </code></pre>
 <p>Flags is a set of flags. The flags that are recognised should be passed as
 a union type for type parameter A. For example:</p>
@@ -2560,50 +2560,50 @@ a union type for type parameter A. For example:</p>
   fun value(): U64 =&gt; 4</p>
 <p>type Features is Flags[(SSE | AVX | RDTSCP)]</p>
 <p>Type parameter B is the unlying field used to store the flags.</p>
-<pre><code class="pony">class ref Flags[A: Flag[B val] val, optional B: ((U8 val | U16 val | U32 val | 
+<pre><code class="pony">class ref Flags[A: Flag[B] val, optional B: ((U8 val | U16 val | U32 val | 
     U64 val | U128 val | ULong val | 
-    USize val) &amp; Integer[B val] val)] is
-  Comparable[Flags[A val, B val] box] ref
+    USize val) &amp; Integer[B] val)] is
+  Comparable[Flags[A, B] box] ref
 </code></pre>
 
 <h4 id="implements">Implements</h4>
 <ul>
-<li><a href="../builtin-Comparable">Comparable</a>[<a href="../collections-Flags">Flags</a>[A val, B val] box] ref</li>
+<li><a href="../builtin-Comparable">Comparable</a>[<a href="../collections-Flags">Flags</a>[A, B] box] ref</li>
 </ul>
 <hr />
 <h2 id="constructors">Constructors</h2>
 <h3 id="create">create</h3>
 <pre><code class="pony">new iso create()
-: Flags[A val, B val] iso^
+: Flags[A, B] iso^
 </code></pre>
 
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../collections-Flags">Flags</a>[A val, B val] iso^</li>
+<li><a href="../collections-Flags">Flags</a>[A, B] iso^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
 <h3 id="value">value</h3>
 <p>Returns the bit encoding of the set flags.</p>
 <pre><code class="pony">fun box value()
-: B val
+: B
 </code></pre>
 
 <h4 id="returns_1">Returns</h4>
 <ul>
-<li>B val</li>
+<li>B</li>
 </ul>
 <hr />
 <h3 id="apply">apply</h3>
 <p>Returns true if the flag is set.</p>
 <pre><code class="pony">fun box apply(
-  flag: A val)
+  flag: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>flag: A val</li>
+<li>flag: A</li>
 </ul>
 <h4 id="returns_2">Returns</h4>
 <ul>
@@ -2635,13 +2635,13 @@ a union type for type parameter A. For example:</p>
 <h3 id="set">set</h3>
 <p>Sets the flag.</p>
 <pre><code class="pony">fun ref set(
-  flag: A val)
+  flag: A)
 : None val
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
-<li>flag: A val</li>
+<li>flag: A</li>
 </ul>
 <h4 id="returns_5">Returns</h4>
 <ul>
@@ -2651,13 +2651,13 @@ a union type for type parameter A. For example:</p>
 <h3 id="unset">unset</h3>
 <p>Unsets the flag.</p>
 <pre><code class="pony">fun ref unset(
-  flag: A val)
+  flag: A)
 : None val
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
 <ul>
-<li>flag: A val</li>
+<li>flag: A</li>
 </ul>
 <h4 id="returns_6">Returns</h4>
 <ul>
@@ -2667,13 +2667,13 @@ a union type for type parameter A. For example:</p>
 <h3 id="flip">flip</h3>
 <p>Sets the flag if it is unset, unsets the flag if it is set.</p>
 <pre><code class="pony">fun ref flip(
-  flag: A val)
+  flag: A)
 : None val
 </code></pre>
 
 <h4 id="parameters_3">Parameters</h4>
 <ul>
-<li>flag: A val</li>
+<li>flag: A</li>
 </ul>
 <h4 id="returns_7">Returns</h4>
 <ul>
@@ -2683,13 +2683,13 @@ a union type for type parameter A. For example:</p>
 <h3 id="union">union</h3>
 <p>The union of this and that.</p>
 <pre><code class="pony">fun ref union(
-  that: Flags[A val, B val] box)
+  that: Flags[A, B] box)
 : None val
 </code></pre>
 
 <h4 id="parameters_4">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-Flags">Flags</a>[A val, B val] box</li>
+<li>that: <a href="../collections-Flags">Flags</a>[A, B] box</li>
 </ul>
 <h4 id="returns_8">Returns</h4>
 <ul>
@@ -2699,13 +2699,13 @@ a union type for type parameter A. For example:</p>
 <h3 id="intersect">intersect</h3>
 <p>The intersection of this and that.</p>
 <pre><code class="pony">fun ref intersect(
-  that: Flags[A val, B val] box)
+  that: Flags[A, B] box)
 : None val
 </code></pre>
 
 <h4 id="parameters_5">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-Flags">Flags</a>[A val, B val] box</li>
+<li>that: <a href="../collections-Flags">Flags</a>[A, B] box</li>
 </ul>
 <h4 id="returns_9">Returns</h4>
 <ul>
@@ -2715,13 +2715,13 @@ a union type for type parameter A. For example:</p>
 <h3 id="difference">difference</h3>
 <p>The symmetric difference of this and that.</p>
 <pre><code class="pony">fun ref difference(
-  that: Flags[A val, B val] box)
+  that: Flags[A, B] box)
 : None val
 </code></pre>
 
 <h4 id="parameters_6">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-Flags">Flags</a>[A val, B val] box</li>
+<li>that: <a href="../collections-Flags">Flags</a>[A, B] box</li>
 </ul>
 <h4 id="returns_10">Returns</h4>
 <ul>
@@ -2731,13 +2731,13 @@ a union type for type parameter A. For example:</p>
 <h3 id="remove">remove</h3>
 <p>Unset flags that are set in that.</p>
 <pre><code class="pony">fun ref remove(
-  that: Flags[A val, B val] box)
+  that: Flags[A, B] box)
 : None val
 </code></pre>
 
 <h4 id="parameters_7">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-Flags">Flags</a>[A val, B val] box</li>
+<li>that: <a href="../collections-Flags">Flags</a>[A, B] box</li>
 </ul>
 <h4 id="returns_11">Returns</h4>
 <ul>
@@ -2747,120 +2747,120 @@ a union type for type parameter A. For example:</p>
 <h3 id="add">add</h3>
 <p>This with the flag set.</p>
 <pre><code class="pony">fun box add(
-  flag: A val)
-: Flags[A val, B val] iso^
+  flag: A)
+: Flags[A, B] iso^
 </code></pre>
 
 <h4 id="parameters_8">Parameters</h4>
 <ul>
-<li>flag: A val</li>
+<li>flag: A</li>
 </ul>
 <h4 id="returns_12">Returns</h4>
 <ul>
-<li><a href="../collections-Flags">Flags</a>[A val, B val] iso^</li>
+<li><a href="../collections-Flags">Flags</a>[A, B] iso^</li>
 </ul>
 <hr />
 <h3 id="sub">sub</h3>
 <p>This with the flag unset.</p>
 <pre><code class="pony">fun box sub(
-  flag: A val)
-: Flags[A val, B val] iso^
+  flag: A)
+: Flags[A, B] iso^
 </code></pre>
 
 <h4 id="parameters_9">Parameters</h4>
 <ul>
-<li>flag: A val</li>
+<li>flag: A</li>
 </ul>
 <h4 id="returns_13">Returns</h4>
 <ul>
-<li><a href="../collections-Flags">Flags</a>[A val, B val] iso^</li>
+<li><a href="../collections-Flags">Flags</a>[A, B] iso^</li>
 </ul>
 <hr />
 <h3 id="op_or">op_or</h3>
 <p>The union of this and that.</p>
 <pre><code class="pony">fun box op_or(
-  that: Flags[A val, B val] box)
-: Flags[A val, B val] iso^
+  that: Flags[A, B] box)
+: Flags[A, B] iso^
 </code></pre>
 
 <h4 id="parameters_10">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-Flags">Flags</a>[A val, B val] box</li>
+<li>that: <a href="../collections-Flags">Flags</a>[A, B] box</li>
 </ul>
 <h4 id="returns_14">Returns</h4>
 <ul>
-<li><a href="../collections-Flags">Flags</a>[A val, B val] iso^</li>
+<li><a href="../collections-Flags">Flags</a>[A, B] iso^</li>
 </ul>
 <hr />
 <h3 id="op_and">op_and</h3>
 <p>The intersection of this and that.</p>
 <pre><code class="pony">fun box op_and(
-  that: Flags[A val, B val] box)
-: Flags[A val, B val] iso^
+  that: Flags[A, B] box)
+: Flags[A, B] iso^
 </code></pre>
 
 <h4 id="parameters_11">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-Flags">Flags</a>[A val, B val] box</li>
+<li>that: <a href="../collections-Flags">Flags</a>[A, B] box</li>
 </ul>
 <h4 id="returns_15">Returns</h4>
 <ul>
-<li><a href="../collections-Flags">Flags</a>[A val, B val] iso^</li>
+<li><a href="../collections-Flags">Flags</a>[A, B] iso^</li>
 </ul>
 <hr />
 <h3 id="op_xor">op_xor</h3>
 <p>The symmetric difference of this and that.</p>
 <pre><code class="pony">fun box op_xor(
-  that: Flags[A val, B val] box)
-: Flags[A val, B val] iso^
+  that: Flags[A, B] box)
+: Flags[A, B] iso^
 </code></pre>
 
 <h4 id="parameters_12">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-Flags">Flags</a>[A val, B val] box</li>
+<li>that: <a href="../collections-Flags">Flags</a>[A, B] box</li>
 </ul>
 <h4 id="returns_16">Returns</h4>
 <ul>
-<li><a href="../collections-Flags">Flags</a>[A val, B val] iso^</li>
+<li><a href="../collections-Flags">Flags</a>[A, B] iso^</li>
 </ul>
 <hr />
 <h3 id="without">without</h3>
 <p>The flags in this that are not in that.</p>
 <pre><code class="pony">fun box without(
-  that: Flags[A val, B val] box)
-: Flags[A val, B val] iso^
+  that: Flags[A, B] box)
+: Flags[A, B] iso^
 </code></pre>
 
 <h4 id="parameters_13">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-Flags">Flags</a>[A val, B val] box</li>
+<li>that: <a href="../collections-Flags">Flags</a>[A, B] box</li>
 </ul>
 <h4 id="returns_17">Returns</h4>
 <ul>
-<li><a href="../collections-Flags">Flags</a>[A val, B val] iso^</li>
+<li><a href="../collections-Flags">Flags</a>[A, B] iso^</li>
 </ul>
 <hr />
 <h3 id="clone">clone</h3>
 <p>Create a clone.</p>
 <pre><code class="pony">fun box clone()
-: Flags[A val, B val] iso^
+: Flags[A, B] iso^
 </code></pre>
 
 <h4 id="returns_18">Returns</h4>
 <ul>
-<li><a href="../collections-Flags">Flags</a>[A val, B val] iso^</li>
+<li><a href="../collections-Flags">Flags</a>[A, B] iso^</li>
 </ul>
 <hr />
 <h3 id="eq">eq</h3>
 <p>Returns true if this has the same flags set as that.</p>
 <pre><code class="pony">fun box eq(
-  that: Flags[A val, B val] box)
+  that: Flags[A, B] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_14">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-Flags">Flags</a>[A val, B val] box</li>
+<li>that: <a href="../collections-Flags">Flags</a>[A, B] box</li>
 </ul>
 <h4 id="returns_19">Returns</h4>
 <ul>
@@ -2871,13 +2871,13 @@ a union type for type parameter A. For example:</p>
 <p>Returns true if the flags set on this are a strict subset of the flags set
 on that. Flags is only partially ordered, so lt is not the opposite of ge.</p>
 <pre><code class="pony">fun box lt(
-  that: Flags[A val, B val] box)
+  that: Flags[A, B] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_15">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-Flags">Flags</a>[A val, B val] box</li>
+<li>that: <a href="../collections-Flags">Flags</a>[A, B] box</li>
 </ul>
 <h4 id="returns_20">Returns</h4>
 <ul>
@@ -2889,13 +2889,13 @@ on that. Flags is only partially ordered, so lt is not the opposite of ge.</p>
 that or they are the same. Flags is only partially ordered, so le is not
 the opposite of te.</p>
 <pre><code class="pony">fun box le(
-  that: Flags[A val, B val] box)
+  that: Flags[A, B] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_16">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-Flags">Flags</a>[A val, B val] box</li>
+<li>that: <a href="../collections-Flags">Flags</a>[A, B] box</li>
 </ul>
 <h4 id="returns_21">Returns</h4>
 <ul>
@@ -2907,13 +2907,13 @@ the opposite of te.</p>
 set on that. Flags is only partially ordered, so gt is not the opposite of
 le.</p>
 <pre><code class="pony">fun box gt(
-  that: Flags[A val, B val] box)
+  that: Flags[A, B] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_17">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-Flags">Flags</a>[A val, B val] box</li>
+<li>that: <a href="../collections-Flags">Flags</a>[A, B] box</li>
 </ul>
 <h4 id="returns_22">Returns</h4>
 <ul>
@@ -2925,13 +2925,13 @@ le.</p>
 that or they are the same. Flags is only partially ordered, so ge is not
 the opposite of lt.</p>
 <pre><code class="pony">fun box ge(
-  that: Flags[A val, B val] box)
+  that: Flags[A, B] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_18">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-Flags">Flags</a>[A val, B val] box</li>
+<li>that: <a href="../collections-Flags">Flags</a>[A, B] box</li>
 </ul>
 <h4 id="returns_23">Returns</h4>
 <ul>
@@ -2940,13 +2940,13 @@ the opposite of lt.</p>
 <hr />
 <h3 id="compare">compare</h3>
 <pre><code class="pony">fun box compare(
-  that: Flags[A val, B val] box)
+  that: Flags[A, B] box)
 : (Less val | Equal val | Greater val)
 </code></pre>
 
 <h4 id="parameters_19">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-Flags">Flags</a>[A val, B val] box</li>
+<li>that: <a href="../collections-Flags">Flags</a>[A, B] box</li>
 </ul>
 <h4 id="returns_24">Returns</h4>
 <ul>
@@ -2955,13 +2955,13 @@ the opposite of lt.</p>
 <hr />
 <h3 id="ne">ne</h3>
 <pre><code class="pony">fun box ne(
-  that: Flags[A val, B val] box)
+  that: Flags[A, B] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_20">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-Flags">Flags</a>[A val, B val] box</li>
+<li>that: <a href="../collections-Flags">Flags</a>[A, B] box</li>
 </ul>
 <h4 id="returns_25">Returns</h4>
 <ul>

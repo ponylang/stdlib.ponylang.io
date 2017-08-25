@@ -2552,7 +2552,7 @@
 <h3 id="empty">empty</h3>
 <pre><code class="pony">new val empty(
   level: U8 val)
-: _VecNode[A #share] val^
+: _VecNode[A] val^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
@@ -2561,41 +2561,41 @@
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-_VecNode">_VecNode</a>[A #share] val^</li>
+<li><a href="../collections-persistent-_VecNode">_VecNode</a>[A] val^</li>
 </ul>
 <hr />
 <h3 id="create">create</h3>
 <pre><code class="pony">new val create(
-  entries: (Array[_VecNode[A #share] val] val | Array[Array[A #share] val] val),
+  entries: (Array[_VecNode[A] val] val | Array[Array[A] val] val),
   level: U8 val)
-: _VecNode[A #share] val^
+: _VecNode[A] val^
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
-<li>entries: (<a href="../builtin-Array">Array</a>[<a href="../collections-persistent-_VecNode">_VecNode</a>[A #share] val] val | <a href="../builtin-Array">Array</a>[<a href="../builtin-Array">Array</a>[A #share] val] val)</li>
+<li>entries: (<a href="../builtin-Array">Array</a>[<a href="../collections-persistent-_VecNode">_VecNode</a>[A] val] val | <a href="../builtin-Array">Array</a>[<a href="../builtin-Array">Array</a>[A] val] val)</li>
 <li>level: <a href="../builtin-U8">U8</a> val</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-_VecNode">_VecNode</a>[A #share] val^</li>
+<li><a href="../collections-persistent-_VecNode">_VecNode</a>[A] val^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
 <h3 id="new_root">new_root</h3>
 <pre><code class="pony">fun val new_root()
-: _VecNode[A #share] val
+: _VecNode[A] val
 </code></pre>
 
 <h4 id="returns_2">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-_VecNode">_VecNode</a>[A #share] val</li>
+<li><a href="../collections-persistent-_VecNode">_VecNode</a>[A] val</li>
 </ul>
 <hr />
 <h3 id="apply">apply</h3>
 <pre><code class="pony">fun box apply(
   i: USize val)
-: A #share ?
+: A ?
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
@@ -2604,47 +2604,47 @@
 </ul>
 <h4 id="returns_3">Returns</h4>
 <ul>
-<li>A #share ?</li>
+<li>A ?</li>
 </ul>
 <hr />
 <h3 id="update">update</h3>
 <pre><code class="pony">fun val update(
   i: USize val,
-  value: A #share)
-: _VecNode[A #share] val ?
+  value: A)
+: _VecNode[A] val ?
 </code></pre>
 
 <h4 id="parameters_3">Parameters</h4>
 <ul>
 <li>i: <a href="../builtin-USize">USize</a> val</li>
-<li>value: A #share</li>
+<li>value: A</li>
 </ul>
 <h4 id="returns_4">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-_VecNode">_VecNode</a>[A #share] val ?</li>
+<li><a href="../collections-persistent-_VecNode">_VecNode</a>[A] val ?</li>
 </ul>
 <hr />
 <h3 id="push">push</h3>
 <pre><code class="pony">fun val push(
   i: USize val,
-  tail: Array[A #share] val)
-: _VecNode[A #share] val ?
+  tail: Array[A] val)
+: _VecNode[A] val ?
 </code></pre>
 
 <h4 id="parameters_4">Parameters</h4>
 <ul>
 <li>i: <a href="../builtin-USize">USize</a> val</li>
-<li>tail: <a href="../builtin-Array">Array</a>[A #share] val</li>
+<li>tail: <a href="../builtin-Array">Array</a>[A] val</li>
 </ul>
 <h4 id="returns_5">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-_VecNode">_VecNode</a>[A #share] val ?</li>
+<li><a href="../collections-persistent-_VecNode">_VecNode</a>[A] val ?</li>
 </ul>
 <hr />
 <h3 id="pop">pop</h3>
 <pre><code class="pony">fun val pop(
   i: USize val)
-: (_VecNode[A #share] val , Array[A #share] val) ?
+: (_VecNode[A] val , Array[A] val) ?
 </code></pre>
 
 <h4 id="parameters_5">Parameters</h4>
@@ -2653,22 +2653,22 @@
 </ul>
 <h4 id="returns_6">Returns</h4>
 <ul>
-<li>(<a href="../collections-persistent-_VecNode">_VecNode</a>[A #share] val , <a href="../builtin-Array">Array</a>[A #share] val) ?</li>
+<li>(<a href="../collections-persistent-_VecNode">_VecNode</a>[A] val , <a href="../builtin-Array">Array</a>[A] val) ?</li>
 </ul>
 <hr />
 <h3 id="leaf_nodes">leaf_nodes</h3>
 <pre><code class="pony">fun val leaf_nodes(
-  lns: Array[Array[A #share] val] ref)
-: Array[Array[A #share] val] ref^
+  lns: Array[Array[A] val] ref)
+: Array[Array[A] val] ref^
 </code></pre>
 
 <h4 id="parameters_6">Parameters</h4>
 <ul>
-<li>lns: <a href="../builtin-Array">Array</a>[<a href="../builtin-Array">Array</a>[A #share] val] ref</li>
+<li>lns: <a href="../builtin-Array">Array</a>[<a href="../builtin-Array">Array</a>[A] val] ref</li>
 </ul>
 <h4 id="returns_7">Returns</h4>
 <ul>
-<li><a href="../builtin-Array">Array</a>[<a href="../builtin-Array">Array</a>[A #share] val] ref^</li>
+<li><a href="../builtin-Array">Array</a>[<a href="../builtin-Array">Array</a>[A] val] ref^</li>
 </ul>
 <hr />
               

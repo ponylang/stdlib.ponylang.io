@@ -2558,24 +2558,24 @@ be fulfilled or rejected.</p>
 <h2 id="constructors">Constructors</h2>
 <h3 id="create">create</h3>
 <pre><code class="pony">new tag create()
-: Promise[A #share] tag^
+: Promise[A] tag^
 </code></pre>
 
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../promises-Promise">Promise</a>[A #share] tag^</li>
+<li><a href="../promises-Promise">Promise</a>[A] tag^</li>
 </ul>
 <hr />
 <h2 id="public-behaviours">Public Behaviours</h2>
 <h3 id="apply">apply</h3>
 <p>Fulfill the promise.</p>
 <pre><code class="pony">be apply(
-  value: A #share)
+  value: A)
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>value: A #share</li>
+<li>value: A</li>
 </ul>
 <hr />
 <h3 id="reject">reject</h3>
@@ -2598,19 +2598,19 @@ fulfill the next promise in the chain.</p>
 <p>If there is no reject function, of if the reject function raises an error,
 then the next promise in the chain will be rejected.</p>
 <pre><code class="pony">fun tag next[B: Any #share](
-  fulfill: Fulfill[A #share, B #share] iso,
-  rejected: Reject[B #share] iso = qualify)
-: Promise[B #share] tag
+  fulfill: Fulfill[A, B] iso,
+  rejected: Reject[B] iso = qualify)
+: Promise[B] tag
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
-<li>fulfill: <a href="../promises-Fulfill">Fulfill</a>[A #share, B #share] iso</li>
-<li>rejected: <a href="../promises-Reject">Reject</a>[B #share] iso = qualify</li>
+<li>fulfill: <a href="../promises-Fulfill">Fulfill</a>[A, B] iso</li>
+<li>rejected: <a href="../promises-Reject">Reject</a>[B] iso = qualify</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>
-<li><a href="../promises-Promise">Promise</a>[B #share] tag</li>
+<li><a href="../promises-Promise">Promise</a>[B] tag</li>
 </ul>
 <hr />
 <h3 id="add91optional-b-any-share93">add[optional B: <a href="../builtin-Any">Any</a> #share]</h3>
@@ -2618,17 +2618,17 @@ then the next promise in the chain will be rejected.</p>
 they are fulfilled. If either of the promises is rejected then the new
 promise is also rejected.</p>
 <pre><code class="pony">fun tag add[optional B: Any #share](
-  p: Promise[B #share] tag)
-: Promise[(A #share , B #share)] tag
+  p: Promise[B] tag)
+: Promise[(A , B)] tag
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
 <ul>
-<li>p: <a href="../promises-Promise">Promise</a>[B #share] tag</li>
+<li>p: <a href="../promises-Promise">Promise</a>[B] tag</li>
 </ul>
 <h4 id="returns_2">Returns</h4>
 <ul>
-<li><a href="../promises-Promise">Promise</a>[(A #share , B #share)] tag</li>
+<li><a href="../promises-Promise">Promise</a>[(A , B)] tag</li>
 </ul>
 <hr />
 <h3 id="join">join</h3>
@@ -2636,34 +2636,34 @@ promise is also rejected.</p>
 the given iterator are fulfilled. If the receiver or any promise in the
 sequence is rejected then the new promise is also rejected.</p>
 <pre><code class="pony">fun tag join(
-  ps: Iterator[Promise[A #share] tag] ref)
-: Promise[Array[A #share] val] tag
+  ps: Iterator[Promise[A] tag] ref)
+: Promise[Array[A] val] tag
 </code></pre>
 
 <h4 id="parameters_3">Parameters</h4>
 <ul>
-<li>ps: <a href="../builtin-Iterator">Iterator</a>[<a href="../promises-Promise">Promise</a>[A #share] tag] ref</li>
+<li>ps: <a href="../builtin-Iterator">Iterator</a>[<a href="../promises-Promise">Promise</a>[A] tag] ref</li>
 </ul>
 <h4 id="returns_3">Returns</h4>
 <ul>
-<li><a href="../promises-Promise">Promise</a>[<a href="../builtin-Array">Array</a>[A #share] val] tag</li>
+<li><a href="../promises-Promise">Promise</a>[<a href="../builtin-Array">Array</a>[A] val] tag</li>
 </ul>
 <hr />
 <h3 id="select">select</h3>
 <p>Return a promise that is fulfilled when either promise is fulfilled,
 resulting in a tuple of its value and the other promise.</p>
 <pre><code class="pony">fun tag select(
-  p: Promise[A #share] tag)
-: Promise[(A #share , Promise[A #share] tag)] tag
+  p: Promise[A] tag)
+: Promise[(A , Promise[A] tag)] tag
 </code></pre>
 
 <h4 id="parameters_4">Parameters</h4>
 <ul>
-<li>p: <a href="../promises-Promise">Promise</a>[A #share] tag</li>
+<li>p: <a href="../promises-Promise">Promise</a>[A] tag</li>
 </ul>
 <h4 id="returns_4">Returns</h4>
 <ul>
-<li><a href="../promises-Promise">Promise</a>[(A #share , <a href="../promises-Promise">Promise</a>[A #share] tag)] tag</li>
+<li><a href="../promises-Promise">Promise</a>[(A , <a href="../promises-Promise">Promise</a>[A] tag)] tag</li>
 </ul>
 <hr />
 <h3 id="timeout">timeout</h3>
@@ -2688,12 +2688,12 @@ resulting in a tuple of its value and the other promise.</p>
 or rejected, immediately fulfill or reject the incoming step. Otherwise,
 keep it in a list.</p>
 <pre><code class="pony">be _attach(
-  attach: _IThen[A #share] iso)
+  attach: _IThen[A] iso)
 </code></pre>
 
 <h4 id="parameters_6">Parameters</h4>
 <ul>
-<li>attach: <a href="../promises-_IThen">_IThen</a>[A #share] iso</li>
+<li>attach: <a href="../promises-_IThen">_IThen</a>[A] iso</li>
 </ul>
 <hr />
               

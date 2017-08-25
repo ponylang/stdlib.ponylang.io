@@ -2602,7 +2602,7 @@ value if it exists and is a subtype of A. Otherwise, the promise will be
 rejected.</p>
 <pre><code class="pony">fun tag apply[optional A: Any tag](
   key: String val)
-: Promise[A tag] tag
+: Promise[A] tag
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
@@ -2611,7 +2611,7 @@ rejected.</p>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>
-<li><a href="../promises-Promise">Promise</a>[A tag] tag</li>
+<li><a href="../promises-Promise">Promise</a>[A] tag</li>
 </ul>
 <hr />
 <h2 id="private-behaviours">Private Behaviours</h2>
@@ -2619,13 +2619,13 @@ rejected.</p>
 <p>Fulfills or rejects the promise.</p>
 <pre><code class="pony">be _fetch[A: Any tag](
   key: String val,
-  promise: Promise[A tag] tag)
+  promise: Promise[A] tag)
 </code></pre>
 
 <h4 id="parameters_3">Parameters</h4>
 <ul>
 <li>key: <a href="../builtin-String">String</a> val</li>
-<li>promise: <a href="../promises-Promise">Promise</a>[A tag] tag</li>
+<li>promise: <a href="../promises-Promise">Promise</a>[A] tag</li>
 </ul>
 <hr />
               

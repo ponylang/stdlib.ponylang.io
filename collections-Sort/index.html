@@ -455,7 +455,7 @@
     <a class="current" href="./">primitive Sort</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#sort91a-seq91b-read93-ref-b-comparable91b-read93-read93">Sort[A: Seq[B #read] ref, B: Comparable[B #read] #read]</a></li>
+    <li class="toctree-l3"><a href="#sort91a-seq91b93-ref-b-comparable91b93-read93">Sort[A: Seq[B] ref, B: Comparable[B] #read]</a></li>
     
         <ul>
         
@@ -2546,48 +2546,48 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="sort91a-seq91b-read93-ref-b-comparable91b-read93-read93">Sort[A: <a href="../builtin-Seq">Seq</a>[B #read] ref, B: <a href="../builtin-Comparable">Comparable</a>[B #read] #read]</h1>
+                <h1 id="sort91a-seq91b93-ref-b-comparable91b93-read93">Sort[A: <a href="../builtin-Seq">Seq</a>[B] ref, B: <a href="../builtin-Comparable">Comparable</a>[B] #read]</h1>
 <p>Implementation of dual-pivot quicksort.</p>
-<pre><code class="pony">primitive val Sort[A: Seq[B #read] ref, B: Comparable[B #read] #read]
+<pre><code class="pony">primitive val Sort[A: Seq[B] ref, B: Comparable[B] #read]
 </code></pre>
 
 <h2 id="constructors">Constructors</h2>
 <h3 id="create">create</h3>
 <pre><code class="pony">new val create()
-: Sort[A ref, B #read] val^
+: Sort[A, B] val^
 </code></pre>
 
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../collections-Sort">Sort</a>[A ref, B #read] val^</li>
+<li><a href="../collections-Sort">Sort</a>[A, B] val^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
 <h3 id="apply">apply</h3>
 <p>Sort the given seq.</p>
 <pre><code class="pony">fun box apply(
-  a: A ref)
-: A ref^
+  a: A)
+: A^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>a: A ref</li>
+<li>a: A</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>
-<li>A ref^</li>
+<li>A^</li>
 </ul>
 <hr />
 <h3 id="eq">eq</h3>
 <pre><code class="pony">fun box eq(
-  that: Sort[A ref, B #read] val)
+  that: Sort[A, B] val)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-Sort">Sort</a>[A ref, B #read] val</li>
+<li>that: <a href="../collections-Sort">Sort</a>[A, B] val</li>
 </ul>
 <h4 id="returns_2">Returns</h4>
 <ul>
@@ -2596,13 +2596,13 @@
 <hr />
 <h3 id="ne">ne</h3>
 <pre><code class="pony">fun box ne(
-  that: Sort[A ref, B #read] val)
+  that: Sort[A, B] val)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-Sort">Sort</a>[A ref, B #read] val</li>
+<li>that: <a href="../collections-Sort">Sort</a>[A, B] val</li>
 </ul>
 <h4 id="returns_3">Returns</h4>
 <ul>
@@ -2612,7 +2612,7 @@
 <h2 id="private-functions">Private Functions</h2>
 <h3 id="_sort">_sort</h3>
 <pre><code class="pony">fun box _sort(
-  a: A ref,
+  a: A,
   lo: ISize val,
   hi: ISize val)
 : None val ?
@@ -2620,7 +2620,7 @@
 
 <h4 id="parameters_3">Parameters</h4>
 <ul>
-<li>a: A ref</li>
+<li>a: A</li>
 <li>lo: <a href="../builtin-ISize">ISize</a> val</li>
 <li>hi: <a href="../builtin-ISize">ISize</a> val</li>
 </ul>
@@ -2631,7 +2631,7 @@
 <hr />
 <h3 id="_swap">_swap</h3>
 <pre><code class="pony">fun box _swap(
-  a: A ref,
+  a: A,
   i: ISize val,
   j: ISize val)
 : None val ?
@@ -2639,7 +2639,7 @@
 
 <h4 id="parameters_4">Parameters</h4>
 <ul>
-<li>a: A ref</li>
+<li>a: A</li>
 <li>i: <a href="../builtin-ISize">ISize</a> val</li>
 <li>j: <a href="../builtin-ISize">ISize</a> val</li>
 </ul>

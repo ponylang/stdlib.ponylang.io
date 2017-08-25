@@ -2557,7 +2557,7 @@ type to create different kinds of maps.</p>
 <h3 id="create">create</h3>
 <pre><code class="pony">new ref create(
   prealloc: USize val = 6)
-: HashMap[K, V, H val] ref^
+: HashMap[K, V, H] ref^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
@@ -2566,7 +2566,7 @@ type to create different kinds of maps.</p>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../collections-HashMap">HashMap</a>[K, V, H val] ref^</li>
+<li><a href="../collections-HashMap">HashMap</a>[K, V, H] ref^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
@@ -2644,7 +2644,7 @@ We call</p>
 <pre><code class="pony">fun ref upsert(
   key: K,
   value: V,
-  f: {(V, V): V^}[K, V, H val] box)
+  f: {(V, V): V^}[K, V, H] box)
 : V ?
 </code></pre>
 
@@ -2652,7 +2652,7 @@ We call</p>
 <ul>
 <li>key: K</li>
 <li>value: V</li>
-<li>f: {(V, V): V^}[K, V, H val] box</li>
+<li>f: {(V, V): V^}[K, V, H] box</li>
 </ul>
 <h4 id="returns_5">Returns</h4>
 <ul>
@@ -2776,7 +2776,7 @@ return the provided alternate value.</p>
 <pre><code class="pony">fun box add[optional H2: HashFunction[this-&gt;K!] val](
   key: this-&gt;K!,
   value: this-&gt;V!)
-: HashMap[this-&gt;K!, this-&gt;V!, H2 val] ref^
+: HashMap[this-&gt;K!, this-&gt;V!, H2] ref^
 </code></pre>
 
 <h4 id="parameters_10">Parameters</h4>
@@ -2786,7 +2786,7 @@ return the provided alternate value.</p>
 </ul>
 <h4 id="returns_12">Returns</h4>
 <ul>
-<li><a href="../collections-HashMap">HashMap</a>[this-&gt;K!, this-&gt;V!, H2 val] ref^</li>
+<li><a href="../collections-HashMap">HashMap</a>[this-&gt;K!, this-&gt;V!, H2] ref^</li>
 </ul>
 <hr />
 <h3 id="sub91optional-h2-hashfunction91this-k93-val93">sub[optional H2: <a href="../collections-HashFunction">HashFunction</a>[this-&gt;K!] val]</h3>
@@ -2794,7 +2794,7 @@ return the provided alternate value.</p>
 <pre><code class="pony">fun box sub[optional H2: HashFunction[this-&gt;K!] val](
   key: this-&gt;K!,
   value: this-&gt;V!)
-: HashMap[this-&gt;K!, this-&gt;V!, H2 val] ref^
+: HashMap[this-&gt;K!, this-&gt;V!, H2] ref^
 </code></pre>
 
 <h4 id="parameters_11">Parameters</h4>
@@ -2804,7 +2804,7 @@ return the provided alternate value.</p>
 </ul>
 <h4 id="returns_13">Returns</h4>
 <ul>
-<li><a href="../collections-HashMap">HashMap</a>[this-&gt;K!, this-&gt;V!, H2 val] ref^</li>
+<li><a href="../collections-HashMap">HashMap</a>[this-&gt;K!, this-&gt;V!, H2] ref^</li>
 </ul>
 <hr />
 <h3 id="next_index">next_index</h3>
@@ -2856,12 +2856,12 @@ Raise an error if the index is not populated.</p>
 <p>Create a clone. The key and value types may be different due to aliasing
 and viewpoint adaptation.</p>
 <pre><code class="pony">fun box clone[optional H2: HashFunction[this-&gt;K!] val]()
-: HashMap[this-&gt;K!, this-&gt;V!, H2 val] ref^
+: HashMap[this-&gt;K!, this-&gt;V!, H2] ref^
 </code></pre>
 
 <h4 id="returns_17">Returns</h4>
 <ul>
-<li><a href="../collections-HashMap">HashMap</a>[this-&gt;K!, this-&gt;V!, H2 val] ref^</li>
+<li><a href="../collections-HashMap">HashMap</a>[this-&gt;K!, this-&gt;V!, H2] ref^</li>
 </ul>
 <hr />
 <h3 id="clear">clear</h3>
@@ -2878,34 +2878,34 @@ and viewpoint adaptation.</p>
 <h3 id="keys">keys</h3>
 <p>Return an iterator over the keys.</p>
 <pre><code class="pony">fun box keys()
-: MapKeys[K, V, H val, this-&gt;HashMap[K, V, H val] ref] ref^
+: MapKeys[K, V, H, this-&gt;HashMap[K, V, H] ref] ref^
 </code></pre>
 
 <h4 id="returns_19">Returns</h4>
 <ul>
-<li><a href="../collections-MapKeys">MapKeys</a>[K, V, H val, this-&gt;<a href="../collections-HashMap">HashMap</a>[K, V, H val] ref] ref^</li>
+<li><a href="../collections-MapKeys">MapKeys</a>[K, V, H, this-&gt;<a href="../collections-HashMap">HashMap</a>[K, V, H] ref] ref^</li>
 </ul>
 <hr />
 <h3 id="values">values</h3>
 <p>Return an iterator over the values.</p>
 <pre><code class="pony">fun box values()
-: MapValues[K, V, H val, this-&gt;HashMap[K, V, H val] ref] ref^
+: MapValues[K, V, H, this-&gt;HashMap[K, V, H] ref] ref^
 </code></pre>
 
 <h4 id="returns_20">Returns</h4>
 <ul>
-<li><a href="../collections-MapValues">MapValues</a>[K, V, H val, this-&gt;<a href="../collections-HashMap">HashMap</a>[K, V, H val] ref] ref^</li>
+<li><a href="../collections-MapValues">MapValues</a>[K, V, H, this-&gt;<a href="../collections-HashMap">HashMap</a>[K, V, H] ref] ref^</li>
 </ul>
 <hr />
 <h3 id="pairs">pairs</h3>
 <p>Return an iterator over the keys and values.</p>
 <pre><code class="pony">fun box pairs()
-: MapPairs[K, V, H val, this-&gt;HashMap[K, V, H val] ref] ref^
+: MapPairs[K, V, H, this-&gt;HashMap[K, V, H] ref] ref^
 </code></pre>
 
 <h4 id="returns_21">Returns</h4>
 <ul>
-<li><a href="../collections-MapPairs">MapPairs</a>[K, V, H val, this-&gt;<a href="../collections-HashMap">HashMap</a>[K, V, H val] ref] ref^</li>
+<li><a href="../collections-MapPairs">MapPairs</a>[K, V, H, this-&gt;<a href="../collections-HashMap">HashMap</a>[K, V, H] ref] ref^</li>
 </ul>
 <hr />
 <h2 id="private-functions">Private Functions</h2>

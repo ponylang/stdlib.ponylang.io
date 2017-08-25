@@ -642,7 +642,7 @@
     <a class="current" href="./">class HashSet</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#hashset91a-any-share-h-hashfunction91a-share93-val93">HashSet[A: Any #share, H: HashFunction[A #share] val]</a></li>
+    <li class="toctree-l3"><a href="#hashset91a-any-share-h-hashfunction91a93-val93">HashSet[A: Any #share, H: HashFunction[A] val]</a></li>
     
         <ul>
         
@@ -2546,42 +2546,42 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="hashset91a-any-share-h-hashfunction91a-share93-val93">HashSet[A: <a href="../builtin-Any">Any</a> #share, H: <a href="../collections-HashFunction">HashFunction</a>[A #share] val]</h1>
+                <h1 id="hashset91a-any-share-h-hashfunction91a93-val93">HashSet[A: <a href="../builtin-Any">Any</a> #share, H: <a href="../collections-HashFunction">HashFunction</a>[A] val]</h1>
 <p>A set, built on top of persistent Map. This is implemented as map of an
 alias of a type to itself.</p>
-<pre><code class="pony">class val HashSet[A: Any #share, H: HashFunction[A #share] val] is
-  Comparable[HashSet[A #share, H val] box] ref
+<pre><code class="pony">class val HashSet[A: Any #share, H: HashFunction[A] val] is
+  Comparable[HashSet[A, H] box] ref
 </code></pre>
 
 <h4 id="implements">Implements</h4>
 <ul>
-<li><a href="../builtin-Comparable">Comparable</a>[<a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] box] ref</li>
+<li><a href="../builtin-Comparable">Comparable</a>[<a href="../collections-persistent-HashSet">HashSet</a>[A, H] box] ref</li>
 </ul>
 <hr />
 <h2 id="constructors">Constructors</h2>
 <h3 id="create">create</h3>
 <pre><code class="pony">new val create()
-: HashSet[A #share, H val] val^
+: HashSet[A, H] val^
 </code></pre>
 
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] val^</li>
+<li><a href="../collections-persistent-HashSet">HashSet</a>[A, H] val^</li>
 </ul>
 <hr />
 <h3 id="_create">_create</h3>
 <pre><code class="pony">new val _create(
-  map': HashMap[A #share, A #share, H val] val)
-: HashSet[A #share, H val] val^
+  map': HashMap[A, A, H] val)
+: HashSet[A, H] val^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>map': <a href="../collections-persistent-HashMap">HashMap</a>[A #share, A #share, H val] val</li>
+<li>map': <a href="../collections-persistent-HashMap">HashMap</a>[A, A, H] val</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] val^</li>
+<li><a href="../collections-persistent-HashSet">HashSet</a>[A, H] val^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
@@ -2599,29 +2599,29 @@ alias of a type to itself.</p>
 <h3 id="apply">apply</h3>
 <p>Return the value if it is in the set, otherwise raise an error.</p>
 <pre><code class="pony">fun box apply(
-  value: A #share)
-: A #share ?
+  value: A)
+: A ?
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
-<li>value: A #share</li>
+<li>value: A</li>
 </ul>
 <h4 id="returns_3">Returns</h4>
 <ul>
-<li>A #share ?</li>
+<li>A ?</li>
 </ul>
 <hr />
 <h3 id="contains">contains</h3>
 <p>Check whether the set contains the value.</p>
 <pre><code class="pony">fun box contains(
-  value: A #share)
+  value: A)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
 <ul>
-<li>value: A #share</li>
+<li>value: A</li>
 </ul>
 <h4 id="returns_4">Returns</h4>
 <ul>
@@ -2631,109 +2631,109 @@ alias of a type to itself.</p>
 <h3 id="add">add</h3>
 <p>Return a set with the value added.</p>
 <pre><code class="pony">fun val add(
-  value: A #share)
-: HashSet[A #share, H val] val
+  value: A)
+: HashSet[A, H] val
 </code></pre>
 
 <h4 id="parameters_3">Parameters</h4>
 <ul>
-<li>value: A #share</li>
+<li>value: A</li>
 </ul>
 <h4 id="returns_5">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] val</li>
+<li><a href="../collections-persistent-HashSet">HashSet</a>[A, H] val</li>
 </ul>
 <hr />
 <h3 id="sub">sub</h3>
 <p>Return a set with the value removed.</p>
 <pre><code class="pony">fun val sub(
-  value: A #share)
-: HashSet[A #share, H val] val
+  value: A)
+: HashSet[A, H] val
 </code></pre>
 
 <h4 id="parameters_4">Parameters</h4>
 <ul>
-<li>value: A #share</li>
+<li>value: A</li>
 </ul>
 <h4 id="returns_6">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] val</li>
+<li><a href="../collections-persistent-HashSet">HashSet</a>[A, H] val</li>
 </ul>
 <hr />
 <h3 id="op_or">op_or</h3>
 <p>Return a set with the elements of both this and that.</p>
 <pre><code class="pony">fun val op_or(
-  that: (HashSet[A #share, H val] val | Iterator[A #share] ref))
-: HashSet[A #share, H val] val
+  that: (HashSet[A, H] val | Iterator[A] ref))
+: HashSet[A, H] val
 </code></pre>
 
 <h4 id="parameters_5">Parameters</h4>
 <ul>
-<li>that: (<a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] val | <a href="../builtin-Iterator">Iterator</a>[A #share] ref)</li>
+<li>that: (<a href="../collections-persistent-HashSet">HashSet</a>[A, H] val | <a href="../builtin-Iterator">Iterator</a>[A] ref)</li>
 </ul>
 <h4 id="returns_7">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] val</li>
+<li><a href="../collections-persistent-HashSet">HashSet</a>[A, H] val</li>
 </ul>
 <hr />
 <h3 id="op_and">op_and</h3>
 <p>Return a set with the elements that are in both this and that.</p>
 <pre><code class="pony">fun val op_and(
-  that: (HashSet[A #share, H val] val | Iterator[A #share] ref))
-: HashSet[A #share, H val] val
+  that: (HashSet[A, H] val | Iterator[A] ref))
+: HashSet[A, H] val
 </code></pre>
 
 <h4 id="parameters_6">Parameters</h4>
 <ul>
-<li>that: (<a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] val | <a href="../builtin-Iterator">Iterator</a>[A #share] ref)</li>
+<li>that: (<a href="../collections-persistent-HashSet">HashSet</a>[A, H] val | <a href="../builtin-Iterator">Iterator</a>[A] ref)</li>
 </ul>
 <h4 id="returns_8">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] val</li>
+<li><a href="../collections-persistent-HashSet">HashSet</a>[A, H] val</li>
 </ul>
 <hr />
 <h3 id="op_xor">op_xor</h3>
 <p>Return a set with elements that are in either this or that, but not both.</p>
 <pre><code class="pony">fun val op_xor(
-  that: (HashSet[A #share, H val] val | Iterator[A #share] ref))
-: HashSet[A #share, H val] val
+  that: (HashSet[A, H] val | Iterator[A] ref))
+: HashSet[A, H] val
 </code></pre>
 
 <h4 id="parameters_7">Parameters</h4>
 <ul>
-<li>that: (<a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] val | <a href="../builtin-Iterator">Iterator</a>[A #share] ref)</li>
+<li>that: (<a href="../collections-persistent-HashSet">HashSet</a>[A, H] val | <a href="../builtin-Iterator">Iterator</a>[A] ref)</li>
 </ul>
 <h4 id="returns_9">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] val</li>
+<li><a href="../collections-persistent-HashSet">HashSet</a>[A, H] val</li>
 </ul>
 <hr />
 <h3 id="without">without</h3>
 <p>Return a set with the elements of this that are not in that.</p>
 <pre><code class="pony">fun val without(
-  that: (HashSet[A #share, H val] val | Iterator[A #share] ref))
-: HashSet[A #share, H val] val
+  that: (HashSet[A, H] val | Iterator[A] ref))
+: HashSet[A, H] val
 </code></pre>
 
 <h4 id="parameters_8">Parameters</h4>
 <ul>
-<li>that: (<a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] val | <a href="../builtin-Iterator">Iterator</a>[A #share] ref)</li>
+<li>that: (<a href="../collections-persistent-HashSet">HashSet</a>[A, H] val | <a href="../builtin-Iterator">Iterator</a>[A] ref)</li>
 </ul>
 <h4 id="returns_10">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] val</li>
+<li><a href="../collections-persistent-HashSet">HashSet</a>[A, H] val</li>
 </ul>
 <hr />
 <h3 id="eq">eq</h3>
 <p>Return true if this and that contain the same elements.</p>
 <pre><code class="pony">fun box eq(
-  that: HashSet[A #share, H val] box)
+  that: HashSet[A, H] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_9">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] box</li>
+<li>that: <a href="../collections-persistent-HashSet">HashSet</a>[A, H] box</li>
 </ul>
 <h4 id="returns_11">Returns</h4>
 <ul>
@@ -2744,13 +2744,13 @@ alias of a type to itself.</p>
 <p>Return true if every element in this is also in that, and this has fewer
 elements than that.</p>
 <pre><code class="pony">fun box lt(
-  that: HashSet[A #share, H val] box)
+  that: HashSet[A, H] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_10">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] box</li>
+<li>that: <a href="../collections-persistent-HashSet">HashSet</a>[A, H] box</li>
 </ul>
 <h4 id="returns_12">Returns</h4>
 <ul>
@@ -2760,13 +2760,13 @@ elements than that.</p>
 <h3 id="le">le</h3>
 <p>Return true if every element in this is also in that.</p>
 <pre><code class="pony">fun box le(
-  that: HashSet[A #share, H val] box)
+  that: HashSet[A, H] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_11">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] box</li>
+<li>that: <a href="../collections-persistent-HashSet">HashSet</a>[A, H] box</li>
 </ul>
 <h4 id="returns_13">Returns</h4>
 <ul>
@@ -2777,13 +2777,13 @@ elements than that.</p>
 <p>Return true if every element in that is also in this, and this has more
 elements than that.</p>
 <pre><code class="pony">fun box gt(
-  that: HashSet[A #share, H val] box)
+  that: HashSet[A, H] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_12">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] box</li>
+<li>that: <a href="../collections-persistent-HashSet">HashSet</a>[A, H] box</li>
 </ul>
 <h4 id="returns_14">Returns</h4>
 <ul>
@@ -2793,13 +2793,13 @@ elements than that.</p>
 <h3 id="ge">ge</h3>
 <p>Return true if every element in that is also in this.</p>
 <pre><code class="pony">fun box ge(
-  that: HashSet[A #share, H val] box)
+  that: HashSet[A, H] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_13">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] box</li>
+<li>that: <a href="../collections-persistent-HashSet">HashSet</a>[A, H] box</li>
 </ul>
 <h4 id="returns_15">Returns</h4>
 <ul>
@@ -2809,23 +2809,23 @@ elements than that.</p>
 <h3 id="values">values</h3>
 <p>Return an iterator over the values in the set.</p>
 <pre><code class="pony">fun box values()
-: Iterator[A #share] ref^
+: Iterator[A] ref^
 </code></pre>
 
 <h4 id="returns_16">Returns</h4>
 <ul>
-<li><a href="../builtin-Iterator">Iterator</a>[A #share] ref^</li>
+<li><a href="../builtin-Iterator">Iterator</a>[A] ref^</li>
 </ul>
 <hr />
 <h3 id="compare">compare</h3>
 <pre><code class="pony">fun box compare(
-  that: HashSet[A #share, H val] box)
+  that: HashSet[A, H] box)
 : (Less val | Equal val | Greater val)
 </code></pre>
 
 <h4 id="parameters_14">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] box</li>
+<li>that: <a href="../collections-persistent-HashSet">HashSet</a>[A, H] box</li>
 </ul>
 <h4 id="returns_17">Returns</h4>
 <ul>
@@ -2834,13 +2834,13 @@ elements than that.</p>
 <hr />
 <h3 id="ne">ne</h3>
 <pre><code class="pony">fun box ne(
-  that: HashSet[A #share, H val] box)
+  that: HashSet[A, H] box)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_15">Parameters</h4>
 <ul>
-<li>that: <a href="../collections-persistent-HashSet">HashSet</a>[A #share, H val] box</li>
+<li>that: <a href="../collections-persistent-HashSet">HashSet</a>[A, H] box</li>
 </ul>
 <h4 id="returns_18">Returns</h4>
 <ul>

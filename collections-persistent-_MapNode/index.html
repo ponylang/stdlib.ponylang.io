@@ -630,7 +630,7 @@
     <a class="current" href="./">class _MapNode</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#_mapnode91k-any-share-v-any-share-h-hashfunction91k-share93-val93">_MapNode[K: Any #share, V: Any #share, H: HashFunction[K #share] val]</a></li>
+    <li class="toctree-l3"><a href="#_mapnode91k-any-share-v-any-share-h-hashfunction91k93-val93">_MapNode[K: Any #share, V: Any #share, H: HashFunction[K] val]</a></li>
     
         <ul>
         
@@ -2546,15 +2546,15 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_mapnode91k-any-share-v-any-share-h-hashfunction91k-share93-val93">_MapNode[K: <a href="../builtin-Any">Any</a> #share, V: <a href="../builtin-Any">Any</a> #share, H: <a href="../collections-HashFunction">HashFunction</a>[K #share] val]</h1>
-<pre><code class="pony">class val _MapNode[K: Any #share, V: Any #share, H: HashFunction[K #share] val]
+                <h1 id="_mapnode91k-any-share-v-any-share-h-hashfunction91k93-val93">_MapNode[K: <a href="../builtin-Any">Any</a> #share, V: <a href="../builtin-Any">Any</a> #share, H: <a href="../collections-HashFunction">HashFunction</a>[K] val]</h1>
+<pre><code class="pony">class val _MapNode[K: Any #share, V: Any #share, H: HashFunction[K] val]
 </code></pre>
 
 <h2 id="constructors">Constructors</h2>
 <h3 id="empty">empty</h3>
 <pre><code class="pony">new val empty(
   l: U8 val)
-: _MapNode[K #share, V #share, H val] val^
+: _MapNode[K, V, H] val^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
@@ -2563,90 +2563,90 @@
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-_MapNode">_MapNode</a>[K #share, V #share, H val] val^</li>
+<li><a href="../collections-persistent-_MapNode">_MapNode</a>[K, V, H] val^</li>
 </ul>
 <hr />
 <h3 id="create">create</h3>
 <pre><code class="pony">new val create(
-  es: Array[(_MapNode[K #share, V #share, H val] val | Array[(K #share , V #share)] val | (K #share , V #share))] iso,
+  es: Array[(_MapNode[K, V, H] val | Array[(K , V)] val | (K , V))] iso,
   nm: U32 val,
   dm: U32 val,
   l: U8 val)
-: _MapNode[K #share, V #share, H val] val^
+: _MapNode[K, V, H] val^
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
-<li>es: <a href="../builtin-Array">Array</a>[(<a href="../collections-persistent-_MapNode">_MapNode</a>[K #share, V #share, H val] val | <a href="../builtin-Array">Array</a>[(K #share , V #share)] val | (K #share , V #share))] iso</li>
+<li>es: <a href="../builtin-Array">Array</a>[(<a href="../collections-persistent-_MapNode">_MapNode</a>[K, V, H] val | <a href="../builtin-Array">Array</a>[(K , V)] val | (K , V))] iso</li>
 <li>nm: <a href="../builtin-U32">U32</a> val</li>
 <li>dm: <a href="../builtin-U32">U32</a> val</li>
 <li>l: <a href="../builtin-U8">U8</a> val</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-_MapNode">_MapNode</a>[K #share, V #share, H val] val^</li>
+<li><a href="../collections-persistent-_MapNode">_MapNode</a>[K, V, H] val^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
 <h3 id="apply">apply</h3>
 <pre><code class="pony">fun val apply(
   hash: U32 val,
-  key: K #share)
-: V #share ?
+  key: K)
+: V ?
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
 <ul>
 <li>hash: <a href="../builtin-U32">U32</a> val</li>
-<li>key: K #share</li>
+<li>key: K</li>
 </ul>
 <h4 id="returns_2">Returns</h4>
 <ul>
-<li>V #share ?</li>
+<li>V ?</li>
 </ul>
 <hr />
 <h3 id="update">update</h3>
 <pre><code class="pony">fun val update(
   hash: U32 val,
-  leaf: (K #share , V #share))
-: (_MapNode[K #share, V #share, H val] val , Bool val) ?
+  leaf: (K , V))
+: (_MapNode[K, V, H] val , Bool val) ?
 </code></pre>
 
 <h4 id="parameters_3">Parameters</h4>
 <ul>
 <li>hash: <a href="../builtin-U32">U32</a> val</li>
-<li>leaf: (K #share , V #share)</li>
+<li>leaf: (K , V)</li>
 </ul>
 <h4 id="returns_3">Returns</h4>
 <ul>
-<li>(<a href="../collections-persistent-_MapNode">_MapNode</a>[K #share, V #share, H val] val , <a href="../builtin-Bool">Bool</a> val) ?</li>
+<li>(<a href="../collections-persistent-_MapNode">_MapNode</a>[K, V, H] val , <a href="../builtin-Bool">Bool</a> val) ?</li>
 </ul>
 <hr />
 <h3 id="remove">remove</h3>
 <pre><code class="pony">fun val remove(
   hash: U32 val,
-  key: K #share)
-: _MapNode[K #share, V #share, H val] val ?
+  key: K)
+: _MapNode[K, V, H] val ?
 </code></pre>
 
 <h4 id="parameters_4">Parameters</h4>
 <ul>
 <li>hash: <a href="../builtin-U32">U32</a> val</li>
-<li>key: K #share</li>
+<li>key: K</li>
 </ul>
 <h4 id="returns_4">Returns</h4>
 <ul>
-<li><a href="../collections-persistent-_MapNode">_MapNode</a>[K #share, V #share, H val] val ?</li>
+<li><a href="../collections-persistent-_MapNode">_MapNode</a>[K, V, H] val ?</li>
 </ul>
 <hr />
 <h3 id="entries">entries</h3>
 <pre><code class="pony">fun box entries()
-: Array[(_MapNode[K #share, V #share, H val] val | Array[(K #share , V #share)] val | (K #share , V #share))] val
+: Array[(_MapNode[K, V, H] val | Array[(K , V)] val | (K , V))] val
 </code></pre>
 
 <h4 id="returns_5">Returns</h4>
 <ul>
-<li><a href="../builtin-Array">Array</a>[(<a href="../collections-persistent-_MapNode">_MapNode</a>[K #share, V #share, H val] val | <a href="../builtin-Array">Array</a>[(K #share , V #share)] val | (K #share , V #share))] val</li>
+<li><a href="../builtin-Array">Array</a>[(<a href="../collections-persistent-_MapNode">_MapNode</a>[K, V, H] val | <a href="../builtin-Array">Array</a>[(K , V)] val | (K , V))] val</li>
 </ul>
 <hr />
 <h2 id="private-functions">Private Functions</h2>

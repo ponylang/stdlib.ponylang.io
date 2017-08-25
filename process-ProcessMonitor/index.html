@@ -2581,7 +2581,7 @@
 <hr />
 <h2 id="public-behaviours">Public Behaviours</h2>
 <h3 id="print">print</h3>
-<p>Print some bytes and insert a newline afterwards.</p>
+<p>Print some bytes and append a newline.</p>
 <pre><code class="pony">be print(
   data: (String val | Array[U8 val] val))
 </code></pre>
@@ -2592,8 +2592,7 @@
 </ul>
 <hr />
 <h3 id="write">write</h3>
-<p>Write to STDIN of the child process.
-TODO: Signal back success/failure</p>
+<p>Write to STDIN of the child process.</p>
 <pre><code class="pony">be write(
   data: (String val | Array[U8 val] val))
 </code></pre>
@@ -2626,7 +2625,8 @@ TODO: Signal back success/failure</p>
 </ul>
 <hr />
 <h3 id="done_writing">done_writing</h3>
-<p>Close _stdin_write file descriptor.</p>
+<p>Set the _done_writing flag to true. If the _pending is empty we can
+close the _stdin_write file descriptor.</p>
 <pre><code class="pony">be done_writing()
 </code></pre>
 
@@ -2760,9 +2760,8 @@ If dup2() fails because of EINTR we retry.</p>
 <hr />
 <h3 id="_make_pipe">_make_pipe</h3>
 <p>Creates a pipe, an unidirectional data channel that can be used
-for interprocess communication. We need to set the flags O_NONBLOCK
-and O_CLOEXEC on the two file descriptors here to prevent capturing
-by another thread.</p>
+for interprocess communication. We need to set the flag on the
+two file descriptors here to prevent capturing by another thread.</p>
 <pre><code class="pony">fun box _make_pipe(
   fd_flags: I32 val)
 : (U32 val , U32 val) ?
@@ -2842,46 +2841,15 @@ by another thread.</p>
 <li><a href="../builtin-None">None</a> val</li>
 </ul>
 <hr />
-<h3 id="_write_final">_write_final</h3>
-<pre><code class="pony">fun ref _write_final(
-  data: (String val | Array[U8 val] val))
-: None val
-</code></pre>
-
-<h4 id="parameters_16">Parameters</h4>
-<ul>
-<li>data: (<a href="../builtin-String">String</a> val | <a href="../builtin-Array">Array</a>[<a href="../builtin-U8">U8</a> val] val)</li>
-</ul>
-<h4 id="returns_11">Returns</h4>
-<ul>
-<li><a href="../builtin-None">None</a> val</li>
-</ul>
-<hr />
 <h3 id="_kill_child">_kill_child</h3>
 <p>Terminate the child process.</p>
 <pre><code class="pony">fun box _kill_child()
 : None val ?
 </code></pre>
 
-<h4 id="returns_12">Returns</h4>
+<h4 id="returns_11">Returns</h4>
 <ul>
 <li><a href="../builtin-None">None</a> val ?</li>
-</ul>
-<hr />
-<h3 id="_create_asio_event">_create_asio_event</h3>
-<p>Takes a file descriptor (one end of a pipe) and returns an AsioEvent.</p>
-<pre><code class="pony">fun box _create_asio_event(
-  fd: U32 val)
-: Pointer[AsioEvent val] tag
-</code></pre>
-
-<h4 id="parameters_17">Parameters</h4>
-<ul>
-<li>fd: <a href="../builtin-U32">U32</a> val</li>
-</ul>
-<h4 id="returns_13">Returns</h4>
-<ul>
-<li><a href="../builtin-Pointer">Pointer</a>[<a href="../builtin-AsioEvent">AsioEvent</a> val] tag</li>
 </ul>
 <hr />
 <h3 id="_event_flags">_event_flags</h3>
@@ -2891,11 +2859,11 @@ by another thread.</p>
 : String box
 </code></pre>
 
-<h4 id="parameters_18">Parameters</h4>
+<h4 id="parameters_16">Parameters</h4>
 <ul>
 <li>flags: <a href="../builtin-U32">U32</a> val</li>
 </ul>
-<h4 id="returns_14">Returns</h4>
+<h4 id="returns_12">Returns</h4>
 <ul>
 <li><a href="../builtin-String">String</a> box</li>
 </ul>
@@ -2907,11 +2875,11 @@ by another thread.</p>
 : None val
 </code></pre>
 
-<h4 id="parameters_19">Parameters</h4>
+<h4 id="parameters_17">Parameters</h4>
 <ul>
 <li>fd: <a href="../builtin-U32">U32</a> val</li>
 </ul>
-<h4 id="returns_15">Returns</h4>
+<h4 id="returns_13">Returns</h4>
 <ul>
 <li><a href="../builtin-None">None</a> val</li>
 </ul>
@@ -2922,7 +2890,7 @@ by another thread.</p>
 : None val
 </code></pre>
 
-<h4 id="returns_16">Returns</h4>
+<h4 id="returns_14">Returns</h4>
 <ul>
 <li><a href="../builtin-None">None</a> val</li>
 </ul>
@@ -2933,7 +2901,7 @@ by another thread.</p>
 : None val
 </code></pre>
 
-<h4 id="returns_17">Returns</h4>
+<h4 id="returns_15">Returns</h4>
 <ul>
 <li><a href="../builtin-None">None</a> val</li>
 </ul>
@@ -2949,11 +2917,11 @@ causal messaging. Events get processed one <em>after</em> another.</p>
 : Bool val
 </code></pre>
 
-<h4 id="parameters_20">Parameters</h4>
+<h4 id="parameters_18">Parameters</h4>
 <ul>
 <li>fd: <a href="../builtin-U32">U32</a> val</li>
 </ul>
-<h4 id="returns_18">Returns</h4>
+<h4 id="returns_16">Returns</h4>
 <ul>
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
@@ -2963,9 +2931,40 @@ causal messaging. Events get processed one <em>after</em> another.</p>
 : None val
 </code></pre>
 
-<h4 id="returns_19">Returns</h4>
+<h4 id="returns_17">Returns</h4>
 <ul>
 <li><a href="../builtin-None">None</a> val</li>
+</ul>
+<hr />
+<h3 id="_write_final">_write_final</h3>
+<p>Write as much as possible to the fd. Return false if not
+everything was written.</p>
+<pre><code class="pony">fun ref _write_final(
+  data: (String val | Array[U8 val] val))
+: Bool val
+</code></pre>
+
+<h4 id="parameters_19">Parameters</h4>
+<ul>
+<li>data: (<a href="../builtin-String">String</a> val | <a href="../builtin-Array">Array</a>[<a href="../builtin-U8">U8</a> val] val)</li>
+</ul>
+<h4 id="returns_18">Returns</h4>
+<ul>
+<li><a href="../builtin-Bool">Bool</a> val</li>
+</ul>
+<hr />
+<h3 id="_pending_writes">_pending_writes</h3>
+<p>Send pending data. If any data can't be sent, keep it and mark fd as not
+writeable. Once set to false the _stdin_writeable flag can only be cleared
+here by processing the pending writes. If the _done_writing flag is set we
+close the _stdin_write fd once we've processed pending writes.</p>
+<pre><code class="pony">fun ref _pending_writes()
+: Bool val
+</code></pre>
+
+<h4 id="returns_19">Returns</h4>
+<ul>
+<li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
 <hr />
               

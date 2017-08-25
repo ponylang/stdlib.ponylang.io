@@ -634,7 +634,7 @@
     <a class="current" href="./">type Set</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#set91a-hashable-val-equatable91a-val9393">Set[A: (Hashable val &amp; Equatable[A val])]</a></li>
+    <li class="toctree-l3"><a href="#set91a-hashable-val-equatable91a9393">Set[A: (Hashable val &amp; Equatable[A])]</a></li>
     
         <ul>
         
@@ -2542,14 +2542,14 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="set91a-hashable-val-equatable91a-val9393">Set[A: (<a href="../collections-Hashable">Hashable</a> val &amp; <a href="../builtin-Equatable">Equatable</a>[A val])]</h1>
-<pre><code class="pony">type Set[A: (Hashable val &amp; Equatable[A val])] is
-  HashSet[A val, HashEq[A val] val] val
+                <h1 id="set91a-hashable-val-equatable91a9393">Set[A: (<a href="../collections-Hashable">Hashable</a> val &amp; <a href="../builtin-Equatable">Equatable</a>[A])]</h1>
+<pre><code class="pony">type Set[A: (Hashable val &amp; Equatable[A])] is
+  HashSet[A, HashEq[A] val] val
 </code></pre>
 
 <h4 id="type-alias-for">Type Alias For</h4>
 <ul>
-<li><a href="../collections-persistent-HashSet">HashSet</a>[A val, <a href="../collections-HashEq">HashEq</a>[A val] val] val</li>
+<li><a href="../collections-persistent-HashSet">HashSet</a>[A, <a href="../collections-HashEq">HashEq</a>[A] val] val</li>
 </ul>
 <hr />
               

@@ -2548,28 +2548,28 @@
               
                 <h1 id="arrayvalues91a-a-b-array91a93-read93">ArrayValues[A: A, B: <a href="../builtin-Array">Array</a>[A] #read]</h1>
 <pre><code class="pony">class ref ArrayValues[A: A, B: Array[A] #read] is
-  Iterator[B #read-&gt;A] ref
+  Iterator[B-&gt;A] ref
 </code></pre>
 
 <h4 id="implements">Implements</h4>
 <ul>
-<li><a href="../builtin-Iterator">Iterator</a>[B #read-&gt;A] ref</li>
+<li><a href="../builtin-Iterator">Iterator</a>[B-&gt;A] ref</li>
 </ul>
 <hr />
 <h2 id="constructors">Constructors</h2>
 <h3 id="create">create</h3>
 <pre><code class="pony">new ref create(
-  array: B #read)
-: ArrayValues[A, B #read] ref^
+  array: B)
+: ArrayValues[A, B] ref^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>array: B #read</li>
+<li>array: B</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../builtin-ArrayValues">ArrayValues</a>[A, B #read] ref^</li>
+<li><a href="../builtin-ArrayValues">ArrayValues</a>[A, B] ref^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
@@ -2585,22 +2585,22 @@
 <hr />
 <h3 id="next">next</h3>
 <pre><code class="pony">fun ref next()
-: B #read-&gt;A ?
+: B-&gt;A ?
 </code></pre>
 
 <h4 id="returns_2">Returns</h4>
 <ul>
-<li>B #read-&gt;A ?</li>
+<li>B-&gt;A ?</li>
 </ul>
 <hr />
 <h3 id="rewind">rewind</h3>
 <pre><code class="pony">fun ref rewind()
-: ArrayValues[A, B #read] ref
+: ArrayValues[A, B] ref
 </code></pre>
 
 <h4 id="returns_3">Returns</h4>
 <ul>
-<li><a href="../builtin-ArrayValues">ArrayValues</a>[A, B #read] ref</li>
+<li><a href="../builtin-ArrayValues">ArrayValues</a>[A, B] ref</li>
 </ul>
 <hr />
               

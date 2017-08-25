@@ -2563,23 +2563,23 @@
 <pre><code class="pony">new tag create(
   name: String val,
   notify: _BenchNotify tag,
-  f: {(): Promise[A] ?}[A #share] val,
+  f: {(): Promise[A] ?}[A] val,
   ops: U64 val,
   timeout: U64 val = 0)
-: _BenchAsync[A #share] tag^
+: _BenchAsync[A] tag^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
 <li>name: <a href="../builtin-String">String</a> val</li>
 <li>notify: <a href="../ponybench-_BenchNotify">_BenchNotify</a> tag</li>
-<li>f: {(): Promise[A] ?}[A #share] val</li>
+<li>f: {(): Promise[A] ?}[A] val</li>
 <li>ops: <a href="../builtin-U64">U64</a> val</li>
 <li>timeout: <a href="../builtin-U64">U64</a> val = 0</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../ponybench-_BenchAsync">_BenchAsync</a>[A #share] tag^</li>
+<li><a href="../ponybench-_BenchAsync">_BenchAsync</a>[A] tag^</li>
 </ul>
 <hr />
 <h2 id="public-behaviours">Public Behaviours</h2>

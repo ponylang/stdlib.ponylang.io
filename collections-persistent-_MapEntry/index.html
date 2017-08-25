@@ -626,7 +626,7 @@
     <a class="current" href="./">type _MapEntry</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#_mapentry91k-any-share-v-any-share-h-hashfunction91k-share93-val93">_MapEntry[K: Any #share, V: Any #share, H: HashFunction[K #share] val]</a></li>
+    <li class="toctree-l3"><a href="#_mapentry91k-any-share-v-any-share-h-hashfunction91k93-val93">_MapEntry[K: Any #share, V: Any #share, H: HashFunction[K] val]</a></li>
     
         <ul>
         
@@ -2542,14 +2542,14 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_mapentry91k-any-share-v-any-share-h-hashfunction91k-share93-val93">_MapEntry[K: <a href="../builtin-Any">Any</a> #share, V: <a href="../builtin-Any">Any</a> #share, H: <a href="../collections-HashFunction">HashFunction</a>[K #share] val]</h1>
-<pre><code class="pony">type _MapEntry[K: Any #share, V: Any #share, H: HashFunction[K #share] val] is
-  (_MapNode[K #share, V #share, H val] val | Array[(K #share , V #share)] val | (K #share , V #share))
+                <h1 id="_mapentry91k-any-share-v-any-share-h-hashfunction91k93-val93">_MapEntry[K: <a href="../builtin-Any">Any</a> #share, V: <a href="../builtin-Any">Any</a> #share, H: <a href="../collections-HashFunction">HashFunction</a>[K] val]</h1>
+<pre><code class="pony">type _MapEntry[K: Any #share, V: Any #share, H: HashFunction[K] val] is
+  (_MapNode[K, V, H] val | Array[(K , V)] val | (K , V))
 </code></pre>
 
 <h4 id="type-alias-for">Type Alias For</h4>
 <ul>
-<li>(<a href="../collections-persistent-_MapNode">_MapNode</a>[K #share, V #share, H val] val | <a href="../builtin-Array">Array</a>[(K #share , V #share)] val | (K #share , V #share))</li>
+<li>(<a href="../collections-persistent-_MapNode">_MapNode</a>[K, V, H] val | <a href="../builtin-Array">Array</a>[(K , V)] val | (K , V))</li>
 </ul>
 <hr />
               
