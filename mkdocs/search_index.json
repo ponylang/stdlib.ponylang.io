@@ -44627,12 +44627,12 @@
         }, 
         {
             "location": "/itertools--index/", 
-            "text": "Itertools Package\n\n\nThe itertools package provides a set of classes for doing useful things with\niterators. It is Inspired by Python's itertools library, Rust's Iterator, and\nElixir's Enum and Stream.\n\n\nIter\n\n\nThe Iter class wraps iterators so that additional methods may be applied to it.\nSome methods, such as fold and collect, run through the underlying iterator in\norder to return a result. Others, such as map and filter, are lazy. This means\nthat they return another Iter so that the resulting values are computed one by\none as needed. Lazy methods return Iter types.\n\n\nFor example, the following code creates an Iter from the values of an array\ncontaining the numbers 1 through 5, increments each number by one, filters out\nany odd numbers, and prints the rest.\n\n\nlet xs = Iter[I64]([as I64: 1; 2; 3; 4; 5].values())\n  .map[I64]({(x: I64): I64 =\n x + 1 })\n  .filter({(x: I64): Bool =\n (x % 2) == 0 })\n  .map[None]({(x: I64) =\n env.out.print(x.string()) })\n\n\n\n\nThis will result in an iterator that prints the numbers 2, 4, and 6. However,\ndue to the lazy nature of the map and filter, no iteration has actually occurred\nand nothing will be printed. One solution to this would be to loop over the\nresulting Iter as so:\n\n\nfor x in xs do\n  None\nend\n\n\n\n\nThis will trigger the iteration and print out the values 2, 4, and 6. This is\nwhere the \nrun\n method comes in handy by doing the iteration without the need\nfor a loop. So the final code would be as follows:\n\n\nIter[I64]([as I64: 1; 2; 3; 4; 5].values())\n  .map[I64]({(x: I64): I64 =\n x + 1 })\n  .filter({(x: I64): Bool =\n (x % 2) == 0 })\n  .map[None]({(x: I64) =\n env.out.print(x.string()) })\n  .run()\n\n\n\n\nOutput:\n\n\n2\n4\n6\n\n\n\n\nOther Classes\n\n\nChain -- chain together two or more iterators\n\n\nTake -- return only the specified number of items from the given\niterator\n\n\nZip2, Zip3, Zip4, Zip5 -- zip together N iterators\n\n\nRepeat -- create an iterator that reapeatedly returns the given value\n\n\nCycle -- create an iterator that infinitely loops over the items of\nthe given iterator\n\n\nMapFn -- create an iterator that applies a function to the value of\nthe given iterator\n\n\nFilter -- create an iterator that only returns items that match a\npredicate\n\n\nPublic Types\n\n\n\n\nclass Cycle\n\n\nclass MapFn\n\n\nclass Filter\n\n\nclass Zip2\n\n\nclass Zip3\n\n\nclass Zip4\n\n\nclass Zip5\n\n\nclass Repeat\n\n\nclass Iter\n\n\nclass Take\n\n\nclass Chain\n\n\n\n\nPrivate Types\n\n\n\n\nprimitive _None", 
+            "text": "Itertools Package\n\n\nThe itertools package provides the \nIter\n class for doing useful things with\niterators. It is Inspired by Python's itertools library, Rust's Iterator, and\nElixir's Enum and Stream.\n\n\nIter\n\n\nThe Iter class wraps iterators so that additional methods may be applied to it.\nSome methods, such as fold and collect, run through the underlying iterator in\norder to return a result. Others, such as map and filter, are lazy. This means\nthat they return another Iter so that the resulting values are computed one by\none as needed. Lazy methods return Iter types.\n\n\nFor example, the following code creates an Iter from the values of an array\ncontaining the numbers 1 through 5, increments each number by one, filters out\nany odd numbers, and prints the rest.\n\n\nlet xs = Iter[I64]([as I64: 1; 2; 3; 4; 5].values())\n  .map[I64]({(x: I64): I64 =\n x + 1 })\n  .filter({(x: I64): Bool =\n (x % 2) == 0 })\n  .map[None]({(x: I64) =\n env.out.print(x.string()) })\n\n\n\n\nThis will result in an iterator that prints the numbers 2, 4, and 6. However,\ndue to the lazy nature of the map and filter, no iteration has actually occurred\nand nothing will be printed. One solution to this would be to loop over the\nresulting Iter as so:\n\n\nfor x in xs do\n  None\nend\n\n\n\n\nThis will trigger the iteration and print out the values 2, 4, and 6. This is\nwhere the \nrun\n method comes in handy by doing the iteration without the need\nfor a loop. So the final code would be as follows:\n\n\nIter[I64]([as I64: 1; 2; 3; 4; 5].values())\n  .map[I64]({(x: I64): I64 =\n x + 1 })\n  .filter({(x: I64): Bool =\n (x % 2) == 0 })\n  .map[None]({(x: I64) =\n env.out.print(x.string()) })\n  .run()\n\n\n\n\nOutput:\n\n\n2\n4\n6\n\n\n\n\nPublic Types\n\n\n\n\nclass Iter\n\n\n\n\nPrivate Types\n\n\n\n\nprimitive _None\n\n\nclass _EmptyIter", 
             "title": "Package"
         }, 
         {
             "location": "/itertools--index/#itertools-package", 
-            "text": "The itertools package provides a set of classes for doing useful things with\niterators. It is Inspired by Python's itertools library, Rust's Iterator, and\nElixir's Enum and Stream.", 
+            "text": "The itertools package provides the  Iter  class for doing useful things with\niterators. It is Inspired by Python's itertools library, Rust's Iterator, and\nElixir's Enum and Stream.", 
             "title": "Itertools Package"
         }, 
         {
@@ -44641,148 +44641,598 @@
             "title": "Iter"
         }, 
         {
-            "location": "/itertools--index/#other-classes", 
-            "text": "Chain -- chain together two or more iterators  Take -- return only the specified number of items from the given\niterator  Zip2, Zip3, Zip4, Zip5 -- zip together N iterators  Repeat -- create an iterator that reapeatedly returns the given value  Cycle -- create an iterator that infinitely loops over the items of\nthe given iterator  MapFn -- create an iterator that applies a function to the value of\nthe given iterator  Filter -- create an iterator that only returns items that match a\npredicate", 
-            "title": "Other Classes"
-        }, 
-        {
             "location": "/itertools--index/#public-types", 
-            "text": "class Cycle  class MapFn  class Filter  class Zip2  class Zip3  class Zip4  class Zip5  class Repeat  class Iter  class Take  class Chain", 
+            "text": "class Iter", 
             "title": "Public Types"
         }, 
         {
             "location": "/itertools--index/#private-types", 
-            "text": "primitive _None", 
+            "text": "primitive _None  class _EmptyIter", 
             "title": "Private Types"
         }, 
         {
-            "location": "/itertools-Cycle/", 
-            "text": "Cycle[A: A]\n\n\nCreate an iterator that repeatedly cycles through the values from the\noriginal iterator.\n\n\nWARNING: The values returned by the original iterator are cached, so\nthe input iterator should be finite.\n\n\nExample program\n\n\nPrint the numbers 1 through 4 forever.\n\n\nuse \nitertools\n\n\nactor Main\n  new create(env: Env) =\n\n    let i1 = [as I32: 1; 2; 3; 4]\n    for x in Cycle[I32](i1.values()) do\n      env.out.print(x.string())\n    end\n\n\n\n\nclass ref Cycle[A: A] is\n  Iterator[A] ref\n\n\n\n\nImplements\n\n\n\n\nIterator\n[A] ref\n\n\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew ref create(\n  iter: Iterator[A^] ref)\n: Cycle[A] ref^\n\n\n\n\nParameters\n\n\n\n\niter: \nIterator\n[A^] ref\n\n\n\n\nReturns\n\n\n\n\nCycle\n[A] ref^\n\n\n\n\n\n\nPublic Functions\n\n\nhas_next\n\n\nfun ref has_next()\n: Bool val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nnext\n\n\nfun ref next()\n: A ?\n\n\n\n\nReturns\n\n\n\n\nA ?", 
-            "title": "class Cycle"
+            "location": "/itertools-Iter/", 
+            "text": "Iter[A: A]\n\n\nWrapper class containing methods to modify iterators.\n\n\nclass ref Iter[A: A] is\n  Iterator[A] ref\n\n\n\n\nImplements\n\n\n\n\nIterator\n[A] ref\n\n\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew ref create(\n  iter: Iterator[A] ref)\n: Iter[A] ref^\n\n\n\n\nParameters\n\n\n\n\niter: \nIterator\n[A] ref\n\n\n\n\nReturns\n\n\n\n\nIter\n[A] ref^\n\n\n\n\n\n\nchain\n\n\nTake an iterator of iterators and return an Iter containing the\nitems of the first one, then the second one, and so on.\n\n\nExample\n\n\nlet xs = [as I64: 1; 2].values()\nlet ys = [as I64: 3; 4].values()\n\nIter[I64].chain([xs; ys].values())\n\n\n\n\n1 2 3 4\n\n\nnew ref chain(\n  outer_iterator: Iterator[Iterator[A] ref] ref)\n: Iter[A] ref^\n\n\n\n\nParameters\n\n\n\n\nouter_iterator: \nIterator\n[\nIterator\n[A] ref] ref\n\n\n\n\nReturns\n\n\n\n\nIter\n[A] ref^\n\n\n\n\n\n\nrepeat_value\n\n\nCreate an iterator that returns the given value forever.\n\n\nExample\n\n\nIter[U32].repeat_value(7)\n\n\n\n\n7 7 7 7 7 7 7 7 7 ...\n\n\nnew ref repeat_value(\n  value: A)\n: Iter[A] ref^\n\n\n\n\nParameters\n\n\n\n\nvalue: A\n\n\n\n\nReturns\n\n\n\n\nIter\n[A] ref^\n\n\n\n\n\n\nPublic Functions\n\n\nhas_next\n\n\nfun ref has_next()\n: Bool val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nnext\n\n\nfun ref next()\n: A ?\n\n\n\n\nReturns\n\n\n\n\nA ?\n\n\n\n\n\n\nmap_stateful[B: B]\n\n\nAllows stateful transformaion of each element from the iterator, similar\nto \nmap\n.\n\n\nfun ref map_stateful[B: B](\n  f: {ref(A!): B ?}[A, B] ref)\n: Iter[B] ref^\n\n\n\n\nParameters\n\n\n\n\nf: {ref(A!): B ?}[A, B] ref\n\n\n\n\nReturns\n\n\n\n\nIter\n[B] ref^\n\n\n\n\n\n\nfilter_stateful\n\n\nAllows filtering of elements based on a stateful adapter, similar to\n\nfilter\n.\n\n\nfun ref filter_stateful(\n  f: {ref(A!): Bool ?}[A] ref)\n: Iter[A] ref^\n\n\n\n\nParameters\n\n\n\n\nf: {ref(A!): Bool ?}[A] ref\n\n\n\n\nReturns\n\n\n\n\nIter\n[A] ref^\n\n\n\n\n\n\nfilter_map_stateful[B: B]\n\n\nAllows stateful modification to the stream of elements from an iterator,\nsimilar to \nfilter_map\n.\n\n\nfun ref filter_map_stateful[B: B](\n  f: {ref(A!): (B | None) ?}[A, B] ref)\n: Iter[B] ref^\n\n\n\n\nParameters\n\n\n\n\nf: {ref(A!): (B | None) ?}[A, B] ref\n\n\n\n\nReturns\n\n\n\n\nIter\n[B] ref^\n\n\n\n\n\n\nall\n\n\nReturn false if at least one value of the iterator fails to match the\npredicate \nf\n. This method short-circuits at the first value where the\npredicate returns false, otherwise true is returned.\n\n\nExamples\n\n\nIter[I64]([as I64: 2; 4; 6].values())\n  .all({(x: I64): Bool =\n (x % 2) == 0 })\n\n\n\n\ntrue\n\n\nIter[I64]([as I64: 2; 3; 4].values())\n  .all({(x: I64): Bool =\n (x % 2) == 0 })\n\n\n\n\nfalse\n\n\nfun ref all(\n  f: {(A!): Bool ?}[A] box)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nf: {(A!): Bool ?}[A] box\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nany\n\n\nReturn true if at least one value of the iterator matches the predicate\n\nf\n. This method short-circuits at the first value where the predicate\nreturns true, otherwise false is returned.\n\n\nExamples\n\n\nIter[I64]([as I64: 2; 4; 6].values())\n  .any({(x: I64): Bool =\n (x % 2) == 1 })\n\n\n\n\nfalse\n\n\nIter[I64]([as I64: 2; 3; 4].values())\n  .any({(x: I64): Bool =\n (x % 2) == 1 })\n\n\n\n\ntrue\n\n\nfun ref any(\n  f: {(A!): Bool ?}[A] box)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nf: {(A!): Bool ?}[A] box\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\ncollect[optional B: \nSeq\n[A!] ref]\n\n\nPush each value from the iterator into the collection \ncoll\n.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .collect(Array[I64](3))\n\n\n\n\n[1, 2, 3]\n\n\nfun ref collect[optional B: Seq[A!] ref](\n  coll: B)\n: B^\n\n\n\n\nParameters\n\n\n\n\ncoll: B\n\n\n\n\nReturns\n\n\n\n\nB^\n\n\n\n\n\n\ncount\n\n\nReturn the number of values in the iterator.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .count()\n\n\n\n\n3\n\n\nfun ref count()\n: USize val\n\n\n\n\nReturns\n\n\n\n\nUSize\n val\n\n\n\n\n\n\ncycle\n\n\nRepeatedly cycle through the values from the iterator.\n\n\nWARNING: The values returned by the original iterator are cached, so\nthe input iterator should be finite.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .cycle()\n\n\n\n\n1 2 3 1 2 3 1 2 3 ...\n\n\nfun ref cycle()\n: Iter[A!] ref^\n\n\n\n\nReturns\n\n\n\n\nIter\n[A!] ref^\n\n\n\n\n\n\nenum[optional B: (\nReal\n[B] val \n (\nI8\n val | \nI16\n val | \nI32\n val |\n\n\n[I64](builtin-I64) val | [I128](builtin-I128) val | [ILong](builtin-ILong) val | \n[ISize](builtin-ISize) val | [U8](builtin-U8) val | [U16](builtin-U16) val | \n[U32](builtin-U32) val | [U64](builtin-U64) val | [U128](builtin-U128) val | \n[ULong](builtin-ULong) val | [USize](builtin-USize) val | [F32](builtin-F32) val | \n[F64](builtin-F64) val))\\]\n\n\n\nAn iterator which yields the current iteration count as well as the next\nvalue from the iterator.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .enum()\n\n\n\n\n(0, 1) (1, 2) (2, 3)\n\n\nfun ref enum[optional B: (Real[B] val \n (I8 val | I16 val | I32 val | \n    I64 val | I128 val | ILong val | \n    ISize val | U8 val | U16 val | \n    U32 val | U64 val | U128 val | \n    ULong val | USize val | F32 val | \n    F64 val))]()\n: Iter[(B , A)] ref^\n\n\n\n\nReturns\n\n\n\n\nIter\n[(B , A)] ref^\n\n\n\n\n\n\nfilter\n\n\nReturn an iterator that only returns items that match the predicate \nf\n.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .filter({(x: I64): Bool =\n (x % 2) == 0 })\n\n\n\n\n2 4 6\n\n\nfun ref filter(\n  f: {(A!): Bool ?}[A] box)\n: Iter[A] ref^\n\n\n\n\nParameters\n\n\n\n\nf: {(A!): Bool ?}[A] box\n\n\n\n\nReturns\n\n\n\n\nIter\n[A] ref^\n\n\n\n\n\n\nfind\n\n\nReturn the nth value in the iterator that satisfies the predicate \nf\n.\n\n\nExamples\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .find({(x: I64): Bool =\n (x % 2) == 0 })\n\n\n\n\n2\n\n\nIter[I64]([as I64: 1; 2; 3; 4].values())\n  .find({(x: I64): Bool =\n (x % 2) == 0 }, 2)\n\n\n\n\n4\n\n\nfun ref find(\n  f: {(A!): Bool ?}[A] box,\n  n: USize val = 1)\n: A ?\n\n\n\n\nParameters\n\n\n\n\nf: {(A!): Bool ?}[A] box\n\n\nn: \nUSize\n val = 1\n\n\n\n\nReturns\n\n\n\n\nA ?\n\n\n\n\n\n\nfilter_map[B: B]\n\n\nReturn an iterator which applies \nf\n to each element. If \nNone\n is\nreturned, then the iterator will try again by applying \nf\n to the next\nelement. Otherwise, the value of type \nB\n is returned.\n\n\nExample\n\n\nIter[I64]([as I64: 1; -2; 4; 7; -5])\n  .filter_map[USize](\n    {(i: I64): (USize | None) =\n if i \n= 0 then i.usize() end })\n\n\n\n\n1 4 7\n\n\n\n\n```pony\nfun ref filter_map[B: B](\n  f: {(A!): (B | None) ?}[A, B] box)\n: Iter[B] ref^\n\n\n\n\nParameters\n\n\n\n\nf: {(A!): (B | None) ?}[A, B] box\n\n\n\n\nReturns\n\n\n\n\nIter\n[B] ref^\n\n\n\n\n\n\nflat_map[B: B]\n\n\nReturn an iterator over the values of the iterators produced from the\napplication of the given function.\n\n\nExample\n\n\nIter[String]([\nalpha\n; \nbeta\n; \ngamma\n])\n  .flat_map[U8]({(s: String): Iterator[U8] =\n s.values() })\n\n\n\n\na l p h a b e t a g a m m a\n\n\nfun ref flat_map[B: B](\n  f: {(A!): Iterator[B] ?}[A, B] box)\n: Iter[B] ref^\n\n\n\n\nParameters\n\n\n\n\nf: {(A!): Iterator[B] ?}[A, B] box\n\n\n\n\nReturns\n\n\n\n\nIter\n[B] ref^\n\n\n\n\n\n\nfold[B: B]\n\n\nApply a function to every element, producing an accumulated value.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .fold[I64]({(sum: I64, x: I64): I64 =\n sum + x }, 0)\n\n\n\n\n6\n\n\nfun ref fold[B: B](\n  acc: B,\n  f: {(B, A!): B^}[A, B] box)\n: B^\n\n\n\n\nParameters\n\n\n\n\nacc: B\n\n\nf: {(B, A!): B^}[A, B] box\n\n\n\n\nReturns\n\n\n\n\nB^\n\n\n\n\n\n\nfold_partial[B: B]\n\n\nA partial version of \nfold\n.\n\n\nfun ref fold_partial[B: B](\n  acc: B,\n  f: {(B, A!): B^ ?}[A, B] box)\n: B^ ?\n\n\n\n\nParameters\n\n\n\n\nacc: B\n\n\nf: {(B, A!): B^ ?}[A, B] box\n\n\n\n\nReturns\n\n\n\n\nB^ ?\n\n\n\n\n\n\nlast\n\n\nReturn the last value of the iterator.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .last()\n\n\n\n\n3\n\n\nfun ref last()\n: A ?\n\n\n\n\nReturns\n\n\n\n\nA ?\n\n\n\n\n\n\nmap[B: B]\n\n\nReturn an iterator where each item's value is the application of the given\nfunction to the value in the original iterator.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .map[I64]({(x: I64): I64 =\n x * x })\n\n\n\n\n1 4 9\n\n\nfun ref map[B: B](\n  f: {(A!): B ?}[A, B] box)\n: Iter[B] ref^\n\n\n\n\nParameters\n\n\n\n\nf: {(A!): B ?}[A, B] box\n\n\n\n\nReturns\n\n\n\n\nIter\n[B] ref^\n\n\n\n\n\n\nnth\n\n\nReturn the nth value of the iterator.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .nth(2)\n\n\n\n\n2\n\n\nfun ref nth(\n  n: USize val)\n: A ?\n\n\n\n\nParameters\n\n\n\n\nn: \nUSize\n val\n\n\n\n\nReturns\n\n\n\n\nA ?\n\n\n\n\n\n\nrun\n\n\nIterate through the values of the iterator without a for loop. The\nfunction \non_error\n will be called if the iterator's \nhas_next\n method\nreturns true but its \nnext\n method throws an error.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .map[None]({(x: I64) =\n env.out.print(x.string()) })\n  .run()\n\n\n\n\n1\n2\n3\n\n\n\n\nfun ref run(\n  on_error: {ref()}[A] ref = lambda)\n: None val\n\n\n\n\nParameters\n\n\n\n\non_error: {ref()}[A] ref = lambda\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\nskip\n\n\nSkip the first n values of the iterator.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .skip(3)\n\n\n\n\n4 5 6\n\n\nfun ref skip(\n  n: USize val)\n: Iter[A] ref^\n\n\n\n\nParameters\n\n\n\n\nn: \nUSize\n val\n\n\n\n\nReturns\n\n\n\n\nIter\n[A] ref^\n\n\n\n\n\n\nskip_while\n\n\nSkip values of the iterator while the predicate \nf\n returns true.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .skip_while({(x: I64): Bool =\n x \n 4 })\n\n\n\n\n4 5 6\n\n\nfun ref skip_while(\n  f: {(A!): Bool ?}[A] box)\n: Iter[A] ref^\n\n\n\n\nParameters\n\n\n\n\nf: {(A!): Bool ?}[A] box\n\n\n\n\nReturns\n\n\n\n\nIter\n[A] ref^\n\n\n\n\n\n\ntake\n\n\nReturn an iterator for the first n elements.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .take(3)\n\n\n\n\n1 2 3\n\n\nfun ref take(\n  n: USize val)\n: Iter[A] ref^\n\n\n\n\nParameters\n\n\n\n\nn: \nUSize\n val\n\n\n\n\nReturns\n\n\n\n\nIter\n[A] ref^\n\n\n\n\n\n\ntake_while\n\n\nReturn an iterator that returns values while the predicate \nf\n returns\ntrue.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .take_while({(x: I64): Bool =\n x \n 4 })\n\n\n\n\n1 2 3\n\n\nfun ref take_while(\n  f: {(A!): Bool ?}[A] box)\n: Iter[A] ref^\n\n\n\n\nParameters\n\n\n\n\nf: {(A!): Bool ?}[A] box\n\n\n\n\nReturns\n\n\n\n\nIter\n[A] ref^\n\n\n\n\n\n\nzip[B: B]\n\n\nZip two iterators together so that each call to next() results in\na tuple with the next value of the first iterator and the next value\nof the second iterator. The number of items returned is the minimum of\nthe number of items returned by the two iterators.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2].values())\n  .zip[I64]([as I64: 3; 4].values())\n\n\n\n\n(1, 3) (2, 4)\n\n\nfun ref zip[B: B](\n  i2: Iterator[B] ref)\n: Iter[(A , B)] ref^\n\n\n\n\nParameters\n\n\n\n\ni2: \nIterator\n[B] ref\n\n\n\n\nReturns\n\n\n\n\nIter\n[(A , B)] ref^\n\n\n\n\n\n\nzip2[B: B, C: C]\n\n\nZip three iterators together so that each call to next() results in\na tuple with the next value of the first iterator, the next value\nof the second iterator, and the value of the third iterator. The\nnumber of items returned is the minimum of the number of items\nreturned by the three iterators.\n\n\nfun ref zip2[B: B, C: C](\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref)\n: Iter[(A , B , C)] ref^\n\n\n\n\nParameters\n\n\n\n\ni2: \nIterator\n[B] ref\n\n\ni3: \nIterator\n[C] ref\n\n\n\n\nReturns\n\n\n\n\nIter\n[(A , B , C)] ref^\n\n\n\n\n\n\nzip3[B: B, C: C, D: D]\n\n\nZip four iterators together so that each call to next() results in\na tuple with the next value of each of the iterators. The number of\nitems returned is the minimum of the number of items returned by the\niterators.\n\n\nfun ref zip3[B: B, C: C, D: D](\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref,\n  i4: Iterator[D] ref)\n: Iter[(A , B , C , D)] ref^\n\n\n\n\nParameters\n\n\n\n\ni2: \nIterator\n[B] ref\n\n\ni3: \nIterator\n[C] ref\n\n\ni4: \nIterator\n[D] ref\n\n\n\n\nReturns\n\n\n\n\nIter\n[(A , B , C , D)] ref^\n\n\n\n\n\n\nzip4[B: B, C: C, D: D, E: E]\n\n\nZip five iterators together so that each call to next() results in\na tuple with the next value of each of the iterators. The number of\nitems returned is the minimum of the number of items returned by the\niterators.\n\n\nfun ref zip4[B: B, C: C, D: D, E: E](\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref,\n  i4: Iterator[D] ref,\n  i5: Iterator[E] ref)\n: Iter[(A , B , C , D , E)] ref^\n\n\n\n\nParameters\n\n\n\n\ni2: \nIterator\n[B] ref\n\n\ni3: \nIterator\n[C] ref\n\n\ni4: \nIterator\n[D] ref\n\n\ni5: \nIterator\n[E] ref\n\n\n\n\nReturns\n\n\n\n\nIter\n[(A , B , C , D , E)] ref^", 
+            "title": "class Iter"
         }, 
         {
-            "location": "/itertools-Cycle/#cycle91a-a93", 
-            "text": "Create an iterator that repeatedly cycles through the values from the\noriginal iterator.  WARNING: The values returned by the original iterator are cached, so\nthe input iterator should be finite.", 
-            "title": "Cycle[A: A]"
+            "location": "/itertools-Iter/#iter91a-a93", 
+            "text": "Wrapper class containing methods to modify iterators.  class ref Iter[A: A] is\n  Iterator[A] ref", 
+            "title": "Iter[A: A]"
         }, 
         {
-            "location": "/itertools-Cycle/#example-program", 
-            "text": "Print the numbers 1 through 4 forever.  use  itertools \n\nactor Main\n  new create(env: Env) = \n    let i1 = [as I32: 1; 2; 3; 4]\n    for x in Cycle[I32](i1.values()) do\n      env.out.print(x.string())\n    end  class ref Cycle[A: A] is\n  Iterator[A] ref", 
-            "title": "Example program"
-        }, 
-        {
-            "location": "/itertools-Cycle/#implements", 
+            "location": "/itertools-Iter/#implements", 
             "text": "Iterator [A] ref", 
             "title": "Implements"
         }, 
         {
-            "location": "/itertools-Cycle/#constructors", 
+            "location": "/itertools-Iter/#constructors", 
             "text": "", 
             "title": "Constructors"
         }, 
         {
-            "location": "/itertools-Cycle/#create", 
-            "text": "new ref create(\n  iter: Iterator[A^] ref)\n: Cycle[A] ref^", 
+            "location": "/itertools-Iter/#create", 
+            "text": "new ref create(\n  iter: Iterator[A] ref)\n: Iter[A] ref^", 
             "title": "create"
         }, 
         {
-            "location": "/itertools-Cycle/#parameters", 
-            "text": "iter:  Iterator [A^] ref", 
+            "location": "/itertools-Iter/#parameters", 
+            "text": "iter:  Iterator [A] ref", 
             "title": "Parameters"
         }, 
         {
-            "location": "/itertools-Cycle/#returns", 
-            "text": "Cycle [A] ref^", 
+            "location": "/itertools-Iter/#returns", 
+            "text": "Iter [A] ref^", 
             "title": "Returns"
         }, 
         {
-            "location": "/itertools-Cycle/#public-functions", 
+            "location": "/itertools-Iter/#chain", 
+            "text": "Take an iterator of iterators and return an Iter containing the\nitems of the first one, then the second one, and so on.", 
+            "title": "chain"
+        }, 
+        {
+            "location": "/itertools-Iter/#example", 
+            "text": "let xs = [as I64: 1; 2].values()\nlet ys = [as I64: 3; 4].values()\n\nIter[I64].chain([xs; ys].values())  1 2 3 4  new ref chain(\n  outer_iterator: Iterator[Iterator[A] ref] ref)\n: Iter[A] ref^", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_1", 
+            "text": "outer_iterator:  Iterator [ Iterator [A] ref] ref", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_1", 
+            "text": "Iter [A] ref^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#repeat_value", 
+            "text": "Create an iterator that returns the given value forever.", 
+            "title": "repeat_value"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_1", 
+            "text": "Iter[U32].repeat_value(7)  7 7 7 7 7 7 7 7 7 ...  new ref repeat_value(\n  value: A)\n: Iter[A] ref^", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_2", 
+            "text": "value: A", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_2", 
+            "text": "Iter [A] ref^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#public-functions", 
             "text": "", 
             "title": "Public Functions"
         }, 
         {
-            "location": "/itertools-Cycle/#has_next", 
+            "location": "/itertools-Iter/#has_next", 
             "text": "fun ref has_next()\n: Bool val", 
             "title": "has_next"
         }, 
         {
-            "location": "/itertools-Cycle/#returns_1", 
+            "location": "/itertools-Iter/#returns_3", 
             "text": "Bool  val", 
             "title": "Returns"
         }, 
         {
-            "location": "/itertools-Cycle/#next", 
+            "location": "/itertools-Iter/#next", 
             "text": "fun ref next()\n: A ?", 
             "title": "next"
         }, 
         {
-            "location": "/itertools-Cycle/#returns_2", 
+            "location": "/itertools-Iter/#returns_4", 
             "text": "A ?", 
             "title": "Returns"
         }, 
         {
-            "location": "/itertools-MapFn/", 
-            "text": "MapFn[A: A, B: B]\n\n\nTake an iterator and a function and return an iterator where each\nitem's value is the application of the given function to the value\nin the original iterator.\n\n\nExample program\n\n\nDouble all of the numbers given as command line arguments.\n\n\nuse \nitertools\n\n\nactor Main\n  new create(env: Env) =\n\n    let fn = {(s: String): I32 =\n try s.i32() * 2 else 0 end }\n    for x in MapFn[String, I32](env.args.slice(1).values(), fn) do\n      env.out.print(x.string())\n    end\n\n\n\n\nclass ref MapFn[A: A, B: B] is\n  Iterator[B] ref\n\n\n\n\nImplements\n\n\n\n\nIterator\n[B] ref\n\n\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew ref create(\n  iter: Iterator[A] ref,\n  f: {(A!): B ?}[A, B] box)\n: MapFn[A, B] ref^\n\n\n\n\nParameters\n\n\n\n\niter: \nIterator\n[A] ref\n\n\nf: {(A!): B ?}[A, B] box\n\n\n\n\nReturns\n\n\n\n\nMapFn\n[A, B] ref^\n\n\n\n\n\n\nPublic Functions\n\n\nhas_next\n\n\nfun ref has_next()\n: Bool val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nnext\n\n\nfun ref next()\n: B ?\n\n\n\n\nReturns\n\n\n\n\nB ?", 
-            "title": "class MapFn"
+            "location": "/itertools-Iter/#map_stateful91b-b93", 
+            "text": "Allows stateful transformaion of each element from the iterator, similar\nto  map .  fun ref map_stateful[B: B](\n  f: {ref(A!): B ?}[A, B] ref)\n: Iter[B] ref^", 
+            "title": "map_stateful[B: B]"
         }, 
         {
-            "location": "/itertools-MapFn/#mapfn91a-a-b-b93", 
-            "text": "Take an iterator and a function and return an iterator where each\nitem's value is the application of the given function to the value\nin the original iterator.", 
-            "title": "MapFn[A: A, B: B]"
-        }, 
-        {
-            "location": "/itertools-MapFn/#example-program", 
-            "text": "Double all of the numbers given as command line arguments.  use  itertools \n\nactor Main\n  new create(env: Env) = \n    let fn = {(s: String): I32 =  try s.i32() * 2 else 0 end }\n    for x in MapFn[String, I32](env.args.slice(1).values(), fn) do\n      env.out.print(x.string())\n    end  class ref MapFn[A: A, B: B] is\n  Iterator[B] ref", 
-            "title": "Example program"
-        }, 
-        {
-            "location": "/itertools-MapFn/#implements", 
-            "text": "Iterator [B] ref", 
-            "title": "Implements"
-        }, 
-        {
-            "location": "/itertools-MapFn/#constructors", 
-            "text": "", 
-            "title": "Constructors"
-        }, 
-        {
-            "location": "/itertools-MapFn/#create", 
-            "text": "new ref create(\n  iter: Iterator[A] ref,\n  f: {(A!): B ?}[A, B] box)\n: MapFn[A, B] ref^", 
-            "title": "create"
-        }, 
-        {
-            "location": "/itertools-MapFn/#parameters", 
-            "text": "iter:  Iterator [A] ref  f: {(A!): B ?}[A, B] box", 
+            "location": "/itertools-Iter/#parameters_3", 
+            "text": "f: {ref(A!): B ?}[A, B] ref", 
             "title": "Parameters"
         }, 
         {
-            "location": "/itertools-MapFn/#returns", 
-            "text": "MapFn [A, B] ref^", 
+            "location": "/itertools-Iter/#returns_5", 
+            "text": "Iter [B] ref^", 
             "title": "Returns"
         }, 
         {
-            "location": "/itertools-MapFn/#public-functions", 
-            "text": "", 
-            "title": "Public Functions"
+            "location": "/itertools-Iter/#filter_stateful", 
+            "text": "Allows filtering of elements based on a stateful adapter, similar to filter .  fun ref filter_stateful(\n  f: {ref(A!): Bool ?}[A] ref)\n: Iter[A] ref^", 
+            "title": "filter_stateful"
         }, 
         {
-            "location": "/itertools-MapFn/#has_next", 
-            "text": "fun ref has_next()\n: Bool val", 
-            "title": "has_next"
+            "location": "/itertools-Iter/#parameters_4", 
+            "text": "f: {ref(A!): Bool ?}[A] ref", 
+            "title": "Parameters"
         }, 
         {
-            "location": "/itertools-MapFn/#returns_1", 
+            "location": "/itertools-Iter/#returns_6", 
+            "text": "Iter [A] ref^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#filter_map_stateful91b-b93", 
+            "text": "Allows stateful modification to the stream of elements from an iterator,\nsimilar to  filter_map .  fun ref filter_map_stateful[B: B](\n  f: {ref(A!): (B | None) ?}[A, B] ref)\n: Iter[B] ref^", 
+            "title": "filter_map_stateful[B: B]"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_5", 
+            "text": "f: {ref(A!): (B | None) ?}[A, B] ref", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_7", 
+            "text": "Iter [B] ref^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#all", 
+            "text": "Return false if at least one value of the iterator fails to match the\npredicate  f . This method short-circuits at the first value where the\npredicate returns false, otherwise true is returned.", 
+            "title": "all"
+        }, 
+        {
+            "location": "/itertools-Iter/#examples", 
+            "text": "Iter[I64]([as I64: 2; 4; 6].values())\n  .all({(x: I64): Bool =  (x % 2) == 0 })  true  Iter[I64]([as I64: 2; 3; 4].values())\n  .all({(x: I64): Bool =  (x % 2) == 0 })  false  fun ref all(\n  f: {(A!): Bool ?}[A] box)\n: Bool val", 
+            "title": "Examples"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_6", 
+            "text": "f: {(A!): Bool ?}[A] box", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_8", 
             "text": "Bool  val", 
             "title": "Returns"
         }, 
         {
-            "location": "/itertools-MapFn/#next", 
-            "text": "fun ref next()\n: B ?", 
-            "title": "next"
+            "location": "/itertools-Iter/#any", 
+            "text": "Return true if at least one value of the iterator matches the predicate f . This method short-circuits at the first value where the predicate\nreturns true, otherwise false is returned.", 
+            "title": "any"
         }, 
         {
-            "location": "/itertools-MapFn/#returns_2", 
-            "text": "B ?", 
+            "location": "/itertools-Iter/#examples_1", 
+            "text": "Iter[I64]([as I64: 2; 4; 6].values())\n  .any({(x: I64): Bool =  (x % 2) == 1 })  false  Iter[I64]([as I64: 2; 3; 4].values())\n  .any({(x: I64): Bool =  (x % 2) == 1 })  true  fun ref any(\n  f: {(A!): Bool ?}[A] box)\n: Bool val", 
+            "title": "Examples"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_7", 
+            "text": "f: {(A!): Bool ?}[A] box", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_9", 
+            "text": "Bool  val", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#collect91optional-b-seq91a93-ref93", 
+            "text": "Push each value from the iterator into the collection  coll .", 
+            "title": "collect[optional B: Seq[A!] ref]"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_2", 
+            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .collect(Array[I64](3))  [1, 2, 3]  fun ref collect[optional B: Seq[A!] ref](\n  coll: B)\n: B^", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_8", 
+            "text": "coll: B", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_10", 
+            "text": "B^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#count", 
+            "text": "Return the number of values in the iterator.", 
+            "title": "count"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_3", 
+            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .count()  3  fun ref count()\n: USize val", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_11", 
+            "text": "USize  val", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#cycle", 
+            "text": "Repeatedly cycle through the values from the iterator.  WARNING: The values returned by the original iterator are cached, so\nthe input iterator should be finite.", 
+            "title": "cycle"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_4", 
+            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .cycle()  1 2 3 1 2 3 1 2 3 ...  fun ref cycle()\n: Iter[A!] ref^", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_12", 
+            "text": "Iter [A!] ref^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#enum91optional-b-real91b93-val-i8-val-i16-val-i32-val", 
+            "text": "[I64](builtin-I64) val | [I128](builtin-I128) val | [ILong](builtin-ILong) val | \n[ISize](builtin-ISize) val | [U8](builtin-U8) val | [U16](builtin-U16) val | \n[U32](builtin-U32) val | [U64](builtin-U64) val | [U128](builtin-U128) val | \n[ULong](builtin-ULong) val | [USize](builtin-USize) val | [F32](builtin-F32) val | \n[F64](builtin-F64) val))\\]  An iterator which yields the current iteration count as well as the next\nvalue from the iterator.", 
+            "title": "enum[optional B: (Real[B] val &amp; (I8 val | I16 val | I32 val |"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_5", 
+            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .enum()  (0, 1) (1, 2) (2, 3)  fun ref enum[optional B: (Real[B] val   (I8 val | I16 val | I32 val | \n    I64 val | I128 val | ILong val | \n    ISize val | U8 val | U16 val | \n    U32 val | U64 val | U128 val | \n    ULong val | USize val | F32 val | \n    F64 val))]()\n: Iter[(B , A)] ref^", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_13", 
+            "text": "Iter [(B , A)] ref^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#filter", 
+            "text": "Return an iterator that only returns items that match the predicate  f .", 
+            "title": "filter"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_6", 
+            "text": "Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .filter({(x: I64): Bool =  (x % 2) == 0 })  2 4 6  fun ref filter(\n  f: {(A!): Bool ?}[A] box)\n: Iter[A] ref^", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_9", 
+            "text": "f: {(A!): Bool ?}[A] box", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_14", 
+            "text": "Iter [A] ref^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#find", 
+            "text": "Return the nth value in the iterator that satisfies the predicate  f .", 
+            "title": "find"
+        }, 
+        {
+            "location": "/itertools-Iter/#examples_2", 
+            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .find({(x: I64): Bool =  (x % 2) == 0 })  2  Iter[I64]([as I64: 1; 2; 3; 4].values())\n  .find({(x: I64): Bool =  (x % 2) == 0 }, 2)  4  fun ref find(\n  f: {(A!): Bool ?}[A] box,\n  n: USize val = 1)\n: A ?", 
+            "title": "Examples"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_10", 
+            "text": "f: {(A!): Bool ?}[A] box  n:  USize  val = 1", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_15", 
+            "text": "A ?", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#filter_map91b-b93", 
+            "text": "Return an iterator which applies  f  to each element. If  None  is\nreturned, then the iterator will try again by applying  f  to the next\nelement. Otherwise, the value of type  B  is returned.", 
+            "title": "filter_map[B: B]"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_7", 
+            "text": "Iter[I64]([as I64: 1; -2; 4; 7; -5])\n  .filter_map[USize](\n    {(i: I64): (USize | None) =  if i  = 0 then i.usize() end })  1 4 7  \n\n```pony\nfun ref filter_map[B: B](\n  f: {(A!): (B | None) ?}[A, B] box)\n: Iter[B] ref^", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_11", 
+            "text": "f: {(A!): (B | None) ?}[A, B] box", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_16", 
+            "text": "Iter [B] ref^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#flat_map91b-b93", 
+            "text": "Return an iterator over the values of the iterators produced from the\napplication of the given function.", 
+            "title": "flat_map[B: B]"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_8", 
+            "text": "Iter[String]([ alpha ;  beta ;  gamma ])\n  .flat_map[U8]({(s: String): Iterator[U8] =  s.values() })  a l p h a b e t a g a m m a  fun ref flat_map[B: B](\n  f: {(A!): Iterator[B] ?}[A, B] box)\n: Iter[B] ref^", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_12", 
+            "text": "f: {(A!): Iterator[B] ?}[A, B] box", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_17", 
+            "text": "Iter [B] ref^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#fold91b-b93", 
+            "text": "Apply a function to every element, producing an accumulated value.", 
+            "title": "fold[B: B]"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_9", 
+            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .fold[I64]({(sum: I64, x: I64): I64 =  sum + x }, 0)  6  fun ref fold[B: B](\n  acc: B,\n  f: {(B, A!): B^}[A, B] box)\n: B^", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_13", 
+            "text": "acc: B  f: {(B, A!): B^}[A, B] box", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_18", 
+            "text": "B^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#fold_partial91b-b93", 
+            "text": "A partial version of  fold .  fun ref fold_partial[B: B](\n  acc: B,\n  f: {(B, A!): B^ ?}[A, B] box)\n: B^ ?", 
+            "title": "fold_partial[B: B]"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_14", 
+            "text": "acc: B  f: {(B, A!): B^ ?}[A, B] box", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_19", 
+            "text": "B^ ?", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#last", 
+            "text": "Return the last value of the iterator.", 
+            "title": "last"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_10", 
+            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .last()  3  fun ref last()\n: A ?", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_20", 
+            "text": "A ?", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#map91b-b93", 
+            "text": "Return an iterator where each item's value is the application of the given\nfunction to the value in the original iterator.", 
+            "title": "map[B: B]"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_11", 
+            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .map[I64]({(x: I64): I64 =  x * x })  1 4 9  fun ref map[B: B](\n  f: {(A!): B ?}[A, B] box)\n: Iter[B] ref^", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_15", 
+            "text": "f: {(A!): B ?}[A, B] box", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_21", 
+            "text": "Iter [B] ref^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#nth", 
+            "text": "Return the nth value of the iterator.", 
+            "title": "nth"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_12", 
+            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .nth(2)  2  fun ref nth(\n  n: USize val)\n: A ?", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_16", 
+            "text": "n:  USize  val", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_22", 
+            "text": "A ?", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#run", 
+            "text": "Iterate through the values of the iterator without a for loop. The\nfunction  on_error  will be called if the iterator's  has_next  method\nreturns true but its  next  method throws an error.", 
+            "title": "run"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_13", 
+            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .map[None]({(x: I64) =  env.out.print(x.string()) })\n  .run()  1\n2\n3  fun ref run(\n  on_error: {ref()}[A] ref = lambda)\n: None val", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_17", 
+            "text": "on_error: {ref()}[A] ref = lambda", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_23", 
+            "text": "None  val", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#skip", 
+            "text": "Skip the first n values of the iterator.", 
+            "title": "skip"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_14", 
+            "text": "Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .skip(3)  4 5 6  fun ref skip(\n  n: USize val)\n: Iter[A] ref^", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_18", 
+            "text": "n:  USize  val", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_24", 
+            "text": "Iter [A] ref^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#skip_while", 
+            "text": "Skip values of the iterator while the predicate  f  returns true.", 
+            "title": "skip_while"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_15", 
+            "text": "Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .skip_while({(x: I64): Bool =  x   4 })  4 5 6  fun ref skip_while(\n  f: {(A!): Bool ?}[A] box)\n: Iter[A] ref^", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_19", 
+            "text": "f: {(A!): Bool ?}[A] box", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_25", 
+            "text": "Iter [A] ref^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#take", 
+            "text": "Return an iterator for the first n elements.", 
+            "title": "take"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_16", 
+            "text": "Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .take(3)  1 2 3  fun ref take(\n  n: USize val)\n: Iter[A] ref^", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_20", 
+            "text": "n:  USize  val", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_26", 
+            "text": "Iter [A] ref^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#take_while", 
+            "text": "Return an iterator that returns values while the predicate  f  returns\ntrue.", 
+            "title": "take_while"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_17", 
+            "text": "Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .take_while({(x: I64): Bool =  x   4 })  1 2 3  fun ref take_while(\n  f: {(A!): Bool ?}[A] box)\n: Iter[A] ref^", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_21", 
+            "text": "f: {(A!): Bool ?}[A] box", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_27", 
+            "text": "Iter [A] ref^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#zip91b-b93", 
+            "text": "Zip two iterators together so that each call to next() results in\na tuple with the next value of the first iterator and the next value\nof the second iterator. The number of items returned is the minimum of\nthe number of items returned by the two iterators.", 
+            "title": "zip[B: B]"
+        }, 
+        {
+            "location": "/itertools-Iter/#example_18", 
+            "text": "Iter[I64]([as I64: 1; 2].values())\n  .zip[I64]([as I64: 3; 4].values())  (1, 3) (2, 4)  fun ref zip[B: B](\n  i2: Iterator[B] ref)\n: Iter[(A , B)] ref^", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_22", 
+            "text": "i2:  Iterator [B] ref", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_28", 
+            "text": "Iter [(A , B)] ref^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#zip291b-b-c-c93", 
+            "text": "Zip three iterators together so that each call to next() results in\na tuple with the next value of the first iterator, the next value\nof the second iterator, and the value of the third iterator. The\nnumber of items returned is the minimum of the number of items\nreturned by the three iterators.  fun ref zip2[B: B, C: C](\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref)\n: Iter[(A , B , C)] ref^", 
+            "title": "zip2[B: B, C: C]"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_23", 
+            "text": "i2:  Iterator [B] ref  i3:  Iterator [C] ref", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_29", 
+            "text": "Iter [(A , B , C)] ref^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#zip391b-b-c-c-d-d93", 
+            "text": "Zip four iterators together so that each call to next() results in\na tuple with the next value of each of the iterators. The number of\nitems returned is the minimum of the number of items returned by the\niterators.  fun ref zip3[B: B, C: C, D: D](\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref,\n  i4: Iterator[D] ref)\n: Iter[(A , B , C , D)] ref^", 
+            "title": "zip3[B: B, C: C, D: D]"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_24", 
+            "text": "i2:  Iterator [B] ref  i3:  Iterator [C] ref  i4:  Iterator [D] ref", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_30", 
+            "text": "Iter [(A , B , C , D)] ref^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/itertools-Iter/#zip491b-b-c-c-d-d-e-e93", 
+            "text": "Zip five iterators together so that each call to next() results in\na tuple with the next value of each of the iterators. The number of\nitems returned is the minimum of the number of items returned by the\niterators.  fun ref zip4[B: B, C: C, D: D, E: E](\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref,\n  i4: Iterator[D] ref,\n  i5: Iterator[E] ref)\n: Iter[(A , B , C , D , E)] ref^", 
+            "title": "zip4[B: B, C: C, D: D, E: E]"
+        }, 
+        {
+            "location": "/itertools-Iter/#parameters_25", 
+            "text": "i2:  Iterator [B] ref  i3:  Iterator [C] ref  i4:  Iterator [D] ref  i5:  Iterator [E] ref", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/itertools-Iter/#returns_31", 
+            "text": "Iter [(A , B , C , D , E)] ref^", 
             "title": "Returns"
         }, 
         {
@@ -44846,1002 +45296,52 @@
             "title": "Returns"
         }, 
         {
-            "location": "/itertools-Filter/", 
-            "text": "Filter[A: A]\n\n\nTake an iterator and a predicate function and return an iterator\nthat only returns items that match the predicate.\n\n\nExample program\n\n\nOnly print command line arguments that are more than 3 characters long.\n\n\nuse \nitertools\n\n\nactor Main\n  new create(env: Env) =\n\n    let fn = {(s: String): Bool =\n s.size() \n 3 }\n    for x in Filter[String](env.args.slice(1).values(), fn) do\n      env.out.print(x)\n    end\n\n\n\n\nclass ref Filter[A: A] is\n  Iterator[A] ref\n\n\n\n\nImplements\n\n\n\n\nIterator\n[A] ref\n\n\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew ref create(\n  iter: Iterator[A^] ref,\n  fn: {(A!): Bool ?}[A] val)\n: Filter[A] ref^\n\n\n\n\nParameters\n\n\n\n\niter: \nIterator\n[A^] ref\n\n\nfn: {(A!): Bool ?}[A] val\n\n\n\n\nReturns\n\n\n\n\nFilter\n[A] ref^\n\n\n\n\n\n\nPublic Functions\n\n\nhas_next\n\n\nfun ref has_next()\n: Bool val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nnext\n\n\nfun ref next()\n: A ?\n\n\n\n\nReturns\n\n\n\n\nA ?\n\n\n\n\n\n\nPrivate Functions\n\n\n_find_next\n\n\nfun ref _find_next()\n: None val\n\n\n\n\nReturns\n\n\n\n\nNone\n val", 
-            "title": "class Filter"
+            "location": "/itertools-_EmptyIter/", 
+            "text": "_EmptyIter[A: A]\n\n\nclass ref _EmptyIter[A: A]\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew iso create()\n: _EmptyIter[A] iso^\n\n\n\n\nReturns\n\n\n\n\n_EmptyIter\n[A] iso^\n\n\n\n\n\n\nPublic Functions\n\n\nhas_next\n\n\nfun ref has_next()\n: Bool val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nnext\n\n\nfun ref next()\n: A ?\n\n\n\n\nReturns\n\n\n\n\nA ?", 
+            "title": "class _EmptyIter"
         }, 
         {
-            "location": "/itertools-Filter/#filter91a-a93", 
-            "text": "Take an iterator and a predicate function and return an iterator\nthat only returns items that match the predicate.", 
-            "title": "Filter[A: A]"
+            "location": "/itertools-_EmptyIter/#_emptyiter91a-a93", 
+            "text": "class ref _EmptyIter[A: A]", 
+            "title": "_EmptyIter[A: A]"
         }, 
         {
-            "location": "/itertools-Filter/#example-program", 
-            "text": "Only print command line arguments that are more than 3 characters long.  use  itertools \n\nactor Main\n  new create(env: Env) = \n    let fn = {(s: String): Bool =  s.size()   3 }\n    for x in Filter[String](env.args.slice(1).values(), fn) do\n      env.out.print(x)\n    end  class ref Filter[A: A] is\n  Iterator[A] ref", 
-            "title": "Example program"
-        }, 
-        {
-            "location": "/itertools-Filter/#implements", 
-            "text": "Iterator [A] ref", 
-            "title": "Implements"
-        }, 
-        {
-            "location": "/itertools-Filter/#constructors", 
+            "location": "/itertools-_EmptyIter/#constructors", 
             "text": "", 
             "title": "Constructors"
         }, 
         {
-            "location": "/itertools-Filter/#create", 
-            "text": "new ref create(\n  iter: Iterator[A^] ref,\n  fn: {(A!): Bool ?}[A] val)\n: Filter[A] ref^", 
+            "location": "/itertools-_EmptyIter/#create", 
+            "text": "new iso create()\n: _EmptyIter[A] iso^", 
             "title": "create"
         }, 
         {
-            "location": "/itertools-Filter/#parameters", 
-            "text": "iter:  Iterator [A^] ref  fn: {(A!): Bool ?}[A] val", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Filter/#returns", 
-            "text": "Filter [A] ref^", 
+            "location": "/itertools-_EmptyIter/#returns", 
+            "text": "_EmptyIter [A] iso^", 
             "title": "Returns"
         }, 
         {
-            "location": "/itertools-Filter/#public-functions", 
+            "location": "/itertools-_EmptyIter/#public-functions", 
             "text": "", 
             "title": "Public Functions"
         }, 
         {
-            "location": "/itertools-Filter/#has_next", 
+            "location": "/itertools-_EmptyIter/#has_next", 
             "text": "fun ref has_next()\n: Bool val", 
             "title": "has_next"
         }, 
         {
-            "location": "/itertools-Filter/#returns_1", 
+            "location": "/itertools-_EmptyIter/#returns_1", 
             "text": "Bool  val", 
             "title": "Returns"
         }, 
         {
-            "location": "/itertools-Filter/#next", 
+            "location": "/itertools-_EmptyIter/#next", 
             "text": "fun ref next()\n: A ?", 
             "title": "next"
         }, 
         {
-            "location": "/itertools-Filter/#returns_2", 
-            "text": "A ?", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Filter/#private-functions", 
-            "text": "", 
-            "title": "Private Functions"
-        }, 
-        {
-            "location": "/itertools-Filter/#_find_next", 
-            "text": "fun ref _find_next()\n: None val", 
-            "title": "_find_next"
-        }, 
-        {
-            "location": "/itertools-Filter/#returns_3", 
-            "text": "None  val", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Zip2/", 
-            "text": "Zip2[A: A, B: B]\n\n\nZip two iterators together so that each call to next() results in\na tuple with the next value of the first iterator and the next value\nof the second iterator. The number of items returned is the minimum of\nthe number of items returned by the two iterators.\n\n\nExample program\n\n\nPrint the following:\n\n\n1 a\n2 b\n3 c\n\n\n\n\nuse \nitertools\n\n\nactor Main\n  new create(env: Env) =\n\n    var i1: Array[I32] ref = [as I32: 1; 2; 3]\n    var i2: Array[String] ref = [\na\n; \nb\n; \nc\n; \nd\n]\n\n    for (x, y) in Zip2[I32, String](i1.values(), i2.values()) do\n      env.out.print(\n.add(x.string()).add(\n \n).add(y))\n    end\n\n\n\n\nclass ref Zip2[A: A, B: B] is\n  Iterator[(A , B)] ref\n\n\n\n\nImplements\n\n\n\n\nIterator\n[(A , B)] ref\n\n\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew ref create(\n  i1: Iterator[A] ref,\n  i2: Iterator[B] ref)\n: Zip2[A, B] ref^\n\n\n\n\nParameters\n\n\n\n\ni1: \nIterator\n[A] ref\n\n\ni2: \nIterator\n[B] ref\n\n\n\n\nReturns\n\n\n\n\nZip2\n[A, B] ref^\n\n\n\n\n\n\nPublic Functions\n\n\nhas_next\n\n\nfun ref has_next()\n: Bool val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nnext\n\n\nfun ref next()\n: (A , B) ?\n\n\n\n\nReturns\n\n\n\n\n(A , B) ?", 
-            "title": "class Zip2"
-        }, 
-        {
-            "location": "/itertools-Zip2/#zip291a-a-b-b93", 
-            "text": "Zip two iterators together so that each call to next() results in\na tuple with the next value of the first iterator and the next value\nof the second iterator. The number of items returned is the minimum of\nthe number of items returned by the two iterators.", 
-            "title": "Zip2[A: A, B: B]"
-        }, 
-        {
-            "location": "/itertools-Zip2/#example-program", 
-            "text": "Print the following:  1 a\n2 b\n3 c  use  itertools \n\nactor Main\n  new create(env: Env) = \n    var i1: Array[I32] ref = [as I32: 1; 2; 3]\n    var i2: Array[String] ref = [ a ;  b ;  c ;  d ]\n\n    for (x, y) in Zip2[I32, String](i1.values(), i2.values()) do\n      env.out.print( .add(x.string()).add(   ).add(y))\n    end  class ref Zip2[A: A, B: B] is\n  Iterator[(A , B)] ref", 
-            "title": "Example program"
-        }, 
-        {
-            "location": "/itertools-Zip2/#implements", 
-            "text": "Iterator [(A , B)] ref", 
-            "title": "Implements"
-        }, 
-        {
-            "location": "/itertools-Zip2/#constructors", 
-            "text": "", 
-            "title": "Constructors"
-        }, 
-        {
-            "location": "/itertools-Zip2/#create", 
-            "text": "new ref create(\n  i1: Iterator[A] ref,\n  i2: Iterator[B] ref)\n: Zip2[A, B] ref^", 
-            "title": "create"
-        }, 
-        {
-            "location": "/itertools-Zip2/#parameters", 
-            "text": "i1:  Iterator [A] ref  i2:  Iterator [B] ref", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Zip2/#returns", 
-            "text": "Zip2 [A, B] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Zip2/#public-functions", 
-            "text": "", 
-            "title": "Public Functions"
-        }, 
-        {
-            "location": "/itertools-Zip2/#has_next", 
-            "text": "fun ref has_next()\n: Bool val", 
-            "title": "has_next"
-        }, 
-        {
-            "location": "/itertools-Zip2/#returns_1", 
-            "text": "Bool  val", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Zip2/#next", 
-            "text": "fun ref next()\n: (A , B) ?", 
-            "title": "next"
-        }, 
-        {
-            "location": "/itertools-Zip2/#returns_2", 
-            "text": "(A , B) ?", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Zip3/", 
-            "text": "Zip3[A: A, B: B, C: C]\n\n\nZip three iterators together so that each call to next() results in\na tuple with the next value of the first iterator, the next value\nof the second iterator, and the value of the third iterator. The\nnumber of items returned is the minimum of the number of items\nreturned by the three iterators.\n\n\nExample Program\n\n\nPrint the following:\n\n\n1 a 0.5\n2 b 9.8\n3 c 3.3\n\n\n\n\nuse \nitertools\n\n\nactor Main\n  new create(env: Env) =\n\n    var i1: Array[I32] ref = [as I32: 1; 2; 3]\n    var i2: Array[String] ref = [\na\n; \nb\n; \nc\n; \nd\n]\n    var i3: Array[F32] ref = [as F32: 0.5; 9.8; 3.3]\n\n    for (x, y, z) in Zip3[I32, String, F32](\n      i1.values(), i2.values(), i3.values())\n    do\n      env.out.print(\n\n        .add(x.string()).add(\n \n)\n        .add(y).add(\n \n)\n        .add(z.string()))\n    end\n\n\n\n\nclass ref Zip3[A: A, B: B, C: C] is\n  Iterator[(A , B , C)] ref\n\n\n\n\nImplements\n\n\n\n\nIterator\n[(A , B , C)] ref\n\n\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew ref create(\n  i1: Iterator[A] ref,\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref)\n: Zip3[A, B, C] ref^\n\n\n\n\nParameters\n\n\n\n\ni1: \nIterator\n[A] ref\n\n\ni2: \nIterator\n[B] ref\n\n\ni3: \nIterator\n[C] ref\n\n\n\n\nReturns\n\n\n\n\nZip3\n[A, B, C] ref^\n\n\n\n\n\n\nPublic Functions\n\n\nhas_next\n\n\nfun ref has_next()\n: Bool val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nnext\n\n\nfun ref next()\n: (A , B , C) ?\n\n\n\n\nReturns\n\n\n\n\n(A , B , C) ?", 
-            "title": "class Zip3"
-        }, 
-        {
-            "location": "/itertools-Zip3/#zip391a-a-b-b-c-c93", 
-            "text": "Zip three iterators together so that each call to next() results in\na tuple with the next value of the first iterator, the next value\nof the second iterator, and the value of the third iterator. The\nnumber of items returned is the minimum of the number of items\nreturned by the three iterators.", 
-            "title": "Zip3[A: A, B: B, C: C]"
-        }, 
-        {
-            "location": "/itertools-Zip3/#example-program", 
-            "text": "Print the following:  1 a 0.5\n2 b 9.8\n3 c 3.3  use  itertools \n\nactor Main\n  new create(env: Env) = \n    var i1: Array[I32] ref = [as I32: 1; 2; 3]\n    var i2: Array[String] ref = [ a ;  b ;  c ;  d ]\n    var i3: Array[F32] ref = [as F32: 0.5; 9.8; 3.3]\n\n    for (x, y, z) in Zip3[I32, String, F32](\n      i1.values(), i2.values(), i3.values())\n    do\n      env.out.print( \n        .add(x.string()).add(   )\n        .add(y).add(   )\n        .add(z.string()))\n    end  class ref Zip3[A: A, B: B, C: C] is\n  Iterator[(A , B , C)] ref", 
-            "title": "Example Program"
-        }, 
-        {
-            "location": "/itertools-Zip3/#implements", 
-            "text": "Iterator [(A , B , C)] ref", 
-            "title": "Implements"
-        }, 
-        {
-            "location": "/itertools-Zip3/#constructors", 
-            "text": "", 
-            "title": "Constructors"
-        }, 
-        {
-            "location": "/itertools-Zip3/#create", 
-            "text": "new ref create(\n  i1: Iterator[A] ref,\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref)\n: Zip3[A, B, C] ref^", 
-            "title": "create"
-        }, 
-        {
-            "location": "/itertools-Zip3/#parameters", 
-            "text": "i1:  Iterator [A] ref  i2:  Iterator [B] ref  i3:  Iterator [C] ref", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Zip3/#returns", 
-            "text": "Zip3 [A, B, C] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Zip3/#public-functions", 
-            "text": "", 
-            "title": "Public Functions"
-        }, 
-        {
-            "location": "/itertools-Zip3/#has_next", 
-            "text": "fun ref has_next()\n: Bool val", 
-            "title": "has_next"
-        }, 
-        {
-            "location": "/itertools-Zip3/#returns_1", 
-            "text": "Bool  val", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Zip3/#next", 
-            "text": "fun ref next()\n: (A , B , C) ?", 
-            "title": "next"
-        }, 
-        {
-            "location": "/itertools-Zip3/#returns_2", 
-            "text": "(A , B , C) ?", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Zip4/", 
-            "text": "Zip4[A: A, B: B, C: C, D: D]\n\n\nZip four iterators together so that each call to next() results in\na tuple with the next value of each of the iterators. The number of\nitems returned is the minimum of the number of items returned by the\niterators.\n\n\nExample Program\n\n\nPrint the following:\n\n\n1 a 0.5 m\n2 b 9.8 n\n3 c 3.3 o\n\n\n\n\nuse \nitertools\n\n\nactor Main\n  new create(env: Env) =\n\n    var i1: Array[I32] ref = [as I32: 1; 2; 3]\n    var i2: Array[String] ref = [\na\n; \nb\n; \nc\n; \nd\n]\n    var i3: Array[F32] ref = [as F32: 0.5; 9.8; 3.3]\n    var i4: Array[String] ref = [\nm\n; \nn\n; \no\n; \np\n; \nq\n; \nr\n]\n\n    for (x, y, z, xx) in Zip4[I32, String, F32, String](\n      i1.values(), i2.values(), i3.values(), i4.values())\n    do\n      env.out.print(\n\n        .add(x.string()).add(\n \n)\n        .add(y).add(\n \n)\n        .add(z.string()).add(\n \n)\n        .add(xx.string()))\n    end\n\n\n\n\nclass ref Zip4[A: A, B: B, C: C, D: D] is\n  Iterator[(A , B , C , D)] ref\n\n\n\n\nImplements\n\n\n\n\nIterator\n[(A , B , C , D)] ref\n\n\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew ref create(\n  i1: Iterator[A] ref,\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref,\n  i4: Iterator[D] ref)\n: Zip4[A, B, C, D] ref^\n\n\n\n\nParameters\n\n\n\n\ni1: \nIterator\n[A] ref\n\n\ni2: \nIterator\n[B] ref\n\n\ni3: \nIterator\n[C] ref\n\n\ni4: \nIterator\n[D] ref\n\n\n\n\nReturns\n\n\n\n\nZip4\n[A, B, C, D] ref^\n\n\n\n\n\n\nPublic Functions\n\n\nhas_next\n\n\nfun ref has_next()\n: Bool val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nnext\n\n\nfun ref next()\n: (A , B , C , D) ?\n\n\n\n\nReturns\n\n\n\n\n(A , B , C , D) ?", 
-            "title": "class Zip4"
-        }, 
-        {
-            "location": "/itertools-Zip4/#zip491a-a-b-b-c-c-d-d93", 
-            "text": "Zip four iterators together so that each call to next() results in\na tuple with the next value of each of the iterators. The number of\nitems returned is the minimum of the number of items returned by the\niterators.", 
-            "title": "Zip4[A: A, B: B, C: C, D: D]"
-        }, 
-        {
-            "location": "/itertools-Zip4/#example-program", 
-            "text": "Print the following:  1 a 0.5 m\n2 b 9.8 n\n3 c 3.3 o  use  itertools \n\nactor Main\n  new create(env: Env) = \n    var i1: Array[I32] ref = [as I32: 1; 2; 3]\n    var i2: Array[String] ref = [ a ;  b ;  c ;  d ]\n    var i3: Array[F32] ref = [as F32: 0.5; 9.8; 3.3]\n    var i4: Array[String] ref = [ m ;  n ;  o ;  p ;  q ;  r ]\n\n    for (x, y, z, xx) in Zip4[I32, String, F32, String](\n      i1.values(), i2.values(), i3.values(), i4.values())\n    do\n      env.out.print( \n        .add(x.string()).add(   )\n        .add(y).add(   )\n        .add(z.string()).add(   )\n        .add(xx.string()))\n    end  class ref Zip4[A: A, B: B, C: C, D: D] is\n  Iterator[(A , B , C , D)] ref", 
-            "title": "Example Program"
-        }, 
-        {
-            "location": "/itertools-Zip4/#implements", 
-            "text": "Iterator [(A , B , C , D)] ref", 
-            "title": "Implements"
-        }, 
-        {
-            "location": "/itertools-Zip4/#constructors", 
-            "text": "", 
-            "title": "Constructors"
-        }, 
-        {
-            "location": "/itertools-Zip4/#create", 
-            "text": "new ref create(\n  i1: Iterator[A] ref,\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref,\n  i4: Iterator[D] ref)\n: Zip4[A, B, C, D] ref^", 
-            "title": "create"
-        }, 
-        {
-            "location": "/itertools-Zip4/#parameters", 
-            "text": "i1:  Iterator [A] ref  i2:  Iterator [B] ref  i3:  Iterator [C] ref  i4:  Iterator [D] ref", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Zip4/#returns", 
-            "text": "Zip4 [A, B, C, D] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Zip4/#public-functions", 
-            "text": "", 
-            "title": "Public Functions"
-        }, 
-        {
-            "location": "/itertools-Zip4/#has_next", 
-            "text": "fun ref has_next()\n: Bool val", 
-            "title": "has_next"
-        }, 
-        {
-            "location": "/itertools-Zip4/#returns_1", 
-            "text": "Bool  val", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Zip4/#next", 
-            "text": "fun ref next()\n: (A , B , C , D) ?", 
-            "title": "next"
-        }, 
-        {
-            "location": "/itertools-Zip4/#returns_2", 
-            "text": "(A , B , C , D) ?", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Zip5/", 
-            "text": "Zip5[A: A, B: B, C: C, D: D, E: E]\n\n\nZip five iterators together so that each call to next() results in\na tuple with the next value of each of the iterators. The number of\nitems returned is the minimum of the number of items returned by the\niterators.\n\n\nExample Program\n\n\nPrint the following:\n\n\n1 a 0.5 m 2\n2 b 9.8 n 6\n3 c 3.3 o 5\n\n\n\n\nuse \nitertools\n\n\nactor Main\n  new create(env: Env) =\n\n    var i1: Array[I32] ref = [as I32: 1; 2; 3]\n    var i2: Array[String] ref = [\na\n; \nb\n; \nc\n; \nd\n]\n    var i3: Array[F32] ref = [as F32: 0.5; 9.8; 3.3]\n    var i4: Array[String] ref = [\nm\n; \nn\n; \no\n; \np\n; \nq\n; \nr\n]\n    var i5: Array[I32] ref = [as I32: 2; 6; 5; 3; 5]\n\n    for (x, y, z, xx, yy) in Zip5[I32, String, F32, String, I32](\n      i1.values(), i2.values(), i3.values(), i4.values(), i5.values())\n    do\n      env.out.print(\n\n        .add(x.string()).add(\n \n)\n        .add(y).add(\n \n)\n        .add(z.string()).add(\n \n)\n        .add(xx.string()).add(\n \n)\n        .add(yy.string()))\n    end\n\n\n\n\nclass ref Zip5[A: A, B: B, C: C, D: D, E: E] is\n  Iterator[(A , B , C , D , E)] ref\n\n\n\n\nImplements\n\n\n\n\nIterator\n[(A , B , C , D , E)] ref\n\n\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew ref create(\n  i1: Iterator[A] ref,\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref,\n  i4: Iterator[D] ref,\n  i5: Iterator[E] ref)\n: Zip5[A, B, C, D, E] ref^\n\n\n\n\nParameters\n\n\n\n\ni1: \nIterator\n[A] ref\n\n\ni2: \nIterator\n[B] ref\n\n\ni3: \nIterator\n[C] ref\n\n\ni4: \nIterator\n[D] ref\n\n\ni5: \nIterator\n[E] ref\n\n\n\n\nReturns\n\n\n\n\nZip5\n[A, B, C, D, E] ref^\n\n\n\n\n\n\nPublic Functions\n\n\nhas_next\n\n\nfun ref has_next()\n: Bool val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nnext\n\n\nfun ref next()\n: (A , B , C , D , E) ?\n\n\n\n\nReturns\n\n\n\n\n(A , B , C , D , E) ?", 
-            "title": "class Zip5"
-        }, 
-        {
-            "location": "/itertools-Zip5/#zip591a-a-b-b-c-c-d-d-e-e93", 
-            "text": "Zip five iterators together so that each call to next() results in\na tuple with the next value of each of the iterators. The number of\nitems returned is the minimum of the number of items returned by the\niterators.", 
-            "title": "Zip5[A: A, B: B, C: C, D: D, E: E]"
-        }, 
-        {
-            "location": "/itertools-Zip5/#example-program", 
-            "text": "Print the following:  1 a 0.5 m 2\n2 b 9.8 n 6\n3 c 3.3 o 5  use  itertools \n\nactor Main\n  new create(env: Env) = \n    var i1: Array[I32] ref = [as I32: 1; 2; 3]\n    var i2: Array[String] ref = [ a ;  b ;  c ;  d ]\n    var i3: Array[F32] ref = [as F32: 0.5; 9.8; 3.3]\n    var i4: Array[String] ref = [ m ;  n ;  o ;  p ;  q ;  r ]\n    var i5: Array[I32] ref = [as I32: 2; 6; 5; 3; 5]\n\n    for (x, y, z, xx, yy) in Zip5[I32, String, F32, String, I32](\n      i1.values(), i2.values(), i3.values(), i4.values(), i5.values())\n    do\n      env.out.print( \n        .add(x.string()).add(   )\n        .add(y).add(   )\n        .add(z.string()).add(   )\n        .add(xx.string()).add(   )\n        .add(yy.string()))\n    end  class ref Zip5[A: A, B: B, C: C, D: D, E: E] is\n  Iterator[(A , B , C , D , E)] ref", 
-            "title": "Example Program"
-        }, 
-        {
-            "location": "/itertools-Zip5/#implements", 
-            "text": "Iterator [(A , B , C , D , E)] ref", 
-            "title": "Implements"
-        }, 
-        {
-            "location": "/itertools-Zip5/#constructors", 
-            "text": "", 
-            "title": "Constructors"
-        }, 
-        {
-            "location": "/itertools-Zip5/#create", 
-            "text": "new ref create(\n  i1: Iterator[A] ref,\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref,\n  i4: Iterator[D] ref,\n  i5: Iterator[E] ref)\n: Zip5[A, B, C, D, E] ref^", 
-            "title": "create"
-        }, 
-        {
-            "location": "/itertools-Zip5/#parameters", 
-            "text": "i1:  Iterator [A] ref  i2:  Iterator [B] ref  i3:  Iterator [C] ref  i4:  Iterator [D] ref  i5:  Iterator [E] ref", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Zip5/#returns", 
-            "text": "Zip5 [A, B, C, D, E] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Zip5/#public-functions", 
-            "text": "", 
-            "title": "Public Functions"
-        }, 
-        {
-            "location": "/itertools-Zip5/#has_next", 
-            "text": "fun ref has_next()\n: Bool val", 
-            "title": "has_next"
-        }, 
-        {
-            "location": "/itertools-Zip5/#returns_1", 
-            "text": "Bool  val", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Zip5/#next", 
-            "text": "fun ref next()\n: (A , B , C , D , E) ?", 
-            "title": "next"
-        }, 
-        {
-            "location": "/itertools-Zip5/#returns_2", 
-            "text": "(A , B , C , D , E) ?", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Repeat/", 
-            "text": "Repeat[A: A]\n\n\nCreate an iterator that returns the specified value forever.\n\n\nExample program\n\n\nPrint the number 7 forever.\n\n\nuse \nitertools\n\n\nactor Main\n  new create(env: Env) =\n\n    for x in Repeat[U32](7) do\n      env.out.print(x.string())\n    end\n\n\n\n\nclass ref Repeat[A: A] is\n  Iterator[A] ref\n\n\n\n\nImplements\n\n\n\n\nIterator\n[A] ref\n\n\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew ref create(\n  v: A)\n: Repeat[A] ref^\n\n\n\n\nParameters\n\n\n\n\nv: A\n\n\n\n\nReturns\n\n\n\n\nRepeat\n[A] ref^\n\n\n\n\n\n\nPublic Functions\n\n\nhas_next\n\n\nfun ref has_next()\n: Bool val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nnext\n\n\nfun ref next()\n: A\n\n\n\n\nReturns\n\n\n\n\nA", 
-            "title": "class Repeat"
-        }, 
-        {
-            "location": "/itertools-Repeat/#repeat91a-a93", 
-            "text": "Create an iterator that returns the specified value forever.", 
-            "title": "Repeat[A: A]"
-        }, 
-        {
-            "location": "/itertools-Repeat/#example-program", 
-            "text": "Print the number 7 forever.  use  itertools \n\nactor Main\n  new create(env: Env) = \n    for x in Repeat[U32](7) do\n      env.out.print(x.string())\n    end  class ref Repeat[A: A] is\n  Iterator[A] ref", 
-            "title": "Example program"
-        }, 
-        {
-            "location": "/itertools-Repeat/#implements", 
-            "text": "Iterator [A] ref", 
-            "title": "Implements"
-        }, 
-        {
-            "location": "/itertools-Repeat/#constructors", 
-            "text": "", 
-            "title": "Constructors"
-        }, 
-        {
-            "location": "/itertools-Repeat/#create", 
-            "text": "new ref create(\n  v: A)\n: Repeat[A] ref^", 
-            "title": "create"
-        }, 
-        {
-            "location": "/itertools-Repeat/#parameters", 
-            "text": "v: A", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Repeat/#returns", 
-            "text": "Repeat [A] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Repeat/#public-functions", 
-            "text": "", 
-            "title": "Public Functions"
-        }, 
-        {
-            "location": "/itertools-Repeat/#has_next", 
-            "text": "fun ref has_next()\n: Bool val", 
-            "title": "has_next"
-        }, 
-        {
-            "location": "/itertools-Repeat/#returns_1", 
-            "text": "Bool  val", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Repeat/#next", 
-            "text": "fun ref next()\n: A", 
-            "title": "next"
-        }, 
-        {
-            "location": "/itertools-Repeat/#returns_2", 
-            "text": "A", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/", 
-            "text": "Iter[A: A]\n\n\nWrapper class containing methods to modify iterators.\n\n\nclass ref Iter[A: A] is\n  Iterator[A] ref\n\n\n\n\nImplements\n\n\n\n\nIterator\n[A] ref\n\n\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew ref create(\n  iter: Iterator[A] ref)\n: Iter[A] ref^\n\n\n\n\nParameters\n\n\n\n\niter: \nIterator\n[A] ref\n\n\n\n\nReturns\n\n\n\n\nIter\n[A] ref^\n\n\n\n\n\n\nchain\n\n\nTake an iterator of iterators and return an Iter containing the\nitems of the first one, then the second one, and so on.\n\n\nExample\n\n\nlet xs = [as I64: 1; 2].values()\nlet ys = [as I64: 3; 4].values()\n\nIter[I64].chain([xs; ys].values())\n\n\n\n\n1 2 3 4\n\n\nnew ref chain(\n  outer_iterator: Iterator[Iterator[A] ref] ref)\n: Iter[A] ref^\n\n\n\n\nParameters\n\n\n\n\nouter_iterator: \nIterator\n[\nIterator\n[A] ref] ref\n\n\n\n\nReturns\n\n\n\n\nIter\n[A] ref^\n\n\n\n\n\n\nPublic Functions\n\n\nhas_next\n\n\nfun ref has_next()\n: Bool val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nnext\n\n\nfun ref next()\n: A ?\n\n\n\n\nReturns\n\n\n\n\nA ?\n\n\n\n\n\n\nall\n\n\nReturn false if at least one value of the iterator fails to match the\npredicate \nf\n. This method short-circuits at the first value where the\npredicate returns false, otherwise true is returned.\n\n\nExamples\n\n\nIter[I64]([as I64: 2; 4; 6].values())\n  .all({(x: I64): Bool =\n (x % 2) == 0 })\n\n\n\n\ntrue\n\n\nIter[I64]([as I64: 2; 3; 4].values())\n  .all({(x: I64): Bool =\n (x % 2) == 0 })\n\n\n\n\nfalse\n\n\nfun ref all(\n  f: {(A!): Bool ?}[A] box)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nf: {(A!): Bool ?}[A] box\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nany\n\n\nReturn true if at least one value of the iterator matches the predicate\n\nf\n. This method short-circuits at the first value where the predicate\nreturns true, otherwise false is returned.\n\n\nExamples\n\n\nIter[I64]([as I64: 2; 4; 6].values())\n  .any({(x: I64): Bool =\n (x % 2) == 1 })\n\n\n\n\nfalse\n\n\nIter[I64]([as I64: 2; 3; 4].values())\n  .any({(x: I64): Bool =\n (x % 2) == 1 })\n\n\n\n\ntrue\n\n\nfun ref any(\n  f: {(A!): Bool ?}[A] box)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nf: {(A!): Bool ?}[A] box\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\ncollect[optional B: \nSeq\n[A!] ref]\n\n\nPush each value from the iterator into the collection \ncoll\n.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .collect(Array[I64](3))\n\n\n\n\n[1, 2, 3]\n\n\nfun ref collect[optional B: Seq[A!] ref](\n  coll: B)\n: B^\n\n\n\n\nParameters\n\n\n\n\ncoll: B\n\n\n\n\nReturns\n\n\n\n\nB^\n\n\n\n\n\n\ncount\n\n\nReturn the number of values in the iterator.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .count()\n\n\n\n\n3\n\n\nfun ref count()\n: USize val\n\n\n\n\nReturns\n\n\n\n\nUSize\n val\n\n\n\n\n\n\ncycle\n\n\nRepeatedly cycle through the values from the iterator.\n\n\nWARNING: The values returned by the original iterator are cached, so\nthe input iterator should be finite.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .cycle()\n\n\n\n\n1 2 3 1 2 3 1 2 3 ...\n\n\nfun ref cycle()\n: Iter[A!] ref^\n\n\n\n\nReturns\n\n\n\n\nIter\n[A!] ref^\n\n\n\n\n\n\nenum[optional B: (\nReal\n[B] val \n (\nI8\n val | \nI16\n val | \nI32\n val |\n\n\n[I64](builtin-I64) val | [I128](builtin-I128) val | [ILong](builtin-ILong) val | \n[ISize](builtin-ISize) val | [U8](builtin-U8) val | [U16](builtin-U16) val | \n[U32](builtin-U32) val | [U64](builtin-U64) val | [U128](builtin-U128) val | \n[ULong](builtin-ULong) val | [USize](builtin-USize) val | [F32](builtin-F32) val | \n[F64](builtin-F64) val))\\]\n\n\n\nAn iterator which yields the current iteration count as well as the next\nvalue from the iterator.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .enum()\n\n\n\n\n(0, 1) (1, 2) (2, 3)\n\n\nfun ref enum[optional B: (Real[B] val \n (I8 val | I16 val | I32 val | \n    I64 val | I128 val | ILong val | \n    ISize val | U8 val | U16 val | \n    U32 val | U64 val | U128 val | \n    ULong val | USize val | F32 val | \n    F64 val))]()\n: Iter[(B , A)] ref^\n\n\n\n\nReturns\n\n\n\n\nIter\n[(B , A)] ref^\n\n\n\n\n\n\nfilter\n\n\nReturn an iterator that only returns items that match the predicate \nf\n.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .filter({(x: I64): Bool =\n (x % 2) == 0 })\n\n\n\n\n2 4 6\n\n\nfun ref filter(\n  f: {(A!): Bool ?}[A] box)\n: Iter[A] ref^\n\n\n\n\nParameters\n\n\n\n\nf: {(A!): Bool ?}[A] box\n\n\n\n\nReturns\n\n\n\n\nIter\n[A] ref^\n\n\n\n\n\n\nfind\n\n\nReturn the nth value in the iterator that satisfies the predicate \nf\n.\n\n\nExamples\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .find({(x: I64): Bool =\n (x % 2) == 0 })\n\n\n\n\n2\n\n\nIter[I64]([as I64: 1; 2; 3; 4].values())\n  .find({(x: I64): Bool =\n (x % 2) == 0 }, 2)\n\n\n\n\n4\n\n\nfun ref find(\n  f: {(A!): Bool ?}[A] box,\n  n: USize val = 1)\n: A ?\n\n\n\n\nParameters\n\n\n\n\nf: {(A!): Bool ?}[A] box\n\n\nn: \nUSize\n val = 1\n\n\n\n\nReturns\n\n\n\n\nA ?\n\n\n\n\n\n\nfold[B: B]\n\n\nApply a function to every element, producing an accumulated value.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .fold[I64]({(sum: I64, x: I64): I64 =\n sum + x }, 0)\n\n\n\n\n6\n\n\nfun ref fold[B: B](\n  f: {(B, A!): B^ ?}[A, B] box,\n  acc: B)\n: B^ ?\n\n\n\n\nParameters\n\n\n\n\nf: {(B, A!): B^ ?}[A, B] box\n\n\nacc: B\n\n\n\n\nReturns\n\n\n\n\nB^ ?\n\n\n\n\n\n\nlast\n\n\nReturn the last value of the iterator.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .last()\n\n\n\n\n3\n\n\nfun ref last()\n: A ?\n\n\n\n\nReturns\n\n\n\n\nA ?\n\n\n\n\n\n\nmap[B: B]\n\n\nReturn an iterator where each item's value is the application of the given\nfunction to the value in the original iterator.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .map[I64]({(x: I64): I64 =\n x * x })\n\n\n\n\n1 4 9\n\n\nfun ref map[B: B](\n  f: {(A!): B ?}[A, B] box)\n: Iter[B] ref^\n\n\n\n\nParameters\n\n\n\n\nf: {(A!): B ?}[A, B] box\n\n\n\n\nReturns\n\n\n\n\nIter\n[B] ref^\n\n\n\n\n\n\nnth\n\n\nReturn the nth value of the iterator.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .nth(2)\n\n\n\n\n2\n\n\nfun ref nth(\n  n: USize val)\n: A ?\n\n\n\n\nParameters\n\n\n\n\nn: \nUSize\n val\n\n\n\n\nReturns\n\n\n\n\nA ?\n\n\n\n\n\n\nrun\n\n\nIterate through the values of the iterator without a for loop. The\nfunction \non_error\n will be called if the iterator's \nhas_next\n method\nreturns true but its \nnext\n method throws an error.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3].values())\n  .map[None]({(x: I64) =\n env.out.print(x.string()) })\n  .run()\n\n\n\n\n1\n2\n3\n\n\n\n\nfun ref run(\n  on_error: {()}[A] box = lambda)\n: None val\n\n\n\n\nParameters\n\n\n\n\non_error: {()}[A] box = lambda\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\nskip\n\n\nSkip the first n values of the iterator.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .skip(3)\n\n\n\n\n4 5 6\n\n\nfun ref skip(\n  n: USize val)\n: Iter[A] ref^\n\n\n\n\nParameters\n\n\n\n\nn: \nUSize\n val\n\n\n\n\nReturns\n\n\n\n\nIter\n[A] ref^\n\n\n\n\n\n\nskip_while\n\n\nSkip values of the iterator while the predicate \nf\n returns true.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .skip_while({(x: I64): Bool =\n x \n 4 })\n\n\n\n\n4 5 6\n\n\nfun ref skip_while(\n  f: {(A!): Bool ?}[A] box)\n: Iter[A] ref^\n\n\n\n\nParameters\n\n\n\n\nf: {(A!): Bool ?}[A] box\n\n\n\n\nReturns\n\n\n\n\nIter\n[A] ref^\n\n\n\n\n\n\ntake\n\n\nReturn an iterator for the first n elements.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .take(3)\n\n\n\n\n1 2 3\n\n\nfun ref take(\n  n: USize val)\n: Iter[A] ref^\n\n\n\n\nParameters\n\n\n\n\nn: \nUSize\n val\n\n\n\n\nReturns\n\n\n\n\nIter\n[A] ref^\n\n\n\n\n\n\ntake_while\n\n\nReturn an iterator that returns values while the predicate \nf\n returns\ntrue.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .take_while({(x: I64): Bool =\n x \n 4 })\n\n\n\n\n1 2 3\n\n\nfun ref take_while(\n  f: {(A!): Bool ?}[A] box)\n: Iter[A] ref^\n\n\n\n\nParameters\n\n\n\n\nf: {(A!): Bool ?}[A] box\n\n\n\n\nReturns\n\n\n\n\nIter\n[A] ref^\n\n\n\n\n\n\nzip[B: B]\n\n\nZip two iterators together so that each call to next() results in\na tuple with the next value of the first iterator and the next value\nof the second iterator. The number of items returned is the minimum of\nthe number of items returned by the two iterators.\n\n\nExample\n\n\nIter[I64]([as I64: 1; 2].values())\n  .zip[I64]([as I64: 3; 4].values())\n\n\n\n\n(1, 3) (2, 4)\n\n\nfun ref zip[B: B](\n  i2: Iterator[B] ref)\n: Iter[(A , B)] ref^\n\n\n\n\nParameters\n\n\n\n\ni2: \nIterator\n[B] ref\n\n\n\n\nReturns\n\n\n\n\nIter\n[(A , B)] ref^\n\n\n\n\n\n\nzip2[B: B, C: C]\n\n\nZip three iterators together so that each call to next() results in\na tuple with the next value of the first iterator, the next value\nof the second iterator, and the value of the third iterator. The\nnumber of items returned is the minimum of the number of items\nreturned by the three iterators.\n\n\nfun ref zip2[B: B, C: C](\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref)\n: Iter[(A , B , C)] ref^\n\n\n\n\nParameters\n\n\n\n\ni2: \nIterator\n[B] ref\n\n\ni3: \nIterator\n[C] ref\n\n\n\n\nReturns\n\n\n\n\nIter\n[(A , B , C)] ref^\n\n\n\n\n\n\nzip3[B: B, C: C, D: D]\n\n\nZip four iterators together so that each call to next() results in\na tuple with the next value of each of the iterators. The number of\nitems returned is the minimum of the number of items returned by the\niterators.\n\n\nfun ref zip3[B: B, C: C, D: D](\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref,\n  i4: Iterator[D] ref)\n: Iter[(A , B , C , D)] ref^\n\n\n\n\nParameters\n\n\n\n\ni2: \nIterator\n[B] ref\n\n\ni3: \nIterator\n[C] ref\n\n\ni4: \nIterator\n[D] ref\n\n\n\n\nReturns\n\n\n\n\nIter\n[(A , B , C , D)] ref^\n\n\n\n\n\n\nzip4[B: B, C: C, D: D, E: E]\n\n\nZip five iterators together so that each call to next() results in\na tuple with the next value of each of the iterators. The number of\nitems returned is the minimum of the number of items returned by the\niterators.\n\n\nfun ref zip4[B: B, C: C, D: D, E: E](\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref,\n  i4: Iterator[D] ref,\n  i5: Iterator[E] ref)\n: Iter[(A , B , C , D , E)] ref^\n\n\n\n\nParameters\n\n\n\n\ni2: \nIterator\n[B] ref\n\n\ni3: \nIterator\n[C] ref\n\n\ni4: \nIterator\n[D] ref\n\n\ni5: \nIterator\n[E] ref\n\n\n\n\nReturns\n\n\n\n\nIter\n[(A , B , C , D , E)] ref^", 
-            "title": "class Iter"
-        }, 
-        {
-            "location": "/itertools-Iter/#iter91a-a93", 
-            "text": "Wrapper class containing methods to modify iterators.  class ref Iter[A: A] is\n  Iterator[A] ref", 
-            "title": "Iter[A: A]"
-        }, 
-        {
-            "location": "/itertools-Iter/#implements", 
-            "text": "Iterator [A] ref", 
-            "title": "Implements"
-        }, 
-        {
-            "location": "/itertools-Iter/#constructors", 
-            "text": "", 
-            "title": "Constructors"
-        }, 
-        {
-            "location": "/itertools-Iter/#create", 
-            "text": "new ref create(\n  iter: Iterator[A] ref)\n: Iter[A] ref^", 
-            "title": "create"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters", 
-            "text": "iter:  Iterator [A] ref", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns", 
-            "text": "Iter [A] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#chain", 
-            "text": "Take an iterator of iterators and return an Iter containing the\nitems of the first one, then the second one, and so on.", 
-            "title": "chain"
-        }, 
-        {
-            "location": "/itertools-Iter/#example", 
-            "text": "let xs = [as I64: 1; 2].values()\nlet ys = [as I64: 3; 4].values()\n\nIter[I64].chain([xs; ys].values())  1 2 3 4  new ref chain(\n  outer_iterator: Iterator[Iterator[A] ref] ref)\n: Iter[A] ref^", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_1", 
-            "text": "outer_iterator:  Iterator [ Iterator [A] ref] ref", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_1", 
-            "text": "Iter [A] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#public-functions", 
-            "text": "", 
-            "title": "Public Functions"
-        }, 
-        {
-            "location": "/itertools-Iter/#has_next", 
-            "text": "fun ref has_next()\n: Bool val", 
-            "title": "has_next"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_2", 
-            "text": "Bool  val", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#next", 
-            "text": "fun ref next()\n: A ?", 
-            "title": "next"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_3", 
-            "text": "A ?", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#all", 
-            "text": "Return false if at least one value of the iterator fails to match the\npredicate  f . This method short-circuits at the first value where the\npredicate returns false, otherwise true is returned.", 
-            "title": "all"
-        }, 
-        {
-            "location": "/itertools-Iter/#examples", 
-            "text": "Iter[I64]([as I64: 2; 4; 6].values())\n  .all({(x: I64): Bool =  (x % 2) == 0 })  true  Iter[I64]([as I64: 2; 3; 4].values())\n  .all({(x: I64): Bool =  (x % 2) == 0 })  false  fun ref all(\n  f: {(A!): Bool ?}[A] box)\n: Bool val", 
-            "title": "Examples"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_2", 
-            "text": "f: {(A!): Bool ?}[A] box", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_4", 
-            "text": "Bool  val", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#any", 
-            "text": "Return true if at least one value of the iterator matches the predicate f . This method short-circuits at the first value where the predicate\nreturns true, otherwise false is returned.", 
-            "title": "any"
-        }, 
-        {
-            "location": "/itertools-Iter/#examples_1", 
-            "text": "Iter[I64]([as I64: 2; 4; 6].values())\n  .any({(x: I64): Bool =  (x % 2) == 1 })  false  Iter[I64]([as I64: 2; 3; 4].values())\n  .any({(x: I64): Bool =  (x % 2) == 1 })  true  fun ref any(\n  f: {(A!): Bool ?}[A] box)\n: Bool val", 
-            "title": "Examples"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_3", 
-            "text": "f: {(A!): Bool ?}[A] box", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_5", 
-            "text": "Bool  val", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#collect91optional-b-seq91a93-ref93", 
-            "text": "Push each value from the iterator into the collection  coll .", 
-            "title": "collect[optional B: Seq[A!] ref]"
-        }, 
-        {
-            "location": "/itertools-Iter/#example_1", 
-            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .collect(Array[I64](3))  [1, 2, 3]  fun ref collect[optional B: Seq[A!] ref](\n  coll: B)\n: B^", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_4", 
-            "text": "coll: B", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_6", 
-            "text": "B^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#count", 
-            "text": "Return the number of values in the iterator.", 
-            "title": "count"
-        }, 
-        {
-            "location": "/itertools-Iter/#example_2", 
-            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .count()  3  fun ref count()\n: USize val", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_7", 
-            "text": "USize  val", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#cycle", 
-            "text": "Repeatedly cycle through the values from the iterator.  WARNING: The values returned by the original iterator are cached, so\nthe input iterator should be finite.", 
-            "title": "cycle"
-        }, 
-        {
-            "location": "/itertools-Iter/#example_3", 
-            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .cycle()  1 2 3 1 2 3 1 2 3 ...  fun ref cycle()\n: Iter[A!] ref^", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_8", 
-            "text": "Iter [A!] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#enum91optional-b-real91b93-val-i8-val-i16-val-i32-val", 
-            "text": "[I64](builtin-I64) val | [I128](builtin-I128) val | [ILong](builtin-ILong) val | \n[ISize](builtin-ISize) val | [U8](builtin-U8) val | [U16](builtin-U16) val | \n[U32](builtin-U32) val | [U64](builtin-U64) val | [U128](builtin-U128) val | \n[ULong](builtin-ULong) val | [USize](builtin-USize) val | [F32](builtin-F32) val | \n[F64](builtin-F64) val))\\]  An iterator which yields the current iteration count as well as the next\nvalue from the iterator.", 
-            "title": "enum[optional B: (Real[B] val &amp; (I8 val | I16 val | I32 val |"
-        }, 
-        {
-            "location": "/itertools-Iter/#example_4", 
-            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .enum()  (0, 1) (1, 2) (2, 3)  fun ref enum[optional B: (Real[B] val   (I8 val | I16 val | I32 val | \n    I64 val | I128 val | ILong val | \n    ISize val | U8 val | U16 val | \n    U32 val | U64 val | U128 val | \n    ULong val | USize val | F32 val | \n    F64 val))]()\n: Iter[(B , A)] ref^", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_9", 
-            "text": "Iter [(B , A)] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#filter", 
-            "text": "Return an iterator that only returns items that match the predicate  f .", 
-            "title": "filter"
-        }, 
-        {
-            "location": "/itertools-Iter/#example_5", 
-            "text": "Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .filter({(x: I64): Bool =  (x % 2) == 0 })  2 4 6  fun ref filter(\n  f: {(A!): Bool ?}[A] box)\n: Iter[A] ref^", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_5", 
-            "text": "f: {(A!): Bool ?}[A] box", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_10", 
-            "text": "Iter [A] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#find", 
-            "text": "Return the nth value in the iterator that satisfies the predicate  f .", 
-            "title": "find"
-        }, 
-        {
-            "location": "/itertools-Iter/#examples_2", 
-            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .find({(x: I64): Bool =  (x % 2) == 0 })  2  Iter[I64]([as I64: 1; 2; 3; 4].values())\n  .find({(x: I64): Bool =  (x % 2) == 0 }, 2)  4  fun ref find(\n  f: {(A!): Bool ?}[A] box,\n  n: USize val = 1)\n: A ?", 
-            "title": "Examples"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_6", 
-            "text": "f: {(A!): Bool ?}[A] box  n:  USize  val = 1", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_11", 
-            "text": "A ?", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#fold91b-b93", 
-            "text": "Apply a function to every element, producing an accumulated value.", 
-            "title": "fold[B: B]"
-        }, 
-        {
-            "location": "/itertools-Iter/#example_6", 
-            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .fold[I64]({(sum: I64, x: I64): I64 =  sum + x }, 0)  6  fun ref fold[B: B](\n  f: {(B, A!): B^ ?}[A, B] box,\n  acc: B)\n: B^ ?", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_7", 
-            "text": "f: {(B, A!): B^ ?}[A, B] box  acc: B", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_12", 
-            "text": "B^ ?", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#last", 
-            "text": "Return the last value of the iterator.", 
-            "title": "last"
-        }, 
-        {
-            "location": "/itertools-Iter/#example_7", 
-            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .last()  3  fun ref last()\n: A ?", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_13", 
-            "text": "A ?", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#map91b-b93", 
-            "text": "Return an iterator where each item's value is the application of the given\nfunction to the value in the original iterator.", 
-            "title": "map[B: B]"
-        }, 
-        {
-            "location": "/itertools-Iter/#example_8", 
-            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .map[I64]({(x: I64): I64 =  x * x })  1 4 9  fun ref map[B: B](\n  f: {(A!): B ?}[A, B] box)\n: Iter[B] ref^", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_8", 
-            "text": "f: {(A!): B ?}[A, B] box", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_14", 
-            "text": "Iter [B] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#nth", 
-            "text": "Return the nth value of the iterator.", 
-            "title": "nth"
-        }, 
-        {
-            "location": "/itertools-Iter/#example_9", 
-            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .nth(2)  2  fun ref nth(\n  n: USize val)\n: A ?", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_9", 
-            "text": "n:  USize  val", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_15", 
-            "text": "A ?", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#run", 
-            "text": "Iterate through the values of the iterator without a for loop. The\nfunction  on_error  will be called if the iterator's  has_next  method\nreturns true but its  next  method throws an error.", 
-            "title": "run"
-        }, 
-        {
-            "location": "/itertools-Iter/#example_10", 
-            "text": "Iter[I64]([as I64: 1; 2; 3].values())\n  .map[None]({(x: I64) =  env.out.print(x.string()) })\n  .run()  1\n2\n3  fun ref run(\n  on_error: {()}[A] box = lambda)\n: None val", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_10", 
-            "text": "on_error: {()}[A] box = lambda", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_16", 
-            "text": "None  val", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#skip", 
-            "text": "Skip the first n values of the iterator.", 
-            "title": "skip"
-        }, 
-        {
-            "location": "/itertools-Iter/#example_11", 
-            "text": "Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .skip(3)  4 5 6  fun ref skip(\n  n: USize val)\n: Iter[A] ref^", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_11", 
-            "text": "n:  USize  val", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_17", 
-            "text": "Iter [A] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#skip_while", 
-            "text": "Skip values of the iterator while the predicate  f  returns true.", 
-            "title": "skip_while"
-        }, 
-        {
-            "location": "/itertools-Iter/#example_12", 
-            "text": "Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .skip_while({(x: I64): Bool =  x   4 })  4 5 6  fun ref skip_while(\n  f: {(A!): Bool ?}[A] box)\n: Iter[A] ref^", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_12", 
-            "text": "f: {(A!): Bool ?}[A] box", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_18", 
-            "text": "Iter [A] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#take", 
-            "text": "Return an iterator for the first n elements.", 
-            "title": "take"
-        }, 
-        {
-            "location": "/itertools-Iter/#example_13", 
-            "text": "Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .take(3)  1 2 3  fun ref take(\n  n: USize val)\n: Iter[A] ref^", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_13", 
-            "text": "n:  USize  val", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_19", 
-            "text": "Iter [A] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#take_while", 
-            "text": "Return an iterator that returns values while the predicate  f  returns\ntrue.", 
-            "title": "take_while"
-        }, 
-        {
-            "location": "/itertools-Iter/#example_14", 
-            "text": "Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())\n  .take_while({(x: I64): Bool =  x   4 })  1 2 3  fun ref take_while(\n  f: {(A!): Bool ?}[A] box)\n: Iter[A] ref^", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_14", 
-            "text": "f: {(A!): Bool ?}[A] box", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_20", 
-            "text": "Iter [A] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#zip91b-b93", 
-            "text": "Zip two iterators together so that each call to next() results in\na tuple with the next value of the first iterator and the next value\nof the second iterator. The number of items returned is the minimum of\nthe number of items returned by the two iterators.", 
-            "title": "zip[B: B]"
-        }, 
-        {
-            "location": "/itertools-Iter/#example_15", 
-            "text": "Iter[I64]([as I64: 1; 2].values())\n  .zip[I64]([as I64: 3; 4].values())  (1, 3) (2, 4)  fun ref zip[B: B](\n  i2: Iterator[B] ref)\n: Iter[(A , B)] ref^", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_15", 
-            "text": "i2:  Iterator [B] ref", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_21", 
-            "text": "Iter [(A , B)] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#zip291b-b-c-c93", 
-            "text": "Zip three iterators together so that each call to next() results in\na tuple with the next value of the first iterator, the next value\nof the second iterator, and the value of the third iterator. The\nnumber of items returned is the minimum of the number of items\nreturned by the three iterators.  fun ref zip2[B: B, C: C](\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref)\n: Iter[(A , B , C)] ref^", 
-            "title": "zip2[B: B, C: C]"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_16", 
-            "text": "i2:  Iterator [B] ref  i3:  Iterator [C] ref", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_22", 
-            "text": "Iter [(A , B , C)] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#zip391b-b-c-c-d-d93", 
-            "text": "Zip four iterators together so that each call to next() results in\na tuple with the next value of each of the iterators. The number of\nitems returned is the minimum of the number of items returned by the\niterators.  fun ref zip3[B: B, C: C, D: D](\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref,\n  i4: Iterator[D] ref)\n: Iter[(A , B , C , D)] ref^", 
-            "title": "zip3[B: B, C: C, D: D]"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_17", 
-            "text": "i2:  Iterator [B] ref  i3:  Iterator [C] ref  i4:  Iterator [D] ref", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_23", 
-            "text": "Iter [(A , B , C , D)] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Iter/#zip491b-b-c-c-d-d-e-e93", 
-            "text": "Zip five iterators together so that each call to next() results in\na tuple with the next value of each of the iterators. The number of\nitems returned is the minimum of the number of items returned by the\niterators.  fun ref zip4[B: B, C: C, D: D, E: E](\n  i2: Iterator[B] ref,\n  i3: Iterator[C] ref,\n  i4: Iterator[D] ref,\n  i5: Iterator[E] ref)\n: Iter[(A , B , C , D , E)] ref^", 
-            "title": "zip4[B: B, C: C, D: D, E: E]"
-        }, 
-        {
-            "location": "/itertools-Iter/#parameters_18", 
-            "text": "i2:  Iterator [B] ref  i3:  Iterator [C] ref  i4:  Iterator [D] ref  i5:  Iterator [E] ref", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Iter/#returns_24", 
-            "text": "Iter [(A , B , C , D , E)] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Take/", 
-            "text": "Take[A: A]\n\n\nCreate an iterator from the original iterator that only returns a\nspecified number of items.\n\n\nExample program\n\n\nPrints the numbers 10 through 12.\n\n\nuse \nitertools\n\n\nactor Main\n  new create(env: Env) =\n\n    let i1 = [as I32: 10; 11; 12; 13; 14]\n\n    for x in Take[I32](i1.values(), 3) do\n      env.out.print(x.string())\n    end\n\n\n\n\nclass ref Take[A: A] is\n  Iterator[A] ref\n\n\n\n\nImplements\n\n\n\n\nIterator\n[A] ref\n\n\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew ref create(\n  i: Iterator[A] ref,\n  l: USize val)\n: Take[A] ref^\n\n\n\n\nParameters\n\n\n\n\ni: \nIterator\n[A] ref\n\n\nl: \nUSize\n val\n\n\n\n\nReturns\n\n\n\n\nTake\n[A] ref^\n\n\n\n\n\n\nPublic Functions\n\n\nhas_next\n\n\nfun ref has_next()\n: Bool val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nnext\n\n\nfun ref next()\n: A ?\n\n\n\n\nReturns\n\n\n\n\nA ?", 
-            "title": "class Take"
-        }, 
-        {
-            "location": "/itertools-Take/#take91a-a93", 
-            "text": "Create an iterator from the original iterator that only returns a\nspecified number of items.", 
-            "title": "Take[A: A]"
-        }, 
-        {
-            "location": "/itertools-Take/#example-program", 
-            "text": "Prints the numbers 10 through 12.  use  itertools \n\nactor Main\n  new create(env: Env) = \n    let i1 = [as I32: 10; 11; 12; 13; 14]\n\n    for x in Take[I32](i1.values(), 3) do\n      env.out.print(x.string())\n    end  class ref Take[A: A] is\n  Iterator[A] ref", 
-            "title": "Example program"
-        }, 
-        {
-            "location": "/itertools-Take/#implements", 
-            "text": "Iterator [A] ref", 
-            "title": "Implements"
-        }, 
-        {
-            "location": "/itertools-Take/#constructors", 
-            "text": "", 
-            "title": "Constructors"
-        }, 
-        {
-            "location": "/itertools-Take/#create", 
-            "text": "new ref create(\n  i: Iterator[A] ref,\n  l: USize val)\n: Take[A] ref^", 
-            "title": "create"
-        }, 
-        {
-            "location": "/itertools-Take/#parameters", 
-            "text": "i:  Iterator [A] ref  l:  USize  val", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Take/#returns", 
-            "text": "Take [A] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Take/#public-functions", 
-            "text": "", 
-            "title": "Public Functions"
-        }, 
-        {
-            "location": "/itertools-Take/#has_next", 
-            "text": "fun ref has_next()\n: Bool val", 
-            "title": "has_next"
-        }, 
-        {
-            "location": "/itertools-Take/#returns_1", 
-            "text": "Bool  val", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Take/#next", 
-            "text": "fun ref next()\n: A ?", 
-            "title": "next"
-        }, 
-        {
-            "location": "/itertools-Take/#returns_2", 
-            "text": "A ?", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Chain/", 
-            "text": "Chain[A: A]\n\n\nTake an iterator of iterators and work through them, returning the\nitems of the first one, then the second one, and so on.\n\n\nExample program\n\n\nPrint the numbers 1 through 14\n\n\nuse \nitertools\n\n\nactor Main\n  new create(env: Env) =\n\n    let i1 = [as I32: 1; 2; 3; 4]\n    let i2 = [as I32: 5; 6; 7; 8; 9]\n    let i3 = [as I32: 10; 11; 12; 13; 14]\n\n    for x in Chain[I32]([i1.values(); i2.values(); i3.values()].values()) do\n      env.out.print(x.string())\n    end\n\n\n\n\nclass ref Chain[A: A] is\n  Iterator[A] ref\n\n\n\n\nImplements\n\n\n\n\nIterator\n[A] ref\n\n\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew ref create(\n  outer_iterator: Iterator[Iterator[A] ref] ref)\n: Chain[A] ref^\n\n\n\n\nParameters\n\n\n\n\nouter_iterator: \nIterator\n[\nIterator\n[A] ref] ref\n\n\n\n\nReturns\n\n\n\n\nChain\n[A] ref^\n\n\n\n\n\n\nPublic Functions\n\n\nhas_next\n\n\nfun ref has_next()\n: Bool val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nnext\n\n\nfun ref next()\n: A ?\n\n\n\n\nReturns\n\n\n\n\nA ?", 
-            "title": "class Chain"
-        }, 
-        {
-            "location": "/itertools-Chain/#chain91a-a93", 
-            "text": "Take an iterator of iterators and work through them, returning the\nitems of the first one, then the second one, and so on.", 
-            "title": "Chain[A: A]"
-        }, 
-        {
-            "location": "/itertools-Chain/#example-program", 
-            "text": "Print the numbers 1 through 14  use  itertools \n\nactor Main\n  new create(env: Env) = \n    let i1 = [as I32: 1; 2; 3; 4]\n    let i2 = [as I32: 5; 6; 7; 8; 9]\n    let i3 = [as I32: 10; 11; 12; 13; 14]\n\n    for x in Chain[I32]([i1.values(); i2.values(); i3.values()].values()) do\n      env.out.print(x.string())\n    end  class ref Chain[A: A] is\n  Iterator[A] ref", 
-            "title": "Example program"
-        }, 
-        {
-            "location": "/itertools-Chain/#implements", 
-            "text": "Iterator [A] ref", 
-            "title": "Implements"
-        }, 
-        {
-            "location": "/itertools-Chain/#constructors", 
-            "text": "", 
-            "title": "Constructors"
-        }, 
-        {
-            "location": "/itertools-Chain/#create", 
-            "text": "new ref create(\n  outer_iterator: Iterator[Iterator[A] ref] ref)\n: Chain[A] ref^", 
-            "title": "create"
-        }, 
-        {
-            "location": "/itertools-Chain/#parameters", 
-            "text": "outer_iterator:  Iterator [ Iterator [A] ref] ref", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/itertools-Chain/#returns", 
-            "text": "Chain [A] ref^", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Chain/#public-functions", 
-            "text": "", 
-            "title": "Public Functions"
-        }, 
-        {
-            "location": "/itertools-Chain/#has_next", 
-            "text": "fun ref has_next()\n: Bool val", 
-            "title": "has_next"
-        }, 
-        {
-            "location": "/itertools-Chain/#returns_1", 
-            "text": "Bool  val", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/itertools-Chain/#next", 
-            "text": "fun ref next()\n: A ?", 
-            "title": "next"
-        }, 
-        {
-            "location": "/itertools-Chain/#returns_2", 
+            "location": "/itertools-_EmptyIter/#returns_2", 
             "text": "A ?", 
             "title": "Returns"
         }, 

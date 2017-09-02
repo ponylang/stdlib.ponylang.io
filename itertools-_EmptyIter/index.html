@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>class Repeat - Pony Standard Library</title>
+  <title>class _EmptyIter - Pony Standard Library</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "class Repeat";
-    var mkdocs_page_input_path = "itertools-Repeat.md";
-    var mkdocs_page_url = "/itertools-Repeat/";
+    var mkdocs_page_name = "class _EmptyIter";
+    var mkdocs_page_input_path = "itertools-_EmptyIter.md";
+    var mkdocs_page_url = "/itertools-_EmptyIter/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -1191,46 +1191,20 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../itertools-Cycle/">class Cycle</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-MapFn/">class MapFn</a>
+    <a class="" href="../itertools-Iter/">class Iter</a>
                 </li>
                 <li class="">
                     
     <a class="" href="../itertools-_None/">primitive _None</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-Filter/">class Filter</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-Zip2/">class Zip2</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-Zip3/">class Zip3</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-Zip4/">class Zip4</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-Zip5/">class Zip5</a>
-                </li>
                 <li class=" current">
                     
-    <a class="current" href="./">class Repeat</a>
+    <a class="current" href="./">class _EmptyIter</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#repeat91a-a93">Repeat[A: A]</a></li>
+    <li class="toctree-l3"><a href="#_emptyiter91a-a93">_EmptyIter[A: A]</a></li>
     
         <ul>
-        
-            <li><a class="toctree-l4" href="#example-program">Example program</a></li>
         
             <li><a class="toctree-l4" href="#constructors">Constructors</a></li>
         
@@ -1240,18 +1214,6 @@
     
 
     </ul>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-Iter/">class Iter</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-Take/">class Take</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-Chain/">class Chain</a>
                 </li>
     </ul>
 	    </li>
@@ -2536,7 +2498,7 @@
         
       
     
-    <li>class Repeat</li>
+    <li>class _EmptyIter</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -2546,42 +2508,19 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="repeat91a-a93">Repeat[A: A]</h1>
-<p>Create an iterator that returns the specified value forever.</p>
-<h2 id="example-program">Example program</h2>
-<p>Print the number 7 forever.</p>
-<pre><code class="pony">use &quot;itertools&quot;
-
-actor Main
-  new create(env: Env) =&gt;
-    for x in Repeat[U32](7) do
-      env.out.print(x.string())
-    end
+                <h1 id="_emptyiter91a-a93">_EmptyIter[A: A]</h1>
+<pre><code class="pony">class ref _EmptyIter[A: A]
 </code></pre>
 
-<pre><code class="pony">class ref Repeat[A: A] is
-  Iterator[A] ref
-</code></pre>
-
-<h4 id="implements">Implements</h4>
-<ul>
-<li><a href="../builtin-Iterator">Iterator</a>[A] ref</li>
-</ul>
-<hr />
 <h2 id="constructors">Constructors</h2>
 <h3 id="create">create</h3>
-<pre><code class="pony">new ref create(
-  v: A)
-: Repeat[A] ref^
+<pre><code class="pony">new iso create()
+: _EmptyIter[A] iso^
 </code></pre>
 
-<h4 id="parameters">Parameters</h4>
-<ul>
-<li>v: A</li>
-</ul>
 <h4 id="returns">Returns</h4>
 <ul>
-<li><a href="../itertools-Repeat">Repeat</a>[A] ref^</li>
+<li><a href="../itertools-_EmptyIter">_EmptyIter</a>[A] iso^</li>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions</h2>
@@ -2597,12 +2536,12 @@ actor Main
 <hr />
 <h3 id="next">next</h3>
 <pre><code class="pony">fun ref next()
-: A
+: A ?
 </code></pre>
 
 <h4 id="returns_2">Returns</h4>
 <ul>
-<li>A</li>
+<li>A ?</li>
 </ul>
 <hr />
               
@@ -2612,10 +2551,10 @@ actor Main
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../itertools-Iter/" class="btn btn-neutral float-right" title="class Iter">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../json--index/" class="btn btn-neutral float-right" title="Package">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../itertools-Zip5/" class="btn btn-neutral" title="class Zip5"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../itertools-_None/" class="btn btn-neutral" title="primitive _None"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -2641,10 +2580,10 @@ actor Main
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../itertools-Zip5/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../itertools-_None/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../itertools-Iter/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../json--index/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

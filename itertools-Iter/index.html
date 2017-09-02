@@ -1189,42 +1189,6 @@
                     
     <a class="" href="../itertools--index/">Package</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-Cycle/">class Cycle</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-MapFn/">class MapFn</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-_None/">primitive _None</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-Filter/">class Filter</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-Zip2/">class Zip2</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-Zip3/">class Zip3</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-Zip4/">class Zip4</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-Zip5/">class Zip5</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../itertools-Repeat/">class Repeat</a>
-                </li>
                 <li class=" current">
                     
     <a class="current" href="./">class Iter</a>
@@ -1240,13 +1204,13 @@
         
             <li><a class="toctree-l4" href="#example">Example</a></li>
         
+            <li><a class="toctree-l4" href="#example_1">Example</a></li>
+        
             <li><a class="toctree-l4" href="#public-functions">Public Functions</a></li>
         
             <li><a class="toctree-l4" href="#examples">Examples</a></li>
         
             <li><a class="toctree-l4" href="#examples_1">Examples</a></li>
-        
-            <li><a class="toctree-l4" href="#example_1">Example</a></li>
         
             <li><a class="toctree-l4" href="#example_2">Example</a></li>
         
@@ -1256,9 +1220,9 @@
         
             <li><a class="toctree-l4" href="#example_5">Example</a></li>
         
-            <li><a class="toctree-l4" href="#examples_2">Examples</a></li>
-        
             <li><a class="toctree-l4" href="#example_6">Example</a></li>
+        
+            <li><a class="toctree-l4" href="#examples_2">Examples</a></li>
         
             <li><a class="toctree-l4" href="#example_7">Example</a></li>
         
@@ -1278,6 +1242,12 @@
         
             <li><a class="toctree-l4" href="#example_15">Example</a></li>
         
+            <li><a class="toctree-l4" href="#example_16">Example</a></li>
+        
+            <li><a class="toctree-l4" href="#example_17">Example</a></li>
+        
+            <li><a class="toctree-l4" href="#example_18">Example</a></li>
+        
         </ul>
     
 
@@ -1285,11 +1255,11 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../itertools-Take/">class Take</a>
+    <a class="" href="../itertools-_None/">primitive _None</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../itertools-Chain/">class Chain</a>
+    <a class="" href="../itertools-_EmptyIter/">class _EmptyIter</a>
                 </li>
     </ul>
 	    </li>
@@ -2636,13 +2606,34 @@ Iter[I64].chain([xs; ys].values())
 <li><a href="../itertools-Iter">Iter</a>[A] ref^</li>
 </ul>
 <hr />
+<h3 id="repeat_value">repeat_value</h3>
+<p>Create an iterator that returns the given value forever.</p>
+<h2 id="example_1">Example</h2>
+<pre><code class="pony">Iter[U32].repeat_value(7)
+</code></pre>
+
+<p><code>7 7 7 7 7 7 7 7 7 ...</code></p>
+<pre><code class="pony">new ref repeat_value(
+  value: A)
+: Iter[A] ref^
+</code></pre>
+
+<h4 id="parameters_2">Parameters</h4>
+<ul>
+<li>value: A</li>
+</ul>
+<h4 id="returns_2">Returns</h4>
+<ul>
+<li><a href="../itertools-Iter">Iter</a>[A] ref^</li>
+</ul>
+<hr />
 <h2 id="public-functions">Public Functions</h2>
 <h3 id="has_next">has_next</h3>
 <pre><code class="pony">fun ref has_next()
 : Bool val
 </code></pre>
 
-<h4 id="returns_2">Returns</h4>
+<h4 id="returns_3">Returns</h4>
 <ul>
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
@@ -2652,9 +2643,60 @@ Iter[I64].chain([xs; ys].values())
 : A ?
 </code></pre>
 
-<h4 id="returns_3">Returns</h4>
+<h4 id="returns_4">Returns</h4>
 <ul>
 <li>A ?</li>
+</ul>
+<hr />
+<h3 id="map_stateful91b-b93">map_stateful[B: B]</h3>
+<p>Allows stateful transformaion of each element from the iterator, similar
+to <code>map</code>.</p>
+<pre><code class="pony">fun ref map_stateful[B: B](
+  f: {ref(A!): B ?}[A, B] ref)
+: Iter[B] ref^
+</code></pre>
+
+<h4 id="parameters_3">Parameters</h4>
+<ul>
+<li>f: {ref(A!): B ?}[A, B] ref</li>
+</ul>
+<h4 id="returns_5">Returns</h4>
+<ul>
+<li><a href="../itertools-Iter">Iter</a>[B] ref^</li>
+</ul>
+<hr />
+<h3 id="filter_stateful">filter_stateful</h3>
+<p>Allows filtering of elements based on a stateful adapter, similar to
+<code>filter</code>.</p>
+<pre><code class="pony">fun ref filter_stateful(
+  f: {ref(A!): Bool ?}[A] ref)
+: Iter[A] ref^
+</code></pre>
+
+<h4 id="parameters_4">Parameters</h4>
+<ul>
+<li>f: {ref(A!): Bool ?}[A] ref</li>
+</ul>
+<h4 id="returns_6">Returns</h4>
+<ul>
+<li><a href="../itertools-Iter">Iter</a>[A] ref^</li>
+</ul>
+<hr />
+<h3 id="filter_map_stateful91b-b93">filter_map_stateful[B: B]</h3>
+<p>Allows stateful modification to the stream of elements from an iterator,
+similar to <code>filter_map</code>.</p>
+<pre><code class="pony">fun ref filter_map_stateful[B: B](
+  f: {ref(A!): (B | None) ?}[A, B] ref)
+: Iter[B] ref^
+</code></pre>
+
+<h4 id="parameters_5">Parameters</h4>
+<ul>
+<li>f: {ref(A!): (B | None) ?}[A, B] ref</li>
+</ul>
+<h4 id="returns_7">Returns</h4>
+<ul>
+<li><a href="../itertools-Iter">Iter</a>[B] ref^</li>
 </ul>
 <hr />
 <h3 id="all">all</h3>
@@ -2677,11 +2719,11 @@ predicate returns false, otherwise true is returned.</p>
 : Bool val
 </code></pre>
 
-<h4 id="parameters_2">Parameters</h4>
+<h4 id="parameters_6">Parameters</h4>
 <ul>
 <li>f: {(A!): Bool ?}[A] box</li>
 </ul>
-<h4 id="returns_4">Returns</h4>
+<h4 id="returns_8">Returns</h4>
 <ul>
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
@@ -2706,18 +2748,18 @@ returns true, otherwise false is returned.</p>
 : Bool val
 </code></pre>
 
-<h4 id="parameters_3">Parameters</h4>
+<h4 id="parameters_7">Parameters</h4>
 <ul>
 <li>f: {(A!): Bool ?}[A] box</li>
 </ul>
-<h4 id="returns_5">Returns</h4>
+<h4 id="returns_9">Returns</h4>
 <ul>
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
 <hr />
 <h3 id="collect91optional-b-seq91a93-ref93">collect[optional B: <a href="../builtin-Seq">Seq</a>[A!] ref]</h3>
 <p>Push each value from the iterator into the collection <code>coll</code>.</p>
-<h2 id="example_1">Example</h2>
+<h2 id="example_2">Example</h2>
 <pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
   .collect(Array[I64](3))
 </code></pre>
@@ -2728,18 +2770,18 @@ returns true, otherwise false is returned.</p>
 : B^
 </code></pre>
 
-<h4 id="parameters_4">Parameters</h4>
+<h4 id="parameters_8">Parameters</h4>
 <ul>
 <li>coll: B</li>
 </ul>
-<h4 id="returns_6">Returns</h4>
+<h4 id="returns_10">Returns</h4>
 <ul>
 <li>B^</li>
 </ul>
 <hr />
 <h3 id="count">count</h3>
 <p>Return the number of values in the iterator.</p>
-<h2 id="example_2">Example</h2>
+<h2 id="example_3">Example</h2>
 <pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
   .count()
 </code></pre>
@@ -2749,7 +2791,7 @@ returns true, otherwise false is returned.</p>
 : USize val
 </code></pre>
 
-<h4 id="returns_7">Returns</h4>
+<h4 id="returns_11">Returns</h4>
 <ul>
 <li><a href="../builtin-USize">USize</a> val</li>
 </ul>
@@ -2758,7 +2800,7 @@ returns true, otherwise false is returned.</p>
 <p>Repeatedly cycle through the values from the iterator.</p>
 <p>WARNING: The values returned by the original iterator are cached, so
 the input iterator should be finite.</p>
-<h2 id="example_3">Example</h2>
+<h2 id="example_4">Example</h2>
 <pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
   .cycle()
 </code></pre>
@@ -2768,7 +2810,7 @@ the input iterator should be finite.</p>
 : Iter[A!] ref^
 </code></pre>
 
-<h4 id="returns_8">Returns</h4>
+<h4 id="returns_12">Returns</h4>
 <ul>
 <li><a href="../itertools-Iter">Iter</a>[A!] ref^</li>
 </ul>
@@ -2782,7 +2824,7 @@ the input iterator should be finite.</p>
 </code></pre>
 <p>An iterator which yields the current iteration count as well as the next
 value from the iterator.</p>
-<h2 id="example_4">Example</h2>
+<h2 id="example_5">Example</h2>
 <pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
   .enum()
 </code></pre>
@@ -2797,14 +2839,14 @@ value from the iterator.</p>
 : Iter[(B , A)] ref^
 </code></pre>
 
-<h4 id="returns_9">Returns</h4>
+<h4 id="returns_13">Returns</h4>
 <ul>
 <li><a href="../itertools-Iter">Iter</a>[(B , A)] ref^</li>
 </ul>
 <hr />
 <h3 id="filter">filter</h3>
 <p>Return an iterator that only returns items that match the predicate <code>f</code>.</p>
-<h2 id="example_5">Example</h2>
+<h2 id="example_6">Example</h2>
 <pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
   .filter({(x: I64): Bool =&gt; (x % 2) == 0 })
 </code></pre>
@@ -2815,11 +2857,11 @@ value from the iterator.</p>
 : Iter[A] ref^
 </code></pre>
 
-<h4 id="parameters_5">Parameters</h4>
+<h4 id="parameters_9">Parameters</h4>
 <ul>
 <li>f: {(A!): Bool ?}[A] box</li>
 </ul>
-<h4 id="returns_10">Returns</h4>
+<h4 id="returns_14">Returns</h4>
 <ul>
 <li><a href="../itertools-Iter">Iter</a>[A] ref^</li>
 </ul>
@@ -2843,43 +2885,112 @@ value from the iterator.</p>
 : A ?
 </code></pre>
 
-<h4 id="parameters_6">Parameters</h4>
+<h4 id="parameters_10">Parameters</h4>
 <ul>
 <li>f: {(A!): Bool ?}[A] box</li>
 <li>n: <a href="../builtin-USize">USize</a> val = 1</li>
 </ul>
-<h4 id="returns_11">Returns</h4>
+<h4 id="returns_15">Returns</h4>
 <ul>
 <li>A ?</li>
 </ul>
 <hr />
+<h3 id="filter_map91b-b93">filter_map[B: B]</h3>
+<p>Return an iterator which applies <code>f</code> to each element. If <code>None</code> is
+returned, then the iterator will try again by applying <code>f</code> to the next
+element. Otherwise, the value of type <code>B</code> is returned.</p>
+<h2 id="example_7">Example</h2>
+<pre><code class="pony">Iter[I64]([as I64: 1; -2; 4; 7; -5])
+  .filter_map[USize](
+    {(i: I64): (USize | None) =&gt; if i &gt;= 0 then i.usize() end })
+</code></pre>
+
+<p><code>1 4 7</code></p>
+<pre><code>
+
+```pony
+fun ref filter_map[B: B](
+  f: {(A!): (B | None) ?}[A, B] box)
+: Iter[B] ref^
+</code></pre>
+
+<h4 id="parameters_11">Parameters</h4>
+<ul>
+<li>f: {(A!): (B | None) ?}[A, B] box</li>
+</ul>
+<h4 id="returns_16">Returns</h4>
+<ul>
+<li><a href="../itertools-Iter">Iter</a>[B] ref^</li>
+</ul>
+<hr />
+<h3 id="flat_map91b-b93">flat_map[B: B]</h3>
+<p>Return an iterator over the values of the iterators produced from the
+application of the given function.</p>
+<h2 id="example_8">Example</h2>
+<pre><code class="pony">Iter[String]([&quot;alpha&quot;; &quot;beta&quot;; &quot;gamma&quot;])
+  .flat_map[U8]({(s: String): Iterator[U8] =&gt; s.values() })
+</code></pre>
+
+<p><code>a l p h a b e t a g a m m a</code></p>
+<pre><code class="pony">fun ref flat_map[B: B](
+  f: {(A!): Iterator[B] ?}[A, B] box)
+: Iter[B] ref^
+</code></pre>
+
+<h4 id="parameters_12">Parameters</h4>
+<ul>
+<li>f: {(A!): Iterator[B] ?}[A, B] box</li>
+</ul>
+<h4 id="returns_17">Returns</h4>
+<ul>
+<li><a href="../itertools-Iter">Iter</a>[B] ref^</li>
+</ul>
+<hr />
 <h3 id="fold91b-b93">fold[B: B]</h3>
 <p>Apply a function to every element, producing an accumulated value.</p>
-<h2 id="example_6">Example</h2>
+<h2 id="example_9">Example</h2>
 <pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
   .fold[I64]({(sum: I64, x: I64): I64 =&gt; sum + x }, 0)
 </code></pre>
 
 <p><code>6</code></p>
 <pre><code class="pony">fun ref fold[B: B](
-  f: {(B, A!): B^ ?}[A, B] box,
-  acc: B)
+  acc: B,
+  f: {(B, A!): B^}[A, B] box)
+: B^
+</code></pre>
+
+<h4 id="parameters_13">Parameters</h4>
+<ul>
+<li>acc: B</li>
+<li>f: {(B, A!): B^}[A, B] box</li>
+</ul>
+<h4 id="returns_18">Returns</h4>
+<ul>
+<li>B^</li>
+</ul>
+<hr />
+<h3 id="fold_partial91b-b93">fold_partial[B: B]</h3>
+<p>A partial version of <code>fold</code>.</p>
+<pre><code class="pony">fun ref fold_partial[B: B](
+  acc: B,
+  f: {(B, A!): B^ ?}[A, B] box)
 : B^ ?
 </code></pre>
 
-<h4 id="parameters_7">Parameters</h4>
+<h4 id="parameters_14">Parameters</h4>
 <ul>
-<li>f: {(B, A!): B^ ?}[A, B] box</li>
 <li>acc: B</li>
+<li>f: {(B, A!): B^ ?}[A, B] box</li>
 </ul>
-<h4 id="returns_12">Returns</h4>
+<h4 id="returns_19">Returns</h4>
 <ul>
 <li>B^ ?</li>
 </ul>
 <hr />
 <h3 id="last">last</h3>
 <p>Return the last value of the iterator.</p>
-<h2 id="example_7">Example</h2>
+<h2 id="example_10">Example</h2>
 <pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
   .last()
 </code></pre>
@@ -2889,7 +3000,7 @@ value from the iterator.</p>
 : A ?
 </code></pre>
 
-<h4 id="returns_13">Returns</h4>
+<h4 id="returns_20">Returns</h4>
 <ul>
 <li>A ?</li>
 </ul>
@@ -2897,7 +3008,7 @@ value from the iterator.</p>
 <h3 id="map91b-b93">map[B: B]</h3>
 <p>Return an iterator where each item's value is the application of the given
 function to the value in the original iterator.</p>
-<h2 id="example_8">Example</h2>
+<h2 id="example_11">Example</h2>
 <pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
   .map[I64]({(x: I64): I64 =&gt; x * x })
 </code></pre>
@@ -2908,18 +3019,18 @@ function to the value in the original iterator.</p>
 : Iter[B] ref^
 </code></pre>
 
-<h4 id="parameters_8">Parameters</h4>
+<h4 id="parameters_15">Parameters</h4>
 <ul>
 <li>f: {(A!): B ?}[A, B] box</li>
 </ul>
-<h4 id="returns_14">Returns</h4>
+<h4 id="returns_21">Returns</h4>
 <ul>
 <li><a href="../itertools-Iter">Iter</a>[B] ref^</li>
 </ul>
 <hr />
 <h3 id="nth">nth</h3>
 <p>Return the nth value of the iterator.</p>
-<h2 id="example_9">Example</h2>
+<h2 id="example_12">Example</h2>
 <pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
   .nth(2)
 </code></pre>
@@ -2930,11 +3041,11 @@ function to the value in the original iterator.</p>
 : A ?
 </code></pre>
 
-<h4 id="parameters_9">Parameters</h4>
+<h4 id="parameters_16">Parameters</h4>
 <ul>
 <li>n: <a href="../builtin-USize">USize</a> val</li>
 </ul>
-<h4 id="returns_15">Returns</h4>
+<h4 id="returns_22">Returns</h4>
 <ul>
 <li>A ?</li>
 </ul>
@@ -2943,7 +3054,7 @@ function to the value in the original iterator.</p>
 <p>Iterate through the values of the iterator without a for loop. The
 function <code>on_error</code> will be called if the iterator's <code>has_next</code> method
 returns true but its <code>next</code> method throws an error.</p>
-<h2 id="example_10">Example</h2>
+<h2 id="example_13">Example</h2>
 <pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
   .map[None]({(x: I64) =&gt; env.out.print(x.string()) })
   .run()
@@ -2955,22 +3066,22 @@ returns true but its <code>next</code> method throws an error.</p>
 </code></pre>
 
 <pre><code class="pony">fun ref run(
-  on_error: {()}[A] box = lambda)
+  on_error: {ref()}[A] ref = lambda)
 : None val
 </code></pre>
 
-<h4 id="parameters_10">Parameters</h4>
+<h4 id="parameters_17">Parameters</h4>
 <ul>
-<li>on_error: {()}[A] box = lambda</li>
+<li>on_error: {ref()}[A] ref = lambda</li>
 </ul>
-<h4 id="returns_16">Returns</h4>
+<h4 id="returns_23">Returns</h4>
 <ul>
 <li><a href="../builtin-None">None</a> val</li>
 </ul>
 <hr />
 <h3 id="skip">skip</h3>
 <p>Skip the first n values of the iterator.</p>
-<h2 id="example_11">Example</h2>
+<h2 id="example_14">Example</h2>
 <pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
   .skip(3)
 </code></pre>
@@ -2981,18 +3092,18 @@ returns true but its <code>next</code> method throws an error.</p>
 : Iter[A] ref^
 </code></pre>
 
-<h4 id="parameters_11">Parameters</h4>
+<h4 id="parameters_18">Parameters</h4>
 <ul>
 <li>n: <a href="../builtin-USize">USize</a> val</li>
 </ul>
-<h4 id="returns_17">Returns</h4>
+<h4 id="returns_24">Returns</h4>
 <ul>
 <li><a href="../itertools-Iter">Iter</a>[A] ref^</li>
 </ul>
 <hr />
 <h3 id="skip_while">skip_while</h3>
 <p>Skip values of the iterator while the predicate <code>f</code> returns true.</p>
-<h2 id="example_12">Example</h2>
+<h2 id="example_15">Example</h2>
 <pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
   .skip_while({(x: I64): Bool =&gt; x &lt; 4 })
 </code></pre>
@@ -3003,18 +3114,18 @@ returns true but its <code>next</code> method throws an error.</p>
 : Iter[A] ref^
 </code></pre>
 
-<h4 id="parameters_12">Parameters</h4>
+<h4 id="parameters_19">Parameters</h4>
 <ul>
 <li>f: {(A!): Bool ?}[A] box</li>
 </ul>
-<h4 id="returns_18">Returns</h4>
+<h4 id="returns_25">Returns</h4>
 <ul>
 <li><a href="../itertools-Iter">Iter</a>[A] ref^</li>
 </ul>
 <hr />
 <h3 id="take">take</h3>
 <p>Return an iterator for the first n elements.</p>
-<h2 id="example_13">Example</h2>
+<h2 id="example_16">Example</h2>
 <pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
   .take(3)
 </code></pre>
@@ -3025,11 +3136,11 @@ returns true but its <code>next</code> method throws an error.</p>
 : Iter[A] ref^
 </code></pre>
 
-<h4 id="parameters_13">Parameters</h4>
+<h4 id="parameters_20">Parameters</h4>
 <ul>
 <li>n: <a href="../builtin-USize">USize</a> val</li>
 </ul>
-<h4 id="returns_19">Returns</h4>
+<h4 id="returns_26">Returns</h4>
 <ul>
 <li><a href="../itertools-Iter">Iter</a>[A] ref^</li>
 </ul>
@@ -3037,7 +3148,7 @@ returns true but its <code>next</code> method throws an error.</p>
 <h3 id="take_while">take_while</h3>
 <p>Return an iterator that returns values while the predicate <code>f</code> returns
 true.</p>
-<h2 id="example_14">Example</h2>
+<h2 id="example_17">Example</h2>
 <pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
   .take_while({(x: I64): Bool =&gt; x &lt; 4 })
 </code></pre>
@@ -3048,11 +3159,11 @@ true.</p>
 : Iter[A] ref^
 </code></pre>
 
-<h4 id="parameters_14">Parameters</h4>
+<h4 id="parameters_21">Parameters</h4>
 <ul>
 <li>f: {(A!): Bool ?}[A] box</li>
 </ul>
-<h4 id="returns_20">Returns</h4>
+<h4 id="returns_27">Returns</h4>
 <ul>
 <li><a href="../itertools-Iter">Iter</a>[A] ref^</li>
 </ul>
@@ -3062,7 +3173,7 @@ true.</p>
 a tuple with the next value of the first iterator and the next value
 of the second iterator. The number of items returned is the minimum of
 the number of items returned by the two iterators.</p>
-<h2 id="example_15">Example</h2>
+<h2 id="example_18">Example</h2>
 <pre><code class="pony">Iter[I64]([as I64: 1; 2].values())
   .zip[I64]([as I64: 3; 4].values())
 </code></pre>
@@ -3073,11 +3184,11 @@ the number of items returned by the two iterators.</p>
 : Iter[(A , B)] ref^
 </code></pre>
 
-<h4 id="parameters_15">Parameters</h4>
+<h4 id="parameters_22">Parameters</h4>
 <ul>
 <li>i2: <a href="../builtin-Iterator">Iterator</a>[B] ref</li>
 </ul>
-<h4 id="returns_21">Returns</h4>
+<h4 id="returns_28">Returns</h4>
 <ul>
 <li><a href="../itertools-Iter">Iter</a>[(A , B)] ref^</li>
 </ul>
@@ -3094,12 +3205,12 @@ returned by the three iterators.</p>
 : Iter[(A , B , C)] ref^
 </code></pre>
 
-<h4 id="parameters_16">Parameters</h4>
+<h4 id="parameters_23">Parameters</h4>
 <ul>
 <li>i2: <a href="../builtin-Iterator">Iterator</a>[B] ref</li>
 <li>i3: <a href="../builtin-Iterator">Iterator</a>[C] ref</li>
 </ul>
-<h4 id="returns_22">Returns</h4>
+<h4 id="returns_29">Returns</h4>
 <ul>
 <li><a href="../itertools-Iter">Iter</a>[(A , B , C)] ref^</li>
 </ul>
@@ -3116,13 +3227,13 @@ iterators.</p>
 : Iter[(A , B , C , D)] ref^
 </code></pre>
 
-<h4 id="parameters_17">Parameters</h4>
+<h4 id="parameters_24">Parameters</h4>
 <ul>
 <li>i2: <a href="../builtin-Iterator">Iterator</a>[B] ref</li>
 <li>i3: <a href="../builtin-Iterator">Iterator</a>[C] ref</li>
 <li>i4: <a href="../builtin-Iterator">Iterator</a>[D] ref</li>
 </ul>
-<h4 id="returns_23">Returns</h4>
+<h4 id="returns_30">Returns</h4>
 <ul>
 <li><a href="../itertools-Iter">Iter</a>[(A , B , C , D)] ref^</li>
 </ul>
@@ -3140,14 +3251,14 @@ iterators.</p>
 : Iter[(A , B , C , D , E)] ref^
 </code></pre>
 
-<h4 id="parameters_18">Parameters</h4>
+<h4 id="parameters_25">Parameters</h4>
 <ul>
 <li>i2: <a href="../builtin-Iterator">Iterator</a>[B] ref</li>
 <li>i3: <a href="../builtin-Iterator">Iterator</a>[C] ref</li>
 <li>i4: <a href="../builtin-Iterator">Iterator</a>[D] ref</li>
 <li>i5: <a href="../builtin-Iterator">Iterator</a>[E] ref</li>
 </ul>
-<h4 id="returns_24">Returns</h4>
+<h4 id="returns_31">Returns</h4>
 <ul>
 <li><a href="../itertools-Iter">Iter</a>[(A , B , C , D , E)] ref^</li>
 </ul>
@@ -3159,10 +3270,10 @@ iterators.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../itertools-Take/" class="btn btn-neutral float-right" title="class Take">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../itertools-_None/" class="btn btn-neutral float-right" title="primitive _None">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../itertools-Repeat/" class="btn btn-neutral" title="class Repeat"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../itertools--index/" class="btn btn-neutral" title="Package"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -3188,10 +3299,10 @@ iterators.</p>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../itertools-Repeat/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../itertools--index/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../itertools-Take/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../itertools-_None/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
