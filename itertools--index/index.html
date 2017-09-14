@@ -428,6 +428,113 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">package cli</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../cli--index/">Package</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-CommandSpec/">class CommandSpec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-OptionSpec/">class OptionSpec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-ArgSpec/">class ArgSpec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_StringSeq/">class _StringSeq</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_Value/">type _Value</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_ValueType/">trait _ValueType</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_BoolType/">primitive _BoolType</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_StringType/">primitive _StringType</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_I64Type/">primitive _I64Type</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_F64Type/">primitive _F64Type</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_StringSeqType/">primitive _StringSeqType</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-Help/">primitive Help</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-CommandHelp/">class CommandHelp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_Columns/">primitive _Columns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-CommandParser/">class CommandParser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_OptionParser/">primitive _OptionParser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_ArgParser/">primitive _ArgParser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_ValueParser/">primitive _ValueParser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-EnvVars/">primitive EnvVars</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_Fixtures/">primitive _Fixtures</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-Command/">class Command</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-Option/">class Option</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-Arg/">class Arg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-SyntaxError/">class SyntaxError</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">package collections</span>
     <ul class="subnav">
                 <li class="">
@@ -2523,10 +2630,10 @@ one as needed. Lazy methods return Iter types.</p>
 <p>For example, the following code creates an Iter from the values of an array
 containing the numbers 1 through 5, increments each number by one, filters out
 any odd numbers, and prints the rest.</p>
-<pre><code class="pony">let xs = Iter[I64]([as I64: 1; 2; 3; 4; 5].values())
-  .map[I64]({(x: I64): I64 =&gt; x + 1 })
-  .filter({(x: I64): Bool =&gt; (x % 2) == 0 })
-  .map[None]({(x: I64) =&gt; env.out.print(x.string()) })
+<pre><code class="pony">let xs = Iter[I64]([1; 2; 3; 4; 5].values())
+  .map[I64]({(x) =&gt; x + 1 })
+  .filter({(x) =&gt; (x % 2) == 0 })
+  .map[None]({(x) =&gt; env.out.print(x.string()) })
 </code></pre>
 
 <p>This will result in an iterator that prints the numbers 2, 4, and 6. However,
@@ -2541,10 +2648,10 @@ end
 <p>This will trigger the iteration and print out the values 2, 4, and 6. This is
 where the <code>run</code> method comes in handy by doing the iteration without the need
 for a loop. So the final code would be as follows:</p>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4; 5].values())
-  .map[I64]({(x: I64): I64 =&gt; x + 1 })
-  .filter({(x: I64): Bool =&gt; (x % 2) == 0 })
-  .map[None]({(x: I64) =&gt; env.out.print(x.string()) })
+<pre><code class="pony">Iter[I64]([1; 2; 3; 4; 5].values())
+  .map[I64]({(x) =&gt; x + 1 })
+  .filter({(x) =&gt; (x % 2) == 0 })
+  .map[None]({(x) =&gt; env.out.print(x.string()) })
   .run()
 </code></pre>
 

@@ -428,6 +428,113 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">package cli</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../cli--index/">Package</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-CommandSpec/">class CommandSpec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-OptionSpec/">class OptionSpec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-ArgSpec/">class ArgSpec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_StringSeq/">class _StringSeq</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_Value/">type _Value</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_ValueType/">trait _ValueType</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_BoolType/">primitive _BoolType</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_StringType/">primitive _StringType</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_I64Type/">primitive _I64Type</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_F64Type/">primitive _F64Type</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_StringSeqType/">primitive _StringSeqType</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-Help/">primitive Help</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-CommandHelp/">class CommandHelp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_Columns/">primitive _Columns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-CommandParser/">class CommandParser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_OptionParser/">primitive _OptionParser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_ArgParser/">primitive _ArgParser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_ValueParser/">primitive _ValueParser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-EnvVars/">primitive EnvVars</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_Fixtures/">primitive _Fixtures</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-Command/">class Command</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-Option/">class Option</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-Arg/">class Arg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-SyntaxError/">class SyntaxError</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">package collections</span>
     <ul class="subnav">
                 <li class="">
@@ -2529,7 +2636,7 @@ actor Main
       let m3 = m2(&quot;b&quot;) = 10 // {a: 5, b: 10}
       let m4 = m3.remove(&quot;a&quot;)? // {b: 10}
       // You can create a new map from key value pairs.
-      let m5 = Map[String, U32].concat([as (String, U32): (&quot;a&quot;, 2); (&quot;b&quot;, 3)].values()) // {a: 2, b: 3}
+      let m5 = Map[String, U32].concat([(&quot;a&quot;, 2); (&quot;b&quot;, 3)].values()) // {a: 2, b: 3}
     end
 </code></pre>
 

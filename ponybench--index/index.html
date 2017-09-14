@@ -428,6 +428,113 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">package cli</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../cli--index/">Package</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-CommandSpec/">class CommandSpec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-OptionSpec/">class OptionSpec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-ArgSpec/">class ArgSpec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_StringSeq/">class _StringSeq</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_Value/">type _Value</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_ValueType/">trait _ValueType</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_BoolType/">primitive _BoolType</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_StringType/">primitive _StringType</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_I64Type/">primitive _I64Type</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_F64Type/">primitive _F64Type</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_StringSeqType/">primitive _StringSeqType</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-Help/">primitive Help</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-CommandHelp/">class CommandHelp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_Columns/">primitive _Columns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-CommandParser/">class CommandParser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_OptionParser/">primitive _OptionParser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_ArgParser/">primitive _ArgParser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_ValueParser/">primitive _ValueParser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-EnvVars/">primitive EnvVars</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_Fixtures/">primitive _Fixtures</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-Command/">class Command</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-Option/">class Option</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-Arg/">class Arg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-SyntaxError/">class SyntaxError</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">package collections</span>
     <ul class="subnav">
                 <li class="">
@@ -2519,28 +2626,23 @@ actor Main
     let bench = PonyBench(env)
 
     // benchmark Fib with different inputs
-    bench[USize](&quot;fib 5&quot;, {(): USize =&gt; Fib(5) })
-    bench[USize](&quot;fib 10&quot;, {(): USize =&gt; Fib(10) })
-    bench[USize](&quot;fib 20&quot;, {(): USize =&gt; Fib(20) })
-    bench[USize](&quot;fib 40&quot;, {(): USize =&gt; Fib(40) })
+    bench[USize](&quot;fib 5&quot;, {() =&gt; Fib(5) })
+    bench[USize](&quot;fib 10&quot;, {() =&gt; Fib(10) })
+    bench[USize](&quot;fib 20&quot;, {() =&gt; Fib(20) })
+    bench[USize](&quot;fib 40&quot;, {() =&gt; Fib(40) })
 
     // show what happens when a benchmark fails
     bench[String](&quot;fail&quot;, {(): String ? =&gt; error })
 
     // async benchmark
-    bench.async[USize](
-      &quot;async&quot;,
-      {(): Promise[USize] =&gt; Promise[USize] .&gt; apply(0) } iso)
+    bench.async[USize](&quot;async&quot;, {() =&gt; Promise[USize] .&gt; apply(0) })
 
     // async benchmark timeout
-    bench.async[USize](
-      &quot;timeout&quot;,
-      {(): Promise[USize] =&gt; Promise[USize] } iso,
-      1_000_000)
+    bench.async[USize](&quot;timeout&quot;, {() =&gt; Promise[USize] }, 1_000_000)
 
     // benchmarks with set ops
-    bench[USize](&quot;add&quot;, {(): USize =&gt; 1 + 2 }, 10_000_000)
-    bench[USize](&quot;sub&quot;, {(): USize =&gt; 2 - 1 }, 10_000_000)
+    bench[USize](&quot;add&quot;, {() =&gt; 1 + 2 }, 10_000_000)
+    bench[USize](&quot;sub&quot;, {() =&gt; 2 - 1 }, 10_000_000)
 
 primitive Fib
   fun apply(n: USize): USize =&gt;

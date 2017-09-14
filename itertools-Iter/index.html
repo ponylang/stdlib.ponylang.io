@@ -428,6 +428,113 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">package cli</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../cli--index/">Package</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-CommandSpec/">class CommandSpec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-OptionSpec/">class OptionSpec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-ArgSpec/">class ArgSpec</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_StringSeq/">class _StringSeq</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_Value/">type _Value</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_ValueType/">trait _ValueType</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_BoolType/">primitive _BoolType</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_StringType/">primitive _StringType</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_I64Type/">primitive _I64Type</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_F64Type/">primitive _F64Type</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_StringSeqType/">primitive _StringSeqType</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-Help/">primitive Help</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-CommandHelp/">class CommandHelp</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_Columns/">primitive _Columns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-CommandParser/">class CommandParser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_OptionParser/">primitive _OptionParser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_ArgParser/">primitive _ArgParser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_ValueParser/">primitive _ValueParser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-EnvVars/">primitive EnvVars</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-_Fixtures/">primitive _Fixtures</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-Command/">class Command</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-Option/">class Option</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-Arg/">class Arg</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cli-SyntaxError/">class SyntaxError</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">package collections</span>
     <ul class="subnav">
                 <li class="">
@@ -2704,13 +2811,13 @@ similar to <code>filter_map</code>.</p>
 predicate <code>f</code>. This method short-circuits at the first value where the
 predicate returns false, otherwise true is returned.</p>
 <h2 id="examples">Examples</h2>
-<pre><code class="pony">Iter[I64]([as I64: 2; 4; 6].values())
-  .all({(x: I64): Bool =&gt; (x % 2) == 0 })
+<pre><code class="pony">Iter[I64]([2; 4; 6].values())
+  .all({(x) =&gt; (x % 2) == 0 })
 </code></pre>
 
 <p><code>true</code></p>
-<pre><code class="pony">Iter[I64]([as I64: 2; 3; 4].values())
-  .all({(x: I64): Bool =&gt; (x % 2) == 0 })
+<pre><code class="pony">Iter[I64]([2; 3; 4].values())
+  .all({(x) =&gt; (x % 2) == 0 })
 </code></pre>
 
 <p><code>false</code></p>
@@ -2733,13 +2840,13 @@ predicate returns false, otherwise true is returned.</p>
 <code>f</code>. This method short-circuits at the first value where the predicate
 returns true, otherwise false is returned.</p>
 <h2 id="examples_1">Examples</h2>
-<pre><code class="pony">Iter[I64]([as I64: 2; 4; 6].values())
-  .any({(x: I64): Bool =&gt; (x % 2) == 1 })
+<pre><code class="pony">Iter[I64]([2; 4; 6].values())
+  .any({(I64) =&gt; (x % 2) == 1 })
 </code></pre>
 
 <p><code>false</code></p>
-<pre><code class="pony">Iter[I64]([as I64: 2; 3; 4].values())
-  .any({(x: I64): Bool =&gt; (x % 2) == 1 })
+<pre><code class="pony">Iter[I64]([2; 3; 4].values())
+  .any({(I64) =&gt; (x % 2) == 1 })
 </code></pre>
 
 <p><code>true</code></p>
@@ -2760,7 +2867,7 @@ returns true, otherwise false is returned.</p>
 <h3 id="collect91optional-b-seq91a93-ref93">collect[optional B: <a href="../builtin-Seq">Seq</a>[A!] ref]</h3>
 <p>Push each value from the iterator into the collection <code>coll</code>.</p>
 <h2 id="example_2">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
+<pre><code class="pony">Iter[I64]([1; 2; 3].values())
   .collect(Array[I64](3))
 </code></pre>
 
@@ -2782,7 +2889,7 @@ returns true, otherwise false is returned.</p>
 <h3 id="count">count</h3>
 <p>Return the number of values in the iterator.</p>
 <h2 id="example_3">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
+<pre><code class="pony">Iter[I64]([1; 2; 3].values())
   .count()
 </code></pre>
 
@@ -2801,7 +2908,7 @@ returns true, otherwise false is returned.</p>
 <p>WARNING: The values returned by the original iterator are cached, so
 the input iterator should be finite.</p>
 <h2 id="example_4">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
+<pre><code class="pony">Iter[I64]([1; 2; 3].values())
   .cycle()
 </code></pre>
 
@@ -2825,7 +2932,7 @@ the input iterator should be finite.</p>
 <p>An iterator which yields the current iteration count as well as the next
 value from the iterator.</p>
 <h2 id="example_5">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
+<pre><code class="pony">Iter[I64]([1; 2; 3].values())
   .enum()
 </code></pre>
 
@@ -2847,8 +2954,8 @@ value from the iterator.</p>
 <h3 id="filter">filter</h3>
 <p>Return an iterator that only returns items that match the predicate <code>f</code>.</p>
 <h2 id="example_6">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
-  .filter({(x: I64): Bool =&gt; (x % 2) == 0 })
+<pre><code class="pony">Iter[I64]([1; 2; 3; 4; 5; 6].values())
+  .filter({(x) =&gt; (x % 2) == 0 })
 </code></pre>
 
 <p><code>2 4 6</code></p>
@@ -2869,13 +2976,13 @@ value from the iterator.</p>
 <h3 id="find">find</h3>
 <p>Return the nth value in the iterator that satisfies the predicate <code>f</code>.</p>
 <h2 id="examples_2">Examples</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
-  .find({(x: I64): Bool =&gt; (x % 2) == 0 })
+<pre><code class="pony">Iter[I64]([1; 2; 3].values())
+  .find({(x) =&gt; (x % 2) == 0 })
 </code></pre>
 
 <p><code>2</code></p>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4].values())
-  .find({(x: I64): Bool =&gt; (x % 2) == 0 }, 2)
+<pre><code class="pony">Iter[I64]([1; 2; 3; 4].values())
+  .find({(x) =&gt; (x % 2) == 0 }, 2)
 </code></pre>
 
 <p><code>4</code></p>
@@ -2949,8 +3056,8 @@ application of the given function.</p>
 <h3 id="fold91b-b93">fold[B: B]</h3>
 <p>Apply a function to every element, producing an accumulated value.</p>
 <h2 id="example_9">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
-  .fold[I64]({(sum: I64, x: I64): I64 =&gt; sum + x }, 0)
+<pre><code class="pony">Iter[I64]([1; 2; 3].values())
+  .fold[I64]({(sum, x) =&gt; sum + x }, 0)
 </code></pre>
 
 <p><code>6</code></p>
@@ -2991,7 +3098,7 @@ application of the given function.</p>
 <h3 id="last">last</h3>
 <p>Return the last value of the iterator.</p>
 <h2 id="example_10">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
+<pre><code class="pony">Iter[I64]([1; 2; 3].values())
   .last()
 </code></pre>
 
@@ -3009,8 +3116,8 @@ application of the given function.</p>
 <p>Return an iterator where each item's value is the application of the given
 function to the value in the original iterator.</p>
 <h2 id="example_11">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
-  .map[I64]({(x: I64): I64 =&gt; x * x })
+<pre><code class="pony">Iter[I64]([1; 2; 3].values())
+  .map[I64]({(x) =&gt; x * x })
 </code></pre>
 
 <p><code>1 4 9</code></p>
@@ -3031,7 +3138,7 @@ function to the value in the original iterator.</p>
 <h3 id="nth">nth</h3>
 <p>Return the nth value of the iterator.</p>
 <h2 id="example_12">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
+<pre><code class="pony">Iter[I64]([1; 2; 3].values())
   .nth(2)
 </code></pre>
 
@@ -3055,8 +3162,8 @@ function to the value in the original iterator.</p>
 function <code>on_error</code> will be called if the iterator's <code>has_next</code> method
 returns true but its <code>next</code> method throws an error.</p>
 <h2 id="example_13">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3].values())
-  .map[None]({(x: I64) =&gt; env.out.print(x.string()) })
+<pre><code class="pony">Iter[I64]([1; 2; 3].values())
+  .map[None]({(x) =&gt; env.out.print(x.string()) })
   .run()
 </code></pre>
 
@@ -3082,7 +3189,7 @@ returns true but its <code>next</code> method throws an error.</p>
 <h3 id="skip">skip</h3>
 <p>Skip the first n values of the iterator.</p>
 <h2 id="example_14">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
+<pre><code class="pony">Iter[I64]([1; 2; 3; 4; 5; 6].values())
   .skip(3)
 </code></pre>
 
@@ -3104,8 +3211,8 @@ returns true but its <code>next</code> method throws an error.</p>
 <h3 id="skip_while">skip_while</h3>
 <p>Skip values of the iterator while the predicate <code>f</code> returns true.</p>
 <h2 id="example_15">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
-  .skip_while({(x: I64): Bool =&gt; x &lt; 4 })
+<pre><code class="pony">Iter[I64]([1; 2; 3; 4; 5; 6].values())
+  .skip_while({(x) =&gt; x &lt; 4 })
 </code></pre>
 
 <p><code>4 5 6</code></p>
@@ -3126,7 +3233,7 @@ returns true but its <code>next</code> method throws an error.</p>
 <h3 id="take">take</h3>
 <p>Return an iterator for the first n elements.</p>
 <h2 id="example_16">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
+<pre><code class="pony">Iter[I64]([1; 2; 3; 4; 5; 6].values())
   .take(3)
 </code></pre>
 
@@ -3149,8 +3256,8 @@ returns true but its <code>next</code> method throws an error.</p>
 <p>Return an iterator that returns values while the predicate <code>f</code> returns
 true.</p>
 <h2 id="example_17">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2; 3; 4; 5; 6].values())
-  .take_while({(x: I64): Bool =&gt; x &lt; 4 })
+<pre><code class="pony">Iter[I64]([1; 2; 3; 4; 5; 6].values())
+  .take_while({(x) =&gt; x &lt; 4 })
 </code></pre>
 
 <p><code>1 2 3</code></p>
@@ -3174,8 +3281,8 @@ a tuple with the next value of the first iterator and the next value
 of the second iterator. The number of items returned is the minimum of
 the number of items returned by the two iterators.</p>
 <h2 id="example_18">Example</h2>
-<pre><code class="pony">Iter[I64]([as I64: 1; 2].values())
-  .zip[I64]([as I64: 3; 4].values())
+<pre><code class="pony">Iter[I64]([1; 2].values())
+  .zip[I64]([3; 4].values())
 </code></pre>
 
 <p><code>(1, 3) (2, 4)</code></p>
