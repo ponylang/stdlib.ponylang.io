@@ -2634,13 +2634,13 @@
 <h3 id="create">create</h3>
 <p>Create an array with zero elements, but space for len elements.</p>
 <pre><code class="pony">new ref create(
-  len: USize val = 0)
+  len: USize val = seq)
 : Array[A] ref^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>len: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>len: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
@@ -2671,7 +2671,7 @@ copied.</p>
 <pre><code class="pony">new ref from_cpointer(
   ptr: Pointer[A] ref,
   len: USize val,
-  alloc: USize val = 0)
+  alloc: USize val = seq)
 : Array[A] ref^
 </code></pre>
 
@@ -2679,7 +2679,7 @@ copied.</p>
 <ul>
 <li>ptr: <a href="../builtin-Pointer">Pointer</a>[A] ref</li>
 <li>len: <a href="../builtin-USize">USize</a> val</li>
-<li>alloc: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>alloc: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_2">Returns</h4>
 <ul>
@@ -2690,13 +2690,13 @@ copied.</p>
 <h3 id="cpointer">cpointer</h3>
 <p>Return the underlying C-style pointer.</p>
 <pre><code class="pony">fun box cpointer(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : Pointer[A] tag
 </code></pre>
 
 <h4 id="parameters_3">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_3">Returns</h4>
 <ul>
@@ -2876,15 +2876,15 @@ array is already smaller than len, do nothing.</p>
 <p>Trim the array to a portion of itself, covering <code>from</code> until <code>to</code>.
 Unlike slice, the operation does not allocate a new array nor copy elements.</p>
 <pre><code class="pony">fun ref trim_in_place(
-  from: USize val = 0,
-  to: USize val = call)
+  from: USize val = seq,
+  to: USize val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_11">Parameters</h4>
 <ul>
-<li>from: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>to: <a href="../builtin-USize">USize</a> val = call</li>
+<li>from: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>to: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_14">Returns</h4>
 <ul>
@@ -2896,15 +2896,15 @@ Unlike slice, the operation does not allocate a new array nor copy elements.</p>
 Both the original and the new array are immutable, as they share memory.
 The operation does not allocate a new array pointer nor copy elements.</p>
 <pre><code class="pony">fun val trim(
-  from: USize val = 0,
-  to: USize val = call)
+  from: USize val = seq,
+  to: USize val = seq)
 : Array[A] val
 </code></pre>
 
 <h4 id="parameters_12">Parameters</h4>
 <ul>
-<li>from: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>to: <a href="../builtin-USize">USize</a> val = call</li>
+<li>from: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>to: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_15">Returns</h4>
 <ul>
@@ -3022,16 +3022,16 @@ The removed element is returned.</p>
 <p>Append the elements from a sequence, starting from the given offset.</p>
 <pre><code class="pony">fun ref append(
   seq: (ReadSeq[A] box &amp; ReadElement[A^] box),
-  offset: USize val = 0,
-  len: USize val = call)
+  offset: USize val = seq,
+  len: USize val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_17">Parameters</h4>
 <ul>
 <li>seq: (<a href="../builtin-ReadSeq">ReadSeq</a>[A] box &amp; <a href="../builtin-ReadElement">ReadElement</a>[A^] box)</li>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>len: <a href="../builtin-USize">USize</a> val = call</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>len: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_23">Returns</h4>
 <ul>
@@ -3043,16 +3043,16 @@ The removed element is returned.</p>
 offset.</p>
 <pre><code class="pony">fun ref concat(
   iter: Iterator[A^] ref,
-  offset: USize val = 0,
-  len: USize val = call)
+  offset: USize val = seq,
+  len: USize val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_18">Parameters</h4>
 <ul>
 <li>iter: <a href="../builtin-Iterator">Iterator</a>[A^] ref</li>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>len: <a href="../builtin-USize">USize</a> val = call</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>len: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_24">Returns</h4>
 <ul>
@@ -3069,18 +3069,18 @@ the first instance of <code>value</code> found, and uses object identity for
 comparison.</p>
 <pre><code class="pony">fun box find(
   value: A!,
-  offset: USize val = 0,
-  nth: USize val = 0,
-  predicate: {(box-&gt;A!, box-&gt;A!): Bool}[A] val = lambda)
+  offset: USize val = seq,
+  nth: USize val = seq,
+  predicate: {(box-&gt;A!, box-&gt;A!): Bool}[A] val = seq)
 : USize val ?
 </code></pre>
 
 <h4 id="parameters_19">Parameters</h4>
 <ul>
 <li>value: A!</li>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>nth: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>predicate: {(box-&gt;A!, box-&gt;A!): Bool}[A] val = lambda</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>nth: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>predicate: {(box-&gt;A!, box-&gt;A!): Bool}[A] val = seq</li>
 </ul>
 <h4 id="returns_25">Returns</h4>
 <ul>
@@ -3091,14 +3091,14 @@ comparison.</p>
 <p>Returns true if the array contains <code>value</code>, false otherwise.</p>
 <pre><code class="pony">fun box contains(
   value: A!,
-  predicate: {(box-&gt;A!, box-&gt;A!): Bool}[A] val = lambda)
+  predicate: {(box-&gt;A!, box-&gt;A!): Bool}[A] val = seq)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_20">Parameters</h4>
 <ul>
 <li>value: A!</li>
-<li>predicate: {(box-&gt;A!, box-&gt;A!): Bool}[A] val = lambda</li>
+<li>predicate: {(box-&gt;A!, box-&gt;A!): Bool}[A] val = seq</li>
 </ul>
 <h4 id="returns_26">Returns</h4>
 <ul>
@@ -3114,18 +3114,18 @@ isn't present.</p>
 first instance of <code>value</code> found, and uses object identity for comparison.</p>
 <pre><code class="pony">fun box rfind(
   value: A!,
-  offset: USize val = call,
-  nth: USize val = 0,
-  predicate: {(box-&gt;A!, box-&gt;A!): Bool}[A] val = lambda)
+  offset: USize val = seq,
+  nth: USize val = seq,
+  predicate: {(box-&gt;A!, box-&gt;A!): Bool}[A] val = seq)
 : USize val ?
 </code></pre>
 
 <h4 id="parameters_21">Parameters</h4>
 <ul>
 <li>value: A!</li>
-<li>offset: <a href="../builtin-USize">USize</a> val = call</li>
-<li>nth: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>predicate: {(box-&gt;A!, box-&gt;A!): Bool}[A] val = lambda</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>nth: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>predicate: {(box-&gt;A!, box-&gt;A!): Bool}[A] val = seq</li>
 </ul>
 <h4 id="returns_27">Returns</h4>
 <ul>
@@ -3151,17 +3151,17 @@ exclusive and saturated.
 The new array contains references to the same elements that the old array
 contains, the elements themselves are not cloned.</p>
 <pre><code class="pony">fun box slice(
-  from: USize val = 0,
-  to: USize val = call,
-  step: USize val = 1)
+  from: USize val = seq,
+  to: USize val = seq,
+  step: USize val = seq)
 : Array[this-&gt;A!] ref^
 </code></pre>
 
 <h4 id="parameters_22">Parameters</h4>
 <ul>
-<li>from: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>to: <a href="../builtin-USize">USize</a> val = call</li>
-<li>step: <a href="../builtin-USize">USize</a> val = 1</li>
+<li>from: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>to: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>step: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_29">Returns</h4>
 <ul>
@@ -3212,13 +3212,32 @@ contains, the elements themselves are not copied.</p>
 <li><a href="../builtin-None">None</a> val</li>
 </ul>
 <hr />
+<h3 id="swap_elements">swap_elements</h3>
+<p>Swap the element at index i with the element at index j.
+If either i or j are out of bounds, an error is raised.</p>
+<pre><code class="pony">fun ref swap_elements(
+  i: USize val,
+  j: USize val)
+: None val ?
+</code></pre>
+
+<h4 id="parameters_24">Parameters</h4>
+<ul>
+<li>i: <a href="../builtin-USize">USize</a> val</li>
+<li>j: <a href="../builtin-USize">USize</a> val</li>
+</ul>
+<h4 id="returns_33">Returns</h4>
+<ul>
+<li><a href="../builtin-None">None</a> val ?</li>
+</ul>
+<hr />
 <h3 id="keys">keys</h3>
 <p>Return an iterator over the indices in the array.</p>
 <pre><code class="pony">fun box keys()
 : ArrayKeys[A, this-&gt;Array[A] ref] ref^
 </code></pre>
 
-<h4 id="returns_33">Returns</h4>
+<h4 id="returns_34">Returns</h4>
 <ul>
 <li><a href="../builtin-ArrayKeys">ArrayKeys</a>[A, this-&gt;<a href="../builtin-Array">Array</a>[A] ref] ref^</li>
 </ul>
@@ -3229,7 +3248,7 @@ contains, the elements themselves are not copied.</p>
 : ArrayValues[A, this-&gt;Array[A] ref] ref^
 </code></pre>
 
-<h4 id="returns_34">Returns</h4>
+<h4 id="returns_35">Returns</h4>
 <ul>
 <li><a href="../builtin-ArrayValues">ArrayValues</a>[A, this-&gt;<a href="../builtin-Array">Array</a>[A] ref] ref^</li>
 </ul>
@@ -3240,7 +3259,7 @@ contains, the elements themselves are not copied.</p>
 : ArrayPairs[A, this-&gt;Array[A] ref] ref^
 </code></pre>
 
-<h4 id="returns_35">Returns</h4>
+<h4 id="returns_36">Returns</h4>
 <ul>
 <li><a href="../builtin-ArrayPairs">ArrayPairs</a>[A, this-&gt;<a href="../builtin-Array">Array</a>[A] ref] ref^</li>
 </ul>
@@ -3251,19 +3270,19 @@ contains, the elements themselves are not copied.</p>
 <pre><code class="pony">fun box _copy_to(
   ptr: Pointer[this-&gt;A!] ref,
   copy_len: USize val,
-  from_offset: USize val = 0,
-  to_offset: USize val = 0)
+  from_offset: USize val = seq,
+  to_offset: USize val = seq)
 : None val
 </code></pre>
 
-<h4 id="parameters_24">Parameters</h4>
+<h4 id="parameters_25">Parameters</h4>
 <ul>
 <li>ptr: <a href="../builtin-Pointer">Pointer</a>[this-&gt;A!] ref</li>
 <li>copy_len: <a href="../builtin-USize">USize</a> val</li>
-<li>from_offset: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>to_offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>from_offset: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>to_offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
-<h4 id="returns_36">Returns</h4>
+<h4 id="returns_37">Returns</h4>
 <ul>
 <li><a href="../builtin-None">None</a> val</li>
 </ul>

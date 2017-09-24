@@ -2637,13 +2637,13 @@
 <h3 id="out">out</h3>
 <p>If platform is debug configured, print message to standard output</p>
 <pre><code class="pony">fun box out(
-  msg: Stringable box= &quot;&quot;)
+  msg: Stringable box = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>msg: <a href="../builtin-Stringable">Stringable</a> box= ""</li>
+<li>msg: <a href="../builtin-Stringable">Stringable</a> box = seq</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>
@@ -2653,13 +2653,13 @@
 <h3 id="err">err</h3>
 <p>If platform is debug configured, print message to standard error</p>
 <pre><code class="pony">fun box err(
-  msg: Stringable box= &quot;&quot;)
+  msg: Stringable box = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
-<li>msg: <a href="../builtin-Stringable">Stringable</a> box= ""</li>
+<li>msg: <a href="../builtin-Stringable">Stringable</a> box = seq</li>
 </ul>
 <h4 id="returns_2">Returns</h4>
 <ul>
@@ -2673,16 +2673,16 @@ stream is stdout.</p>
 default separator is ", ", and the default output stream is stdout.</p>
 <pre><code class="pony">fun box apply(
   msg: (Stringable box | ReadSeq[Stringable box] box),
-  sep: String val= &quot;, &quot;,
-  stream: (DebugOut val | DebugErr val) = reference)
+  sep: String val = seq,
+  stream: (DebugOut val | DebugErr val) = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
 <ul>
 <li>msg: (<a href="../builtin-Stringable">Stringable</a> box | <a href="../builtin-ReadSeq">ReadSeq</a>[<a href="../builtin-Stringable">Stringable</a> box] box)</li>
-<li>sep: <a href="../builtin-String">String</a> val= ", "</li>
-<li>stream: (<a href="../debug-DebugOut">DebugOut</a> val | <a href="../debug-DebugErr">DebugErr</a> val) = reference</li>
+<li>sep: <a href="../builtin-String">String</a> val = seq</li>
+<li>stream: (<a href="../debug-DebugOut">DebugOut</a> val | <a href="../debug-DebugErr">DebugErr</a> val) = seq</li>
 </ul>
 <h4 id="returns_3">Returns</h4>
 <ul>

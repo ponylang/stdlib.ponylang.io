@@ -2635,8 +2635,8 @@
 <pre><code class="pony">new iso create(
   notify: ReadlineNotify iso,
   out: OutStream tag,
-  path: (FilePath val | None val) = reference,
-  maxlen: USize val = 0)
+  path: (FilePath val | None val) = seq,
+  maxlen: USize val = seq)
 : Readline iso^
 </code></pre>
 
@@ -2644,8 +2644,8 @@
 <ul>
 <li>notify: <a href="../term-ReadlineNotify">ReadlineNotify</a> iso</li>
 <li>out: <a href="../builtin-OutStream">OutStream</a> tag</li>
-<li>path: (<a href="../files-FilePath">FilePath</a> val | <a href="../builtin-None">None</a> val) = reference</li>
-<li>maxlen: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>path: (<a href="../files-FilePath">FilePath</a> val | <a href="../builtin-None">None</a> val) = seq</li>
+<li>maxlen: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
@@ -2703,17 +2703,17 @@
 <h3 id="up">up</h3>
 <p>Previous line.</p>
 <pre><code class="pony">fun ref up(
-  ctrl: Bool val = false,
-  alt: Bool val = false,
-  shift: Bool val = false)
+  ctrl: Bool val = seq,
+  alt: Bool val = seq,
+  shift: Bool val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_3">Parameters</h4>
 <ul>
-<li>ctrl: <a href="../builtin-Bool">Bool</a> val = false</li>
-<li>alt: <a href="../builtin-Bool">Bool</a> val = false</li>
-<li>shift: <a href="../builtin-Bool">Bool</a> val = false</li>
+<li>ctrl: <a href="../builtin-Bool">Bool</a> val = seq</li>
+<li>alt: <a href="../builtin-Bool">Bool</a> val = seq</li>
+<li>shift: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_4">Returns</h4>
 <ul>
@@ -2723,17 +2723,17 @@
 <h3 id="down">down</h3>
 <p>Next line.</p>
 <pre><code class="pony">fun ref down(
-  ctrl: Bool val = false,
-  alt: Bool val = false,
-  shift: Bool val = false)
+  ctrl: Bool val = seq,
+  alt: Bool val = seq,
+  shift: Bool val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_4">Parameters</h4>
 <ul>
-<li>ctrl: <a href="../builtin-Bool">Bool</a> val = false</li>
-<li>alt: <a href="../builtin-Bool">Bool</a> val = false</li>
-<li>shift: <a href="../builtin-Bool">Bool</a> val = false</li>
+<li>ctrl: <a href="../builtin-Bool">Bool</a> val = seq</li>
+<li>alt: <a href="../builtin-Bool">Bool</a> val = seq</li>
+<li>shift: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_5">Returns</h4>
 <ul>
@@ -2743,17 +2743,17 @@
 <h3 id="left">left</h3>
 <p>Move left.</p>
 <pre><code class="pony">fun ref left(
-  ctrl: Bool val = false,
-  alt: Bool val = false,
-  shift: Bool val = false)
+  ctrl: Bool val = seq,
+  alt: Bool val = seq,
+  shift: Bool val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_5">Parameters</h4>
 <ul>
-<li>ctrl: <a href="../builtin-Bool">Bool</a> val = false</li>
-<li>alt: <a href="../builtin-Bool">Bool</a> val = false</li>
-<li>shift: <a href="../builtin-Bool">Bool</a> val = false</li>
+<li>ctrl: <a href="../builtin-Bool">Bool</a> val = seq</li>
+<li>alt: <a href="../builtin-Bool">Bool</a> val = seq</li>
+<li>shift: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_6">Returns</h4>
 <ul>
@@ -2763,17 +2763,17 @@
 <h3 id="right">right</h3>
 <p>Move right.</p>
 <pre><code class="pony">fun ref right(
-  ctrl: Bool val = false,
-  alt: Bool val = false,
-  shift: Bool val = false)
+  ctrl: Bool val = seq,
+  alt: Bool val = seq,
+  shift: Bool val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_6">Parameters</h4>
 <ul>
-<li>ctrl: <a href="../builtin-Bool">Bool</a> val = false</li>
-<li>alt: <a href="../builtin-Bool">Bool</a> val = false</li>
-<li>shift: <a href="../builtin-Bool">Bool</a> val = false</li>
+<li>ctrl: <a href="../builtin-Bool">Bool</a> val = seq</li>
+<li>alt: <a href="../builtin-Bool">Bool</a> val = seq</li>
+<li>shift: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_7">Returns</h4>
 <ul>
@@ -2783,17 +2783,17 @@
 <h3 id="home">home</h3>
 <p>Beginning of the line.</p>
 <pre><code class="pony">fun ref home(
-  ctrl: Bool val = false,
-  alt: Bool val = false,
-  shift: Bool val = false)
+  ctrl: Bool val = seq,
+  alt: Bool val = seq,
+  shift: Bool val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_7">Parameters</h4>
 <ul>
-<li>ctrl: <a href="../builtin-Bool">Bool</a> val = false</li>
-<li>alt: <a href="../builtin-Bool">Bool</a> val = false</li>
-<li>shift: <a href="../builtin-Bool">Bool</a> val = false</li>
+<li>ctrl: <a href="../builtin-Bool">Bool</a> val = seq</li>
+<li>alt: <a href="../builtin-Bool">Bool</a> val = seq</li>
+<li>shift: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_8">Returns</h4>
 <ul>
@@ -2803,17 +2803,17 @@
 <h3 id="end_key">end_key</h3>
 <p>End of the line.</p>
 <pre><code class="pony">fun ref end_key(
-  ctrl: Bool val = false,
-  alt: Bool val = false,
-  shift: Bool val = false)
+  ctrl: Bool val = seq,
+  alt: Bool val = seq,
+  shift: Bool val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_8">Parameters</h4>
 <ul>
-<li>ctrl: <a href="../builtin-Bool">Bool</a> val = false</li>
-<li>alt: <a href="../builtin-Bool">Bool</a> val = false</li>
-<li>shift: <a href="../builtin-Bool">Bool</a> val = false</li>
+<li>ctrl: <a href="../builtin-Bool">Bool</a> val = seq</li>
+<li>alt: <a href="../builtin-Bool">Bool</a> val = seq</li>
+<li>shift: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_9">Returns</h4>
 <ul>
@@ -2823,17 +2823,17 @@
 <h3 id="delete">delete</h3>
 <p>Forward delete.</p>
 <pre><code class="pony">fun ref delete(
-  ctrl: Bool val = false,
-  alt: Bool val = false,
-  shift: Bool val = false)
+  ctrl: Bool val = seq,
+  alt: Bool val = seq,
+  shift: Bool val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_9">Parameters</h4>
 <ul>
-<li>ctrl: <a href="../builtin-Bool">Bool</a> val = false</li>
-<li>alt: <a href="../builtin-Bool">Bool</a> val = false</li>
-<li>shift: <a href="../builtin-Bool">Bool</a> val = false</li>
+<li>ctrl: <a href="../builtin-Bool">Bool</a> val = seq</li>
+<li>alt: <a href="../builtin-Bool">Bool</a> val = seq</li>
+<li>shift: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_10">Returns</h4>
 <ul>

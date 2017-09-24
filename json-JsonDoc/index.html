@@ -2647,15 +2647,15 @@ A JSON document consists of exactly 1 value.</p>
 <h3 id="string">string</h3>
 <p>Generate string representation of this document.</p>
 <pre><code class="pony">fun box string(
-  indent: String val= &quot;&quot;,
-  pretty_print: Bool val = false)
+  indent: String val = seq,
+  pretty_print: Bool val = seq)
 : String val
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>indent: <a href="../builtin-String">String</a> val= ""</li>
-<li>pretty_print: <a href="../builtin-Bool">Bool</a> val = false</li>
+<li>indent: <a href="../builtin-String">String</a> val = seq</li>
+<li>pretty_print: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>
@@ -2838,13 +2838,13 @@ suitable message.
 If eof_context is None then 0 is returned on EOF. It up to the caller to
 handle this appropriately.</p>
 <pre><code class="pony">fun ref _peek_char(
-  eof_context: (String val | None val) = reference)
+  eof_context: (String val | None val) = seq)
 : U8 val ?
 </code></pre>
 
 <h4 id="parameters_4">Parameters</h4>
 <ul>
-<li>eof_context: (<a href="../builtin-String">String</a> val | <a href="../builtin-None">None</a> val) = reference</li>
+<li>eof_context: (<a href="../builtin-String">String</a> val | <a href="../builtin-None">None</a> val) = seq</li>
 </ul>
 <h4 id="returns_15">Returns</h4>
 <ul>
@@ -2858,13 +2858,13 @@ suitable message.
 If eof_context is None then 0 is returned on EOF. It up to the caller to
 handle this appropriately.</p>
 <pre><code class="pony">fun ref _get_char(
-  eof_context: (String val | None val) = reference)
+  eof_context: (String val | None val) = seq)
 : U8 val ?
 </code></pre>
 
 <h4 id="parameters_5">Parameters</h4>
 <ul>
-<li>eof_context: (<a href="../builtin-String">String</a> val | <a href="../builtin-None">None</a> val) = reference</li>
+<li>eof_context: (<a href="../builtin-String">String</a> val | <a href="../builtin-None">None</a> val) = seq</li>
 </ul>
 <h4 id="returns_16">Returns</h4>
 <ul>

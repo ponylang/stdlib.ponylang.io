@@ -2672,13 +2672,13 @@
 <h3 id="create">create</h3>
 <p>An empty string. Enough space for len bytes is reserved.</p>
 <pre><code class="pony">new ref create(
-  len: USize val = 0)
+  len: USize val = seq)
 : String ref^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>len: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>len: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
@@ -2725,7 +2725,7 @@ empty string is returned.</p>
 <pre><code class="pony">new ref from_cpointer(
   str: Pointer[U8 val] ref,
   len: USize val,
-  alloc: USize val = 0)
+  alloc: USize val = seq)
 : String ref^
 </code></pre>
 
@@ -2733,7 +2733,7 @@ empty string is returned.</p>
 <ul>
 <li>str: <a href="../builtin-Pointer">Pointer</a>[<a href="../builtin-U8">U8</a> val] ref</li>
 <li>len: <a href="../builtin-USize">USize</a> val</li>
-<li>alloc: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>alloc: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_3">Returns</h4>
 <ul>
@@ -2836,13 +2836,13 @@ pointer is given then an empty string is returned.</p>
 <h3 id="cpointer">cpointer</h3>
 <p>Returns a C compatible pointer to the underlying string allocation.</p>
 <pre><code class="pony">fun box cpointer(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : Pointer[U8 val] tag
 </code></pre>
 
 <h4 id="parameters_9">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_9">Returns</h4>
 <ul>
@@ -2890,15 +2890,15 @@ is copied into a new, null-terminated allocation.</p>
 <p>Returns the number of unicode code points in the string between the two
 offsets. Index range [<code>from</code> .. <code>to</code>) is half-open.</p>
 <pre><code class="pony">fun box codepoints(
-  from: ISize val = 0,
-  to: ISize val = call)
+  from: ISize val = seq,
+  to: ISize val = seq)
 : USize val
 </code></pre>
 
 <h4 id="parameters_10">Parameters</h4>
 <ul>
-<li>from: <a href="../builtin-ISize">ISize</a> val = 0</li>
-<li>to: <a href="../builtin-ISize">ISize</a> val = call</li>
+<li>from: <a href="../builtin-ISize">ISize</a> val = seq</li>
+<li>to: <a href="../builtin-ISize">ISize</a> val = seq</li>
 </ul>
 <h4 id="returns_13">Returns</h4>
 <ul>
@@ -2981,15 +2981,15 @@ null terminator. Does not check for null terminators inside the string.</p>
 Unlike slice, the operation does not allocate a new string nor copy
 elements.</p>
 <pre><code class="pony">fun ref trim_in_place(
-  from: USize val = 0,
-  to: USize val = call)
+  from: USize val = seq,
+  to: USize val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_13">Parameters</h4>
 <ul>
-<li>from: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>to: <a href="../builtin-USize">USize</a> val = call</li>
+<li>from: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>to: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_19">Returns</h4>
 <ul>
@@ -3001,15 +3001,15 @@ elements.</p>
 Both the original and the new string are immutable, as they share memory.
 The operation does not allocate a new string pointer nor copy elements.</p>
 <pre><code class="pony">fun val trim(
-  from: USize val = 0,
-  to: USize val = call)
+  from: USize val = seq,
+  to: USize val = seq)
 : String val
 </code></pre>
 
 <h4 id="parameters_14">Parameters</h4>
 <ul>
-<li>from: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>to: <a href="../builtin-USize">USize</a> val = call</li>
+<li>from: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>to: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_20">Returns</h4>
 <ul>
@@ -3139,16 +3139,16 @@ null-terminated even if the original is not.</p>
 beginning. Raise an error if there is no n-th occurrence of s or s is empty.</p>
 <pre><code class="pony">fun box find(
   s: String box,
-  offset: ISize val = 0,
-  nth: USize val = 0)
+  offset: ISize val = seq,
+  nth: USize val = seq)
 : ISize val ?
 </code></pre>
 
 <h4 id="parameters_20">Parameters</h4>
 <ul>
 <li>s: <a href="../builtin-String">String</a> box</li>
-<li>offset: <a href="../builtin-ISize">ISize</a> val = 0</li>
-<li>nth: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-ISize">ISize</a> val = seq</li>
+<li>nth: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_28">Returns</h4>
 <ul>
@@ -3161,16 +3161,16 @@ end. The <code>offset</code> represents the highest index to included in the sea
 Raise an error if there is no n-th occurrence of <code>s</code> or <code>s</code> is empty.</p>
 <pre><code class="pony">fun box rfind(
   s: String box,
-  offset: ISize val = call,
-  nth: USize val = 0)
+  offset: ISize val = seq,
+  nth: USize val = seq)
 : ISize val ?
 </code></pre>
 
 <h4 id="parameters_21">Parameters</h4>
 <ul>
 <li>s: <a href="../builtin-String">String</a> box</li>
-<li>offset: <a href="../builtin-ISize">ISize</a> val = call</li>
-<li>nth: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-ISize">ISize</a> val = seq</li>
+<li>nth: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_29">Returns</h4>
 <ul>
@@ -3181,16 +3181,16 @@ Raise an error if there is no n-th occurrence of <code>s</code> or <code>s</code
 <p>Returns true if contains s as a substring, false otherwise.</p>
 <pre><code class="pony">fun box contains(
   s: String box,
-  offset: ISize val = 0,
-  nth: USize val = 0)
+  offset: ISize val = seq,
+  nth: USize val = seq)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_22">Parameters</h4>
 <ul>
 <li>s: <a href="../builtin-String">String</a> box</li>
-<li>offset: <a href="../builtin-ISize">ISize</a> val = 0</li>
-<li>nth: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-ISize">ISize</a> val = seq</li>
+<li>nth: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_30">Returns</h4>
 <ul>
@@ -3201,14 +3201,14 @@ Raise an error if there is no n-th occurrence of <code>s</code> or <code>s</code
 <p>Counts the non-overlapping occurrences of s in the string.</p>
 <pre><code class="pony">fun box count(
   s: String box,
-  offset: ISize val = 0)
+  offset: ISize val = seq)
 : USize val
 </code></pre>
 
 <h4 id="parameters_23">Parameters</h4>
 <ul>
 <li>s: <a href="../builtin-String">String</a> box</li>
-<li>offset: <a href="../builtin-ISize">ISize</a> val = 0</li>
+<li>offset: <a href="../builtin-ISize">ISize</a> val = seq</li>
 </ul>
 <h4 id="returns_31">Returns</h4>
 <ul>
@@ -3219,14 +3219,14 @@ Raise an error if there is no n-th occurrence of <code>s</code> or <code>s</code
 <p>Returns true if the substring s is present at the given offset.</p>
 <pre><code class="pony">fun box at(
   s: String box,
-  offset: ISize val = 0)
+  offset: ISize val = seq)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_24">Parameters</h4>
 <ul>
 <li>s: <a href="../builtin-String">String</a> box</li>
-<li>offset: <a href="../builtin-ISize">ISize</a> val = 0</li>
+<li>offset: <a href="../builtin-ISize">ISize</a> val = seq</li>
 </ul>
 <h4 id="returns_32">Returns</h4>
 <ul>
@@ -3237,14 +3237,14 @@ Raise an error if there is no n-th occurrence of <code>s</code> or <code>s</code
 <p>Delete len bytes at the supplied offset, compacting the string in place.</p>
 <pre><code class="pony">fun ref delete(
   offset: ISize val,
-  len: USize val = 1)
+  len: USize val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_25">Parameters</h4>
 <ul>
 <li>offset: <a href="../builtin-ISize">ISize</a> val</li>
-<li>len: <a href="../builtin-USize">USize</a> val = 1</li>
+<li>len: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_33">Returns</h4>
 <ul>
@@ -3259,14 +3259,14 @@ similar operations that don't allocate a new string, see <code>trim</code> and
 <code>trim_in_place</code>.</p>
 <pre><code class="pony">fun box substring(
   from: ISize val,
-  to: ISize val = call)
+  to: ISize val = seq)
 : String iso^
 </code></pre>
 
 <h4 id="parameters_26">Parameters</h4>
 <ul>
 <li>from: <a href="../builtin-ISize">ISize</a> val</li>
-<li>to: <a href="../builtin-ISize">ISize</a> val = call</li>
+<li>to: <a href="../builtin-ISize">ISize</a> val = seq</li>
 </ul>
 <h4 id="returns_34">Returns</h4>
 <ul>
@@ -3399,16 +3399,16 @@ UTF-8 correctly.</p>
 <p>Append the elements from a sequence, starting from the given offset.</p>
 <pre><code class="pony">fun ref append(
   seq: ReadSeq[U8 val] box,
-  offset: USize val = 0,
-  len: USize val = call)
+  offset: USize val = seq,
+  len: USize val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_29">Parameters</h4>
 <ul>
 <li>seq: <a href="../builtin-ReadSeq">ReadSeq</a>[<a href="../builtin-U8">U8</a> val] box</li>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>len: <a href="../builtin-USize">USize</a> val = call</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>len: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_45">Returns</h4>
 <ul>
@@ -3420,16 +3420,16 @@ UTF-8 correctly.</p>
 offset.</p>
 <pre><code class="pony">fun ref concat(
   iter: Iterator[U8 val] ref,
-  offset: USize val = 0,
-  len: USize val = call)
+  offset: USize val = seq,
+  len: USize val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_30">Parameters</h4>
 <ul>
 <li>iter: <a href="../builtin-Iterator">Iterator</a>[<a href="../builtin-U8">U8</a> val] ref</li>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>len: <a href="../builtin-USize">USize</a> val = call</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>len: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_46">Returns</h4>
 <ul>
@@ -3508,14 +3508,14 @@ offset is out of bounds.</p>
 Index range [<code>from</code> .. <code>to</code>) is half-open.</p>
 <pre><code class="pony">fun box cut(
   from: ISize val,
-  to: ISize val = call)
+  to: ISize val = seq)
 : String iso^
 </code></pre>
 
 <h4 id="parameters_34">Parameters</h4>
 <ul>
 <li>from: <a href="../builtin-ISize">ISize</a> val</li>
-<li>to: <a href="../builtin-ISize">ISize</a> val = call</li>
+<li>to: <a href="../builtin-ISize">ISize</a> val = seq</li>
 </ul>
 <h4 id="returns_51">Returns</h4>
 <ul>
@@ -3527,14 +3527,14 @@ Index range [<code>from</code> .. <code>to</code>) is half-open.</p>
 Index range [<code>from</code> .. <code>to</code>) is half-open.</p>
 <pre><code class="pony">fun ref cut_in_place(
   from: ISize val,
-  to: ISize val = call)
+  to: ISize val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_35">Parameters</h4>
 <ul>
 <li>from: <a href="../builtin-ISize">ISize</a> val</li>
-<li>to: <a href="../builtin-ISize">ISize</a> val = call</li>
+<li>to: <a href="../builtin-ISize">ISize</a> val = seq</li>
 </ul>
 <h4 id="returns_52">Returns</h4>
 <ul>
@@ -3564,7 +3564,7 @@ occurrences will be replaced. Returns the count of replaced occurrences.</p>
 <pre><code class="pony">fun ref replace(
   from: String box,
   to: String box,
-  n: USize val = 0)
+  n: USize val = seq)
 : USize val
 </code></pre>
 
@@ -3572,7 +3572,7 @@ occurrences will be replaced. Returns the count of replaced occurrences.</p>
 <ul>
 <li>from: <a href="../builtin-String">String</a> box</li>
 <li>to: <a href="../builtin-String">String</a> box</li>
-<li>n: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>n: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_54">Returns</h4>
 <ul>
@@ -3588,14 +3588,14 @@ example, <code>"1,,2".split(",") =&gt; ["1", "", "2"]</code>.</p>
 to the whole string.</p>
 <pre><code class="pony">fun box split_by(
   delim: String val,
-  n: USize val = call)
+  n: USize val = seq)
 : Array[String val] iso^
 </code></pre>
 
 <h4 id="parameters_38">Parameters</h4>
 <ul>
 <li>delim: <a href="../builtin-String">String</a> val</li>
-<li>n: <a href="../builtin-USize">USize</a> val = call</li>
+<li>n: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_55">Returns</h4>
 <ul>
@@ -3609,17 +3609,15 @@ limited to n.</p>
 <p>Adjacent delimiters result in a zero length entry in the array. For
 example, <code>"1,,2".split(",") =&gt; ["1", "", "2"]</code>.</p>
 <pre><code class="pony">fun box split(
-  delim: String val= &quot;  
-&quot;,
-  n: USize val = 0)
+  delim: String val = seq,
+  n: USize val = seq)
 : Array[String val] iso^
 </code></pre>
 
 <h4 id="parameters_39">Parameters</h4>
 <ul>
-<li>delim: <a href="../builtin-String">String</a> val= "  
-"</li>
-<li>n: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>delim: <a href="../builtin-String">String</a> val = seq</li>
+<li>n: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_56">Returns</h4>
 <ul>
@@ -3629,15 +3627,13 @@ example, <code>"1,,2".split(",") =&gt; ["1", "", "2"]</code>.</p>
 <h3 id="strip">strip</h3>
 <p>Remove all leading and trailing characters from the string that are in s.</p>
 <pre><code class="pony">fun ref strip(
-  s: String box= &quot;  
-&quot;)
+  s: String box = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_40">Parameters</h4>
 <ul>
-<li>s: <a href="../builtin-String">String</a> box= "  
-"</li>
+<li>s: <a href="../builtin-String">String</a> box = seq</li>
 </ul>
 <h4 id="returns_57">Returns</h4>
 <ul>
@@ -3648,15 +3644,13 @@ example, <code>"1,,2".split(",") =&gt; ["1", "", "2"]</code>.</p>
 <p>Remove all trailing characters within the string that are in s. By default,
 trailing whitespace is removed.</p>
 <pre><code class="pony">fun ref rstrip(
-  s: String box= &quot;  
-&quot;)
+  s: String box = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_41">Parameters</h4>
 <ul>
-<li>s: <a href="../builtin-String">String</a> box= "  
-"</li>
+<li>s: <a href="../builtin-String">String</a> box = seq</li>
 </ul>
 <h4 id="returns_58">Returns</h4>
 <ul>
@@ -3667,15 +3661,13 @@ trailing whitespace is removed.</p>
 <p>Remove all leading characters within the string that are in s. By default,
 leading whitespace is removed.</p>
 <pre><code class="pony">fun ref lstrip(
-  s: String box= &quot;  
-&quot;)
+  s: String box = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_42">Parameters</h4>
 <ul>
-<li>s: <a href="../builtin-String">String</a> box= "  
-"</li>
+<li>s: <a href="../builtin-String">String</a> box = seq</li>
 </ul>
 <h4 id="returns_59">Returns</h4>
 <ul>
@@ -3747,9 +3739,9 @@ will be reduced to the length of the longest substring.</p>
 <pre><code class="pony">fun box compare_sub(
   that: String box,
   n: USize val,
-  offset: ISize val = 0,
-  that_offset: ISize val = 0,
-  ignore_case: Bool val = false)
+  offset: ISize val = seq,
+  that_offset: ISize val = seq,
+  ignore_case: Bool val = seq)
 : (Less val | Equal val | Greater val)
 </code></pre>
 
@@ -3757,9 +3749,9 @@ will be reduced to the length of the longest substring.</p>
 <ul>
 <li>that: <a href="../builtin-String">String</a> box</li>
 <li>n: <a href="../builtin-USize">USize</a> val</li>
-<li>offset: <a href="../builtin-ISize">ISize</a> val = 0</li>
-<li>that_offset: <a href="../builtin-ISize">ISize</a> val = 0</li>
-<li>ignore_case: <a href="../builtin-Bool">Bool</a> val = false</li>
+<li>offset: <a href="../builtin-ISize">ISize</a> val = seq</li>
+<li>that_offset: <a href="../builtin-ISize">ISize</a> val = seq</li>
+<li>ignore_case: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_63">Returns</h4>
 <ul>
@@ -3843,13 +3835,13 @@ made UTF-8 safe.</p>
 <hr />
 <h3 id="i8">i8</h3>
 <pre><code class="pony">fun box i8(
-  base: U8 val = 0)
+  base: U8 val = seq)
 : I8 val ?
 </code></pre>
 
 <h4 id="parameters_51">Parameters</h4>
 <ul>
-<li>base: <a href="../builtin-U8">U8</a> val = 0</li>
+<li>base: <a href="../builtin-U8">U8</a> val = seq</li>
 </ul>
 <h4 id="returns_69">Returns</h4>
 <ul>
@@ -3858,13 +3850,13 @@ made UTF-8 safe.</p>
 <hr />
 <h3 id="i16">i16</h3>
 <pre><code class="pony">fun box i16(
-  base: U8 val = 0)
+  base: U8 val = seq)
 : I16 val ?
 </code></pre>
 
 <h4 id="parameters_52">Parameters</h4>
 <ul>
-<li>base: <a href="../builtin-U8">U8</a> val = 0</li>
+<li>base: <a href="../builtin-U8">U8</a> val = seq</li>
 </ul>
 <h4 id="returns_70">Returns</h4>
 <ul>
@@ -3873,13 +3865,13 @@ made UTF-8 safe.</p>
 <hr />
 <h3 id="i32">i32</h3>
 <pre><code class="pony">fun box i32(
-  base: U8 val = 0)
+  base: U8 val = seq)
 : I32 val ?
 </code></pre>
 
 <h4 id="parameters_53">Parameters</h4>
 <ul>
-<li>base: <a href="../builtin-U8">U8</a> val = 0</li>
+<li>base: <a href="../builtin-U8">U8</a> val = seq</li>
 </ul>
 <h4 id="returns_71">Returns</h4>
 <ul>
@@ -3888,13 +3880,13 @@ made UTF-8 safe.</p>
 <hr />
 <h3 id="i64">i64</h3>
 <pre><code class="pony">fun box i64(
-  base: U8 val = 0)
+  base: U8 val = seq)
 : I64 val ?
 </code></pre>
 
 <h4 id="parameters_54">Parameters</h4>
 <ul>
-<li>base: <a href="../builtin-U8">U8</a> val = 0</li>
+<li>base: <a href="../builtin-U8">U8</a> val = seq</li>
 </ul>
 <h4 id="returns_72">Returns</h4>
 <ul>
@@ -3903,13 +3895,13 @@ made UTF-8 safe.</p>
 <hr />
 <h3 id="i128">i128</h3>
 <pre><code class="pony">fun box i128(
-  base: U8 val = 0)
+  base: U8 val = seq)
 : I128 val ?
 </code></pre>
 
 <h4 id="parameters_55">Parameters</h4>
 <ul>
-<li>base: <a href="../builtin-U8">U8</a> val = 0</li>
+<li>base: <a href="../builtin-U8">U8</a> val = seq</li>
 </ul>
 <h4 id="returns_73">Returns</h4>
 <ul>
@@ -3918,13 +3910,13 @@ made UTF-8 safe.</p>
 <hr />
 <h3 id="ilong">ilong</h3>
 <pre><code class="pony">fun box ilong(
-  base: U8 val = 0)
+  base: U8 val = seq)
 : ILong val ?
 </code></pre>
 
 <h4 id="parameters_56">Parameters</h4>
 <ul>
-<li>base: <a href="../builtin-U8">U8</a> val = 0</li>
+<li>base: <a href="../builtin-U8">U8</a> val = seq</li>
 </ul>
 <h4 id="returns_74">Returns</h4>
 <ul>
@@ -3933,13 +3925,13 @@ made UTF-8 safe.</p>
 <hr />
 <h3 id="isize">isize</h3>
 <pre><code class="pony">fun box isize(
-  base: U8 val = 0)
+  base: U8 val = seq)
 : ISize val ?
 </code></pre>
 
 <h4 id="parameters_57">Parameters</h4>
 <ul>
-<li>base: <a href="../builtin-U8">U8</a> val = 0</li>
+<li>base: <a href="../builtin-U8">U8</a> val = seq</li>
 </ul>
 <h4 id="returns_75">Returns</h4>
 <ul>
@@ -3948,13 +3940,13 @@ made UTF-8 safe.</p>
 <hr />
 <h3 id="u8">u8</h3>
 <pre><code class="pony">fun box u8(
-  base: U8 val = 0)
+  base: U8 val = seq)
 : U8 val ?
 </code></pre>
 
 <h4 id="parameters_58">Parameters</h4>
 <ul>
-<li>base: <a href="../builtin-U8">U8</a> val = 0</li>
+<li>base: <a href="../builtin-U8">U8</a> val = seq</li>
 </ul>
 <h4 id="returns_76">Returns</h4>
 <ul>
@@ -3963,13 +3955,13 @@ made UTF-8 safe.</p>
 <hr />
 <h3 id="u16">u16</h3>
 <pre><code class="pony">fun box u16(
-  base: U8 val = 0)
+  base: U8 val = seq)
 : U16 val ?
 </code></pre>
 
 <h4 id="parameters_59">Parameters</h4>
 <ul>
-<li>base: <a href="../builtin-U8">U8</a> val = 0</li>
+<li>base: <a href="../builtin-U8">U8</a> val = seq</li>
 </ul>
 <h4 id="returns_77">Returns</h4>
 <ul>
@@ -3978,13 +3970,13 @@ made UTF-8 safe.</p>
 <hr />
 <h3 id="u32">u32</h3>
 <pre><code class="pony">fun box u32(
-  base: U8 val = 0)
+  base: U8 val = seq)
 : U32 val ?
 </code></pre>
 
 <h4 id="parameters_60">Parameters</h4>
 <ul>
-<li>base: <a href="../builtin-U8">U8</a> val = 0</li>
+<li>base: <a href="../builtin-U8">U8</a> val = seq</li>
 </ul>
 <h4 id="returns_78">Returns</h4>
 <ul>
@@ -3993,13 +3985,13 @@ made UTF-8 safe.</p>
 <hr />
 <h3 id="u64">u64</h3>
 <pre><code class="pony">fun box u64(
-  base: U8 val = 0)
+  base: U8 val = seq)
 : U64 val ?
 </code></pre>
 
 <h4 id="parameters_61">Parameters</h4>
 <ul>
-<li>base: <a href="../builtin-U8">U8</a> val = 0</li>
+<li>base: <a href="../builtin-U8">U8</a> val = seq</li>
 </ul>
 <h4 id="returns_79">Returns</h4>
 <ul>
@@ -4008,13 +4000,13 @@ made UTF-8 safe.</p>
 <hr />
 <h3 id="u128">u128</h3>
 <pre><code class="pony">fun box u128(
-  base: U8 val = 0)
+  base: U8 val = seq)
 : U128 val ?
 </code></pre>
 
 <h4 id="parameters_62">Parameters</h4>
 <ul>
-<li>base: <a href="../builtin-U8">U8</a> val = 0</li>
+<li>base: <a href="../builtin-U8">U8</a> val = seq</li>
 </ul>
 <h4 id="returns_80">Returns</h4>
 <ul>
@@ -4023,13 +4015,13 @@ made UTF-8 safe.</p>
 <hr />
 <h3 id="ulong">ulong</h3>
 <pre><code class="pony">fun box ulong(
-  base: U8 val = 0)
+  base: U8 val = seq)
 : ULong val ?
 </code></pre>
 
 <h4 id="parameters_63">Parameters</h4>
 <ul>
-<li>base: <a href="../builtin-U8">U8</a> val = 0</li>
+<li>base: <a href="../builtin-U8">U8</a> val = seq</li>
 </ul>
 <h4 id="returns_81">Returns</h4>
 <ul>
@@ -4038,13 +4030,13 @@ made UTF-8 safe.</p>
 <hr />
 <h3 id="usize">usize</h3>
 <pre><code class="pony">fun box usize(
-  base: U8 val = 0)
+  base: U8 val = seq)
 : USize val ?
 </code></pre>
 
 <h4 id="parameters_64">Parameters</h4>
 <ul>
-<li>base: <a href="../builtin-U8">U8</a> val = 0</li>
+<li>base: <a href="../builtin-U8">U8</a> val = seq</li>
 </ul>
 <h4 id="returns_82">Returns</h4>
 <ul>
@@ -4071,15 +4063,15 @@ Underscore characters are allowed throughout the integer and are ignored.</p>
     ISize val | U8 val | U16 val | 
     U32 val | U64 val | U128 val | 
     ULong val | USize val) &amp; Integer[A] val)](
-  offset: ISize val = 0,
-  base: U8 val = 0)
+  offset: ISize val = seq,
+  base: U8 val = seq)
 : (A , USize val) ?
 </code></pre>
 
 <h4 id="parameters_65">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-ISize">ISize</a> val = 0</li>
-<li>base: <a href="../builtin-U8">U8</a> val = 0</li>
+<li>offset: <a href="../builtin-ISize">ISize</a> val = seq</li>
+<li>base: <a href="../builtin-U8">U8</a> val = seq</li>
 </ul>
 <h4 id="returns_83">Returns</h4>
 <ul>
@@ -4088,13 +4080,13 @@ Underscore characters are allowed throughout the integer and are ignored.</p>
 <hr />
 <h3 id="f32">f32</h3>
 <pre><code class="pony">fun box f32(
-  offset: ISize val = 0)
+  offset: ISize val = seq)
 : F32 val
 </code></pre>
 
 <h4 id="parameters_66">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-ISize">ISize</a> val = 0</li>
+<li>offset: <a href="../builtin-ISize">ISize</a> val = seq</li>
 </ul>
 <h4 id="returns_84">Returns</h4>
 <ul>
@@ -4103,13 +4095,13 @@ Underscore characters are allowed throughout the integer and are ignored.</p>
 <hr />
 <h3 id="f64">f64</h3>
 <pre><code class="pony">fun box f64(
-  offset: ISize val = 0)
+  offset: ISize val = seq)
 : F64 val
 </code></pre>
 
 <h4 id="parameters_67">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-ISize">ISize</a> val = 0</li>
+<li>offset: <a href="../builtin-ISize">ISize</a> val = seq</li>
 </ul>
 <h4 id="returns_85">Returns</h4>
 <ul>
@@ -4209,8 +4201,8 @@ Underscore characters are allowed throughout the integer and are ignored.</p>
 <pre><code class="pony">fun box _copy_to(
   ptr: Pointer[U8 val] ref,
   copy_len: USize val,
-  from_offset: USize val = 0,
-  to_offset: USize val = 0)
+  from_offset: USize val = seq,
+  to_offset: USize val = seq)
 : None val
 </code></pre>
 
@@ -4218,8 +4210,8 @@ Underscore characters are allowed throughout the integer and are ignored.</p>
 <ul>
 <li>ptr: <a href="../builtin-Pointer">Pointer</a>[<a href="../builtin-U8">U8</a> val] ref</li>
 <li>copy_len: <a href="../builtin-USize">USize</a> val</li>
-<li>from_offset: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>to_offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>from_offset: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>to_offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_93">Returns</h4>
 <ul>

@@ -2635,14 +2635,14 @@
 <h3 id="create">create</h3>
 <pre><code class="pony">new ref create(
   args: Array[String val] box,
-  fatal: Bool val = true)
+  fatal: Bool val = seq)
 : Options ref^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
 <li>args: <a href="../builtin-Array">Array</a>[<a href="../builtin-String">String</a> val] box</li>
-<li>fatal: <a href="../builtin-Bool">Bool</a> val = true</li>
+<li>fatal: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
@@ -2654,20 +2654,20 @@
 <p>Adds a new named option to the parser configuration.</p>
 <pre><code class="pony">fun ref add(
   long: String val,
-  short: (None val | String val) = reference,
+  short: (None val | String val) = seq,
   arg: (None val | StringArgument val | I64Argument val | 
-    F64Argument val) = reference,
-  mode: (Required val | Optional val) = reference)
+    F64Argument val) = seq,
+  mode: (Required val | Optional val) = seq)
 : Options ref
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
 <li>long: <a href="../builtin-String">String</a> val</li>
-<li>short: (<a href="../builtin-None">None</a> val | <a href="../builtin-String">String</a> val) = reference</li>
+<li>short: (<a href="../builtin-None">None</a> val | <a href="../builtin-String">String</a> val) = seq</li>
 <li>arg: (<a href="../builtin-None">None</a> val | <a href="../options-StringArgument">StringArgument</a> val | <a href="../options-I64Argument">I64Argument</a> val | 
-    <a href="../options-F64Argument">F64Argument</a> val) = reference</li>
-<li>mode: (<a href="../options-Required">Required</a> val | <a href="../options-Optional">Optional</a> val) = reference</li>
+    <a href="../options-F64Argument">F64Argument</a> val) = seq</li>
+<li>mode: (<a href="../options-Required">Required</a> val | <a href="../options-Optional">Optional</a> val) = seq</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>

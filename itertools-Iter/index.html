@@ -2988,14 +2988,14 @@ value from the iterator.</p>
 <p><code>4</code></p>
 <pre><code class="pony">fun ref find(
   f: {(A!): Bool ?}[A] box,
-  n: USize val = 1)
+  n: USize val = seq)
 : A ?
 </code></pre>
 
 <h4 id="parameters_10">Parameters</h4>
 <ul>
 <li>f: {(A!): Bool ?}[A] box</li>
-<li>n: <a href="../builtin-USize">USize</a> val = 1</li>
+<li>n: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_15">Returns</h4>
 <ul>
@@ -3173,13 +3173,13 @@ returns true but its <code>next</code> method throws an error.</p>
 </code></pre>
 
 <pre><code class="pony">fun ref run(
-  on_error: {ref()}[A] ref = lambda)
+  on_error: {ref()}[A] ref = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_17">Parameters</h4>
 <ul>
-<li>on_error: {ref()}[A] ref = lambda</li>
+<li>on_error: {ref()}[A] ref = seq</li>
 </ul>
 <h4 id="returns_23">Returns</h4>
 <ul>

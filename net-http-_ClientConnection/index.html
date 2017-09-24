@@ -2670,8 +2670,8 @@ for the client application's needs.</p>
     TCPConnectAuth val),
   host: String val,
   service: String val,
-  sslctx: (SSLContext val | None val) = reference,
-  pipeline: Bool val = true,
+  sslctx: (SSLContext val | None val) = seq,
+  pipeline: Bool val = seq,
   handlermaker: HandlerFactory val)
 : _ClientConnection tag^
 </code></pre>
@@ -2682,8 +2682,8 @@ for the client application's needs.</p>
     <a href="../net-TCPConnectAuth">TCPConnectAuth</a> val)</li>
 <li>host: <a href="../builtin-String">String</a> val</li>
 <li>service: <a href="../builtin-String">String</a> val</li>
-<li>sslctx: (<a href="../net-ssl-SSLContext">SSLContext</a> val | <a href="../builtin-None">None</a> val) = reference</li>
-<li>pipeline: <a href="../builtin-Bool">Bool</a> val = true</li>
+<li>sslctx: (<a href="../net-ssl-SSLContext">SSLContext</a> val | <a href="../builtin-None">None</a> val) = seq</li>
+<li>pipeline: <a href="../builtin-Bool">Bool</a> val = seq</li>
 <li>handlermaker: <a href="../net-http-HandlerFactory">HandlerFactory</a> val</li>
 </ul>
 <h4 id="returns">Returns</h4>

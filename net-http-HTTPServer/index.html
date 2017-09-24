@@ -2691,13 +2691,13 @@ will back-pressure the inbound TCP stream.</p>
     TCPListenAuth val),
   notify: ServerNotify iso,
   handler: HandlerFactory val,
-  logger: Logger val = reference,
-  host: String val= &quot;&quot;,
-  service: String val= &quot;0&quot;,
-  limit: USize val = 0,
-  sslctx: (SSLContext val | None val) = reference,
+  logger: Logger val = seq,
+  host: String val = seq,
+  service: String val = seq,
+  limit: USize val = seq,
+  sslctx: (SSLContext val | None val) = seq,
   reversedns: (AmbientAuth val | NetAuth val | DNSAuth val | 
-    None val) = reference)
+    None val) = seq)
 : HTTPServer tag^
 </code></pre>
 
@@ -2707,13 +2707,13 @@ will back-pressure the inbound TCP stream.</p>
     <a href="../net-TCPListenAuth">TCPListenAuth</a> val)</li>
 <li>notify: <a href="../net-http-ServerNotify">ServerNotify</a> iso</li>
 <li>handler: <a href="../net-http-HandlerFactory">HandlerFactory</a> val</li>
-<li>logger: <a href="../net-http-Logger">Logger</a> val = reference</li>
-<li>host: <a href="../builtin-String">String</a> val= ""</li>
-<li>service: <a href="../builtin-String">String</a> val= "0"</li>
-<li>limit: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>sslctx: (<a href="../net-ssl-SSLContext">SSLContext</a> val | <a href="../builtin-None">None</a> val) = reference</li>
+<li>logger: <a href="../net-http-Logger">Logger</a> val = seq</li>
+<li>host: <a href="../builtin-String">String</a> val = seq</li>
+<li>service: <a href="../builtin-String">String</a> val = seq</li>
+<li>limit: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>sslctx: (<a href="../net-ssl-SSLContext">SSLContext</a> val | <a href="../builtin-None">None</a> val) = seq</li>
 <li>reversedns: (<a href="../builtin-AmbientAuth">AmbientAuth</a> val | <a href="../net-NetAuth">NetAuth</a> val | <a href="../net-DNSAuth">DNSAuth</a> val | 
-    <a href="../builtin-None">None</a> val) = reference</li>
+    <a href="../builtin-None">None</a> val) = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>

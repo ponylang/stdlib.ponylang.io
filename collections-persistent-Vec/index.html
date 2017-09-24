@@ -2813,18 +2813,18 @@ returns the first instance of <code>value</code> found, and uses object identity
 for comparison.</p>
 <pre><code class="pony">fun val find(
   value: A,
-  offset: USize val = 0,
-  nth: USize val = 0,
-  predicate: {(A, A): Bool}[A] val = lambda)
+  offset: USize val = seq,
+  nth: USize val = seq,
+  predicate: {(A, A): Bool}[A] val = seq)
 : USize val ?
 </code></pre>
 
 <h4 id="parameters_8">Parameters</h4>
 <ul>
 <li>value: A</li>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>nth: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>predicate: {(A, A): Bool}[A] val = lambda</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>nth: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>predicate: {(A, A): Bool}[A] val = seq</li>
 </ul>
 <h4 id="returns_11">Returns</h4>
 <ul>
@@ -2835,14 +2835,14 @@ for comparison.</p>
 <p>Returns true if the vector contains <code>value</code>, false otherwise.</p>
 <pre><code class="pony">fun val contains(
   value: A,
-  predicate: {(A, A): Bool}[A] val = lambda)
+  predicate: {(A, A): Bool}[A] val = seq)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_9">Parameters</h4>
 <ul>
 <li>value: A</li>
-<li>predicate: {(A, A): Bool}[A] val = lambda</li>
+<li>predicate: {(A, A): Bool}[A] val = seq</li>
 </ul>
 <h4 id="returns_12">Returns</h4>
 <ul>
@@ -2853,17 +2853,17 @@ for comparison.</p>
 <p>Return a vector that is a clone of a portion of this vector. The range is
 exclusive and saturated.</p>
 <pre><code class="pony">fun val slice(
-  from: USize val = 0,
-  to: USize val = call,
-  step: USize val = 1)
+  from: USize val = seq,
+  to: USize val = seq,
+  step: USize val = seq)
 : Vec[A] val
 </code></pre>
 
 <h4 id="parameters_10">Parameters</h4>
 <ul>
-<li>from: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>to: <a href="../builtin-USize">USize</a> val = call</li>
-<li>step: <a href="../builtin-USize">USize</a> val = 1</li>
+<li>from: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>to: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>step: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_13">Returns</h4>
 <ul>

@@ -2628,14 +2628,14 @@ attempts to enable JIT matching whenever possible.</p>
 <p>Compile a regular expression. Raises an error for an invalid expression.</p>
 <pre><code class="pony">new ref create(
   from: (String box | Array[U8 val] box),
-  jit: Bool val = true)
+  jit: Bool val = seq)
 : Regex ref^ ?
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
 <li>from: (<a href="../builtin-String">String</a> box | <a href="../builtin-Array">Array</a>[<a href="../builtin-U8">U8</a> val] box)</li>
-<li>jit: <a href="../builtin-Bool">Bool</a> val = true</li>
+<li>jit: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
@@ -2698,14 +2698,14 @@ object that can give precise match details. Raises an error if there is no
 match.</p>
 <pre><code class="pony">fun box apply(
   subject: (String val | Array[U8 val] val),
-  offset: USize val = 0)
+  offset: USize val = seq)
 : Match ref^ ?
 </code></pre>
 
 <h4 id="parameters_4">Parameters</h4>
 <ul>
 <li>subject: (<a href="../builtin-String">String</a> val | <a href="../builtin-Array">Array</a>[<a href="../builtin-U8">U8</a> val] val)</li>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_4">Returns</h4>
 <ul>
@@ -2719,8 +2719,8 @@ an error if there is no match.</p>
 <pre><code class="pony">fun box replace[optional A: (Seq[U8 val] iso &amp; (String iso | Array[U8 val] iso))](
   subject: (String val | Array[U8 val] val),
   value: (String box | Array[U8 val] box),
-  offset: USize val = 0,
-  global: Bool val = false)
+  offset: USize val = seq,
+  global: Bool val = seq)
 : A^ ?
 </code></pre>
 
@@ -2728,8 +2728,8 @@ an error if there is no match.</p>
 <ul>
 <li>subject: (<a href="../builtin-String">String</a> val | <a href="../builtin-Array">Array</a>[<a href="../builtin-U8">U8</a> val] val)</li>
 <li>value: (<a href="../builtin-String">String</a> box | <a href="../builtin-Array">Array</a>[<a href="../builtin-U8">U8</a> val] box)</li>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>global: <a href="../builtin-Bool">Bool</a> val = false</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>global: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_5">Returns</h4>
 <ul>
@@ -2741,14 +2741,14 @@ an error if there is no match.</p>
 of the substrings.</p>
 <pre><code class="pony">fun box split(
   subject: String val,
-  offset: USize val = 0)
+  offset: USize val = seq)
 : Array[String val] iso^ ?
 </code></pre>
 
 <h4 id="parameters_6">Parameters</h4>
 <ul>
 <li>subject: <a href="../builtin-String">String</a> val</li>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_6">Returns</h4>
 <ul>

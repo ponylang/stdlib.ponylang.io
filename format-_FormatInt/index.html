@@ -2781,12 +2781,12 @@
   fmt: (FormatDefault val | FormatUTF32 val | FormatBinary val | 
     FormatBinaryBare val | FormatOctal val | FormatOctalBare val | 
     FormatHex val | FormatHexBare val | FormatHexSmall val | 
-    FormatHexSmallBare val) = reference,
-  prefix: (PrefixDefault val | PrefixSpace val | PrefixSign val) = reference,
-  prec: USize val = call,
-  width: USize val = 0,
-  align: (AlignLeft val | AlignRight val | AlignCenter val) = reference,
-  fill: U32 val = 32)
+    FormatHexSmallBare val) = seq,
+  prefix: (PrefixDefault val | PrefixSpace val | PrefixSign val) = seq,
+  prec: USize val = seq,
+  width: USize val = seq,
+  align: (AlignLeft val | AlignRight val | AlignCenter val) = seq,
+  fill: U32 val = seq)
 : String iso^
 </code></pre>
 
@@ -2797,12 +2797,12 @@
 <li>fmt: (<a href="../format-FormatDefault">FormatDefault</a> val | <a href="../format-FormatUTF32">FormatUTF32</a> val | <a href="../format-FormatBinary">FormatBinary</a> val | 
     <a href="../format-FormatBinaryBare">FormatBinaryBare</a> val | <a href="../format-FormatOctal">FormatOctal</a> val | <a href="../format-FormatOctalBare">FormatOctalBare</a> val | 
     <a href="../format-FormatHex">FormatHex</a> val | <a href="../format-FormatHexBare">FormatHexBare</a> val | <a href="../format-FormatHexSmall">FormatHexSmall</a> val | 
-    <a href="../format-FormatHexSmallBare">FormatHexSmallBare</a> val) = reference</li>
-<li>prefix: (<a href="../format-PrefixDefault">PrefixDefault</a> val | <a href="../format-PrefixSpace">PrefixSpace</a> val | <a href="../format-PrefixSign">PrefixSign</a> val) = reference</li>
-<li>prec: <a href="../builtin-USize">USize</a> val = call</li>
-<li>width: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>align: (<a href="../format-AlignLeft">AlignLeft</a> val | <a href="../format-AlignRight">AlignRight</a> val | <a href="../format-AlignCenter">AlignCenter</a> val) = reference</li>
-<li>fill: <a href="../builtin-U32">U32</a> val = 32</li>
+    <a href="../format-FormatHexSmallBare">FormatHexSmallBare</a> val) = seq</li>
+<li>prefix: (<a href="../format-PrefixDefault">PrefixDefault</a> val | <a href="../format-PrefixSpace">PrefixSpace</a> val | <a href="../format-PrefixSign">PrefixSign</a> val) = seq</li>
+<li>prec: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>width: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>align: (<a href="../format-AlignLeft">AlignLeft</a> val | <a href="../format-AlignRight">AlignRight</a> val | <a href="../format-AlignCenter">AlignCenter</a> val) = seq</li>
+<li>fill: <a href="../builtin-U32">U32</a> val = seq</li>
 </ul>
 <h4 id="returns_5">Returns</h4>
 <ul>

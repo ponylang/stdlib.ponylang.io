@@ -2798,9 +2798,9 @@ exit.</p>
   notify: TCPConnectionNotify iso,
   host: String val,
   service: String val,
-  from: String val= &quot;&quot;,
-  init_size: USize val = 64,
-  max_size: USize val = 16384)
+  from: String val = seq,
+  init_size: USize val = seq,
+  max_size: USize val = seq)
 : TCPConnection tag^
 </code></pre>
 
@@ -2811,9 +2811,9 @@ exit.</p>
 <li>notify: <a href="../net-TCPConnectionNotify">TCPConnectionNotify</a> iso</li>
 <li>host: <a href="../builtin-String">String</a> val</li>
 <li>service: <a href="../builtin-String">String</a> val</li>
-<li>from: <a href="../builtin-String">String</a> val= ""</li>
-<li>init_size: <a href="../builtin-USize">USize</a> val = 64</li>
-<li>max_size: <a href="../builtin-USize">USize</a> val = 16384</li>
+<li>from: <a href="../builtin-String">String</a> val = seq</li>
+<li>init_size: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>max_size: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
@@ -2827,9 +2827,9 @@ exit.</p>
   notify: TCPConnectionNotify iso,
   host: String val,
   service: String val,
-  from: String val= &quot;&quot;,
-  init_size: USize val = 64,
-  max_size: USize val = 16384)
+  from: String val = seq,
+  init_size: USize val = seq,
+  max_size: USize val = seq)
 : TCPConnection tag^
 </code></pre>
 
@@ -2840,9 +2840,9 @@ exit.</p>
 <li>notify: <a href="../net-TCPConnectionNotify">TCPConnectionNotify</a> iso</li>
 <li>host: <a href="../builtin-String">String</a> val</li>
 <li>service: <a href="../builtin-String">String</a> val</li>
-<li>from: <a href="../builtin-String">String</a> val= ""</li>
-<li>init_size: <a href="../builtin-USize">USize</a> val = 64</li>
-<li>max_size: <a href="../builtin-USize">USize</a> val = 16384</li>
+<li>from: <a href="../builtin-String">String</a> val = seq</li>
+<li>init_size: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>max_size: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>
@@ -2856,9 +2856,9 @@ exit.</p>
   notify: TCPConnectionNotify iso,
   host: String val,
   service: String val,
-  from: String val= &quot;&quot;,
-  init_size: USize val = 64,
-  max_size: USize val = 16384)
+  from: String val = seq,
+  init_size: USize val = seq,
+  max_size: USize val = seq)
 : TCPConnection tag^
 </code></pre>
 
@@ -2869,9 +2869,9 @@ exit.</p>
 <li>notify: <a href="../net-TCPConnectionNotify">TCPConnectionNotify</a> iso</li>
 <li>host: <a href="../builtin-String">String</a> val</li>
 <li>service: <a href="../builtin-String">String</a> val</li>
-<li>from: <a href="../builtin-String">String</a> val= ""</li>
-<li>init_size: <a href="../builtin-USize">USize</a> val = 64</li>
-<li>max_size: <a href="../builtin-USize">USize</a> val = 16384</li>
+<li>from: <a href="../builtin-String">String</a> val = seq</li>
+<li>init_size: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>max_size: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_2">Returns</h4>
 <ul>
@@ -2883,8 +2883,8 @@ exit.</p>
   listen: TCPListener tag,
   notify: TCPConnectionNotify iso,
   fd: U32 val,
-  init_size: USize val = 64,
-  max_size: USize val = 16384)
+  init_size: USize val = seq,
+  max_size: USize val = seq)
 : TCPConnection tag^
 </code></pre>
 
@@ -2893,8 +2893,8 @@ exit.</p>
 <li>listen: <a href="../net-TCPListener">TCPListener</a> tag</li>
 <li>notify: <a href="../net-TCPConnectionNotify">TCPConnectionNotify</a> iso</li>
 <li>fd: <a href="../builtin-U32">U32</a> val</li>
-<li>init_size: <a href="../builtin-USize">USize</a> val = 64</li>
-<li>max_size: <a href="../builtin-USize">USize</a> val = 16384</li>
+<li>init_size: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>max_size: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_3">Returns</h4>
 <ul>
@@ -2984,13 +2984,13 @@ the connection has not yet been established though.</p>
 <code>qty</code> is zero, the call can contain any amount of data. This has no effect
 if called in the <code>sent</code> notifier callback.</p>
 <pre><code class="pony">fun ref expect(
-  qty: USize val = 0)
+  qty: USize val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_7">Parameters</h4>
 <ul>
-<li>qty: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>qty: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_6">Returns</h4>
 <ul>

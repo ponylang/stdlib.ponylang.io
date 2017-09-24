@@ -2634,7 +2634,7 @@ that path.</p>
     FileRead val | FileRemove val | FileRename val | 
     FileSeek val | FileStat val | FileSync val | 
     FileTime val | FileTruncate val | FileWrite val | 
-    FileExec val), U32 val] val = recover)
+    FileExec val), U32 val] val = seq)
 : FilePath val^ ?
 </code></pre>
 
@@ -2647,7 +2647,7 @@ that path.</p>
     <a href="../files-FileRead">FileRead</a> val | <a href="../files-FileRemove">FileRemove</a> val | <a href="../files-FileRename">FileRename</a> val | 
     <a href="../files-FileSeek">FileSeek</a> val | <a href="../files-FileStat">FileStat</a> val | <a href="../files-FileSync">FileSync</a> val | 
     <a href="../files-FileTime">FileTime</a> val | <a href="../files-FileTruncate">FileTruncate</a> val | <a href="../files-FileWrite">FileWrite</a> val | 
-    <a href="../files-FileExec">FileExec</a> val), <a href="../builtin-U32">U32</a> val] val = recover</li>
+    <a href="../files-FileExec">FileExec</a> val), <a href="../builtin-U32">U32</a> val] val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
@@ -2657,26 +2657,26 @@ that path.</p>
 <h3 id="mkdtemp">mkdtemp</h3>
 <pre><code class="pony">new val mkdtemp(
   base: (FilePath val | AmbientAuth val),
-  prefix: String val= &quot;&quot;,
+  prefix: String val = seq,
   caps': Flags[(FileCreate val | FileChmod val | FileChown val | 
     FileLink val | FileLookup val | FileMkdir val | 
     FileRead val | FileRemove val | FileRename val | 
     FileSeek val | FileStat val | FileSync val | 
     FileTime val | FileTruncate val | FileWrite val | 
-    FileExec val), U32 val] val = recover)
+    FileExec val), U32 val] val = seq)
 : FilePath val^ ?
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
 <li>base: (<a href="../files-FilePath">FilePath</a> val | <a href="../builtin-AmbientAuth">AmbientAuth</a> val)</li>
-<li>prefix: <a href="../builtin-String">String</a> val= ""</li>
+<li>prefix: <a href="../builtin-String">String</a> val = seq</li>
 <li>caps': <a href="../collections-Flags">Flags</a>[(<a href="../files-FileCreate">FileCreate</a> val | <a href="../files-FileChmod">FileChmod</a> val | <a href="../files-FileChown">FileChown</a> val | 
     <a href="../files-FileLink">FileLink</a> val | <a href="../files-FileLookup">FileLookup</a> val | <a href="../files-FileMkdir">FileMkdir</a> val | 
     <a href="../files-FileRead">FileRead</a> val | <a href="../files-FileRemove">FileRemove</a> val | <a href="../files-FileRename">FileRename</a> val | 
     <a href="../files-FileSeek">FileSeek</a> val | <a href="../files-FileStat">FileStat</a> val | <a href="../files-FileSync">FileSync</a> val | 
     <a href="../files-FileTime">FileTime</a> val | <a href="../files-FileTruncate">FileTruncate</a> val | <a href="../files-FileWrite">FileWrite</a> val | 
-    <a href="../files-FileExec">FileExec</a> val), <a href="../builtin-U32">U32</a> val] val = recover</li>
+    <a href="../files-FileExec">FileExec</a> val), <a href="../builtin-U32">U32</a> val] val = seq</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>
@@ -2734,7 +2734,7 @@ that path.</p>
     FileRead val | FileRemove val | FileRename val | 
     FileSeek val | FileStat val | FileSync val | 
     FileTime val | FileTruncate val | FileWrite val | 
-    FileExec val), U32 val] val = recover)
+    FileExec val), U32 val] val = seq)
 : FilePath val ?
 </code></pre>
 
@@ -2746,7 +2746,7 @@ that path.</p>
     <a href="../files-FileRead">FileRead</a> val | <a href="../files-FileRemove">FileRemove</a> val | <a href="../files-FileRename">FileRename</a> val | 
     <a href="../files-FileSeek">FileSeek</a> val | <a href="../files-FileStat">FileStat</a> val | <a href="../files-FileSync">FileSync</a> val | 
     <a href="../files-FileTime">FileTime</a> val | <a href="../files-FileTruncate">FileTruncate</a> val | <a href="../files-FileWrite">FileWrite</a> val | 
-    <a href="../files-FileExec">FileExec</a> val), <a href="../builtin-U32">U32</a> val] val = recover</li>
+    <a href="../files-FileExec">FileExec</a> val), <a href="../builtin-U32">U32</a> val] val = seq</li>
 </ul>
 <h4 id="returns_3">Returns</h4>
 <ul>
@@ -2760,14 +2760,14 @@ starting with this one. The handler can control which subdirectories are
 expanded by removing them from the <code>dir_entries</code> list.</p>
 <pre><code class="pony">fun val walk(
   handler: WalkHandler ref,
-  follow_links: Bool val = false)
+  follow_links: Bool val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_4">Parameters</h4>
 <ul>
 <li>handler: <a href="../files-WalkHandler">WalkHandler</a> ref</li>
-<li>follow_links: <a href="../builtin-Bool">Bool</a> val = false</li>
+<li>follow_links: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_4">Returns</h4>
 <ul>
@@ -2803,13 +2803,13 @@ if the directory exists when we're done, false if it does not. If we do not
 have the FileStat permission, this will return false even if the directory
 does exist.</p>
 <pre><code class="pony">fun val mkdir(
-  must_create: Bool val = false)
+  must_create: Bool val = seq)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_5">Parameters</h4>
 <ul>
-<li>must_create: <a href="../builtin-Bool">Bool</a> val = false</li>
+<li>must_create: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_7">Returns</h4>
 <ul>

@@ -3035,13 +3035,13 @@ included in the returned string, but it is removed from the network buffer.</p>
 <p>Peek at a U8 at the given offset. Raise an error if there isn't enough
 data.</p>
 <pre><code class="pony">fun box peek_u8(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : U8 val ?
 </code></pre>
 
 <h4 id="parameters_4">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_30">Returns</h4>
 <ul>
@@ -3051,13 +3051,13 @@ data.</p>
 <h3 id="peek_i8">peek_i8</h3>
 <p>Peek at an I8.</p>
 <pre><code class="pony">fun box peek_i8(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : I8 val ?
 </code></pre>
 
 <h4 id="parameters_5">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_31">Returns</h4>
 <ul>
@@ -3067,13 +3067,13 @@ data.</p>
 <h3 id="peek_u16_be">peek_u16_be</h3>
 <p>Peek at a big-endian U16.</p>
 <pre><code class="pony">fun box peek_u16_be(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : U16 val ?
 </code></pre>
 
 <h4 id="parameters_6">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_32">Returns</h4>
 <ul>
@@ -3083,13 +3083,13 @@ data.</p>
 <h3 id="peek_u16_le">peek_u16_le</h3>
 <p>Peek at a little-endian U16.</p>
 <pre><code class="pony">fun box peek_u16_le(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : U16 val ?
 </code></pre>
 
 <h4 id="parameters_7">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_33">Returns</h4>
 <ul>
@@ -3099,13 +3099,13 @@ data.</p>
 <h3 id="peek_i16_be">peek_i16_be</h3>
 <p>Peek at a big-endian I16.</p>
 <pre><code class="pony">fun box peek_i16_be(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : I16 val ?
 </code></pre>
 
 <h4 id="parameters_8">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_34">Returns</h4>
 <ul>
@@ -3115,13 +3115,13 @@ data.</p>
 <h3 id="peek_i16_le">peek_i16_le</h3>
 <p>Peek at a little-endian I16.</p>
 <pre><code class="pony">fun box peek_i16_le(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : I16 val ?
 </code></pre>
 
 <h4 id="parameters_9">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_35">Returns</h4>
 <ul>
@@ -3131,13 +3131,13 @@ data.</p>
 <h3 id="peek_u32_be">peek_u32_be</h3>
 <p>Peek at a big-endian U32.</p>
 <pre><code class="pony">fun box peek_u32_be(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : U32 val ?
 </code></pre>
 
 <h4 id="parameters_10">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_36">Returns</h4>
 <ul>
@@ -3147,13 +3147,13 @@ data.</p>
 <h3 id="peek_u32_le">peek_u32_le</h3>
 <p>Peek at a little-endian U32.</p>
 <pre><code class="pony">fun box peek_u32_le(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : U32 val ?
 </code></pre>
 
 <h4 id="parameters_11">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_37">Returns</h4>
 <ul>
@@ -3163,13 +3163,13 @@ data.</p>
 <h3 id="peek_i32_be">peek_i32_be</h3>
 <p>Peek at a big-endian I32.</p>
 <pre><code class="pony">fun box peek_i32_be(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : I32 val ?
 </code></pre>
 
 <h4 id="parameters_12">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_38">Returns</h4>
 <ul>
@@ -3179,13 +3179,13 @@ data.</p>
 <h3 id="peek_i32_le">peek_i32_le</h3>
 <p>Peek at a little-endian I32.</p>
 <pre><code class="pony">fun box peek_i32_le(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : I32 val ?
 </code></pre>
 
 <h4 id="parameters_13">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_39">Returns</h4>
 <ul>
@@ -3195,13 +3195,13 @@ data.</p>
 <h3 id="peek_u64_be">peek_u64_be</h3>
 <p>Peek at a big-endian U64.</p>
 <pre><code class="pony">fun box peek_u64_be(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : U64 val ?
 </code></pre>
 
 <h4 id="parameters_14">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_40">Returns</h4>
 <ul>
@@ -3211,13 +3211,13 @@ data.</p>
 <h3 id="peek_u64_le">peek_u64_le</h3>
 <p>Peek at a little-endian U64.</p>
 <pre><code class="pony">fun box peek_u64_le(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : U64 val ?
 </code></pre>
 
 <h4 id="parameters_15">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_41">Returns</h4>
 <ul>
@@ -3227,13 +3227,13 @@ data.</p>
 <h3 id="peek_i64_be">peek_i64_be</h3>
 <p>Peek at a big-endian I64.</p>
 <pre><code class="pony">fun box peek_i64_be(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : I64 val ?
 </code></pre>
 
 <h4 id="parameters_16">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_42">Returns</h4>
 <ul>
@@ -3243,13 +3243,13 @@ data.</p>
 <h3 id="peek_i64_le">peek_i64_le</h3>
 <p>Peek at a little-endian I64.</p>
 <pre><code class="pony">fun box peek_i64_le(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : I64 val ?
 </code></pre>
 
 <h4 id="parameters_17">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_43">Returns</h4>
 <ul>
@@ -3259,13 +3259,13 @@ data.</p>
 <h3 id="peek_u128_be">peek_u128_be</h3>
 <p>Peek at a big-endian U128.</p>
 <pre><code class="pony">fun box peek_u128_be(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : U128 val ?
 </code></pre>
 
 <h4 id="parameters_18">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_44">Returns</h4>
 <ul>
@@ -3275,13 +3275,13 @@ data.</p>
 <h3 id="peek_u128_le">peek_u128_le</h3>
 <p>Peek at a little-endian U128.</p>
 <pre><code class="pony">fun box peek_u128_le(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : U128 val ?
 </code></pre>
 
 <h4 id="parameters_19">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_45">Returns</h4>
 <ul>
@@ -3291,13 +3291,13 @@ data.</p>
 <h3 id="peek_i128_be">peek_i128_be</h3>
 <p>Peek at a big-endian I129.</p>
 <pre><code class="pony">fun box peek_i128_be(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : I128 val ?
 </code></pre>
 
 <h4 id="parameters_20">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_46">Returns</h4>
 <ul>
@@ -3307,13 +3307,13 @@ data.</p>
 <h3 id="peek_i128_le">peek_i128_le</h3>
 <p>Peek at a little-endian I128.</p>
 <pre><code class="pony">fun box peek_i128_le(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : I128 val ?
 </code></pre>
 
 <h4 id="parameters_21">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_47">Returns</h4>
 <ul>
@@ -3323,13 +3323,13 @@ data.</p>
 <h3 id="peek_f32_be">peek_f32_be</h3>
 <p>Peek at a big-endian F32.</p>
 <pre><code class="pony">fun box peek_f32_be(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : F32 val ?
 </code></pre>
 
 <h4 id="parameters_22">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_48">Returns</h4>
 <ul>
@@ -3339,13 +3339,13 @@ data.</p>
 <h3 id="peek_f32_le">peek_f32_le</h3>
 <p>Peek at a little-endian F32.</p>
 <pre><code class="pony">fun box peek_f32_le(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : F32 val ?
 </code></pre>
 
 <h4 id="parameters_23">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_49">Returns</h4>
 <ul>
@@ -3355,13 +3355,13 @@ data.</p>
 <h3 id="peek_f64_be">peek_f64_be</h3>
 <p>Peek at a big-endian F64.</p>
 <pre><code class="pony">fun box peek_f64_be(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : F64 val ?
 </code></pre>
 
 <h4 id="parameters_24">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_50">Returns</h4>
 <ul>
@@ -3371,13 +3371,13 @@ data.</p>
 <h3 id="peek_f64_le">peek_f64_le</h3>
 <p>Peek at a little-endian F64.</p>
 <pre><code class="pony">fun box peek_f64_le(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : F64 val ?
 </code></pre>
 
 <h4 id="parameters_25">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_51">Returns</h4>
 <ul>
@@ -3400,13 +3400,13 @@ data.</p>
 <p>Get the byte at the given offset without moving the cursor forward.
 Raise an error if the given offset is not yet available.</p>
 <pre><code class="pony">fun box _peek_byte(
-  offset: USize val = 0)
+  offset: USize val = seq)
 : U8 val ?
 </code></pre>
 
 <h4 id="parameters_26">Parameters</h4>
 <ul>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_53">Returns</h4>
 <ul>

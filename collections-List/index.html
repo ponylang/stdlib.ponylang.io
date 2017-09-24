@@ -2633,13 +2633,13 @@
 <h2 id="constructors">Constructors</h2>
 <h3 id="create">create</h3>
 <pre><code class="pony">new ref create(
-  len: USize val = 0)
+  len: USize val = seq)
 : List[A] ref^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>len: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>len: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
@@ -2707,13 +2707,13 @@
 <h3 id="apply">apply</h3>
 <p>Get the i-th element, raising an error if the index is out of bounds.</p>
 <pre><code class="pony">fun box apply(
-  i: USize val = 0)
+  i: USize val = seq)
 : this-&gt;A ?
 </code></pre>
 
 <h4 id="parameters_4">Parameters</h4>
 <ul>
-<li>i: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>i: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_5">Returns</h4>
 <ul>
@@ -2928,16 +2928,16 @@ The removed node is returned.</p>
 <p>Append len elements from a sequence, starting from the given offset.</p>
 <pre><code class="pony">fun ref append(
   seq: (ReadSeq[A] box &amp; ReadElement[A^] box),
-  offset: USize val = 0,
-  len: USize val = call)
+  offset: USize val = seq,
+  len: USize val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_14">Parameters</h4>
 <ul>
 <li>seq: (<a href="../builtin-ReadSeq">ReadSeq</a>[A] box &amp; <a href="../builtin-ReadElement">ReadElement</a>[A^] box)</li>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>len: <a href="../builtin-USize">USize</a> val = call</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>len: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_20">Returns</h4>
 <ul>
@@ -2949,16 +2949,16 @@ The removed node is returned.</p>
 offset.</p>
 <pre><code class="pony">fun ref concat(
   iter: Iterator[A^] ref,
-  offset: USize val = 0,
-  len: USize val = call)
+  offset: USize val = seq,
+  len: USize val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_15">Parameters</h4>
 <ul>
 <li>iter: <a href="../builtin-Iterator">Iterator</a>[A^] ref</li>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>len: <a href="../builtin-USize">USize</a> val = call</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>len: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_21">Returns</h4>
 <ul>

@@ -2719,7 +2719,7 @@
 <pre><code class="pony">fun box set_rights(
   fd: I32 val,
   path: FilePath val,
-  writeable: Bool val = true)
+  writeable: Bool val = seq)
 : None val ?
 </code></pre>
 
@@ -2727,7 +2727,7 @@
 <ul>
 <li>fd: <a href="../builtin-I32">I32</a> val</li>
 <li>path: <a href="../files-FilePath">FilePath</a> val</li>
-<li>writeable: <a href="../builtin-Bool">Bool</a> val = true</li>
+<li>writeable: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_5">Returns</h4>
 <ul>

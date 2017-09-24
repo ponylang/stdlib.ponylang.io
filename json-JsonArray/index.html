@@ -2627,13 +2627,13 @@
 <h3 id="create">create</h3>
 <p>Create an array with zero elements, but space for len elements.</p>
 <pre><code class="pony">new iso create(
-  len: USize val = 0)
+  len: USize val = seq)
 : JsonArray iso^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>len: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>len: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
@@ -2671,15 +2671,15 @@
 <h3 id="string">string</h3>
 <p>Generate string representation of this array.</p>
 <pre><code class="pony">fun box string(
-  indent: String val= &quot;&quot;,
-  pretty_print: Bool val = false)
+  indent: String val = seq,
+  pretty_print: Bool val = seq)
 : String val
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
 <ul>
-<li>indent: <a href="../builtin-String">String</a> val= ""</li>
-<li>pretty_print: <a href="../builtin-Bool">Bool</a> val = false</li>
+<li>indent: <a href="../builtin-String">String</a> val = seq</li>
+<li>pretty_print: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_2">Returns</h4>
 <ul>
@@ -2691,7 +2691,7 @@
 <p>Append the string representation of this array to the provided String.</p>
 <pre><code class="pony">fun box _show(
   buf': String iso,
-  indent: String val= &quot;&quot;,
+  indent: String val = seq,
   level: USize val,
   pretty: Bool val)
 : String iso^
@@ -2700,7 +2700,7 @@
 <h4 id="parameters_3">Parameters</h4>
 <ul>
 <li>buf': <a href="../builtin-String">String</a> iso</li>
-<li>indent: <a href="../builtin-String">String</a> val= ""</li>
+<li>indent: <a href="../builtin-String">String</a> val = seq</li>
 <li>level: <a href="../builtin-USize">USize</a> val</li>
 <li>pretty: <a href="../builtin-Bool">Bool</a> val</li>
 </ul>

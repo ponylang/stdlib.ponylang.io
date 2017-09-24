@@ -2670,14 +2670,14 @@ fulfill the next promise in the chain.</p>
 then the next promise in the chain will be rejected.</p>
 <pre><code class="pony">fun tag next[B: Any #share](
   fulfill: Fulfill[A, B] iso,
-  rejected: Reject[B] iso = qualify)
+  rejected: Reject[B] iso = seq)
 : Promise[B] tag
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
 <li>fulfill: <a href="../promises-Fulfill">Fulfill</a>[A, B] iso</li>
-<li>rejected: <a href="../promises-Reject">Reject</a>[B] iso = qualify</li>
+<li>rejected: <a href="../promises-Reject">Reject</a>[B] iso = seq</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>

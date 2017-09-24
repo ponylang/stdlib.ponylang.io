@@ -2636,13 +2636,13 @@ a text-based UI.</p>
 <h3 id="up">up</h3>
 <p>Move the cursor up n lines. 0 is the same as 1.</p>
 <pre><code class="pony">fun box up(
-  n: U32 val = 0)
+  n: U32 val = seq)
 : String val
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>n: <a href="../builtin-U32">U32</a> val = 0</li>
+<li>n: <a href="../builtin-U32">U32</a> val = seq</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>
@@ -2652,13 +2652,13 @@ a text-based UI.</p>
 <h3 id="down">down</h3>
 <p>Move the cursor down n lines. 0 is the same as 1.</p>
 <pre><code class="pony">fun box down(
-  n: U32 val = 0)
+  n: U32 val = seq)
 : String val
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
-<li>n: <a href="../builtin-U32">U32</a> val = 0</li>
+<li>n: <a href="../builtin-U32">U32</a> val = seq</li>
 </ul>
 <h4 id="returns_2">Returns</h4>
 <ul>
@@ -2668,13 +2668,13 @@ a text-based UI.</p>
 <h3 id="right">right</h3>
 <p>Move the cursor right n columns. 0 is the same as 1.</p>
 <pre><code class="pony">fun box right(
-  n: U32 val = 0)
+  n: U32 val = seq)
 : String val
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
 <ul>
-<li>n: <a href="../builtin-U32">U32</a> val = 0</li>
+<li>n: <a href="../builtin-U32">U32</a> val = seq</li>
 </ul>
 <h4 id="returns_3">Returns</h4>
 <ul>
@@ -2684,13 +2684,13 @@ a text-based UI.</p>
 <h3 id="left">left</h3>
 <p>Move the cursor left n columns. 0 is the same as 1.</p>
 <pre><code class="pony">fun box left(
-  n: U32 val = 0)
+  n: U32 val = seq)
 : String val
 </code></pre>
 
 <h4 id="parameters_3">Parameters</h4>
 <ul>
-<li>n: <a href="../builtin-U32">U32</a> val = 0</li>
+<li>n: <a href="../builtin-U32">U32</a> val = seq</li>
 </ul>
 <h4 id="returns_4">Returns</h4>
 <ul>
@@ -2701,15 +2701,15 @@ a text-based UI.</p>
 <p>Move the cursor to line y, column x. 0 is the same as 1. This indexes from
 the top left corner of the screen.</p>
 <pre><code class="pony">fun box cursor(
-  x: U32 val = 0,
-  y: U32 val = 0)
+  x: U32 val = seq,
+  y: U32 val = seq)
 : String val
 </code></pre>
 
 <h4 id="parameters_4">Parameters</h4>
 <ul>
-<li>x: <a href="../builtin-U32">U32</a> val = 0</li>
-<li>y: <a href="../builtin-U32">U32</a> val = 0</li>
+<li>x: <a href="../builtin-U32">U32</a> val = seq</li>
+<li>y: <a href="../builtin-U32">U32</a> val = seq</li>
 </ul>
 <h4 id="returns_5">Returns</h4>
 <ul>
@@ -2752,13 +2752,13 @@ the top left corner of the screen.</p>
 <h3 id="bold">bold</h3>
 <p>Bold text. Does nothing on Windows.</p>
 <pre><code class="pony">fun box bold(
-  state: Bool val = true)
+  state: Bool val = seq)
 : String val
 </code></pre>
 
 <h4 id="parameters_5">Parameters</h4>
 <ul>
-<li>state: <a href="../builtin-Bool">Bool</a> val = true</li>
+<li>state: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_9">Returns</h4>
 <ul>
@@ -2768,13 +2768,13 @@ the top left corner of the screen.</p>
 <h3 id="underline">underline</h3>
 <p>Underlined text. Does nothing on Windows.</p>
 <pre><code class="pony">fun box underline(
-  state: Bool val = true)
+  state: Bool val = seq)
 : String val
 </code></pre>
 
 <h4 id="parameters_6">Parameters</h4>
 <ul>
-<li>state: <a href="../builtin-Bool">Bool</a> val = true</li>
+<li>state: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_10">Returns</h4>
 <ul>
@@ -2784,13 +2784,13 @@ the top left corner of the screen.</p>
 <h3 id="blink">blink</h3>
 <p>Blinking text. Does nothing on Windows.</p>
 <pre><code class="pony">fun box blink(
-  state: Bool val = true)
+  state: Bool val = seq)
 : String val
 </code></pre>
 
 <h4 id="parameters_7">Parameters</h4>
 <ul>
-<li>state: <a href="../builtin-Bool">Bool</a> val = true</li>
+<li>state: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_11">Returns</h4>
 <ul>
@@ -2800,13 +2800,13 @@ the top left corner of the screen.</p>
 <h3 id="reverse">reverse</h3>
 <p>Swap foreground and background colour.</p>
 <pre><code class="pony">fun box reverse(
-  state: Bool val = true)
+  state: Bool val = seq)
 : String val
 </code></pre>
 
 <h4 id="parameters_8">Parameters</h4>
 <ul>
-<li>state: <a href="../builtin-Bool">Bool</a> val = true</li>
+<li>state: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_12">Returns</h4>
 <ul>

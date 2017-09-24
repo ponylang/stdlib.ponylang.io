@@ -2690,15 +2690,15 @@ simplified method can be used instead:</p>
 <h2 id="constructors">Constructors</h2>
 <h3 id="request">request</h3>
 <pre><code class="pony">new iso request(
-  method': String val= &quot;GET&quot;,
-  url': URL val = reference)
+  method': String val = seq,
+  url': URL val = seq)
 : Payload iso^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>method': <a href="../builtin-String">String</a> val= "GET"</li>
-<li>url': <a href="../net-http-URL">URL</a> val = reference</li>
+<li>method': <a href="../builtin-String">String</a> val = seq</li>
+<li>url': <a href="../net-http-URL">URL</a> val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
@@ -2707,13 +2707,13 @@ simplified method can be used instead:</p>
 <hr />
 <h3 id="response">response</h3>
 <pre><code class="pony">new iso response(
-  status': Status val = reference)
+  status': Status val = seq)
 : Payload iso^
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
-<li>status': <a href="../net-http-Status">Status</a> val = reference</li>
+<li>status': <a href="../net-http-Status">Status</a> val = seq</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>
@@ -2722,13 +2722,13 @@ simplified method can be used instead:</p>
 <hr />
 <h3 id="_empty">_empty</h3>
 <pre><code class="pony">new iso _empty(
-  response': Bool val = true)
+  response': Bool val = seq)
 : Payload iso^
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
 <ul>
-<li>response': <a href="../builtin-Bool">Bool</a> val = true</li>
+<li>response': <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_2">Returns</h4>
 <ul>
@@ -2963,14 +2963,14 @@ and is unnecessary, in Oneshot mode.</p>
 <p>Writes the payload to an HTTPSession. Requests and Responses differ
 only in the first line of text - everything after that is the same format.</p>
 <pre><code class="pony">fun val _write(
-  keepalive: Bool val = true,
+  keepalive: Bool val = seq,
   conn: TCPConnection tag)
 : None val
 </code></pre>
 
 <h4 id="parameters_9">Parameters</h4>
 <ul>
-<li>keepalive: <a href="../builtin-Bool">Bool</a> val = true</li>
+<li>keepalive: <a href="../builtin-Bool">Bool</a> val = seq</li>
 <li>conn: <a href="../net-TCPConnection">TCPConnection</a> tag</li>
 </ul>
 <h4 id="returns_16">Returns</h4>

@@ -2647,7 +2647,7 @@ cannot be encoded.</p>
   from: String val,
   part: (URLPartUser val | URLPartPassword val | URLPartHost val | 
     URLPartPath val | URLPartQuery val | URLPartFragment val),
-  percent_encoded: Bool val = true)
+  percent_encoded: Bool val = seq)
 : String val ?
 </code></pre>
 
@@ -2656,7 +2656,7 @@ cannot be encoded.</p>
 <li>from: <a href="../builtin-String">String</a> val</li>
 <li>part: (<a href="../net-http-URLPartUser">URLPartUser</a> val | <a href="../net-http-URLPartPassword">URLPartPassword</a> val | <a href="../net-http-URLPartHost">URLPartHost</a> val | 
     <a href="../net-http-URLPartPath">URLPartPath</a> val | <a href="../net-http-URLPartQuery">URLPartQuery</a> val | <a href="../net-http-URLPartFragment">URLPartFragment</a> val)</li>
-<li>percent_encoded: <a href="../builtin-Bool">Bool</a> val = true</li>
+<li>percent_encoded: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>

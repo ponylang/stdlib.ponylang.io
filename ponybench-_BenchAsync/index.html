@@ -2636,7 +2636,7 @@
   notify: _BenchNotify tag,
   f: {(): Promise[A] ?}[A] val,
   ops: U64 val,
-  timeout: U64 val = 0)
+  timeout: U64 val = seq)
 : _BenchAsync[A] tag^
 </code></pre>
 
@@ -2646,7 +2646,7 @@
 <li>notify: <a href="../ponybench-_BenchNotify">_BenchNotify</a> tag</li>
 <li>f: {(): Promise[A] ?}[A] val</li>
 <li>ops: <a href="../builtin-U64">U64</a> val</li>
-<li>timeout: <a href="../builtin-U64">U64</a> val = 0</li>
+<li>timeout: <a href="../builtin-U64">U64</a> val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>

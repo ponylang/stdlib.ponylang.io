@@ -2628,8 +2628,8 @@ A client should create one instance of this class.</p>
 <pre><code class="pony">new ref create(
   auth: (AmbientAuth val | NetAuth val | TCPAuth val | 
     TCPConnectAuth val),
-  sslctx: (SSLContext val | None val) = reference,
-  pipeline: Bool val = true)
+  sslctx: (SSLContext val | None val) = seq,
+  pipeline: Bool val = seq)
 : HTTPClient ref^
 </code></pre>
 
@@ -2637,8 +2637,8 @@ A client should create one instance of this class.</p>
 <ul>
 <li>auth: (<a href="../builtin-AmbientAuth">AmbientAuth</a> val | <a href="../net-NetAuth">NetAuth</a> val | <a href="../net-TCPAuth">TCPAuth</a> val | 
     <a href="../net-TCPConnectAuth">TCPConnectAuth</a> val)</li>
-<li>sslctx: (<a href="../net-ssl-SSLContext">SSLContext</a> val | <a href="../builtin-None">None</a> val) = reference</li>
-<li>pipeline: <a href="../builtin-Bool">Bool</a> val = true</li>
+<li>sslctx: (<a href="../net-ssl-SSLContext">SSLContext</a> val | <a href="../builtin-None">None</a> val) = seq</li>
+<li>pipeline: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>

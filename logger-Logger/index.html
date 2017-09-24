@@ -2626,7 +2626,7 @@
     Error val),
   out: OutStream tag,
   f: {(A): String}[A] val,
-  formatter: LogFormatter val = reference)
+  formatter: LogFormatter val = seq)
 : Logger[A] val^
 </code></pre>
 
@@ -2636,7 +2636,7 @@
     <a href="../logger-Error">Error</a> val)</li>
 <li>out: <a href="../builtin-OutStream">OutStream</a> tag</li>
 <li>f: {(A): String}[A] val</li>
-<li>formatter: <a href="../logger-LogFormatter">LogFormatter</a> val = reference</li>
+<li>formatter: <a href="../logger-LogFormatter">LogFormatter</a> val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
@@ -2664,14 +2664,14 @@
 <h3 id="log">log</h3>
 <pre><code class="pony">fun box log(
   value: A,
-  loc: SourceLoc val = __loc)
+  loc: SourceLoc val = seq)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
 <ul>
 <li>value: A</li>
-<li>loc: <a href="../builtin-SourceLoc">SourceLoc</a> val = __loc</li>
+<li>loc: <a href="../builtin-SourceLoc">SourceLoc</a> val = seq</li>
 </ul>
 <h4 id="returns_2">Returns</h4>
 <ul>

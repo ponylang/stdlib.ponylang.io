@@ -2636,18 +2636,18 @@ command has the following attributes:</p>
 <h3 id="parent">parent</h3>
 <pre><code class="pony">new ref parent(
   name': String val,
-  descr': String val= &quot;&quot;,
-  options': Array[OptionSpec val] box = call,
-  commands': Array[CommandSpec ref] box = call)
+  descr': String val = seq,
+  options': Array[OptionSpec val] box = seq,
+  commands': Array[CommandSpec ref] box = seq)
 : CommandSpec ref^ ?
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
 <li>name': <a href="../builtin-String">String</a> val</li>
-<li>descr': <a href="../builtin-String">String</a> val= ""</li>
-<li>options': <a href="../builtin-Array">Array</a>[<a href="../cli-OptionSpec">OptionSpec</a> val] box = call</li>
-<li>commands': <a href="../builtin-Array">Array</a>[<a href="../cli-CommandSpec">CommandSpec</a> ref] box = call</li>
+<li>descr': <a href="../builtin-String">String</a> val = seq</li>
+<li>options': <a href="../builtin-Array">Array</a>[<a href="../cli-OptionSpec">OptionSpec</a> val] box = seq</li>
+<li>commands': <a href="../builtin-Array">Array</a>[<a href="../cli-CommandSpec">CommandSpec</a> ref] box = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
@@ -2657,18 +2657,18 @@ command has the following attributes:</p>
 <h3 id="leaf">leaf</h3>
 <pre><code class="pony">new ref leaf(
   name': String val,
-  descr': String val= &quot;&quot;,
-  options': Array[OptionSpec val] box = call,
-  args': Array[ArgSpec val] box = call)
+  descr': String val = seq,
+  options': Array[OptionSpec val] box = seq,
+  args': Array[ArgSpec val] box = seq)
 : CommandSpec ref^ ?
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
 <li>name': <a href="../builtin-String">String</a> val</li>
-<li>descr': <a href="../builtin-String">String</a> val= ""</li>
-<li>options': <a href="../builtin-Array">Array</a>[<a href="../cli-OptionSpec">OptionSpec</a> val] box = call</li>
-<li>args': <a href="../builtin-Array">Array</a>[<a href="../cli-ArgSpec">ArgSpec</a> val] box = call</li>
+<li>descr': <a href="../builtin-String">String</a> val = seq</li>
+<li>options': <a href="../builtin-Array">Array</a>[<a href="../cli-OptionSpec">OptionSpec</a> val] box = seq</li>
+<li>args': <a href="../builtin-Array">Array</a>[<a href="../cli-ArgSpec">ArgSpec</a> val] box = seq</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>
@@ -2695,13 +2695,13 @@ command has the following attributes:</p>
 <h3 id="add_help">add_help</h3>
 <p>Adds a standard help option and, optionally command, to a root command.</p>
 <pre><code class="pony">fun ref add_help(
-  hname: String val= &quot;help&quot;)
+  hname: String val = seq)
 : None val ?
 </code></pre>
 
 <h4 id="parameters_3">Parameters</h4>
 <ul>
-<li>hname: <a href="../builtin-String">String</a> val= "help"</li>
+<li>hname: <a href="../builtin-String">String</a> val = seq</li>
 </ul>
 <h4 id="returns_3">Returns</h4>
 <ul>

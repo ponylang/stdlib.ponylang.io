@@ -2791,14 +2791,14 @@ In all cases, join(head, tail) returns a path to the same location as path
 (but the strings may differ). Also see the functions dir() and base().</p>
 <pre><code class="pony">fun box split(
   path: String val,
-  separator: String val = call)
+  separator: String val = seq)
 : (String val , String val)
 </code></pre>
 
 <h4 id="parameters_7">Parameters</h4>
 <ul>
 <li>path: <a href="../builtin-String">String</a> val</li>
-<li>separator: <a href="../builtin-String">String</a> val = call</li>
+<li>separator: <a href="../builtin-String">String</a> val = seq</li>
 </ul>
 <h4 id="returns_10">Returns</h4>
 <ul>
@@ -2812,14 +2812,14 @@ If <code>with_ext</code> is <code>false</code>, the extension as defined by the 
 will be omitted from the result.</p>
 <pre><code class="pony">fun box base(
   path: String val,
-  with_ext: Bool val = true)
+  with_ext: Bool val = seq)
 : String val
 </code></pre>
 
 <h4 id="parameters_8">Parameters</h4>
 <ul>
 <li>path: <a href="../builtin-String">String</a> val</li>
-<li>with_ext: <a href="../builtin-Bool">Bool</a> val = true</li>
+<li>with_ext: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_11">Returns</h4>
 <ul>
@@ -2973,13 +2973,13 @@ isn't one.</p>
 <p>Returns a pseudo-random base, suitable as a temporary file name or
 directory name, but not guaranteed to not already exist.</p>
 <pre><code class="pony">fun box random(
-  len: USize val = 6)
+  len: USize val = seq)
 : String val
 </code></pre>
 
 <h4 id="parameters_17">Parameters</h4>
 <ul>
-<li>len: <a href="../builtin-USize">USize</a> val = 6</li>
+<li>len: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_21">Returns</h4>
 <ul>
@@ -3021,14 +3021,14 @@ directory name, but not guaranteed to not already exist.</p>
 <p>Look for a drive letter followed by a ':', returning true if we find it.</p>
 <pre><code class="pony">fun box _drive_letter(
   path: String val,
-  offset: ISize val = 0)
+  offset: ISize val = seq)
 : Bool val
 </code></pre>
 
 <h4 id="parameters_20">Parameters</h4>
 <ul>
 <li>path: <a href="../builtin-String">String</a> val</li>
-<li>offset: <a href="../builtin-ISize">ISize</a> val = 0</li>
+<li>offset: <a href="../builtin-ISize">ISize</a> val = seq</li>
 </ul>
 <h4 id="returns_24">Returns</h4>
 <ul>
@@ -3040,14 +3040,14 @@ directory name, but not guaranteed to not already exist.</p>
 we found one, otherwise an empty String.</p>
 <pre><code class="pony">fun box _network_share(
   path: String val,
-  offset: ISize val = 0)
+  offset: ISize val = seq)
 : String val
 </code></pre>
 
 <h4 id="parameters_21">Parameters</h4>
 <ul>
 <li>path: <a href="../builtin-String">String</a> val</li>
-<li>offset: <a href="../builtin-ISize">ISize</a> val = 0</li>
+<li>offset: <a href="../builtin-ISize">ISize</a> val = seq</li>
 </ul>
 <h4 id="returns_25">Returns</h4>
 <ul>

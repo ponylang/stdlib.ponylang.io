@@ -2696,9 +2696,9 @@ actor Main
 <pre><code class="pony">new tag create(
   auth: (AmbientAuth val | NetAuth val | UDPAuth val),
   notify: UDPNotify iso,
-  host: String val= &quot;&quot;,
-  service: String val= &quot;0&quot;,
-  size: USize val = 1024)
+  host: String val = seq,
+  service: String val = seq,
+  size: USize val = seq)
 : UDPSocket tag^
 </code></pre>
 
@@ -2706,9 +2706,9 @@ actor Main
 <ul>
 <li>auth: (<a href="../builtin-AmbientAuth">AmbientAuth</a> val | <a href="../net-NetAuth">NetAuth</a> val | <a href="../net-UDPAuth">UDPAuth</a> val)</li>
 <li>notify: <a href="../net-UDPNotify">UDPNotify</a> iso</li>
-<li>host: <a href="../builtin-String">String</a> val= ""</li>
-<li>service: <a href="../builtin-String">String</a> val= "0"</li>
-<li>size: <a href="../builtin-USize">USize</a> val = 1024</li>
+<li>host: <a href="../builtin-String">String</a> val = seq</li>
+<li>service: <a href="../builtin-String">String</a> val = seq</li>
+<li>size: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
@@ -2719,9 +2719,9 @@ actor Main
 <pre><code class="pony">new tag ip4(
   auth: (AmbientAuth val | NetAuth val | UDPAuth val),
   notify: UDPNotify iso,
-  host: String val= &quot;&quot;,
-  service: String val= &quot;0&quot;,
-  size: USize val = 1024)
+  host: String val = seq,
+  service: String val = seq,
+  size: USize val = seq)
 : UDPSocket tag^
 </code></pre>
 
@@ -2729,9 +2729,9 @@ actor Main
 <ul>
 <li>auth: (<a href="../builtin-AmbientAuth">AmbientAuth</a> val | <a href="../net-NetAuth">NetAuth</a> val | <a href="../net-UDPAuth">UDPAuth</a> val)</li>
 <li>notify: <a href="../net-UDPNotify">UDPNotify</a> iso</li>
-<li>host: <a href="../builtin-String">String</a> val= ""</li>
-<li>service: <a href="../builtin-String">String</a> val= "0"</li>
-<li>size: <a href="../builtin-USize">USize</a> val = 1024</li>
+<li>host: <a href="../builtin-String">String</a> val = seq</li>
+<li>service: <a href="../builtin-String">String</a> val = seq</li>
+<li>size: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>
@@ -2742,9 +2742,9 @@ actor Main
 <pre><code class="pony">new tag ip6(
   auth: (AmbientAuth val | NetAuth val | UDPAuth val),
   notify: UDPNotify iso,
-  host: String val= &quot;&quot;,
-  service: String val= &quot;0&quot;,
-  size: USize val = 1024)
+  host: String val = seq,
+  service: String val = seq,
+  size: USize val = seq)
 : UDPSocket tag^
 </code></pre>
 
@@ -2752,9 +2752,9 @@ actor Main
 <ul>
 <li>auth: (<a href="../builtin-AmbientAuth">AmbientAuth</a> val | <a href="../net-NetAuth">NetAuth</a> val | <a href="../net-UDPAuth">UDPAuth</a> val)</li>
 <li>notify: <a href="../net-UDPNotify">UDPNotify</a> iso</li>
-<li>host: <a href="../builtin-String">String</a> val= ""</li>
-<li>service: <a href="../builtin-String">String</a> val= "0"</li>
-<li>size: <a href="../builtin-USize">USize</a> val = 1024</li>
+<li>host: <a href="../builtin-String">String</a> val = seq</li>
+<li>service: <a href="../builtin-String">String</a> val = seq</li>
+<li>size: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_2">Returns</h4>
 <ul>
@@ -2815,12 +2815,12 @@ actor Main
 for multicast addresses. This can be used to force a specific interface. To
 revert to allowing the OS to choose, call with an empty string.</p>
 <pre><code class="pony">be set_multicast_interface(
-  from: String val= &quot;&quot;)
+  from: String val = seq)
 </code></pre>
 
 <h4 id="parameters_7">Parameters</h4>
 <ul>
-<li>from: <a href="../builtin-String">String</a> val= ""</li>
+<li>from: <a href="../builtin-String">String</a> val = seq</li>
 </ul>
 <hr />
 <h3 id="set_multicast_loopback">set_multicast_loopback</h3>
@@ -2852,13 +2852,13 @@ prevents this.</p>
 specific interface.</p>
 <pre><code class="pony">be multicast_join(
   group: String val,
-  to: String val= &quot;&quot;)
+  to: String val = seq)
 </code></pre>
 
 <h4 id="parameters_10">Parameters</h4>
 <ul>
 <li>group: <a href="../builtin-String">String</a> val</li>
-<li>to: <a href="../builtin-String">String</a> val= ""</li>
+<li>to: <a href="../builtin-String">String</a> val = seq</li>
 </ul>
 <hr />
 <h3 id="multicast_leave">multicast_leave</h3>
@@ -2867,13 +2867,13 @@ specific interface. No attempt is made to check that this socket has
 previously added this group.</p>
 <pre><code class="pony">be multicast_leave(
   group: String val,
-  to: String val= &quot;&quot;)
+  to: String val = seq)
 </code></pre>
 
 <h4 id="parameters_11">Parameters</h4>
 <ul>
 <li>group: <a href="../builtin-String">String</a> val</li>
-<li>to: <a href="../builtin-String">String</a> val= ""</li>
+<li>to: <a href="../builtin-String">String</a> val = seq</li>
 </ul>
 <hr />
 <h3 id="dispose">dispose</h3>

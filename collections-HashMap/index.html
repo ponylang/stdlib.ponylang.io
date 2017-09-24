@@ -2627,13 +2627,13 @@ type to create different kinds of maps.</p>
 <h2 id="constructors">Constructors</h2>
 <h3 id="create">create</h3>
 <pre><code class="pony">new ref create(
-  prealloc: USize val = 6)
+  prealloc: USize val = seq)
 : HashMap[K, V, H] ref^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>prealloc: <a href="../builtin-USize">USize</a> val = 6</li>
+<li>prealloc: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
@@ -2882,13 +2882,13 @@ return the provided alternate value.</p>
 <p>Given an index, return the next index that has a populated key and value.
 Raise an error if there is no next populated index.</p>
 <pre><code class="pony">fun box next_index(
-  prev: USize val = call)
+  prev: USize val = seq)
 : USize val ?
 </code></pre>
 
 <h4 id="parameters_12">Parameters</h4>
 <ul>
-<li>prev: <a href="../builtin-USize">USize</a> val = call</li>
+<li>prev: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_14">Returns</h4>
 <ul>

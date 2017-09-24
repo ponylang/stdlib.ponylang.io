@@ -2638,13 +2638,13 @@
 <p>Create a client-side SSL session. If a hostname is supplied, the server
 side certificate must be valid for that hostname.</p>
 <pre><code class="pony">fun box client(
-  hostname: String val= &quot;&quot;)
+  hostname: String val = seq)
 : SSL iso^ ?
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>hostname: <a href="../builtin-String">String</a> val= ""</li>
+<li>hostname: <a href="../builtin-String">String</a> val = seq</li>
 </ul>
 <h4 id="returns_1">Returns</h4>
 <ul>
@@ -2688,14 +2688,14 @@ to indicate no file or no path. Raises an error if these verify locations
 aren't valid, or if both are None.</p>
 <pre><code class="pony">fun ref set_authority(
   file: (FilePath val | None val),
-  path: (FilePath val | None val) = reference)
+  path: (FilePath val | None val) = seq)
 : None val ?
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
 <ul>
 <li>file: (<a href="../files-FilePath">FilePath</a> val | <a href="../builtin-None">None</a> val)</li>
-<li>path: (<a href="../files-FilePath">FilePath</a> val | <a href="../builtin-None">None</a> val) = reference</li>
+<li>path: (<a href="../files-FilePath">FilePath</a> val | <a href="../builtin-None">None</a> val) = seq</li>
 </ul>
 <h4 id="returns_4">Returns</h4>
 <ul>

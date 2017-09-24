@@ -2633,13 +2633,13 @@ a type to itself</p>
 <h3 id="create">create</h3>
 <p>Defaults to a prealloc of 8.</p>
 <pre><code class="pony">new ref create(
-  prealloc: USize val = 8)
+  prealloc: USize val = seq)
 : HashSet[A, H] ref^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>prealloc: <a href="../builtin-USize">USize</a> val = 8</li>
+<li>prealloc: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
@@ -3036,13 +3036,13 @@ elements than that.</p>
 <p>Given an index, return the next index that has a populated value. Raise an
 error if there is no next populated index.</p>
 <pre><code class="pony">fun box next_index(
-  prev: USize val = call)
+  prev: USize val = seq)
 : USize val ?
 </code></pre>
 
 <h4 id="parameters_22">Parameters</h4>
 <ul>
-<li>prev: <a href="../builtin-USize">USize</a> val = call</li>
+<li>prev: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_26">Returns</h4>
 <ul>

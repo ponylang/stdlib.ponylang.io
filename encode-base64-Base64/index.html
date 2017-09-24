@@ -2669,14 +2669,14 @@
 <p>Encode for URLs (RFC 4648). Padding characters are stripped by default.</p>
 <pre><code class="pony">fun box encode_url[optional A: Seq[U8 val] iso](
   data: ReadSeq[U8 val] box,
-  pad: Bool val = false)
+  pad: Bool val = seq)
 : A^
 </code></pre>
 
 <h4 id="parameters_2">Parameters</h4>
 <ul>
 <li>data: <a href="../builtin-ReadSeq">ReadSeq</a>[<a href="../builtin-U8">U8</a> val] box</li>
-<li>pad: <a href="../builtin-Bool">Bool</a> val = false</li>
+<li>pad: <a href="../builtin-Bool">Bool</a> val = seq</li>
 </ul>
 <h4 id="returns_3">Returns</h4>
 <ul>
@@ -2687,24 +2687,22 @@
 <p>Configurable encoding. The defaults are for RFC 4648.</p>
 <pre><code class="pony">fun box encode[optional A: Seq[U8 val] iso](
   data: ReadSeq[U8 val] box,
-  at62: U8 val = 43,
-  at63: U8 val = 47,
-  pad: U8 val = 61,
-  linelen: USize val = 0,
-  linesep: String val= &quot;
-&quot;)
+  at62: U8 val = seq,
+  at63: U8 val = seq,
+  pad: U8 val = seq,
+  linelen: USize val = seq,
+  linesep: String val = seq)
 : A^
 </code></pre>
 
 <h4 id="parameters_3">Parameters</h4>
 <ul>
 <li>data: <a href="../builtin-ReadSeq">ReadSeq</a>[<a href="../builtin-U8">U8</a> val] box</li>
-<li>at62: <a href="../builtin-U8">U8</a> val = 43</li>
-<li>at63: <a href="../builtin-U8">U8</a> val = 47</li>
-<li>pad: <a href="../builtin-U8">U8</a> val = 61</li>
-<li>linelen: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>linesep: <a href="../builtin-String">String</a> val= "
-"</li>
+<li>at62: <a href="../builtin-U8">U8</a> val = seq</li>
+<li>at63: <a href="../builtin-U8">U8</a> val = seq</li>
+<li>pad: <a href="../builtin-U8">U8</a> val = seq</li>
+<li>linelen: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>linesep: <a href="../builtin-String">String</a> val = seq</li>
 </ul>
 <h4 id="returns_4">Returns</h4>
 <ul>
@@ -2733,18 +2731,18 @@ not an error. Non-base64 data, other than whitespace (which can appear at
 any time), is an error.</p>
 <pre><code class="pony">fun box decode[optional A: Seq[U8 val] iso](
   data: ReadSeq[U8 val] box,
-  at62: U8 val = 43,
-  at63: U8 val = 47,
-  pad: U8 val = 61)
+  at62: U8 val = seq,
+  at63: U8 val = seq,
+  pad: U8 val = seq)
 : A^ ?
 </code></pre>
 
 <h4 id="parameters_5">Parameters</h4>
 <ul>
 <li>data: <a href="../builtin-ReadSeq">ReadSeq</a>[<a href="../builtin-U8">U8</a> val] box</li>
-<li>at62: <a href="../builtin-U8">U8</a> val = 43</li>
-<li>at63: <a href="../builtin-U8">U8</a> val = 47</li>
-<li>pad: <a href="../builtin-U8">U8</a> val = 61</li>
+<li>at62: <a href="../builtin-U8">U8</a> val = seq</li>
+<li>at63: <a href="../builtin-U8">U8</a> val = seq</li>
+<li>pad: <a href="../builtin-U8">U8</a> val = seq</li>
 </ul>
 <h4 id="returns_6">Returns</h4>
 <ul>

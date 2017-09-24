@@ -2624,13 +2624,13 @@
 <h3 id="create">create</h3>
 <p>Create a sequence, reserving space for len elements.</p>
 <pre><code class="pony">new ref create(
-  len: USize val = 0)
+  len: USize val = seq)
 : Seq[A] ref^
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
 <ul>
-<li>len: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>len: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
@@ -2771,16 +2771,16 @@ Raises an error if the index is out of bounds.</p>
 offset.</p>
 <pre><code class="pony">fun ref append(
   seq: (ReadSeq[A] box &amp; ReadElement[A^] box),
-  offset: USize val = 0,
-  len: USize val = call)
+  offset: USize val = seq,
+  len: USize val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_6">Parameters</h4>
 <ul>
 <li>seq: (<a href="../builtin-ReadSeq">ReadSeq</a>[A] box &amp; <a href="../builtin-ReadElement">ReadElement</a>[A^] box)</li>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>len: <a href="../builtin-USize">USize</a> val = call</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>len: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_10">Returns</h4>
 <ul>
@@ -2792,16 +2792,16 @@ offset.</p>
 offset.</p>
 <pre><code class="pony">fun ref concat(
   iter: Iterator[A^] ref,
-  offset: USize val = 0,
-  len: USize val = call)
+  offset: USize val = seq,
+  len: USize val = seq)
 : None val
 </code></pre>
 
 <h4 id="parameters_7">Parameters</h4>
 <ul>
 <li>iter: <a href="../builtin-Iterator">Iterator</a>[A^] ref</li>
-<li>offset: <a href="../builtin-USize">USize</a> val = 0</li>
-<li>len: <a href="../builtin-USize">USize</a> val = call</li>
+<li>offset: <a href="../builtin-USize">USize</a> val = seq</li>
+<li>len: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_11">Returns</h4>
 <ul>

@@ -2629,7 +2629,7 @@ to any transport layer.</p>
   ctx: Pointer[_SSLContext val] tag,
   server: Bool val,
   verify: Bool val,
-  hostname: String val= &quot;&quot;)
+  hostname: String val = seq)
 : SSL ref^ ?
 </code></pre>
 
@@ -2638,7 +2638,7 @@ to any transport layer.</p>
 <li>ctx: <a href="../builtin-Pointer">Pointer</a>[<a href="../net-ssl-_SSLContext">_SSLContext</a> val] tag</li>
 <li>server: <a href="../builtin-Bool">Bool</a> val</li>
 <li>verify: <a href="../builtin-Bool">Bool</a> val</li>
-<li>hostname: <a href="../builtin-String">String</a> val= ""</li>
+<li>hostname: <a href="../builtin-String">String</a> val = seq</li>
 </ul>
 <h4 id="returns">Returns</h4>
 <ul>
@@ -2664,13 +2664,13 @@ to any transport layer.</p>
 non-zero, the number of bytes returned will be exactly <code>expect</code>. If no data
 (or less than <code>expect</code> bytes) is available, this returns None.</p>
 <pre><code class="pony">fun ref read(
-  expect: USize val = 0)
+  expect: USize val = seq)
 : (Array[U8 val] iso^ | None val)
 </code></pre>
 
 <h4 id="parameters_1">Parameters</h4>
 <ul>
-<li>expect: <a href="../builtin-USize">USize</a> val = 0</li>
+<li>expect: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
 <h4 id="returns_2">Returns</h4>
 <ul>
