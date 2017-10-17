@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,7 +13,7 @@
         
     <url>
      <loc>/packages-stdlib--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -23,19 +23,19 @@
         
     <url>
      <loc>/assert--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/assert-Assert/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/assert-Fact/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -45,19 +45,19 @@
         
     <url>
      <loc>/buffered--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/buffered-Writer/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/buffered-Reader/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -67,415 +67,415 @@
         
     <url>
      <loc>/builtin--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-I8/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-I16/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-I32/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-I64/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-ILong/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-ISize/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-I128/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Signed/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Pointer/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-MaybePointer/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-None/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Env/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-AsioEventID/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-AsioEventNotify/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-AsioEvent/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-F32/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-F64/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Float/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Seq/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-_ArithmeticConvertible/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Real/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Integer/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-_SignedInteger/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-_UnsignedInteger/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-FloatingPoint/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Number/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Int/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-DoNotOptimise/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Bool/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-AmbientAuth/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Iterator/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-_ToString/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-SourceLoc/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Array/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-ArrayKeys/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-ArrayValues/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-ArrayPairs/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Less/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Equal/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Greater/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Compare/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-HasEq/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Equatable/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Comparable/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Platform/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Stringable/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-ByteSeq/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-ByteSeqIter/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-OutStream/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-StdStream/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Any/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-ReadSeq/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-ReadElement/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-U8/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-U16/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-U32/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-U64/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-ULong/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-USize/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-U128/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Unsigned/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-String/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-StringBytes/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-StringRunes/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-_UTF32Encoder/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-StdinNotify/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-DisposableActor/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/builtin-Stdin/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -485,19 +485,19 @@
         
     <url>
      <loc>/bureaucracy--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/bureaucracy-Custodian/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/bureaucracy-Registrar/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -507,25 +507,25 @@
         
     <url>
      <loc>/capsicum--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/capsicum-CapRights/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/capsicum-CapRights0/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/capsicum-Cap/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -535,151 +535,151 @@
         
     <url>
      <loc>/cli--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-CommandSpec/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-OptionSpec/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-ArgSpec/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-_StringSeq/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-_Value/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-_ValueType/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-_BoolType/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-_StringType/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-_I64Type/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-_F64Type/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-_StringSeqType/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-Help/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-CommandHelp/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-_Columns/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-CommandParser/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-_OptionParser/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-_ArgParser/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-_ValueParser/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-EnvVars/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-_Fixtures/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-Command/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-Option/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-Arg/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/cli-SyntaxError/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -689,169 +689,169 @@
         
     <url>
      <loc>/collections--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-Reverse/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-Flag/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-Flags/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-Range/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-Sort/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-_MapEmpty/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-_MapDeleted/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-Map/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-MapIs/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-HashMap/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-MapKeys/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-MapValues/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-MapPairs/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-ListNode/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-Hashable/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-HashFunction/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-HashEq/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-HashIs/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-HashByteSeq/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-Set/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-SetIs/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-HashSet/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-SetValues/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-RingBuffer/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-List/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-ListNodes/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-ListValues/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -861,163 +861,163 @@
         
     <url>
      <loc>/collections-persistent--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-_Bits/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-Vec/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-VecKeys/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-VecValues/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-VecPairs/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-_VecLeafNodes/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-_VecNodes/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-_VecEntries/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-_VecNode/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-Map/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-MapIs/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-HashMap/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-MapKeys/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-MapValues/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-MapPairs/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-_MapCollisions/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-_MapLeaf/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-_MapEntry/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-_MapNode/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-Set/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-SetIs/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-HashSet/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-List/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-Lists/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-Nil/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/collections-persistent-Cons/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -1027,91 +1027,91 @@
         
     <url>
      <loc>/crypto--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/crypto-ConstantTimeCompare/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/crypto-_EVPMD/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/crypto-_EVPCTX/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/crypto-Digest/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/crypto-HashFn/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/crypto-MD4/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/crypto-MD5/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/crypto-RIPEMD160/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/crypto-SHA1/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/crypto-SHA224/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/crypto-SHA256/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/crypto-SHA384/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/crypto-SHA512/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/crypto-ToHexString/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -1121,31 +1121,31 @@
         
     <url>
      <loc>/debug--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/debug-DebugOut/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/debug-DebugErr/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/debug-DebugStream/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/debug-Debug/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -1155,13 +1155,13 @@
         
     <url>
      <loc>/encode-base64--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/encode-base64-Base64/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -1171,289 +1171,289 @@
         
     <url>
      <loc>/files--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileMode/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileCreate/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileChmod/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileChown/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileLink/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileLookup/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileMkdir/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileRead/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileRemove/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileRename/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileSeek/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileStat/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileSync/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileTime/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileTruncate/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileWrite/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileExec/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileCaps/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-WalkHandler/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FilePath/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-_FileHelper/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileStream/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-_PathSep/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-_PathDot/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-_PathDot2/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-_PathOther/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-_PathState/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-Path/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-_DirectoryHandle/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-_DirectoryEntry/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-Directory/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileOK/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileError/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileEOF/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileBadFileNumber/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileExists/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FilePermissionDenied/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-_EBADF/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-_EEXIST/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-_EACCES/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileErrNo/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-CreateFile/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-OpenFile/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-File/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileLines/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-FileInfo/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/files-_FileDes/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -1463,217 +1463,217 @@
         
     <url>
      <loc>/format--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-_FormatInt/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-Format/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatSpec/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-PrefixSpec/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-Creatable/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatSettings/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatSettingsDefault/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatDefault/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-PrefixDefault/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-AlignLeft/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-AlignRight/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-AlignCenter/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-Align/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatUTF32/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatBinary/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatBinaryBare/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatOctal/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatOctalBare/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatHex/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatHexBare/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatHexSmall/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatHexSmallBare/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatInt/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatDefaultNumber/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-PrefixSpace/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-PrefixSign/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-PrefixNumber/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatExp/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatExpLarge/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatFix/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatFixLarge/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatGeneral/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatGeneralLarge/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-FormatFloat/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/format-_FormatFloat/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -1683,25 +1683,25 @@
         
     <url>
      <loc>/glob--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/glob-_FileHelper/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/glob-GlobHandler/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/glob-Glob/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -1711,49 +1711,49 @@
         
     <url>
      <loc>/ini--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ini-IniMap/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ini-IniParse/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ini-IniIncompleteSection/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ini-IniNoDelimiter/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ini-IniError/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ini-IniNotify/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ini-Ini/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -1763,25 +1763,25 @@
         
     <url>
      <loc>/itertools--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/itertools-Iter/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/itertools-_None/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/itertools-_EmptyIter/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -1791,37 +1791,37 @@
         
     <url>
      <loc>/json--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/json-JsonDoc/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/json-JsonType/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/json-JsonArray/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/json-JsonObject/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/json-_JsonPrint/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -1831,61 +1831,61 @@
         
     <url>
      <loc>/logger--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/logger-LogLevel/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/logger-Fine/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/logger-Info/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/logger-Warn/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/logger-Error/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/logger-Logger/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/logger-StringLogger/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/logger-LogFormatter/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/logger-DefaultLogFormatter/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -1895,13 +1895,13 @@
         
     <url>
      <loc>/math--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/math-Fibonacci/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -1911,115 +1911,115 @@
         
     <url>
      <loc>/net--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-TCPListenNotify/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-NetAuth/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-DNSAuth/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-UDPAuth/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-TCPAuth/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-TCPListenAuth/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-TCPConnectAuth/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-UDPNotify/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-TCPListenerAuth/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-TCPListener/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-TCPConnectionNotify/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-NetAddress/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-DNSLookupAuth/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-DNS/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-TCPConnectionAuth/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-TCPConnection/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-UDPSocketAuth/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-UDPSocket/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -2029,553 +2029,553 @@
         
     <url>
      <loc>/net-http--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_ClientConnection/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-Status/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusContinue/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusSwitchingProtocols/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusOK/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusCreated/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusAccepted/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusNonAuthoritativeInfo/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusNoContent/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusResetContent/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusPartialContent/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusMultipleChoices/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusMovedPermanently/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusFound/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusSeeOther/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusNotModified/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusUseProxy/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusTemporaryRedirect/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusBadRequest/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusUnauthorized/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusPaymentRequired/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusForbidden/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusNotFound/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusMethodNotAllowed/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusNotAcceptable/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusProxyAuthRequired/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusRequestTimeout/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusConflict/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusGone/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusLengthRequired/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusPreconditionFailed/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusRequestEntityTooLarge/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusRequestURITooLong/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusUnsupportedMediaType/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusRequestedRangeNotSatisfiable/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusExpectationFailed/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusTeapot/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusPreconditionRequired/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusTooManyRequests/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusRequestHeaderFieldsTooLarge/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusUnavailableForLegalReasons/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusInternalServerError/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusNotImplemented/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusBadGateway/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusServiceUnavailable/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusGatewayTimeout/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusHTTPVersionNotSupported/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StatusNetworkAuthenticationRequired/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_ServerConnHandler/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-URLPartUser/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-URLPartPassword/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-URLPartHost/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-URLPartPath/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-URLPartQuery/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-URLPartFragment/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-URLPart/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-URLEncode/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-HTTPHandler/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-HandlerFactory/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_HostService/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_ServerListener/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-HTTPServer/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-HTTPSession/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_ClientConnHandler/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-ContentsLog/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_ExpectRequest/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_ExpectResponse/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_ExpectHeaders/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_ExpectContentLength/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_ExpectChunkStart/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_ExpectChunk/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_ExpectChunkEnd/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_ExpectBody/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_ExpectReady/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_ExpectError/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_PayloadState/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_HTTPParser/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-Logger/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-ServerNotify/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-MimeTypes/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_ServerConnection/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-HTTPClient/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-_SessionGuard/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-ChunkedTransfer/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-StreamTransfer/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-OneshotTransfer/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-TransferMode/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-Payload/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-CommonLog/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-URL/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-http-DiscardLog/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -2585,103 +2585,103 @@
         
     <url>
      <loc>/net-ssl--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-ssl-_SSL/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-ssl-_BIO/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-ssl-SSLHandshake/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-ssl-SSLAuthFail/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-ssl-SSLReady/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-ssl-SSLError/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-ssl-SSLState/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-ssl-SSL/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-ssl-SSLConnection/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-ssl-_SSLContext/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-ssl-SSLContext/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-ssl-_SSLInit/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-ssl-_X509Name/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-ssl-_GeneralName/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-ssl-_GeneralNameStack/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/net-ssl-X509/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -2691,109 +2691,109 @@
         
     <url>
      <loc>/options--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/options-EnvVars/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/options-StringArgument/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/options-I64Argument/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/options-F64Argument/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/options-Required/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/options-Optional/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/options-UnrecognisedOption/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/options-AmbiguousMatch/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/options-MissingArgument/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/options-InvalidArgument/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/options-ArgumentType/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/options-ErrorReason/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/options-ParsedOption/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/options-ParseError/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/options-Options/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/options-_Option/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/options-_ErrorPrinter/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -2803,55 +2803,55 @@
         
     <url>
      <loc>/ponybench--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ponybench-PonyBench/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ponybench-_BenchNotify/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ponybench-_Benchmark/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ponybench-_AutoBench/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ponybench-_AutoBenchAsync/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ponybench-_AutoOps/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ponybench-_Bench/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ponybench-_BenchAsync/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -2861,61 +2861,61 @@
         
     <url>
      <loc>/ponytest--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ponytest-ITest/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ponytest-TestHelper/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ponytest-_Color/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ponytest-_Group/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ponytest-_ExclusiveGroup/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ponytest-_SimultaneousGroup/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ponytest-UnitTest/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ponytest-TestList/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/ponytest-PonyTest/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -2925,163 +2925,163 @@
         
     <url>
      <loc>/process--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-StartProcessAuth/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-_EINTR/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-_STDINFILENO/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-_STDOUTFILENO/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-_STDERRFILENO/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-_FSETFL/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-_FGETFL/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-_FSETFD/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-_FGETFD/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-_FDCLOEXEC/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-_SIGTERM/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-_EAGAIN/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-_ONONBLOCK/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-ExecveError/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-PipeError/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-ForkError/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-WaitpidError/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-WriteError/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-KillError/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-Unsupported/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-CapError/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-ProcessError/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-ProcessMonitorAuth/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-ProcessMonitor/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-_ProcessClient/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/process-ProcessNotify/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -3091,79 +3091,79 @@
         
     <url>
      <loc>/promises--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/promises-_Pending/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/promises-_Reject/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/promises-Fulfill/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/promises-Reject/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/promises-FulfillIdentity/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/promises-RejectAlways/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/promises-Promise/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/promises-Promises/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/promises-_Join/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/promises-_None/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/promises-_Then/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/promises-_IThen/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -3173,43 +3173,43 @@
         
     <url>
      <loc>/random--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/random-XorShift128Plus/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/random-MT/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/random-Rand/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/random-Random/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/random-Dice/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/random-XorOshiro128Plus/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -3219,43 +3219,43 @@
         
     <url>
      <loc>/regex--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/regex-_Pattern/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/regex-_PCRE2/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/regex-Regex/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/regex-_Match/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/regex-Match/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/regex-MatchIterator/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -3265,73 +3265,73 @@
         
     <url>
      <loc>/serialise--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/serialise-_MachineWords/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/serialise-_StructWords/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/serialise-_Simple/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/serialise-_EmptyActor/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/serialise-_HasActor/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/serialise-_BoxedWord/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/serialise-SerialiseAuth/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/serialise-DeserialiseAuth/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/serialise-OutputSerialisedAuth/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/serialise-InputSerialisedAuth/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/serialise-Serialised/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -3341,31 +3341,31 @@
         
     <url>
      <loc>/signals--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/signals-SignalHandler/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/signals-Sig/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/signals-SignalNotify/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/signals-SignalRaise/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -3375,13 +3375,13 @@
         
     <url>
      <loc>/strings--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/strings-CommonPrefix/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -3391,91 +3391,91 @@
         
     <url>
      <loc>/term--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/term-ReadlineNotify/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/term-_TermSize/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/term-_EscapeNone/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/term-_EscapeStart/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/term-_EscapeSS3/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/term-_EscapeCSI/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/term-_EscapeMod/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/term-_EscapeState/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/term-_TermResizeNotify/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/term-_TIOCGWINSZ/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/term-ANSITerm/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/term-Readline/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/term-ANSINotify/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/term-ANSI/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -3485,67 +3485,67 @@
         
     <url>
      <loc>/time--index/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/time-_TimingWheel/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/time-Date/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/time-Timer/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/time-TimerNotify/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/time-Timers/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/time-Nanos/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/time-_Clock/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/time-_ClockRealtime/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/time-_ClockMonotonic/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/time-Time/</loc>
-     <lastmod>2017-10-09</lastmod>
+     <lastmod>2017-10-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

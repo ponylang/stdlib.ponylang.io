@@ -2698,9 +2698,9 @@ as <code>done</code> resets the chunks.</p>
 <li><a href="../builtin-None">None</a> val</li>
 </ul>
 <hr />
-<h3 id="reserve">reserve</h3>
-<p>Reserve space for size additional bytes.</p>
-<pre><code class="pony">fun ref reserve(
+<h3 id="reserve_current">reserve_current</h3>
+<p>Reserve space for size bytes in <code>_current</code>.</p>
+<pre><code class="pony">fun ref reserve_current(
   size': USize val)
 : None val
 </code></pre>
