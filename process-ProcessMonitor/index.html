@@ -2179,11 +2179,27 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../process-_SIGKILL/">primitive _SIGKILL</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../process-_SIGTERM/">primitive _SIGTERM</a>
                 </li>
                 <li class="">
                     
+    <a class="" href="../process-_EPERM/">primitive _EPERM</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../process-_ESRCH/">primitive _ESRCH</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../process-_EAGAIN/">primitive _EAGAIN</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../process-_EINVAL/">primitive _EINVAL</a>
                 </li>
                 <li class="">
                     
@@ -2942,14 +2958,15 @@ two file descriptors here to prevent capturing by another thread.</p>
 </ul>
 <hr />
 <h3 id="_kill_child">_kill_child</h3>
-<p>Terminate the child process.</p>
+<p>Terminate the child process, first trying SIGTERM and if
+that fails try SIGKILL.</p>
 <pre><code class="pony">fun box _kill_child()
-: None val ?
+: None val
 </code></pre>
 
 <h4 id="returns_11">Returns</h4>
 <ul>
-<li><a href="../builtin-None">None</a> val ?</li>
+<li><a href="../builtin-None">None</a> val</li>
 </ul>
 <hr />
 <h3 id="_event_flags">_event_flags</h3>

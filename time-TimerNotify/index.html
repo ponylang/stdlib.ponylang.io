@@ -2179,11 +2179,27 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../process-_SIGKILL/">primitive _SIGKILL</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../process-_SIGTERM/">primitive _SIGTERM</a>
                 </li>
                 <li class="">
                     
+    <a class="" href="../process-_EPERM/">primitive _EPERM</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../process-_ESRCH/">primitive _ESRCH</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../process-_EAGAIN/">primitive _EAGAIN</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../process-_EINVAL/">primitive _EINVAL</a>
                 </li>
                 <li class="">
                     
@@ -2648,7 +2664,13 @@
 <h2 id="public-functions">Public Functions</h2>
 <h3 id="apply">apply</h3>
 <p>Called with the the number of times the timer has fired since this was last
-called. Return true to reschedule the timer (if it has an interval), or
+called. Usually, the value of <code>count</code> will be 1. If it is not 1, it means
+that the timer isn't firing on schedule.</p>
+<p>For example, if your timer is set to fire every 10 milliseconds, and
+<code>count</code> is 2, that means it has been between 20-29 milliseconds since the
+last time your timer fired. Non 1 values for a timer are rare and indicate
+a system under heavy load.</p>
+<p>Return true to reschedule the timer (if it has an interval), or
 false to cancel the timer (even if it has an interval).</p>
 <pre><code class="pony">fun ref apply(
   timer: Timer ref,
@@ -2668,7 +2690,7 @@ false to cancel the timer (even if it has an interval).</p>
 <hr />
 <h3 id="cancel">cancel</h3>
 <p>Called if the timer is cancelled. This is also called if the notifier
-returns false.</p>
+returns false from its <code>apply</code> method.</p>
 <pre><code class="pony">fun ref cancel(
   timer: Timer ref)
 : None val

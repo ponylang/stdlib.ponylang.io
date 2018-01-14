@@ -63602,7 +63602,7 @@
         }, 
         {
             "location": "/process--index/", 
-            "text": "Process package\n\n\nThe Process package provides support for handling Unix style processes.\nFor each external process that you want to handle, you need to create a\n\nProcessMonitor\n and a corresponding \nProcessNotify\n object. Each\nProcessMonitor runs as it own actor and upon receiving data will call its\ncorresponding \nProcessNotify\n's method.\n\n\nExample program\n\n\nThe following program will spawn an external program and write to it's\nSTDIN. Output received on STDOUT of the child process is forwarded to the\nProcessNotify client and printed.\n\n\nuse \nprocess\n\nuse \nfiles\n\n\nactor Main\n  new create(env: Env) =\n\n    // create a notifier\n    let client = ProcessClient(env)\n    let notifier: ProcessNotify iso = consume client\n    // define the binary to run\n    try\n      let path = FilePath(env.root as AmbientAuth, \n/bin/cat\n)?\n      // define the arguments; first arg is always the binary name\n      let args: Array[String] iso = recover Array[String](1) end\n      args.push(\ncat\n)\n      // define the environment variable for the execution\n      let vars: Array[String] iso = recover Array[String](2) end\n      vars.push(\nHOME=/\n)\n      vars.push(\nPATH=/bin\n)\n      // create a ProcessMonitor and spawn the child process\n      let auth = env.root as AmbientAuth\n      let pm: ProcessMonitor = ProcessMonitor(auth, consume notifier, path,\n      consume args, consume vars)\n      // write to STDIN of the child process\n      pm.write(\none, two, three\n)\n      pm.done_writing() // closing stdin allows cat to terminate\n    else\n      env.out.print(\nCould not create FilePath!\n)\n    end\n\n// define a client that implements the ProcessNotify interface\nclass ProcessClient is ProcessNotify\n  let _env: Env\n\n  new iso create(env: Env) =\n\n    _env = env\n\n  fun ref stdout(process: ProcessMonitor ref, data: Array[U8] iso) =\n\n    let out = String.from_array(consume data)\n    _env.out.print(\nSTDOUT: \n + out)\n\n  fun ref stderr(process: ProcessMonitor ref, data: Array[U8] iso) =\n\n    let err = String.from_array(consume data)\n    _env.out.print(\nSTDERR: \n + err)\n\n  fun ref failed(process: ProcessMonitor ref, err: ProcessError) =\n\n    match err\n    | ExecveError =\n _env.out.print(\nProcessError: ExecveError\n)\n    | PipeError =\n _env.out.print(\nProcessError: PipeError\n)\n    | ForkError =\n _env.out.print(\nProcessError: ForkError\n)\n    | WaitpidError =\n _env.out.print(\nProcessError: WaitpidError\n)\n    | WriteError =\n _env.out.print(\nProcessError: WriteError\n)\n    | KillError =\n _env.out.print(\nProcessError: KillError\n)\n    | CapError =\n _env.out.print(\nProcessError: CapError\n)\n    | Unsupported =\n _env.out.print(\nProcessError: Unsupported\n)\n    else _env.out.print(\nUnknown ProcessError!\n)\n    end\n\n  fun ref dispose(process: ProcessMonitor ref, child_exit_code: I32) =\n\n    let code: I32 = consume child_exit_code\n    _env.out.print(\nChild exit code: \n + code.string())\n\n\n\n\nProcess portability\n\n\nThe ProcessMonitor supports spawning processes on Linux, FreeBSD and OSX.\nProcesses are not supported on Windows and attempting to use them will cause\na runtime error.\n\n\nShutting down ProcessMonitor and external process\n\n\nDocument waitpid behaviour (stops world)\n\n\nPublic Types\n\n\n\n\ninterface ProcessNotify\n\n\nprimitive ExecveError\n\n\nprimitive PipeError\n\n\nprimitive ForkError\n\n\nprimitive WaitpidError\n\n\nprimitive WriteError\n\n\nprimitive KillError\n\n\nprimitive Unsupported\n\n\nprimitive CapError\n\n\ntype ProcessError\n\n\ntype ProcessMonitorAuth\n\n\nactor ProcessMonitor\n\n\nprimitive StartProcessAuth\n\n\n\n\nPrivate Types\n\n\n\n\nprimitive _EINTR\n\n\nprimitive _STDINFILENO\n\n\nprimitive _STDOUTFILENO\n\n\nprimitive _STDERRFILENO\n\n\nprimitive _FSETFL\n\n\nprimitive _FGETFL\n\n\nprimitive _FSETFD\n\n\nprimitive _FGETFD\n\n\nprimitive _FDCLOEXEC\n\n\nprimitive _SIGTERM\n\n\nprimitive _EAGAIN\n\n\nprimitive _ONONBLOCK\n\n\nclass _ProcessClient", 
+            "text": "Process package\n\n\nThe Process package provides support for handling Unix style processes.\nFor each external process that you want to handle, you need to create a\n\nProcessMonitor\n and a corresponding \nProcessNotify\n object. Each\nProcessMonitor runs as it own actor and upon receiving data will call its\ncorresponding \nProcessNotify\n's method.\n\n\nExample program\n\n\nThe following program will spawn an external program and write to it's\nSTDIN. Output received on STDOUT of the child process is forwarded to the\nProcessNotify client and printed.\n\n\nuse \nprocess\n\nuse \nfiles\n\n\nactor Main\n  new create(env: Env) =\n\n    // create a notifier\n    let client = ProcessClient(env)\n    let notifier: ProcessNotify iso = consume client\n    // define the binary to run\n    try\n      let path = FilePath(env.root as AmbientAuth, \n/bin/cat\n)?\n      // define the arguments; first arg is always the binary name\n      let args: Array[String] iso = recover Array[String](1) end\n      args.push(\ncat\n)\n      // define the environment variable for the execution\n      let vars: Array[String] iso = recover Array[String](2) end\n      vars.push(\nHOME=/\n)\n      vars.push(\nPATH=/bin\n)\n      // create a ProcessMonitor and spawn the child process\n      let auth = env.root as AmbientAuth\n      let pm: ProcessMonitor = ProcessMonitor(auth, consume notifier, path,\n      consume args, consume vars)\n      // write to STDIN of the child process\n      pm.write(\none, two, three\n)\n      pm.done_writing() // closing stdin allows cat to terminate\n    else\n      env.out.print(\nCould not create FilePath!\n)\n    end\n\n// define a client that implements the ProcessNotify interface\nclass ProcessClient is ProcessNotify\n  let _env: Env\n\n  new iso create(env: Env) =\n\n    _env = env\n\n  fun ref stdout(process: ProcessMonitor ref, data: Array[U8] iso) =\n\n    let out = String.from_array(consume data)\n    _env.out.print(\nSTDOUT: \n + out)\n\n  fun ref stderr(process: ProcessMonitor ref, data: Array[U8] iso) =\n\n    let err = String.from_array(consume data)\n    _env.out.print(\nSTDERR: \n + err)\n\n  fun ref failed(process: ProcessMonitor ref, err: ProcessError) =\n\n    match err\n    | ExecveError =\n _env.out.print(\nProcessError: ExecveError\n)\n    | PipeError =\n _env.out.print(\nProcessError: PipeError\n)\n    | ForkError =\n _env.out.print(\nProcessError: ForkError\n)\n    | WaitpidError =\n _env.out.print(\nProcessError: WaitpidError\n)\n    | WriteError =\n _env.out.print(\nProcessError: WriteError\n)\n    | KillError =\n _env.out.print(\nProcessError: KillError\n)\n    | CapError =\n _env.out.print(\nProcessError: CapError\n)\n    | Unsupported =\n _env.out.print(\nProcessError: Unsupported\n)\n    else _env.out.print(\nUnknown ProcessError!\n)\n    end\n\n  fun ref dispose(process: ProcessMonitor ref, child_exit_code: I32) =\n\n    let code: I32 = consume child_exit_code\n    _env.out.print(\nChild exit code: \n + code.string())\n\n\n\n\nProcess portability\n\n\nThe ProcessMonitor supports spawning processes on Linux, FreeBSD and OSX.\nProcesses are not supported on Windows and attempting to use them will cause\na runtime error.\n\n\nShutting down ProcessMonitor and external process\n\n\nDocument waitpid behaviour (stops world)\n\n\nPublic Types\n\n\n\n\ninterface ProcessNotify\n\n\nprimitive ExecveError\n\n\nprimitive PipeError\n\n\nprimitive ForkError\n\n\nprimitive WaitpidError\n\n\nprimitive WriteError\n\n\nprimitive KillError\n\n\nprimitive Unsupported\n\n\nprimitive CapError\n\n\ntype ProcessError\n\n\ntype ProcessMonitorAuth\n\n\nactor ProcessMonitor\n\n\nprimitive StartProcessAuth\n\n\n\n\nPrivate Types\n\n\n\n\nprimitive _EINTR\n\n\nprimitive _STDINFILENO\n\n\nprimitive _STDOUTFILENO\n\n\nprimitive _STDERRFILENO\n\n\nprimitive _FSETFL\n\n\nprimitive _FGETFL\n\n\nprimitive _FSETFD\n\n\nprimitive _FGETFD\n\n\nprimitive _FDCLOEXEC\n\n\nprimitive _SIGKILL\n\n\nprimitive _SIGTERM\n\n\nprimitive _EPERM\n\n\nprimitive _ESRCH\n\n\nprimitive _EAGAIN\n\n\nprimitive _EINVAL\n\n\nprimitive _ONONBLOCK\n\n\nclass _ProcessClient", 
             "title": "Package"
         }, 
         {
@@ -63632,7 +63632,7 @@
         }, 
         {
             "location": "/process--index/#private-types", 
-            "text": "primitive _EINTR  primitive _STDINFILENO  primitive _STDOUTFILENO  primitive _STDERRFILENO  primitive _FSETFL  primitive _FGETFL  primitive _FSETFD  primitive _FGETFD  primitive _FDCLOEXEC  primitive _SIGTERM  primitive _EAGAIN  primitive _ONONBLOCK  class _ProcessClient", 
+            "text": "primitive _EINTR  primitive _STDINFILENO  primitive _STDOUTFILENO  primitive _STDERRFILENO  primitive _FSETFL  primitive _FGETFL  primitive _FSETFD  primitive _FGETFD  primitive _FDCLOEXEC  primitive _SIGKILL  primitive _SIGTERM  primitive _EPERM  primitive _ESRCH  primitive _EAGAIN  primitive _EINVAL  primitive _ONONBLOCK  class _ProcessClient", 
             "title": "Private Types"
         }, 
         {
@@ -64371,6 +64371,76 @@
             "title": "Returns"
         }, 
         {
+            "location": "/process-_SIGKILL/", 
+            "text": "_SIGKILL\n\n\nprimitive val _SIGKILL\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew val create()\n: _SIGKILL val^\n\n\n\n\nReturns\n\n\n\n\n_SIGKILL\n val^\n\n\n\n\n\n\nPublic Functions\n\n\napply\n\n\nfun box apply()\n: I32 val\n\n\n\n\nReturns\n\n\n\n\nI32\n val\n\n\n\n\n\n\neq\n\n\nfun box eq(\n  that: _SIGKILL val)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nthat: \n_SIGKILL\n val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nne\n\n\nfun box ne(\n  that: _SIGKILL val)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nthat: \n_SIGKILL\n val\n\n\n\n\nReturns\n\n\n\n\nBool\n val", 
+            "title": "primitive _SIGKILL"
+        }, 
+        {
+            "location": "/process-_SIGKILL/#_sigkill", 
+            "text": "primitive val _SIGKILL", 
+            "title": "_SIGKILL"
+        }, 
+        {
+            "location": "/process-_SIGKILL/#constructors", 
+            "text": "", 
+            "title": "Constructors"
+        }, 
+        {
+            "location": "/process-_SIGKILL/#create", 
+            "text": "new val create()\n: _SIGKILL val^", 
+            "title": "create"
+        }, 
+        {
+            "location": "/process-_SIGKILL/#returns", 
+            "text": "_SIGKILL  val^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/process-_SIGKILL/#public-functions", 
+            "text": "", 
+            "title": "Public Functions"
+        }, 
+        {
+            "location": "/process-_SIGKILL/#apply", 
+            "text": "fun box apply()\n: I32 val", 
+            "title": "apply"
+        }, 
+        {
+            "location": "/process-_SIGKILL/#returns_1", 
+            "text": "I32  val", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/process-_SIGKILL/#eq", 
+            "text": "fun box eq(\n  that: _SIGKILL val)\n: Bool val", 
+            "title": "eq"
+        }, 
+        {
+            "location": "/process-_SIGKILL/#parameters", 
+            "text": "that:  _SIGKILL  val", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/process-_SIGKILL/#returns_2", 
+            "text": "Bool  val", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/process-_SIGKILL/#ne", 
+            "text": "fun box ne(\n  that: _SIGKILL val)\n: Bool val", 
+            "title": "ne"
+        }, 
+        {
+            "location": "/process-_SIGKILL/#parameters_1", 
+            "text": "that:  _SIGKILL  val", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/process-_SIGKILL/#returns_3", 
+            "text": "Bool  val", 
+            "title": "Returns"
+        }, 
+        {
             "location": "/process-_SIGTERM/", 
             "text": "_SIGTERM\n\n\nprimitive val _SIGTERM\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew val create()\n: _SIGTERM val^\n\n\n\n\nReturns\n\n\n\n\n_SIGTERM\n val^\n\n\n\n\n\n\nPublic Functions\n\n\napply\n\n\nfun box apply()\n: I32 val\n\n\n\n\nReturns\n\n\n\n\nI32\n val\n\n\n\n\n\n\neq\n\n\nfun box eq(\n  that: _SIGTERM val)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nthat: \n_SIGTERM\n val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nne\n\n\nfun box ne(\n  that: _SIGTERM val)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nthat: \n_SIGTERM\n val\n\n\n\n\nReturns\n\n\n\n\nBool\n val", 
             "title": "primitive _SIGTERM"
@@ -64441,6 +64511,146 @@
             "title": "Returns"
         }, 
         {
+            "location": "/process-_EPERM/", 
+            "text": "_EPERM\n\n\nprimitive val _EPERM\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew val create()\n: _EPERM val^\n\n\n\n\nReturns\n\n\n\n\n_EPERM\n val^\n\n\n\n\n\n\nPublic Functions\n\n\napply\n\n\nfun box apply()\n: I32 val\n\n\n\n\nReturns\n\n\n\n\nI32\n val\n\n\n\n\n\n\neq\n\n\nfun box eq(\n  that: _EPERM val)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nthat: \n_EPERM\n val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nne\n\n\nfun box ne(\n  that: _EPERM val)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nthat: \n_EPERM\n val\n\n\n\n\nReturns\n\n\n\n\nBool\n val", 
+            "title": "primitive _EPERM"
+        }, 
+        {
+            "location": "/process-_EPERM/#_eperm", 
+            "text": "primitive val _EPERM", 
+            "title": "_EPERM"
+        }, 
+        {
+            "location": "/process-_EPERM/#constructors", 
+            "text": "", 
+            "title": "Constructors"
+        }, 
+        {
+            "location": "/process-_EPERM/#create", 
+            "text": "new val create()\n: _EPERM val^", 
+            "title": "create"
+        }, 
+        {
+            "location": "/process-_EPERM/#returns", 
+            "text": "_EPERM  val^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/process-_EPERM/#public-functions", 
+            "text": "", 
+            "title": "Public Functions"
+        }, 
+        {
+            "location": "/process-_EPERM/#apply", 
+            "text": "fun box apply()\n: I32 val", 
+            "title": "apply"
+        }, 
+        {
+            "location": "/process-_EPERM/#returns_1", 
+            "text": "I32  val", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/process-_EPERM/#eq", 
+            "text": "fun box eq(\n  that: _EPERM val)\n: Bool val", 
+            "title": "eq"
+        }, 
+        {
+            "location": "/process-_EPERM/#parameters", 
+            "text": "that:  _EPERM  val", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/process-_EPERM/#returns_2", 
+            "text": "Bool  val", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/process-_EPERM/#ne", 
+            "text": "fun box ne(\n  that: _EPERM val)\n: Bool val", 
+            "title": "ne"
+        }, 
+        {
+            "location": "/process-_EPERM/#parameters_1", 
+            "text": "that:  _EPERM  val", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/process-_EPERM/#returns_3", 
+            "text": "Bool  val", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/process-_ESRCH/", 
+            "text": "_ESRCH\n\n\nprimitive val _ESRCH\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew val create()\n: _ESRCH val^\n\n\n\n\nReturns\n\n\n\n\n_ESRCH\n val^\n\n\n\n\n\n\nPublic Functions\n\n\napply\n\n\nfun box apply()\n: I32 val\n\n\n\n\nReturns\n\n\n\n\nI32\n val\n\n\n\n\n\n\neq\n\n\nfun box eq(\n  that: _ESRCH val)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nthat: \n_ESRCH\n val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nne\n\n\nfun box ne(\n  that: _ESRCH val)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nthat: \n_ESRCH\n val\n\n\n\n\nReturns\n\n\n\n\nBool\n val", 
+            "title": "primitive _ESRCH"
+        }, 
+        {
+            "location": "/process-_ESRCH/#_esrch", 
+            "text": "primitive val _ESRCH", 
+            "title": "_ESRCH"
+        }, 
+        {
+            "location": "/process-_ESRCH/#constructors", 
+            "text": "", 
+            "title": "Constructors"
+        }, 
+        {
+            "location": "/process-_ESRCH/#create", 
+            "text": "new val create()\n: _ESRCH val^", 
+            "title": "create"
+        }, 
+        {
+            "location": "/process-_ESRCH/#returns", 
+            "text": "_ESRCH  val^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/process-_ESRCH/#public-functions", 
+            "text": "", 
+            "title": "Public Functions"
+        }, 
+        {
+            "location": "/process-_ESRCH/#apply", 
+            "text": "fun box apply()\n: I32 val", 
+            "title": "apply"
+        }, 
+        {
+            "location": "/process-_ESRCH/#returns_1", 
+            "text": "I32  val", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/process-_ESRCH/#eq", 
+            "text": "fun box eq(\n  that: _ESRCH val)\n: Bool val", 
+            "title": "eq"
+        }, 
+        {
+            "location": "/process-_ESRCH/#parameters", 
+            "text": "that:  _ESRCH  val", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/process-_ESRCH/#returns_2", 
+            "text": "Bool  val", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/process-_ESRCH/#ne", 
+            "text": "fun box ne(\n  that: _ESRCH val)\n: Bool val", 
+            "title": "ne"
+        }, 
+        {
+            "location": "/process-_ESRCH/#parameters_1", 
+            "text": "that:  _ESRCH  val", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/process-_ESRCH/#returns_3", 
+            "text": "Bool  val", 
+            "title": "Returns"
+        }, 
+        {
             "location": "/process-_EAGAIN/", 
             "text": "_EAGAIN\n\n\nprimitive val _EAGAIN\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew val create()\n: _EAGAIN val^\n\n\n\n\nReturns\n\n\n\n\n_EAGAIN\n val^\n\n\n\n\n\n\nPublic Functions\n\n\napply\n\n\nfun box apply()\n: I32 val\n\n\n\n\nReturns\n\n\n\n\nI32\n val\n\n\n\n\n\n\neq\n\n\nfun box eq(\n  that: _EAGAIN val)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nthat: \n_EAGAIN\n val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nne\n\n\nfun box ne(\n  that: _EAGAIN val)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nthat: \n_EAGAIN\n val\n\n\n\n\nReturns\n\n\n\n\nBool\n val", 
             "title": "primitive _EAGAIN"
@@ -64507,6 +64717,76 @@
         }, 
         {
             "location": "/process-_EAGAIN/#returns_3", 
+            "text": "Bool  val", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/process-_EINVAL/", 
+            "text": "_EINVAL\n\n\nprimitive val _EINVAL\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew val create()\n: _EINVAL val^\n\n\n\n\nReturns\n\n\n\n\n_EINVAL\n val^\n\n\n\n\n\n\nPublic Functions\n\n\napply\n\n\nfun box apply()\n: I32 val\n\n\n\n\nReturns\n\n\n\n\nI32\n val\n\n\n\n\n\n\neq\n\n\nfun box eq(\n  that: _EINVAL val)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nthat: \n_EINVAL\n val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\nne\n\n\nfun box ne(\n  that: _EINVAL val)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nthat: \n_EINVAL\n val\n\n\n\n\nReturns\n\n\n\n\nBool\n val", 
+            "title": "primitive _EINVAL"
+        }, 
+        {
+            "location": "/process-_EINVAL/#_einval", 
+            "text": "primitive val _EINVAL", 
+            "title": "_EINVAL"
+        }, 
+        {
+            "location": "/process-_EINVAL/#constructors", 
+            "text": "", 
+            "title": "Constructors"
+        }, 
+        {
+            "location": "/process-_EINVAL/#create", 
+            "text": "new val create()\n: _EINVAL val^", 
+            "title": "create"
+        }, 
+        {
+            "location": "/process-_EINVAL/#returns", 
+            "text": "_EINVAL  val^", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/process-_EINVAL/#public-functions", 
+            "text": "", 
+            "title": "Public Functions"
+        }, 
+        {
+            "location": "/process-_EINVAL/#apply", 
+            "text": "fun box apply()\n: I32 val", 
+            "title": "apply"
+        }, 
+        {
+            "location": "/process-_EINVAL/#returns_1", 
+            "text": "I32  val", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/process-_EINVAL/#eq", 
+            "text": "fun box eq(\n  that: _EINVAL val)\n: Bool val", 
+            "title": "eq"
+        }, 
+        {
+            "location": "/process-_EINVAL/#parameters", 
+            "text": "that:  _EINVAL  val", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/process-_EINVAL/#returns_2", 
+            "text": "Bool  val", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/process-_EINVAL/#ne", 
+            "text": "fun box ne(\n  that: _EINVAL val)\n: Bool val", 
+            "title": "ne"
+        }, 
+        {
+            "location": "/process-_EINVAL/#parameters_1", 
+            "text": "that:  _EINVAL  val", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/process-_EINVAL/#returns_3", 
             "text": "Bool  val", 
             "title": "Returns"
         }, 
@@ -65092,7 +65372,7 @@
         }, 
         {
             "location": "/process-ProcessMonitor/", 
-            "text": "ProcessMonitor\n\n\nForks and monitors a process. Notifies a client about STDOUT / STDERR events.\n\n\nactor tag ProcessMonitor\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew tag create(\n  auth: (AmbientAuth val | StartProcessAuth val),\n  backpressure_auth: (AmbientAuth val | ApplyReleaseBackpressureAuth val),\n  notifier: ProcessNotify iso,\n  filepath: FilePath val,\n  args: Array[String val] val,\n  vars: Array[String val] val)\n: ProcessMonitor tag^\n\n\n\n\nParameters\n\n\n\n\nauth: (\nAmbientAuth\n val | \nStartProcessAuth\n val)\n\n\nbackpressure_auth: (\nAmbientAuth\n val | \nApplyReleaseBackpressureAuth\n val)\n\n\nnotifier: \nProcessNotify\n iso\n\n\nfilepath: \nFilePath\n val\n\n\nargs: \nArray\n[\nString\n val] val\n\n\nvars: \nArray\n[\nString\n val] val\n\n\n\n\nReturns\n\n\n\n\nProcessMonitor\n tag^\n\n\n\n\n\n\nPublic Behaviours\n\n\nprint\n\n\nPrint some bytes and append a newline.\n\n\nbe print(\n  data: (String val | Array[U8 val] val))\n\n\n\n\nParameters\n\n\n\n\ndata: (\nString\n val | \nArray\n[\nU8\n val] val)\n\n\n\n\n\n\nwrite\n\n\nWrite to STDIN of the child process.\n\n\nbe write(\n  data: (String val | Array[U8 val] val))\n\n\n\n\nParameters\n\n\n\n\ndata: (\nString\n val | \nArray\n[\nU8\n val] val)\n\n\n\n\n\n\nprintv\n\n\nPrint an iterable collection of ByteSeqs.\n\n\nbe printv(\n  data: ByteSeqIter val)\n\n\n\n\nParameters\n\n\n\n\ndata: \nByteSeqIter\n val\n\n\n\n\n\n\nwritev\n\n\nWrite an iterable collection of ByteSeqs.\n\n\nbe writev(\n  data: ByteSeqIter val)\n\n\n\n\nParameters\n\n\n\n\ndata: \nByteSeqIter\n val\n\n\n\n\n\n\ndone_writing\n\n\nSet the _done_writing flag to true. If the _pending is empty we can\nclose the _stdin_write file descriptor.\n\n\nbe done_writing()\n\n\n\n\n\n\ndispose\n\n\nTerminate child and close down everything.\n\n\nbe dispose()\n\n\n\n\n\n\nPublic Functions\n\n\nexpect\n\n\nA \nstdout\n call on the notifier must contain exactly \nqty\n bytes. If\n\nqty\n is zero, the call can contain any amount of data.\n\n\nfun ref expect(\n  qty: USize val = seq)\n: None val\n\n\n\n\nParameters\n\n\n\n\nqty: \nUSize\n val = seq\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\nPrivate Behaviours\n\n\n_event_notify\n\n\nHandle the incoming event.\n\n\nbe _event_notify(\n  event: Pointer[AsioEvent val] tag,\n  flags: U32 val,\n  arg: U32 val)\n\n\n\n\nParameters\n\n\n\n\nevent: \nPointer\n[\nAsioEvent\n val] tag\n\n\nflags: \nU32\n val\n\n\narg: \nU32\n val\n\n\n\n\n\n\n_read_again\n\n\nResume reading on file descriptor.\n\n\nbe _read_again(\n  fd: U32 val)\n\n\n\n\nParameters\n\n\n\n\nfd: \nU32\n val\n\n\n\n\n\n\nPrivate Functions\n\n\n_child\n\n\nWe are now in the child process. We redirect STDIN, STDOUT and STDERR\nto their pipes and execute the command. The command is executed via\nexecve which does not return on success, and the text, data, bss, and\nstack of the calling process are overwritten by that of the program\nloaded. We've set the FD_CLOEXEC flag on all file descriptors to ensure\nthat they are all closed automatically once @execve gets called.\n\n\nfun box _child(\n  path: String val,\n  argp: Array[Pointer[U8 val] tag] ref,\n  envp: Array[Pointer[U8 val] tag] ref)\n: None val\n\n\n\n\nParameters\n\n\n\n\npath: \nString\n val\n\n\nargp: \nArray\n[\nPointer\n[\nU8\n val] tag] ref\n\n\nenvp: \nArray\n[\nPointer\n[\nU8\n val] tag] ref\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\n_parent\n\n\nWe're now in the parent process. We setup asio events for STDOUT and STDERR\nand close the file descriptors we don't need.\n\n\nfun ref _parent()\n: None val\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\n_make_argv\n\n\nConvert an array of String parameters into an array of\nC pointers to same strings.\n\n\nfun box _make_argv(\n  args: Array[String val] box)\n: Array[Pointer[U8 val] tag] ref\n\n\n\n\nParameters\n\n\n\n\nargs: \nArray\n[\nString\n val] box\n\n\n\n\nReturns\n\n\n\n\nArray\n[\nPointer\n[\nU8\n val] tag] ref\n\n\n\n\n\n\n_dup2\n\n\nCreates a copy of the file descriptor oldfd using the file\ndescriptor number specified in newfd. If the file descriptor newfd\nwas previously open, it is silently closed before being reused.\nIf dup2() fails because of EINTR we retry.\n\n\nfun box _dup2(\n  oldfd: U32 val,\n  newfd: U32 val)\n: None val\n\n\n\n\nParameters\n\n\n\n\noldfd: \nU32\n val\n\n\nnewfd: \nU32\n val\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\n_make_pipe\n\n\nCreates a pipe, an unidirectional data channel that can be used\nfor interprocess communication. We need to set the flag on the\ntwo file descriptors here to prevent capturing by another thread.\n\n\nfun box _make_pipe(\n  fd_flags: I32 val)\n: (U32 val , U32 val) ?\n\n\n\n\nParameters\n\n\n\n\nfd_flags: \nI32\n val\n\n\n\n\nReturns\n\n\n\n\n(\nU32\n val , \nU32\n val) ?\n\n\n\n\n\n\n_getflags\n\n\nGet the string representation of flags set for a file descriptor\n\n\nfun box _getflags(\n  fd: U32 val)\n: String box ?\n\n\n\n\nParameters\n\n\n\n\nfd: \nU32\n val\n\n\n\n\nReturns\n\n\n\n\nString\n box ?\n\n\n\n\n\n\n_set_fd\n\n\nfun box _set_fd(\n  fd: U32 val,\n  flags: I32 val)\n: None val ?\n\n\n\n\nParameters\n\n\n\n\nfd: \nU32\n val\n\n\nflags: \nI32\n val\n\n\n\n\nReturns\n\n\n\n\nNone\n val ?\n\n\n\n\n\n\n_set_fl\n\n\nfun box _set_fl(\n  fd: U32 val,\n  flags: I32 val)\n: None val ?\n\n\n\n\nParameters\n\n\n\n\nfd: \nU32\n val\n\n\nflags: \nI32\n val\n\n\n\n\nReturns\n\n\n\n\nNone\n val ?\n\n\n\n\n\n\n_print_final\n\n\nfun ref _print_final(\n  data: (String val | Array[U8 val] val))\n: None val\n\n\n\n\nParameters\n\n\n\n\ndata: (\nString\n val | \nArray\n[\nU8\n val] val)\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\n_kill_child\n\n\nTerminate the child process.\n\n\nfun box _kill_child()\n: None val ?\n\n\n\n\nReturns\n\n\n\n\nNone\n val ?\n\n\n\n\n\n\n_event_flags\n\n\nReturn all flags of an event as a string.\n\n\nfun box _event_flags(\n  flags: U32 val)\n: String box\n\n\n\n\nParameters\n\n\n\n\nflags: \nU32\n val\n\n\n\n\nReturns\n\n\n\n\nString\n box\n\n\n\n\n\n\n_close_fd\n\n\nClose a file descriptor.\n\n\nfun ref _close_fd(\n  fd: U32 val)\n: None val\n\n\n\n\nParameters\n\n\n\n\nfd: \nU32\n val\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\n_close\n\n\nClose all pipes, unsubscribe events and wait for the child process to exit.\n\n\nfun ref _close()\n: None val\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\n_try_shutdown\n\n\nIf neither stdout nor stderr are open we close down and exit.\n\n\nfun ref _try_shutdown()\n: None val\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\n_pending_reads\n\n\nRead from stdout while data is available. If we read 4 kb of data,\nsend ourself a resume message and stop reading, to avoid starving\nother actors.\nIt's safe to use the same buffer for stdout and stderr because of\ncausal messaging. Events get processed one \nafter\n another.\n\n\nfun ref _pending_reads(\n  fd: U32 val)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nfd: \nU32\n val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\n_read_buf_size\n\n\nfun ref _read_buf_size()\n: None val\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\n_write_final\n\n\nWrite as much as possible to the fd. Return false if not\neverything was written.\n\n\nfun ref _write_final(\n  data: (String val | Array[U8 val] val))\n: Bool val\n\n\n\n\nParameters\n\n\n\n\ndata: (\nString\n val | \nArray\n[\nU8\n val] val)\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\n_pending_writes\n\n\nSend pending data. If any data can't be sent, keep it and mark fd as not\nwriteable. Once set to false the _stdin_writeable flag can only be cleared\nhere by processing the pending writes. If the _done_writing flag is set we\nclose the _stdin_write fd once we've processed pending writes.\n\n\nfun ref _pending_writes()\n: Bool val\n\n\n\n\nReturns\n\n\n\n\nBool\n val", 
+            "text": "ProcessMonitor\n\n\nForks and monitors a process. Notifies a client about STDOUT / STDERR events.\n\n\nactor tag ProcessMonitor\n\n\n\n\nConstructors\n\n\ncreate\n\n\nnew tag create(\n  auth: (AmbientAuth val | StartProcessAuth val),\n  backpressure_auth: (AmbientAuth val | ApplyReleaseBackpressureAuth val),\n  notifier: ProcessNotify iso,\n  filepath: FilePath val,\n  args: Array[String val] val,\n  vars: Array[String val] val)\n: ProcessMonitor tag^\n\n\n\n\nParameters\n\n\n\n\nauth: (\nAmbientAuth\n val | \nStartProcessAuth\n val)\n\n\nbackpressure_auth: (\nAmbientAuth\n val | \nApplyReleaseBackpressureAuth\n val)\n\n\nnotifier: \nProcessNotify\n iso\n\n\nfilepath: \nFilePath\n val\n\n\nargs: \nArray\n[\nString\n val] val\n\n\nvars: \nArray\n[\nString\n val] val\n\n\n\n\nReturns\n\n\n\n\nProcessMonitor\n tag^\n\n\n\n\n\n\nPublic Behaviours\n\n\nprint\n\n\nPrint some bytes and append a newline.\n\n\nbe print(\n  data: (String val | Array[U8 val] val))\n\n\n\n\nParameters\n\n\n\n\ndata: (\nString\n val | \nArray\n[\nU8\n val] val)\n\n\n\n\n\n\nwrite\n\n\nWrite to STDIN of the child process.\n\n\nbe write(\n  data: (String val | Array[U8 val] val))\n\n\n\n\nParameters\n\n\n\n\ndata: (\nString\n val | \nArray\n[\nU8\n val] val)\n\n\n\n\n\n\nprintv\n\n\nPrint an iterable collection of ByteSeqs.\n\n\nbe printv(\n  data: ByteSeqIter val)\n\n\n\n\nParameters\n\n\n\n\ndata: \nByteSeqIter\n val\n\n\n\n\n\n\nwritev\n\n\nWrite an iterable collection of ByteSeqs.\n\n\nbe writev(\n  data: ByteSeqIter val)\n\n\n\n\nParameters\n\n\n\n\ndata: \nByteSeqIter\n val\n\n\n\n\n\n\ndone_writing\n\n\nSet the _done_writing flag to true. If the _pending is empty we can\nclose the _stdin_write file descriptor.\n\n\nbe done_writing()\n\n\n\n\n\n\ndispose\n\n\nTerminate child and close down everything.\n\n\nbe dispose()\n\n\n\n\n\n\nPublic Functions\n\n\nexpect\n\n\nA \nstdout\n call on the notifier must contain exactly \nqty\n bytes. If\n\nqty\n is zero, the call can contain any amount of data.\n\n\nfun ref expect(\n  qty: USize val = seq)\n: None val\n\n\n\n\nParameters\n\n\n\n\nqty: \nUSize\n val = seq\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\nPrivate Behaviours\n\n\n_event_notify\n\n\nHandle the incoming event.\n\n\nbe _event_notify(\n  event: Pointer[AsioEvent val] tag,\n  flags: U32 val,\n  arg: U32 val)\n\n\n\n\nParameters\n\n\n\n\nevent: \nPointer\n[\nAsioEvent\n val] tag\n\n\nflags: \nU32\n val\n\n\narg: \nU32\n val\n\n\n\n\n\n\n_read_again\n\n\nResume reading on file descriptor.\n\n\nbe _read_again(\n  fd: U32 val)\n\n\n\n\nParameters\n\n\n\n\nfd: \nU32\n val\n\n\n\n\n\n\nPrivate Functions\n\n\n_child\n\n\nWe are now in the child process. We redirect STDIN, STDOUT and STDERR\nto their pipes and execute the command. The command is executed via\nexecve which does not return on success, and the text, data, bss, and\nstack of the calling process are overwritten by that of the program\nloaded. We've set the FD_CLOEXEC flag on all file descriptors to ensure\nthat they are all closed automatically once @execve gets called.\n\n\nfun box _child(\n  path: String val,\n  argp: Array[Pointer[U8 val] tag] ref,\n  envp: Array[Pointer[U8 val] tag] ref)\n: None val\n\n\n\n\nParameters\n\n\n\n\npath: \nString\n val\n\n\nargp: \nArray\n[\nPointer\n[\nU8\n val] tag] ref\n\n\nenvp: \nArray\n[\nPointer\n[\nU8\n val] tag] ref\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\n_parent\n\n\nWe're now in the parent process. We setup asio events for STDOUT and STDERR\nand close the file descriptors we don't need.\n\n\nfun ref _parent()\n: None val\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\n_make_argv\n\n\nConvert an array of String parameters into an array of\nC pointers to same strings.\n\n\nfun box _make_argv(\n  args: Array[String val] box)\n: Array[Pointer[U8 val] tag] ref\n\n\n\n\nParameters\n\n\n\n\nargs: \nArray\n[\nString\n val] box\n\n\n\n\nReturns\n\n\n\n\nArray\n[\nPointer\n[\nU8\n val] tag] ref\n\n\n\n\n\n\n_dup2\n\n\nCreates a copy of the file descriptor oldfd using the file\ndescriptor number specified in newfd. If the file descriptor newfd\nwas previously open, it is silently closed before being reused.\nIf dup2() fails because of EINTR we retry.\n\n\nfun box _dup2(\n  oldfd: U32 val,\n  newfd: U32 val)\n: None val\n\n\n\n\nParameters\n\n\n\n\noldfd: \nU32\n val\n\n\nnewfd: \nU32\n val\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\n_make_pipe\n\n\nCreates a pipe, an unidirectional data channel that can be used\nfor interprocess communication. We need to set the flag on the\ntwo file descriptors here to prevent capturing by another thread.\n\n\nfun box _make_pipe(\n  fd_flags: I32 val)\n: (U32 val , U32 val) ?\n\n\n\n\nParameters\n\n\n\n\nfd_flags: \nI32\n val\n\n\n\n\nReturns\n\n\n\n\n(\nU32\n val , \nU32\n val) ?\n\n\n\n\n\n\n_getflags\n\n\nGet the string representation of flags set for a file descriptor\n\n\nfun box _getflags(\n  fd: U32 val)\n: String box ?\n\n\n\n\nParameters\n\n\n\n\nfd: \nU32\n val\n\n\n\n\nReturns\n\n\n\n\nString\n box ?\n\n\n\n\n\n\n_set_fd\n\n\nfun box _set_fd(\n  fd: U32 val,\n  flags: I32 val)\n: None val ?\n\n\n\n\nParameters\n\n\n\n\nfd: \nU32\n val\n\n\nflags: \nI32\n val\n\n\n\n\nReturns\n\n\n\n\nNone\n val ?\n\n\n\n\n\n\n_set_fl\n\n\nfun box _set_fl(\n  fd: U32 val,\n  flags: I32 val)\n: None val ?\n\n\n\n\nParameters\n\n\n\n\nfd: \nU32\n val\n\n\nflags: \nI32\n val\n\n\n\n\nReturns\n\n\n\n\nNone\n val ?\n\n\n\n\n\n\n_print_final\n\n\nfun ref _print_final(\n  data: (String val | Array[U8 val] val))\n: None val\n\n\n\n\nParameters\n\n\n\n\ndata: (\nString\n val | \nArray\n[\nU8\n val] val)\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\n_kill_child\n\n\nTerminate the child process, first trying SIGTERM and if\nthat fails try SIGKILL.\n\n\nfun box _kill_child()\n: None val\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\n_event_flags\n\n\nReturn all flags of an event as a string.\n\n\nfun box _event_flags(\n  flags: U32 val)\n: String box\n\n\n\n\nParameters\n\n\n\n\nflags: \nU32\n val\n\n\n\n\nReturns\n\n\n\n\nString\n box\n\n\n\n\n\n\n_close_fd\n\n\nClose a file descriptor.\n\n\nfun ref _close_fd(\n  fd: U32 val)\n: None val\n\n\n\n\nParameters\n\n\n\n\nfd: \nU32\n val\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\n_close\n\n\nClose all pipes, unsubscribe events and wait for the child process to exit.\n\n\nfun ref _close()\n: None val\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\n_try_shutdown\n\n\nIf neither stdout nor stderr are open we close down and exit.\n\n\nfun ref _try_shutdown()\n: None val\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\n_pending_reads\n\n\nRead from stdout while data is available. If we read 4 kb of data,\nsend ourself a resume message and stop reading, to avoid starving\nother actors.\nIt's safe to use the same buffer for stdout and stderr because of\ncausal messaging. Events get processed one \nafter\n another.\n\n\nfun ref _pending_reads(\n  fd: U32 val)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\nfd: \nU32\n val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\n_read_buf_size\n\n\nfun ref _read_buf_size()\n: None val\n\n\n\n\nReturns\n\n\n\n\nNone\n val\n\n\n\n\n\n\n_write_final\n\n\nWrite as much as possible to the fd. Return false if not\neverything was written.\n\n\nfun ref _write_final(\n  data: (String val | Array[U8 val] val))\n: Bool val\n\n\n\n\nParameters\n\n\n\n\ndata: (\nString\n val | \nArray\n[\nU8\n val] val)\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\n_pending_writes\n\n\nSend pending data. If any data can't be sent, keep it and mark fd as not\nwriteable. Once set to false the _stdin_writeable flag can only be cleared\nhere by processing the pending writes. If the _done_writing flag is set we\nclose the _stdin_write fd once we've processed pending writes.\n\n\nfun ref _pending_writes()\n: Bool val\n\n\n\n\nReturns\n\n\n\n\nBool\n val", 
             "title": "actor ProcessMonitor"
         }, 
         {
@@ -65357,12 +65637,12 @@
         }, 
         {
             "location": "/process-ProcessMonitor/#_kill_child", 
-            "text": "Terminate the child process.  fun box _kill_child()\n: None val ?", 
+            "text": "Terminate the child process, first trying SIGTERM and if\nthat fails try SIGKILL.  fun box _kill_child()\n: None val", 
             "title": "_kill_child"
         }, 
         {
             "location": "/process-ProcessMonitor/#returns_11", 
-            "text": "None  val ?", 
+            "text": "None  val", 
             "title": "Returns"
         }, 
         {
@@ -71667,7 +71947,7 @@
         }, 
         {
             "location": "/time-TimerNotify/", 
-            "text": "TimerNotify\n\n\nNotifications for timer.\n\n\ninterface ref TimerNotify\n\n\n\n\nPublic Functions\n\n\napply\n\n\nCalled with the the number of times the timer has fired since this was last\ncalled. Return true to reschedule the timer (if it has an interval), or\nfalse to cancel the timer (even if it has an interval).\n\n\nfun ref apply(\n  timer: Timer ref,\n  count: U64 val)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\ntimer: \nTimer\n ref\n\n\ncount: \nU64\n val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\ncancel\n\n\nCalled if the timer is cancelled. This is also called if the notifier\nreturns false.\n\n\nfun ref cancel(\n  timer: Timer ref)\n: None val\n\n\n\n\nParameters\n\n\n\n\ntimer: \nTimer\n ref\n\n\n\n\nReturns\n\n\n\n\nNone\n val", 
+            "text": "TimerNotify\n\n\nNotifications for timer.\n\n\ninterface ref TimerNotify\n\n\n\n\nPublic Functions\n\n\napply\n\n\nCalled with the the number of times the timer has fired since this was last\ncalled. Usually, the value of \ncount\n will be 1. If it is not 1, it means\nthat the timer isn't firing on schedule.\n\n\nFor example, if your timer is set to fire every 10 milliseconds, and\n\ncount\n is 2, that means it has been between 20-29 milliseconds since the\nlast time your timer fired. Non 1 values for a timer are rare and indicate\na system under heavy load.\n\n\nReturn true to reschedule the timer (if it has an interval), or\nfalse to cancel the timer (even if it has an interval).\n\n\nfun ref apply(\n  timer: Timer ref,\n  count: U64 val)\n: Bool val\n\n\n\n\nParameters\n\n\n\n\ntimer: \nTimer\n ref\n\n\ncount: \nU64\n val\n\n\n\n\nReturns\n\n\n\n\nBool\n val\n\n\n\n\n\n\ncancel\n\n\nCalled if the timer is cancelled. This is also called if the notifier\nreturns false from its \napply\n method.\n\n\nfun ref cancel(\n  timer: Timer ref)\n: None val\n\n\n\n\nParameters\n\n\n\n\ntimer: \nTimer\n ref\n\n\n\n\nReturns\n\n\n\n\nNone\n val", 
             "title": "interface TimerNotify"
         }, 
         {
@@ -71682,7 +71962,7 @@
         }, 
         {
             "location": "/time-TimerNotify/#apply", 
-            "text": "Called with the the number of times the timer has fired since this was last\ncalled. Return true to reschedule the timer (if it has an interval), or\nfalse to cancel the timer (even if it has an interval).  fun ref apply(\n  timer: Timer ref,\n  count: U64 val)\n: Bool val", 
+            "text": "Called with the the number of times the timer has fired since this was last\ncalled. Usually, the value of  count  will be 1. If it is not 1, it means\nthat the timer isn't firing on schedule.  For example, if your timer is set to fire every 10 milliseconds, and count  is 2, that means it has been between 20-29 milliseconds since the\nlast time your timer fired. Non 1 values for a timer are rare and indicate\na system under heavy load.  Return true to reschedule the timer (if it has an interval), or\nfalse to cancel the timer (even if it has an interval).  fun ref apply(\n  timer: Timer ref,\n  count: U64 val)\n: Bool val", 
             "title": "apply"
         }, 
         {
@@ -71697,7 +71977,7 @@
         }, 
         {
             "location": "/time-TimerNotify/#cancel", 
-            "text": "Called if the timer is cancelled. This is also called if the notifier\nreturns false.  fun ref cancel(\n  timer: Timer ref)\n: None val", 
+            "text": "Called if the timer is cancelled. This is also called if the notifier\nreturns false from its  apply  method.  fun ref cancel(\n  timer: Timer ref)\n: None val", 
             "title": "cancel"
         }, 
         {
