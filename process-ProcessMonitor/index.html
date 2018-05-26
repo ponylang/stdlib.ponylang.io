@@ -11415,7 +11415,7 @@ user about incoming data via the notifier.</p>
 <hr />
 <h2 id="public-behaviours">Public Behaviours<a class="headerlink" href="#public-behaviours" title="Permanent link">&para;</a></h2>
 <h3 id="print">print<a class="headerlink" href="#print" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L411">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L412">[Source]</a></span></p>
 <p>Print some bytes and append a newline.</p>
 <pre><code class="pony">be print(
   data: (String val | Array[U8 val] val))
@@ -11427,7 +11427,7 @@ user about incoming data via the notifier.</p>
 </ul>
 <hr />
 <h3 id="write">write<a class="headerlink" href="#write" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L423">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L424">[Source]</a></span></p>
 <p>Write to STDIN of the child process.</p>
 <pre><code class="pony">be write(
   data: (String val | Array[U8 val] val))
@@ -11439,7 +11439,7 @@ user about incoming data via the notifier.</p>
 </ul>
 <hr />
 <h3 id="printv">printv<a class="headerlink" href="#printv" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L433">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L434">[Source]</a></span></p>
 <p>Print an iterable collection of ByteSeqs.</p>
 <pre><code class="pony">be printv(
   data: ByteSeqIter val)
@@ -11451,7 +11451,7 @@ user about incoming data via the notifier.</p>
 </ul>
 <hr />
 <h3 id="writev">writev<a class="headerlink" href="#writev" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L441">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L442">[Source]</a></span></p>
 <p>Write an iterable collection of ByteSeqs.</p>
 <pre><code class="pony">be writev(
   data: ByteSeqIter val)
@@ -11463,7 +11463,7 @@ user about incoming data via the notifier.</p>
 </ul>
 <hr />
 <h3 id="done_writing">done_writing<a class="headerlink" href="#done_writing" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L453">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L454">[Source]</a></span></p>
 <p>Set the _done_writing flag to true. If the _pending is empty we can
 close the _stdin_write file descriptor.</p>
 <pre><code class="pony">be done_writing()
@@ -11471,7 +11471,7 @@ close the _stdin_write file descriptor.</p>
 
 <hr />
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L464">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L465">[Source]</a></span></p>
 <p>Terminate child and close down everything.</p>
 <pre><code class="pony">be dispose()
 </code></pre>
@@ -11479,7 +11479,7 @@ close the _stdin_write file descriptor.</p>
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="expect">expect<a class="headerlink" href="#expect" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L472">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L473">[Source]</a></span></p>
 <p>A <code>stdout</code> call on the notifier must contain exactly <code>qty</code> bytes. If
 <code>qty</code> is zero, the call can contain any amount of data.</p>
 <pre><code class="pony">fun ref expect(
@@ -11498,7 +11498,7 @@ close the _stdin_write file descriptor.</p>
 <hr />
 <h2 id="private-behaviours">Private Behaviours<a class="headerlink" href="#private-behaviours" title="Permanent link">&para;</a></h2>
 <h3 id="_event_notify">_event_notify<a class="headerlink" href="#_event_notify" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L509">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L510">[Source]</a></span></p>
 <p>Handle the incoming event.</p>
 <pre><code class="pony">be _event_notify(
   event: Pointer[AsioEvent val] tag,
@@ -11514,7 +11514,7 @@ close the _stdin_write file descriptor.</p>
 </ul>
 <hr />
 <h3 id="_read_again">_read_again<a class="headerlink" href="#_read_again" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L682">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L683">[Source]</a></span></p>
 <p>Resume reading on file descriptor.</p>
 <pre><code class="pony">be _read_again(
   fd: U32 val)
@@ -11527,7 +11527,7 @@ close the _stdin_write file descriptor.</p>
 <hr />
 <h2 id="private-functions">Private Functions<a class="headerlink" href="#private-functions" title="Permanent link">&para;</a></h2>
 <h3 id="_child">_child<a class="headerlink" href="#_child" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L294">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L295">[Source]</a></span></p>
 <p>We are now in the child process. We redirect STDIN, STDOUT and STDERR
 to their pipes and execute the command. The command is executed via
 execve which does not return on success, and the text, data, bss, and
@@ -11553,7 +11553,7 @@ that they are all closed automatically once @execve gets called.</p>
 </ul>
 <hr />
 <h3 id="_parent">_parent<a class="headerlink" href="#_parent" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L318">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L319">[Source]</a></span></p>
 <p>We're now in the parent process. We setup asio events for STDOUT and STDERR
 and close the file descriptors we don't need.</p>
 <pre><code class="pony">fun ref _parent()
@@ -11566,7 +11566,7 @@ and close the file descriptors we don't need.</p>
 </ul>
 <hr />
 <h3 id="_make_argv">_make_argv<a class="headerlink" href="#_make_argv" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L335">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L336">[Source]</a></span></p>
 <p>Convert an array of String parameters into an array of
 C pointers to same strings.</p>
 <pre><code class="pony">fun box _make_argv(
@@ -11584,7 +11584,7 @@ C pointers to same strings.</p>
 </ul>
 <hr />
 <h3 id="_dup2">_dup2<a class="headerlink" href="#_dup2" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L347">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L348">[Source]</a></span></p>
 <p>Creates a copy of the file descriptor oldfd using the file
 descriptor number specified in newfd. If the file descriptor newfd
 was previously open, it is silently closed before being reused.
@@ -11606,7 +11606,7 @@ If dup2() fails because of EINTR we retry.</p>
 </ul>
 <hr />
 <h3 id="_make_pipe">_make_pipe<a class="headerlink" href="#_make_pipe" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L364">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L365">[Source]</a></span></p>
 <p>Creates a pipe, an unidirectional data channel that can be used
 for interprocess communication. We need to set the flag on the
 two file descriptors here to prevent capturing by another thread.</p>
@@ -11625,7 +11625,7 @@ two file descriptors here to prevent capturing by another thread.</p>
 </ul>
 <hr />
 <h3 id="_getflags">_getflags<a class="headerlink" href="#_getflags" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L382">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L383">[Source]</a></span></p>
 <p>Get the string representation of flags set for a file descriptor</p>
 <pre><code class="pony">fun box _getflags(
   fd: U32 val)
@@ -11642,7 +11642,7 @@ two file descriptors here to prevent capturing by another thread.</p>
 </ul>
 <hr />
 <h3 id="_set_fd">_set_fd<a class="headerlink" href="#_set_fd" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L403">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L404">[Source]</a></span></p>
 <pre><code class="pony">fun box _set_fd(
   fd: U32 val,
   flags: I32 val)
@@ -11660,7 +11660,7 @@ two file descriptors here to prevent capturing by another thread.</p>
 </ul>
 <hr />
 <h3 id="_set_fl">_set_fl<a class="headerlink" href="#_set_fl" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L407">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L408">[Source]</a></span></p>
 <pre><code class="pony">fun box _set_fl(
   fd: U32 val,
   flags: I32 val)
@@ -11678,7 +11678,7 @@ two file descriptors here to prevent capturing by another thread.</p>
 </ul>
 <hr />
 <h3 id="_print_final">_print_final<a class="headerlink" href="#_print_final" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L449">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L450">[Source]</a></span></p>
 <pre><code class="pony">fun ref _print_final(
   data: (String val | Array[U8 val] val))
 : None val
@@ -11694,7 +11694,7 @@ two file descriptors here to prevent capturing by another thread.</p>
 </ul>
 <hr />
 <h3 id="_kill_child">_kill_child<a class="headerlink" href="#_kill_child" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L480">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L481">[Source]</a></span></p>
 <p>Terminate the child process, first trying SIGTERM and if
 that fails try SIGKILL.</p>
 <pre><code class="pony">fun box _kill_child()
@@ -11707,7 +11707,7 @@ that fails try SIGKILL.</p>
 </ul>
 <hr />
 <h3 id="_event_flags">_event_flags<a class="headerlink" href="#_event_flags" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L499">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L500">[Source]</a></span></p>
 <p>Return all flags of an event as a string.</p>
 <pre><code class="pony">fun box _event_flags(
   flags: U32 val)
@@ -11724,7 +11724,7 @@ that fails try SIGKILL.</p>
 </ul>
 <hr />
 <h3 id="_close_fd">_close_fd<a class="headerlink" href="#_close_fd" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L538">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L539">[Source]</a></span></p>
 <p>Close a file descriptor.  This function also handles unsubscribing
 the asio event (if the file descriptor has one), the file
 descriptor should always be closed <em>after</em> unsubscribing the
@@ -11749,7 +11749,7 @@ unsubscribing logic here too.</p>
 </ul>
 <hr />
 <h3 id="_close">_close<a class="headerlink" href="#_close" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L575">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L576">[Source]</a></span></p>
 <p>Close all pipes wait for the child process to exit.</p>
 <pre><code class="pony">fun ref _close()
 : None val
@@ -11761,7 +11761,7 @@ unsubscribing logic here too.</p>
 </ul>
 <hr />
 <h3 id="_try_shutdown">_try_shutdown<a class="headerlink" href="#_try_shutdown" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L606">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L607">[Source]</a></span></p>
 <p>If neither stdout nor stderr are open we close down and exit.</p>
 <pre><code class="pony">fun ref _try_shutdown()
 : None val
@@ -11773,7 +11773,7 @@ unsubscribing logic here too.</p>
 </ul>
 <hr />
 <h3 id="_pending_reads">_pending_reads<a class="headerlink" href="#_pending_reads" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L617">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L618">[Source]</a></span></p>
 <p>Read from stdout while data is available. If we read 4 kb of data,
 send ourself a resume message and stop reading, to avoid starving
 other actors.
@@ -11794,7 +11794,7 @@ causal messaging. Events get processed one <em>after</em> another.</p>
 </ul>
 <hr />
 <h3 id="_read_buf_size">_read_buf_size<a class="headerlink" href="#_read_buf_size" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L675">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L676">[Source]</a></span></p>
 <pre><code class="pony">fun ref _read_buf_size()
 : None val
 </code></pre>
@@ -11805,7 +11805,7 @@ causal messaging. Events get processed one <em>after</em> another.</p>
 </ul>
 <hr />
 <h3 id="_write_final">_write_final<a class="headerlink" href="#_write_final" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L691">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L692">[Source]</a></span></p>
 <p>Write as much as possible to the fd. Return false if not
 everything was written.</p>
 <pre><code class="pony">fun ref _write_final(
@@ -11823,7 +11823,7 @@ everything was written.</p>
 </ul>
 <hr />
 <h3 id="_pending_writes">_pending_writes<a class="headerlink" href="#_pending_writes" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L727">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L728">[Source]</a></span></p>
 <p>Send pending data. If any data can't be sent, keep it and mark fd as not
 writeable. Once set to false the _stdin_writeable flag can only be cleared
 here by processing the pending writes. If the _done_writing flag is set we

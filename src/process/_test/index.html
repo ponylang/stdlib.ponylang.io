@@ -10809,18 +10809,18 @@ class iso _TestNonExecutablePathResultsInExecveError is UnitTest
 
   fun apply(h: TestHelper) =&gt;
     try
-      let path = _setup_file(h)?
+      let auth = h.env.root as AmbientAuth
+      let path = FilePath.mkdtemp(auth, &quot;pony_execve_test&quot;)?
       let args: Array[String] iso = recover Array[String](1) end
       let vars: Array[String] iso = recover Array[String](2) end
 
-      let auth = h.env.root as AmbientAuth
       let notifier = _setup_notifier(h, path)
       let pm: ProcessMonitor = ProcessMonitor(auth, auth, consume notifier,
         path, consume args, consume vars)
       h.dispose_when_done(pm)
       h.long_test(30_000_000_000)
     else
-      h.fail(&quot;Could not create FilePath!&quot;)
+      h.fail(&quot;Could not create temporary FilePath!&quot;)
     end
 
   fun timed_out(h: TestHelper) =&gt;
@@ -10848,16 +10848,6 @@ class iso _TestNonExecutablePathResultsInExecveError is UnitTest
       fun _cleanup() =&gt;
         _path.remove()
     end end
-
-  fun _setup_file(h: TestHelper): FilePath ? =&gt;
-    let tmp_dir = FilePath(h.env.root as AmbientAuth, &quot;/tmp/&quot;)?
-    let path =
-      FilePath(h.env.root as AmbientAuth, tmp_dir.path + &quot;/&quot; + Path.random(32))?
-    let tmp_file = CreateFile(path) as File
-    let mode = FileMode
-    mode.any_exec = false
-    tmp_file.path.chmod(consume mode)
-    path
 
 class iso _TestExpect is UnitTest
   fun name(): String =&gt;

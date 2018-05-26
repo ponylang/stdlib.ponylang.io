@@ -10928,7 +10928,7 @@
                 
                 
                 <h1 id="_processclient">_ProcessClient<a class="headerlink" href="#_processclient" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/process/_test/#L377">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/_test/#L367">[Source]</a></span></p>
 <p>Notifications for Process connections.</p>
 <pre><code class="pony">class ref _ProcessClient is
   ProcessNotify ref
@@ -10941,7 +10941,7 @@
 <hr />
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/_test/#L390">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/_test/#L380">[Source]</a></span></p>
 <pre><code class="pony">new iso create(
   out: USize val,
   err: String val,
@@ -10964,7 +10964,7 @@
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="stdout">stdout<a class="headerlink" href="#stdout" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/_test/#L402">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/_test/#L392">[Source]</a></span></p>
 <p>Called when new data is received on STDOUT of the forked process</p>
 <pre><code class="pony">fun ref stdout(
   process: ProcessMonitor ref,
@@ -10983,7 +10983,7 @@
 </ul>
 <hr />
 <h3 id="stderr">stderr<a class="headerlink" href="#stderr" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/_test/#L418">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/_test/#L408">[Source]</a></span></p>
 <p>Called when new data is received on STDERR of the forked process</p>
 <pre><code class="pony">fun ref stderr(
   process: ProcessMonitor ref,
@@ -11002,7 +11002,7 @@
 </ul>
 <hr />
 <h3 id="failed">failed<a class="headerlink" href="#failed" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/_test/#L424">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/_test/#L414">[Source]</a></span></p>
 <p>ProcessMonitor calls this if we run into errors with the
 forked process.</p>
 <pre><code class="pony">fun ref failed(
@@ -11026,7 +11026,7 @@ forked process.</p>
 </ul>
 <hr />
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/_test/#L440">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/_test/#L430">[Source]</a></span></p>
 <p>Called when ProcessMonitor terminates to cleanup ProcessNotify
 We receive the exit code of the child process from ProcessMonitor.</p>
 <pre><code class="pony">fun ref dispose(
