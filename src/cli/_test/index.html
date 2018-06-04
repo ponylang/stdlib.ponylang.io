@@ -1454,6 +1454,42 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../cli-_CommandSpecLeaf/" title="primitive _CommandSpecLeaf" class="md-nav__link">
+      primitive _CommandSpecLeaf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cli-_CommandSpecParent/" title="primitive _CommandSpecParent" class="md-nav__link">
+      primitive _CommandSpecParent
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cli-_CommandSpecType/" title="type _CommandSpecType" class="md-nav__link">
+      type _CommandSpecType
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../cli-CommandSpec/" title="class CommandSpec" class="md-nav__link">
       class CommandSpec
     </a>
@@ -8498,8 +8534,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../time-Nanos/" title="primitive Nanos" class="md-nav__link">
-      primitive Nanos
+    <a href="../../../time-PosixDate/" title="class PosixDate" class="md-nav__link">
+      class PosixDate
     </a>
   </li>
 
@@ -8510,8 +8546,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../time-PosixDate/" title="class PosixDate" class="md-nav__link">
-      class PosixDate
+    <a href="../../../time-Nanos/" title="primitive Nanos" class="md-nav__link">
+      primitive Nanos
     </a>
   </li>
 
@@ -10619,8 +10655,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../time/nanos/" title="nanos.pony" class="md-nav__link">
-      nanos.pony
+    <a href="../../time/posix_date/" title="posix_date.pony" class="md-nav__link">
+      posix_date.pony
     </a>
   </li>
 
@@ -10631,8 +10667,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../time/date/" title="date.pony" class="md-nav__link">
-      date.pony
+    <a href="../../time/nanos/" title="nanos.pony" class="md-nav__link">
+      nanos.pony
     </a>
   </li>
 
@@ -10677,6 +10713,7 @@ actor Main is TestList
 
   fun tag tests(test: PonyTest) =&gt;
     test(_TestMinimal)
+    test(_TestMinimalWithHelp)
     test(_TestBadName)
     test(_TestUnknownCommand)
     test(_TestUnexpectedArg)
@@ -10706,15 +10743,30 @@ class iso _TestMinimal is UnitTest
     ])?
 
     h.assert_eq[String](&quot;minimal&quot;, cs.name())
+    h.assert_true(cs.is_leaf())
+    h.assert_false(cs.is_parent())
 
     let args: Array[String] = [&quot;ignored&quot;; &quot;--aflag=true&quot;]
     let cmdErr = CommandParser(cs).parse(args)
     h.log(&quot;Parsed: &quot; + cmdErr.string())
 
-    let cmd = match cmdErr | let c: Command =&gt; c else error end
+    let cmd = cmdErr as Command
 
     h.assert_eq[String](&quot;minimal&quot;, cmd.fullname())
     h.assert_eq[Bool](true, cmd.option(&quot;aflag&quot;).bool())
+
+class iso _TestMinimalWithHelp is UnitTest
+  fun name(): String =&gt; &quot;ponycli/minimal_help&quot;
+
+  fun apply(h: TestHelper) ? =&gt;
+    let cs = CommandSpec.leaf(&quot;minimal_help&quot;, &quot;&quot;,[])? .&gt; add_help()?
+    h.assert_eq[String](&quot;minimal_help&quot;, cs.name())
+    h.assert_true(cs.is_leaf())
+    h.assert_false(cs.is_parent())
+
+    let args: Array[String] = [&quot;--help&quot;]
+    // test for successful parsing
+    let cmdErr = CommandParser(cs).parse(args) as Command
 
 class iso _TestBadName is UnitTest
   fun name(): String =&gt; &quot;ponycli/badname&quot;
@@ -10732,6 +10784,8 @@ class iso _TestUnknownCommand is UnitTest
   // Negative test: unknown command should report
   fun apply(h: TestHelper) ? =&gt;
     let cs = _Fixtures.chat_cli_spec()?
+    h.assert_false(cs.is_leaf())
+    h.assert_true(cs.is_parent())
 
     let args: Array[String] = [
       &quot;ignored&quot;
@@ -10754,6 +10808,8 @@ class iso _TestUnexpectedArg is UnitTest
   // Negative test: unexpected arg/command token should report
   fun apply(h: TestHelper) ? =&gt;
     let cs = _Fixtures.bools_cli_spec()?
+    h.assert_true(cs.is_leaf())
+    h.assert_false(cs.is_parent())
 
     let args: Array[String] = [
       &quot;ignored&quot;
@@ -10777,6 +10833,8 @@ class iso _TestUnknownShort is UnitTest
   // Negative test: unknown short option should report
   fun apply(h: TestHelper) ? =&gt;
     let cs = _Fixtures.bools_cli_spec()?
+    h.assert_true(cs.is_leaf())
+    h.assert_false(cs.is_parent())
 
     let args: Array[String] = [
       &quot;ignored&quot;
@@ -10800,6 +10858,8 @@ class iso _TestUnknownLong is UnitTest
   // Negative test: unknown long option should report
   fun apply(h: TestHelper) ? =&gt;
     let cs = _Fixtures.bools_cli_spec()?
+    h.assert_true(cs.is_leaf())
+    h.assert_false(cs.is_parent())
 
     let args: Array[String] = [
       &quot;ignored&quot;
@@ -10826,11 +10886,13 @@ class iso _TestHyphenArg is UnitTest
     let cs = CommandSpec.leaf(&quot;minimal&quot; where args' = [
       ArgSpec.string(&quot;name&quot;, &quot;&quot;)
     ])?
+    h.assert_true(cs.is_leaf())
+    h.assert_false(cs.is_parent())
     let args: Array[String] = [&quot;ignored&quot;; &quot;-&quot;]
     let cmdErr = CommandParser(cs).parse(args)
     h.log(&quot;Parsed: &quot; + cmdErr.string())
 
-    let cmd = match cmdErr | let c: Command =&gt; c else error end
+    let cmd = cmdErr as Command
 
     h.assert_eq[String](&quot;minimal&quot;, cmd.fullname())
     h.assert_eq[String](&quot;-&quot;, cmd.arg(&quot;name&quot;).string())
@@ -10841,12 +10903,14 @@ class iso _TestBools is UnitTest
   // Rules 2, 3, 5, 7 w/ Bools
   fun apply(h: TestHelper) ? =&gt;
     let cs = _Fixtures.bools_cli_spec()?
+    h.assert_true(cs.is_leaf())
+    h.assert_false(cs.is_parent())
 
     let args: Array[String] = [&quot;ignored&quot;; &quot;-ab&quot;; &quot;-c=true&quot;; &quot;-d=false&quot;]
     let cmdErr = CommandParser(cs).parse(args)
     h.log(&quot;Parsed: &quot; + cmdErr.string())
 
-    let cmd = match cmdErr | let c: Command =&gt; c else error end
+    let cmd = cmdErr as Command
 
     h.assert_eq[String](&quot;bools&quot;, cmd.fullname())
     h.assert_eq[Bool](true, cmd.option(&quot;aaa&quot;).bool())
@@ -10860,13 +10924,15 @@ class iso _TestDefaults is UnitTest
   // Rules 2, 3, 5, 6
   fun apply(h: TestHelper) ? =&gt;
     let cs = _Fixtures.simple_cli_spec()?
+    h.assert_true(cs.is_leaf())
+    h.assert_false(cs.is_parent())
 
     let args: Array[String] =
       [&quot;ignored&quot;; &quot;-B&quot;; &quot;-S--&quot;; &quot;-I42&quot;; &quot;-U47&quot;; &quot;-F42.0&quot;]
     let cmdErr = CommandParser(cs).parse(args)
     h.log(&quot;Parsed: &quot; + cmdErr.string())
 
-    let cmd = match cmdErr | let c: Command =&gt; c else error end
+    let cmd = cmdErr as Command
 
     h.assert_eq[Bool](true, cmd.option(&quot;boolo&quot;).bool())
     h.assert_eq[String](&quot;astring&quot;, cmd.option(&quot;stringo&quot;).string())
@@ -10881,6 +10947,8 @@ class iso _TestShortsAdj is UnitTest
   // Rules 2, 3, 5, 6, 8
   fun apply(h: TestHelper) ? =&gt;
     let cs = _Fixtures.simple_cli_spec()?
+    h.assert_true(cs.is_leaf())
+    h.assert_false(cs.is_parent())
 
     let args: Array[String] = [
       &quot;ignored&quot;
@@ -10889,7 +10957,7 @@ class iso _TestShortsAdj is UnitTest
     let cmdErr = CommandParser(cs).parse(args)
     h.log(&quot;Parsed: &quot; + cmdErr.string())
 
-    let cmd = match cmdErr | let c: Command =&gt; c else error end
+    let cmd = cmdErr as Command
 
     h.assert_eq[Bool](true, cmd.option(&quot;boolr&quot;).bool())
     h.assert_eq[String](&quot;--&quot;, cmd.option(&quot;stringr&quot;).string())
@@ -10915,7 +10983,7 @@ class iso _TestShortsEq is UnitTest
     let cmdErr = CommandParser(cs).parse(args)
     h.log(&quot;Parsed: &quot; + cmdErr.string())
 
-    let cmd = match cmdErr | let c: Command =&gt; c else error end
+    let cmd = cmdErr as Command
 
     h.assert_eq[Bool](true, cmd.option(&quot;boolr&quot;).bool())
     h.assert_eq[String](&quot;astring&quot;, cmd.option(&quot;stringr&quot;).string())
@@ -10942,7 +11010,7 @@ class iso _TestShortsNext is UnitTest
     let cmdErr = CommandParser(cs).parse(args)
     h.log(&quot;Parsed: &quot; + cmdErr.string())
 
-    let cmd = match cmdErr | let c: Command =&gt; c else error end
+    let cmd = cmdErr as Command
 
     h.assert_eq[Bool](true, cmd.option(&quot;boolr&quot;).bool())
     h.assert_eq[String](&quot;--&quot;, cmd.option(&quot;stringr&quot;).string())
@@ -10969,7 +11037,7 @@ class iso _TestLongsEq is UnitTest
     let cmdErr = CommandParser(cs).parse(args)
     h.log(&quot;Parsed: &quot; + cmdErr.string())
 
-    let cmd = match cmdErr | let c: Command =&gt; c else error end
+    let cmd = cmdErr as Command
 
     h.assert_eq[Bool](true, cmd.option(&quot;boolr&quot;).bool())
     h.assert_eq[String](&quot;astring&quot;, cmd.option(&quot;stringr&quot;).string())
@@ -10996,7 +11064,7 @@ class iso _TestLongsNext is UnitTest
     let cmdErr = CommandParser(cs).parse(args)
     h.log(&quot;Parsed: &quot; + cmdErr.string())
 
-    let cmd = match cmdErr | let c: Command =&gt; c else error end
+    let cmd = cmdErr as Command
 
     h.assert_eq[String](&quot;--&quot;, cmd.option(&quot;stringr&quot;).string())
     h.assert_eq[I64](42, cmd.option(&quot;intr&quot;).i64())
@@ -11027,7 +11095,7 @@ class iso _TestEnvs is UnitTest
     let cmdErr = CommandParser(cs).parse(args, envs)
     h.log(&quot;Parsed: &quot; + cmdErr.string())
 
-    let cmd = match cmdErr | let c: Command =&gt; c else error end
+    let cmd = cmdErr as Command
 
     h.assert_eq[Bool](true, cmd.option(&quot;boolr&quot;).bool())
     h.assert_eq[String](&quot;astring&quot;, cmd.option(&quot;stringr&quot;).string())
@@ -11044,13 +11112,13 @@ class iso _TestOptionStop is UnitTest
 
     let args: Array[String] = [
       &quot;ignored&quot;
-      &quot;-BS=astring&quot;; &quot;-I=42&quot;; &quot;-F=42.0&quot;
+      &quot;-BS=astring&quot;; &quot;-I=42&quot;; &quot;-F=42.0&quot;; &quot;-U=23&quot;
       &quot;--&quot;; &quot;-f=1.0&quot;
     ]
     let cmdErr = CommandParser(cs).parse(args)
     h.log(&quot;Parsed: &quot; + cmdErr.string())
 
-    let cmd = match cmdErr | let c: Command =&gt; c else error end
+    let cmd = cmdErr as Command
 
     h.assert_eq[String](&quot;-f=1.0&quot;, cmd.arg(&quot;words&quot;).string())
     h.assert_eq[F64](42.0, cmd.option(&quot;floato&quot;).f64())
@@ -11070,7 +11138,7 @@ class iso _TestDuplicate is UnitTest
     let cmdErr = CommandParser(cs).parse(args)
     h.log(&quot;Parsed: &quot; + cmdErr.string())
 
-    let cmd = match cmdErr | let c: Command =&gt; c else error end
+    let cmd = cmdErr as Command
 
     h.assert_eq[String](&quot;newstring&quot;, cmd.option(&quot;stringr&quot;).string())
 
@@ -11079,6 +11147,8 @@ class iso _TestChat is UnitTest
 
   fun apply(h: TestHelper) ? =&gt;
     let cs = _Fixtures.chat_cli_spec()?
+    h.assert_false(cs.is_leaf())
+    h.assert_true(cs.is_parent())
 
     let args: Array[String] = [
       &quot;ignored&quot;
@@ -11088,7 +11158,7 @@ class iso _TestChat is UnitTest
     let cmdErr = CommandParser(cs).parse(args)
     h.log(&quot;Parsed: &quot; + cmdErr.string())
 
-    let cmd = match cmdErr | let c: Command =&gt; c else error end
+    let cmd = cmdErr as Command
 
     h.assert_eq[String](&quot;chat/say&quot;, cmd.fullname())
 
@@ -11120,6 +11190,8 @@ class iso _TestMustBeLeaf is UnitTest
   // Negative test: can't just supply parent command
   fun apply(h: TestHelper) ? =&gt;
     let cs = _Fixtures.chat_cli_spec()?
+    h.assert_false(cs.is_leaf())
+    h.assert_true(cs.is_parent())
 
     let args: Array[String] = [
       &quot;ignored&quot;
@@ -11142,7 +11214,7 @@ class iso _TestHelp is UnitTest
     let cs = _Fixtures.chat_cli_spec()?
 
     let chErr = Help.for_command(cs, [&quot;config&quot;; &quot;server&quot;])
-    let ch = match chErr | let c: CommandHelp =&gt; c else error end
+    let ch = chErr as CommandHelp
 
     let help = ch.help_string()
     h.log(help)

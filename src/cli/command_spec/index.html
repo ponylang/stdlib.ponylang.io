@@ -1454,6 +1454,42 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../cli-_CommandSpecLeaf/" title="primitive _CommandSpecLeaf" class="md-nav__link">
+      primitive _CommandSpecLeaf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cli-_CommandSpecParent/" title="primitive _CommandSpecParent" class="md-nav__link">
+      primitive _CommandSpecParent
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cli-_CommandSpecType/" title="type _CommandSpecType" class="md-nav__link">
+      type _CommandSpecType
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../cli-CommandSpec/" title="class CommandSpec" class="md-nav__link">
       class CommandSpec
     </a>
@@ -8498,8 +8534,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../time-Nanos/" title="primitive Nanos" class="md-nav__link">
-      primitive Nanos
+    <a href="../../../time-PosixDate/" title="class PosixDate" class="md-nav__link">
+      class PosixDate
     </a>
   </li>
 
@@ -8510,8 +8546,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../time-PosixDate/" title="class PosixDate" class="md-nav__link">
-      class PosixDate
+    <a href="../../../time-Nanos/" title="primitive Nanos" class="md-nav__link">
+      primitive Nanos
     </a>
   </li>
 
@@ -10619,8 +10655,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../time/nanos/" title="nanos.pony" class="md-nav__link">
-      nanos.pony
+    <a href="../../time/posix_date/" title="posix_date.pony" class="md-nav__link">
+      posix_date.pony
     </a>
   </li>
 
@@ -10631,8 +10667,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../time/date/" title="date.pony" class="md-nav__link">
-      date.pony
+    <a href="../../time/nanos/" title="nanos.pony" class="md-nav__link">
+      nanos.pony
     </a>
   </li>
 
@@ -10672,6 +10708,11 @@
                 <pre><code class="pony-full-source">use &quot;collections&quot;
 use pc = &quot;collections/persistent&quot;
 
+primitive _CommandSpecLeaf
+primitive _CommandSpecParent
+
+type _CommandSpecType is (_CommandSpecLeaf | _CommandSpecParent )
+
 class CommandSpec
   &quot;&quot;&quot;
   CommandSpec describes the specification of a parent or leaf command. Each
@@ -10685,6 +10726,7 @@ class CommandSpec
      - a Map of child commands.
      - an Array of arguments.
   &quot;&quot;&quot;
+  let _type: _CommandSpecType
   let _name: String
   let _descr: String
   let _options: Map[String, OptionSpec] = _options.create()
@@ -10705,6 +10747,7 @@ class CommandSpec
     Creates a command spec that can accept options and child commands, but not
     arguments.
     &quot;&quot;&quot;
+    _type = _CommandSpecParent
     _name = _assertName(name')?
     _descr = descr'
     for o in options'.values() do
@@ -10724,6 +10767,7 @@ class CommandSpec
     Creates a command spec that can accept options and arguments, but not child
     commands.
     &quot;&quot;&quot;
+    _type = _CommandSpecLeaf
     _name = _assertName(name')?
     _descr = descr'
     for o in options'.values() do
@@ -10748,7 +10792,7 @@ class CommandSpec
     &quot;&quot;&quot;
     Adds an additional child command to this parent command.
     &quot;&quot;&quot;
-    if _args.size() &gt; 0 then error end
+    if is_leaf() then error end
     _commands.update(cmd.name(), cmd)
 
   fun ref add_help(hname: String = &quot;help&quot;, descr': String = &quot;&quot;) ? =&gt;
@@ -10759,7 +10803,7 @@ class CommandSpec
     _help_info = descr'
     let help_option = OptionSpec.bool(_help_name, _help_info, 'h', false)
     _options.update(_help_name, help_option)
-    if _args.size() == 0 then
+    if is_parent() then
       let help_cmd = CommandSpec.leaf(_help_name, &quot;&quot;, Array[OptionSpec](), [
         ArgSpec.string(&quot;command&quot; where default' = &quot;&quot;)
       ])?
@@ -10795,6 +10839,10 @@ class CommandSpec
     Returns an array of the positional arguments of this command.
     &quot;&quot;&quot;
     _args
+
+  fun is_leaf(): Bool =&gt; _type is _CommandSpecLeaf
+
+  fun is_parent(): Bool =&gt; _type is _CommandSpecParent
 
   fun help_name(): String =&gt;
     &quot;&quot;&quot;

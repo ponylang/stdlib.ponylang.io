@@ -1458,6 +1458,42 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../cli-_CommandSpecLeaf/" title="primitive _CommandSpecLeaf" class="md-nav__link">
+      primitive _CommandSpecLeaf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cli-_CommandSpecParent/" title="primitive _CommandSpecParent" class="md-nav__link">
+      primitive _CommandSpecParent
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cli-_CommandSpecType/" title="type _CommandSpecType" class="md-nav__link">
+      type _CommandSpecType
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -1588,6 +1624,24 @@
             <li class="md-nav__item">
   <a href="#args" title="args" class="md-nav__link">
     args
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+  <a href="#is_leaf" title="is_leaf" class="md-nav__link">
+    is_leaf
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+  <a href="#is_parent" title="is_parent" class="md-nav__link">
+    is_parent
   </a>
   
 </li>
@@ -8690,8 +8744,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../time-Nanos/" title="primitive Nanos" class="md-nav__link">
-      primitive Nanos
+    <a href="../time-PosixDate/" title="class PosixDate" class="md-nav__link">
+      class PosixDate
     </a>
   </li>
 
@@ -8702,8 +8756,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../time-PosixDate/" title="class PosixDate" class="md-nav__link">
-      class PosixDate
+    <a href="../time-Nanos/" title="primitive Nanos" class="md-nav__link">
+      primitive Nanos
     </a>
   </li>
 
@@ -10802,8 +10856,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/time/nanos/" title="nanos.pony" class="md-nav__link">
-      nanos.pony
+    <a href="../src/time/posix_date/" title="posix_date.pony" class="md-nav__link">
+      posix_date.pony
     </a>
   </li>
 
@@ -10814,8 +10868,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/time/date/" title="date.pony" class="md-nav__link">
-      date.pony
+    <a href="../src/time/nanos/" title="nanos.pony" class="md-nav__link">
+      nanos.pony
     </a>
   </li>
 
@@ -10966,6 +11020,24 @@
         
           
             <li class="md-nav__item">
+  <a href="#is_leaf" title="is_leaf" class="md-nav__link">
+    is_leaf
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+  <a href="#is_parent" title="is_parent" class="md-nav__link">
+    is_parent
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
   <a href="#help_name" title="help_name" class="md-nav__link">
     help_name
   </a>
@@ -11030,7 +11102,7 @@
                 
                 
                 <h1 id="commandspec">CommandSpec<a class="headerlink" href="#commandspec" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L4">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L9">[Source]</a></span></p>
 <p>CommandSpec describes the specification of a parent or leaf command. Each
 command has the following attributes:</p>
 <ul>
@@ -11047,7 +11119,7 @@ command has the following attributes:</p>
 
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="parent">parent<a class="headerlink" href="#parent" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L27">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L33">[Source]</a></span></p>
 <p>Creates a command spec that can accept options and child commands, but not
 arguments.</p>
 <pre><code class="pony">new ref parent(
@@ -11071,7 +11143,7 @@ arguments.</p>
 </ul>
 <hr />
 <h3 id="leaf">leaf<a class="headerlink" href="#leaf" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L46">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L53">[Source]</a></span></p>
 <p>Creates a command spec that can accept options and arguments, but not child
 commands.</p>
 <pre><code class="pony">new ref leaf(
@@ -11096,7 +11168,7 @@ commands.</p>
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="add_command">add_command<a class="headerlink" href="#add_command" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L76">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L84">[Source]</a></span></p>
 <p>Adds an additional child command to this parent command.</p>
 <pre><code class="pony">fun ref add_command(
   cmd: CommandSpec box)
@@ -11113,7 +11185,7 @@ commands.</p>
 </ul>
 <hr />
 <h3 id="add_help">add_help<a class="headerlink" href="#add_help" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L83">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L91">[Source]</a></span></p>
 <p>Adds a standard help option and, optionally command, to a root command.</p>
 <pre><code class="pony">fun ref add_help(
   hname: String val = seq,
@@ -11132,7 +11204,7 @@ commands.</p>
 </ul>
 <hr />
 <h3 id="name">name<a class="headerlink" href="#name" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L98">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L106">[Source]</a></span></p>
 <p>Returns the name of this command.</p>
 <pre><code class="pony">fun box name()
 : String val
@@ -11144,7 +11216,7 @@ commands.</p>
 </ul>
 <hr />
 <h3 id="descr">descr<a class="headerlink" href="#descr" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L104">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L112">[Source]</a></span></p>
 <p>Returns the description for this command.</p>
 <pre><code class="pony">fun box descr()
 : String val
@@ -11156,7 +11228,7 @@ commands.</p>
 </ul>
 <hr />
 <h3 id="options">options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L110">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L118">[Source]</a></span></p>
 <p>Returns a map by name of the named options of this command.</p>
 <pre><code class="pony">fun box options()
 : HashMap[String val, OptionSpec val, HashEq[String val] val] box
@@ -11168,7 +11240,7 @@ commands.</p>
 </ul>
 <hr />
 <h3 id="commands">commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L116">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L124">[Source]</a></span></p>
 <p>Returns a map by name of the child commands of this command.</p>
 <pre><code class="pony">fun box commands()
 : HashMap[String val, CommandSpec box, HashEq[String val] val] box
@@ -11180,7 +11252,7 @@ commands.</p>
 </ul>
 <hr />
 <h3 id="args">args<a class="headerlink" href="#args" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L122">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L130">[Source]</a></span></p>
 <p>Returns an array of the positional arguments of this command.</p>
 <pre><code class="pony">fun box args()
 : Array[ArgSpec val] box
@@ -11191,33 +11263,55 @@ commands.</p>
 <li><a href="../builtin-Array">Array</a>[<a href="../cli-ArgSpec">ArgSpec</a> val] box</li>
 </ul>
 <hr />
+<h3 id="is_leaf">is_leaf<a class="headerlink" href="#is_leaf" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L136">[Source]</a></span></p>
+<pre><code class="pony">fun box is_leaf()
+: Bool val
+</code></pre>
+
+<h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../builtin-Bool">Bool</a> val</li>
+</ul>
+<hr />
+<h3 id="is_parent">is_parent<a class="headerlink" href="#is_parent" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L138">[Source]</a></span></p>
+<pre><code class="pony">fun box is_parent()
+: Bool val
+</code></pre>
+
+<h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../builtin-Bool">Bool</a> val</li>
+</ul>
+<hr />
 <h3 id="help_name">help_name<a class="headerlink" href="#help_name" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L128">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L140">[Source]</a></span></p>
 <p>Returns the name of the help command, which defaults to "help".</p>
 <pre><code class="pony">fun box help_name()
 : String val
 </code></pre>
 
-<h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
+<h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String">String</a> val</li>
 </ul>
 <hr />
 <h3 id="help_string">help_string<a class="headerlink" href="#help_string" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L134">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L146">[Source]</a></span></p>
 <p>Returns a formated help string for this command and all of its arguments.</p>
 <pre><code class="pony">fun box help_string()
 : String val
 </code></pre>
 
-<h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
+<h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String">String</a> val</li>
 </ul>
 <hr />
 <h2 id="private-functions">Private Functions<a class="headerlink" href="#private-functions" title="Permanent link">&para;</a></h2>
 <h3 id="_assertname">_assertName<a class="headerlink" href="#_assertname" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L65">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L73">[Source]</a></span></p>
 <pre><code class="pony">fun tag _assertName(
   nm: String val)
 : String val ?
@@ -11227,7 +11321,7 @@ commands.</p>
 <ul>
 <li>nm: <a href="../builtin-String">String</a> val</li>
 </ul>
-<h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
+<h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String">String</a> val ?</li>
 </ul>
@@ -11252,7 +11346,7 @@ commands.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../cli-EnvVars/" title="primitive EnvVars" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../cli-_CommandSpecType/" title="type _CommandSpecType" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -11261,7 +11355,7 @@ commands.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                primitive EnvVars
+                type _CommandSpecType
               </span>
             </div>
           </a>

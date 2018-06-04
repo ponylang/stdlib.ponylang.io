@@ -1460,6 +1460,42 @@
 
 
   <li class="md-nav__item">
+    <a href="../cli-_CommandSpecLeaf/" title="primitive _CommandSpecLeaf" class="md-nav__link">
+      primitive _CommandSpecLeaf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cli-_CommandSpecParent/" title="primitive _CommandSpecParent" class="md-nav__link">
+      primitive _CommandSpecParent
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cli-_CommandSpecType/" title="type _CommandSpecType" class="md-nav__link">
+      type _CommandSpecType
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../cli-CommandSpec/" title="class CommandSpec" class="md-nav__link">
       class CommandSpec
     </a>
@@ -8735,8 +8771,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../time-Nanos/" title="primitive Nanos" class="md-nav__link">
-      primitive Nanos
+    <a href="../time-PosixDate/" title="class PosixDate" class="md-nav__link">
+      class PosixDate
     </a>
   </li>
 
@@ -8747,8 +8783,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../time-PosixDate/" title="class PosixDate" class="md-nav__link">
-      class PosixDate
+    <a href="../time-Nanos/" title="primitive Nanos" class="md-nav__link">
+      primitive Nanos
     </a>
   </li>
 
@@ -10847,8 +10883,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/time/nanos/" title="nanos.pony" class="md-nav__link">
-      nanos.pony
+    <a href="../src/time/posix_date/" title="posix_date.pony" class="md-nav__link">
+      posix_date.pony
     </a>
   </li>
 
@@ -10859,8 +10895,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/time/date/" title="date.pony" class="md-nav__link">
-      date.pony
+    <a href="../src/time/nanos/" title="nanos.pony" class="md-nav__link">
+      nanos.pony
     </a>
   </li>
 
@@ -11120,7 +11156,7 @@
                 
                 
                 <h1 id="optionspec">OptionSpec<a class="headerlink" href="#optionspec" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L145">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L157">[Source]</a></span></p>
 <p>OptionSpec describes the specification of a named Option. They have a name,
 descr(iption), a short-name, a typ(e), and a default value when they are not
 required.</p>
@@ -11131,7 +11167,7 @@ of as named arguments.</p>
 
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="bool">bool<a class="headerlink" href="#bool" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L169">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L181">[Source]</a></span></p>
 <p>Creates an Option with a Bool typed value that can be used like
   <code>--opt</code> or <code>-O</code> or <code>--opt=true</code> or <code>-O=true</code>
 to yield an option value like
@@ -11157,7 +11193,7 @@ to yield an option value like
 </ul>
 <hr />
 <h3 id="string">string<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L186">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L198">[Source]</a></span></p>
 <p>Creates an Option with a String typed value that can be used like
   <code>--file=dir/filename</code> or <code>-F=dir/filename</code> or <code>-Fdir/filename</code>
 to yield an option value like
@@ -11183,7 +11219,7 @@ to yield an option value like
 </ul>
 <hr />
 <h3 id="i64">i64<a class="headerlink" href="#i64" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L203">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L215">[Source]</a></span></p>
 <p>Creates an Option with an I64 typed value that can be used like
   <code>--count=42 -C=42</code>
 to yield an option value like
@@ -11209,7 +11245,7 @@ to yield an option value like
 </ul>
 <hr />
 <h3 id="u64">u64<a class="headerlink" href="#u64" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L219">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L231">[Source]</a></span></p>
 <p>Creates an Option with an U64 typed value that can be used like
   <code>--count=47 -C=47</code>
 to yield an option value like
@@ -11235,7 +11271,7 @@ to yield an option value like
 </ul>
 <hr />
 <h3 id="f64">f64<a class="headerlink" href="#f64" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L235">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L247">[Source]</a></span></p>
 <p>Creates an Option with a F64 typed value that can be used like
   <code>--ratio=1.039</code> or <code>-R=1.039</code>
 to yield an option value like
@@ -11261,7 +11297,7 @@ to yield an option value like
 </ul>
 <hr />
 <h3 id="string_seq">string_seq<a class="headerlink" href="#string_seq" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L251">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L263">[Source]</a></span></p>
 <p>Creates an Option with a ReadSeq[String] typed value that can be used like
   <code>--files=file1 --files=files2 --files=files2</code>
 to yield a sequence of three strings equivalent to
@@ -11286,7 +11322,7 @@ to yield a sequence of three strings equivalent to
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="name">name<a class="headerlink" href="#name" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L267">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L279">[Source]</a></span></p>
 <p>Returns the name of this option.</p>
 <pre><code class="pony">fun box name()
 : String val
@@ -11298,7 +11334,7 @@ to yield a sequence of three strings equivalent to
 </ul>
 <hr />
 <h3 id="descr">descr<a class="headerlink" href="#descr" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L273">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L285">[Source]</a></span></p>
 <p>Returns the description for this option.</p>
 <pre><code class="pony">fun box descr()
 : String val
@@ -11310,7 +11346,7 @@ to yield a sequence of three strings equivalent to
 </ul>
 <hr />
 <h3 id="required">required<a class="headerlink" href="#required" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L283">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L295">[Source]</a></span></p>
 <p>Returns true iff this option is required to be present in the command line.</p>
 <pre><code class="pony">fun box required()
 : Bool val
@@ -11322,7 +11358,7 @@ to yield a sequence of three strings equivalent to
 </ul>
 <hr />
 <h3 id="help_string">help_string<a class="headerlink" href="#help_string" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L312">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L324">[Source]</a></span></p>
 <p>Returns a formated help string for this option.</p>
 <pre><code class="pony">fun box help_string()
 : String val
@@ -11334,7 +11370,7 @@ to yield a sequence of three strings equivalent to
 </ul>
 <hr />
 <h3 id="deb_string">deb_string<a class="headerlink" href="#deb_string" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L325">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L337">[Source]</a></span></p>
 <pre><code class="pony">fun box deb_string()
 : String val
 </code></pre>
@@ -11346,7 +11382,7 @@ to yield a sequence of three strings equivalent to
 <hr />
 <h2 id="private-functions">Private Functions<a class="headerlink" href="#private-functions" title="Permanent link">&para;</a></h2>
 <h3 id="_init">_init<a class="headerlink" href="#_init" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L161">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L173">[Source]</a></span></p>
 <pre><code class="pony">fun tag _init(
   typ': _ValueType val,
   default': (Bool val | String val | I64 val | 
@@ -11370,7 +11406,7 @@ to yield a sequence of three strings equivalent to
 </ul>
 <hr />
 <h3 id="_typ_p">_typ_p<a class="headerlink" href="#_typ_p" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L279">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L291">[Source]</a></span></p>
 <pre><code class="pony">fun box _typ_p()
 : _ValueType val
 </code></pre>
@@ -11381,7 +11417,7 @@ to yield a sequence of three strings equivalent to
 </ul>
 <hr />
 <h3 id="_default_p">_default_p<a class="headerlink" href="#_default_p" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L281">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L293">[Source]</a></span></p>
 <pre><code class="pony">fun box _default_p()
 : (Bool val | String val | I64 val | 
     U64 val | F64 val | _StringSeq val)
@@ -11394,7 +11430,7 @@ to yield a sequence of three strings equivalent to
 </ul>
 <hr />
 <h3 id="_requires_arg">_requires_arg<a class="headerlink" href="#_requires_arg" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L290">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L302">[Source]</a></span></p>
 <pre><code class="pony">fun box _requires_arg()
 : Bool val
 </code></pre>
@@ -11405,7 +11441,7 @@ to yield a sequence of three strings equivalent to
 </ul>
 <hr />
 <h3 id="_default_arg">_default_arg<a class="headerlink" href="#_default_arg" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L298">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L310">[Source]</a></span></p>
 <pre><code class="pony">fun box _default_arg()
 : (Bool val | String val | I64 val | 
     U64 val | F64 val | _StringSeq val)
@@ -11418,7 +11454,7 @@ to yield a sequence of three strings equivalent to
 </ul>
 <hr />
 <h3 id="_has_short">_has_short<a class="headerlink" href="#_has_short" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/cli/command_spec/#L305">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/cli/command_spec/#L317">[Source]</a></span></p>
 <pre><code class="pony">fun box _has_short(
   sh: U8 val)
 : Bool val

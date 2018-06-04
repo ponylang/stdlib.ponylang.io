@@ -1458,6 +1458,42 @@
 
 
   <li class="md-nav__item">
+    <a href="../cli-_CommandSpecLeaf/" title="primitive _CommandSpecLeaf" class="md-nav__link">
+      primitive _CommandSpecLeaf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cli-_CommandSpecParent/" title="primitive _CommandSpecParent" class="md-nav__link">
+      primitive _CommandSpecParent
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cli-_CommandSpecType/" title="type _CommandSpecType" class="md-nav__link">
+      type _CommandSpecType
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../cli-CommandSpec/" title="class CommandSpec" class="md-nav__link">
       class CommandSpec
     </a>
@@ -8502,18 +8538,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../time-Nanos/" title="primitive Nanos" class="md-nav__link">
-      primitive Nanos
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -8738,6 +8762,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../time-Nanos/" title="primitive Nanos" class="md-nav__link">
+      primitive Nanos
+    </a>
   </li>
 
         
@@ -10835,8 +10871,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/time/nanos/" title="nanos.pony" class="md-nav__link">
-      nanos.pony
+    <a href="../src/time/posix_date/" title="posix_date.pony" class="md-nav__link">
+      posix_date.pony
     </a>
   </li>
 
@@ -10847,8 +10883,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/time/date/" title="date.pony" class="md-nav__link">
-      date.pony
+    <a href="../src/time/nanos/" title="nanos.pony" class="md-nav__link">
+      nanos.pony
     </a>
   </li>
 
@@ -11096,7 +11132,7 @@
                 
                 
                 <h1 id="posixdate">PosixDate<a class="headerlink" href="#posixdate" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/time/date/#L1">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L1">[Source]</a></span></p>
 <p>Represents a proleptic Gregorian date and time, without specifying a
 time zone. The day of month, month, day of week, and day of year are all
 indexed from 1, i.e. January is 1, Monday is 1.</p>
@@ -11105,7 +11141,7 @@ indexed from 1, i.e. January is 1, Monday is 1.</p>
 
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/date/#L17">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L17">[Source]</a></span></p>
 <p>Create a date from a POSIX time. Negative arguments will be changed to zero.</p>
 <pre><code class="pony">new ref create(
   seconds: I64 val = seq,
@@ -11125,35 +11161,35 @@ indexed from 1, i.e. January is 1, Monday is 1.</p>
 <hr />
 <h2 id="public-fields">Public fields<a class="headerlink" href="#public-fields" title="Permanent link">&para;</a></h2>
 <h3 id="var-nsec-i32-val">var nsec: <a href="../builtin-I32">I32</a> val<a class="headerlink" href="#var-nsec-i32-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/date/#L7">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L7">[Source]</a></span></p>
 <hr />
 <h3 id="var-sec-i32-val">var sec: <a href="../builtin-I32">I32</a> val<a class="headerlink" href="#var-sec-i32-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/date/#L8">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L8">[Source]</a></span></p>
 <hr />
 <h3 id="var-min-i32-val">var min: <a href="../builtin-I32">I32</a> val<a class="headerlink" href="#var-min-i32-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/date/#L9">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L9">[Source]</a></span></p>
 <hr />
 <h3 id="var-hour-i32-val">var hour: <a href="../builtin-I32">I32</a> val<a class="headerlink" href="#var-hour-i32-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/date/#L10">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L10">[Source]</a></span></p>
 <hr />
 <h3 id="var-day_of_month-i32-val">var day_of_month: <a href="../builtin-I32">I32</a> val<a class="headerlink" href="#var-day_of_month-i32-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/date/#L11">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L11">[Source]</a></span></p>
 <hr />
 <h3 id="var-month-i32-val">var month: <a href="../builtin-I32">I32</a> val<a class="headerlink" href="#var-month-i32-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/date/#L12">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L12">[Source]</a></span></p>
 <hr />
 <h3 id="var-year-i32-val">var year: <a href="../builtin-I32">I32</a> val<a class="headerlink" href="#var-year-i32-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/date/#L13">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L13">[Source]</a></span></p>
 <hr />
 <h3 id="var-day_of_week-i32-val">var day_of_week: <a href="../builtin-I32">I32</a> val<a class="headerlink" href="#var-day_of_week-i32-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/date/#L14">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L14">[Source]</a></span></p>
 <hr />
 <h3 id="var-day_of_year-i32-val">var day_of_year: <a href="../builtin-I32">I32</a> val<a class="headerlink" href="#var-day_of_year-i32-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/date/#L15">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L15">[Source]</a></span></p>
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="time">time<a class="headerlink" href="#time" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/date/#L25">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L25">[Source]</a></span></p>
 <p>Return a POSIX time. Treats the date as UTC.</p>
 <pre><code class="pony">fun box time()
 : I64 val
@@ -11165,7 +11201,7 @@ indexed from 1, i.e. January is 1, Monday is 1.</p>
 </ul>
 <hr />
 <h3 id="normal">normal<a class="headerlink" href="#normal" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/date/#L31">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L31">[Source]</a></span></p>
 <p>Normalise all the fields of the date. For example, if the hour is 24, it is
 set to 0 and the day is advanced. This allows fields to be changed naively,
 eg. adding 1000 to hours to advance the time by 1000 hours, and then
@@ -11180,7 +11216,7 @@ normalising the date.</p>
 </ul>
 <hr />
 <h3 id="format">format<a class="headerlink" href="#format" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/date/#L40">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L40">[Source]</a></span></p>
 <p>Format the time as for strftime.</p>
 <pre><code class="pony">fun box format(
   fmt: String val)
@@ -11198,7 +11234,7 @@ normalising the date.</p>
 <hr />
 <h2 id="private-functions">Private Functions<a class="headerlink" href="#private-functions" title="Permanent link">&para;</a></h2>
 <h3 id="_negative_to_zero">_negative_to_zero<a class="headerlink" href="#_negative_to_zero" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/date/#L49">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L49">[Source]</a></span></p>
 <pre><code class="pony">fun box _negative_to_zero(
   value: I64 val)
 : I64 val
@@ -11233,7 +11269,7 @@ normalising the date.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../time-Nanos/" title="primitive Nanos" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../time-Time/" title="primitive Time" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -11242,19 +11278,19 @@ normalising the date.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                primitive Nanos
+                primitive Time
               </span>
             </div>
           </a>
         
         
-          <a href="../time-_TimingWheel/" title="class _TimingWheel" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../time-Nanos/" title="primitive Nanos" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                class _TimingWheel
+                primitive Nanos
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
