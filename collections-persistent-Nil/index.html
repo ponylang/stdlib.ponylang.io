@@ -11306,7 +11306,7 @@
                 
                 
                 <h1 id="nil91a-a93">Nil[A: A]<a class="headerlink" href="#nil91a-a93" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L91">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L87">[Source]</a></span></p>
 <p>The empty list of As.</p>
 <pre><code class="pony">primitive val Nil[A: A] is
   ReadSeq[val-&gt;A] box
@@ -11319,7 +11319,7 @@
 <hr />
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L91">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L87">[Source]</a></span></p>
 <pre><code class="pony">new val create()
 : Nil[A] val^
 </code></pre>
@@ -11331,7 +11331,7 @@
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="size">size<a class="headerlink" href="#size" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L96">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L92">[Source]</a></span></p>
 <p>Returns the size of the list.</p>
 <pre><code class="pony">fun box size()
 : USize val
@@ -11343,7 +11343,7 @@
 </ul>
 <hr />
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L102">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L98">[Source]</a></span></p>
 <p>Returns the i-th element of the sequence. For the empty list this call will
 always error because any index will be out of bounds.</p>
 <pre><code class="pony">fun box apply(
@@ -11361,7 +11361,7 @@ always error because any index will be out of bounds.</p>
 </ul>
 <hr />
 <h3 id="values">values<a class="headerlink" href="#values" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L109">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L105">[Source]</a></span></p>
 <p>Returns an empty iterator over the elements of the empty list.</p>
 <pre><code class="pony">fun box values()
 : Iterator[val-&gt;A] ref^
@@ -11373,7 +11373,7 @@ always error because any index will be out of bounds.</p>
 </ul>
 <hr />
 <h3 id="is_empty">is_empty<a class="headerlink" href="#is_empty" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L118">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L114">[Source]</a></span></p>
 <p>Returns a Bool indicating if the list is empty.</p>
 <pre><code class="pony">fun box is_empty()
 : Bool val
@@ -11385,7 +11385,7 @@ always error because any index will be out of bounds.</p>
 </ul>
 <hr />
 <h3 id="is_non_empty">is_non_empty<a class="headerlink" href="#is_non_empty" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L124">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L120">[Source]</a></span></p>
 <p>Returns a Bool indicating if the list is non-empty.</p>
 <pre><code class="pony">fun box is_non_empty()
 : Bool val
@@ -11397,7 +11397,7 @@ always error because any index will be out of bounds.</p>
 </ul>
 <hr />
 <h3 id="head">head<a class="headerlink" href="#head" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L130">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L126">[Source]</a></span></p>
 <p>Returns an error, since Nil has no head.</p>
 <pre><code class="pony">fun box head()
 : val-&gt;A ?
@@ -11409,7 +11409,7 @@ always error because any index will be out of bounds.</p>
 </ul>
 <hr />
 <h3 id="tail">tail<a class="headerlink" href="#tail" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L136">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L132">[Source]</a></span></p>
 <p>Returns an error, since Nil has no tail.</p>
 <pre><code class="pony">fun box tail()
 : (Cons[A] val | Nil[A] val) ?
@@ -11421,7 +11421,7 @@ always error because any index will be out of bounds.</p>
 </ul>
 <hr />
 <h3 id="reverse">reverse<a class="headerlink" href="#reverse" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L142">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L138">[Source]</a></span></p>
 <p>The reverse of the empty list is the empty list.</p>
 <pre><code class="pony">fun box reverse()
 : Nil[A] val
@@ -11433,7 +11433,7 @@ always error because any index will be out of bounds.</p>
 </ul>
 <hr />
 <h3 id="prepend">prepend<a class="headerlink" href="#prepend" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L148">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L144">[Source]</a></span></p>
 <p>Builds a new list with an element added to the front of this list.</p>
 <pre><code class="pony">fun box prepend(
   a: val-&gt;A!)
@@ -11450,7 +11450,7 @@ always error because any index will be out of bounds.</p>
 </ul>
 <hr />
 <h3 id="concat">concat<a class="headerlink" href="#concat" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L154">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L150">[Source]</a></span></p>
 <p>The concatenation of any list l with the empty list is l.</p>
 <pre><code class="pony">fun box concat(
   l: (Cons[A] val | Nil[A] val))
@@ -11467,7 +11467,7 @@ always error because any index will be out of bounds.</p>
 </ul>
 <hr />
 <h3 id="map91b-b93">map[B: B]<a class="headerlink" href="#map91b-b93" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L160">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L156">[Source]</a></span></p>
 <p>Mapping a function from A to B over the empty list yields the
 empty list of Bs.</p>
 <pre><code class="pony">fun box map[B: B](
@@ -11485,7 +11485,7 @@ empty list of Bs.</p>
 </ul>
 <hr />
 <h3 id="flat_map91b-b93">flat_map[B: B]<a class="headerlink" href="#flat_map91b-b93" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L167">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L163">[Source]</a></span></p>
 <p>Flatmapping a function from A to B over the empty list yields the
 empty list of Bs.</p>
 <pre><code class="pony">fun box flat_map[B: B](
@@ -11503,7 +11503,7 @@ empty list of Bs.</p>
 </ul>
 <hr />
 <h3 id="for_each">for_each<a class="headerlink" href="#for_each" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L174">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L170">[Source]</a></span></p>
 <p>Applying a function to every member of the empty list is a no-op.</p>
 <pre><code class="pony">fun box for_each(
   f: {(val-&gt;A)}[A] box)
@@ -11520,7 +11520,7 @@ empty list of Bs.</p>
 </ul>
 <hr />
 <h3 id="filter">filter<a class="headerlink" href="#filter" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L180">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L176">[Source]</a></span></p>
 <p>Filtering the empty list yields the empty list.</p>
 <pre><code class="pony">fun box filter(
   f: {(val-&gt;A): Bool}[A] box)
@@ -11537,7 +11537,7 @@ empty list of Bs.</p>
 </ul>
 <hr />
 <h3 id="fold91b-b93">fold[B: B]<a class="headerlink" href="#fold91b-b93" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L186">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L182">[Source]</a></span></p>
 <p>Folding over the empty list yields the initial accumulator.</p>
 <pre><code class="pony">fun box fold[B: B](
   f: {(B, val-&gt;A): B^}[A, B] box,
@@ -11556,7 +11556,7 @@ empty list of Bs.</p>
 </ul>
 <hr />
 <h3 id="every">every<a class="headerlink" href="#every" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L192">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L188">[Source]</a></span></p>
 <p>Any predicate is true of every member of the empty list.</p>
 <pre><code class="pony">fun box every(
   f: {(val-&gt;A): Bool}[A] box)
@@ -11573,7 +11573,7 @@ empty list of Bs.</p>
 </ul>
 <hr />
 <h3 id="exists">exists<a class="headerlink" href="#exists" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L198">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L194">[Source]</a></span></p>
 <p>For any predicate, there is no element that satisfies it in the empty
 list.</p>
 <pre><code class="pony">fun box exists(
@@ -11591,7 +11591,7 @@ list.</p>
 </ul>
 <hr />
 <h3 id="partition">partition<a class="headerlink" href="#partition" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L205">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L201">[Source]</a></span></p>
 <p>The only partition of the empty list is two empty lists.</p>
 <pre><code class="pony">fun box partition(
   f: {(val-&gt;A): Bool}[A] box)
@@ -11608,7 +11608,7 @@ list.</p>
 </ul>
 <hr />
 <h3 id="drop">drop<a class="headerlink" href="#drop" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L211">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L207">[Source]</a></span></p>
 <p>There are no elements to drop from the empty list.</p>
 <pre><code class="pony">fun box drop(
   n: USize val)
@@ -11625,7 +11625,7 @@ list.</p>
 </ul>
 <hr />
 <h3 id="drop_while">drop_while<a class="headerlink" href="#drop_while" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L217">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L213">[Source]</a></span></p>
 <p>There are no elements to drop from the empty list.</p>
 <pre><code class="pony">fun box drop_while(
   f: {(val-&gt;A): Bool}[A] box)
@@ -11642,7 +11642,7 @@ list.</p>
 </ul>
 <hr />
 <h3 id="take">take<a class="headerlink" href="#take" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L223">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L219">[Source]</a></span></p>
 <p>There are no elements to take from the empty list.</p>
 <pre><code class="pony">fun box take(
   n: USize val)
@@ -11659,7 +11659,7 @@ list.</p>
 </ul>
 <hr />
 <h3 id="take_while">take_while<a class="headerlink" href="#take_while" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L229">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L225">[Source]</a></span></p>
 <p>There are no elements to take from the empty list.</p>
 <pre><code class="pony">fun box take_while(
   f: {(val-&gt;A): Bool}[A] box)
@@ -11676,7 +11676,7 @@ list.</p>
 </ul>
 <hr />
 <h3 id="contains91optional-t-a-haseq91a93-read93">contains[optional T: (A &amp; <a href="../builtin-HasEq">HasEq</a>[A!] #read)]<a class="headerlink" href="#contains91optional-t-a-haseq91a93-read93" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L235">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L231">[Source]</a></span></p>
 <pre><code class="pony">fun val contains[optional T: (A &amp; HasEq[A!] #read)](
   a: val-&gt;T)
 : Bool val
@@ -11692,7 +11692,7 @@ list.</p>
 </ul>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L96">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L92">[Source]</a></span></p>
 <pre><code class="pony">fun box eq(
   that: Nil[A] val)
 : Bool val
@@ -11708,7 +11708,7 @@ list.</p>
 </ul>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/list/#L96">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/list/#L92">[Source]</a></span></p>
 <pre><code class="pony">fun box ne(
   that: Nil[A] val)
 : Bool val
