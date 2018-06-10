@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-ponylang-material-0.1.0">
+      <meta name="generator" content="mkdocs-0.17.4, mkdocs-ponylang-material-0.1.0">
     
     
       
@@ -10964,6 +10964,12 @@ trait val Integer[A: Integer[A] val] is Real[A]
   fun op_xor(y: A): A =&gt; this xor y
   fun op_not(): A =&gt; not this
 
+  fun bit_reverse(): A
+    &quot;&quot;&quot;
+    Reverse the order of the bits within the integer.
+    For example, 0b11101101 (237) would return 0b10110111 (183).
+    &quot;&quot;&quot;
+
   fun bswap(): A
 
 trait val _SignedInteger[A: _SignedInteger[A, B] val,
@@ -11326,7 +11332,7 @@ type Int is (Signed | Unsigned)
     
       <script src="../../../assets/javascripts/application.044f2a1a.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.4",url:{base:"../../.."}})</script>
       
     
     

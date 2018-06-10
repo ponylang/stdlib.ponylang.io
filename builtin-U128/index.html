@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-ponylang-material-0.1.0">
+      <meta name="generator" content="mkdocs-0.17.4, mkdocs-ponylang-material-0.1.0">
     
     
       
@@ -622,6 +622,15 @@
             <li class="md-nav__item">
   <a href="#abs" title="abs" class="md-nav__link">
     abs
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+  <a href="#bit_reverse" title="bit_reverse" class="md-nav__link">
+    bit_reverse
   </a>
   
 </li>
@@ -11650,6 +11659,15 @@
         
           
             <li class="md-nav__item">
+  <a href="#bit_reverse" title="bit_reverse" class="md-nav__link">
+    bit_reverse
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
   <a href="#bswap" title="bswap" class="md-nav__link">
     bswap
   </a>
@@ -12398,7 +12416,7 @@
                 
                 
                 <h1 id="u128">U128<a class="headerlink" href="#u128" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L379">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L397">[Source]</a></span></p>
 <pre><code class="pony">primitive val U128 is
   _UnsignedInteger[U128 val] val
 </code></pre>
@@ -12410,7 +12428,7 @@
 <hr />
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L380">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L398">[Source]</a></span></p>
 <pre><code class="pony">new val create(
   value: U128 val)
 : U128 val^
@@ -12426,7 +12444,7 @@
 </ul>
 <hr />
 <h3 id="from91a-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-f32-val-f64-val-real91a93-val93">from[A: ((<a href="../builtin-I8">I8</a> val | <a href="../builtin-I16">I16</a> val | <a href="../builtin-I32">I32</a> val | <a href="../builtin-I64">I64</a> val | <a href="../builtin-I128">I128</a> val | <a href="../builtin-ILong">ILong</a> val | <a href="../builtin-ISize">ISize</a> val | <a href="../builtin-U8">U8</a> val | <a href="../builtin-U16">U16</a> val | <a href="../builtin-U32">U32</a> val | <a href="../builtin-U64">U64</a> val | <a href="../builtin-U128">U128</a> val | <a href="../builtin-ULong">ULong</a> val | <a href="../builtin-USize">USize</a> val | <a href="../builtin-F32">F32</a> val | <a href="../builtin-F64">F64</a> val) &amp; <a href="../builtin-Real">Real</a>[A] val)]<a class="headerlink" href="#from91a-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-f32-val-f64-val-real91a93-val93" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L381">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L399">[Source]</a></span></p>
 <pre><code class="pony">new val from[A: ((I8 val | I16 val | I32 val | 
     I64 val | I128 val | ILong val | 
     ISize val | U8 val | U16 val | 
@@ -12447,7 +12465,7 @@
 </ul>
 <hr />
 <h3 id="min_value">min_value<a class="headerlink" href="#min_value" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L383">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L401">[Source]</a></span></p>
 <pre><code class="pony">new val min_value()
 : U128 val^
 </code></pre>
@@ -12458,7 +12476,7 @@
 </ul>
 <hr />
 <h3 id="max_value">max_value<a class="headerlink" href="#max_value" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L384">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L402">[Source]</a></span></p>
 <pre><code class="pony">new val max_value()
 : U128 val^
 </code></pre>
@@ -12470,7 +12488,7 @@
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="next_pow2">next_pow2<a class="headerlink" href="#next_pow2" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L386">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L404">[Source]</a></span></p>
 <pre><code class="pony">fun box next_pow2()
 : U128 val
 </code></pre>
@@ -12481,7 +12499,7 @@
 </ul>
 <hr />
 <h3 id="abs">abs<a class="headerlink" href="#abs" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L390">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L408">[Source]</a></span></p>
 <pre><code class="pony">fun box abs()
 : U128 val
 </code></pre>
@@ -12491,9 +12509,9 @@
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
 <hr />
-<h3 id="bswap">bswap<a class="headerlink" href="#bswap" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L391">[Source]</a></span></p>
-<pre><code class="pony">fun box bswap()
+<h3 id="bit_reverse">bit_reverse<a class="headerlink" href="#bit_reverse" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L409">[Source]</a></span></p>
+<pre><code class="pony">fun box bit_reverse()
 : U128 val
 </code></pre>
 
@@ -12502,9 +12520,9 @@
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
 <hr />
-<h3 id="popcount">popcount<a class="headerlink" href="#popcount" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L392">[Source]</a></span></p>
-<pre><code class="pony">fun box popcount()
+<h3 id="bswap">bswap<a class="headerlink" href="#bswap" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L410">[Source]</a></span></p>
+<pre><code class="pony">fun box bswap()
 : U128 val
 </code></pre>
 
@@ -12513,9 +12531,9 @@
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
 <hr />
-<h3 id="clz">clz<a class="headerlink" href="#clz" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L393">[Source]</a></span></p>
-<pre><code class="pony">fun box clz()
+<h3 id="popcount">popcount<a class="headerlink" href="#popcount" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L411">[Source]</a></span></p>
+<pre><code class="pony">fun box popcount()
 : U128 val
 </code></pre>
 
@@ -12524,9 +12542,9 @@
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
 <hr />
-<h3 id="ctz">ctz<a class="headerlink" href="#ctz" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L394">[Source]</a></span></p>
-<pre><code class="pony">fun box ctz()
+<h3 id="clz">clz<a class="headerlink" href="#clz" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L412">[Source]</a></span></p>
+<pre><code class="pony">fun box clz()
 : U128 val
 </code></pre>
 
@@ -12535,11 +12553,9 @@
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
 <hr />
-<h3 id="clz_unsafe">clz_unsafe<a class="headerlink" href="#clz_unsafe" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L396">[Source]</a></span></p>
-<p>Unsafe operation.
-If this is 0, the result is undefined.</p>
-<pre><code class="pony">fun box clz_unsafe()
+<h3 id="ctz">ctz<a class="headerlink" href="#ctz" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L413">[Source]</a></span></p>
+<pre><code class="pony">fun box ctz()
 : U128 val
 </code></pre>
 
@@ -12548,11 +12564,11 @@ If this is 0, the result is undefined.</p>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
 <hr />
-<h3 id="ctz_unsafe">ctz_unsafe<a class="headerlink" href="#ctz_unsafe" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L403">[Source]</a></span></p>
+<h3 id="clz_unsafe">clz_unsafe<a class="headerlink" href="#clz_unsafe" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L415">[Source]</a></span></p>
 <p>Unsafe operation.
 If this is 0, the result is undefined.</p>
-<pre><code class="pony">fun box ctz_unsafe()
+<pre><code class="pony">fun box clz_unsafe()
 : U128 val
 </code></pre>
 
@@ -12561,9 +12577,11 @@ If this is 0, the result is undefined.</p>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
 <hr />
-<h3 id="bitwidth">bitwidth<a class="headerlink" href="#bitwidth" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L410">[Source]</a></span></p>
-<pre><code class="pony">fun box bitwidth()
+<h3 id="ctz_unsafe">ctz_unsafe<a class="headerlink" href="#ctz_unsafe" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L422">[Source]</a></span></p>
+<p>Unsafe operation.
+If this is 0, the result is undefined.</p>
+<pre><code class="pony">fun box ctz_unsafe()
 : U128 val
 </code></pre>
 
@@ -12572,8 +12590,19 @@ If this is 0, the result is undefined.</p>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
 <hr />
+<h3 id="bitwidth">bitwidth<a class="headerlink" href="#bitwidth" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L429">[Source]</a></span></p>
+<pre><code class="pony">fun box bitwidth()
+: U128 val
+</code></pre>
+
+<h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../builtin-U128">U128</a> val</li>
+</ul>
+<hr />
 <h3 id="min">min<a class="headerlink" href="#min" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L411">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L430">[Source]</a></span></p>
 <pre><code class="pony">fun box min(
   y: U128 val)
 : U128 val
@@ -12583,13 +12612,13 @@ If this is 0, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
+<h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
 <hr />
 <h3 id="max">max<a class="headerlink" href="#max" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L412">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L431">[Source]</a></span></p>
 <pre><code class="pony">fun box max(
   y: U128 val)
 : U128 val
@@ -12599,46 +12628,46 @@ If this is 0, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
+<h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
 <hr />
 <h3 id="hash">hash<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L414">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L433">[Source]</a></span></p>
 <pre><code class="pony">fun box hash()
 : USize val
 </code></pre>
 
-<h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
+<h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-USize">USize</a> val</li>
 </ul>
 <hr />
 <h3 id="hash64">hash64<a class="headerlink" href="#hash64" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L424">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L443">[Source]</a></span></p>
 <pre><code class="pony">fun box hash64()
 : U64 val
 </code></pre>
 
-<h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
+<h4 id="returns_17">Returns<a class="headerlink" href="#returns_17" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64">U64</a> val</li>
 </ul>
 <hr />
 <h3 id="string">string<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L427">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L446">[Source]</a></span></p>
 <pre><code class="pony">fun box string()
 : String iso^
 </code></pre>
 
-<h4 id="returns_17">Returns<a class="headerlink" href="#returns_17" title="Permanent link">&para;</a></h4>
+<h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String">String</a> iso^</li>
 </ul>
 <hr />
 <h3 id="mul">mul<a class="headerlink" href="#mul" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L430">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L449">[Source]</a></span></p>
 <pre><code class="pony">fun box mul(
   y: U128 val)
 : U128 val
@@ -12648,13 +12677,13 @@ If this is 0, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
+<h4 id="returns_19">Returns<a class="headerlink" href="#returns_19" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
 <hr />
 <h3 id="divmod">divmod<a class="headerlink" href="#divmod" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L459">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L478">[Source]</a></span></p>
 <pre><code class="pony">fun box divmod(
   y: U128 val)
 : (U128 val , U128 val)
@@ -12664,13 +12693,13 @@ If this is 0, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_19">Returns<a class="headerlink" href="#returns_19" title="Permanent link">&para;</a></h4>
+<h4 id="returns_20">Returns<a class="headerlink" href="#returns_20" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U128">U128</a> val , <a href="../builtin-U128">U128</a> val)</li>
 </ul>
 <hr />
 <h3 id="div">div<a class="headerlink" href="#div" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L489">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L508">[Source]</a></span></p>
 <pre><code class="pony">fun box div(
   y: U128 val)
 : U128 val
@@ -12680,13 +12709,13 @@ If this is 0, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_20">Returns<a class="headerlink" href="#returns_20" title="Permanent link">&para;</a></h4>
+<h4 id="returns_21">Returns<a class="headerlink" href="#returns_21" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
 <hr />
 <h3 id="mod">mod<a class="headerlink" href="#mod" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L497">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L516">[Source]</a></span></p>
 <pre><code class="pony">fun box mod(
   y: U128 val)
 : U128 val
@@ -12696,13 +12725,13 @@ If this is 0, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_21">Returns<a class="headerlink" href="#returns_21" title="Permanent link">&para;</a></h4>
+<h4 id="returns_22">Returns<a class="headerlink" href="#returns_22" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
 <hr />
 <h3 id="mul_unsafe">mul_unsafe<a class="headerlink" href="#mul_unsafe" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L505">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L524">[Source]</a></span></p>
 <p>Unsafe operation.
 If the operation overflows, the result is undefined.</p>
 <pre><code class="pony">fun box mul_unsafe(
@@ -12714,13 +12743,13 @@ If the operation overflows, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_22">Returns<a class="headerlink" href="#returns_22" title="Permanent link">&para;</a></h4>
+<h4 id="returns_23">Returns<a class="headerlink" href="#returns_23" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
 <hr />
 <h3 id="divmod_unsafe">divmod_unsafe<a class="headerlink" href="#divmod_unsafe" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L516">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L535">[Source]</a></span></p>
 <p>Unsafe operation.
 If y is 0, the result is undefined.
 If the operation overflows, the result is undefined.</p>
@@ -12733,13 +12762,13 @@ If the operation overflows, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_23">Returns<a class="headerlink" href="#returns_23" title="Permanent link">&para;</a></h4>
+<h4 id="returns_24">Returns<a class="headerlink" href="#returns_24" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U128">U128</a> val , <a href="../builtin-U128">U128</a> val)</li>
 </ul>
 <hr />
 <h3 id="div_unsafe">div_unsafe<a class="headerlink" href="#div_unsafe" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L528">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L547">[Source]</a></span></p>
 <p>Unsafe operation.
 If y is 0, the result is undefined.
 If the operation overflows, the result is undefined.</p>
@@ -12752,13 +12781,13 @@ If the operation overflows, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_24">Returns<a class="headerlink" href="#returns_24" title="Permanent link">&para;</a></h4>
+<h4 id="returns_25">Returns<a class="headerlink" href="#returns_25" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
 <hr />
 <h3 id="mod_unsafe">mod_unsafe<a class="headerlink" href="#mod_unsafe" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L540">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L559">[Source]</a></span></p>
 <p>Unsafe operation.
 If y is 0, the result is undefined.
 If the operation overflows, the result is undefined.</p>
@@ -12771,61 +12800,61 @@ If the operation overflows, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_25">Returns<a class="headerlink" href="#returns_25" title="Permanent link">&para;</a></h4>
+<h4 id="returns_26">Returns<a class="headerlink" href="#returns_26" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
 <hr />
 <h3 id="f32">f32<a class="headerlink" href="#f32" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L552">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L571">[Source]</a></span></p>
 <pre><code class="pony">fun box f32()
 : F32 val
 </code></pre>
 
-<h4 id="returns_26">Returns<a class="headerlink" href="#returns_26" title="Permanent link">&para;</a></h4>
+<h4 id="returns_27">Returns<a class="headerlink" href="#returns_27" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-F32">F32</a> val</li>
 </ul>
 <hr />
 <h3 id="f64">f64<a class="headerlink" href="#f64" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L560">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L579">[Source]</a></span></p>
 <pre><code class="pony">fun box f64()
 : F64 val
 </code></pre>
 
-<h4 id="returns_27">Returns<a class="headerlink" href="#returns_27" title="Permanent link">&para;</a></h4>
+<h4 id="returns_28">Returns<a class="headerlink" href="#returns_28" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-F64">F64</a> val</li>
 </ul>
 <hr />
 <h3 id="f32_unsafe">f32_unsafe<a class="headerlink" href="#f32_unsafe" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L594">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L613">[Source]</a></span></p>
 <p>Unsafe operation.
 If the value doesn't fit in the destination type, the result is undefined.</p>
 <pre><code class="pony">fun box f32_unsafe()
 : F32 val
 </code></pre>
 
-<h4 id="returns_28">Returns<a class="headerlink" href="#returns_28" title="Permanent link">&para;</a></h4>
+<h4 id="returns_29">Returns<a class="headerlink" href="#returns_29" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-F32">F32</a> val</li>
 </ul>
 <hr />
 <h3 id="f64_unsafe">f64_unsafe<a class="headerlink" href="#f64_unsafe" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L601">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L620">[Source]</a></span></p>
 <p>Unsafe operation.
 If the value doesn't fit in the destination type, the result is undefined.</p>
 <pre><code class="pony">fun box f64_unsafe()
 : F64 val
 </code></pre>
 
-<h4 id="returns_29">Returns<a class="headerlink" href="#returns_29" title="Permanent link">&para;</a></h4>
+<h4 id="returns_30">Returns<a class="headerlink" href="#returns_30" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-F64">F64</a> val</li>
 </ul>
 <hr />
 <h3 id="addc">addc<a class="headerlink" href="#addc" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L608">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L627">[Source]</a></span></p>
 <pre><code class="pony">fun box addc(
   y: U128 val)
 : (U128 val , Bool val)
@@ -12835,13 +12864,13 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_30">Returns<a class="headerlink" href="#returns_30" title="Permanent link">&para;</a></h4>
+<h4 id="returns_31">Returns<a class="headerlink" href="#returns_31" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U128">U128</a> val , <a href="../builtin-Bool">Bool</a> val)</li>
 </ul>
 <hr />
 <h3 id="subc">subc<a class="headerlink" href="#subc" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L616">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L635">[Source]</a></span></p>
 <pre><code class="pony">fun box subc(
   y: U128 val)
 : (U128 val , Bool val)
@@ -12851,13 +12880,13 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_31">Returns<a class="headerlink" href="#returns_31" title="Permanent link">&para;</a></h4>
+<h4 id="returns_32">Returns<a class="headerlink" href="#returns_32" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U128">U128</a> val , <a href="../builtin-Bool">Bool</a> val)</li>
 </ul>
 <hr />
 <h3 id="mulc">mulc<a class="headerlink" href="#mulc" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/unsigned/#L624">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/unsigned/#L643">[Source]</a></span></p>
 <pre><code class="pony">fun box mulc(
   y: U128 val)
 : (U128 val , Bool val)
@@ -12867,7 +12896,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_32">Returns<a class="headerlink" href="#returns_32" title="Permanent link">&para;</a></h4>
+<h4 id="returns_33">Returns<a class="headerlink" href="#returns_33" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U128">U128</a> val , <a href="../builtin-Bool">Bool</a> val)</li>
 </ul>
@@ -12882,7 +12911,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_33">Returns<a class="headerlink" href="#returns_33" title="Permanent link">&para;</a></h4>
+<h4 id="returns_34">Returns<a class="headerlink" href="#returns_34" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -12897,7 +12926,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_34">Returns<a class="headerlink" href="#returns_34" title="Permanent link">&para;</a></h4>
+<h4 id="returns_35">Returns<a class="headerlink" href="#returns_35" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -12912,7 +12941,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_35">Returns<a class="headerlink" href="#returns_35" title="Permanent link">&para;</a></h4>
+<h4 id="returns_36">Returns<a class="headerlink" href="#returns_36" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -12927,7 +12956,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_36">Returns<a class="headerlink" href="#returns_36" title="Permanent link">&para;</a></h4>
+<h4 id="returns_37">Returns<a class="headerlink" href="#returns_37" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -12942,7 +12971,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_37">Returns<a class="headerlink" href="#returns_37" title="Permanent link">&para;</a></h4>
+<h4 id="returns_38">Returns<a class="headerlink" href="#returns_38" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -12957,7 +12986,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_38">Returns<a class="headerlink" href="#returns_38" title="Permanent link">&para;</a></h4>
+<h4 id="returns_39">Returns<a class="headerlink" href="#returns_39" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -12972,7 +13001,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_39">Returns<a class="headerlink" href="#returns_39" title="Permanent link">&para;</a></h4>
+<h4 id="returns_40">Returns<a class="headerlink" href="#returns_40" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -12987,7 +13016,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_40">Returns<a class="headerlink" href="#returns_40" title="Permanent link">&para;</a></h4>
+<h4 id="returns_41">Returns<a class="headerlink" href="#returns_41" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -12997,7 +13026,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : U128 val
 </code></pre>
 
-<h4 id="returns_41">Returns<a class="headerlink" href="#returns_41" title="Permanent link">&para;</a></h4>
+<h4 id="returns_42">Returns<a class="headerlink" href="#returns_42" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -13012,7 +13041,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_42">Returns<a class="headerlink" href="#returns_42" title="Permanent link">&para;</a></h4>
+<h4 id="returns_43">Returns<a class="headerlink" href="#returns_43" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -13027,7 +13056,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_43">Returns<a class="headerlink" href="#returns_43" title="Permanent link">&para;</a></h4>
+<h4 id="returns_44">Returns<a class="headerlink" href="#returns_44" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -13042,7 +13071,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_44">Returns<a class="headerlink" href="#returns_44" title="Permanent link">&para;</a></h4>
+<h4 id="returns_45">Returns<a class="headerlink" href="#returns_45" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -13052,7 +13081,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : U128 val
 </code></pre>
 
-<h4 id="returns_45">Returns<a class="headerlink" href="#returns_45" title="Permanent link">&para;</a></h4>
+<h4 id="returns_46">Returns<a class="headerlink" href="#returns_46" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -13067,7 +13096,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_46">Returns<a class="headerlink" href="#returns_46" title="Permanent link">&para;</a></h4>
+<h4 id="returns_47">Returns<a class="headerlink" href="#returns_47" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -13082,7 +13111,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_47">Returns<a class="headerlink" href="#returns_47" title="Permanent link">&para;</a></h4>
+<h4 id="returns_48">Returns<a class="headerlink" href="#returns_48" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -13092,7 +13121,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : U128 val
 </code></pre>
 
-<h4 id="returns_48">Returns<a class="headerlink" href="#returns_48" title="Permanent link">&para;</a></h4>
+<h4 id="returns_49">Returns<a class="headerlink" href="#returns_49" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -13107,7 +13136,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_49">Returns<a class="headerlink" href="#returns_49" title="Permanent link">&para;</a></h4>
+<h4 id="returns_50">Returns<a class="headerlink" href="#returns_50" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
@@ -13122,7 +13151,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_50">Returns<a class="headerlink" href="#returns_50" title="Permanent link">&para;</a></h4>
+<h4 id="returns_51">Returns<a class="headerlink" href="#returns_51" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
@@ -13137,7 +13166,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_51">Returns<a class="headerlink" href="#returns_51" title="Permanent link">&para;</a></h4>
+<h4 id="returns_52">Returns<a class="headerlink" href="#returns_52" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
@@ -13152,7 +13181,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_52">Returns<a class="headerlink" href="#returns_52" title="Permanent link">&para;</a></h4>
+<h4 id="returns_53">Returns<a class="headerlink" href="#returns_53" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
@@ -13167,7 +13196,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_53">Returns<a class="headerlink" href="#returns_53" title="Permanent link">&para;</a></h4>
+<h4 id="returns_54">Returns<a class="headerlink" href="#returns_54" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
@@ -13182,7 +13211,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>y: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_54">Returns<a class="headerlink" href="#returns_54" title="Permanent link">&para;</a></h4>
+<h4 id="returns_55">Returns<a class="headerlink" href="#returns_55" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
@@ -13192,7 +13221,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : I8 val
 </code></pre>
 
-<h4 id="returns_55">Returns<a class="headerlink" href="#returns_55" title="Permanent link">&para;</a></h4>
+<h4 id="returns_56">Returns<a class="headerlink" href="#returns_56" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I8">I8</a> val</li>
 </ul>
@@ -13202,7 +13231,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : I16 val
 </code></pre>
 
-<h4 id="returns_56">Returns<a class="headerlink" href="#returns_56" title="Permanent link">&para;</a></h4>
+<h4 id="returns_57">Returns<a class="headerlink" href="#returns_57" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I16">I16</a> val</li>
 </ul>
@@ -13212,7 +13241,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : I32 val
 </code></pre>
 
-<h4 id="returns_57">Returns<a class="headerlink" href="#returns_57" title="Permanent link">&para;</a></h4>
+<h4 id="returns_58">Returns<a class="headerlink" href="#returns_58" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I32">I32</a> val</li>
 </ul>
@@ -13222,7 +13251,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : I64 val
 </code></pre>
 
-<h4 id="returns_58">Returns<a class="headerlink" href="#returns_58" title="Permanent link">&para;</a></h4>
+<h4 id="returns_59">Returns<a class="headerlink" href="#returns_59" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I64">I64</a> val</li>
 </ul>
@@ -13232,7 +13261,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : I128 val
 </code></pre>
 
-<h4 id="returns_59">Returns<a class="headerlink" href="#returns_59" title="Permanent link">&para;</a></h4>
+<h4 id="returns_60">Returns<a class="headerlink" href="#returns_60" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I128">I128</a> val</li>
 </ul>
@@ -13242,7 +13271,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : ILong val
 </code></pre>
 
-<h4 id="returns_60">Returns<a class="headerlink" href="#returns_60" title="Permanent link">&para;</a></h4>
+<h4 id="returns_61">Returns<a class="headerlink" href="#returns_61" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ILong">ILong</a> val</li>
 </ul>
@@ -13252,7 +13281,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : ISize val
 </code></pre>
 
-<h4 id="returns_61">Returns<a class="headerlink" href="#returns_61" title="Permanent link">&para;</a></h4>
+<h4 id="returns_62">Returns<a class="headerlink" href="#returns_62" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ISize">ISize</a> val</li>
 </ul>
@@ -13262,7 +13291,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : U8 val
 </code></pre>
 
-<h4 id="returns_62">Returns<a class="headerlink" href="#returns_62" title="Permanent link">&para;</a></h4>
+<h4 id="returns_63">Returns<a class="headerlink" href="#returns_63" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U8">U8</a> val</li>
 </ul>
@@ -13272,7 +13301,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : U16 val
 </code></pre>
 
-<h4 id="returns_63">Returns<a class="headerlink" href="#returns_63" title="Permanent link">&para;</a></h4>
+<h4 id="returns_64">Returns<a class="headerlink" href="#returns_64" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U16">U16</a> val</li>
 </ul>
@@ -13282,7 +13311,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : U32 val
 </code></pre>
 
-<h4 id="returns_64">Returns<a class="headerlink" href="#returns_64" title="Permanent link">&para;</a></h4>
+<h4 id="returns_65">Returns<a class="headerlink" href="#returns_65" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32">U32</a> val</li>
 </ul>
@@ -13292,7 +13321,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : U64 val
 </code></pre>
 
-<h4 id="returns_65">Returns<a class="headerlink" href="#returns_65" title="Permanent link">&para;</a></h4>
+<h4 id="returns_66">Returns<a class="headerlink" href="#returns_66" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64">U64</a> val</li>
 </ul>
@@ -13302,7 +13331,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : U128 val
 </code></pre>
 
-<h4 id="returns_66">Returns<a class="headerlink" href="#returns_66" title="Permanent link">&para;</a></h4>
+<h4 id="returns_67">Returns<a class="headerlink" href="#returns_67" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -13312,7 +13341,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : ULong val
 </code></pre>
 
-<h4 id="returns_67">Returns<a class="headerlink" href="#returns_67" title="Permanent link">&para;</a></h4>
+<h4 id="returns_68">Returns<a class="headerlink" href="#returns_68" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ULong">ULong</a> val</li>
 </ul>
@@ -13322,7 +13351,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : USize val
 </code></pre>
 
-<h4 id="returns_68">Returns<a class="headerlink" href="#returns_68" title="Permanent link">&para;</a></h4>
+<h4 id="returns_69">Returns<a class="headerlink" href="#returns_69" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-USize">USize</a> val</li>
 </ul>
@@ -13332,7 +13361,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : I8 val
 </code></pre>
 
-<h4 id="returns_69">Returns<a class="headerlink" href="#returns_69" title="Permanent link">&para;</a></h4>
+<h4 id="returns_70">Returns<a class="headerlink" href="#returns_70" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I8">I8</a> val</li>
 </ul>
@@ -13342,7 +13371,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : I16 val
 </code></pre>
 
-<h4 id="returns_70">Returns<a class="headerlink" href="#returns_70" title="Permanent link">&para;</a></h4>
+<h4 id="returns_71">Returns<a class="headerlink" href="#returns_71" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I16">I16</a> val</li>
 </ul>
@@ -13352,7 +13381,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : I32 val
 </code></pre>
 
-<h4 id="returns_71">Returns<a class="headerlink" href="#returns_71" title="Permanent link">&para;</a></h4>
+<h4 id="returns_72">Returns<a class="headerlink" href="#returns_72" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I32">I32</a> val</li>
 </ul>
@@ -13362,7 +13391,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : I64 val
 </code></pre>
 
-<h4 id="returns_72">Returns<a class="headerlink" href="#returns_72" title="Permanent link">&para;</a></h4>
+<h4 id="returns_73">Returns<a class="headerlink" href="#returns_73" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I64">I64</a> val</li>
 </ul>
@@ -13372,7 +13401,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : I128 val
 </code></pre>
 
-<h4 id="returns_73">Returns<a class="headerlink" href="#returns_73" title="Permanent link">&para;</a></h4>
+<h4 id="returns_74">Returns<a class="headerlink" href="#returns_74" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I128">I128</a> val</li>
 </ul>
@@ -13382,7 +13411,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : ILong val
 </code></pre>
 
-<h4 id="returns_74">Returns<a class="headerlink" href="#returns_74" title="Permanent link">&para;</a></h4>
+<h4 id="returns_75">Returns<a class="headerlink" href="#returns_75" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ILong">ILong</a> val</li>
 </ul>
@@ -13392,7 +13421,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : ISize val
 </code></pre>
 
-<h4 id="returns_75">Returns<a class="headerlink" href="#returns_75" title="Permanent link">&para;</a></h4>
+<h4 id="returns_76">Returns<a class="headerlink" href="#returns_76" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ISize">ISize</a> val</li>
 </ul>
@@ -13402,7 +13431,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : U8 val
 </code></pre>
 
-<h4 id="returns_76">Returns<a class="headerlink" href="#returns_76" title="Permanent link">&para;</a></h4>
+<h4 id="returns_77">Returns<a class="headerlink" href="#returns_77" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U8">U8</a> val</li>
 </ul>
@@ -13412,7 +13441,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : U16 val
 </code></pre>
 
-<h4 id="returns_77">Returns<a class="headerlink" href="#returns_77" title="Permanent link">&para;</a></h4>
+<h4 id="returns_78">Returns<a class="headerlink" href="#returns_78" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U16">U16</a> val</li>
 </ul>
@@ -13422,7 +13451,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : U32 val
 </code></pre>
 
-<h4 id="returns_78">Returns<a class="headerlink" href="#returns_78" title="Permanent link">&para;</a></h4>
+<h4 id="returns_79">Returns<a class="headerlink" href="#returns_79" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32">U32</a> val</li>
 </ul>
@@ -13432,7 +13461,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : U64 val
 </code></pre>
 
-<h4 id="returns_79">Returns<a class="headerlink" href="#returns_79" title="Permanent link">&para;</a></h4>
+<h4 id="returns_80">Returns<a class="headerlink" href="#returns_80" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64">U64</a> val</li>
 </ul>
@@ -13442,7 +13471,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : U128 val
 </code></pre>
 
-<h4 id="returns_80">Returns<a class="headerlink" href="#returns_80" title="Permanent link">&para;</a></h4>
+<h4 id="returns_81">Returns<a class="headerlink" href="#returns_81" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -13452,7 +13481,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : ULong val
 </code></pre>
 
-<h4 id="returns_81">Returns<a class="headerlink" href="#returns_81" title="Permanent link">&para;</a></h4>
+<h4 id="returns_82">Returns<a class="headerlink" href="#returns_82" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ULong">ULong</a> val</li>
 </ul>
@@ -13462,7 +13491,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : USize val
 </code></pre>
 
-<h4 id="returns_82">Returns<a class="headerlink" href="#returns_82" title="Permanent link">&para;</a></h4>
+<h4 id="returns_83">Returns<a class="headerlink" href="#returns_83" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-USize">USize</a> val</li>
 </ul>
@@ -13477,7 +13506,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 <ul>
 <li>that: <a href="../builtin-U128">U128</a> val</li>
 </ul>
-<h4 id="returns_83">Returns<a class="headerlink" href="#returns_83" title="Permanent link">&para;</a></h4>
+<h4 id="returns_84">Returns<a class="headerlink" href="#returns_84" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-Less">Less</a> val | <a href="../builtin-Equal">Equal</a> val | <a href="../builtin-Greater">Greater</a> val)</li>
 </ul>
@@ -13488,7 +13517,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 : U128 val
 </code></pre>
 
-<h4 id="returns_84">Returns<a class="headerlink" href="#returns_84" title="Permanent link">&para;</a></h4>
+<h4 id="returns_85">Returns<a class="headerlink" href="#returns_85" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128">U128</a> val</li>
 </ul>
@@ -13566,7 +13595,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
     
       <script src="../assets/javascripts/application.044f2a1a.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:".."}})</script>
+      <script>app.initialize({version:"0.17.4",url:{base:".."}})</script>
       
     
     

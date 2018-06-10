@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-ponylang-material-0.1.0">
+      <meta name="generator" content="mkdocs-0.17.4, mkdocs-ponylang-material-0.1.0">
     
     
       
@@ -11356,7 +11356,7 @@ class iso _TestFileWritev is UnitTest
       let path = &quot;tmp.writev&quot;
       let filepath = FilePath(h.env.root as AmbientAuth, path)?
       with file = CreateFile(filepath) as File do
-        file.writev(wb.done())
+        h.assert_true(file.writev(wb.done()))
       end
       with file2 = CreateFile(filepath) as File do
         let fileline1 = file2.line()?
@@ -11472,7 +11472,7 @@ class iso _TestFileWritevLarge is UnitTest
       let path = &quot;tmp.writevlarge&quot;
       let filepath = FilePath(h.env.root as AmbientAuth, path)?
       with file = CreateFile(filepath) as File do
-        file.writev(wb.done())
+        h.assert_true(file.writev(wb.done()))
       end
       with file2 = CreateFile(filepath) as File do
         count = 0
@@ -11480,6 +11480,10 @@ class iso _TestFileWritevLarge is UnitTest
           let fileline1 = file2.line()?
           h.assert_eq[String](count.string(), consume fileline1)
           count = count + 1
+          h.log(count.string())
+        end
+        try
+          h.fail(&quot;expected end of file, but got line: &quot; + file2.line()?)
         end
       end
       filepath.remove()
@@ -11589,7 +11593,7 @@ class iso _TestFileFlush is UnitTest
     
       <script src="../../../assets/javascripts/application.044f2a1a.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.4",url:{base:"../../.."}})</script>
       
     
     

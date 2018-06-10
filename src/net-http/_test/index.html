@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-ponylang-material-0.1.0">
+      <meta name="generator" content="mkdocs-0.17.4, mkdocs-ponylang-material-0.1.0">
     
     
       
@@ -11228,10 +11228,11 @@ primitive _FixedResponseHTTPServerNotify
               reader.append(consume data)
               while true do
                 var blank = false
-                try 
+                try
                   let l = reader.line()?
-                  h.log(&quot;received line: &quot; + l)
-                  if l.size() == 0 then
+                  let l_size = l.size()
+                  h.log(&quot;received line: &quot; + consume l)
+                  if l_size == 0 then
                     // Write the response.
                     nr = nr + 1
                     for r in response.values() do
@@ -11349,7 +11350,7 @@ primitive _FixedResponseHTTPServerNotify
     
       <script src="../../../assets/javascripts/application.044f2a1a.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.4",url:{base:"../../.."}})</script>
       
     
     

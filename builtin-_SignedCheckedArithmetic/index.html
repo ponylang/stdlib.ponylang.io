@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-ponylang-material-0.1.0">
+      <meta name="generator" content="mkdocs-0.17.4, mkdocs-ponylang-material-0.1.0">
     
     
       
@@ -10922,13 +10922,13 @@
                 
                 
                 <h1 id="_signedcheckedarithmetic">_SignedCheckedArithmetic<a class="headerlink" href="#_signedcheckedarithmetic" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/builtin/signed/#L534">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/signed/#L553">[Source]</a></span></p>
 <pre><code class="pony">primitive val _SignedCheckedArithmetic
 </code></pre>
 
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/signed/#L534">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/signed/#L553">[Source]</a></span></p>
 <pre><code class="pony">new val create()
 : _SignedCheckedArithmetic val^
 </code></pre>
@@ -10940,7 +10940,7 @@
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/signed/#L535">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/signed/#L554">[Source]</a></span></p>
 <pre><code class="pony">fun box eq(
   that: _SignedCheckedArithmetic val)
 : Bool val
@@ -10956,7 +10956,7 @@
 </ul>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/signed/#L535">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/signed/#L554">[Source]</a></span></p>
 <pre><code class="pony">fun box ne(
   that: _SignedCheckedArithmetic val)
 : Bool val
@@ -10973,7 +10973,7 @@
 <hr />
 <h2 id="private-functions">Private Functions<a class="headerlink" href="#private-functions" title="Permanent link">&para;</a></h2>
 <h3 id="_mulc91u-_unsignedinteger91u93-val-t-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-_signedinteger91t-u93-val93">_mulc[U: <a href="../builtin-_UnsignedInteger">_UnsignedInteger</a>[U] val, T: ((<a href="../builtin-I8">I8</a> val | <a href="../builtin-I16">I16</a> val | <a href="../builtin-I32">I32</a> val | <a href="../builtin-I64">I64</a> val | <a href="../builtin-I128">I128</a> val | <a href="../builtin-ILong">ILong</a> val | <a href="../builtin-ISize">ISize</a> val) &amp; <a href="../builtin-_SignedInteger">_SignedInteger</a>[T, U] val)]<a class="headerlink" href="#_mulc91u-_unsignedinteger91u93-val-t-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-_signedinteger91t-u93-val93" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/signed/#L535">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/signed/#L554">[Source]</a></span></p>
 <p>basically exactly what the runtime functions __muloti4, mulodi4 etc. are doing
 and roughly as fast as these.</p>
 <p>Additionally on (at least some) 32 bit systems, the runtime function for checked 64 bit integer addition __mulodi4 is not available.
@@ -11071,7 +11071,7 @@ So we shouldn't use: <code>@"llvm.smul.with.overflow.i64"[(I64, Bool)](this, y)<
     
       <script src="../assets/javascripts/application.044f2a1a.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:".."}})</script>
+      <script>app.initialize({version:"0.17.4",url:{base:".."}})</script>
       
     
     

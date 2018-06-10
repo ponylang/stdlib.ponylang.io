@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-ponylang-material-0.1.0">
+      <meta name="generator" content="mkdocs-0.17.4, mkdocs-ponylang-material-0.1.0">
     
     
       
@@ -10713,6 +10713,7 @@
   new max_value() =&gt; 0x7F
 
   fun abs(): U8 =&gt; if this &lt; 0 then (-this).u8() else this.u8() end
+  fun bit_reverse(): I8 =&gt; @&quot;llvm.bitreverse.i8&quot;[I8](this)
   fun bswap(): I8 =&gt; this
   fun popcount(): U8 =&gt; @&quot;llvm.ctpop.i8&quot;[U8](this)
   fun clz(): U8 =&gt; @&quot;llvm.ctlz.i8&quot;[U8](this, false)
@@ -10754,6 +10755,7 @@ primitive I16 is _SignedInteger[I16, U16]
   new max_value() =&gt; 0x7FFF
 
   fun abs(): U16 =&gt; if this &lt; 0 then (-this).u16() else this.u16() end
+  fun bit_reverse(): I16 =&gt; @&quot;llvm.bitreverse.i16&quot;[I16](this)
   fun bswap(): I16 =&gt; @&quot;llvm.bswap.i16&quot;[I16](this)
   fun popcount(): U16 =&gt; @&quot;llvm.ctpop.i16&quot;[U16](this)
   fun clz(): U16 =&gt; @&quot;llvm.ctlz.i16&quot;[U16](this, false)
@@ -10795,6 +10797,7 @@ primitive I32 is _SignedInteger[I32, U32]
   new max_value() =&gt; 0x7FFF_FFFF
 
   fun abs(): U32 =&gt; if this &lt; 0 then (-this).u32() else this.u32() end
+  fun bit_reverse(): I32 =&gt; @&quot;llvm.bitreverse.i32&quot;[I32](this)
   fun bswap(): I32 =&gt; @&quot;llvm.bswap.i32&quot;[I32](this)
   fun popcount(): U32 =&gt; @&quot;llvm.ctpop.i32&quot;[U32](this)
   fun clz(): U32 =&gt; @&quot;llvm.ctlz.i32&quot;[U32](this, false)
@@ -10836,6 +10839,7 @@ primitive I64 is _SignedInteger[I64, U64]
   new max_value() =&gt; 0x7FFF_FFFF_FFFF_FFFF
 
   fun abs(): U64 =&gt; if this &lt; 0 then (-this).u64() else this.u64() end
+  fun bit_reverse(): I64 =&gt; @&quot;llvm.bitreverse.i64&quot;[I64](this)
   fun bswap(): I64 =&gt; @&quot;llvm.bswap.i64&quot;[I64](this)
   fun popcount(): U64 =&gt; @&quot;llvm.ctpop.i64&quot;[U64](this)
   fun clz(): U64 =&gt; @&quot;llvm.ctlz.i64&quot;[U64](this, false)
@@ -10890,6 +10894,13 @@ primitive ILong is _SignedInteger[ILong, ULong]
     end
 
   fun abs(): ULong =&gt; if this &lt; 0 then (-this).ulong() else this.ulong() end
+
+  fun bit_reverse(): ILong =&gt;
+    ifdef ilp32 or llp64 then
+      @&quot;llvm.bitreverse.i32&quot;[ILong](this)
+    else
+      @&quot;llvm.bitreverse.i64&quot;[ILong](this)
+    end
 
   fun bswap(): ILong =&gt;
     ifdef ilp32 or llp64 then
@@ -10979,6 +10990,13 @@ primitive ISize is _SignedInteger[ISize, USize]
 
   fun abs(): USize =&gt; if this &lt; 0 then (-this).usize() else this.usize() end
 
+  fun bit_reverse(): ISize =&gt;
+    ifdef ilp32 then
+      @&quot;llvm.bitreverse.i32&quot;[ISize](this)
+    else
+      @&quot;llvm.bitreverse.i64&quot;[ISize](this)
+    end
+
   fun bswap(): ISize =&gt;
     ifdef ilp32 then
       @&quot;llvm.bswap.i32&quot;[ISize](this)
@@ -11054,6 +11072,7 @@ primitive I128 is _SignedInteger[I128, U128]
   new max_value() =&gt; 0x7FFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF
 
   fun abs(): U128 =&gt; if this &lt; 0 then (-this).u128() else this.u128() end
+  fun bit_reverse(): I128 =&gt; @&quot;llvm.bitreverse.i128&quot;[I128](this)
   fun bswap(): I128 =&gt; @&quot;llvm.bswap.i128&quot;[I128](this)
   fun popcount(): U128 =&gt; @&quot;llvm.ctpop.i128&quot;[U128](this)
   fun clz(): U128 =&gt; @&quot;llvm.ctlz.i128&quot;[U128](this, false)
@@ -11349,7 +11368,7 @@ primitive _SignedCheckedArithmetic
     
       <script src="../../../assets/javascripts/application.044f2a1a.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.4",url:{base:"../../.."}})</script>
       
     
     

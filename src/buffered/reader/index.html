@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-ponylang-material-0.1.0">
+      <meta name="generator" content="mkdocs-0.17.4, mkdocs-ponylang-material-0.1.0">
     
     
       
@@ -10876,7 +10876,7 @@ class Reader
     u8()?
     b
 
-  fun ref line(): String ? =&gt;
+  fun ref line(): String iso^ ? =&gt;
     &quot;&quot;&quot;
     Return a \n or \r\n terminated line as a string. The newline is not
     included in the returned string, but it is removed from the network buffer.
@@ -10909,7 +10909,7 @@ class Reader
     out.truncate(len -
       if (len &gt;= 2) and (out.at_offset(-2)? == '\r') then 2 else 1 end)
 
-    out
+    consume out
 
   fun ref u8(): U8 ? =&gt;
     &quot;&quot;&quot;
@@ -11376,7 +11376,7 @@ class Reader
     
       <script src="../../../assets/javascripts/application.044f2a1a.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.4",url:{base:"../../.."}})</script>
       
     
     
