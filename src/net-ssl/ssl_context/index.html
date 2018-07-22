@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-0.17.4, mkdocs-ponylang-material-0.1.0">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-ponylang-material-0.1.0">
     
     
       
@@ -5174,6 +5174,126 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../net-ssl-ALPNProtocolNotify/" title="interface ALPNProtocolNotify" class="md-nav__link">
+      interface ALPNProtocolNotify
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../net-ssl-ALPNProtocolName/" title="type ALPNProtocolName" class="md-nav__link">
+      type ALPNProtocolName
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../net-ssl-ALPNFatal/" title="primitive ALPNFatal" class="md-nav__link">
+      primitive ALPNFatal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../net-ssl-ALPNNoAck/" title="primitive ALPNNoAck" class="md-nav__link">
+      primitive ALPNNoAck
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../net-ssl-ALPNWarning/" title="primitive ALPNWarning" class="md-nav__link">
+      primitive ALPNWarning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../net-ssl-ALPNMatchResult/" title="type ALPNMatchResult" class="md-nav__link">
+      type ALPNMatchResult
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../net-ssl-ALPNProtocolResolver/" title="interface ALPNProtocolResolver" class="md-nav__link">
+      interface ALPNProtocolResolver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../net-ssl-ALPNStandardProtocolResolver/" title="class ALPNStandardProtocolResolver" class="md-nav__link">
+      class ALPNStandardProtocolResolver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../net-ssl-_ALPNMatchResultCode/" title="primitive _ALPNMatchResultCode" class="md-nav__link">
+      primitive _ALPNMatchResultCode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../net-ssl-_ALPNProtocolList/" title="primitive _ALPNProtocolList" class="md-nav__link">
+      primitive _ALPNProtocolList
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../net-ssl-_SslCtrlSetMinProtoVersion/" title="primitive _SslCtrlSetMinProtoVersion" class="md-nav__link">
       primitive _SslCtrlSetMinProtoVersion
     </a>
@@ -8675,6 +8795,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../alpn/" title="alpn.pony" class="md-nav__link">
+      alpn.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../_ssl_versions/" title="_ssl_versions.pony" class="md-nav__link">
       _ssl_versions.pony
     </a>
@@ -9510,6 +9642,70 @@ class val SSLContext
     &quot;&quot;&quot;
     @SSL_CTX_ctrl(_ctx, _SslCtrlGetMaxProtoVersion.apply(), 0, Pointer[None])
 
+  fun ref alpn_set_resolver(resolver: ALPNProtocolResolver box): Bool =&gt;
+    &quot;&quot;&quot;
+    Use `resolver` to choose the protocol to be selected for incomming connections.
+
+    Returns true on success
+    Requires OpenSSL &gt;= 1.0.2
+    &quot;&quot;&quot;
+    ifdef &quot;openssl_1.1.0&quot; then
+      @SSL_CTX_set_alpn_select_cb[None](_ctx, addressof SSLContext._alpn_select_cb, resolver)
+      return true
+    end
+
+    false
+
+  fun ref alpn_set_client_protocols(protocols: Array[String] box): Bool =&gt;
+    &quot;&quot;&quot;
+    Configures the SSLContext to advertise the protocol names defined in `protocols` when connecting to a server
+    protocol names must have a size of 1 to 255
+
+    Returns true on success
+    Requires OpenSSL &gt;= 1.0.2
+    &quot;&quot;&quot;
+    ifdef &quot;openssl_1.1.0&quot; then
+      try
+        let proto_list = _ALPNProtocolList.from_array(protocols)?
+        let result = @SSL_CTX_set_alpn_protos[I32](_ctx, proto_list.cpointer(), proto_list.size())
+        return result == 0
+      end
+    end
+
+    false
+
+  fun @_alpn_select_cb(
+    ssl: Pointer[_SSL] tag,
+    out: Pointer[Pointer[U8] tag] tag,
+    outlen: Pointer[U8] tag,
+    inptr: Pointer[U8] box,
+    inlen: U32 val,
+    resolver: ALPNProtocolResolver box)
+    : I32 val
+  =&gt;
+    let proto_arr_str = String.copy_cpointer(inptr, USize.from[U32](inlen))
+    try
+      let proto_arr = _ALPNProtocolList.to_array(proto_arr_str)?
+
+      match resolver.resolve(proto_arr)
+      | let matched: String val =&gt;
+      var size = matched.size()
+      if (size &gt; 0) and (size &lt;= 255) then
+        var ptr = matched.cpointer()
+        @memcpy[None](out, addressof ptr, size.bitwidth() / 8)
+        @memcpy[None](outlen, addressof size, USize(1))
+        _ALPNMatchResultCode.ok()
+      else
+        _ALPNMatchResultCode.fatal()
+      end
+      | ALPNNoAck =&gt; _ALPNMatchResultCode.no_ack()
+      | ALPNWarning =&gt; _ALPNMatchResultCode.warning()
+      | ALPNFatal =&gt; _ALPNMatchResultCode.fatal()
+      end
+    else
+      _ALPNMatchResultCode.fatal()
+    end
+
   fun ref allow_tls_v1(state: Bool) =&gt;
     &quot;&quot;&quot;
     Allow TLS v1. Defaults to false.
@@ -9640,7 +9836,7 @@ class val SSLContext
     
       <script src="../../../assets/javascripts/application.044f2a1a.js"></script>
       
-      <script>app.initialize({version:"0.17.4",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"0.17.5",url:{base:"../../.."}})</script>
       
     
     

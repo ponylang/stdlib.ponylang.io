@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-0.17.4, mkdocs-ponylang-material-0.1.0">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-ponylang-material-0.1.0">
     
     
       
@@ -5231,6 +5231,15 @@
         
           
             <li class="md-nav__item">
+  <a href="#alpn_selected" title="alpn_selected" class="md-nav__link">
+    alpn_selected
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
   <a href="#state" title="state" class="md-nav__link">
     state
   </a>
@@ -5339,6 +5348,126 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../net-ssl-ALPNProtocolNotify/" title="interface ALPNProtocolNotify" class="md-nav__link">
+      interface ALPNProtocolNotify
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../net-ssl-ALPNProtocolName/" title="type ALPNProtocolName" class="md-nav__link">
+      type ALPNProtocolName
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../net-ssl-ALPNFatal/" title="primitive ALPNFatal" class="md-nav__link">
+      primitive ALPNFatal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../net-ssl-ALPNNoAck/" title="primitive ALPNNoAck" class="md-nav__link">
+      primitive ALPNNoAck
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../net-ssl-ALPNWarning/" title="primitive ALPNWarning" class="md-nav__link">
+      primitive ALPNWarning
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../net-ssl-ALPNMatchResult/" title="type ALPNMatchResult" class="md-nav__link">
+      type ALPNMatchResult
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../net-ssl-ALPNProtocolResolver/" title="interface ALPNProtocolResolver" class="md-nav__link">
+      interface ALPNProtocolResolver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../net-ssl-ALPNStandardProtocolResolver/" title="class ALPNStandardProtocolResolver" class="md-nav__link">
+      class ALPNStandardProtocolResolver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../net-ssl-_ALPNMatchResultCode/" title="primitive _ALPNMatchResultCode" class="md-nav__link">
+      primitive _ALPNMatchResultCode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../net-ssl-_ALPNProtocolList/" title="primitive _ALPNProtocolList" class="md-nav__link">
+      primitive _ALPNProtocolList
+    </a>
   </li>
 
         
@@ -8840,6 +8969,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../src/net-ssl/alpn/" title="alpn.pony" class="md-nav__link">
+      alpn.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../src/net-ssl/_ssl_versions/" title="_ssl_versions.pony" class="md-nav__link">
       _ssl_versions.pony
     </a>
@@ -9484,6 +9625,15 @@
         
           
             <li class="md-nav__item">
+  <a href="#alpn_selected" title="alpn_selected" class="md-nav__link">
+    alpn_selected
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
   <a href="#state" title="state" class="md-nav__link">
     state
   </a>
@@ -9633,22 +9783,34 @@ to any transport layer.</p>
 </ul>
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
-<h3 id="state">state<a class="headerlink" href="#state" title="Permanent link">&para;</a></h3>
+<h3 id="alpn_selected">alpn_selected<a class="headerlink" href="#alpn_selected" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net-ssl/ssl/#L74">[Source]</a></span></p>
+<p>Get the protocol identifier negotiated via ALPN</p>
+<pre><code class="pony">fun box alpn_selected()
+: (String val | None val)
+</code></pre>
+
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>(<a href="../builtin-String">String</a> val | <a href="../builtin-None">None</a> val)</li>
+</ul>
+<hr />
+<h3 id="state">state<a class="headerlink" href="#state" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/net-ssl/ssl/#L89">[Source]</a></span></p>
 <p>Returns the SSL session state.</p>
 <pre><code class="pony">fun box state()
 : (SSLHandshake val | SSLAuthFail val | SSLReady val | 
     SSLError val)
 </code></pre>
 
-<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../net-ssl-SSLHandshake">SSLHandshake</a> val | <a href="../net-ssl-SSLAuthFail">SSLAuthFail</a> val | <a href="../net-ssl-SSLReady">SSLReady</a> val | 
     <a href="../net-ssl-SSLError">SSLError</a> val)</li>
 </ul>
 <hr />
 <h3 id="read">read<a class="headerlink" href="#read" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net-ssl/ssl/#L80">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net-ssl/ssl/#L95">[Source]</a></span></p>
 <p>Returns unencrypted bytes to be passed to the application. If <code>expect</code> is
 non-zero, the number of bytes returned will be exactly <code>expect</code>. If no data
 (or less than <code>expect</code> bytes) is available, this returns None.</p>
@@ -9661,13 +9823,13 @@ non-zero, the number of bytes returned will be exactly <code>expect</code>. If n
 <ul>
 <li>expect: <a href="../builtin-USize">USize</a> val = seq</li>
 </ul>
-<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-Array">Array</a>[<a href="../builtin-U8">U8</a> val] iso^ | <a href="../builtin-None">None</a> val)</li>
 </ul>
 <hr />
 <h3 id="write">write<a class="headerlink" href="#write" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net-ssl/ssl/#L138">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net-ssl/ssl/#L153">[Source]</a></span></p>
 <p>When application data is sent, add it to the SSL session. Raises an error
 if the handshake is not complete.</p>
 <pre><code class="pony">fun ref write(
@@ -9679,13 +9841,13 @@ if the handshake is not complete.</p>
 <ul>
 <li>data: (<a href="../builtin-String">String</a> val | <a href="../builtin-Array">Array</a>[<a href="../builtin-U8">U8</a> val] val)</li>
 </ul>
-<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None">None</a> val ?</li>
 </ul>
 <hr />
 <h3 id="receive">receive<a class="headerlink" href="#receive" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net-ssl/ssl/#L149">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net-ssl/ssl/#L164">[Source]</a></span></p>
 <p>When data is received, add it to the SSL session.</p>
 <pre><code class="pony">fun ref receive(
   data: (String val | Array[U8 val] val))
@@ -9696,53 +9858,40 @@ if the handshake is not complete.</p>
 <ul>
 <li>data: (<a href="../builtin-String">String</a> val | <a href="../builtin-Array">Array</a>[<a href="../builtin-U8">U8</a> val] val)</li>
 </ul>
-<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None">None</a> val</li>
 </ul>
 <hr />
 <h3 id="can_send">can_send<a class="headerlink" href="#can_send" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net-ssl/ssl/#L168">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net-ssl/ssl/#L183">[Source]</a></span></p>
 <p>Returns true if there are encrypted bytes to be passed to the destination.</p>
 <pre><code class="pony">fun ref can_send()
 : Bool val
 </code></pre>
 
-<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool">Bool</a> val</li>
 </ul>
 <hr />
 <h3 id="send">send<a class="headerlink" href="#send" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net-ssl/ssl/#L174">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net-ssl/ssl/#L189">[Source]</a></span></p>
 <p>Returns encrypted bytes to be passed to the destination. Raises an error
 if no data is available.</p>
 <pre><code class="pony">fun ref send()
 : Array[U8 val] iso^ ?
 </code></pre>
 
-<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
+<h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Array">Array</a>[<a href="../builtin-U8">U8</a> val] iso^ ?</li>
 </ul>
 <hr />
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net-ssl/ssl/#L186">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net-ssl/ssl/#L201">[Source]</a></span></p>
 <p>Dispose of the session.</p>
 <pre><code class="pony">fun ref dispose()
-: None val
-</code></pre>
-
-<h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
-<ul>
-<li><a href="../builtin-None">None</a> val</li>
-</ul>
-<hr />
-<h2 id="private-functions">Private Functions<a class="headerlink" href="#private-functions" title="Permanent link">&para;</a></h2>
-<h3 id="_final">_final<a class="headerlink" href="#_final" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net-ssl/ssl/#L195">[Source]</a></span></p>
-<p>Dispose of the session.</p>
-<pre><code class="pony">fun box _final()
 : None val
 </code></pre>
 
@@ -9751,14 +9900,27 @@ if no data is available.</p>
 <li><a href="../builtin-None">None</a> val</li>
 </ul>
 <hr />
+<h2 id="private-functions">Private Functions<a class="headerlink" href="#private-functions" title="Permanent link">&para;</a></h2>
+<h3 id="_final">_final<a class="headerlink" href="#_final" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/net-ssl/ssl/#L210">[Source]</a></span></p>
+<p>Dispose of the session.</p>
+<pre><code class="pony">fun box _final()
+: None val
+</code></pre>
+
+<h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../builtin-None">None</a> val</li>
+</ul>
+<hr />
 <h3 id="_verify_hostname">_verify_hostname<a class="headerlink" href="#_verify_hostname" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net-ssl/ssl/#L203">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net-ssl/ssl/#L218">[Source]</a></span></p>
 <p>Verify that the certificate is valid for the given hostname.</p>
 <pre><code class="pony">fun ref _verify_hostname()
 : None val
 </code></pre>
 
-<h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
+<h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None">None</a> val</li>
 </ul>
@@ -9798,13 +9960,13 @@ if no data is available.</p>
           </a>
         
         
-          <a href="../net-ssl-_SslCtrlSetMinProtoVersion/" title="primitive _SslCtrlSetMinProtoVersion" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../net-ssl-ALPNProtocolNotify/" title="interface ALPNProtocolNotify" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                primitive _SslCtrlSetMinProtoVersion
+                interface ALPNProtocolNotify
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -9836,7 +9998,7 @@ if no data is available.</p>
     
       <script src="../assets/javascripts/application.044f2a1a.js"></script>
       
-      <script>app.initialize({version:"0.17.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"0.17.5",url:{base:".."}})</script>
       
     
     
