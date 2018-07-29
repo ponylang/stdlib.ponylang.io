@@ -9614,7 +9614,7 @@
                 
                 
                 <h1 id="arrayvalues91a-a-b-array91a93-read93">ArrayValues[A: A, B: <a href="../builtin-Array">Array</a>[A] #read]<a class="headerlink" href="#arrayvalues91a-a-b-array91a93-read93" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/builtin/array/#L695">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L705">[Source]</a></span></p>
 <pre><code class="pony">class ref ArrayValues[A: A, B: Array[A] #read] is
   Iterator[B-&gt;A] ref
 </code></pre>
@@ -9626,7 +9626,7 @@
 <hr />
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L699">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L709">[Source]</a></span></p>
 <pre><code class="pony">new ref create(
   array: B)
 : ArrayValues[A, B] ref^
@@ -9643,7 +9643,7 @@
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="has_next">has_next<a class="headerlink" href="#has_next" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L703">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L713">[Source]</a></span></p>
 <pre><code class="pony">fun box has_next()
 : Bool val
 </code></pre>
@@ -9654,7 +9654,7 @@
 </ul>
 <hr />
 <h3 id="next">next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L706">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L716">[Source]</a></span></p>
 <pre><code class="pony">fun ref next()
 : B-&gt;A ?
 </code></pre>
@@ -9665,7 +9665,7 @@
 </ul>
 <hr />
 <h3 id="rewind">rewind<a class="headerlink" href="#rewind" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L709">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L719">[Source]</a></span></p>
 <pre><code class="pony">fun ref rewind()
 : ArrayValues[A, B] ref
 </code></pre>
