@@ -36,7 +36,7 @@
     
     
       
-        <title>type _MapCollisions - Pony Standard Library</title>
+        <title>class _MapCollisions - Pony Standard Library</title>
       
     
     
@@ -96,7 +96,7 @@
                 Pony Standard Library
               </span>
               <span class="md-header-nav__topic">
-                type _MapCollisions
+                class _MapCollisions
               </span>
             
           
@@ -1272,6 +1272,42 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../builtin-_PartialArithmetic/" title="trait _PartialArithmetic" class="md-nav__link">
+      trait _PartialArithmetic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../builtin-_UnsignedPartialArithmetic/" title="primitive _UnsignedPartialArithmetic" class="md-nav__link">
+      primitive _UnsignedPartialArithmetic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../builtin-_SignedPartialArithmetic/" title="primitive _SignedPartialArithmetic" class="md-nav__link">
+      primitive _SignedPartialArithmetic
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2360,6 +2396,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../collections-persistent-_MapIter/" title="interface _MapIter" class="md-nav__link">
+      interface _MapIter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../collections-persistent-MapPairs/" title="class MapPairs" class="md-nav__link">
       class MapPairs
     </a>
@@ -2442,6 +2490,66 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../collections-persistent-_Map/" title="type _Map" class="md-nav__link">
+      type _Map
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../collections-persistent-CollisionHash/" title="primitive CollisionHash" class="md-nav__link">
+      primitive CollisionHash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../collections-persistent-_OpMapUpdate/" title="class _OpMapUpdate" class="md-nav__link">
+      class _OpMapUpdate
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../collections-persistent-_OpMapRemove/" title="class _OpMapRemove" class="md-nav__link">
+      class _OpMapRemove
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../collections-persistent-_MapEntry/" title="class _MapEntry" class="md-nav__link">
+      class _MapEntry
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -2453,11 +2561,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        type _MapCollisions
+        class _MapCollisions
       </label>
     
-    <a href="./" title="type _MapCollisions" class="md-nav__link md-nav__link--active">
-      type _MapCollisions
+    <a href="./" title="class _MapCollisions" class="md-nav__link md-nav__link--active">
+      class _MapCollisions
     </a>
     
       
@@ -2474,9 +2582,117 @@
       
         
           <li class="md-nav__item">
-  <a href="#type-alias-for" title="Type Alias For" class="md-nav__link">
-    Type Alias For
+  <a href="#constructors" title="Constructors" class="md-nav__link">
+    Constructors
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          
+            <li class="md-nav__item">
+  <a href="#create" title="create" class="md-nav__link">
+    create
+  </a>
+  
+</li>
+          
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      
+        
+          <li class="md-nav__item">
+  <a href="#public-fields" title="Public fields" class="md-nav__link">
+    Public fields
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          
+            <li class="md-nav__item">
+  <a href="#embed-bins-array91array91_mapentry91k-v-h93-val93-trn93-trn" title="embed bins: Array[Array[_MapEntry[K, V, H] val] trn] trn" class="md-nav__link">
+    embed bins: Array[Array[_MapEntry[K, V, H] val] trn] trn
+  </a>
+  
+</li>
+          
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      
+        
+          <li class="md-nav__item">
+  <a href="#public-functions" title="Public Functions" class="md-nav__link">
+    Public Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          
+            <li class="md-nav__item">
+  <a href="#clone" title="clone" class="md-nav__link">
+    clone
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+  <a href="#apply" title="apply" class="md-nav__link">
+    apply
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+  <a href="#remove" title="remove" class="md-nav__link">
+    remove
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+  <a href="#pull_last" title="pull_last" class="md-nav__link">
+    pull_last
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+  <a href="#update_mut" title="update_mut" class="md-nav__link">
+    update_mut
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+  <a href="#iter" title="iter" class="md-nav__link">
+    iter
+  </a>
+  
+</li>
+          
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2498,8 +2714,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../collections-persistent-_MapLeaf/" title="type _MapLeaf" class="md-nav__link">
-      type _MapLeaf
+    <a href="../collections-persistent-_MapNode/" title="type _MapNode" class="md-nav__link">
+      type _MapNode
     </a>
   </li>
 
@@ -2510,20 +2726,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../collections-persistent-_MapEntry/" title="type _MapEntry" class="md-nav__link">
-      type _MapEntry
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../collections-persistent-_MapNode/" title="class _MapNode" class="md-nav__link">
-      class _MapNode
+    <a href="../collections-persistent-_MapSubNodes/" title="class _MapSubNodes" class="md-nav__link">
+      class _MapSubNodes
     </a>
   </li>
 
@@ -3038,6 +3242,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../files-FileLines/" title="class FileLines" class="md-nav__link">
+      class FileLines
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../files-FileInfo/" title="class FileInfo" class="md-nav__link">
       class FileInfo
     </a>
@@ -3400,18 +3616,6 @@
   <li class="md-nav__item">
     <a href="../files-File/" title="class File" class="md-nav__link">
       class File
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../files-FileLines/" title="class FileLines" class="md-nav__link">
-      class FileLines
     </a>
   </li>
 
@@ -7946,6 +8150,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../src/builtin/_partial_arithmetic/" title="_partial_arithmetic.pony" class="md-nav__link">
+      _partial_arithmetic.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../src/bureaucracy/registrar/" title="registrar.pony" class="md-nav__link">
       registrar.pony
     </a>
@@ -8246,6 +8462,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../src/collections-persistent/_test/" title="_test.pony" class="md-nav__link">
+      _test.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../src/collections-persistent/_map_node/" title="_map_node.pony" class="md-nav__link">
       _map_node.pony
     </a>
@@ -8368,6 +8596,18 @@
   <li class="md-nav__item">
     <a href="../src/files/file_mode/" title="file_mode.pony" class="md-nav__link">
       file_mode.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../src/files/file_lines/" title="file_lines.pony" class="md-nav__link">
+      file_lines.pony
     </a>
   </li>
 
@@ -9457,9 +9697,117 @@
       
         
           <li class="md-nav__item">
-  <a href="#type-alias-for" title="Type Alias For" class="md-nav__link">
-    Type Alias For
+  <a href="#constructors" title="Constructors" class="md-nav__link">
+    Constructors
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          
+            <li class="md-nav__item">
+  <a href="#create" title="create" class="md-nav__link">
+    create
+  </a>
+  
+</li>
+          
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      
+        
+          <li class="md-nav__item">
+  <a href="#public-fields" title="Public fields" class="md-nav__link">
+    Public fields
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          
+            <li class="md-nav__item">
+  <a href="#embed-bins-array91array91_mapentry91k-v-h93-val93-trn93-trn" title="embed bins: Array[Array[_MapEntry[K, V, H] val] trn] trn" class="md-nav__link">
+    embed bins: Array[Array[_MapEntry[K, V, H] val] trn] trn
+  </a>
+  
+</li>
+          
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      
+        
+          <li class="md-nav__item">
+  <a href="#public-functions" title="Public Functions" class="md-nav__link">
+    Public Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          
+            <li class="md-nav__item">
+  <a href="#clone" title="clone" class="md-nav__link">
+    clone
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+  <a href="#apply" title="apply" class="md-nav__link">
+    apply
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+  <a href="#remove" title="remove" class="md-nav__link">
+    remove
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+  <a href="#pull_last" title="pull_last" class="md-nav__link">
+    pull_last
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+  <a href="#update_mut" title="update_mut" class="md-nav__link">
+    update_mut
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+  <a href="#iter" title="iter" class="md-nav__link">
+    iter
+  </a>
+  
+</li>
+          
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -9482,14 +9830,112 @@
                 
                 
                 <h1 id="_mapcollisions91k-any-share-v-any-share-h-hashfunction91k93-val93">_MapCollisions[K: <a href="../builtin-Any">Any</a> #share, V: <a href="../builtin-Any">Any</a> #share, H: <a href="../collections-HashFunction">HashFunction</a>[K] val]<a class="headerlink" href="#_mapcollisions91k-any-share-v-any-share-h-hashfunction91k93-val93" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/collections-persistent/_map_node/#L3">[Source]</a></span></p>
-<pre><code class="pony">type _MapCollisions[K: Any #share, V: Any #share, H: HashFunction[K] val] is
-  Array[(K , V)] val
+<p><span class="source-link"><a href="../src/collections-persistent/_map_node/#L14">[Source]</a></span></p>
+<pre><code class="pony">class val _MapCollisions[K: Any #share, V: Any #share, H: HashFunction[K] val]
 </code></pre>
 
-<h4 id="type-alias-for">Type Alias For<a class="headerlink" href="#type-alias-for" title="Permanent link">&para;</a></h4>
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
+<h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/collections-persistent/_map_node/#L19">[Source]</a></span></p>
+<pre><code class="pony">new trn create()
+: _MapCollisions[K, V, H] trn^
+</code></pre>
+
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
-<li><a href="../builtin-Array">Array</a>[(K , V)] val</li>
+<li><a href="../collections-persistent-_MapCollisions">_MapCollisions</a>[K, V, H] trn^</li>
+</ul>
+<hr />
+<h2 id="public-fields">Public fields<a class="headerlink" href="#public-fields" title="Permanent link">&para;</a></h2>
+<h3 id="embed-bins-array91array91_mapentry91k-v-h93-val93-trn93-trn">embed bins: <a href="../builtin-Array">Array</a>[<a href="../builtin-Array">Array</a>[<a href="../collections-persistent-_MapEntry">_MapEntry</a>[K, V, H] val] trn] trn<a class="headerlink" href="#embed-bins-array91array91_mapentry91k-v-h93-val93-trn93-trn" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/collections-persistent/_map_node/#L17">[Source]</a></span></p>
+<hr />
+<h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
+<h3 id="clone">clone<a class="headerlink" href="#clone" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/collections-persistent/_map_node/#L23">[Source]</a></span></p>
+<pre><code class="pony">fun val clone()
+: _MapCollisions[K, V, H] trn^
+</code></pre>
+
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../collections-persistent-_MapCollisions">_MapCollisions</a>[K, V, H] trn^</li>
+</ul>
+<hr />
+<h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/collections-persistent/_map_node/#L34">[Source]</a></span></p>
+<pre><code class="pony">fun box apply(
+  hash: U32 val,
+  k: K)
+: (V | None val) ?
+</code></pre>
+
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li>hash: <a href="../builtin-U32">U32</a> val</li>
+<li>k: K</li>
+</ul>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>(V | <a href="../builtin-None">None</a> val) ?</li>
+</ul>
+<hr />
+<h3 id="remove">remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/collections-persistent/_map_node/#L41">[Source]</a></span></p>
+<pre><code class="pony">fun val remove(
+  hash: U32 val,
+  k: K)
+: _MapCollisions[K, V, H] val ?
+</code></pre>
+
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>hash: <a href="../builtin-U32">U32</a> val</li>
+<li>k: K</li>
+</ul>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../collections-persistent-_MapCollisions">_MapCollisions</a>[K, V, H] val ?</li>
+</ul>
+<hr />
+<h3 id="pull_last">pull_last<a class="headerlink" href="#pull_last" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/collections-persistent/_map_node/#L55">[Source]</a></span></p>
+<pre><code class="pony">fun val pull_last()
+: _MapEntry[K, V, H] val ?
+</code></pre>
+
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../collections-persistent-_MapEntry">_MapEntry</a>[K, V, H] val ?</li>
+</ul>
+<hr />
+<h3 id="update_mut">update_mut<a class="headerlink" href="#update_mut" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/collections-persistent/_map_node/#L61">[Source]</a></span></p>
+<pre><code class="pony">fun ref update_mut(
+  hash: U32 val,
+  entry: _MapEntry[K, V, H] val)
+: Bool val ?
+</code></pre>
+
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>hash: <a href="../builtin-U32">U32</a> val</li>
+<li>entry: <a href="../collections-persistent-_MapEntry">_MapEntry</a>[K, V, H] val</li>
+</ul>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../builtin-Bool">Bool</a> val ?</li>
+</ul>
+<hr />
+<h3 id="iter">iter<a class="headerlink" href="#iter" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/collections-persistent/_map_node/#L73">[Source]</a></span></p>
+<pre><code class="pony">fun val iter()
+: _MapIter[K, V, H] ref
+</code></pre>
+
+<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../collections-persistent-_MapIter">_MapIter</a>[K, V, H] ref</li>
 </ul>
 <hr />
                 
@@ -9512,7 +9958,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../collections-persistent-_VecNode/" title="class _VecNode" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../collections-persistent-_MapEntry/" title="class _MapEntry" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -9521,19 +9967,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                class _VecNode
+                class _MapEntry
               </span>
             </div>
           </a>
         
         
-          <a href="../collections-persistent-_MapLeaf/" title="type _MapLeaf" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../collections-persistent-_MapNode/" title="type _MapNode" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                type _MapLeaf
+                type _MapNode
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
