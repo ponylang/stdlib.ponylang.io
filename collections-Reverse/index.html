@@ -10011,7 +10011,27 @@
                 
                 <h1 id="reverse91optional-a-real91a93-val-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-f32-val-f64-val93">Reverse[optional A: (<a href="../builtin-Real/">Real</a>[A] val &amp; (<a href="../builtin-I8/">I8</a> val | <a href="../builtin-I16/">I16</a> val | <a href="../builtin-I32/">I32</a> val | <a href="../builtin-I64/">I64</a> val | <a href="../builtin-I128/">I128</a> val | <a href="../builtin-ILong/">ILong</a> val | <a href="../builtin-ISize/">ISize</a> val | <a href="../builtin-U8/">U8</a> val | <a href="../builtin-U16/">U16</a> val | <a href="../builtin-U32/">U32</a> val | <a href="../builtin-U64/">U64</a> val | <a href="../builtin-U128/">U128</a> val | <a href="../builtin-ULong/">ULong</a> val | <a href="../builtin-USize/">USize</a> val | <a href="../builtin-F32/">F32</a> val | <a href="../builtin-F64/">F64</a> val))]<a class="headerlink" href="#reverse91optional-a-real91a93-val-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-f32-val-f64-val93" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/collections/reverse/#L1">[Source]</a></span></p>
-<p>Produces [max, min].</p>
+<p>Produces a decreasing range [max, min] with step <code>dec</code>, for any <code>Number</code> type.
+(i.e. the reverse of <code>Range</code>)</p>
+<p>Example program: </p>
+<pre><code class="pony">use &quot;collections&quot;
+actor Main
+  new create(env: Env) =&gt;
+    for e in Reverse(10, 2, 2) do
+      env.out.print(e.string())
+    end 
+</code></pre>
+
+<p>Which outputs: </p>
+<pre><code>10
+8
+6
+4
+2
+</code></pre>
+
+<p>If <code>dec</code> is 0, produces an infinite series of <code>max</code>.</p>
+<p>If <code>dec</code> is negative, produces a range with <code>max</code> as the only value.</p>
 <pre><code class="pony">class ref Reverse[optional A: (Real[A] val &amp; (I8 val | I16 val | I32 val | 
     I64 val | I128 val | ILong val | 
     ISize val | U8 val | U16 val | 
@@ -10028,7 +10048,7 @@
 <hr />
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/reverse/#L10">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/reverse/#L36">[Source]</a></span></p>
 <pre><code class="pony">new ref create(
   max: A,
   min: A,
@@ -10049,7 +10069,7 @@
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="has_next">has_next<a class="headerlink" href="#has_next" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/reverse/#L16">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/reverse/#L42">[Source]</a></span></p>
 <pre><code class="pony">fun box has_next()
 : Bool val
 </code></pre>
@@ -10060,7 +10080,7 @@
 </ul>
 <hr />
 <h3 id="next">next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/reverse/#L19">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/reverse/#L45">[Source]</a></span></p>
 <pre><code class="pony">fun ref next()
 : A
 </code></pre>
@@ -10071,7 +10091,7 @@
 </ul>
 <hr />
 <h3 id="rewind">rewind<a class="headerlink" href="#rewind" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/reverse/#L26">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/reverse/#L52">[Source]</a></span></p>
 <pre><code class="pony">fun ref rewind()
 : None val
 </code></pre>

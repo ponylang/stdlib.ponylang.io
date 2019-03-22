@@ -9918,23 +9918,23 @@
 runtime backpressure system. The goal of the backpressure system is to prevent
 an actor's mailbox from growing at an unbounded rate.</p>
 <p>At a high level, the runtime backpressure system works by adjusting the
-scheduling of actors. When an actor becomes overload, the Pony runtime will
+scheduling of actors. When an actor becomes overloaded, the Pony runtime will
 deprioritize scheduling the actors that are sending to it. This change in
 scheduling allows the overloaded actor to catch up.</p>
 <p>The Pony runtime can detect overloading based on message queue size. However,
 the overloading of some types of actors is harder to detect. Let's take the
 case of actors like <code>TCPConnection</code>.</p>
 <p><code>TCPConnection</code> manages a socket for sending data to and receiving data from
-another process. TCP connections can experience backpressure from the outside
+another process. TCP connections can experience backpressure from outside
 our Pony program that prevents them from sending. There's no way for the Pony
-runtime to detect this so, intervention by the programmer is needed.</p>
+runtime to detect this, so intervention by the programmer is needed.</p>
 <p><code>TCPConnection</code> is a single example. This Backpressure package exists to allow
 a programmer to indicate to the runtime that a given actor is experiencing
 pressure and sending messages to it should be adjusted accordingly.</p>
 <p>Any actor that needs to be able to tell the runtime to "send me messages
 slower" due to external conditions can do so via this package. Additionally,
-actors that maintain there own internal queues of any sort, say for buffering,
-are also prime candidates to for using this package. If an actor's internal
+actors that maintain their own internal queues of any sort, say for buffering,
+are also prime candidates for using this package. If an actor's internal
 queue grows too large, it can call <code>Backpressure.apply</code> to let the runtime know
 it is under pressure.</p>
 <h2 id="example-program">Example program<a class="headerlink" href="#example-program" title="Permanent link">&para;</a></h2>
@@ -9988,7 +9988,7 @@ corresponding call to <code>Backpressure.release</code>. Authorization via the
 <code>ApplyReleaseBackpressureAuth</code> capability is required to apply or release
 backpressure. By requiring that the caller have a token to apply or release a
 backpressure, rouge 3rd party library code can't run wild and unknowingly
-mess with the runtime.</p>
+interfere with the runtime.</p>
 <h2 id="public-types">Public Types<a class="headerlink" href="#public-types" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../backpressure-BackpressureAuth/">type BackpressureAuth</a></li>
