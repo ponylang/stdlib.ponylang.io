@@ -6998,6 +6998,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../random-XorOshiro128StarStar/" title="class XorOshiro128StarStar" class="md-nav__link">
+      class XorOshiro128StarStar
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../random-SplitMix64/" title="class SplitMix64" class="md-nav__link">
+      class SplitMix64
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../random-Rand/" title="type Rand" class="md-nav__link">
       type Rand
     </a>
@@ -9494,6 +9518,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../splitmix64/" title="splitmix64.pony" class="md-nav__link">
+      splitmix64.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -9941,11 +9977,63 @@ trait Random
     &quot;&quot;&quot;
     usize().isize()
 
-  fun ref int[N: (Unsigned val &amp; Real[N] val) = U64](n: N): N =&gt;
+  fun ref int_fp_mult[N: (Unsigned val &amp; Real[N] val) = U64](n: N): N =&gt;
     &quot;&quot;&quot;
     A random integer in [0, n)
     &quot;&quot;&quot;
     N.from[F64](real() * n.f64())
+
+  fun ref int[N: (Unsigned val &amp; Real[N] val) = U64](n: N): N =&gt;
+    &quot;&quot;&quot;
+    A random integer in [0, n)
+
+    Uses fixed-point inversion if platform supports native 128 bit operations
+    otherwise uses floating-point multiplication.
+    &quot;&quot;&quot;
+    ifdef native128 then
+      // TODO: once we have specialized generic functions, chose smaller int
+      // types for smaller N.
+      N.from[U64](((next().u128() * n.u128()) &gt;&gt; 64).u64())
+    else
+      int_fp_mult[N](n)
+    end
+
+
+  fun ref int_unbiased[N: (Unsigned val &amp; Real[N] val) = U64](n: N): N =&gt;
+    &quot;&quot;&quot;
+    A random integer in [0, n)
+
+    Not biased with small values of `n` like `int`.
+    &quot;&quot;&quot;
+    N.from[U64](_u64_unbiased(U64.from[N](n)))
+
+  fun ref _u64_unbiased(range: U64): U64 =&gt;
+    &quot;&quot;&quot;
+    Generates a U64 in the range `[0, n)`
+    while avoiding bias.
+
+    See:
+    - https://arxiv.org/abs/1805.10941
+    - http://www.pcg-random.org/posts/bounded-rands.html
+    &quot;&quot;&quot;
+    var x: U64 = next()
+    var m: U128 = x.u128() * range.u128()
+    var l: U64 = m.u64()
+    if l &lt; range then
+      var t: U64 = -range
+      if t &gt;= range then
+        t = t - range
+        if t &gt;= range then
+          t = t % range
+        end
+      end
+      while (l &lt; t) do
+        x = u64()
+        m = x.u128() * range.u128()
+        l = m.u64()
+      end
+    end
+    (m &gt;&gt; 64).u64()
 
   fun ref real(): F64 =&gt;
     &quot;&quot;&quot;
@@ -9986,7 +10074,7 @@ trait Random
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../xoroshiro/" title="xoroshiro.pony" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../splitmix64/" title="splitmix64.pony" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -9995,7 +10083,7 @@ trait Random
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                xoroshiro.pony
+                splitmix64.pony
               </span>
             </div>
           </a>

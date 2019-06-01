@@ -6998,6 +6998,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../random-XorOshiro128StarStar/" title="class XorOshiro128StarStar" class="md-nav__link">
+      class XorOshiro128StarStar
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../random-SplitMix64/" title="class SplitMix64" class="md-nav__link">
+      class SplitMix64
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../random-Rand/" title="type Rand" class="md-nav__link">
       type Rand
     </a>
@@ -9503,6 +9527,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../random/splitmix64/" title="splitmix64.pony" class="md-nav__link">
+      splitmix64.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../random/random/" title="random.pony" class="md-nav__link">
       random.pony
     </a>
@@ -10400,7 +10436,7 @@ actor TCPConnection
     ifdef windows then
       if len == 0 then
         // IOCP reported a failed write on this chunk. Non-graceful shutdown.
-        _hard_close()
+        hard_close()
         return
       end
 
@@ -10453,7 +10489,7 @@ actor TCPConnection
           end
         else
           // Non-graceful shutdown on error.
-          _hard_close()
+          hard_close()
         end
       end
     end
@@ -10586,7 +10622,7 @@ actor TCPConnection
           _read_buf.cpointer(_read_len),
           _read_buf.size() - _read_len) ?
       else
-        _hard_close()
+        hard_close()
       end
     end
 
@@ -10666,7 +10702,7 @@ actor TCPConnection
       _notify.connecting(this, _connect_count)
     else
       _notify.connect_failed(this)
-      _hard_close()
+      hard_close()
     end
 
   fun ref close() =&gt;
@@ -10680,7 +10716,7 @@ actor TCPConnection
       _close()
     else
       if _muted then
-        _hard_close()
+        hard_close()
       else
         _close()
       end
@@ -10714,7 +10750,7 @@ actor TCPConnection
     end
 
     if _connected and _shutdown and _shutdown_peer then
-      _hard_close()
+      hard_close()
     end
 
     ifdef windows then
@@ -10725,7 +10761,7 @@ actor TCPConnection
       end
     end
 
-  fun ref _hard_close() =&gt;
+  fun ref hard_close() =&gt;
     &quot;&quot;&quot;
     When an error happens, do a non-graceful close.
     &quot;&quot;&quot;

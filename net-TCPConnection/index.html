@@ -5003,6 +5003,15 @@
         
           
             <li class="md-nav__item">
+    <a href="#hard_close" title="hard_close" class="md-nav__link">
+    hard_close
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
     <a href="#getsockopt" title="getsockopt" class="md-nav__link">
     getsockopt
   </a>
@@ -5233,15 +5242,6 @@
             <li class="md-nav__item">
     <a href="#_try_shutdown" title="_try_shutdown" class="md-nav__link">
     _try_shutdown
-  </a>
-  
-</li>
-          
-        
-          
-            <li class="md-nav__item">
-    <a href="#_hard_close" title="_hard_close" class="md-nav__link">
-    _hard_close
   </a>
   
 </li>
@@ -7531,6 +7531,30 @@
   <li class="md-nav__item">
     <a href="../random-XorOshiro128Plus/" title="class XorOshiro128Plus" class="md-nav__link">
       class XorOshiro128Plus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../random-XorOshiro128StarStar/" title="class XorOshiro128StarStar" class="md-nav__link">
+      class XorOshiro128StarStar
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../random-SplitMix64/" title="class SplitMix64" class="md-nav__link">
+      class SplitMix64
     </a>
   </li>
 
@@ -10037,6 +10061,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../src/random/splitmix64/" title="splitmix64.pony" class="md-nav__link">
+      splitmix64.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../src/random/random/" title="random.pony" class="md-nav__link">
       random.pony
     </a>
@@ -10573,6 +10609,15 @@
         
           
             <li class="md-nav__item">
+    <a href="#hard_close" title="hard_close" class="md-nav__link">
+    hard_close
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
     <a href="#getsockopt" title="getsockopt" class="md-nav__link">
     getsockopt
   </a>
@@ -10803,15 +10848,6 @@
             <li class="md-nav__item">
     <a href="#_try_shutdown" title="_try_shutdown" class="md-nav__link">
     _try_shutdown
-  </a>
-  
-</li>
-          
-        
-          
-            <li class="md-nav__item">
-    <a href="#_hard_close" title="_hard_close" class="md-nav__link">
-    _hard_close
   </a>
   
 </li>
@@ -11332,6 +11368,18 @@ down immediately.</p>
 <li><a href="../builtin-None/">None</a> val</li>
 </ul>
 <hr />
+<h3 id="hard_close">hard_close<a class="headerlink" href="#hard_close" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L921">[Source]</a></span></p>
+<p>When an error happens, do a non-graceful close.</p>
+<pre><code class="pony">fun ref hard_close()
+: None val
+</code></pre>
+
+<h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../builtin-None/">None</a> val</li>
+</ul>
+<hr />
 <h3 id="getsockopt">getsockopt<a class="headerlink" href="#getsockopt" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L986">[Source]</a></span></p>
 <p>General wrapper for TCP sockets to the <code>getsockopt(2)</code> system call.</p>
@@ -11377,7 +11425,7 @@ fun ref connected(conn: TCPConnection ref) =&gt;
 <li>option_name: <a href="../builtin-I32/">I32</a> val</li>
 <li>option_max_size: <a href="../builtin-USize/">USize</a> val = 4</li>
 </ul>
-<h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
+<h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U32/">U32</a> val , <a href="../builtin-Array/">Array</a>[<a href="../builtin-U8/">U8</a> val] iso^)</li>
 </ul>
@@ -11404,7 +11452,7 @@ type <code>U32</code>.</p>
 <li>level: <a href="../builtin-I32/">I32</a> val</li>
 <li>option_name: <a href="../builtin-I32/">I32</a> val</li>
 </ul>
-<h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
+<h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U32/">U32</a> val , <a href="../builtin-U32/">U32</a> val)</li>
 </ul>
@@ -11448,7 +11496,7 @@ fun ref connected(conn: TCPConnection ref) =&gt;
 <li>option_name: <a href="../builtin-I32/">I32</a> val</li>
 <li>option: <a href="../builtin-Array/">Array</a>[<a href="../builtin-U8/">U8</a> val] ref</li>
 </ul>
-<h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
+<h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
 </ul>
@@ -11473,7 +11521,7 @@ failure.</p>
 <li>option_name: <a href="../builtin-I32/">I32</a> val</li>
 <li>option: <a href="../builtin-U32/">U32</a> val</li>
 </ul>
-<h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
+<h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
 </ul>
@@ -11485,7 +11533,7 @@ failure.</p>
 : (U32 val , U32 val)
 </code></pre>
 
-<h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
+<h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U32/">U32</a> val , <a href="../builtin-U32/">U32</a> val)</li>
 </ul>
@@ -11497,7 +11545,7 @@ failure.</p>
 : (U32 val , U32 val)
 </code></pre>
 
-<h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
+<h4 id="returns_17">Returns<a class="headerlink" href="#returns_17" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U32/">U32</a> val , <a href="../builtin-U32/">U32</a> val)</li>
 </ul>
@@ -11509,7 +11557,7 @@ failure.</p>
 : (U32 val , U32 val)
 </code></pre>
 
-<h4 id="returns_17">Returns<a class="headerlink" href="#returns_17" title="Permanent link">&para;</a></h4>
+<h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U32/">U32</a> val , <a href="../builtin-U32/">U32</a> val)</li>
 </ul>
@@ -11521,7 +11569,7 @@ failure.</p>
 : (U32 val , U32 val)
 </code></pre>
 
-<h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
+<h4 id="returns_19">Returns<a class="headerlink" href="#returns_19" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U32/">U32</a> val , <a href="../builtin-U32/">U32</a> val)</li>
 </ul>
@@ -11538,7 +11586,7 @@ failure.</p>
 <ul>
 <li>bufsize: <a href="../builtin-U32/">U32</a> val</li>
 </ul>
-<h4 id="returns_19">Returns<a class="headerlink" href="#returns_19" title="Permanent link">&para;</a></h4>
+<h4 id="returns_20">Returns<a class="headerlink" href="#returns_20" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
 </ul>
@@ -11555,7 +11603,7 @@ failure.</p>
 <ul>
 <li>bufsize: <a href="../builtin-U32/">U32</a> val</li>
 </ul>
-<h4 id="returns_20">Returns<a class="headerlink" href="#returns_20" title="Permanent link">&para;</a></h4>
+<h4 id="returns_21">Returns<a class="headerlink" href="#returns_21" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
 </ul>
@@ -11572,7 +11620,7 @@ failure.</p>
 <ul>
 <li>state: <a href="../builtin-Bool/">Bool</a> val</li>
 </ul>
-<h4 id="returns_21">Returns<a class="headerlink" href="#returns_21" title="Permanent link">&para;</a></h4>
+<h4 id="returns_22">Returns<a class="headerlink" href="#returns_22" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
 </ul>
@@ -11615,7 +11663,7 @@ This occurs only with IOCP on Windows.</p>
 <ul>
 <li>len: <a href="../builtin-U32/">U32</a> val</li>
 </ul>
-<h4 id="returns_22">Returns<a class="headerlink" href="#returns_22" title="Permanent link">&para;</a></h4>
+<h4 id="returns_23">Returns<a class="headerlink" href="#returns_23" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
 </ul>
@@ -11629,7 +11677,7 @@ it sent all pending data or not.</p>
 : Bool val
 </code></pre>
 
-<h4 id="returns_23">Returns<a class="headerlink" href="#returns_23" title="Permanent link">&para;</a></h4>
+<h4 id="returns_24">Returns<a class="headerlink" href="#returns_24" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
 </ul>
@@ -11651,7 +11699,7 @@ the pending buffer is empty or not.</p>
 <li>bytes_to_send: <a href="../builtin-USize/">USize</a> val</li>
 <li>num_to_send: <a href="../builtin-USize/">USize</a> val</li>
 </ul>
-<h4 id="returns_24">Returns<a class="headerlink" href="#returns_24" title="Permanent link">&para;</a></h4>
+<h4 id="returns_25">Returns<a class="headerlink" href="#returns_25" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val ?</li>
 </ul>
@@ -11669,7 +11717,7 @@ This occurs only with IOCP on Windows.</p>
 <ul>
 <li>len: <a href="../builtin-U32/">U32</a> val</li>
 </ul>
-<h4 id="returns_25">Returns<a class="headerlink" href="#returns_25" title="Permanent link">&para;</a></h4>
+<h4 id="returns_26">Returns<a class="headerlink" href="#returns_26" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
 </ul>
@@ -11681,7 +11729,7 @@ This occurs only with IOCP on Windows.</p>
 : None val
 </code></pre>
 
-<h4 id="returns_26">Returns<a class="headerlink" href="#returns_26" title="Permanent link">&para;</a></h4>
+<h4 id="returns_27">Returns<a class="headerlink" href="#returns_27" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
 </ul>
@@ -11693,7 +11741,7 @@ This occurs only with IOCP on Windows.</p>
 : None val
 </code></pre>
 
-<h4 id="returns_27">Returns<a class="headerlink" href="#returns_27" title="Permanent link">&para;</a></h4>
+<h4 id="returns_28">Returns<a class="headerlink" href="#returns_28" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
 </ul>
@@ -11707,7 +11755,7 @@ ourself a resume message and stop reading, to avoid starving other actors.</p>
 : None val
 </code></pre>
 
-<h4 id="returns_28">Returns<a class="headerlink" href="#returns_28" title="Permanent link">&para;</a></h4>
+<h4 id="returns_29">Returns<a class="headerlink" href="#returns_29" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
 </ul>
@@ -11719,7 +11767,7 @@ ourself a resume message and stop reading, to avoid starving other actors.</p>
 : None val
 </code></pre>
 
-<h4 id="returns_29">Returns<a class="headerlink" href="#returns_29" title="Permanent link">&para;</a></h4>
+<h4 id="returns_30">Returns<a class="headerlink" href="#returns_30" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
 </ul>
@@ -11730,7 +11778,7 @@ ourself a resume message and stop reading, to avoid starving other actors.</p>
 : None val
 </code></pre>
 
-<h4 id="returns_30">Returns<a class="headerlink" href="#returns_30" title="Permanent link">&para;</a></h4>
+<h4 id="returns_31">Returns<a class="headerlink" href="#returns_31" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
 </ul>
@@ -11740,18 +11788,6 @@ ourself a resume message and stop reading, to avoid starving other actors.</p>
 <p>If we have closed and we have no remaining writes or pending connections,
 then shutdown.</p>
 <pre><code class="pony">fun ref _try_shutdown()
-: None val
-</code></pre>
-
-<h4 id="returns_31">Returns<a class="headerlink" href="#returns_31" title="Permanent link">&para;</a></h4>
-<ul>
-<li><a href="../builtin-None/">None</a> val</li>
-</ul>
-<hr />
-<h3 id="_hard_close">_hard_close<a class="headerlink" href="#_hard_close" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L921">[Source]</a></span></p>
-<p>When an error happens, do a non-graceful close.</p>
-<pre><code class="pony">fun ref _hard_close()
 : None val
 </code></pre>
 

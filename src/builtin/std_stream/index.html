@@ -6998,6 +6998,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../random-XorOshiro128StarStar/" title="class XorOshiro128StarStar" class="md-nav__link">
+      class XorOshiro128StarStar
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../random-SplitMix64/" title="class SplitMix64" class="md-nav__link">
+      class SplitMix64
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../random-Rand/" title="type Rand" class="md-nav__link">
       type Rand
     </a>
@@ -9503,6 +9527,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../random/splitmix64/" title="splitmix64.pony" class="md-nav__link">
+      splitmix64.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../random/random/" title="random.pony" class="md-nav__link">
       random.pony
     </a>
@@ -9837,6 +9873,11 @@ interface tag OutStream
     Write an iterable collection of ByteSeqs.
     &quot;&quot;&quot;
 
+  be flush()
+    &quot;&quot;&quot;
+    Flush the stream.
+    &quot;&quot;&quot;
+
 actor StdStream
   &quot;&quot;&quot;
   Asynchronous access to stdout and stderr. The constructors are private to
@@ -9883,6 +9924,12 @@ actor StdStream
     for bytes in data.values() do
       _write(bytes)
     end
+
+  be flush() =&gt;
+    &quot;&quot;&quot;
+    Flush any data out to the os (ignoring failures).
+    &quot;&quot;&quot;
+    @pony_os_std_flush[None](_stream)
 
   fun ref _write(data: ByteSeq) =&gt;
     &quot;&quot;&quot;

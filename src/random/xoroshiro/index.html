@@ -6998,6 +6998,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../random-XorOshiro128StarStar/" title="class XorOshiro128StarStar" class="md-nav__link">
+      class XorOshiro128StarStar
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../random-SplitMix64/" title="class SplitMix64" class="md-nav__link">
+      class SplitMix64
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../random-Rand/" title="type Rand" class="md-nav__link">
       type Rand
     </a>
@@ -9503,6 +9527,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../splitmix64/" title="splitmix64.pony" class="md-nav__link">
+      splitmix64.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../random/" title="random.pony" class="md-nav__link">
       random.pony
     </a>
@@ -9813,8 +9849,18 @@
 
   This is currently the default Rand implementation.
   &quot;&quot;&quot;
+  // state
   var _x: U64
   var _y: U64
+
+  new from_u64(x: U64 = 5489) =&gt;
+    &quot;&quot;&quot;
+    Use seed x to seed a [SplitMix64](random-SplitMix64.md) and use this to
+    initialize the 128 bits of state.
+    &quot;&quot;&quot;
+    let sm = SplitMix64(x)
+    _x = sm.next()
+    _y = sm.next()
 
   new create(x: U64 = 5489, y: U64 = 0) =&gt;
     &quot;&quot;&quot;
@@ -9834,8 +9880,45 @@
     let r = x + y
 
     y = x xor y
-    _x = x.rotl(55) xor y xor (y &lt;&lt; 14)
-    _y = y.rotl(36)
+    _x = x.rotl(24) xor y xor (y &lt;&lt; 16)
+    _y = y.rotl(37)
+    r
+
+class XorOshiro128StarStar is Random
+  &quot;&quot;&quot;
+  This is an implementation of xoroshiro128**, as detailed at:
+
+  http://xoshiro.di.unimi.it/
+
+  This Rand implementation is slightly slower than [XorOshiro128Plus](random-XorOshiro128Plus.md)
+  but does not exhibit &quot;mild dependencies in Hamming weights&quot; (the lower four bits might fail linearity tests).
+  &quot;&quot;&quot;
+
+  var _x: U64
+  var _y: U64
+
+  new from_u64(x: U64 = 5489) =&gt;
+    &quot;&quot;&quot;
+    Use seed x to seed a [SplitMix64](random-SplitMix64.md) and use this to
+    initialize the 128 bits of state.
+    &quot;&quot;&quot;
+    let sm = SplitMix64(x)
+    _x = sm.next()
+    _y = sm.next()
+
+  new create(x: U64 = 5489, y: U64 = 0) =&gt;
+    _x = x
+    _y = y
+    next()
+
+  fun ref next(): U64 =&gt;
+    let x = _x
+    var y = _y
+    let r = (x * 5).rotl(7) * 9
+    y = x xor y
+
+    _x = x.rotl(24) xor y xor (y &lt;&lt; 16)
+    _y = y.rotl(37)
     r
 
 </code></pre>
@@ -9874,13 +9957,13 @@
           </a>
         
         
-          <a href="../random/" title="random.pony" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../splitmix64/" title="splitmix64.pony" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                random.pony
+                splitmix64.pony
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

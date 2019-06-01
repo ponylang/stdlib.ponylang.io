@@ -7097,6 +7097,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../random-XorOshiro128StarStar/" title="class XorOshiro128StarStar" class="md-nav__link">
+      class XorOshiro128StarStar
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../random-SplitMix64/" title="class SplitMix64" class="md-nav__link">
+      class SplitMix64
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../random-Rand/" title="type Rand" class="md-nav__link">
       type Rand
     </a>
@@ -9593,6 +9617,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../src/random/splitmix64/" title="splitmix64.pony" class="md-nav__link">
+      splitmix64.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../src/random/random/" title="random.pony" class="md-nav__link">
       random.pony
     </a>
@@ -10006,7 +10042,7 @@ not been called yet.</p>
 JsonDoc instance can be used to parse multiple JSON Strings one by one.</p>
 <pre><code class="pony">let doc = JsonDoc
 // parsing
-doc.parse(\&quot;\&quot;\&quot;{&quot;key&quot;:&quot;value&quot;, &quot;property: true, &quot;array&quot;:[1, 2.5, false]}\&quot;\&quot;\&quot;)?
+doc.parse(&quot;{\&quot;key\&quot;:\&quot;value\&quot;, \&quot;property\&quot;: true, \&quot;array\&quot;:[1, 2.5, false]}&quot;)?
 
 // extracting values from a JSON structure
 let json: JsonObject  = doc.data as JsonObject
@@ -10025,7 +10061,7 @@ recover it to a sendable reference capability (either <code>val</code> or <code>
 sake of simplicity it is recommended to do the parsing already in the recover
 block:</p>
 <pre><code class="pony">// sending an iso doc
-let json_string = \&quot;\&quot;\&quot;{&quot;array&quot;:[1, true, null]}\&quot;\&quot;\&quot;
+let json_string = &quot;{\&quot;array\&quot;:[1, true, null]}&quot;
 let sendable_doc: JsonDoc iso = recover iso JsonDoc.&gt;parse(json_string)? end
 some_actor.send(consume sendable_doc)
 
