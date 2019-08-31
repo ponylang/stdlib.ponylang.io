@@ -4577,6 +4577,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../net-Proxy/" title="interface Proxy" class="md-nav__link">
+      interface Proxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../net-NoProxy/" title="class NoProxy" class="md-nav__link">
+      class NoProxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../net-OSSockOpt/" title="primitive OSSockOpt" class="md-nav__link">
       primitive OSSockOpt
     </a>
@@ -7973,6 +7997,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../src/net/proxy/" title="proxy.pony" class="md-nav__link">
+      proxy.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../src/net/ossockopt/" title="ossockopt.pony" class="md-nav__link">
       ossockopt.pony
     </a>
@@ -8727,8 +8763,8 @@ doc.parse(&quot;{\&quot;key\&quot;:\&quot;value\&quot;, \&quot;property\&quot;: 
 // extracting values from a JSON structure
 let json: JsonObject  = doc.data as JsonObject
 let key: String       = json.data(&quot;key&quot;)? as String
-let property: Boolean = json.data(&quot;property&quot;)? as Bool
-let array: JsonArray  = json.data(&quot;array&quot;)?
+let property: Bool    = json.data(&quot;property&quot;)? as Bool
+let array: JsonArray  = json.data(&quot;array&quot;)? as JsonArray
 let first: I64        = array.data(0)? as I64
 let second: F64       = array.data(1)? as F64
 let last: Bool        = array.data(2)? as Bool

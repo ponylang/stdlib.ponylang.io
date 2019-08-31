@@ -4496,6 +4496,15 @@
         
           
             <li class="md-nav__item">
+    <a href="#proxy_via" title="proxy_via" class="md-nav__link">
+    proxy_via
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
     <a href="#connecting" title="connecting" class="md-nav__link">
     connecting
   </a>
@@ -4630,6 +4639,30 @@
   <li class="md-nav__item">
     <a href="../net-TCPConnection/" title="actor TCPConnection" class="md-nav__link">
       actor TCPConnection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../net-Proxy/" title="interface Proxy" class="md-nav__link">
+      interface Proxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../net-NoProxy/" title="class NoProxy" class="md-nav__link">
+      class NoProxy
     </a>
   </li>
 
@@ -8036,6 +8069,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../src/net/proxy/" title="proxy.pony" class="md-nav__link">
+      proxy.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../src/net/ossockopt/" title="ossockopt.pony" class="md-nav__link">
       ossockopt.pony
     </a>
@@ -8701,6 +8746,15 @@
         
           
             <li class="md-nav__item">
+    <a href="#proxy_via" title="proxy_via" class="md-nav__link">
+    proxy_via
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
     <a href="#connecting" title="connecting" class="md-nav__link">
     connecting
   </a>
@@ -8847,8 +8901,41 @@
 <li><a href="../builtin-None/">None</a> val</li>
 </ul>
 <hr />
-<h3 id="connecting">connecting<a class="headerlink" href="#connecting" title="Permanent link">&para;</a></h3>
+<h3 id="proxy_via">proxy_via<a class="headerlink" href="#proxy_via" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L14">[Source]</a></span></p>
+<p>Called before before attempting to connect to the destination server
+In order to connect via proxy, return the host &amp; service for the proxy
+server.</p>
+<p>An implementation of this function might look like:</p>
+<pre><code class="pony">let _proxy_host = &quot;some-proxy.example.com&quot;
+let _proxy_service = &quot;80&quot;
+var _destination_host: ( None | String )
+var _destination_service: ( None | String )
+
+fun ref proxy_via(host: String, service: String): (String, String) =&gt;
+  _destination_host = host
+  _destination_service = service
+  ( _proxy_host, _proxy_service )
+</code></pre>
+
+<pre><code class="pony">fun ref proxy_via(
+  host: String val,
+  service: String val)
+: (String val , String val)
+</code></pre>
+
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>host: <a href="../builtin-String/">String</a> val</li>
+<li>service: <a href="../builtin-String/">String</a> val</li>
+</ul>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>(<a href="../builtin-String/">String</a> val , <a href="../builtin-String/">String</a> val)</li>
+</ul>
+<hr />
+<h3 id="connecting">connecting<a class="headerlink" href="#connecting" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L35">[Source]</a></span></p>
 <p>Called if name resolution succeeded for a TCPConnection and we are now
 waiting for a connection to the server to succeed. The count is the number
 of connections we're trying. The notifier will be informed each time the
@@ -8859,44 +8946,20 @@ count changes, until a connection is made or connect_failed() is called.</p>
 : None val
 </code></pre>
 
-<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
-<ul>
-<li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
-<li>count: <a href="../builtin-U32/">U32</a> val</li>
-</ul>
-<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
-<ul>
-<li><a href="../builtin-None/">None</a> val</li>
-</ul>
-<hr />
-<h3 id="connected">connected<a class="headerlink" href="#connected" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L23">[Source]</a></span></p>
-<p>Called when we have successfully connected to the server.</p>
-<pre><code class="pony">fun ref connected(
-  conn: TCPConnection ref)
-: None val
-</code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
+<li>count: <a href="../builtin-U32/">U32</a> val</li>
 </ul>
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
 </ul>
 <hr />
-<h3 id="connect_failed">connect_failed<a class="headerlink" href="#connect_failed" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L29">[Source]</a></span></p>
-<p>Called when we have failed to connect to all possible addresses for the
-server. At this point, the connection will never be established.</p>
-<p>It is expected to implement proper error handling. You need to opt in to
-ignoring errors, which can be implemented like this:</p>
-<pre><code class="pony">fun ref connect_failed(conn: TCPConnection ref) =&gt;
-  None
-</code></pre>
-
-<pre><code class="pony">fun ref connect_failed(
+<h3 id="connected">connected<a class="headerlink" href="#connected" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L44">[Source]</a></span></p>
+<p>Called when we have successfully connected to the server.</p>
+<pre><code class="pony">fun ref connected(
   conn: TCPConnection ref)
 : None val
 </code></pre>
@@ -8910,12 +8973,17 @@ ignoring errors, which can be implemented like this:</p>
 <li><a href="../builtin-None/">None</a> val</li>
 </ul>
 <hr />
-<h3 id="auth_failed">auth_failed<a class="headerlink" href="#auth_failed" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L43">[Source]</a></span></p>
-<p>A raw TCPConnection has no authentication mechanism. However, when
-protocols are wrapped in other protocols, this can be used to report an
-authentication failure in a lower level protocol (e.g. SSL).</p>
-<pre><code class="pony">fun ref auth_failed(
+<h3 id="connect_failed">connect_failed<a class="headerlink" href="#connect_failed" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L50">[Source]</a></span></p>
+<p>Called when we have failed to connect to all possible addresses for the
+server. At this point, the connection will never be established.</p>
+<p>It is expected to implement proper error handling. You need to opt in to
+ignoring errors, which can be implemented like this:</p>
+<pre><code class="pony">fun ref connect_failed(conn: TCPConnection ref) =&gt;
+  None
+</code></pre>
+
+<pre><code class="pony">fun ref connect_failed(
   conn: TCPConnection ref)
 : None val
 </code></pre>
@@ -8929,8 +8997,27 @@ authentication failure in a lower level protocol (e.g. SSL).</p>
 <li><a href="../builtin-None/">None</a> val</li>
 </ul>
 <hr />
+<h3 id="auth_failed">auth_failed<a class="headerlink" href="#auth_failed" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L64">[Source]</a></span></p>
+<p>A raw TCPConnection has no authentication mechanism. However, when
+protocols are wrapped in other protocols, this can be used to report an
+authentication failure in a lower level protocol (e.g. SSL).</p>
+<pre><code class="pony">fun ref auth_failed(
+  conn: TCPConnection ref)
+: None val
+</code></pre>
+
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
+</ul>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../builtin-None/">None</a> val</li>
+</ul>
+<hr />
 <h3 id="sent">sent<a class="headerlink" href="#sent" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L51">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L72">[Source]</a></span></p>
 <p>Called when data is sent on the connection. This gives the notifier an
 opportunity to modify sent data before it is written. To swallow data,
 return an empty string.</p>
@@ -8940,18 +9027,18 @@ return an empty string.</p>
 : (String val | Array[U8 val] val)
 </code></pre>
 
-<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
 <li>data: (<a href="../builtin-String/">String</a> val | <a href="../builtin-Array/">Array</a>[<a href="../builtin-U8/">U8</a> val] val)</li>
 </ul>
-<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-String/">String</a> val | <a href="../builtin-Array/">Array</a>[<a href="../builtin-U8/">U8</a> val] val)</li>
 </ul>
 <hr />
 <h3 id="sentv">sentv<a class="headerlink" href="#sentv" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L59">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L80">[Source]</a></span></p>
 <p>Called when multiple chunks of data are sent to the connection in a single
 call. This gives the notifier an opportunity to modify the sent data chunks
 before they are written. To swallow the send, return an empty
@@ -8962,18 +9049,18 @@ Array[String].</p>
 : ByteSeqIter val
 </code></pre>
 
-<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
 <li>data: <a href="../builtin-ByteSeqIter/">ByteSeqIter</a> val</li>
 </ul>
-<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
+<h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ByteSeqIter/">ByteSeqIter</a> val</li>
 </ul>
 <hr />
 <h3 id="received">received<a class="headerlink" href="#received" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L68">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L89">[Source]</a></span></p>
 <p>Called when new data is received on the connection. Return true if you
 want to continue receiving messages without yielding until you read
 max_size on the TCPConnection. Return false to cause the TCPConnection
@@ -8987,19 +9074,19 @@ been called. This allows the notifier to end reads on a regular basis.</p>
 : Bool val
 </code></pre>
 
-<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
 <li>data: <a href="../builtin-Array/">Array</a>[<a href="../builtin-U8/">U8</a> val] iso</li>
 <li>times: <a href="../builtin-USize/">USize</a> val</li>
 </ul>
-<h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
+<h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
 </ul>
 <hr />
 <h3 id="expect">expect<a class="headerlink" href="#expect" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L85">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L106">[Source]</a></span></p>
 <p>Called when the connection has been told to expect a certain quantity of
 bytes. This allows nested notifiers to change the expected quantity, which
 allows a lower level protocol to handle any framing (e.g. SSL).</p>
@@ -9009,41 +9096,20 @@ allows a lower level protocol to handle any framing (e.g. SSL).</p>
 : USize val
 </code></pre>
 
-<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
 <li>qty: <a href="../builtin-USize/">USize</a> val</li>
 </ul>
-<h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
+<h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-USize/">USize</a> val</li>
 </ul>
 <hr />
 <h3 id="closed">closed<a class="headerlink" href="#closed" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L93">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L114">[Source]</a></span></p>
 <p>Called when the connection is closed.</p>
 <pre><code class="pony">fun ref closed(
-  conn: TCPConnection ref)
-: None val
-</code></pre>
-
-<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
-<ul>
-<li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
-</ul>
-<h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
-<ul>
-<li><a href="../builtin-None/">None</a> val</li>
-</ul>
-<hr />
-<h3 id="throttled">throttled<a class="headerlink" href="#throttled" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L99">[Source]</a></span></p>
-<p>Called when the connection starts experiencing TCP backpressure. You should
-respond to this by pausing additional calls to <code>write</code> and <code>writev</code> until
-you are informed that pressure has been released. Failure to respond to
-the <code>throttled</code> notification will result in outgoing data queuing in the
-connection and increasing memory usage.</p>
-<pre><code class="pony">fun ref throttled(
   conn: TCPConnection ref)
 : None val
 </code></pre>
@@ -9057,12 +9123,14 @@ connection and increasing memory usage.</p>
 <li><a href="../builtin-None/">None</a> val</li>
 </ul>
 <hr />
-<h3 id="unthrottled">unthrottled<a class="headerlink" href="#unthrottled" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L109">[Source]</a></span></p>
-<p>Called when the connection stops experiencing TCP backpressure. Upon
-receiving this notification, you should feel free to start making calls to
-<code>write</code> and <code>writev</code> again.</p>
-<pre><code class="pony">fun ref unthrottled(
+<h3 id="throttled">throttled<a class="headerlink" href="#throttled" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L120">[Source]</a></span></p>
+<p>Called when the connection starts experiencing TCP backpressure. You should
+respond to this by pausing additional calls to <code>write</code> and <code>writev</code> until
+you are informed that pressure has been released. Failure to respond to
+the <code>throttled</code> notification will result in outgoing data queuing in the
+connection and increasing memory usage.</p>
+<pre><code class="pony">fun ref throttled(
   conn: TCPConnection ref)
 : None val
 </code></pre>
@@ -9072,6 +9140,25 @@ receiving this notification, you should feel free to start making calls to
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
 </ul>
 <h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../builtin-None/">None</a> val</li>
+</ul>
+<hr />
+<h3 id="unthrottled">unthrottled<a class="headerlink" href="#unthrottled" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L130">[Source]</a></span></p>
+<p>Called when the connection stops experiencing TCP backpressure. Upon
+receiving this notification, you should feel free to start making calls to
+<code>write</code> and <code>writev</code> again.</p>
+<pre><code class="pony">fun ref unthrottled(
+  conn: TCPConnection ref)
+: None val
+</code></pre>
+
+<h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
+<ul>
+<li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
+</ul>
+<h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
 </ul>

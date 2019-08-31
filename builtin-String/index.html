@@ -5507,6 +5507,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../net-Proxy/" title="interface Proxy" class="md-nav__link">
+      interface Proxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../net-NoProxy/" title="class NoProxy" class="md-nav__link">
+      class NoProxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../net-OSSockOpt/" title="primitive OSSockOpt" class="md-nav__link">
       primitive OSSockOpt
     </a>
@@ -8903,6 +8927,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../src/net/proxy/" title="proxy.pony" class="md-nav__link">
+      proxy.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../src/net/ossockopt/" title="ossockopt.pony" class="md-nav__link">
       ossockopt.pony
     </a>
@@ -11670,10 +11706,27 @@ occurrences will be replaced. Returns the count of replaced occurrences.</p>
 <p><span class="source-link"><a href="../src/builtin/string/#L1094">[Source]</a></span></p>
 <p>Split the string into an array of strings that are delimited by <code>delim</code> in
 the original string. If <code>n &gt; 0</code>, then the split count is limited to n.</p>
+<p>Example:</p>
+<pre><code class="pony">let original: String = &quot;&lt;b&gt;&lt;span&gt;Hello!&lt;/span&gt;&lt;/b&gt;&quot;
+let delimiter: String = &quot;&gt;&lt;&quot;
+let split_array: Array[String] = original.split_by(delimiter)
+env.out.print(&quot;OUTPUT:&quot;)
+for value in split_array.values() do
+  env.out.print(value)
+end
+
+// OUTPUT:
+// &lt;b
+// span&gt;Hello!&lt;/span
+// b&gt;
+</code></pre>
+
 <p>Adjacent delimiters result in a zero length entry in the array. For
-example, <code>"1,,2".split(",") =&gt; ["1", "", "2"]</code>.</p>
+example, <code>"1CutCut2".split_by("Cut") =&gt; ["1", "", "2"]</code>.</p>
 <p>An empty delimiter results in an array that contains a single element equal
 to the whole string.</p>
+<p>If you want to split the string with each individual character of <code>delim</code>,
+use <a href="#split"><code>split</code></a>.</p>
 <pre><code class="pony">fun box split_by(
   delim: String val,
   n: USize val = call)
@@ -11691,12 +11744,29 @@ to the whole string.</p>
 </ul>
 <hr />
 <h3 id="split">split<a class="headerlink" href="#split" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1125">[Source]</a></span></p>
-<p>Split the string into an array of strings. Any character in the delimiter
-string is accepted as a delimiter. If <code>n &gt; 0</code>, then the split count is
-limited to n.</p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1145">[Source]</a></span></p>
+<p>Split the string into an array of strings with any character in the
+delimiter string. By default, the string is split with whitespace
+characters. If <code>n &gt; 0</code>, then the split count is limited to n.</p>
+<p>Example:</p>
+<pre><code class="pony">let original: String = &quot;name,job;department&quot;
+let delimiter: String = &quot;.,;&quot;
+let split_array: Array[String] = original.split(delimiter)
+env.out.print(&quot;OUTPUT:&quot;)
+for value in split_array.values() do
+  env.out.print(value)
+end
+
+// OUTPUT:
+// name
+// job
+// department
+</code></pre>
+
 <p>Adjacent delimiters result in a zero length entry in the array. For
 example, <code>"1,,2".split(",") =&gt; ["1", "", "2"]</code>.</p>
+<p>If you want to split the string with the entire delimiter string <code>delim</code>,
+use <a href="#split_by"><code>split_by</code></a>.</p>
 <pre><code class="pony">fun box split(
   delim: String val = &quot;     
 &quot;,
@@ -11716,7 +11786,7 @@ example, <code>"1,,2".split(",") =&gt; ["1", "", "2"]</code>.</p>
 </ul>
 <hr />
 <h3 id="strip">strip<a class="headerlink" href="#strip" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1185">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1225">[Source]</a></span></p>
 <p>Remove all leading and trailing characters from the string that are in s.</p>
 <pre><code class="pony">fun ref strip(
   s: String box = &quot;     
@@ -11735,7 +11805,7 @@ example, <code>"1,,2".split(",") =&gt; ["1", "", "2"]</code>.</p>
 </ul>
 <hr />
 <h3 id="rstrip">rstrip<a class="headerlink" href="#rstrip" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1191">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1231">[Source]</a></span></p>
 <p>Remove all trailing characters within the string that are in s. By default,
 trailing whitespace is removed.</p>
 <pre><code class="pony">fun ref rstrip(
@@ -11755,7 +11825,7 @@ trailing whitespace is removed.</p>
 </ul>
 <hr />
 <h3 id="lstrip">lstrip<a class="headerlink" href="#lstrip" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1223">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1263">[Source]</a></span></p>
 <p>Remove all leading characters within the string that are in s. By default,
 leading whitespace is removed.</p>
 <pre><code class="pony">fun ref lstrip(
@@ -11775,7 +11845,7 @@ leading whitespace is removed.</p>
 </ul>
 <hr />
 <h3 id="add">add<a class="headerlink" href="#add" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1264">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1304">[Source]</a></span></p>
 <p>Return a string that is a concatenation of this and that.</p>
 <pre><code class="pony">fun box add(
   that: String box)
@@ -11792,7 +11862,7 @@ leading whitespace is removed.</p>
 </ul>
 <hr />
 <h3 id="join">join<a class="headerlink" href="#join" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1272">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1312">[Source]</a></span></p>
 <p>Return a string that is a concatenation of the strings in data, using this
 as a separator.</p>
 <pre><code class="pony">fun box join(
@@ -11810,7 +11880,7 @@ as a separator.</p>
 </ul>
 <hr />
 <h3 id="compare">compare<a class="headerlink" href="#compare" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1289">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1329">[Source]</a></span></p>
 <p>Lexically compare two strings.</p>
 <pre><code class="pony">fun box compare(
   that: String box)
@@ -11827,7 +11897,7 @@ as a separator.</p>
 </ul>
 <hr />
 <h3 id="compare_sub">compare_sub<a class="headerlink" href="#compare_sub" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1295">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1335">[Source]</a></span></p>
 <p>Lexically compare at most <code>n</code> bytes of the substring of <code>this</code> starting at
 <code>offset</code> with the substring of <code>that</code> starting at <code>that_offset</code>. The
 comparison is case sensitive unless <code>ignore_case</code> is <code>true</code>.</p>
@@ -11863,7 +11933,7 @@ will be reduced to the length of the longest substring.</p>
 </ul>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1352">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1392">[Source]</a></span></p>
 <p>Returns true if the two strings have the same contents.</p>
 <pre><code class="pony">fun box eq(
   that: String box)
@@ -11880,7 +11950,7 @@ will be reduced to the length of the longest substring.</p>
 </ul>
 <hr />
 <h3 id="lt">lt<a class="headerlink" href="#lt" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1362">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1402">[Source]</a></span></p>
 <p>Returns true if this is lexically less than that. Needs to be made UTF-8
 safe.</p>
 <pre><code class="pony">fun box lt(
@@ -11898,7 +11968,7 @@ safe.</p>
 </ul>
 <hr />
 <h3 id="le">le<a class="headerlink" href="#le" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1380">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1420">[Source]</a></span></p>
 <p>Returns true if this is lexically less than or equal to that. Needs to be
 made UTF-8 safe.</p>
 <pre><code class="pony">fun box le(
@@ -11916,7 +11986,7 @@ made UTF-8 safe.</p>
 </ul>
 <hr />
 <h3 id="offset_to_index">offset_to_index<a class="headerlink" href="#offset_to_index" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1398">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1438">[Source]</a></span></p>
 <pre><code class="pony">fun box offset_to_index(
   i: ISize val)
 : USize val
@@ -11932,7 +12002,7 @@ made UTF-8 safe.</p>
 </ul>
 <hr />
 <h3 id="bool">bool<a class="headerlink" href="#bool" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1401">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1441">[Source]</a></span></p>
 <pre><code class="pony">fun box bool()
 : Bool val ?
 </code></pre>
@@ -11943,7 +12013,7 @@ made UTF-8 safe.</p>
 </ul>
 <hr />
 <h3 id="i8">i8<a class="headerlink" href="#i8" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1409">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1449">[Source]</a></span></p>
 <pre><code class="pony">fun box i8(
   base: U8 val = 0)
 : I8 val ?
@@ -11959,7 +12029,7 @@ made UTF-8 safe.</p>
 </ul>
 <hr />
 <h3 id="i16">i16<a class="headerlink" href="#i16" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1410">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1450">[Source]</a></span></p>
 <pre><code class="pony">fun box i16(
   base: U8 val = 0)
 : I16 val ?
@@ -11975,7 +12045,7 @@ made UTF-8 safe.</p>
 </ul>
 <hr />
 <h3 id="i32">i32<a class="headerlink" href="#i32" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1411">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1451">[Source]</a></span></p>
 <pre><code class="pony">fun box i32(
   base: U8 val = 0)
 : I32 val ?
@@ -11991,7 +12061,7 @@ made UTF-8 safe.</p>
 </ul>
 <hr />
 <h3 id="i64">i64<a class="headerlink" href="#i64" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1412">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1452">[Source]</a></span></p>
 <pre><code class="pony">fun box i64(
   base: U8 val = 0)
 : I64 val ?
@@ -12007,7 +12077,7 @@ made UTF-8 safe.</p>
 </ul>
 <hr />
 <h3 id="i128">i128<a class="headerlink" href="#i128" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1413">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1453">[Source]</a></span></p>
 <pre><code class="pony">fun box i128(
   base: U8 val = 0)
 : I128 val ?
@@ -12023,7 +12093,7 @@ made UTF-8 safe.</p>
 </ul>
 <hr />
 <h3 id="ilong">ilong<a class="headerlink" href="#ilong" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1414">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1454">[Source]</a></span></p>
 <pre><code class="pony">fun box ilong(
   base: U8 val = 0)
 : ILong val ?
@@ -12039,7 +12109,7 @@ made UTF-8 safe.</p>
 </ul>
 <hr />
 <h3 id="isize">isize<a class="headerlink" href="#isize" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1415">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1455">[Source]</a></span></p>
 <pre><code class="pony">fun box isize(
   base: U8 val = 0)
 : ISize val ?
@@ -12055,7 +12125,7 @@ made UTF-8 safe.</p>
 </ul>
 <hr />
 <h3 id="u8">u8<a class="headerlink" href="#u8" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1416">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1456">[Source]</a></span></p>
 <pre><code class="pony">fun box u8(
   base: U8 val = 0)
 : U8 val ?
@@ -12071,7 +12141,7 @@ made UTF-8 safe.</p>
 </ul>
 <hr />
 <h3 id="u16">u16<a class="headerlink" href="#u16" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1417">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1457">[Source]</a></span></p>
 <pre><code class="pony">fun box u16(
   base: U8 val = 0)
 : U16 val ?
@@ -12087,7 +12157,7 @@ made UTF-8 safe.</p>
 </ul>
 <hr />
 <h3 id="u32">u32<a class="headerlink" href="#u32" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1418">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1458">[Source]</a></span></p>
 <pre><code class="pony">fun box u32(
   base: U8 val = 0)
 : U32 val ?
@@ -12103,7 +12173,7 @@ made UTF-8 safe.</p>
 </ul>
 <hr />
 <h3 id="u64">u64<a class="headerlink" href="#u64" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1419">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1459">[Source]</a></span></p>
 <pre><code class="pony">fun box u64(
   base: U8 val = 0)
 : U64 val ?
@@ -12119,7 +12189,7 @@ made UTF-8 safe.</p>
 </ul>
 <hr />
 <h3 id="u128">u128<a class="headerlink" href="#u128" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1420">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1460">[Source]</a></span></p>
 <pre><code class="pony">fun box u128(
   base: U8 val = 0)
 : U128 val ?
@@ -12135,7 +12205,7 @@ made UTF-8 safe.</p>
 </ul>
 <hr />
 <h3 id="ulong">ulong<a class="headerlink" href="#ulong" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1421">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1461">[Source]</a></span></p>
 <pre><code class="pony">fun box ulong(
   base: U8 val = 0)
 : ULong val ?
@@ -12151,7 +12221,7 @@ made UTF-8 safe.</p>
 </ul>
 <hr />
 <h3 id="usize">usize<a class="headerlink" href="#usize" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1422">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1462">[Source]</a></span></p>
 <pre><code class="pony">fun box usize(
   base: U8 val = 0)
 : USize val ?
@@ -12167,7 +12237,7 @@ made UTF-8 safe.</p>
 </ul>
 <hr />
 <h3 id="read_int91a-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-integer91a93-val93">read_int[A: ((<a href="../builtin-I8/">I8</a> val | <a href="../builtin-I16/">I16</a> val | <a href="../builtin-I32/">I32</a> val | <a href="../builtin-I64/">I64</a> val | <a href="../builtin-I128/">I128</a> val | <a href="../builtin-ILong/">ILong</a> val | <a href="../builtin-ISize/">ISize</a> val | <a href="../builtin-U8/">U8</a> val | <a href="../builtin-U16/">U16</a> val | <a href="../builtin-U32/">U32</a> val | <a href="../builtin-U64/">U64</a> val | <a href="../builtin-U128/">U128</a> val | <a href="../builtin-ULong/">ULong</a> val | <a href="../builtin-USize/">USize</a> val) &amp; <a href="../builtin-Integer/">Integer</a>[A] val)]<a class="headerlink" href="#read_int91a-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-integer91a93-val93" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1435">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1475">[Source]</a></span></p>
 <p>Read an integer from the specified location in this string. The integer
 value read and the number of characters consumed are reported.
 The base parameter specifies the base to use, 0 indicates using the prefix,
@@ -12198,7 +12268,7 @@ Underscore characters are allowed throughout the integer and are ignored.</p>
 </ul>
 <hr />
 <h3 id="f32">f32<a class="headerlink" href="#f32" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1549">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1589">[Source]</a></span></p>
 <p>Convert this string starting at the given offset
 to a 32-bit floating point number (<a href="../builtin-F32/">F32</a>).</p>
 <p>This method errors if this string cannot be parsed to a float,
@@ -12226,7 +12296,7 @@ there are leftover characters in the string after conversion.</p>
 </ul>
 <hr />
 <h3 id="f64">f64<a class="headerlink" href="#f64" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1582">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1622">[Source]</a></span></p>
 <p>Convert this string starting at the given offset
 to a 64-bit floating point number (<a href="../builtin-F64/">F64</a>).</p>
 <p>This method errors if this string cannot be parsed to a float,
@@ -12254,7 +12324,7 @@ there are leftover characters in the string after conversion.</p>
 </ul>
 <hr />
 <h3 id="hash">hash<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1615">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1655">[Source]</a></span></p>
 <pre><code class="pony">fun box hash()
 : USize val
 </code></pre>
@@ -12265,7 +12335,7 @@ there are leftover characters in the string after conversion.</p>
 </ul>
 <hr />
 <h3 id="hash64">hash64<a class="headerlink" href="#hash64" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1618">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1658">[Source]</a></span></p>
 <pre><code class="pony">fun box hash64()
 : U64 val
 </code></pre>
@@ -12276,7 +12346,7 @@ there are leftover characters in the string after conversion.</p>
 </ul>
 <hr />
 <h3 id="string_1">string<a class="headerlink" href="#string_1" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1621">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1661">[Source]</a></span></p>
 <pre><code class="pony">fun box string()
 : String iso^
 </code></pre>
@@ -12287,7 +12357,7 @@ there are leftover characters in the string after conversion.</p>
 </ul>
 <hr />
 <h3 id="values">values<a class="headerlink" href="#values" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1624">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1664">[Source]</a></span></p>
 <p>Return an iterator over the bytes in the string.</p>
 <pre><code class="pony">fun box values()
 : StringBytes ref^
@@ -12299,7 +12369,7 @@ there are leftover characters in the string after conversion.</p>
 </ul>
 <hr />
 <h3 id="runes">runes<a class="headerlink" href="#runes" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1630">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1670">[Source]</a></span></p>
 <p>Return an iterator over the codepoints in the string.</p>
 <pre><code class="pony">fun box runes()
 : StringRunes ref^
@@ -12380,7 +12450,7 @@ there are leftover characters in the string after conversion.</p>
 </ul>
 <hr />
 <h3 id="_append">_append<a class="headerlink" href="#_append" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1253">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1293">[Source]</a></span></p>
 <pre><code class="pony">fun iso _append(
   s: String box)
 : String iso^
@@ -12396,7 +12466,7 @@ there are leftover characters in the string after conversion.</p>
 </ul>
 <hr />
 <h3 id="_to_int91a-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-integer91a93-val93">_to_int[A: ((<a href="../builtin-I8/">I8</a> val | <a href="../builtin-I16/">I16</a> val | <a href="../builtin-I32/">I32</a> val | <a href="../builtin-I64/">I64</a> val | <a href="../builtin-I128/">I128</a> val | <a href="../builtin-ILong/">ILong</a> val | <a href="../builtin-ISize/">ISize</a> val | <a href="../builtin-U8/">U8</a> val | <a href="../builtin-U16/">U16</a> val | <a href="../builtin-U32/">U32</a> val | <a href="../builtin-U64/">U64</a> val | <a href="../builtin-U128/">U128</a> val | <a href="../builtin-ULong/">ULong</a> val | <a href="../builtin-USize/">USize</a> val) &amp; <a href="../builtin-Integer/">Integer</a>[A] val)]<a class="headerlink" href="#_to_int91a-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-integer91a93-val93" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1424">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1464">[Source]</a></span></p>
 <p>Convert the <em>whole</em> string to the specified type.
 If there are any other characters in the string, or the integer found is
 out of range for the target type then an error is thrown.</p>
@@ -12419,7 +12489,7 @@ out of range for the target type then an error is thrown.</p>
 </ul>
 <hr />
 <h3 id="_read_int_base91a-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-integer91a93-val93">_read_int_base[A: ((<a href="../builtin-I8/">I8</a> val | <a href="../builtin-I16/">I16</a> val | <a href="../builtin-I32/">I32</a> val | <a href="../builtin-I64/">I64</a> val | <a href="../builtin-I128/">I128</a> val | <a href="../builtin-ILong/">ILong</a> val | <a href="../builtin-ISize/">ISize</a> val | <a href="../builtin-U8/">U8</a> val | <a href="../builtin-U16/">U16</a> val | <a href="../builtin-U32/">U32</a> val | <a href="../builtin-U64/">U64</a> val | <a href="../builtin-U128/">U128</a> val | <a href="../builtin-ULong/">ULong</a> val | <a href="../builtin-USize/">USize</a> val) &amp; <a href="../builtin-Integer/">Integer</a>[A] val)]<a class="headerlink" href="#_read_int_base91a-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-integer91a93-val93" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1512">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1552">[Source]</a></span></p>
 <p>Determine the base of an integer starting at the specified index.
 If a non-0 base is given use that. If given base is 0 read the base
 specifying prefix, if any, to detect base 2 or 16.
@@ -12447,7 +12517,7 @@ Report the base found and the number of characters in the prefix.</p>
 </ul>
 <hr />
 <h3 id="_set">_set<a class="headerlink" href="#_set" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/string/#L1636">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/string/#L1676">[Source]</a></span></p>
 <p>Unsafe update, used internally.</p>
 <pre><code class="pony">fun ref _set(
   i: USize val,

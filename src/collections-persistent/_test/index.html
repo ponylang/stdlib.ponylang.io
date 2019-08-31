@@ -4478,6 +4478,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../net-Proxy/" title="interface Proxy" class="md-nav__link">
+      interface Proxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../net-NoProxy/" title="class NoProxy" class="md-nav__link">
+      class NoProxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../net-OSSockOpt/" title="primitive OSSockOpt" class="md-nav__link">
       primitive OSSockOpt
     </a>
@@ -7883,6 +7907,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../net/proxy/" title="proxy.pony" class="md-nav__link">
+      proxy.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../net/ossockopt/" title="ossockopt.pony" class="md-nav__link">
       ossockopt.pony
     </a>
@@ -8753,7 +8789,8 @@ class iso _TestListTakeWhile is UnitTest
     h.assert_true(Lists[U32].eq(empty.take_while(is_even), Lists[U32].empty())?)
 
 class iso _TestMap is UnitTest
-  fun name(): String =&gt; &quot;collections/persistent/Map (update, remove, concat)&quot;
+  fun name(): String =&gt;
+    &quot;collections/persistent/Map (update, remove, concat, add, sub)&quot;
 
   fun apply(h: TestHelper) ? =&gt;
     let m1 = Map[String,U32]
@@ -8792,6 +8829,11 @@ class iso _TestMap is UnitTest
     let m10 = m9.remove(&quot;b&quot;)?.remove(&quot;d&quot;)?
     h.assert_error({() ? =&gt; m10(&quot;b&quot;)? })
     h.assert_error({() ? =&gt; m10(&quot;d&quot;)? })
+
+    let m11 = m10 + (&quot;b&quot;, 3)
+    h.assert_eq[U32](m11(&quot;b&quot;)?, 3)
+    let m12 = m11 - &quot;b&quot;
+    h.assert_error({() ? =&gt; m12(&quot;b&quot;)? })
 
     let seed = Time.millis()
     h.log(&quot;seed: &quot; + seed.string())

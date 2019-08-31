@@ -4478,6 +4478,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../net-Proxy/" title="interface Proxy" class="md-nav__link">
+      interface Proxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../net-NoProxy/" title="class NoProxy" class="md-nav__link">
+      class NoProxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../net-OSSockOpt/" title="primitive OSSockOpt" class="md-nav__link">
       primitive OSSockOpt
     </a>
@@ -7883,6 +7907,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../proxy/" title="proxy.pony" class="md-nav__link">
+      proxy.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../ossockopt/" title="ossockopt.pony" class="md-nav__link">
       ossockopt.pony
     </a>
@@ -8533,6 +8569,27 @@
     Called when a TCPConnection is accepted by a TCPListener.
     &quot;&quot;&quot;
     None
+
+  fun ref proxy_via(host: String, service: String): (String, String) =&gt;
+    &quot;&quot;&quot;
+    Called before before attempting to connect to the destination server
+    In order to connect via proxy, return the host &amp; service for the proxy
+    server.
+
+    An implementation of this function might look like:
+    ```pony
+    let _proxy_host = &quot;some-proxy.example.com&quot;
+    let _proxy_service = &quot;80&quot;
+    var _destination_host: ( None | String )
+    var _destination_service: ( None | String )
+
+    fun ref proxy_via(host: String, service: String): (String, String) =&gt;
+      _destination_host = host
+      _destination_service = service
+      ( _proxy_host, _proxy_service )
+    ```
+    &quot;&quot;&quot;
+    (host, service)
 
   fun ref connecting(conn: TCPConnection ref, count: U32) =&gt;
     &quot;&quot;&quot;
