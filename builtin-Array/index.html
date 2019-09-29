@@ -944,8 +944,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../builtin-None/" title="primitive None" class="md-nav__link">
-      primitive None
+    <a href="../builtin-NullablePointer/" title="struct NullablePointer" class="md-nav__link">
+      struct NullablePointer
     </a>
   </li>
 
@@ -956,8 +956,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../builtin-MaybePointer/" title="struct MaybePointer" class="md-nav__link">
-      struct MaybePointer
+    <a href="../builtin-None/" title="primitive None" class="md-nav__link">
+      primitive None
     </a>
   </li>
 
@@ -7604,8 +7604,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/builtin/none/" title="none.pony" class="md-nav__link">
-      none.pony
+    <a href="../src/builtin/nullable_pointer/" title="nullable_pointer.pony" class="md-nav__link">
+      nullable_pointer.pony
     </a>
   </li>
 
@@ -7616,8 +7616,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/builtin/maybe_pointer/" title="maybe_pointer.pony" class="md-nav__link">
-      maybe_pointer.pony
+    <a href="../src/builtin/none/" title="none.pony" class="md-nav__link">
+      none.pony
     </a>
   </li>
 
@@ -9797,22 +9797,22 @@
 <p><span class="source-link"><a href="../src/builtin/array/#L1">[Source]</a></span></p>
 <p>Contiguous, resizable memory to store elements of type A.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p>Creating an Array of String.</p>
+<p>Creating an Array of String:</p>
 <pre><code class="pony">  let array: Array[String] = [&quot;dog&quot;; &quot;cat&quot;; &quot;wombat&quot;]
   // array.size() == 3
   // array.space() &gt;= 3
 </code></pre>
 
 <p>Creating an empty Array of String, which may hold at least 10 elements before
-requesting more space.</p>
-<pre><code class="pony">  let array = Array(10)
+requesting more space:</p>
+<pre><code class="pony">  let array = Array[String](10)
   // array.size() == 0
   // array.space() &gt;= 10
 </code></pre>
 
 <p>Accessing elements can be done via the <code>apply(i: USize): this-&gt;A ?</code> method.
 The provided index might be out of bounds so <code>apply</code> is partial and has to be
-called within a try-catch block or inside another partial method.</p>
+called within a try-catch block or inside another partial method:</p>
 <pre><code class="pony">  let array: Array[String] = [&quot;dog&quot;; &quot;cat&quot;; &quot;wombat&quot;]
   let is_second_element_wobat = try
     // indexes start from 0, so 1 is the second element
@@ -9823,8 +9823,8 @@ called within a try-catch block or inside another partial method.</p>
 </code></pre>
 
 <p>Adding and removing elements to and from the end of the Array can be done via
-<code>push</code> and <code>pop</code> methods. You could treat the array as a FIFO queue using
-those methods.</p>
+<code>push</code> and <code>pop</code> methods. You could treat the array as a LIFO stack using
+those methods:</p>
 <pre><code class="pony">  while (array.size() &gt; 0) do
     let elem = array.pop()?
     // do something with element
@@ -9834,7 +9834,7 @@ those methods.</p>
 <p>Modifying the Array can be done via <code>update</code>, <code>insert</code> and <code>delete</code> methods
 which alter the Array at an arbitrary index, moving elements left (when
 deleting) or right (when inserting) as necessary.</p>
-<p>Iterating over the elements of an Array can be done using the <code>values</code> method.</p>
+<p>Iterating over the elements of an Array can be done using the <code>values</code> method:</p>
 <pre><code class="pony">  for element in array.values() do
       // do something with element
   end

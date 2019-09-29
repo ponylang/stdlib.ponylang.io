@@ -938,8 +938,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../builtin-None/" title="primitive None" class="md-nav__link">
-      primitive None
+    <a href="../../../builtin-NullablePointer/" title="struct NullablePointer" class="md-nav__link">
+      struct NullablePointer
     </a>
   </li>
 
@@ -950,8 +950,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../builtin-MaybePointer/" title="struct MaybePointer" class="md-nav__link">
-      struct MaybePointer
+    <a href="../../../builtin-None/" title="primitive None" class="md-nav__link">
+      primitive None
     </a>
   </li>
 
@@ -6976,8 +6976,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../none/" title="none.pony" class="md-nav__link">
-      none.pony
+    <a href="../nullable_pointer/" title="nullable_pointer.pony" class="md-nav__link">
+      nullable_pointer.pony
     </a>
   </li>
 
@@ -6988,8 +6988,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../maybe_pointer/" title="maybe_pointer.pony" class="md-nav__link">
-      maybe_pointer.pony
+    <a href="../none/" title="none.pony" class="md-nav__link">
+      none.pony
     </a>
   </li>
 
@@ -8563,7 +8563,7 @@
 
   ## Usage
 
-  Creating an Array of String.
+  Creating an Array of String:
   ```pony
     let array: Array[String] = [&quot;dog&quot;; &quot;cat&quot;; &quot;wombat&quot;]
     // array.size() == 3
@@ -8571,16 +8571,16 @@
   ```
 
   Creating an empty Array of String, which may hold at least 10 elements before
-  requesting more space.
+  requesting more space:
   ```pony
-    let array = Array(10)
+    let array = Array[String](10)
     // array.size() == 0
     // array.space() &gt;= 10
   ```
 
   Accessing elements can be done via the `apply(i: USize): this-&gt;A ?` method.
   The provided index might be out of bounds so `apply` is partial and has to be
-  called within a try-catch block or inside another partial method.
+  called within a try-catch block or inside another partial method:
   ```pony
     let array: Array[String] = [&quot;dog&quot;; &quot;cat&quot;; &quot;wombat&quot;]
     let is_second_element_wobat = try
@@ -8592,8 +8592,8 @@
   ```
 
   Adding and removing elements to and from the end of the Array can be done via
-  `push` and `pop` methods. You could treat the array as a FIFO queue using
-  those methods.
+  `push` and `pop` methods. You could treat the array as a LIFO stack using
+  those methods:
   ```pony
     while (array.size() &gt; 0) do
       let elem = array.pop()?
@@ -8605,7 +8605,7 @@
   which alter the Array at an arbitrary index, moving elements left (when
   deleting) or right (when inserting) as necessary.
 
-  Iterating over the elements of an Array can be done using the `values` method.
+  Iterating over the elements of an Array can be done using the `values` method:
   ```pony
     for element in array.values() do
         // do something with element

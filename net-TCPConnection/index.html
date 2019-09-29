@@ -942,8 +942,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../builtin-None/" title="primitive None" class="md-nav__link">
-      primitive None
+    <a href="../builtin-NullablePointer/" title="struct NullablePointer" class="md-nav__link">
+      struct NullablePointer
     </a>
   </li>
 
@@ -954,8 +954,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../builtin-MaybePointer/" title="struct MaybePointer" class="md-nav__link">
-      struct MaybePointer
+    <a href="../builtin-None/" title="primitive None" class="md-nav__link">
+      primitive None
     </a>
   </li>
 
@@ -7550,8 +7550,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/builtin/none/" title="none.pony" class="md-nav__link">
-      none.pony
+    <a href="../src/builtin/nullable_pointer/" title="nullable_pointer.pony" class="md-nav__link">
+      nullable_pointer.pony
     </a>
   </li>
 
@@ -7562,8 +7562,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/builtin/maybe_pointer/" title="maybe_pointer.pony" class="md-nav__link">
-      maybe_pointer.pony
+    <a href="../src/builtin/none/" title="none.pony" class="md-nav__link">
+      none.pony
     </a>
   </li>
 
@@ -10214,7 +10214,7 @@ discarded if the connection has not yet been established though.</p>
 </ul>
 <hr />
 <h3 id="close">close<a class="headerlink" href="#close" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1019">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1017">[Source]</a></span></p>
 <p>Attempt to perform a graceful shutdown. Don't accept new writes. If the
 connection isn't muted then we won't finish closing until we get a zero
 length read. If the connection is muted, perform a hard close and shut
@@ -10229,7 +10229,7 @@ down immediately.</p>
 </ul>
 <hr />
 <h3 id="hard_close">hard_close<a class="headerlink" href="#hard_close" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1075">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1073">[Source]</a></span></p>
 <p>When an error happens, do a non-graceful close.</p>
 <pre><code class="pony">fun ref hard_close()
 : None val
@@ -10241,7 +10241,7 @@ down immediately.</p>
 </ul>
 <hr />
 <h3 id="getsockopt">getsockopt<a class="headerlink" href="#getsockopt" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1141">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1139">[Source]</a></span></p>
 <p>General wrapper for TCP sockets to the <code>getsockopt(2)</code> system call.</p>
 <p>The caller must provide an array that is pre-allocated to be
 at least as large as the largest data structure that the kernel
@@ -10291,7 +10291,7 @@ fun ref connected(conn: TCPConnection ref) =&gt;
 </ul>
 <hr />
 <h3 id="getsockopt_u32">getsockopt_u32<a class="headerlink" href="#getsockopt_u32" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1182">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1180">[Source]</a></span></p>
 <p>Wrapper for TCP sockets to the <code>getsockopt(2)</code> system call where
 the kernel's returned option value is a C <code>uint32_t</code> type / Pony
 type <code>U32</code>.</p>
@@ -10318,7 +10318,7 @@ type <code>U32</code>.</p>
 </ul>
 <hr />
 <h3 id="setsockopt">setsockopt<a class="headerlink" href="#setsockopt" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1198">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1196">[Source]</a></span></p>
 <p>General wrapper for TCP sockets to the <code>setsockopt(2)</code> system call.</p>
 <p>The caller is responsible for the correct size and byte contents of
 the <code>option</code> array for the requested <code>level</code> and <code>option_name</code>,
@@ -10362,7 +10362,7 @@ fun ref connected(conn: TCPConnection ref) =&gt;
 </ul>
 <hr />
 <h3 id="setsockopt_u32">setsockopt_u32<a class="headerlink" href="#setsockopt_u32" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1231">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1229">[Source]</a></span></p>
 <p>General wrapper for TCP sockets to the <code>setsockopt(2)</code> system call where
 the kernel expects an option value of a C <code>uint32_t</code> type / Pony
 type <code>U32</code>.</p>
@@ -10387,7 +10387,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="get_so_error">get_so_error<a class="headerlink" href="#get_so_error" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1243">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1241">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, SO_ERROR, ...)</code></p>
 <pre><code class="pony">fun ref get_so_error()
 : (U32 val , U32 val)
@@ -10399,7 +10399,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="get_so_rcvbuf">get_so_rcvbuf<a class="headerlink" href="#get_so_rcvbuf" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1249">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1247">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, SO_RCVBUF, ...)</code></p>
 <pre><code class="pony">fun ref get_so_rcvbuf()
 : (U32 val , U32 val)
@@ -10411,7 +10411,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="get_so_sndbuf">get_so_sndbuf<a class="headerlink" href="#get_so_sndbuf" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1255">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1253">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, SO_SNDBUF, ...)</code></p>
 <pre><code class="pony">fun ref get_so_sndbuf()
 : (U32 val , U32 val)
@@ -10423,7 +10423,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="get_tcp_nodelay">get_tcp_nodelay<a class="headerlink" href="#get_tcp_nodelay" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1261">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1259">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, TCP_NODELAY, ...)</code></p>
 <pre><code class="pony">fun ref get_tcp_nodelay()
 : (U32 val , U32 val)
@@ -10435,7 +10435,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="set_so_rcvbuf">set_so_rcvbuf<a class="headerlink" href="#set_so_rcvbuf" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1268">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1266">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, SO_RCVBUF, ...)</code></p>
 <pre><code class="pony">fun ref set_so_rcvbuf(
   bufsize: U32 val)
@@ -10452,7 +10452,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="set_so_sndbuf">set_so_sndbuf<a class="headerlink" href="#set_so_sndbuf" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1274">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1272">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, SO_SNDBUF, ...)</code></p>
 <pre><code class="pony">fun ref set_so_sndbuf(
   bufsize: U32 val)
@@ -10469,7 +10469,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="set_tcp_nodelay">set_tcp_nodelay<a class="headerlink" href="#set_tcp_nodelay" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1280">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1278">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, TCP_NODELAY, ...)</code></p>
 <pre><code class="pony">fun ref set_tcp_nodelay(
   state: Bool val)
@@ -10590,7 +10590,7 @@ This occurs only with IOCP on Windows.</p>
 </ul>
 <hr />
 <h3 id="_read_buf_size">_read_buf_size<a class="headerlink" href="#_read_buf_size" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L901">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L900">[Source]</a></span></p>
 <p>Resize the read buffer if it is empty or smaller than the next payload size</p>
 <pre><code class="pony">fun ref _read_buf_size()
 : None val
@@ -10602,7 +10602,7 @@ This occurs only with IOCP on Windows.</p>
 </ul>
 <hr />
 <h3 id="_queue_read">_queue_read<a class="headerlink" href="#_queue_read" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L909">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L908">[Source]</a></span></p>
 <p>Begin an IOCP read on Windows.</p>
 <pre><code class="pony">fun ref _queue_read()
 : None val
@@ -10614,7 +10614,7 @@ This occurs only with IOCP on Windows.</p>
 </ul>
 <hr />
 <h3 id="_pending_reads">_pending_reads<a class="headerlink" href="#_pending_reads" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L924">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L923">[Source]</a></span></p>
 <p>Unless this connection is currently muted, read while data is available,
 guessing the next packet length as we go. If we read 5 kb of data, send
 ourself a resume message and stop reading, to avoid starving other actors.
@@ -10631,7 +10631,7 @@ cases.</p>
 </ul>
 <hr />
 <h3 id="_notify_connecting">_notify_connecting<a class="headerlink" href="#_notify_connecting" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1008">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1006">[Source]</a></span></p>
 <p>Inform the notifier that we're connecting.</p>
 <pre><code class="pony">fun ref _notify_connecting()
 : None val
@@ -10643,7 +10643,7 @@ cases.</p>
 </ul>
 <hr />
 <h3 id="_close">_close<a class="headerlink" href="#_close" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1036">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1034">[Source]</a></span></p>
 <pre><code class="pony">fun ref _close()
 : None val
 </code></pre>
@@ -10654,7 +10654,7 @@ cases.</p>
 </ul>
 <hr />
 <h3 id="_try_shutdown">_try_shutdown<a class="headerlink" href="#_try_shutdown" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1040">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1038">[Source]</a></span></p>
 <p>If we have closed and we have no remaining writes or pending connections,
 then shutdown.</p>
 <pre><code class="pony">fun ref _try_shutdown()
@@ -10667,7 +10667,7 @@ then shutdown.</p>
 </ul>
 <hr />
 <h3 id="_is_sock_connected">_is_sock_connected<a class="headerlink" href="#_is_sock_connected" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1115">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1113">[Source]</a></span></p>
 <pre><code class="pony">fun box _is_sock_connected(
   fd: U32 val)
 : Bool val
@@ -10683,7 +10683,7 @@ then shutdown.</p>
 </ul>
 <hr />
 <h3 id="_apply_backpressure">_apply_backpressure<a class="headerlink" href="#_apply_backpressure" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1119">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1117">[Source]</a></span></p>
 <pre><code class="pony">fun ref _apply_backpressure()
 : None val
 </code></pre>
@@ -10694,7 +10694,7 @@ then shutdown.</p>
 </ul>
 <hr />
 <h3 id="_release_backpressure">_release_backpressure<a class="headerlink" href="#_release_backpressure" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1133">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1131">[Source]</a></span></p>
 <pre><code class="pony">fun ref _release_backpressure()
 : None val
 </code></pre>

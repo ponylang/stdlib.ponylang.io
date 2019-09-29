@@ -938,8 +938,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../builtin-None/" title="primitive None" class="md-nav__link">
-      primitive None
+    <a href="../../../builtin-NullablePointer/" title="struct NullablePointer" class="md-nav__link">
+      struct NullablePointer
     </a>
   </li>
 
@@ -950,8 +950,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../builtin-MaybePointer/" title="struct MaybePointer" class="md-nav__link">
-      struct MaybePointer
+    <a href="../../../builtin-None/" title="primitive None" class="md-nav__link">
+      primitive None
     </a>
   </li>
 
@@ -6976,8 +6976,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../builtin/none/" title="none.pony" class="md-nav__link">
-      none.pony
+    <a href="../../builtin/nullable_pointer/" title="nullable_pointer.pony" class="md-nav__link">
+      nullable_pointer.pony
     </a>
   </li>
 
@@ -6988,8 +6988,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../builtin/maybe_pointer/" title="maybe_pointer.pony" class="md-nav__link">
-      maybe_pointer.pony
+    <a href="../../builtin/none/" title="none.pony" class="md-nav__link">
+      none.pony
     </a>
   </li>
 
@@ -9446,8 +9446,7 @@ actor TCPConnection
         and (_read_buf_offset &gt; 0) do
         // get data to be distributed and update `_read_buf_offset`
         let chop_at = if _expect == 0 then _read_buf_offset else _expect end
-        let data' = _read_buf = recover Array[U8] end
-        (let data, _read_buf) = (consume data').chop(chop_at)
+        (let data, _read_buf) = (consume _read_buf).chop(chop_at)
         _read_buf_offset = _read_buf_offset - chop_at
 
         _notify.received(this, consume data, 1)
@@ -9507,8 +9506,7 @@ actor TCPConnection
           while (_read_buf_offset &gt;= _expect) and (_read_buf_offset &gt; 0) do
             // get data to be distributed and update `_read_buf_offset`
             let chop_at = if _expect == 0 then _read_buf_offset else _expect end
-            let data' = _read_buf = recover Array[U8] end
-            (let data, _read_buf) = (consume data').chop(chop_at)
+            (let data, _read_buf) = (consume _read_buf).chop(chop_at)
             _read_buf_offset = _read_buf_offset - chop_at
 
             // increment max reads

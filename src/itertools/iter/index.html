@@ -938,8 +938,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../builtin-None/" title="primitive None" class="md-nav__link">
-      primitive None
+    <a href="../../../builtin-NullablePointer/" title="struct NullablePointer" class="md-nav__link">
+      struct NullablePointer
     </a>
   </li>
 
@@ -950,8 +950,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../builtin-MaybePointer/" title="struct MaybePointer" class="md-nav__link">
-      struct MaybePointer
+    <a href="../../../builtin-None/" title="primitive None" class="md-nav__link">
+      primitive None
     </a>
   </li>
 
@@ -6976,8 +6976,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../builtin/none/" title="none.pony" class="md-nav__link">
-      none.pony
+    <a href="../../builtin/nullable_pointer/" title="nullable_pointer.pony" class="md-nav__link">
+      nullable_pointer.pony
     </a>
   </li>
 
@@ -6988,8 +6988,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../builtin/maybe_pointer/" title="maybe_pointer.pony" class="md-nav__link">
-      maybe_pointer.pony
+    <a href="../../builtin/none/" title="none.pony" class="md-nav__link">
+      none.pony
     </a>
   </li>
 
@@ -8650,7 +8650,7 @@ class Iter[A] is Iterator[A]
 
   fun ref map_stateful[B](f: {ref(A!): B^ ?}): Iter[B]^ =&gt;
     &quot;&quot;&quot;
-    Allows stateful transformaion of each element from the iterator, similar
+    Allows stateful transformation of each element from the iterator, similar
     to `map`.
     &quot;&quot;&quot;
     Iter[B](
