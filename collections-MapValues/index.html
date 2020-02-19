@@ -70,7 +70,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#mapvalues91k-k-v-v-h-hashfunction91k93-val-m-hashmap91k-v-h93-read93" tabindex="1" class="md-skip">
+      <a href="../#mapvaluesk-k-v-v-h-hashfunctionk-val-m-hashmapk-v-h-read" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -786,6 +786,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../builtin-RuntimeOptions/" title="struct RuntimeOptions" class="md-nav__link">
+      struct RuntimeOptions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../builtin-Real/" title="trait Real" class="md-nav__link">
       trait Real
     </a>
@@ -918,8 +930,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../builtin-None/" title="primitive None" class="md-nav__link">
-      primitive None
+    <a href="../builtin-NullablePointer/" title="struct NullablePointer" class="md-nav__link">
+      struct NullablePointer
     </a>
   </li>
 
@@ -930,8 +942,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../builtin-MaybePointer/" title="struct MaybePointer" class="md-nav__link">
-      struct MaybePointer
+    <a href="../builtin-None/" title="primitive None" class="md-nav__link">
+      primitive None
     </a>
   </li>
 
@@ -3887,6 +3899,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../net-Proxy/" title="interface Proxy" class="md-nav__link">
+      interface Proxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../net-NoProxy/" title="class NoProxy" class="md-nav__link">
+      class NoProxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../net-OSSockOpt/" title="primitive OSSockOpt" class="md-nav__link">
       primitive OSSockOpt
     </a>
@@ -5567,6 +5603,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../src/builtin/runtime_options/" title="runtime_options.pony" class="md-nav__link">
+      runtime_options.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../src/builtin/real/" title="real.pony" class="md-nav__link">
       real.pony
     </a>
@@ -5615,8 +5663,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/builtin/none/" title="none.pony" class="md-nav__link">
-      none.pony
+    <a href="../src/builtin/nullable_pointer/" title="nullable_pointer.pony" class="md-nav__link">
+      nullable_pointer.pony
     </a>
   </li>
 
@@ -5627,8 +5675,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/builtin/maybe_pointer/" title="maybe_pointer.pony" class="md-nav__link">
-      maybe_pointer.pony
+    <a href="../src/builtin/none/" title="none.pony" class="md-nav__link">
+      none.pony
     </a>
   </li>
 
@@ -6407,6 +6455,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../src/net/proxy/" title="proxy.pony" class="md-nav__link">
+      proxy.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../src/net/ossockopt/" title="ossockopt.pony" class="md-nav__link">
       ossockopt.pony
     </a>
@@ -7003,8 +7063,8 @@
               
                 
                 
-                <h1 id="mapvalues91k-k-v-v-h-hashfunction91k93-val-m-hashmap91k-v-h93-read93">MapValues[K: K, V: V, H: <a href="../collections-HashFunction/">HashFunction</a>[K] val, M: <a href="../collections-HashMap/">HashMap</a>[K, V, H] #read]<a class="headerlink" href="#mapvalues91k-k-v-v-h-hashfunction91k93-val-m-hashmap91k-v-h93-read93" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/collections/map/#L421">[Source]</a></span></p>
+                <h1 id="mapvaluesk-k-v-v-h-hashfunctionk-val-m-hashmapk-v-h-read">MapValues[K: K, V: V, H: <a href="../collections-HashFunction/">HashFunction</a>[K] val, M: <a href="../collections-HashMap/">HashMap</a>[K, V, H] #read]<a class="headerlink" href="#mapvaluesk-k-v-v-h-hashfunctionk-val-m-hashmapk-v-h-read" title="Permanent link">&para;</a></h1>
+<p><span class="source-link"><a href="../src/collections/map/#L419">[Source]</a></span></p>
 <p>An iterator over the values in a map.</p>
 <pre><code class="pony">class ref MapValues[K: K, V: V, H: HashFunction[K] val, M: HashMap[K, V, H] #read] is
   Iterator[M-&gt;V] ref
@@ -7017,7 +7077,7 @@
 <hr />
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/map/#L430">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/map/#L428">[Source]</a></span></p>
 <p>Creates an iterator for the given map.</p>
 <pre><code class="pony">new ref create(
   map: M)
@@ -7035,7 +7095,7 @@
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="has_next">has_next<a class="headerlink" href="#has_next" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/map/#L436">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/map/#L434">[Source]</a></span></p>
 <p>True if it believes there are remaining entries. May not be right if values
 were added or removed from the map.</p>
 <pre><code class="pony">fun box has_next()
@@ -7048,7 +7108,7 @@ were added or removed from the map.</p>
 </ul>
 <hr />
 <h3 id="next">next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/map/#L443">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/map/#L441">[Source]</a></span></p>
 <p>Returns the next value, or raises an error if there isn't one. If values
 are added during iteration, this may not return all values.</p>
 <pre><code class="pony">fun ref next()

@@ -782,6 +782,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../builtin-RuntimeOptions/" title="struct RuntimeOptions" class="md-nav__link">
+      struct RuntimeOptions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../builtin-Real/" title="trait Real" class="md-nav__link">
       trait Real
     </a>
@@ -914,8 +926,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../builtin-None/" title="primitive None" class="md-nav__link">
-      primitive None
+    <a href="../../../builtin-NullablePointer/" title="struct NullablePointer" class="md-nav__link">
+      struct NullablePointer
     </a>
   </li>
 
@@ -926,8 +938,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../builtin-MaybePointer/" title="struct MaybePointer" class="md-nav__link">
-      struct MaybePointer
+    <a href="../../../builtin-None/" title="primitive None" class="md-nav__link">
+      primitive None
     </a>
   </li>
 
@@ -3782,6 +3794,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../net-Proxy/" title="interface Proxy" class="md-nav__link">
+      interface Proxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../net-NoProxy/" title="class NoProxy" class="md-nav__link">
+      class NoProxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../net-OSSockOpt/" title="primitive OSSockOpt" class="md-nav__link">
       primitive OSSockOpt
     </a>
@@ -5471,6 +5507,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../runtime_options/" title="runtime_options.pony" class="md-nav__link">
+      runtime_options.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../real/" title="real.pony" class="md-nav__link">
       real.pony
     </a>
@@ -5519,8 +5567,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../none/" title="none.pony" class="md-nav__link">
-      none.pony
+    <a href="../nullable_pointer/" title="nullable_pointer.pony" class="md-nav__link">
+      nullable_pointer.pony
     </a>
   </li>
 
@@ -5531,8 +5579,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../maybe_pointer/" title="maybe_pointer.pony" class="md-nav__link">
-      maybe_pointer.pony
+    <a href="../none/" title="none.pony" class="md-nav__link">
+      none.pony
     </a>
   </li>
 
@@ -6301,6 +6349,18 @@
   <li class="md-nav__item">
     <a href="../../net/tcp_connection/" title="tcp_connection.pony" class="md-nav__link">
       tcp_connection.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../net/proxy/" title="proxy.pony" class="md-nav__link">
+      proxy.pony
     </a>
   </li>
 
@@ -7919,11 +7979,31 @@ actor Main
     Split the string into an array of strings that are delimited by `delim` in
     the original string. If `n &gt; 0`, then the split count is limited to n.
 
+    Example:
+
+    ```pony
+    let original: String = &quot;&lt;b&gt;&lt;span&gt;Hello!&lt;/span&gt;&lt;/b&gt;&quot;
+    let delimiter: String = &quot;&gt;&lt;&quot;
+    let split_array: Array[String] = original.split_by(delimiter)
+    env.out.print(&quot;OUTPUT:&quot;)
+    for value in split_array.values() do
+      env.out.print(value)
+    end
+
+    // OUTPUT:
+    // &lt;b
+    // span&gt;Hello!&lt;/span
+    // b&gt;
+    ```
+
     Adjacent delimiters result in a zero length entry in the array. For
-    example, `&quot;1,,2&quot;.split(&quot;,&quot;) =&gt; [&quot;1&quot;, &quot;&quot;, &quot;2&quot;]`.
+    example, `&quot;1CutCut2&quot;.split_by(&quot;Cut&quot;) =&gt; [&quot;1&quot;, &quot;&quot;, &quot;2&quot;]`.
 
     An empty delimiter results in an array that contains a single element equal
     to the whole string.
+
+    If you want to split the string with each individual character of `delim`,
+    use [`split`](#split).
     &quot;&quot;&quot;
     let delim_size = ISize.from[USize](delim.size())
     let total_size = ISize.from[USize](size())
@@ -7943,12 +8023,32 @@ actor Main
 
   fun split(delim: String = &quot; \t\v\f\r\n&quot;, n: USize = 0): Array[String] iso^ =&gt;
     &quot;&quot;&quot;
-    Split the string into an array of strings. Any character in the delimiter
-    string is accepted as a delimiter. If `n &gt; 0`, then the split count is
-    limited to n.
+    Split the string into an array of strings with any character in the
+    delimiter string. By default, the string is split with whitespace
+    characters. If `n &gt; 0`, then the split count is limited to n.
+
+    Example:
+
+    ```pony
+    let original: String = &quot;name,job;department&quot;
+    let delimiter: String = &quot;.,;&quot;
+    let split_array: Array[String] = original.split(delimiter)
+    env.out.print(&quot;OUTPUT:&quot;)
+    for value in split_array.values() do
+      env.out.print(value)
+    end
+
+    // OUTPUT:
+    // name
+    // job
+    // department
+    ```
 
     Adjacent delimiters result in a zero length entry in the array. For
     example, `&quot;1,,2&quot;.split(&quot;,&quot;) =&gt; [&quot;1&quot;, &quot;&quot;, &quot;2&quot;]`.
+
+    If you want to split the string with the entire delimiter string `delim`,
+    use [`split_by`](#split_by).
     &quot;&quot;&quot;
     let result = recover Array[String] end
 

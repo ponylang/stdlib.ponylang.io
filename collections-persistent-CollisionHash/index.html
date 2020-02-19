@@ -786,6 +786,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../builtin-RuntimeOptions/" title="struct RuntimeOptions" class="md-nav__link">
+      struct RuntimeOptions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../builtin-Real/" title="trait Real" class="md-nav__link">
       trait Real
     </a>
@@ -918,8 +930,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../builtin-None/" title="primitive None" class="md-nav__link">
-      primitive None
+    <a href="../builtin-NullablePointer/" title="struct NullablePointer" class="md-nav__link">
+      struct NullablePointer
     </a>
   </li>
 
@@ -930,8 +942,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../builtin-MaybePointer/" title="struct MaybePointer" class="md-nav__link">
-      struct MaybePointer
+    <a href="../builtin-None/" title="primitive None" class="md-nav__link">
+      primitive None
     </a>
   </li>
 
@@ -3896,6 +3908,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../net-Proxy/" title="interface Proxy" class="md-nav__link">
+      interface Proxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../net-NoProxy/" title="class NoProxy" class="md-nav__link">
+      class NoProxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../net-OSSockOpt/" title="primitive OSSockOpt" class="md-nav__link">
       primitive OSSockOpt
     </a>
@@ -5576,6 +5612,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../src/builtin/runtime_options/" title="runtime_options.pony" class="md-nav__link">
+      runtime_options.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../src/builtin/real/" title="real.pony" class="md-nav__link">
       real.pony
     </a>
@@ -5624,8 +5672,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/builtin/none/" title="none.pony" class="md-nav__link">
-      none.pony
+    <a href="../src/builtin/nullable_pointer/" title="nullable_pointer.pony" class="md-nav__link">
+      nullable_pointer.pony
     </a>
   </li>
 
@@ -5636,8 +5684,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/builtin/maybe_pointer/" title="maybe_pointer.pony" class="md-nav__link">
-      maybe_pointer.pony
+    <a href="../src/builtin/none/" title="none.pony" class="md-nav__link">
+      none.pony
     </a>
   </li>
 
@@ -6416,6 +6464,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../src/net/proxy/" title="proxy.pony" class="md-nav__link">
+      proxy.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../src/net/ossockopt/" title="ossockopt.pony" class="md-nav__link">
       ossockopt.pony
     </a>
@@ -7022,7 +7082,7 @@
                 
                 
                 <h1 id="collisionhash">CollisionHash<a class="headerlink" href="#collisionhash" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/collections-persistent/_test/#L335">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/_test/#L341">[Source]</a></span></p>
 <pre><code class="pony">primitive val CollisionHash is
   HashFunction[U64 val] val
 </code></pre>
@@ -7034,7 +7094,7 @@
 <hr />
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/_test/#L335">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/_test/#L341">[Source]</a></span></p>
 <pre><code class="pony">new val create()
 : CollisionHash val^
 </code></pre>
@@ -7046,7 +7106,7 @@
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="hash">hash<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/_test/#L336">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/_test/#L342">[Source]</a></span></p>
 <pre><code class="pony">fun box hash(
   x: U64 val)
 : USize val
@@ -7062,7 +7122,7 @@
 </ul>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/_test/#L337">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/_test/#L343">[Source]</a></span></p>
 <pre><code class="pony">fun box eq(
   x: U64 val,
   y: U64 val)
@@ -7080,7 +7140,7 @@
 </ul>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/_test/#L336">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/_test/#L342">[Source]</a></span></p>
 <pre><code class="pony">fun box ne(
   that: CollisionHash val)
 : Bool val

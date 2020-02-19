@@ -782,6 +782,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../builtin-RuntimeOptions/" title="struct RuntimeOptions" class="md-nav__link">
+      struct RuntimeOptions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../builtin-Real/" title="trait Real" class="md-nav__link">
       trait Real
     </a>
@@ -914,8 +926,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../builtin-None/" title="primitive None" class="md-nav__link">
-      primitive None
+    <a href="../../../builtin-NullablePointer/" title="struct NullablePointer" class="md-nav__link">
+      struct NullablePointer
     </a>
   </li>
 
@@ -926,8 +938,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../builtin-MaybePointer/" title="struct MaybePointer" class="md-nav__link">
-      struct MaybePointer
+    <a href="../../../builtin-None/" title="primitive None" class="md-nav__link">
+      primitive None
     </a>
   </li>
 
@@ -3782,6 +3794,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../net-Proxy/" title="interface Proxy" class="md-nav__link">
+      interface Proxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../net-NoProxy/" title="class NoProxy" class="md-nav__link">
+      class NoProxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../net-OSSockOpt/" title="primitive OSSockOpt" class="md-nav__link">
       primitive OSSockOpt
     </a>
@@ -5464,6 +5500,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../builtin/runtime_options/" title="runtime_options.pony" class="md-nav__link">
+      runtime_options.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../builtin/real/" title="real.pony" class="md-nav__link">
       real.pony
     </a>
@@ -5512,8 +5560,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../builtin/none/" title="none.pony" class="md-nav__link">
-      none.pony
+    <a href="../../builtin/nullable_pointer/" title="nullable_pointer.pony" class="md-nav__link">
+      nullable_pointer.pony
     </a>
   </li>
 
@@ -5524,8 +5572,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../builtin/maybe_pointer/" title="maybe_pointer.pony" class="md-nav__link">
-      maybe_pointer.pony
+    <a href="../../builtin/none/" title="none.pony" class="md-nav__link">
+      none.pony
     </a>
   </li>
 
@@ -6311,6 +6359,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../proxy/" title="proxy.pony" class="md-nav__link">
+      proxy.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../ossockopt/" title="ossockopt.pony" class="md-nav__link">
       ossockopt.pony
     </a>
@@ -6829,6 +6889,27 @@
     Called when a TCPConnection is accepted by a TCPListener.
     &quot;&quot;&quot;
     None
+
+  fun ref proxy_via(host: String, service: String): (String, String) =&gt;
+    &quot;&quot;&quot;
+    Called before before attempting to connect to the destination server
+    In order to connect via proxy, return the host &amp; service for the proxy
+    server.
+
+    An implementation of this function might look like:
+    ```pony
+    let _proxy_host = &quot;some-proxy.example.com&quot;
+    let _proxy_service = &quot;80&quot;
+    var _destination_host: ( None | String )
+    var _destination_service: ( None | String )
+
+    fun ref proxy_via(host: String, service: String): (String, String) =&gt;
+      _destination_host = host
+      _destination_service = service
+      ( _proxy_host, _proxy_service )
+    ```
+    &quot;&quot;&quot;
+    (host, service)
 
   fun ref connecting(conn: TCPConnection ref, count: U32) =&gt;
     &quot;&quot;&quot;

@@ -70,7 +70,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#mapkeys91k-any-share-v-any-share-h-hashfunction91k93-val93" tabindex="1" class="md-skip">
+      <a href="../#mapkeysk-any-share-v-any-share-h-hashfunctionk-val" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -786,6 +786,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../builtin-RuntimeOptions/" title="struct RuntimeOptions" class="md-nav__link">
+      struct RuntimeOptions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../builtin-Real/" title="trait Real" class="md-nav__link">
       trait Real
     </a>
@@ -918,8 +930,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../builtin-None/" title="primitive None" class="md-nav__link">
-      primitive None
+    <a href="../builtin-NullablePointer/" title="struct NullablePointer" class="md-nav__link">
+      struct NullablePointer
     </a>
   </li>
 
@@ -930,8 +942,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../builtin-MaybePointer/" title="struct MaybePointer" class="md-nav__link">
-      struct MaybePointer
+    <a href="../builtin-None/" title="primitive None" class="md-nav__link">
+      primitive None
     </a>
   </li>
 
@@ -3878,6 +3890,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../net-Proxy/" title="interface Proxy" class="md-nav__link">
+      interface Proxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../net-NoProxy/" title="class NoProxy" class="md-nav__link">
+      class NoProxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../net-OSSockOpt/" title="primitive OSSockOpt" class="md-nav__link">
       primitive OSSockOpt
     </a>
@@ -5558,6 +5594,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../src/builtin/runtime_options/" title="runtime_options.pony" class="md-nav__link">
+      runtime_options.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../src/builtin/real/" title="real.pony" class="md-nav__link">
       real.pony
     </a>
@@ -5606,8 +5654,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/builtin/none/" title="none.pony" class="md-nav__link">
-      none.pony
+    <a href="../src/builtin/nullable_pointer/" title="nullable_pointer.pony" class="md-nav__link">
+      nullable_pointer.pony
     </a>
   </li>
 
@@ -5618,8 +5666,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/builtin/maybe_pointer/" title="maybe_pointer.pony" class="md-nav__link">
-      maybe_pointer.pony
+    <a href="../src/builtin/none/" title="none.pony" class="md-nav__link">
+      none.pony
     </a>
   </li>
 
@@ -6398,6 +6446,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../src/net/proxy/" title="proxy.pony" class="md-nav__link">
+      proxy.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../src/net/ossockopt/" title="ossockopt.pony" class="md-nav__link">
       ossockopt.pony
     </a>
@@ -6985,14 +7045,14 @@
               
                 
                 
-                <h1 id="mapkeys91k-any-share-v-any-share-h-hashfunction91k93-val93">MapKeys[K: <a href="../builtin-Any/">Any</a> #share, V: <a href="../builtin-Any/">Any</a> #share, H: <a href="../collections-HashFunction/">HashFunction</a>[K] val]<a class="headerlink" href="#mapkeys91k-any-share-v-any-share-h-hashfunction91k93-val93" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/collections-persistent/map/#L120">[Source]</a></span></p>
+                <h1 id="mapkeysk-any-share-v-any-share-h-hashfunctionk-val">MapKeys[K: <a href="../builtin-Any/">Any</a> #share, V: <a href="../builtin-Any/">Any</a> #share, H: <a href="../collections-HashFunction/">HashFunction</a>[K] val]<a class="headerlink" href="#mapkeysk-any-share-v-any-share-h-hashfunctionk-val" title="Permanent link">&para;</a></h1>
+<p><span class="source-link"><a href="../src/collections-persistent/map/#L136">[Source]</a></span></p>
 <pre><code class="pony">class ref MapKeys[K: Any #share, V: Any #share, H: HashFunction[K] val]
 </code></pre>
 
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/map/#L123">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/map/#L139">[Source]</a></span></p>
 <pre><code class="pony">new ref create(
   m: HashMap[K, V, H] val)
 : MapKeys[K, V, H] ref^
@@ -7009,7 +7069,7 @@
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="has_next">has_next<a class="headerlink" href="#has_next" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/map/#L125">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/map/#L141">[Source]</a></span></p>
 <pre><code class="pony">fun box has_next()
 : Bool val
 </code></pre>
@@ -7020,7 +7080,7 @@
 </ul>
 <hr />
 <h3 id="next">next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections-persistent/map/#L127">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections-persistent/map/#L143">[Source]</a></span></p>
 <pre><code class="pony">fun ref next()
 : K ?
 </code></pre>

@@ -782,6 +782,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../builtin-RuntimeOptions/" title="struct RuntimeOptions" class="md-nav__link">
+      struct RuntimeOptions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../builtin-Real/" title="trait Real" class="md-nav__link">
       trait Real
     </a>
@@ -914,8 +926,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../builtin-None/" title="primitive None" class="md-nav__link">
-      primitive None
+    <a href="../../../builtin-NullablePointer/" title="struct NullablePointer" class="md-nav__link">
+      struct NullablePointer
     </a>
   </li>
 
@@ -926,8 +938,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../builtin-MaybePointer/" title="struct MaybePointer" class="md-nav__link">
-      struct MaybePointer
+    <a href="../../../builtin-None/" title="primitive None" class="md-nav__link">
+      primitive None
     </a>
   </li>
 
@@ -3782,6 +3794,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../net-Proxy/" title="interface Proxy" class="md-nav__link">
+      interface Proxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../net-NoProxy/" title="class NoProxy" class="md-nav__link">
+      class NoProxy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../net-OSSockOpt/" title="primitive OSSockOpt" class="md-nav__link">
       primitive OSSockOpt
     </a>
@@ -5464,6 +5500,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../builtin/runtime_options/" title="runtime_options.pony" class="md-nav__link">
+      runtime_options.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../builtin/real/" title="real.pony" class="md-nav__link">
       real.pony
     </a>
@@ -5512,8 +5560,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../builtin/none/" title="none.pony" class="md-nav__link">
-      none.pony
+    <a href="../../builtin/nullable_pointer/" title="nullable_pointer.pony" class="md-nav__link">
+      nullable_pointer.pony
     </a>
   </li>
 
@@ -5524,8 +5572,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../builtin/maybe_pointer/" title="maybe_pointer.pony" class="md-nav__link">
-      maybe_pointer.pony
+    <a href="../../builtin/none/" title="none.pony" class="md-nav__link">
+      none.pony
     </a>
   </li>
 
@@ -6311,6 +6359,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../proxy/" title="proxy.pony" class="md-nav__link">
+      proxy.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../ossockopt/" title="ossockopt.pony" class="md-nav__link">
       ossockopt.pony
     </a>
@@ -7009,6 +7069,80 @@ actor TCPConnection
   these platforms, you **must** call `unmute` on a muted connection to have
   it close. Without calling `unmute` the `TCPConnection` actor will never
   exit.
+
+  ## Proxy support
+
+  Using the `proxy_via` callback in a `TCPConnectionNotify` it is possible
+  to implement proxies. The function takes the intended destination host
+  and service as parameters and returns a 2-tuple of the proxy host and
+  service.
+
+  The proxy `TCPConnectionNotify` should decorate another implementation of
+  `TCPConnectionNotify` passing relevent data through.
+
+  ### Example proxy implementation
+
+  ```pony
+  actor Main
+    new create(env: Env) =&gt;
+      MyClient.create(
+        &quot;example.com&quot;, // we actually want to connect to this host
+        &quot;80&quot;,
+        ExampleProxy.create(&quot;proxy.example.com&quot;, &quot;80&quot;)) // we connect via this proxy
+
+  actor MyClient
+    new create(host: String, service: String, proxy: Proxy = NoProxy) =&gt;
+      let conn: TCPConnection = TCPConnection.create(
+        env.root as AmbientAuth,
+        proxy.apply(MyConnectionNotify.create()),
+        host,
+        service)
+
+  class ExampleProxy is Proxy
+    let _proxy_host: String
+    let _proxy_service: String
+
+    new create(proxy_host: String, proxy_service: String) =&gt;
+      _proxy_host = proxy_host
+      _proxy_service = proxy_service
+
+    fun apply(wrap: TCPConnectionNotify iso): TCPConnectionNotify iso^ =&gt;
+      ExampleProxyNotify.create(consume wrap, _proxy_service, _proxy_service)
+
+  class iso ExampleProxyNotify is TCPConnectionNotify
+    // Fictional proxy implementation that has no error
+    // conditions, and always forwards the connection.
+    let _proxy_host: String
+    let _proxy_service: String
+    var _destination_host: (None | String) = None
+    var _destination_service: (None | String) = None
+    let _wrapped: TCPConnectionNotify iso
+
+    new iso create(wrap: TCPConnectionNotify iso, proxy_host: String, proxy_service: String) =&gt;
+      _wrapped = wrap
+      _proxy_host = proxy_host
+      _proxy_service = proxy_service
+
+    fun ref proxy_via(host: String, service: String): (String, String) =&gt;
+      // Stash the original host &amp; service; return the host &amp; service
+      // for the proxy; indicating that the initial TCP connection should
+      // be made to the proxy
+      _destination_host = host
+      _destination_service = service
+      (_proxy_host, _proxy_service)
+
+    fun ref connected(conn: TCPConnection ref) =&gt;
+      // conn is the connection to the *proxy* server. We need to ask the
+      // proxy server to forward this connection to our intended final
+      // destination.
+      conn.write((_destination_host + &quot;\n&quot;).array())
+      conn.write((_destination_service + &quot;\n&quot;).array())
+      wrapped.connected(conn)
+
+    fun ref received(conn, data, times) =&gt; _wrapped.received(conn, data, times)
+    fun ref connect_failed(conn: TCPConnection ref) =&gt; None
+  ```
+
   &quot;&quot;&quot;
   var _listen: (TCPListener | None) = None
   var _notify: TCPConnectionNotify
@@ -7067,8 +7201,9 @@ actor TCPConnection
       else
         AsioEvent.read_write()
       end
+    (let host', let service') = _notify.proxy_via(host, service)
     _connect_count =
-      @pony_os_connect_tcp[U32](this, host.cstring(), service.cstring(),
+      @pony_os_connect_tcp[U32](this, host'.cstring(), service'.cstring(),
         from.cstring(), asio_flags)
     _notify_connecting()
 
@@ -7096,8 +7231,9 @@ actor TCPConnection
       else
         AsioEvent.read_write()
       end
+    (let host', let service') = _notify.proxy_via(host, service)
     _connect_count =
-      @pony_os_connect_tcp4[U32](this, host.cstring(), service.cstring(),
+      @pony_os_connect_tcp4[U32](this, host'.cstring(), service'.cstring(),
         from.cstring(), asio_flags)
     _notify_connecting()
 
@@ -7125,8 +7261,9 @@ actor TCPConnection
       else
         AsioEvent.read_write()
       end
+    (let host', let service') = _notify.proxy_via(host, service)
     _connect_count =
-      @pony_os_connect_tcp6[U32](this, host.cstring(), service.cstring(),
+      @pony_os_connect_tcp6[U32](this, host'.cstring(), service'.cstring(),
         from.cstring(), asio_flags)
     _notify_connecting()
 
@@ -7629,8 +7766,7 @@ actor TCPConnection
         and (_read_buf_offset &gt; 0) do
         // get data to be distributed and update `_read_buf_offset`
         let chop_at = if _expect == 0 then _read_buf_offset else _expect end
-        let data' = _read_buf = recover Array[U8] end
-        (let data, _read_buf) = (consume data').chop(chop_at)
+        (let data, _read_buf) = (consume _read_buf).chop(chop_at)
         _read_buf_offset = _read_buf_offset - chop_at
 
         _notify.received(this, consume data, 1)
@@ -7690,8 +7826,7 @@ actor TCPConnection
           while (_read_buf_offset &gt;= _expect) and (_read_buf_offset &gt; 0) do
             // get data to be distributed and update `_read_buf_offset`
             let chop_at = if _expect == 0 then _read_buf_offset else _expect end
-            let data' = _read_buf = recover Array[U8] end
-            (let data, _read_buf) = (consume data').chop(chop_at)
+            (let data, _read_buf) = (consume _read_buf).chop(chop_at)
             _read_buf_offset = _read_buf_offset - chop_at
 
             // increment max reads
@@ -8063,13 +8198,13 @@ actor TCPConnection
           </a>
         
         
-          <a href="../ossockopt/" title="ossockopt.pony" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../proxy/" title="proxy.pony" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                ossockopt.pony
+                proxy.pony
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
