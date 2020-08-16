@@ -32,11 +32,11 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-ponylang-0.2.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-ponylang-0.2.6">
     
     
       
-        <title>primitive CatArgs - Pony Standard Library</title>
+        <title>class Signaled - Pony Standard Library</title>
       
     
     
@@ -70,7 +70,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#catargs" tabindex="1" class="md-skip">
+      <a href="#signaled" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -96,7 +96,7 @@
                 Pony Standard Library
               </span>
               <span class="md-header-nav__topic">
-                primitive CatArgs
+                class Signaled
               </span>
             
           
@@ -4460,6 +4460,54 @@
 
 
   <li class="md-nav__item">
+    <a href="../process-ProcessMonitorAuth/" title="type ProcessMonitorAuth" class="md-nav__link">
+      type ProcessMonitorAuth
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-ProcessMonitor/" title="actor ProcessMonitor" class="md-nav__link">
+      actor ProcessMonitor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-ProcessError/" title="class ProcessError" class="md-nav__link">
+      class ProcessError
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-ProcessErrorType/" title="type ProcessErrorType" class="md-nav__link">
+      type ProcessErrorType
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../process-ExecveError/" title="primitive ExecveError" class="md-nav__link">
       primitive ExecveError
     </a>
@@ -4532,18 +4580,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../process-Unsupported/" title="primitive Unsupported" class="md-nav__link">
-      primitive Unsupported
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../process-CapError/" title="primitive CapError" class="md-nav__link">
       primitive CapError
     </a>
@@ -4556,8 +4592,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../process-ProcessError/" title="type ProcessError" class="md-nav__link">
-      type ProcessError
+    <a href="../process-ChdirError/" title="primitive ChdirError" class="md-nav__link">
+      primitive ChdirError
     </a>
   </li>
 
@@ -4568,20 +4604,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../process-ProcessMonitorAuth/" title="type ProcessMonitorAuth" class="md-nav__link">
-      type ProcessMonitorAuth
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../process-ProcessMonitor/" title="actor ProcessMonitor" class="md-nav__link">
-      actor ProcessMonitor
+    <a href="../process-UnknownError/" title="primitive UnknownError" class="md-nav__link">
+      primitive UnknownError
     </a>
   </li>
 
@@ -4604,8 +4628,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../process-CatPath/" title="primitive CatPath" class="md-nav__link">
-      primitive CatPath
+    <a href="../process-Exited/" title="class Exited" class="md-nav__link">
+      class Exited
     </a>
   </li>
 
@@ -4625,11 +4649,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        primitive CatArgs
+        class Signaled
       </label>
     
-    <a href="./" title="primitive CatArgs" class="md-nav__link md-nav__link--active">
-      primitive CatArgs
+    <a href="./" title="class Signaled" class="md-nav__link md-nav__link--active">
+      class Signaled
     </a>
     
       
@@ -4643,6 +4667,15 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        
+          <li class="md-nav__item">
+    <a href="#implements" title="Implements" class="md-nav__link">
+    Implements
+  </a>
+  
+</li>
+        
       
         
           <li class="md-nav__item">
@@ -4679,8 +4712,17 @@
         
           
             <li class="md-nav__item">
-    <a href="#apply" title="apply" class="md-nav__link">
-    apply
+    <a href="#signal" title="signal" class="md-nav__link">
+    signal
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+    <a href="#string" title="string" class="md-nav__link">
+    string
   </a>
   
 </li>
@@ -4727,8 +4769,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../process-EchoPath/" title="primitive EchoPath" class="md-nav__link">
-      primitive EchoPath
+    <a href="../process-ProcessExitStatus/" title="type ProcessExitStatus" class="md-nav__link">
+      type ProcessExitStatus
     </a>
   </li>
 
@@ -6647,6 +6689,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../src/process/process_error/" title="process_error.pony" class="md-nav__link">
+      process_error.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../src/process/auth/" title="auth.pony" class="md-nav__link">
       auth.pony
     </a>
@@ -6659,8 +6713,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/process/_test/" title="_test.pony" class="md-nav__link">
-      _test.pony
+    <a href="../src/process/_process/" title="_process.pony" class="md-nav__link">
+      _process.pony
     </a>
   </li>
 
@@ -6982,6 +7036,15 @@
       
         
           <li class="md-nav__item">
+    <a href="#implements" title="Implements" class="md-nav__link">
+    Implements
+  </a>
+  
+</li>
+        
+      
+        
+          <li class="md-nav__item">
     <a href="#constructors" title="Constructors" class="md-nav__link">
     Constructors
   </a>
@@ -7015,8 +7078,17 @@
         
           
             <li class="md-nav__item">
-    <a href="#apply" title="apply" class="md-nav__link">
-    apply
+    <a href="#signal" title="signal" class="md-nav__link">
+    signal
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+    <a href="#string" title="string" class="md-nav__link">
+    string
   </a>
   
 </li>
@@ -7063,63 +7135,89 @@
               
                 
                 
-                <h1 id="catargs">CatArgs<a class="headerlink" href="#catargs" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/process/_test/#L31">[Source]</a></span></p>
-<pre><code class="pony">primitive val CatArgs
+                <h1 id="signaled">Signaled<a class="headerlink" href="#signaled" title="Permanent link">&para;</a></h1>
+<p><span class="source-link"><a href="../src/process/_process/#L103">[Source]</a></span></p>
+<p>Process exit status: Process was terminated by a signal.</p>
+<pre><code class="pony">class val Signaled is
+  Stringable box,
+  Equatable[(Exited val | Signaled val)] ref
 </code></pre>
 
+<h4 id="implements">Implements<a class="headerlink" href="#implements" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../builtin-Stringable/">Stringable</a> box</li>
+<li><a href="../builtin-Equatable/">Equatable</a>[(<a href="../process-Exited/">Exited</a> val | <a href="./">Signaled</a> val)] ref</li>
+</ul>
+<hr />
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/_test/#L31">[Source]</a></span></p>
-<pre><code class="pony">new val create()
-: CatArgs val^
-</code></pre>
-
-<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
-<ul>
-<li><a href="./">CatArgs</a> val^</li>
-</ul>
-<hr />
-<h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
-<h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/_test/#L32">[Source]</a></span></p>
-<pre><code class="pony">fun box apply()
-: Array[String val] val
-</code></pre>
-
-<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
-<ul>
-<li><a href="../builtin-Array/">Array</a>[<a href="../builtin-String/">String</a> val] val</li>
-</ul>
-<hr />
-<h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/_test/#L32">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
-  that: CatArgs val)
-: Bool val
+<p><span class="source-link"><a href="../src/process/_process/#L109">[Source]</a></span></p>
+<pre><code class="pony">new val create(
+  sig: U32 val)
+: Signaled val^
 </code></pre>
 
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
-<li>that: <a href="./">CatArgs</a> val</li>
+<li>sig: <a href="../builtin-U32/">U32</a> val</li>
 </ul>
-<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
-<li><a href="../builtin-Bool/">Bool</a> val</li>
+<li><a href="./">Signaled</a> val^</li>
 </ul>
 <hr />
-<h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/_test/#L32">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
-  that: CatArgs val)
+<h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
+<h3 id="signal">signal<a class="headerlink" href="#signal" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/process/_process/#L112">[Source]</a></span></p>
+<p>Retrieve the signal number that exited the process.</p>
+<pre><code class="pony">fun box signal()
+: U32 val
+</code></pre>
+
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../builtin-U32/">U32</a> val</li>
+</ul>
+<hr />
+<h3 id="string">string<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/process/_process/#L118">[Source]</a></span></p>
+<pre><code class="pony">fun box string()
+: String iso^
+</code></pre>
+
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../builtin-String/">String</a> iso^</li>
+</ul>
+<hr />
+<h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/process/_process/#L126">[Source]</a></span></p>
+<pre><code class="pony">fun box eq(
+  other: (Exited val | Signaled val))
 : Bool val
 </code></pre>
 
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
-<li>that: <a href="./">CatArgs</a> val</li>
+<li>other: (<a href="../process-Exited/">Exited</a> val | <a href="./">Signaled</a> val)</li>
 </ul>
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../builtin-Bool/">Bool</a> val</li>
+</ul>
+<hr />
+<h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/builtin/compare/#L20">[Source]</a></span></p>
+<pre><code class="pony">fun box ne(
+  that: (Exited val | Signaled val))
+: Bool val
+</code></pre>
+
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>that: (<a href="../process-Exited/">Exited</a> val | <a href="./">Signaled</a> val)</li>
+</ul>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
 </ul>
@@ -7144,7 +7242,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../process-CatPath/" title="primitive CatPath" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../process-Exited/" title="class Exited" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -7153,19 +7251,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                primitive CatPath
+                class Exited
               </span>
             </div>
           </a>
         
         
-          <a href="../process-EchoPath/" title="primitive EchoPath" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../process-ProcessExitStatus/" title="type ProcessExitStatus" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                primitive EchoPath
+                type ProcessExitStatus
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -7197,7 +7295,7 @@
     
     <script src="../assets/javascripts/application.c1ad9e36.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:".."}})</script>
       
     
     

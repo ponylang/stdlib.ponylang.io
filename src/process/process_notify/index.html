@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-ponylang-0.2.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-ponylang-0.2.6">
     
     
       
@@ -4454,6 +4454,54 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../process-ProcessMonitorAuth/" title="type ProcessMonitorAuth" class="md-nav__link">
+      type ProcessMonitorAuth
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../process-ProcessMonitor/" title="actor ProcessMonitor" class="md-nav__link">
+      actor ProcessMonitor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../process-ProcessError/" title="class ProcessError" class="md-nav__link">
+      class ProcessError
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../process-ProcessErrorType/" title="type ProcessErrorType" class="md-nav__link">
+      type ProcessErrorType
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../process-ExecveError/" title="primitive ExecveError" class="md-nav__link">
       primitive ExecveError
     </a>
@@ -4526,18 +4574,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../process-Unsupported/" title="primitive Unsupported" class="md-nav__link">
-      primitive Unsupported
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../process-CapError/" title="primitive CapError" class="md-nav__link">
       primitive CapError
     </a>
@@ -4550,8 +4586,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../process-ProcessError/" title="type ProcessError" class="md-nav__link">
-      type ProcessError
+    <a href="../../../process-ChdirError/" title="primitive ChdirError" class="md-nav__link">
+      primitive ChdirError
     </a>
   </li>
 
@@ -4562,20 +4598,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../process-ProcessMonitorAuth/" title="type ProcessMonitorAuth" class="md-nav__link">
-      type ProcessMonitorAuth
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../process-ProcessMonitor/" title="actor ProcessMonitor" class="md-nav__link">
-      actor ProcessMonitor
+    <a href="../../../process-UnknownError/" title="primitive UnknownError" class="md-nav__link">
+      primitive UnknownError
     </a>
   </li>
 
@@ -4598,8 +4622,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../process-CatPath/" title="primitive CatPath" class="md-nav__link">
-      primitive CatPath
+    <a href="../../../process-Exited/" title="class Exited" class="md-nav__link">
+      class Exited
     </a>
   </li>
 
@@ -4610,8 +4634,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../process-CatArgs/" title="primitive CatArgs" class="md-nav__link">
-      primitive CatArgs
+    <a href="../../../process-Signaled/" title="class Signaled" class="md-nav__link">
+      class Signaled
     </a>
   </li>
 
@@ -4622,8 +4646,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../process-EchoPath/" title="primitive EchoPath" class="md-nav__link">
-      primitive EchoPath
+    <a href="../../../process-ProcessExitStatus/" title="type ProcessExitStatus" class="md-nav__link">
+      type ProcessExitStatus
     </a>
   </li>
 
@@ -6551,6 +6575,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../process_error/" title="process_error.pony" class="md-nav__link">
+      process_error.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../auth/" title="auth.pony" class="md-nav__link">
       auth.pony
     </a>
@@ -6563,8 +6599,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../_test/" title="_test.pony" class="md-nav__link">
-      _test.pony
+    <a href="../_process/" title="_process.pony" class="md-nav__link">
+      _process.pony
     </a>
   </li>
 
@@ -6913,10 +6949,16 @@
     &quot;&quot;&quot;
     qty
 
-  fun ref dispose(process: ProcessMonitor ref, child_exit_code: I32) =&gt;
+  fun ref dispose(process: ProcessMonitor ref, child_exit_status: ProcessExitStatus) =&gt;
     &quot;&quot;&quot;
     Call when ProcessMonitor terminates to cleanup ProcessNotify.
-    We return the exit code of the child process.
+    We return the exit status of the child process, it can be either an instance of
+    [Exited](process-Exited.md) if the process finished. The childs exit code can be retrieved
+    using [Exited.exit_code()](process-Exited.md#exit_code).
+
+    On Posix systems, if the process has been killed by a signal (e.g. through the `kill` command),
+    `child_exit_status` will be an instance of [Signaled](process-Signaled.md) with the signal number
+    that terminated the process available via [Signaled.signal()](process-Signaled.md#signal).
     &quot;&quot;&quot;
 
 </code></pre>
@@ -6993,7 +7035,7 @@
     
     <script src="../../../assets/javascripts/application.c1ad9e36.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../../.."}})</script>
       
     
     

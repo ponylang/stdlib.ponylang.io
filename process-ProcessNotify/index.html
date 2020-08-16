@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-ponylang-0.2.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-ponylang-0.2.6">
     
     
       
@@ -70,7 +70,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#processnotify" tabindex="1" class="md-skip">
+      <a href="#processnotify" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -4562,6 +4562,54 @@
 
 
   <li class="md-nav__item">
+    <a href="../process-ProcessMonitorAuth/" title="type ProcessMonitorAuth" class="md-nav__link">
+      type ProcessMonitorAuth
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-ProcessMonitor/" title="actor ProcessMonitor" class="md-nav__link">
+      actor ProcessMonitor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-ProcessError/" title="class ProcessError" class="md-nav__link">
+      class ProcessError
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-ProcessErrorType/" title="type ProcessErrorType" class="md-nav__link">
+      type ProcessErrorType
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../process-ExecveError/" title="primitive ExecveError" class="md-nav__link">
       primitive ExecveError
     </a>
@@ -4634,18 +4682,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../process-Unsupported/" title="primitive Unsupported" class="md-nav__link">
-      primitive Unsupported
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../process-CapError/" title="primitive CapError" class="md-nav__link">
       primitive CapError
     </a>
@@ -4658,8 +4694,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../process-ProcessError/" title="type ProcessError" class="md-nav__link">
-      type ProcessError
+    <a href="../process-ChdirError/" title="primitive ChdirError" class="md-nav__link">
+      primitive ChdirError
     </a>
   </li>
 
@@ -4670,20 +4706,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../process-ProcessMonitorAuth/" title="type ProcessMonitorAuth" class="md-nav__link">
-      type ProcessMonitorAuth
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../process-ProcessMonitor/" title="actor ProcessMonitor" class="md-nav__link">
-      actor ProcessMonitor
+    <a href="../process-UnknownError/" title="primitive UnknownError" class="md-nav__link">
+      primitive UnknownError
     </a>
   </li>
 
@@ -4706,8 +4730,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../process-CatPath/" title="primitive CatPath" class="md-nav__link">
-      primitive CatPath
+    <a href="../process-Exited/" title="class Exited" class="md-nav__link">
+      class Exited
     </a>
   </li>
 
@@ -4718,8 +4742,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../process-CatArgs/" title="primitive CatArgs" class="md-nav__link">
-      primitive CatArgs
+    <a href="../process-Signaled/" title="class Signaled" class="md-nav__link">
+      class Signaled
     </a>
   </li>
 
@@ -4730,8 +4754,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../process-EchoPath/" title="primitive EchoPath" class="md-nav__link">
-      primitive EchoPath
+    <a href="../process-ProcessExitStatus/" title="type ProcessExitStatus" class="md-nav__link">
+      type ProcessExitStatus
     </a>
   </li>
 
@@ -6650,6 +6674,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../src/process/process_error/" title="process_error.pony" class="md-nav__link">
+      process_error.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../src/process/auth/" title="auth.pony" class="md-nav__link">
       auth.pony
     </a>
@@ -6662,8 +6698,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/process/_test/" title="_test.pony" class="md-nav__link">
-      _test.pony
+    <a href="../src/process/_process/" title="_process.pony" class="md-nav__link">
+      _process.pony
     </a>
   </li>
 
@@ -7139,18 +7175,14 @@ forked process</p>
 forked process.</p>
 <pre><code class="pony">fun ref failed(
   process: ProcessMonitor ref,
-  err: (ExecveError val | ForkError val | KillError val | 
-    PipeError val | Unsupported val | WaitpidError val | 
-    WriteError val | CapError val))
+  err: ProcessError val)
 : None val
 </code></pre>
 
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>process: <a href="../process-ProcessMonitor/">ProcessMonitor</a> ref</li>
-<li>err: (<a href="../process-ExecveError/">ExecveError</a> val | <a href="../process-ForkError/">ForkError</a> val | <a href="../process-KillError/">KillError</a> val | 
-    <a href="../process-PipeError/">PipeError</a> val | <a href="../process-Unsupported/">Unsupported</a> val | <a href="../process-WaitpidError/">WaitpidError</a> val | 
-    <a href="../process-WriteError/">WriteError</a> val | <a href="../process-CapError/">CapError</a> val)</li>
+<li>err: <a href="../process-ProcessError/">ProcessError</a> val</li>
 </ul>
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
@@ -7181,17 +7213,22 @@ which allows a lower level protocol to handle any framing.</p>
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/process/process_notify/#L37">[Source]</a></span></p>
 <p>Call when ProcessMonitor terminates to cleanup ProcessNotify.
-We return the exit code of the child process.</p>
+We return the exit status of the child process, it can be either an instance of
+<a href="../process-Exited/">Exited</a> if the process finished. The childs exit code can be retrieved
+using <a href="../process-Exited/#exit_code">Exited.exit_code()</a>.</p>
+<p>On Posix systems, if the process has been killed by a signal (e.g. through the <code>kill</code> command),
+<code>child_exit_status</code> will be an instance of <a href="../process-Signaled/">Signaled</a> with the signal number
+that terminated the process available via <a href="../process-Signaled/#signal">Signaled.signal()</a>.</p>
 <pre><code class="pony">fun ref dispose(
   process: ProcessMonitor ref,
-  child_exit_code: I32 val)
+  child_exit_status: (Exited val | Signaled val))
 : None val
 </code></pre>
 
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>process: <a href="../process-ProcessMonitor/">ProcessMonitor</a> ref</li>
-<li>child_exit_code: <a href="../builtin-I32/">I32</a> val</li>
+<li>child_exit_status: (<a href="../process-Exited/">Exited</a> val | <a href="../process-Signaled/">Signaled</a> val)</li>
 </ul>
 <h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
 <ul>
@@ -7233,13 +7270,13 @@ We return the exit code of the child process.</p>
           </a>
         
         
-          <a href="../process-ExecveError/" title="primitive ExecveError" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../process-ProcessMonitorAuth/" title="type ProcessMonitorAuth" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                primitive ExecveError
+                type ProcessMonitorAuth
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -7271,7 +7308,7 @@ We return the exit code of the child process.</p>
     
     <script src="../assets/javascripts/application.c1ad9e36.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:".."}})</script>
       
     
     

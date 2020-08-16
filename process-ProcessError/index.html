@@ -32,11 +32,11 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-ponylang-0.2.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-ponylang-0.2.6">
     
     
       
-        <title>type ProcessError - Pony Standard Library</title>
+        <title>class ProcessError - Pony Standard Library</title>
       
     
     
@@ -70,7 +70,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#processerror" tabindex="1" class="md-skip">
+      <a href="#processerror" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -96,7 +96,7 @@
                 Pony Standard Library
               </span>
               <span class="md-header-nav__topic">
-                type ProcessError
+                class ProcessError
               </span>
             
           
@@ -4460,6 +4460,168 @@
 
 
   <li class="md-nav__item">
+    <a href="../process-ProcessMonitorAuth/" title="type ProcessMonitorAuth" class="md-nav__link">
+      type ProcessMonitorAuth
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-ProcessMonitor/" title="actor ProcessMonitor" class="md-nav__link">
+      actor ProcessMonitor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        class ProcessError
+      </label>
+    
+    <a href="./" title="class ProcessError" class="md-nav__link md-nav__link--active">
+      class ProcessError
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        
+          <li class="md-nav__item">
+    <a href="#constructors" title="Constructors" class="md-nav__link">
+    Constructors
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          
+            <li class="md-nav__item">
+    <a href="#create" title="create" class="md-nav__link">
+    create
+  </a>
+  
+</li>
+          
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      
+        
+          <li class="md-nav__item">
+    <a href="#public-fields" title="Public fields" class="md-nav__link">
+    Public fields
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          
+            <li class="md-nav__item">
+    <a href="#let-error_type-execveerror-val-pipeerror-val-forkerror-val" title="let error_type: (ExecveError val | PipeError val | ForkError val |" class="md-nav__link">
+    let error_type: (ExecveError val | PipeError val | ForkError val |
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+    <a href="#let-message-string-val-none-val" title="let message: (String val | None val)" class="md-nav__link">
+    let message: (String val | None val)
+  </a>
+  
+</li>
+          
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      
+        
+          <li class="md-nav__item">
+    <a href="#public-functions" title="Public Functions" class="md-nav__link">
+    Public Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          
+            <li class="md-nav__item">
+    <a href="#string" title="string" class="md-nav__link">
+    string
+  </a>
+  
+</li>
+          
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-ProcessErrorType/" title="type ProcessErrorType" class="md-nav__link">
+      type ProcessErrorType
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../process-ExecveError/" title="primitive ExecveError" class="md-nav__link">
       primitive ExecveError
     </a>
@@ -4532,18 +4694,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../process-Unsupported/" title="primitive Unsupported" class="md-nav__link">
-      primitive Unsupported
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../process-CapError/" title="primitive CapError" class="md-nav__link">
       primitive CapError
     </a>
@@ -4554,64 +4704,10 @@
           
           
 
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        type ProcessError
-      </label>
-    
-    <a href="./" title="type ProcessError" class="md-nav__link md-nav__link--active">
-      type ProcessError
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        
-          <li class="md-nav__item">
-    <a href="#type-alias-for" title="Type Alias For" class="md-nav__link">
-    Type Alias For
-  </a>
-  
-</li>
-        
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-          
-          
-          
-
 
   <li class="md-nav__item">
-    <a href="../process-ProcessMonitorAuth/" title="type ProcessMonitorAuth" class="md-nav__link">
-      type ProcessMonitorAuth
+    <a href="../process-ChdirError/" title="primitive ChdirError" class="md-nav__link">
+      primitive ChdirError
     </a>
   </li>
 
@@ -4622,8 +4718,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../process-ProcessMonitor/" title="actor ProcessMonitor" class="md-nav__link">
-      actor ProcessMonitor
+    <a href="../process-UnknownError/" title="primitive UnknownError" class="md-nav__link">
+      primitive UnknownError
     </a>
   </li>
 
@@ -4646,8 +4742,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../process-CatPath/" title="primitive CatPath" class="md-nav__link">
-      primitive CatPath
+    <a href="../process-Exited/" title="class Exited" class="md-nav__link">
+      class Exited
     </a>
   </li>
 
@@ -4658,8 +4754,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../process-CatArgs/" title="primitive CatArgs" class="md-nav__link">
-      primitive CatArgs
+    <a href="../process-Signaled/" title="class Signaled" class="md-nav__link">
+      class Signaled
     </a>
   </li>
 
@@ -4670,8 +4766,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../process-EchoPath/" title="primitive EchoPath" class="md-nav__link">
-      primitive EchoPath
+    <a href="../process-ProcessExitStatus/" title="type ProcessExitStatus" class="md-nav__link">
+      type ProcessExitStatus
     </a>
   </li>
 
@@ -6590,6 +6686,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../src/process/process_error/" title="process_error.pony" class="md-nav__link">
+      process_error.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../src/process/auth/" title="auth.pony" class="md-nav__link">
       auth.pony
     </a>
@@ -6602,8 +6710,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/process/_test/" title="_test.pony" class="md-nav__link">
-      _test.pony
+    <a href="../src/process/_process/" title="_process.pony" class="md-nav__link">
+      _process.pony
     </a>
   </li>
 
@@ -6925,9 +7033,81 @@
       
         
           <li class="md-nav__item">
-    <a href="#type-alias-for" title="Type Alias For" class="md-nav__link">
-    Type Alias For
+    <a href="#constructors" title="Constructors" class="md-nav__link">
+    Constructors
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          
+            <li class="md-nav__item">
+    <a href="#create" title="create" class="md-nav__link">
+    create
+  </a>
+  
+</li>
+          
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      
+        
+          <li class="md-nav__item">
+    <a href="#public-fields" title="Public fields" class="md-nav__link">
+    Public fields
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          
+            <li class="md-nav__item">
+    <a href="#let-error_type-execveerror-val-pipeerror-val-forkerror-val" title="let error_type: (ExecveError val | PipeError val | ForkError val |" class="md-nav__link">
+    let error_type: (ExecveError val | PipeError val | ForkError val |
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+    <a href="#let-message-string-val-none-val" title="let message: (String val | None val)" class="md-nav__link">
+    let message: (String val | None val)
+  </a>
+  
+</li>
+          
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      
+        
+          <li class="md-nav__item">
+    <a href="#public-functions" title="Public Functions" class="md-nav__link">
+    Public Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          
+            <li class="md-nav__item">
+    <a href="#string" title="string" class="md-nav__link">
+    string
+  </a>
+  
+</li>
+          
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -6950,14 +7130,53 @@
                 
                 
                 <h1 id="processerror">ProcessError<a class="headerlink" href="#processerror" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L101">[Source]</a></span></p>
-<pre><code class="pony">type ProcessError is
-  (ExecveError val | ForkError val | KillError val | PipeError val | Unsupported val | WaitpidError val | WriteError val | CapError val)
+<p><span class="source-link"><a href="../src/process/process_error/#L1">[Source]</a></span></p>
+<pre><code class="pony">class val ProcessError
 </code></pre>
 
-<h4 id="type-alias-for">Type Alias For<a class="headerlink" href="#type-alias-for" title="Permanent link">&para;</a></h4>
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
+<h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/process/process_error/#L5">[Source]</a></span></p>
+<pre><code class="pony">new val create(
+  error_type': (ExecveError val | PipeError val | ForkError val | 
+    WaitpidError val | WriteError val | KillError val | 
+    CapError val | ChdirError val | UnknownError val),
+  message': (String val | None val) = reference)
+: ProcessError val^
+</code></pre>
+
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
-<li>(<a href="../process-ExecveError/">ExecveError</a> val | <a href="../process-ForkError/">ForkError</a> val | <a href="../process-KillError/">KillError</a> val | <a href="../process-PipeError/">PipeError</a> val | <a href="../process-Unsupported/">Unsupported</a> val | <a href="../process-WaitpidError/">WaitpidError</a> val | <a href="../process-WriteError/">WriteError</a> val | <a href="../process-CapError/">CapError</a> val)</li>
+<li>error_type': (<a href="../process-ExecveError/">ExecveError</a> val | <a href="../process-PipeError/">PipeError</a> val | <a href="../process-ForkError/">ForkError</a> val | 
+    <a href="../process-WaitpidError/">WaitpidError</a> val | <a href="../process-WriteError/">WriteError</a> val | <a href="../process-KillError/">KillError</a> val | 
+    <a href="../process-CapError/">CapError</a> val | <a href="../process-ChdirError/">ChdirError</a> val | <a href="../process-UnknownError/">UnknownError</a> val)</li>
+<li>message': (<a href="../builtin-String/">String</a> val | <a href="../builtin-None/">None</a> val) = reference</li>
+</ul>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="./">ProcessError</a> val^</li>
+</ul>
+<hr />
+<h2 id="public-fields">Public fields<a class="headerlink" href="#public-fields" title="Permanent link">&para;</a></h2>
+<h3 id="let-error_type-execveerror-val-pipeerror-val-forkerror-val">let error_type: (<a href="../process-ExecveError/">ExecveError</a> val | <a href="../process-PipeError/">PipeError</a> val | <a href="../process-ForkError/">ForkError</a> val |<a class="headerlink" href="#let-error_type-execveerror-val-pipeerror-val-forkerror-val" title="Permanent link">&para;</a></h3>
+<pre><code>[WaitpidError](process-WaitpidError.md) val | [WriteError](process-WriteError.md) val | [KillError](process-KillError.md) val | 
+[CapError](process-CapError.md) val | [ChdirError](process-ChdirError.md) val | [UnknownError](process-UnknownError.md) val)
+</code></pre>
+<p><span class="source-link"><a href="../src/process/process_error/#L2">[Source]</a></span></p>
+<hr />
+<h3 id="let-message-string-val-none-val">let message: (<a href="../builtin-String/">String</a> val | <a href="../builtin-None/">None</a> val)<a class="headerlink" href="#let-message-string-val-none-val" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/process/process_error/#L3">[Source]</a></span></p>
+<hr />
+<h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
+<h3 id="string">string<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/process/process_error/#L11">[Source]</a></span></p>
+<pre><code class="pony">fun box string()
+: String iso^
+</code></pre>
+
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../builtin-String/">String</a> iso^</li>
 </ul>
 <hr />
                 
@@ -6980,7 +7199,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../process-CapError/" title="primitive CapError" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../process-ProcessMonitor/" title="actor ProcessMonitor" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -6989,19 +7208,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                primitive CapError
+                actor ProcessMonitor
               </span>
             </div>
           </a>
         
         
-          <a href="../process-ProcessMonitorAuth/" title="type ProcessMonitorAuth" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../process-ProcessErrorType/" title="type ProcessErrorType" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                type ProcessMonitorAuth
+                type ProcessErrorType
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -7033,7 +7252,7 @@
     
     <script src="../assets/javascripts/application.c1ad9e36.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:".."}})</script>
       
     
     
