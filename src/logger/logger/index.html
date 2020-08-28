@@ -6993,7 +6993,6 @@ override the standard formatting, you can create an object that implements:
 ```pony
 interface val LogFormatter
   fun apply(
-    level: LogLevel,
     msg: String,
     file_name: String,
     file_linenum: String,
@@ -7013,19 +7012,15 @@ type LogLevel is
 
 primitive Fine
   fun apply(): U32 =&gt; 0
-  fun string(): String iso^ =&gt; recover &quot;FINE&quot;.clone() end
 
 primitive Info
   fun apply(): U32 =&gt; 1
-  fun string(): String iso^ =&gt; recover &quot;INFO&quot;.clone() end
 
 primitive Warn
   fun apply(): U32 =&gt; 2
-  fun string(): String iso^ =&gt; recover &quot;WARN&quot;.clone() end
 
 primitive Error
   fun apply(): U32 =&gt; 3
-  fun string(): String iso^ =&gt; recover &quot;ERRR&quot;.clone() end
 
 class val Logger[A]
   let _level: LogLevel
@@ -7048,7 +7043,7 @@ class val Logger[A]
     level() &gt;= _level()
 
   fun log(value: A, loc: SourceLoc = __loc): Bool =&gt;
-    _out.print(_formatter(_level, _f(consume value), loc))
+    _out.print(_formatter(_f(consume value), loc))
     true
 
 primitive StringLogger
@@ -7069,10 +7064,10 @@ interface val LogFormatter
 
   See `DefaultLogFormatter` for an example of how to implement a LogFormatter.
   &quot;&quot;&quot;
-  fun apply(lvl: LogLevel, msg: String, loc: SourceLoc): String
+  fun apply(msg: String, loc: SourceLoc): String
 
 primitive DefaultLogFormatter is LogFormatter
-  fun apply(lvl: LogLevel, msg: String, loc: SourceLoc): String =&gt;
+  fun apply(msg: String, loc: SourceLoc): String =&gt;
     let file_name: String = loc.file()
     let file_linenum: String  = loc.line().string()
     let file_linepos: String  = loc.pos().string()
