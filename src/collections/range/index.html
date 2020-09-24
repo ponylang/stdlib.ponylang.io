@@ -6926,7 +6926,9 @@
   // iterating over Range of U8 with while-loop
   let range = Range[U8](5, 100, 5)
   while range.has_next() do
-    handle_u8(range.next())
+    try
+      handle_u8(range.next()?)
+    end
   end
   ```
 
@@ -7012,11 +7014,11 @@
       _idx &gt; _max
     end
 
-  fun ref next(): A =&gt;
+  fun ref next(): A ? =&gt;
     if has_next() then
       _idx = _idx + _inc
     else
-      _idx
+      error
     end
 
   fun ref rewind() =&gt;
