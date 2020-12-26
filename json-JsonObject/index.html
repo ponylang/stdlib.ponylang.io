@@ -7131,19 +7131,17 @@
                 
                 <h1 id="jsonobject">JsonObject<a class="headerlink" href="#jsonobject" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/json/json_type/#L77">[Source]</a></span></p>
-<pre><code class="pony">class ref JsonObject
+<pre><code class="language-pony">class ref JsonObject
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/json/json_type/#L84">[Source]</a></span></p>
 <p>Create a map with space for prealloc elements without triggering a
 resize. Defaults to 6.</p>
-<pre><code class="pony">new ref create(
+<pre><code class="language-pony">new ref create(
   prealloc: USize val = 6)
 : JsonObject ref^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>prealloc: <a href="../builtin-USize/">USize</a> val = 6</li>
@@ -7156,11 +7154,10 @@ resize. Defaults to 6.</p>
 <h3 id="from_map">from_map<a class="headerlink" href="#from_map" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/json/json_type/#L91">[Source]</a></span></p>
 <p>Create a Json object from a map.</p>
-<pre><code class="pony">new ref from_map(
+<pre><code class="language-pony">new ref from_map(
   data': HashMap[String val, (F64 val | I64 val | Bool val | None val | String val | JsonArray ref | JsonObject ref), HashEq[String val] val] ref)
 : JsonObject ref^
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data': <a href="../collections-HashMap/">HashMap</a>[<a href="../builtin-String/">String</a> val, (<a href="../builtin-F64/">F64</a> val | <a href="../builtin-I64/">I64</a> val | <a href="../builtin-Bool/">Bool</a> val | <a href="../builtin-None/">None</a> val | <a href="../builtin-String/">String</a> val | <a href="../json-JsonArray/">JsonArray</a> ref | <a href="./">JsonObject</a> ref), <a href="../collections-HashEq/">HashEq</a>[<a href="../builtin-String/">String</a> val] val] ref</li>
@@ -7180,12 +7177,11 @@ mapping <code>String</code> keys to other JSON structures.</p>
 <h3 id="string">string<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/json/json_type/#L97">[Source]</a></span></p>
 <p>Generate string representation of this object.</p>
-<pre><code class="pony">fun box string(
+<pre><code class="language-pony">fun box string(
   indent: String val = &quot;&quot;,
   pretty_print: Bool val = false)
 : String val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>indent: <a href="../builtin-String/">String</a> val = ""</li>

@@ -7697,16 +7697,14 @@
 <p><span class="source-link"><a href="../src/signals/sig/#L51">[Source]</a></span></p>
 <p>Define the portable signal numbers. Other signals can be used, but they are
 not guaranteed to be portable.</p>
-<pre><code class="pony">primitive val Sig
+<pre><code class="language-pony">primitive val Sig
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L51">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : Sig val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">Sig</a> val^</li>
@@ -7715,10 +7713,9 @@ not guaranteed to be portable.</p>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="hup">hup<a class="headerlink" href="#hup" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L56">[Source]</a></span></p>
-<pre><code class="pony">fun box hup()
+<pre><code class="language-pony">fun box hup()
 : U32 val
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7726,10 +7723,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="int">int<a class="headerlink" href="#int" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L57">[Source]</a></span></p>
-<pre><code class="pony">fun box int()
+<pre><code class="language-pony">fun box int()
 : U32 val
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7737,10 +7733,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="quit">quit<a class="headerlink" href="#quit" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L58">[Source]</a></span></p>
-<pre><code class="pony">fun box quit()
+<pre><code class="language-pony">fun box quit()
 : U32 val
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7748,10 +7743,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="ill">ill<a class="headerlink" href="#ill" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L60">[Source]</a></span></p>
-<pre><code class="pony">fun box ill()
+<pre><code class="language-pony">fun box ill()
 : U32 val
 </code></pre>
-
 <h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7759,10 +7753,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="trap">trap<a class="headerlink" href="#trap" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L65">[Source]</a></span></p>
-<pre><code class="pony">fun box trap()
+<pre><code class="language-pony">fun box trap()
 : U32 val
 </code></pre>
-
 <h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7770,10 +7763,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="abrt">abrt<a class="headerlink" href="#abrt" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L70">[Source]</a></span></p>
-<pre><code class="pony">fun box abrt()
+<pre><code class="language-pony">fun box abrt()
 : U32 val
 </code></pre>
-
 <h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7781,10 +7773,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="emt">emt<a class="headerlink" href="#emt" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L72">[Source]</a></span></p>
-<pre><code class="pony">fun box emt()
+<pre><code class="language-pony">fun box emt()
 : U32 val
 </code></pre>
-
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7792,10 +7783,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="fpe">fpe<a class="headerlink" href="#fpe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L77">[Source]</a></span></p>
-<pre><code class="pony">fun box fpe()
+<pre><code class="language-pony">fun box fpe()
 : U32 val
 </code></pre>
-
 <h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7803,10 +7793,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="kill">kill<a class="headerlink" href="#kill" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L82">[Source]</a></span></p>
-<pre><code class="pony">fun box kill()
+<pre><code class="language-pony">fun box kill()
 : U32 val
 </code></pre>
-
 <h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7814,10 +7803,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="bus">bus<a class="headerlink" href="#bus" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L84">[Source]</a></span></p>
-<pre><code class="pony">fun box bus()
+<pre><code class="language-pony">fun box bus()
 : U32 val
 </code></pre>
-
 <h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7825,10 +7813,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="segv">segv<a class="headerlink" href="#segv" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L90">[Source]</a></span></p>
-<pre><code class="pony">fun box segv()
+<pre><code class="language-pony">fun box segv()
 : U32 val
 </code></pre>
-
 <h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7836,10 +7823,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="sys">sys<a class="headerlink" href="#sys" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L95">[Source]</a></span></p>
-<pre><code class="pony">fun box sys()
+<pre><code class="language-pony">fun box sys()
 : U32 val
 </code></pre>
-
 <h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7847,10 +7833,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="pipe">pipe<a class="headerlink" href="#pipe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L101">[Source]</a></span></p>
-<pre><code class="pony">fun box pipe()
+<pre><code class="language-pony">fun box pipe()
 : U32 val
 </code></pre>
-
 <h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7858,10 +7843,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="alrm">alrm<a class="headerlink" href="#alrm" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L106">[Source]</a></span></p>
-<pre><code class="pony">fun box alrm()
+<pre><code class="language-pony">fun box alrm()
 : U32 val
 </code></pre>
-
 <h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7869,10 +7853,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="term">term<a class="headerlink" href="#term" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L107">[Source]</a></span></p>
-<pre><code class="pony">fun box term()
+<pre><code class="language-pony">fun box term()
 : U32 val
 </code></pre>
-
 <h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7880,10 +7863,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="urg">urg<a class="headerlink" href="#urg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L109">[Source]</a></span></p>
-<pre><code class="pony">fun box urg()
+<pre><code class="language-pony">fun box urg()
 : U32 val
 </code></pre>
-
 <h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7891,10 +7873,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="stkflt">stkflt<a class="headerlink" href="#stkflt" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L115">[Source]</a></span></p>
-<pre><code class="pony">fun box stkflt()
+<pre><code class="language-pony">fun box stkflt()
 : U32 val
 </code></pre>
-
 <h4 id="returns_17">Returns<a class="headerlink" href="#returns_17" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7902,10 +7883,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="stop">stop<a class="headerlink" href="#stop" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L120">[Source]</a></span></p>
-<pre><code class="pony">fun box stop()
+<pre><code class="language-pony">fun box stop()
 : U32 val
 </code></pre>
-
 <h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7913,10 +7893,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="tstp">tstp<a class="headerlink" href="#tstp" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L126">[Source]</a></span></p>
-<pre><code class="pony">fun box tstp()
+<pre><code class="language-pony">fun box tstp()
 : U32 val
 </code></pre>
-
 <h4 id="returns_19">Returns<a class="headerlink" href="#returns_19" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7924,10 +7903,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="cont">cont<a class="headerlink" href="#cont" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L132">[Source]</a></span></p>
-<pre><code class="pony">fun box cont()
+<pre><code class="language-pony">fun box cont()
 : U32 val
 </code></pre>
-
 <h4 id="returns_20">Returns<a class="headerlink" href="#returns_20" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7935,10 +7913,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="chld">chld<a class="headerlink" href="#chld" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L138">[Source]</a></span></p>
-<pre><code class="pony">fun box chld()
+<pre><code class="language-pony">fun box chld()
 : U32 val
 </code></pre>
-
 <h4 id="returns_21">Returns<a class="headerlink" href="#returns_21" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7946,10 +7923,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="ttin">ttin<a class="headerlink" href="#ttin" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L144">[Source]</a></span></p>
-<pre><code class="pony">fun box ttin()
+<pre><code class="language-pony">fun box ttin()
 : U32 val
 </code></pre>
-
 <h4 id="returns_22">Returns<a class="headerlink" href="#returns_22" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7957,10 +7933,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="ttou">ttou<a class="headerlink" href="#ttou" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L149">[Source]</a></span></p>
-<pre><code class="pony">fun box ttou()
+<pre><code class="language-pony">fun box ttou()
 : U32 val
 </code></pre>
-
 <h4 id="returns_23">Returns<a class="headerlink" href="#returns_23" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7968,10 +7943,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="io">io<a class="headerlink" href="#io" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L154">[Source]</a></span></p>
-<pre><code class="pony">fun box io()
+<pre><code class="language-pony">fun box io()
 : U32 val
 </code></pre>
-
 <h4 id="returns_24">Returns<a class="headerlink" href="#returns_24" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7979,10 +7953,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="xcpu">xcpu<a class="headerlink" href="#xcpu" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L160">[Source]</a></span></p>
-<pre><code class="pony">fun box xcpu()
+<pre><code class="language-pony">fun box xcpu()
 : U32 val
 </code></pre>
-
 <h4 id="returns_25">Returns<a class="headerlink" href="#returns_25" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7990,10 +7963,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="xfsz">xfsz<a class="headerlink" href="#xfsz" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L165">[Source]</a></span></p>
-<pre><code class="pony">fun box xfsz()
+<pre><code class="language-pony">fun box xfsz()
 : U32 val
 </code></pre>
-
 <h4 id="returns_26">Returns<a class="headerlink" href="#returns_26" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -8001,10 +7973,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="vtalrm">vtalrm<a class="headerlink" href="#vtalrm" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L170">[Source]</a></span></p>
-<pre><code class="pony">fun box vtalrm()
+<pre><code class="language-pony">fun box vtalrm()
 : U32 val
 </code></pre>
-
 <h4 id="returns_27">Returns<a class="headerlink" href="#returns_27" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -8012,10 +7983,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="prof">prof<a class="headerlink" href="#prof" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L175">[Source]</a></span></p>
-<pre><code class="pony">fun box prof()
+<pre><code class="language-pony">fun box prof()
 : U32 val
 </code></pre>
-
 <h4 id="returns_28">Returns<a class="headerlink" href="#returns_28" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -8023,10 +7993,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="winch">winch<a class="headerlink" href="#winch" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L180">[Source]</a></span></p>
-<pre><code class="pony">fun box winch()
+<pre><code class="language-pony">fun box winch()
 : U32 val
 </code></pre>
-
 <h4 id="returns_29">Returns<a class="headerlink" href="#returns_29" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -8034,10 +8003,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="info">info<a class="headerlink" href="#info" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L185">[Source]</a></span></p>
-<pre><code class="pony">fun box info()
+<pre><code class="language-pony">fun box info()
 : U32 val
 </code></pre>
-
 <h4 id="returns_30">Returns<a class="headerlink" href="#returns_30" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -8045,10 +8013,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="pwr">pwr<a class="headerlink" href="#pwr" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L190">[Source]</a></span></p>
-<pre><code class="pony">fun box pwr()
+<pre><code class="language-pony">fun box pwr()
 : U32 val
 </code></pre>
-
 <h4 id="returns_31">Returns<a class="headerlink" href="#returns_31" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -8056,10 +8023,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="usr1">usr1<a class="headerlink" href="#usr1" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L195">[Source]</a></span></p>
-<pre><code class="pony">fun box usr1()
+<pre><code class="language-pony">fun box usr1()
 : U32 val
 </code></pre>
-
 <h4 id="returns_32">Returns<a class="headerlink" href="#returns_32" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -8067,10 +8033,9 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="usr2">usr2<a class="headerlink" href="#usr2" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L201">[Source]</a></span></p>
-<pre><code class="pony">fun box usr2()
+<pre><code class="language-pony">fun box usr2()
 : U32 val
 </code></pre>
-
 <h4 id="returns_33">Returns<a class="headerlink" href="#returns_33" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -8078,11 +8043,10 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="rt">rt<a class="headerlink" href="#rt" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L215">[Source]</a></span></p>
-<pre><code class="pony">fun box rt(
+<pre><code class="language-pony">fun box rt(
   n: U32 val)
 : U32 val ?
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>n: <a href="../builtin-U32/">U32</a> val</li>
@@ -8094,11 +8058,10 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L56">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: Sig val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Sig</a> val</li>
@@ -8110,11 +8073,10 @@ not guaranteed to be portable.</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/sig/#L56">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: Sig val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Sig</a> val</li>

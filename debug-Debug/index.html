@@ -7138,16 +7138,14 @@
                 <h1 id="debug">Debug<a class="headerlink" href="#debug" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/debug/debug/#L24">[Source]</a></span></p>
 <p>This is a debug only print utility.</p>
-<pre><code class="pony">primitive val Debug
+<pre><code class="language-pony">primitive val Debug
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/debug/debug/#L24">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : Debug val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">Debug</a> val^</li>
@@ -7159,13 +7157,12 @@
 <p>If platform is debug configured, print either a single stringable or a
 sequence of stringables. The default separator is ", ", and the default
 output stream is stdout.</p>
-<pre><code class="pony">fun box apply(
+<pre><code class="language-pony">fun box apply(
   msg: (Stringable box | ReadSeq[Stringable box] box),
   sep: String val = &quot;, &quot;,
   stream: (DebugOut val | DebugErr val) = reference)
 : None val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>msg: (<a href="../builtin-Stringable/">Stringable</a> box | <a href="../builtin-ReadSeq/">ReadSeq</a>[<a href="../builtin-Stringable/">Stringable</a> box] box)</li>
@@ -7180,11 +7177,10 @@ output stream is stdout.</p>
 <h3 id="out">out<a class="headerlink" href="#out" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/debug/debug/#L47">[Source]</a></span></p>
 <p>If platform is debug configured, print message to standard output</p>
-<pre><code class="pony">fun box out(
+<pre><code class="language-pony">fun box out(
   msg: Stringable box = &quot;&quot;)
 : None val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>msg: <a href="../builtin-Stringable/">Stringable</a> box = ""</li>
@@ -7197,11 +7193,10 @@ output stream is stdout.</p>
 <h3 id="err">err<a class="headerlink" href="#err" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/debug/debug/#L53">[Source]</a></span></p>
 <p>If platform is debug configured, print message to standard error</p>
-<pre><code class="pony">fun box err(
+<pre><code class="language-pony">fun box err(
   msg: Stringable box = &quot;&quot;)
 : None val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>msg: <a href="../builtin-Stringable/">Stringable</a> box = ""</li>
@@ -7213,11 +7208,10 @@ output stream is stdout.</p>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/debug/debug/#L28">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: Debug val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Debug</a> val</li>
@@ -7229,11 +7223,10 @@ output stream is stdout.</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/debug/debug/#L28">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: Debug val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Debug</a> val</li>

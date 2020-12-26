@@ -7137,10 +7137,9 @@
                 
                 <h1 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/options/options/#L102">[Source]</a></span></p>
-<pre><code class="pony">class ref Options is
+<pre><code class="language-pony">class ref Options is
   Iterator[((String val , (None val | String val | I64 val | U64 val | F64 val)) | ParseError ref | None val)] ref
 </code></pre>
-
 <h4 id="implements">Implements<a class="headerlink" href="#implements" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Iterator/">Iterator</a>[((<a href="../builtin-String/">String</a> val , (<a href="../builtin-None/">None</a> val | <a href="../builtin-String/">String</a> val | <a href="../builtin-I64/">I64</a> val | <a href="../builtin-U64/">U64</a> val | <a href="../builtin-F64/">F64</a> val)) | <a href="../options-ParseError/">ParseError</a> ref | <a href="../builtin-None/">None</a> val)] ref</li>
@@ -7149,12 +7148,11 @@
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/options/options/#L109">[Source]</a></span></p>
-<pre><code class="pony">new ref create(
+<pre><code class="language-pony">new ref create(
   args: Array[String val] box,
   fatal: Bool val = true)
 : Options ref^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>args: <a href="../builtin-Array/">Array</a>[<a href="../builtin-String/">String</a> val] box</li>
@@ -7169,7 +7167,7 @@
 <h3 id="add">add<a class="headerlink" href="#add" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/options/options/#L117">[Source]</a></span></p>
 <p>Adds a new named option to the parser configuration.</p>
-<pre><code class="pony">fun ref add(
+<pre><code class="language-pony">fun ref add(
   long: String val,
   short: (None val | String val) = reference,
   arg: (None val | StringArgument val | I64Argument val | 
@@ -7177,7 +7175,6 @@
   mode: (Required val | Optional val) = reference)
 : Options ref
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>long: <a href="../builtin-String/">String</a> val</li>
@@ -7196,10 +7193,9 @@
 <p>Returns all unprocessed command line arguments. After parsing all options,
 this will only include positional arguments, potentially unrecognised and
 ambiguous options and invalid arguments.</p>
-<pre><code class="pony">fun ref remaining()
+<pre><code class="language-pony">fun ref remaining()
 : Array[String ref] ref
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Array/">Array</a>[<a href="../builtin-String/">String</a> ref] ref</li>
@@ -7209,10 +7205,9 @@ ambiguous options and invalid arguments.</p>
 <p><span class="source-link"><a href="../src/options/options/#L250">[Source]</a></span></p>
 <p>Parsing options is done if either an error occurs and fatal error reporting
 is turned on, or if all command line arguments have been processed.</p>
-<pre><code class="pony">fun box has_next()
+<pre><code class="language-pony">fun box has_next()
 : Bool val
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7223,11 +7218,10 @@ is turned on, or if all command line arguments have been processed.</p>
 <p>Skips all positional arguments and attemps to match named options. Returns
 a ParsedOption on success, a ParseError on error, or None if no named
 options are found.</p>
-<pre><code class="pony">fun ref next()
+<pre><code class="language-pony">fun ref next()
 : ((String val , (None val | String val | I64 val | 
     U64 val | F64 val)) | ParseError ref | None val)
 </code></pre>
-
 <h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>((<a href="../builtin-String/">String</a> val , (<a href="../builtin-None/">None</a> val | <a href="../builtin-String/">String</a> val | <a href="../builtin-I64/">I64</a> val | 

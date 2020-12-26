@@ -6987,10 +6987,9 @@
                 
                 <h1 id="seta-hashable-read-equatablea-read">Set[A: (<a href="../collections-Hashable/">Hashable</a> #read &amp; <a href="../builtin-Equatable/">Equatable</a>[A] #read)]<a class="headerlink" href="#seta-hashable-read-equatablea-read" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/collections/set/#L1">[Source]</a></span></p>
-<pre><code class="pony">type Set[A: (Hashable #read &amp; Equatable[A] #read)] is
+<pre><code class="language-pony">type Set[A: (Hashable #read &amp; Equatable[A] #read)] is
   HashSet[A, HashEq[A] val] ref
 </code></pre>
-
 <h4 id="type-alias-for">Type Alias For<a class="headerlink" href="#type-alias-for" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../collections-HashSet/">HashSet</a>[A, <a href="../collections-HashEq/">HashEq</a>[A] val] ref</li>

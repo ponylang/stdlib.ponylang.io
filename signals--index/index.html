@@ -7048,7 +7048,7 @@ actor and upon receiving the signal will call its corresponding
 <h2 id="example-program">Example program<a class="headerlink" href="#example-program" title="Permanent link">&para;</a></h2>
 <p>The following program will listen for the TERM signal and output a message to
 standard out if it is received.</p>
-<pre><code class="pony">use &quot;signals&quot;
+<pre><code class="language-pony">use &quot;signals&quot;
 
 actor Main
   new create(env: Env) =&gt;
@@ -7067,7 +7067,6 @@ class TermHandler is SignalNotify
     _env.out.print(&quot;TERM signal received&quot;)
     true
 </code></pre>
-
 <h2 id="signal-portability">Signal portability<a class="headerlink" href="#signal-portability" title="Permanent link">&para;</a></h2>
 <p>The <code>Sig</code> primitive provides support for portable signal handling across Linux,
 FreeBSD and OSX. Signals are not supported on Windows and attempting to use

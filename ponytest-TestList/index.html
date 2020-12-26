@@ -7019,25 +7019,22 @@
 <p><span class="source-link"><a href="../src/ponytest/test_list/#L1">[Source]</a></span></p>
 <p>Source of unit tests for a PonyTest object.
 See package doc string for further information and example use.</p>
-<pre><code class="pony">trait ref TestList
+<pre><code class="language-pony">trait ref TestList
 </code></pre>
-
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="tests">tests<a class="headerlink" href="#tests" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ponytest/test_list/#L7">[Source]</a></span></p>
 <p>Add all the tests in this suite to the given test object.
 Typically the implementation of this function will be of the form:</p>
-<pre><code class="pony">fun tests(test: PonyTest) =&gt;
+<pre><code class="language-pony">fun tests(test: PonyTest) =&gt;
   test(_TestClass1)
   test(_TestClass2)
   test(_TestClass3)
 </code></pre>
-
-<pre><code class="pony">fun tag tests(
+<pre><code class="language-pony">fun tag tests(
   test: PonyTest tag)
 : None val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>test: <a href="../ponytest-PonyTest/">PonyTest</a> tag</li>

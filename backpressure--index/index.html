@@ -7046,7 +7046,7 @@ are also prime candidates for using this package. If an actor's internal
 queue grows too large, it can call <code>Backpressure.apply</code> to let the runtime know
 it is under pressure.</p>
 <h2 id="example-program">Example program<a class="headerlink" href="#example-program" title="Permanent link">&para;</a></h2>
-<pre><code class="pony">// Here we have a TCPConnectionNotify that upon construction
+<pre><code class="language-pony">// Here we have a TCPConnectionNotify that upon construction
 // is given a BackpressureAuth token. This allows the notifier
 // to inform the Pony runtime when to apply and release backpressure
 // as the connection experiences it.
@@ -7088,7 +7088,6 @@ actor Main
         &quot;&quot;, &quot;7669&quot;)
     end
 </code></pre>
-
 <h2 id="caveat">Caveat<a class="headerlink" href="#caveat" title="Permanent link">&para;</a></h2>
 <p>The runtime backpressure is a powerful system. By intervening, programmers can
 create deadlocks. Any call to <code>Backpressure.apply</code> should be matched by a

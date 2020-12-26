@@ -7103,16 +7103,14 @@
 <p><span class="source-link"><a href="../src/files/file/#L49">[Source]</a></span></p>
 <p>Open a File for read/write, creating if it doesn't exist, preserving the
 contents if it does exist.</p>
-<pre><code class="pony">primitive val CreateFile
+<pre><code class="language-pony">primitive val CreateFile
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file/#L49">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : CreateFile val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">CreateFile</a> val^</li>
@@ -7121,13 +7119,12 @@ contents if it does exist.</p>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file/#L54">[Source]</a></span></p>
-<pre><code class="pony">fun box apply(
+<pre><code class="language-pony">fun box apply(
   from: FilePath val)
 : (File ref | FileOK val | FileError val | 
     FileEOF val | FileBadFileNumber val | FileExists val | 
     FilePermissionDenied val)
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>from: <a href="../files-FilePath/">FilePath</a> val</li>
@@ -7141,11 +7138,10 @@ contents if it does exist.</p>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file/#L54">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: CreateFile val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">CreateFile</a> val</li>
@@ -7157,11 +7153,10 @@ contents if it does exist.</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file/#L54">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: CreateFile val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">CreateFile</a> val</li>

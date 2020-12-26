@@ -7101,16 +7101,14 @@
                 
                 <h1 id="serialise">Serialise<a class="headerlink" href="#serialise" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/serialise/serialise/#L30">[Source]</a></span></p>
-<pre><code class="pony">primitive val Serialise
+<pre><code class="language-pony">primitive val Serialise
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/serialise/serialise/#L30">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : Serialise val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">Serialise</a> val^</li>
@@ -7123,10 +7121,9 @@
 purposes of comparing before deserialising any data from that source.
 It is statistically impossible for two serialisation-incompatible Pony
 binaries to have the same serialise signature.</p>
-<pre><code class="pony">fun box signature()
+<pre><code class="language-pony">fun box signature()
 : Array[U8 val] val
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Array/">Array</a>[<a href="../builtin-U8/">U8</a> val] val</li>
@@ -7134,11 +7131,10 @@ binaries to have the same serialise signature.</p>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/serialise/serialise/#L31">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: Serialise val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Serialise</a> val</li>
@@ -7150,11 +7146,10 @@ binaries to have the same serialise signature.</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/serialise/serialise/#L31">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: Serialise val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Serialise</a> val</li>

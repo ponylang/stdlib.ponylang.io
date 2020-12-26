@@ -7083,17 +7083,15 @@
                 
                 <h1 id="tcplistenauth">TCPListenAuth<a class="headerlink" href="#tcplistenauth" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/net/auth/#L17">[Source]</a></span></p>
-<pre><code class="pony">primitive val TCPListenAuth
+<pre><code class="language-pony">primitive val TCPListenAuth
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/auth/#L18">[Source]</a></span></p>
-<pre><code class="pony">new val create(
+<pre><code class="language-pony">new val create(
   from: (AmbientAuth val | NetAuth val | TCPAuth val))
 : TCPListenAuth val^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>from: (<a href="../builtin-AmbientAuth/">AmbientAuth</a> val | <a href="../net-NetAuth/">NetAuth</a> val | <a href="../net-TCPAuth/">TCPAuth</a> val)</li>
@@ -7106,11 +7104,10 @@
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/auth/#L18">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: TCPListenAuth val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">TCPListenAuth</a> val</li>
@@ -7122,11 +7119,10 @@
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/auth/#L18">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: TCPListenAuth val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">TCPListenAuth</a> val</li>

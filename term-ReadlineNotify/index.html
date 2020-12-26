@@ -7036,20 +7036,18 @@
                 <h1 id="readlinenotify">ReadlineNotify<a class="headerlink" href="#readlinenotify" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/term/readline_notify/#L3">[Source]</a></span></p>
 <p>Notifier for readline.</p>
-<pre><code class="pony">interface ref ReadlineNotify
+<pre><code class="language-pony">interface ref ReadlineNotify
 </code></pre>
-
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/readline_notify/#L7">[Source]</a></span></p>
 <p>Receives finished lines. The next prompt is set by fulfilling the promise.
 If the promise is rejected, readline will stop handling input.</p>
-<pre><code class="pony">fun ref apply(
+<pre><code class="language-pony">fun ref apply(
   line: String val,
   prompt: Promise[String val] tag)
 : None val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>line: <a href="../builtin-String/">String</a> val</li>
@@ -7063,11 +7061,10 @@ If the promise is rejected, readline will stop handling input.</p>
 <h3 id="tab">tab<a class="headerlink" href="#tab" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/readline_notify/#L14">[Source]</a></span></p>
 <p>Return tab completion possibilities.</p>
-<pre><code class="pony">fun ref tab(
+<pre><code class="language-pony">fun ref tab(
   line: String val)
 : Seq[String val] box
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>line: <a href="../builtin-String/">String</a> val</li>

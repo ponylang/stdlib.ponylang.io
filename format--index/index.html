@@ -6940,7 +6940,7 @@ used to set things like width, padding and alignment, as well as
 controlling the way numbers are displayed (decimal, octal,
 hexadecimal).</p>
 <h1 id="example-program">Example program<a class="headerlink" href="#example-program" title="Permanent link">&para;</a></h1>
-<pre><code class="pony">use &quot;format&quot;
+<pre><code class="language-pony">use &quot;format&quot;
 
 actor Main
   fun disp(desc: String, v: I32, fmt: FormatInt = FormatDefault): String =&gt;
@@ -6961,7 +6961,6 @@ actor Main
       env.err.print(&quot;Usage: &quot; + exe + &quot; NUMBER1 NUMBER2&quot;)
     end
 </code></pre>
-
 <h2 id="public-types">Public Types<a class="headerlink" href="#public-types" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../format-PrefixSpec/">trait PrefixSpec</a></li>

@@ -7056,7 +7056,7 @@
 feature of commands that can be specified in a hierarchy.</p>
 <p>See <a href="https://github.com/ponylang/rfcs/blob/master/text/0038-cli-format.md">RFC-0038</a> for more background.</p>
 <p>The general EBNF of a command line is:</p>
-<pre><code class="ebnf">  command_line ::= root_command (option | command)* (option | arg)*
+<pre><code class="language-ebnf">  command_line ::= root_command (option | command)* (option | arg)*
   command ::= alphanum_word
   alphanum_word ::= alphachar(alphachar | numchar | '_' | '-')*
   option ::= longoption | shortoptionset
@@ -7068,13 +7068,11 @@ feature of commands that can be specified in a hierarchy.</p>
   floatarg ::= ['-'] numchar... ['.' numchar...]
   stringarg ::= anychar
 </code></pre>
-
 <p>Some examples:</p>
 <pre><code>  usage: ls [&lt;options&gt;] [&lt;args&gt; ...]
   usage: make [&lt;options&gt;] &lt;command&gt; [&lt;options&gt;] [&lt;args&gt; ...]
   usage: chat [&lt;options&gt;] &lt;command&gt;  &lt;subcommand&gt; [&lt;options&gt;] [&lt;args&gt; ...]
 </code></pre>
-
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>The types in the cli package are broken down into three groups:</p>
 <h3 id="specs">Specs<a class="headerlink" href="#specs" title="Permanent link">&para;</a></h3>
@@ -7119,7 +7117,7 @@ command's options and arguments can be retrieved.</p>
 <h1 id="example-program">Example program<a class="headerlink" href="#example-program" title="Permanent link">&para;</a></h1>
 <p>This program echos its command line arguments with the option of uppercasing
 them.</p>
-<pre><code class="pony">use &quot;cli&quot;
+<pre><code class="language-pony">use &quot;cli&quot;
 
 actor Main
   new create(env: Env) =&gt;
@@ -7156,7 +7154,6 @@ actor Main
     end
     env.out.print(&quot;&quot;)
 </code></pre>
-
 <h2 id="public-types">Public Types<a class="headerlink" href="#public-types" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../cli-EnvVars/">primitive EnvVars</a></li>

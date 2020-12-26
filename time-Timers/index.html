@@ -7102,9 +7102,8 @@
                 <h1 id="timers">Timers<a class="headerlink" href="#timers" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/time/timers/#L13">[Source]</a></span></p>
 <p>A hierarchical set of timing wheels.</p>
-<pre><code class="pony">actor tag Timers
+<pre><code class="language-pony">actor tag Timers
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/time/timers/#L24">[Source]</a></span></p>
@@ -7112,11 +7111,10 @@
 means trying for nanosecond resolution. 10 slop bits is approximately
 microsecond resolution, 20 slop bits is approximately millisecond
 resolution.</p>
-<pre><code class="pony">new tag create(
+<pre><code class="language-pony">new tag create(
   slop: USize val = 20)
 : Timers tag^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>slop: <a href="../builtin-USize/">USize</a> val = 20</li>
@@ -7131,10 +7129,9 @@ resolution.</p>
 <p><span class="source-link"><a href="../src/time/timers/#L38">[Source]</a></span></p>
 <p>Sets a timer. Fire it if need be, schedule it on the right timing wheel,
 then rearm the timer.</p>
-<pre><code class="pony">be apply(
+<pre><code class="language-pony">be apply(
   timer: Timer iso)
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>timer: <a href="../time-Timer/">Timer</a> iso</li>
@@ -7143,10 +7140,9 @@ then rearm the timer.</p>
 <h3 id="cancel">cancel<a class="headerlink" href="#cancel" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/time/timers/#L49">[Source]</a></span></p>
 <p>Cancels a timer.</p>
-<pre><code class="pony">be cancel(
+<pre><code class="language-pony">be cancel(
   timer: Timer tag)
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>timer: <a href="../time-Timer/">Timer</a> tag</li>
@@ -7155,9 +7151,8 @@ then rearm the timer.</p>
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/time/timers/#L64">[Source]</a></span></p>
 <p>Dispose of this set of timing wheels.</p>
-<pre><code class="pony">be dispose()
+<pre><code class="language-pony">be dispose()
 </code></pre>
-
 <hr />
                 
                   

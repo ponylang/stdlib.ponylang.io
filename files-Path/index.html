@@ -7463,16 +7463,14 @@
 <p><span class="source-link"><a href="../src/files/path/#L10">[Source]</a></span></p>
 <p>Operations on paths that do not require a capability. The operations can be
 used to manipulate path names, but give no access to the resulting paths.</p>
-<pre><code class="pony">primitive val Path
+<pre><code class="language-pony">primitive val Path
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/path/#L10">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : Path val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">Path</a> val^</li>
@@ -7482,11 +7480,10 @@ used to manipulate path names, but give no access to the resulting paths.</p>
 <h3 id="is_sep">is_sep<a class="headerlink" href="#is_sep" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/path/#L15">[Source]</a></span></p>
 <p>Determine if a byte is a path separator.</p>
-<pre><code class="pony">fun box is_sep(
+<pre><code class="language-pony">fun box is_sep(
   c: U8 val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>c: <a href="../builtin-U8/">U8</a> val</li>
@@ -7499,10 +7496,9 @@ used to manipulate path names, but give no access to the resulting paths.</p>
 <h3 id="sep">sep<a class="headerlink" href="#sep" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/path/#L25">[Source]</a></span></p>
 <p>Return the path separator as a string.</p>
-<pre><code class="pony">fun tag sep()
+<pre><code class="language-pony">fun tag sep()
 : String val
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -7511,11 +7507,10 @@ used to manipulate path names, but give no access to the resulting paths.</p>
 <h3 id="is_abs">is_abs<a class="headerlink" href="#is_abs" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/path/#L31">[Source]</a></span></p>
 <p>Return true if the path is an absolute path.</p>
-<pre><code class="pony">fun box is_abs(
+<pre><code class="language-pony">fun box is_abs(
   path: String val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>path: <a href="../builtin-String/">String</a> val</li>
@@ -7529,12 +7524,11 @@ used to manipulate path names, but give no access to the resulting paths.</p>
 <p><span class="source-link"><a href="../src/files/path/#L45">[Source]</a></span></p>
 <p>Join two paths together. If the next_path is absolute, simply return it.
 The returned path will be cleaned.</p>
-<pre><code class="pony">fun box join(
+<pre><code class="language-pony">fun box join(
   path: String val,
   next_path: String val)
 : String val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>path: <a href="../builtin-String/">String</a> val</li>
@@ -7553,11 +7547,10 @@ Remove instances of . from the path.
 Remove instances of .. and the preceding path element from the path.
 The result will have no trailing slash unless it is a root directory.
 If the result would be empty, "." will be returned instead.</p>
-<pre><code class="pony">fun box clean(
+<pre><code class="language-pony">fun box clean(
   path: String val)
 : String val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>path: <a href="../builtin-String/">String</a> val</li>
@@ -7570,11 +7563,10 @@ If the result would be empty, "." will be returned instead.</p>
 <h3 id="normcase">normcase<a class="headerlink" href="#normcase" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/path/#L188">[Source]</a></span></p>
 <p>Normalizes the case of path for the runtime platform.</p>
-<pre><code class="pony">fun box normcase(
+<pre><code class="language-pony">fun box normcase(
   path: String val)
 : String val
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>path: <a href="../builtin-String/">String</a> val</li>
@@ -7588,10 +7580,9 @@ If the result would be empty, "." will be returned instead.</p>
 <p><span class="source-link"><a href="../src/files/path/#L200">[Source]</a></span></p>
 <p>Returns the program's working directory. Setting the working directory is
 not supported, as it is not concurrency-safe.</p>
-<pre><code class="pony">fun box cwd()
+<pre><code class="language-pony">fun box cwd()
 : String val
 </code></pre>
-
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -7600,11 +7591,10 @@ not supported, as it is not concurrency-safe.</p>
 <h3 id="abs">abs<a class="headerlink" href="#abs" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/path/#L207">[Source]</a></span></p>
 <p>Returns a cleaned, absolute path.</p>
-<pre><code class="pony">fun box abs(
+<pre><code class="language-pony">fun box abs(
   path: String val)
 : String val
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>path: <a href="../builtin-String/">String</a> val</li>
@@ -7618,12 +7608,11 @@ not supported, as it is not concurrency-safe.</p>
 <p><span class="source-link"><a href="../src/files/path/#L217">[Source]</a></span></p>
 <p>Returns a path such that Path.join(to, Path.rel(to, target)) == target.
 Raises an error if this isn't possible.</p>
-<pre><code class="pony">fun box rel(
+<pre><code class="language-pony">fun box rel(
   to: String val,
   target: String val)
 : String val ?
 </code></pre>
-
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>to: <a href="../builtin-String/">String</a> val</li>
@@ -7643,12 +7632,11 @@ there is no slash in path, head will be empty. If path is empty, both head
 and tail are empty. The path in head will be cleaned before it is returned.
 In all cases, join(head, tail) returns a path to the same location as path
 (but the strings may differ). Also see the functions dir() and base().</p>
-<pre><code class="pony">fun box split(
+<pre><code class="language-pony">fun box split(
   path: String val,
   separator: String val = call)
 : (String val , String val)
 </code></pre>
-
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>path: <a href="../builtin-String/">String</a> val</li>
@@ -7665,12 +7653,11 @@ In all cases, join(head, tail) returns a path to the same location as path
 separator.
 If <code>with_ext</code> is <code>false</code>, the extension as defined by the <code>ext()</code> method
 will be omitted from the result.</p>
-<pre><code class="pony">fun box base(
+<pre><code class="language-pony">fun box base(
   path: String val,
   with_ext: Bool val = true)
 : String val
 </code></pre>
-
 <h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>path: <a href="../builtin-String/">String</a> val</li>
@@ -7685,11 +7672,10 @@ will be omitted from the result.</p>
 <p><span class="source-link"><a href="../src/files/path/#L349">[Source]</a></span></p>
 <p>Return a cleaned path before the last separator, or the whole path if there
 is no separator.</p>
-<pre><code class="pony">fun box dir(
+<pre><code class="language-pony">fun box dir(
   path: String val)
 : String val
 </code></pre>
-
 <h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>path: <a href="../builtin-String/">String</a> val</li>
@@ -7703,11 +7689,10 @@ is no separator.</p>
 <p><span class="source-link"><a href="../src/files/path/#L360">[Source]</a></span></p>
 <p>Return the file extension, i.e. the part after the last dot as long as that
 dot is after all separators. Return an empty string for no extension.</p>
-<pre><code class="pony">fun box ext(
+<pre><code class="language-pony">fun box ext(
   path: String val)
 : String val
 </code></pre>
-
 <h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>path: <a href="../builtin-String/">String</a> val</li>
@@ -7721,11 +7706,10 @@ dot is after all separators. Return an empty string for no extension.</p>
 <p><span class="source-link"><a href="../src/files/path/#L380">[Source]</a></span></p>
 <p>On Windows, this returns the drive letter or UNC base at the beginning of
 the path, if there is one. Otherwise, this returns an empty string.</p>
-<pre><code class="pony">fun box volume(
+<pre><code class="language-pony">fun box volume(
   path: String val)
 : String val
 </code></pre>
-
 <h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li>path: <a href="../builtin-String/">String</a> val</li>
@@ -7738,11 +7722,10 @@ the path, if there is one. Otherwise, this returns an empty string.</p>
 <h3 id="from_slash">from_slash<a class="headerlink" href="#from_slash" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/path/#L441">[Source]</a></span></p>
 <p>Changes each / in the path to the OS specific separator.</p>
-<pre><code class="pony">fun box from_slash(
+<pre><code class="language-pony">fun box from_slash(
   path: String val)
 : String val
 </code></pre>
-
 <h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li>path: <a href="../builtin-String/">String</a> val</li>
@@ -7755,11 +7738,10 @@ the path, if there is one. Otherwise, this returns an empty string.</p>
 <h3 id="to_slash">to_slash<a class="headerlink" href="#to_slash" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/path/#L465">[Source]</a></span></p>
 <p>Changes each OS specific separator in the path to /.</p>
-<pre><code class="pony">fun box to_slash(
+<pre><code class="language-pony">fun box to_slash(
   path: String val)
 : String val
 </code></pre>
-
 <h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li>path: <a href="../builtin-String/">String</a> val</li>
@@ -7773,11 +7755,10 @@ the path, if there is one. Otherwise, this returns an empty string.</p>
 <p><span class="source-link"><a href="../src/files/path/#L489">[Source]</a></span></p>
 <p>Return the equivalent canonical absolute path. Raise an error if there
 isn't one.</p>
-<pre><code class="pony">fun box canonical(
+<pre><code class="language-pony">fun box canonical(
   path: String val)
 : String val ?
 </code></pre>
-
 <h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li>path: <a href="../builtin-String/">String</a> val</li>
@@ -7790,11 +7771,10 @@ isn't one.</p>
 <h3 id="is_list_sep">is_list_sep<a class="headerlink" href="#is_list_sep" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/path/#L503">[Source]</a></span></p>
 <p>Determine if a byte is a path list separator.</p>
-<pre><code class="pony">fun box is_list_sep(
+<pre><code class="language-pony">fun box is_list_sep(
   c: U8 val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li>c: <a href="../builtin-U8/">U8</a> val</li>
@@ -7807,10 +7787,9 @@ isn't one.</p>
 <h3 id="list_sep">list_sep<a class="headerlink" href="#list_sep" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/path/#L509">[Source]</a></span></p>
 <p>Return the path list separator as a string.</p>
-<pre><code class="pony">fun box list_sep()
+<pre><code class="language-pony">fun box list_sep()
 : String val
 </code></pre>
-
 <h4 id="returns_19">Returns<a class="headerlink" href="#returns_19" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -7819,11 +7798,10 @@ isn't one.</p>
 <h3 id="split_list">split_list<a class="headerlink" href="#split_list" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/path/#L515">[Source]</a></span></p>
 <p>Separate a list of paths into an array of cleaned paths.</p>
-<pre><code class="pony">fun box split_list(
+<pre><code class="language-pony">fun box split_list(
   path: String val)
 : Array[String val] iso^
 </code></pre>
-
 <h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
 <ul>
 <li>path: <a href="../builtin-String/">String</a> val</li>
@@ -7837,11 +7815,10 @@ isn't one.</p>
 <p><span class="source-link"><a href="../src/files/path/#L534">[Source]</a></span></p>
 <p>Returns a pseudo-random base, suitable as a temporary file name or
 directory name, but not guaranteed to not already exist.</p>
-<pre><code class="pony">fun box random(
+<pre><code class="language-pony">fun box random(
   len: USize val = 6)
 : String val
 </code></pre>
-
 <h4 id="parameters_17">Parameters<a class="headerlink" href="#parameters_17" title="Permanent link">&para;</a></h4>
 <ul>
 <li>len: <a href="../builtin-USize/">USize</a> val = 6</li>
@@ -7853,11 +7830,10 @@ directory name, but not guaranteed to not already exist.</p>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/path/#L15">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: Path val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_18">Parameters<a class="headerlink" href="#parameters_18" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Path</a> val</li>
@@ -7869,11 +7845,10 @@ directory name, but not guaranteed to not already exist.</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/path/#L15">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: Path val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_19">Parameters<a class="headerlink" href="#parameters_19" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Path</a> val</li>

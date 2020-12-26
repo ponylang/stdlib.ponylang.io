@@ -7200,7 +7200,7 @@ can also indicate failure by raising an error in the test function.</p>
 tells the PonyTest object about the tests. Typically the TestList will be Main
 for the package.</p>
 <p>The following is a complete program with 2 trivial tests.</p>
-<pre><code class="pony">use &quot;ponytest&quot;
+<pre><code class="language-pony">use &quot;ponytest&quot;
 
 actor Main is TestList
   new create(env: Env) =&gt;
@@ -7225,7 +7225,6 @@ class iso _TestSub is UnitTest
   fun apply(h: TestHelper) =&gt;
     h.assert_eq[U32](2, 4 - 2)
 </code></pre>
-
 <p>The make() constructor is not needed for this example. However, it allows for
 easy aggregation of tests (see below) so it is recommended that all test Mains
 provide it.</p>
@@ -7250,7 +7249,7 @@ own unit tests it may be useful to run all tests for the bundle together.</p>
 <p>This can be achieved by writing an aggregate test list class, which calls the
 list function for each package. The following is an example that aggregates the
 tests from packages <code>foo</code> and <code>bar</code>.</p>
-<pre><code class="pony">use &quot;ponytest&quot;
+<pre><code class="language-pony">use &quot;ponytest&quot;
 use foo = &quot;foo&quot;
 use bar = &quot;bar&quot;
 
@@ -7265,7 +7264,6 @@ actor Main is TestList
     foo.Main.make().tests(test)
     bar.Main.make().tests(test)
 </code></pre>
-
 <p>Aggregate test classes may themselves be aggregated. Every test list class may
 contain any combination of its own tests and aggregated lists.</p>
 <h2 id="long-tests">Long tests<a class="headerlink" href="#long-tests" title="Permanent link">&para;</a></h2>
@@ -7311,7 +7309,7 @@ command line argument <code>--label=[some custom label]</code>. It can be used t
 unit tests from integration tests.</p>
 <p>By default label is empty. You can set it up by overriding <code>label(): String</code>
 method in unit test.</p>
-<pre><code class="pony">use &quot;ponytest&quot;
+<pre><code class="language-pony">use &quot;ponytest&quot;
 
 class iso _I8AddTest is UnitTest
   fun name(): String =&gt; &quot;_I8AddTest&quot;
@@ -7320,7 +7318,6 @@ class iso _I8AddTest is UnitTest
     h.assert_eq[I8](1, 1)
 
 </code></pre>
-
 <h2 id="setting-up-and-tearing-down-a-test-environment">Setting up and tearing down a test environment<a class="headerlink" href="#setting-up-and-tearing-down-a-test-environment" title="Permanent link">&para;</a></h2>
 <h3 id="set-up">Set Up<a class="headerlink" href="#set-up" title="Permanent link">&para;</a></h3>
 <p>Any kind of fixture or environment necessary for executing a <a href="../ponytest-UnitTest/">UnitTest</a>
@@ -7345,7 +7342,7 @@ messages and call assert functions during tear down.</p>
 <p>The following example creates a temporary directory in the <a href="../ponytest-UnitTest/#set_up">set_up()</a> function
 and removes it in the <a href="../ponytest-UnitTest/#tear_down">tear_down()</a> function, thus
 simplifying the test function itself:</p>
-<pre><code class="pony">use &quot;ponytest&quot;
+<pre><code class="language-pony">use &quot;ponytest&quot;
 use &quot;files&quot;
 
 class iso TempDirTest
@@ -7365,7 +7362,6 @@ class iso TempDirTest
     let dir = tmp_dir as FilePath
     // do something inside the temporary directory
 </code></pre>
-
 <h2 id="public-types">Public Types<a class="headerlink" href="#public-types" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../ponytest-UnitTest/">trait UnitTest</a></li>

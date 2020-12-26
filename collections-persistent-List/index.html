@@ -7019,7 +7019,7 @@
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L1">[Source]</a></span></p>
 <p>A persistent list with functional transformations.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<pre><code class="pony">use &quot;collections/persistent&quot;
+<pre><code class="language-pony">use &quot;collections/persistent&quot;
 
 actor Main
   new create(env: Env) =&gt;
@@ -7045,11 +7045,9 @@ actor Main
       Lists[U32].eq(doubled, Lists[U32]([2; 4; 6]))?
     end
 </code></pre>
-
-<pre><code class="pony">type List[A: A] is
+<pre><code class="language-pony">type List[A: A] is
   (Cons[A] val | Nil[A] val)
 </code></pre>
-
 <h4 id="type-alias-for">Type Alias For<a class="headerlink" href="#type-alias-for" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../collections-persistent-Cons/">Cons</a>[A] val | <a href="../collections-persistent-Nil/">Nil</a>[A] val)</li>

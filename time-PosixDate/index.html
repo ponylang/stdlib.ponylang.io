@@ -7296,19 +7296,17 @@
 <p>Represents a proleptic Gregorian date and time, without specifying a
 time zone. The day of month, month, day of week, and day of year are all
 indexed from 1, i.e. January is 1, Monday is 1.</p>
-<pre><code class="pony">class ref PosixDate
+<pre><code class="language-pony">class ref PosixDate
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/time/posix_date/#L17">[Source]</a></span></p>
 <p>Create a date from a POSIX time. Negative arguments will be changed to zero.</p>
-<pre><code class="pony">new ref create(
+<pre><code class="language-pony">new ref create(
   seconds: I64 val = 0,
   nanoseconds: I64 val = 0)
 : PosixDate ref^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>seconds: <a href="../builtin-I64/">I64</a> val = 0</li>
@@ -7351,10 +7349,9 @@ indexed from 1, i.e. January is 1, Monday is 1.</p>
 <h3 id="time">time<a class="headerlink" href="#time" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/time/posix_date/#L25">[Source]</a></span></p>
 <p>Return a POSIX time. Treats the date as UTC.</p>
-<pre><code class="pony">fun box time()
+<pre><code class="language-pony">fun box time()
 : I64 val
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I64/">I64</a> val</li>
@@ -7366,10 +7363,9 @@ indexed from 1, i.e. January is 1, Monday is 1.</p>
 set to 0 and the day is advanced. This allows fields to be changed naively,
 eg. adding 1000 to hours to advance the time by 1000 hours, and then
 normalising the date.</p>
-<pre><code class="pony">fun ref normal()
+<pre><code class="language-pony">fun ref normal()
 : None val
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
@@ -7378,11 +7374,10 @@ normalising the date.</p>
 <h3 id="format">format<a class="headerlink" href="#format" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/time/posix_date/#L40">[Source]</a></span></p>
 <p>Format the time as for strftime.</p>
-<pre><code class="pony">fun box format(
+<pre><code class="language-pony">fun box format(
   fmt: String val)
 : String val ?
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>fmt: <a href="../builtin-String/">String</a> val</li>

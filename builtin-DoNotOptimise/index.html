@@ -7121,16 +7121,14 @@
 <p><span class="source-link"><a href="../src/builtin/do_not_optimise/#L1">[Source]</a></span></p>
 <p>Contains functions preventing some compiler optimisations, namely dead code
 removal. This is useful for benchmarking purposes.</p>
-<pre><code class="pony">primitive val DoNotOptimise
+<pre><code class="language-pony">primitive val DoNotOptimise
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/do_not_optimise/#L1">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : DoNotOptimise val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">DoNotOptimise</a> val^</li>
@@ -7141,11 +7139,10 @@ removal. This is useful for benchmarking purposes.</p>
 <p><span class="source-link"><a href="../src/builtin/do_not_optimise/#L7">[Source]</a></span></p>
 <p>Prevent the compiler from optimising out obj and any computation it is
 derived from. This doesn't prevent constant propagation.</p>
-<pre><code class="pony">fun box apply[A: A](
+<pre><code class="language-pony">fun box apply[A: A](
   obj: A)
 : None val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>obj: A</li>
@@ -7159,10 +7156,9 @@ derived from. This doesn't prevent constant propagation.</p>
 <p><span class="source-link"><a href="../src/builtin/do_not_optimise/#L14">[Source]</a></span></p>
 <p>Prevent the compiler from optimising out writes to an object marked by
 the apply function.</p>
-<pre><code class="pony">fun box observe()
+<pre><code class="language-pony">fun box observe()
 : None val
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
@@ -7170,11 +7166,10 @@ the apply function.</p>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/do_not_optimise/#L7">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: DoNotOptimise val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">DoNotOptimise</a> val</li>
@@ -7186,11 +7181,10 @@ the apply function.</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/do_not_optimise/#L7">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: DoNotOptimise val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">DoNotOptimise</a> val</li>

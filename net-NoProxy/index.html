@@ -7084,7 +7084,7 @@
                 <h1 id="noproxy">NoProxy<a class="headerlink" href="#noproxy" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/net/proxy/#L5">[Source]</a></span></p>
 <p>Default implementation of a proxy that does not alter the supplied <code>TCPConnectionNotify</code>.</p>
-<pre><code class="pony">actor MyClient
+<pre><code class="language-pony">actor MyClient
   new create(host: String, service: String, proxy: Proxy = NoProxy) =&gt;
     let conn: TCPConnection = TCPConnection.create(
       env.root as AmbientAuth,
@@ -7092,11 +7092,9 @@
       &quot;localhost&quot;,
       &quot;80&quot;)
 </code></pre>
-
-<pre><code class="pony">class val NoProxy is
+<pre><code class="language-pony">class val NoProxy is
   Proxy ref
 </code></pre>
-
 <h4 id="implements">Implements<a class="headerlink" href="#implements" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../net-Proxy/">Proxy</a> ref</li>
@@ -7105,10 +7103,9 @@
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/proxy/#L5">[Source]</a></span></p>
-<pre><code class="pony">new iso create()
+<pre><code class="language-pony">new iso create()
 : NoProxy iso^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">NoProxy</a> iso^</li>
@@ -7117,11 +7114,10 @@
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/proxy/#L19">[Source]</a></span></p>
-<pre><code class="pony">fun box apply(
+<pre><code class="language-pony">fun box apply(
   wrap: TCPConnectionNotify iso)
 : TCPConnectionNotify iso^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>wrap: <a href="../net-TCPConnectionNotify/">TCPConnectionNotify</a> iso</li>

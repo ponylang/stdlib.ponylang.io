@@ -7128,18 +7128,16 @@
 <p>Each unit test class must provide this trait. Simple tests only need to
 define the name() and apply() functions. The remaining functions specify
 additional test options.</p>
-<pre><code class="pony">trait ref UnitTest
+<pre><code class="language-pony">trait ref UnitTest
 </code></pre>
-
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="name">name<a class="headerlink" href="#name" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ponytest/unit_test/#L8">[Source]</a></span></p>
 <p>Report the test name, which is used when printing test results and on the
 command line to select tests to run.</p>
-<pre><code class="pony">fun box name()
+<pre><code class="language-pony">fun box name()
 : String val
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -7149,10 +7147,9 @@ command line to select tests to run.</p>
 <p><span class="source-link"><a href="../src/ponytest/unit_test/#L14">[Source]</a></span></p>
 <p>Report the test exclusion group, returning an empty string for none.
 The default body returns an empty string.</p>
-<pre><code class="pony">fun box exclusion_group()
+<pre><code class="language-pony">fun box exclusion_group()
 : String val
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -7162,11 +7159,10 @@ The default body returns an empty string.</p>
 <p><span class="source-link"><a href="../src/ponytest/unit_test/#L21">[Source]</a></span></p>
 <p>Run the test.
 Raising an error is interpreted as a test failure.</p>
-<pre><code class="pony">fun ref apply(
+<pre><code class="language-pony">fun ref apply(
   h: TestHelper val)
 : None val ?
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>h: <a href="../ponytest-TestHelper/">TestHelper</a> val</li>
@@ -7183,11 +7179,10 @@ Called when the timeout specified by to long_test() expires.
 There is no need for this function to call complete(false).
 tear_down() will still be called after this completes.
 The default is to do nothing.</p>
-<pre><code class="pony">fun ref timed_out(
+<pre><code class="language-pony">fun ref timed_out(
   h: TestHelper val)
 : None val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>h: <a href="../ponytest-TestHelper/">TestHelper</a> val</li>
@@ -7201,11 +7196,10 @@ The default is to do nothing.</p>
 <p><span class="source-link"><a href="../src/ponytest/unit_test/#L37">[Source]</a></span></p>
 <p>Set up the testing environment before a test method is called.
 Default is to do nothing.</p>
-<pre><code class="pony">fun ref set_up(
+<pre><code class="language-pony">fun ref set_up(
   h: TestHelper val)
 : None val ?
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>h: <a href="../ponytest-TestHelper/">TestHelper</a> val</li>
@@ -7220,11 +7214,10 @@ Default is to do nothing.</p>
 <p>Tidy up after the test has completed.
 Called for each run test, whether that test passed, succeeded or timed out.
 The default is to do nothing.</p>
-<pre><code class="pony">fun ref tear_down(
+<pre><code class="language-pony">fun ref tear_down(
   h: TestHelper val)
 : None val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>h: <a href="../ponytest-TestHelper/">TestHelper</a> val</li>
@@ -7238,10 +7231,9 @@ The default is to do nothing.</p>
 <p><span class="source-link"><a href="../src/ponytest/unit_test/#L52">[Source]</a></span></p>
 <p>Report the test label, returning an empty string for none.
 It can be later use to filter tests which we want to run, by labels.</p>
-<pre><code class="pony">fun box label()
+<pre><code class="language-pony">fun box label()
 : String val
 </code></pre>
-
 <h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>

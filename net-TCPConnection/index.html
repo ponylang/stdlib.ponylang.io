@@ -7681,7 +7681,7 @@
 <p>The following code creates a client that connects to port 8989 of
 the local host, writes "hello world", and listens for a response,
 which it then prints.</p>
-<pre><code class="pony">use &quot;net&quot;
+<pre><code class="language-pony">use &quot;net&quot;
 
 class MyTCPConnectionNotify is TCPConnectionNotify
   let _out: OutStream
@@ -7712,7 +7712,6 @@ actor Main
         recover MyTCPConnectionNotify(env.out) end, &quot;&quot;, &quot;8989&quot;)
     end
 </code></pre>
-
 <p>Note: when writing to the connection data will be silently discarded if the
 connection has not yet been established.</p>
 <h2 id="backpressure-support">Backpressure support<a class="headerlink" href="#backpressure-support" title="Permanent link">&para;</a></h2>
@@ -7730,7 +7729,7 @@ on how to handle it. One is to inform the Pony runtime that it can no
 longer make progress and that runtime backpressure should be applied to
 any actors sending this one messages. For example, you might construct your
 application like:</p>
-<pre><code class="pony">// Here we have a TCPConnectionNotify that upon construction
+<pre><code class="language-pony">// Here we have a TCPConnectionNotify that upon construction
 // is given a BackpressureAuth token. This allows the notifier
 // to inform the Pony runtime when to apply and release backpressure
 // as the connection experiences it.
@@ -7779,11 +7778,10 @@ actor Main
     end
 
 </code></pre>
-
 <p>Or if you want, you could handle backpressure by shedding load, that is,
 dropping the extra data rather than carrying out the send. This might look
 like:</p>
-<pre><code class="pony">use &quot;net&quot;
+<pre><code class="language-pony">use &quot;net&quot;
 
 class ThrowItAway is TCPConnectionNotify
   var _throttled: Bool = false
@@ -7818,7 +7816,6 @@ actor Main
         recover ThrowItAway end, &quot;&quot;, &quot;7669&quot;)
     end
 </code></pre>
-
 <p>In general, unless you have a very specific use case, we strongly advise that
 you don't implement a load shedding scheme where you drop data.</p>
 <h3 id="read">Read<a class="headerlink" href="#read" title="Permanent link">&para;</a></h3>
@@ -7845,7 +7842,7 @@ service.</p>
 <p>The proxy <code>TCPConnectionNotify</code> should decorate another implementation of
 <code>TCPConnectionNotify</code> passing relevent data through.</p>
 <h3 id="example-proxy-implementation">Example proxy implementation<a class="headerlink" href="#example-proxy-implementation" title="Permanent link">&para;</a></h3>
-<pre><code class="pony">actor Main
+<pre><code class="language-pony">actor Main
   new create(env: Env) =&gt;
     MyClient.create(
       &quot;example.com&quot;, // we actually want to connect to this host
@@ -7904,16 +7901,14 @@ class iso ExampleProxyNotify is TCPConnectionNotify
   fun ref received(conn, data, times) =&gt; _wrapped.received(conn, data, times)
   fun ref connect_failed(conn: TCPConnection ref) =&gt; None
 </code></pre>
-
-<pre><code class="pony">actor tag TCPConnection
+<pre><code class="language-pony">actor tag TCPConnection
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L300">[Source]</a></span></p>
 <p>Connect via IPv4 or IPv6. If <code>from</code> is a non-empty string, the connection
 will be made from the specified interface.</p>
-<pre><code class="pony">new tag create(
+<pre><code class="language-pony">new tag create(
   auth: (AmbientAuth val | NetAuth val | TCPAuth val | 
     TCPConnectAuth val),
   notify: TCPConnectionNotify iso,
@@ -7925,7 +7920,6 @@ will be made from the specified interface.</p>
   yield_after_writing: USize val = 16384)
 : TCPConnection tag^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>auth: (<a href="../builtin-AmbientAuth/">AmbientAuth</a> val | <a href="../net-NetAuth/">NetAuth</a> val | <a href="../net-TCPAuth/">TCPAuth</a> val | 
@@ -7946,7 +7940,7 @@ will be made from the specified interface.</p>
 <h3 id="ip4">ip4<a class="headerlink" href="#ip4" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L331">[Source]</a></span></p>
 <p>Connect via IPv4.</p>
-<pre><code class="pony">new tag ip4(
+<pre><code class="language-pony">new tag ip4(
   auth: (AmbientAuth val | NetAuth val | TCPAuth val | 
     TCPConnectAuth val),
   notify: TCPConnectionNotify iso,
@@ -7958,7 +7952,6 @@ will be made from the specified interface.</p>
   yield_after_writing: USize val = 16384)
 : TCPConnection tag^
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>auth: (<a href="../builtin-AmbientAuth/">AmbientAuth</a> val | <a href="../net-NetAuth/">NetAuth</a> val | <a href="../net-TCPAuth/">TCPAuth</a> val | 
@@ -7979,7 +7972,7 @@ will be made from the specified interface.</p>
 <h3 id="ip6">ip6<a class="headerlink" href="#ip6" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L361">[Source]</a></span></p>
 <p>Connect via IPv6.</p>
-<pre><code class="pony">new tag ip6(
+<pre><code class="language-pony">new tag ip6(
   auth: (AmbientAuth val | NetAuth val | TCPAuth val | 
     TCPConnectAuth val),
   notify: TCPConnectionNotify iso,
@@ -7991,7 +7984,6 @@ will be made from the specified interface.</p>
   yield_after_writing: USize val = 16384)
 : TCPConnection tag^
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>auth: (<a href="../builtin-AmbientAuth/">AmbientAuth</a> val | <a href="../net-NetAuth/">NetAuth</a> val | <a href="../net-TCPAuth/">TCPAuth</a> val | 
@@ -8014,10 +8006,9 @@ will be made from the specified interface.</p>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L429">[Source]</a></span></p>
 <p>Write a single sequence of bytes. Data will be silently discarded if the
 connection has not yet been established though.</p>
-<pre><code class="pony">be write(
+<pre><code class="language-pony">be write(
   data: (String val | Array[U8 val] val))
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: (<a href="../builtin-String/">String</a> val | <a href="../builtin-Array/">Array</a>[<a href="../builtin-U8/">U8</a> val] val)</li>
@@ -8027,10 +8018,9 @@ connection has not yet been established though.</p>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L440">[Source]</a></span></p>
 <p>Write a sequence of sequences of bytes. Data will be silently discarded if
 the connection has not yet been established though.</p>
-<pre><code class="pony">be writev(
+<pre><code class="language-pony">be writev(
   data: ByteSeqIter val)
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-ByteSeqIter/">ByteSeqIter</a> val</li>
@@ -8040,24 +8030,21 @@ the connection has not yet been established though.</p>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L497">[Source]</a></span></p>
 <p>Temporarily suspend reading off this TCPConnection until such time as
 <code>unmute</code> is called.</p>
-<pre><code class="pony">be mute()
+<pre><code class="language-pony">be mute()
 </code></pre>
-
 <hr />
 <h3 id="unmute">unmute<a class="headerlink" href="#unmute" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L504">[Source]</a></span></p>
 <p>Start reading off this TCPConnection again after having been muted.</p>
-<pre><code class="pony">be unmute()
+<pre><code class="language-pony">be unmute()
 </code></pre>
-
 <hr />
 <h3 id="set_notify">set_notify<a class="headerlink" href="#set_notify" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L513">[Source]</a></span></p>
 <p>Change the notifier.</p>
-<pre><code class="pony">be set_notify(
+<pre><code class="language-pony">be set_notify(
   notify: TCPConnectionNotify iso)
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>notify: <a href="../net-TCPConnectionNotify/">TCPConnectionNotify</a> iso</li>
@@ -8066,19 +8053,17 @@ the connection has not yet been established though.</p>
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L519">[Source]</a></span></p>
 <p>Close the connection gracefully once all writes are sent.</p>
-<pre><code class="pony">be dispose()
+<pre><code class="language-pony">be dispose()
 </code></pre>
-
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="local_address">local_address<a class="headerlink" href="#local_address" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L525">[Source]</a></span></p>
 <p>Return the local IP address. If this TCPConnection is closed then the
 address returned is invalid.</p>
-<pre><code class="pony">fun box local_address()
+<pre><code class="language-pony">fun box local_address()
 : NetAddress val
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../net-NetAddress/">NetAddress</a> val</li>
@@ -8088,10 +8073,9 @@ address returned is invalid.</p>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L534">[Source]</a></span></p>
 <p>Return the remote IP address. If this TCPConnection is closed then the
 address returned is invalid.</p>
-<pre><code class="pony">fun box remote_address()
+<pre><code class="language-pony">fun box remote_address()
 : NetAddress val
 </code></pre>
-
 <h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../net-NetAddress/">NetAddress</a> val</li>
@@ -8104,11 +8088,10 @@ address returned is invalid.</p>
 if called in the <code>sent</code> notifier callback.</p>
 <p>Errors if <code>qty</code> exceeds the max buffer size as indicated by the
 <code>read_buffer_size</code> supplied when the connection was created.</p>
-<pre><code class="pony">fun ref expect(
+<pre><code class="language-pony">fun ref expect(
   qty: USize val = 0)
 : None val ?
 </code></pre>
-
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>qty: <a href="../builtin-USize/">USize</a> val = 0</li>
@@ -8122,11 +8105,10 @@ if called in the <code>sent</code> notifier callback.</p>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L562">[Source]</a></span></p>
 <p>Turn Nagle on/off. Defaults to on. This can only be set on a connected
 socket.</p>
-<pre><code class="pony">fun ref set_nodelay(
+<pre><code class="language-pony">fun ref set_nodelay(
   state: Bool val)
 : None val
 </code></pre>
-
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>state: <a href="../builtin-Bool/">Bool</a> val</li>
@@ -8142,11 +8124,10 @@ socket.</p>
 timing is OS dependent. If <code>secs</code> is zero, TCP keepalive is disabled. TCP
 keepalive is disabled by default. This can only be set on a connected
 socket.</p>
-<pre><code class="pony">fun ref set_keepalive(
+<pre><code class="language-pony">fun ref set_keepalive(
   secs: U32 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>secs: <a href="../builtin-U32/">U32</a> val</li>
@@ -8162,11 +8143,10 @@ socket.</p>
 everything was written. On an error, close the connection. This is for data
 that has already been transformed by the notifier. Data will be silently
 discarded if the connection has not yet been established though.</p>
-<pre><code class="pony">fun ref write_final(
+<pre><code class="language-pony">fun ref write_final(
   data: (String val | Array[U8 val] val))
 : None val
 </code></pre>
-
 <h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: (<a href="../builtin-String/">String</a> val | <a href="../builtin-Array/">Array</a>[<a href="../builtin-U8/">U8</a> val] val)</li>
@@ -8182,10 +8162,9 @@ discarded if the connection has not yet been established though.</p>
 connection isn't muted then we won't finish closing until we get a zero
 length read. If the connection is muted, perform a hard close and shut
 down immediately.</p>
-<pre><code class="pony">fun ref close()
+<pre><code class="language-pony">fun ref close()
 : None val
 </code></pre>
-
 <h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
@@ -8194,10 +8173,9 @@ down immediately.</p>
 <h3 id="hard_close">hard_close<a class="headerlink" href="#hard_close" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L1073">[Source]</a></span></p>
 <p>When an error happens, do a non-graceful close.</p>
-<pre><code class="pony">fun ref hard_close()
+<pre><code class="language-pony">fun ref hard_close()
 : None val
 </code></pre>
-
 <h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
@@ -8218,7 +8196,7 @@ may return for the requested option.</p>
 1. The value of <code>errno</code>.
 2. An undefined value that must be ignored.</p>
 <p>Usage example:</p>
-<pre><code class="pony">// connected() is a callback function for class TCPConnectionNotify
+<pre><code class="language-pony">// connected() is a callback function for class TCPConnectionNotify
 fun ref connected(conn: TCPConnection ref) =&gt;
   match conn.getsockopt(OSSockOpt.sol_socket(), OSSockOpt.so_rcvbuf(), 4)
     | (0, let gbytes: Array[U8] iso) =&gt;
@@ -8234,14 +8212,12 @@ fun ref connected(conn: TCPConnection ref) =&gt;
       // System call failed
   end
 </code></pre>
-
-<pre><code class="pony">fun ref getsockopt(
+<pre><code class="language-pony">fun ref getsockopt(
   level: I32 val,
   option_name: I32 val,
   option_max_size: USize val = 4)
 : (U32 val , Array[U8 val] iso^)
 </code></pre>
-
 <h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>level: <a href="../builtin-I32/">I32</a> val</li>
@@ -8264,12 +8240,11 @@ type <code>U32</code>.</p>
 <p>In case of system call failure, this function returns the 2-tuple:
 1. The value of <code>errno</code>.
 2. An undefined value that must be ignored.</p>
-<pre><code class="pony">fun ref getsockopt_u32(
+<pre><code class="language-pony">fun ref getsockopt_u32(
   level: I32 val,
   option_name: I32 val)
 : (U32 val , U32 val)
 </code></pre>
-
 <h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li>level: <a href="../builtin-I32/">I32</a> val</li>
@@ -8289,7 +8264,7 @@ including using the appropriate machine endian byte order.</p>
 <p>This function returns <code>0</code> on success, else the value of <code>errno</code> on
 failure.</p>
 <p>Usage example:</p>
-<pre><code class="pony">// connected() is a callback function for class TCPConnectionNotify
+<pre><code class="language-pony">// connected() is a callback function for class TCPConnectionNotify
 fun ref connected(conn: TCPConnection ref) =&gt;
   let sb = Writer
 
@@ -8305,14 +8280,12 @@ fun ref connected(conn: TCPConnection ref) =&gt;
       // System call failed
   end
 </code></pre>
-
-<pre><code class="pony">fun ref setsockopt(
+<pre><code class="language-pony">fun ref setsockopt(
   level: I32 val,
   option_name: I32 val,
   option: Array[U8 val] ref)
 : U32 val
 </code></pre>
-
 <h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li>level: <a href="../builtin-I32/">I32</a> val</li>
@@ -8331,13 +8304,12 @@ the kernel expects an option value of a C <code>uint32_t</code> type / Pony
 type <code>U32</code>.</p>
 <p>This function returns <code>0</code> on success, else the value of <code>errno</code> on
 failure.</p>
-<pre><code class="pony">fun ref setsockopt_u32(
+<pre><code class="language-pony">fun ref setsockopt_u32(
   level: I32 val,
   option_name: I32 val,
   option: U32 val)
 : U32 val
 </code></pre>
-
 <h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li>level: <a href="../builtin-I32/">I32</a> val</li>
@@ -8352,10 +8324,9 @@ failure.</p>
 <h3 id="get_so_error">get_so_error<a class="headerlink" href="#get_so_error" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L1241">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, SO_ERROR, ...)</code></p>
-<pre><code class="pony">fun ref get_so_error()
+<pre><code class="language-pony">fun ref get_so_error()
 : (U32 val , U32 val)
 </code></pre>
-
 <h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U32/">U32</a> val , <a href="../builtin-U32/">U32</a> val)</li>
@@ -8364,10 +8335,9 @@ failure.</p>
 <h3 id="get_so_rcvbuf">get_so_rcvbuf<a class="headerlink" href="#get_so_rcvbuf" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L1247">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, SO_RCVBUF, ...)</code></p>
-<pre><code class="pony">fun ref get_so_rcvbuf()
+<pre><code class="language-pony">fun ref get_so_rcvbuf()
 : (U32 val , U32 val)
 </code></pre>
-
 <h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U32/">U32</a> val , <a href="../builtin-U32/">U32</a> val)</li>
@@ -8376,10 +8346,9 @@ failure.</p>
 <h3 id="get_so_sndbuf">get_so_sndbuf<a class="headerlink" href="#get_so_sndbuf" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L1253">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, SO_SNDBUF, ...)</code></p>
-<pre><code class="pony">fun ref get_so_sndbuf()
+<pre><code class="language-pony">fun ref get_so_sndbuf()
 : (U32 val , U32 val)
 </code></pre>
-
 <h4 id="returns_17">Returns<a class="headerlink" href="#returns_17" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U32/">U32</a> val , <a href="../builtin-U32/">U32</a> val)</li>
@@ -8388,10 +8357,9 @@ failure.</p>
 <h3 id="get_tcp_nodelay">get_tcp_nodelay<a class="headerlink" href="#get_tcp_nodelay" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L1259">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, TCP_NODELAY, ...)</code></p>
-<pre><code class="pony">fun ref get_tcp_nodelay()
+<pre><code class="language-pony">fun ref get_tcp_nodelay()
 : (U32 val , U32 val)
 </code></pre>
-
 <h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U32/">U32</a> val , <a href="../builtin-U32/">U32</a> val)</li>
@@ -8400,11 +8368,10 @@ failure.</p>
 <h3 id="set_so_rcvbuf">set_so_rcvbuf<a class="headerlink" href="#set_so_rcvbuf" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L1266">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, SO_RCVBUF, ...)</code></p>
-<pre><code class="pony">fun ref set_so_rcvbuf(
+<pre><code class="language-pony">fun ref set_so_rcvbuf(
   bufsize: U32 val)
 : U32 val
 </code></pre>
-
 <h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li>bufsize: <a href="../builtin-U32/">U32</a> val</li>
@@ -8417,11 +8384,10 @@ failure.</p>
 <h3 id="set_so_sndbuf">set_so_sndbuf<a class="headerlink" href="#set_so_sndbuf" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L1272">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, SO_SNDBUF, ...)</code></p>
-<pre><code class="pony">fun ref set_so_sndbuf(
+<pre><code class="language-pony">fun ref set_so_sndbuf(
   bufsize: U32 val)
 : U32 val
 </code></pre>
-
 <h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li>bufsize: <a href="../builtin-U32/">U32</a> val</li>
@@ -8434,11 +8400,10 @@ failure.</p>
 <h3 id="set_tcp_nodelay">set_tcp_nodelay<a class="headerlink" href="#set_tcp_nodelay" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection/#L1278">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, TCP_NODELAY, ...)</code></p>
-<pre><code class="pony">fun ref set_tcp_nodelay(
+<pre><code class="language-pony">fun ref set_tcp_nodelay(
   state: Bool val)
 : U32 val
 </code></pre>
-
 <h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
 <ul>
 <li>state: <a href="../builtin-Bool/">Bool</a> val</li>

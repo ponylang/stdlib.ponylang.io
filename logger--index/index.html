@@ -7116,7 +7116,7 @@ to zero cost for items that aren't going to end up being logged.</p>
 <h3 id="string-logger">String Logger<a class="headerlink" href="#string-logger" title="Permanent link">&para;</a></h3>
 <p>The following program will output 'my warn message' and 'my error message' to
 STDOUT in the standard default log format.</p>
-<pre><code class="pony">use &quot;logger&quot;
+<pre><code class="language-pony">use &quot;logger&quot;
 
 actor Main
   new create(env: Env) =&gt;
@@ -7129,11 +7129,10 @@ actor Main
     logger(Warn) and logger.log(&quot;my warn message&quot;)
     logger(Error) and logger.log(&quot;my error message&quot;)
 </code></pre>
-
 <h3 id="loggera">Logger[A]<a class="headerlink" href="#loggera" title="Permanent link">&para;</a></h3>
 <p>The following program will output '42' to STDOUT in the standard default log
 format.</p>
-<pre><code class="pony">use &quot;logger&quot;
+<pre><code class="language-pony">use &quot;logger&quot;
 
 actor Main
   new create(env: Env) =&gt;
@@ -7141,18 +7140,16 @@ actor Main
 
     logger(Error) and logger.log(U64(42))
 </code></pre>
-
 <h2 id="custom-formatting-your-logs">Custom formatting your logs<a class="headerlink" href="#custom-formatting-your-logs" title="Permanent link">&para;</a></h2>
 <p>The Logger package provides an interface for formatting logs. If you wish to
 override the standard formatting, you can create an object that implements:</p>
-<pre><code class="pony">interface val LogFormatter
+<pre><code class="language-pony">interface val LogFormatter
   fun apply(
     msg: String,
     file_name: String,
     file_linenum: String,
     file_linepos: String): String
 </code></pre>
-
 <p>This can either be a class or because the interface only has a single apply
 method, can also be a lambda.</p>
 <h2 id="public-types">Public Types<a class="headerlink" href="#public-types" title="Permanent link">&para;</a></h2>

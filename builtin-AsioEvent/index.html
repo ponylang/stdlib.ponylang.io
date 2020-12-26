@@ -7318,16 +7318,14 @@
                 <h1 id="asioevent">AsioEvent<a class="headerlink" href="#asioevent" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/builtin/asio_event/#L6">[Source]</a></span></p>
 <p>Functions for asynchronous event notification.</p>
-<pre><code class="pony">primitive val AsioEvent
+<pre><code class="language-pony">primitive val AsioEvent
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/asio_event/#L6">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : AsioEvent val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">AsioEvent</a> val^</li>
@@ -7337,10 +7335,9 @@
 <h3 id="none">none<a class="headerlink" href="#none" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/asio_event/#L10">[Source]</a></span></p>
 <p>An empty event.</p>
-<pre><code class="pony">fun box none()
+<pre><code class="language-pony">fun box none()
 : Pointer[AsioEvent val] tag
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Pointer/">Pointer</a>[<a href="./">AsioEvent</a> val] tag</li>
@@ -7349,11 +7346,10 @@
 <h3 id="readable">readable<a class="headerlink" href="#readable" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/asio_event/#L16">[Source]</a></span></p>
 <p>Returns true if the flags contain the readable flag.</p>
-<pre><code class="pony">fun box readable(
+<pre><code class="language-pony">fun box readable(
   flags: U32 val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>flags: <a href="../builtin-U32/">U32</a> val</li>
@@ -7366,11 +7362,10 @@
 <h3 id="writeable">writeable<a class="headerlink" href="#writeable" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/asio_event/#L22">[Source]</a></span></p>
 <p>Returns true if the flags contain the writeable flag.</p>
-<pre><code class="pony">fun box writeable(
+<pre><code class="language-pony">fun box writeable(
   flags: U32 val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>flags: <a href="../builtin-U32/">U32</a> val</li>
@@ -7383,11 +7378,10 @@
 <h3 id="disposable">disposable<a class="headerlink" href="#disposable" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/asio_event/#L28">[Source]</a></span></p>
 <p>Returns true if the event should be disposed of.</p>
-<pre><code class="pony">fun box disposable(
+<pre><code class="language-pony">fun box disposable(
   flags: U32 val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>flags: <a href="../builtin-U32/">U32</a> val</li>
@@ -7400,11 +7394,10 @@
 <h3 id="oneshotable">oneshotable<a class="headerlink" href="#oneshotable" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/asio_event/#L34">[Source]</a></span></p>
 <p>Returns true if the flags contain the oneshot flag.</p>
-<pre><code class="pony">fun box oneshotable(
+<pre><code class="language-pony">fun box oneshotable(
   flags: U32 val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>flags: <a href="../builtin-U32/">U32</a> val</li>
@@ -7416,10 +7409,9 @@
 <hr />
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/asio_event/#L40">[Source]</a></span></p>
-<pre><code class="pony">fun box dispose()
+<pre><code class="language-pony">fun box dispose()
 : U32 val
 </code></pre>
-
 <h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7427,10 +7419,9 @@
 <hr />
 <h3 id="read">read<a class="headerlink" href="#read" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/asio_event/#L42">[Source]</a></span></p>
-<pre><code class="pony">fun box read()
+<pre><code class="language-pony">fun box read()
 : U32 val
 </code></pre>
-
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7438,10 +7429,9 @@
 <hr />
 <h3 id="write">write<a class="headerlink" href="#write" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/asio_event/#L44">[Source]</a></span></p>
-<pre><code class="pony">fun box write()
+<pre><code class="language-pony">fun box write()
 : U32 val
 </code></pre>
-
 <h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7449,10 +7439,9 @@
 <hr />
 <h3 id="timer">timer<a class="headerlink" href="#timer" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/asio_event/#L46">[Source]</a></span></p>
-<pre><code class="pony">fun box timer()
+<pre><code class="language-pony">fun box timer()
 : U32 val
 </code></pre>
-
 <h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7460,10 +7449,9 @@
 <hr />
 <h3 id="signal">signal<a class="headerlink" href="#signal" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/asio_event/#L48">[Source]</a></span></p>
-<pre><code class="pony">fun box signal()
+<pre><code class="language-pony">fun box signal()
 : U32 val
 </code></pre>
-
 <h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7471,10 +7459,9 @@
 <hr />
 <h3 id="read_write">read_write<a class="headerlink" href="#read_write" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/asio_event/#L50">[Source]</a></span></p>
-<pre><code class="pony">fun box read_write()
+<pre><code class="language-pony">fun box read_write()
 : U32 val
 </code></pre>
-
 <h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7482,10 +7469,9 @@
 <hr />
 <h3 id="oneshot">oneshot<a class="headerlink" href="#oneshot" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/asio_event/#L52">[Source]</a></span></p>
-<pre><code class="pony">fun box oneshot()
+<pre><code class="language-pony">fun box oneshot()
 : U32 val
 </code></pre>
-
 <h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7493,10 +7479,9 @@
 <hr />
 <h3 id="read_write_oneshot">read_write_oneshot<a class="headerlink" href="#read_write_oneshot" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/asio_event/#L54">[Source]</a></span></p>
-<pre><code class="pony">fun box read_write_oneshot()
+<pre><code class="language-pony">fun box read_write_oneshot()
 : U32 val
 </code></pre>
-
 <h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7504,11 +7489,10 @@
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/asio_event/#L10">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: AsioEvent val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">AsioEvent</a> val</li>
@@ -7520,11 +7504,10 @@
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/asio_event/#L10">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: AsioEvent val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">AsioEvent</a> val</li>

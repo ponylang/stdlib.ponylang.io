@@ -7119,16 +7119,14 @@
                 
                 <h1 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/cli/command_help/#L3">[Source]</a></span></p>
-<pre><code class="pony">primitive val Help
+<pre><code class="language-pony">primitive val Help
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_help/#L3">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : Help val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">Help</a> val^</li>
@@ -7138,11 +7136,10 @@
 <h3 id="general">general<a class="headerlink" href="#general" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_help/#L4">[Source]</a></span></p>
 <p>Creates a command help that can print a general program help message.</p>
-<pre><code class="pony">fun box general(
+<pre><code class="language-pony">fun box general(
   cs: CommandSpec box)
 : CommandHelp box
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>cs: <a href="../cli-CommandSpec/">CommandSpec</a> box</li>
@@ -7156,12 +7153,11 @@
 <p><span class="source-link"><a href="../src/cli/command_help/#L10">[Source]</a></span></p>
 <p>Creates a command help for a specific command that can print a detailed
 help message.</p>
-<pre><code class="pony">fun box for_command(
+<pre><code class="language-pony">fun box for_command(
   cs: CommandSpec box,
   argv: Array[String val] box)
 : (CommandHelp box | SyntaxError val)
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>cs: <a href="../cli-CommandSpec/">CommandSpec</a> box</li>
@@ -7174,11 +7170,10 @@ help message.</p>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_help/#L4">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: Help val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Help</a> val</li>
@@ -7190,11 +7185,10 @@ help message.</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_help/#L4">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: Help val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Help</a> val</li>

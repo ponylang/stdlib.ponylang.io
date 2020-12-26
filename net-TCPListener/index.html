@@ -7188,7 +7188,7 @@
 <p>Listens for new network connections.</p>
 <p>The following program creates an echo server that listens for
 connections on port 8989 and echoes back any data it receives.</p>
-<pre><code class="pony">use &quot;net&quot;
+<pre><code class="language-pony">use &quot;net&quot;
 
 class MyTCPConnectionNotify is TCPConnectionNotify
   fun ref received(
@@ -7217,15 +7217,13 @@ actor Main
         recover MyTCPListenNotify end, &quot;&quot;, &quot;8989&quot;)
     end
 </code></pre>
-
-<pre><code class="pony">actor tag TCPListener
+<pre><code class="language-pony">actor tag TCPListener
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_listener/#L52">[Source]</a></span></p>
 <p>Listens for both IPv4 and IPv6 connections.</p>
-<pre><code class="pony">new tag create(
+<pre><code class="language-pony">new tag create(
   auth: (AmbientAuth val | NetAuth val | TCPAuth val | 
     TCPListenAuth val),
   notify: TCPListenNotify iso,
@@ -7237,7 +7235,6 @@ actor Main
   yield_after_writing: USize val = 16384)
 : TCPListener tag^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>auth: (<a href="../builtin-AmbientAuth/">AmbientAuth</a> val | <a href="../net-NetAuth/">NetAuth</a> val | <a href="../net-TCPAuth/">TCPAuth</a> val | 
@@ -7258,7 +7255,7 @@ actor Main
 <h3 id="ip4">ip4<a class="headerlink" href="#ip4" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_listener/#L76">[Source]</a></span></p>
 <p>Listens for IPv4 connections.</p>
-<pre><code class="pony">new tag ip4(
+<pre><code class="language-pony">new tag ip4(
   auth: (AmbientAuth val | NetAuth val | TCPAuth val | 
     TCPListenAuth val),
   notify: TCPListenNotify iso,
@@ -7270,7 +7267,6 @@ actor Main
   yield_after_writing: USize val = 16384)
 : TCPListener tag^
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>auth: (<a href="../builtin-AmbientAuth/">AmbientAuth</a> val | <a href="../net-NetAuth/">NetAuth</a> val | <a href="../net-TCPAuth/">TCPAuth</a> val | 
@@ -7291,7 +7287,7 @@ actor Main
 <h3 id="ip6">ip6<a class="headerlink" href="#ip6" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_listener/#L100">[Source]</a></span></p>
 <p>Listens for IPv6 connections.</p>
-<pre><code class="pony">new tag ip6(
+<pre><code class="language-pony">new tag ip6(
   auth: (AmbientAuth val | NetAuth val | TCPAuth val | 
     TCPListenAuth val),
   notify: TCPListenNotify iso,
@@ -7303,7 +7299,6 @@ actor Main
   yield_after_writing: USize val = 16384)
 : TCPListener tag^
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>auth: (<a href="../builtin-AmbientAuth/">AmbientAuth</a> val | <a href="../net-NetAuth/">NetAuth</a> val | <a href="../net-TCPAuth/">TCPAuth</a> val | 
@@ -7325,10 +7320,9 @@ actor Main
 <h3 id="set_notify">set_notify<a class="headerlink" href="#set_notify" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_listener/#L124">[Source]</a></span></p>
 <p>Change the notifier.</p>
-<pre><code class="pony">be set_notify(
+<pre><code class="language-pony">be set_notify(
   notify: TCPListenNotify iso)
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>notify: <a href="../net-TCPListenNotify/">TCPListenNotify</a> iso</li>
@@ -7337,18 +7331,16 @@ actor Main
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_listener/#L130">[Source]</a></span></p>
 <p>Stop listening.</p>
-<pre><code class="pony">be dispose()
+<pre><code class="language-pony">be dispose()
 </code></pre>
-
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="local_address">local_address<a class="headerlink" href="#local_address" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_listener/#L136">[Source]</a></span></p>
 <p>Return the bound IP address.</p>
-<pre><code class="pony">fun box local_address()
+<pre><code class="language-pony">fun box local_address()
 : NetAddress val
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../net-NetAddress/">NetAddress</a> val</li>
@@ -7357,10 +7349,9 @@ actor Main
 <h3 id="close">close<a class="headerlink" href="#close" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_listener/#L245">[Source]</a></span></p>
 <p>Dispose of resources.</p>
-<pre><code class="pony">fun ref close()
+<pre><code class="language-pony">fun ref close()
 : None val
 </code></pre>
-
 <h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>

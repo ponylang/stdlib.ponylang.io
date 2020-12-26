@@ -7151,17 +7151,15 @@
 <p><span class="source-link"><a href="../src/json/json_doc/#L4">[Source]</a></span></p>
 <p>Top level JSON type containing an entire document.
 A JSON document consists of exactly 1 value.</p>
-<pre><code class="pony">class ref JsonDoc
+<pre><code class="language-pony">class ref JsonDoc
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/json/json_doc/#L24">[Source]</a></span></p>
 <p>Default constructor building a document containing a single null.</p>
-<pre><code class="pony">new ref create()
+<pre><code class="language-pony">new ref create()
 : JsonDoc ref^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">JsonDoc</a> ref^</li>
@@ -7180,12 +7178,11 @@ A JSON document consists of exactly 1 value.</p>
 <h3 id="string">string<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/json/json_doc/#L30">[Source]</a></span></p>
 <p>Generate string representation of this document.</p>
-<pre><code class="pony">fun box string(
+<pre><code class="language-pony">fun box string(
   indent: String val = &quot;&quot;,
   pretty_print: Bool val = false)
 : String val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>indent: <a href="../builtin-String/">String</a> val = ""</li>
@@ -7200,11 +7197,10 @@ A JSON document consists of exactly 1 value.</p>
 <p><span class="source-link"><a href="../src/json/json_doc/#L40">[Source]</a></span></p>
 <p>Parse the given string as a JSON file, building a document.
 Raise error on invalid JSON in given source.</p>
-<pre><code class="pony">fun ref parse(
+<pre><code class="language-pony">fun ref parse(
   source: String val)
 : None val ?
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>source: <a href="../builtin-String/">String</a> val</li>
@@ -7218,10 +7214,9 @@ Raise error on invalid JSON in given source.</p>
 <p><span class="source-link"><a href="../src/json/json_doc/#L62">[Source]</a></span></p>
 <p>Give details of the error that occurred last time we attempted to parse.
 If parse was successful returns (0, "").</p>
-<pre><code class="pony">fun box parse_report()
+<pre><code class="language-pony">fun box parse_report()
 : (USize val , String val)
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-USize/">USize</a> val , <a href="../builtin-String/">String</a> val)</li>

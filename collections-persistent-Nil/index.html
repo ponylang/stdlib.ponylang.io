@@ -7516,10 +7516,9 @@
                 <h1 id="nila-a">Nil[A: A]<a class="headerlink" href="#nila-a" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L87">[Source]</a></span></p>
 <p>The empty list of As.</p>
-<pre><code class="pony">primitive val Nil[A: A] is
+<pre><code class="language-pony">primitive val Nil[A: A] is
   ReadSeq[val-&gt;A] box
 </code></pre>
-
 <h4 id="implements">Implements<a class="headerlink" href="#implements" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ReadSeq/">ReadSeq</a>[val-&gt;A] box</li>
@@ -7528,10 +7527,9 @@
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L87">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : Nil[A] val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">Nil</a>[A] val^</li>
@@ -7541,10 +7539,9 @@
 <h3 id="size">size<a class="headerlink" href="#size" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L92">[Source]</a></span></p>
 <p>Returns the size of the list.</p>
-<pre><code class="pony">fun box size()
+<pre><code class="language-pony">fun box size()
 : USize val
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-USize/">USize</a> val</li>
@@ -7554,11 +7551,10 @@
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L98">[Source]</a></span></p>
 <p>Returns the i-th element of the sequence. For the empty list this call will
 always error because any index will be out of bounds.</p>
-<pre><code class="pony">fun box apply(
+<pre><code class="language-pony">fun box apply(
   i: USize val)
 : val-&gt;A ?
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>i: <a href="../builtin-USize/">USize</a> val</li>
@@ -7571,10 +7567,9 @@ always error because any index will be out of bounds.</p>
 <h3 id="values">values<a class="headerlink" href="#values" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L105">[Source]</a></span></p>
 <p>Returns an empty iterator over the elements of the empty list.</p>
-<pre><code class="pony">fun box values()
+<pre><code class="language-pony">fun box values()
 : Iterator[val-&gt;A] ref^
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Iterator/">Iterator</a>[val-&gt;A] ref^</li>
@@ -7583,10 +7578,9 @@ always error because any index will be out of bounds.</p>
 <h3 id="is_empty">is_empty<a class="headerlink" href="#is_empty" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L114">[Source]</a></span></p>
 <p>Returns a Bool indicating if the list is empty.</p>
-<pre><code class="pony">fun box is_empty()
+<pre><code class="language-pony">fun box is_empty()
 : Bool val
 </code></pre>
-
 <h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7595,10 +7589,9 @@ always error because any index will be out of bounds.</p>
 <h3 id="is_non_empty">is_non_empty<a class="headerlink" href="#is_non_empty" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L120">[Source]</a></span></p>
 <p>Returns a Bool indicating if the list is non-empty.</p>
-<pre><code class="pony">fun box is_non_empty()
+<pre><code class="language-pony">fun box is_non_empty()
 : Bool val
 </code></pre>
-
 <h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7607,10 +7600,9 @@ always error because any index will be out of bounds.</p>
 <h3 id="head">head<a class="headerlink" href="#head" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L126">[Source]</a></span></p>
 <p>Returns an error, since Nil has no head.</p>
-<pre><code class="pony">fun box head()
+<pre><code class="language-pony">fun box head()
 : val-&gt;A ?
 </code></pre>
-
 <h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>val-&gt;A ?</li>
@@ -7619,10 +7611,9 @@ always error because any index will be out of bounds.</p>
 <h3 id="tail">tail<a class="headerlink" href="#tail" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L132">[Source]</a></span></p>
 <p>Returns an error, since Nil has no tail.</p>
-<pre><code class="pony">fun box tail()
+<pre><code class="language-pony">fun box tail()
 : (Cons[A] val | Nil[A] val) ?
 </code></pre>
-
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../collections-persistent-Cons/">Cons</a>[A] val | <a href="./">Nil</a>[A] val) ?</li>
@@ -7631,10 +7622,9 @@ always error because any index will be out of bounds.</p>
 <h3 id="reverse">reverse<a class="headerlink" href="#reverse" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L138">[Source]</a></span></p>
 <p>The reverse of the empty list is the empty list.</p>
-<pre><code class="pony">fun box reverse()
+<pre><code class="language-pony">fun box reverse()
 : Nil[A] val
 </code></pre>
-
 <h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">Nil</a>[A] val</li>
@@ -7643,11 +7633,10 @@ always error because any index will be out of bounds.</p>
 <h3 id="prepend">prepend<a class="headerlink" href="#prepend" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L144">[Source]</a></span></p>
 <p>Builds a new list with an element added to the front of this list.</p>
-<pre><code class="pony">fun box prepend(
+<pre><code class="language-pony">fun box prepend(
   a: val-&gt;A!)
 : Cons[A] val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>a: val-&gt;A!</li>
@@ -7660,11 +7649,10 @@ always error because any index will be out of bounds.</p>
 <h3 id="concat">concat<a class="headerlink" href="#concat" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L150">[Source]</a></span></p>
 <p>The concatenation of any list l with the empty list is l.</p>
-<pre><code class="pony">fun box concat(
+<pre><code class="language-pony">fun box concat(
   l: (Cons[A] val | Nil[A] val))
 : (Cons[A] val | Nil[A] val)
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>l: (<a href="../collections-persistent-Cons/">Cons</a>[A] val | <a href="./">Nil</a>[A] val)</li>
@@ -7678,11 +7666,10 @@ always error because any index will be out of bounds.</p>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L156">[Source]</a></span></p>
 <p>Mapping a function from A to B over the empty list yields the
 empty list of Bs.</p>
-<pre><code class="pony">fun box map[B: B](
+<pre><code class="language-pony">fun box map[B: B](
   f: {(val-&gt;A): val-&gt;B}[A, B] box)
 : Nil[B] val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>f: {(val-&gt;A): val-&gt;B}[A, B] box</li>
@@ -7696,11 +7683,10 @@ empty list of Bs.</p>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L163">[Source]</a></span></p>
 <p>Flatmapping a function from A to B over the empty list yields the
 empty list of Bs.</p>
-<pre><code class="pony">fun box flat_map[B: B](
+<pre><code class="language-pony">fun box flat_map[B: B](
   f: {(val-&gt;A): List[B]}[A, B] box)
 : Nil[B] val
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>f: {(val-&gt;A): List[B]}[A, B] box</li>
@@ -7713,11 +7699,10 @@ empty list of Bs.</p>
 <h3 id="for_each">for_each<a class="headerlink" href="#for_each" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L170">[Source]</a></span></p>
 <p>Applying a function to every member of the empty list is a no-op.</p>
-<pre><code class="pony">fun box for_each(
+<pre><code class="language-pony">fun box for_each(
   f: {(val-&gt;A)}[A] box)
 : None val
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>f: {(val-&gt;A)}[A] box</li>
@@ -7730,11 +7715,10 @@ empty list of Bs.</p>
 <h3 id="filter">filter<a class="headerlink" href="#filter" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L176">[Source]</a></span></p>
 <p>Filtering the empty list yields the empty list.</p>
-<pre><code class="pony">fun box filter(
+<pre><code class="language-pony">fun box filter(
   f: {(val-&gt;A): Bool}[A] box)
 : Nil[A] val
 </code></pre>
-
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>f: {(val-&gt;A): Bool}[A] box</li>
@@ -7747,12 +7731,11 @@ empty list of Bs.</p>
 <h3 id="foldb-b">fold[B: B]<a class="headerlink" href="#foldb-b" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L182">[Source]</a></span></p>
 <p>Folding over the empty list yields the initial accumulator.</p>
-<pre><code class="pony">fun box fold[B: B](
+<pre><code class="language-pony">fun box fold[B: B](
   f: {(B, val-&gt;A): B^}[A, B] box,
   acc: B)
 : B
 </code></pre>
-
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>f: {(B, val-&gt;A): B^}[A, B] box</li>
@@ -7766,11 +7749,10 @@ empty list of Bs.</p>
 <h3 id="every">every<a class="headerlink" href="#every" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L188">[Source]</a></span></p>
 <p>Any predicate is true of every member of the empty list.</p>
-<pre><code class="pony">fun box every(
+<pre><code class="language-pony">fun box every(
   f: {(val-&gt;A): Bool}[A] box)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>f: {(val-&gt;A): Bool}[A] box</li>
@@ -7784,11 +7766,10 @@ empty list of Bs.</p>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L194">[Source]</a></span></p>
 <p>For any predicate, there is no element that satisfies it in the empty
 list.</p>
-<pre><code class="pony">fun box exists(
+<pre><code class="language-pony">fun box exists(
   f: {(val-&gt;A): Bool}[A] box)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>f: {(val-&gt;A): Bool}[A] box</li>
@@ -7801,11 +7782,10 @@ list.</p>
 <h3 id="partition">partition<a class="headerlink" href="#partition" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L201">[Source]</a></span></p>
 <p>The only partition of the empty list is two empty lists.</p>
-<pre><code class="pony">fun box partition(
+<pre><code class="language-pony">fun box partition(
   f: {(val-&gt;A): Bool}[A] box)
 : (Nil[A] val , Nil[A] val)
 </code></pre>
-
 <h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>f: {(val-&gt;A): Bool}[A] box</li>
@@ -7818,11 +7798,10 @@ list.</p>
 <h3 id="drop">drop<a class="headerlink" href="#drop" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L207">[Source]</a></span></p>
 <p>There are no elements to drop from the empty list.</p>
-<pre><code class="pony">fun box drop(
+<pre><code class="language-pony">fun box drop(
   n: USize val)
 : Nil[A] val
 </code></pre>
-
 <h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li>n: <a href="../builtin-USize/">USize</a> val</li>
@@ -7835,11 +7814,10 @@ list.</p>
 <h3 id="drop_while">drop_while<a class="headerlink" href="#drop_while" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L213">[Source]</a></span></p>
 <p>There are no elements to drop from the empty list.</p>
-<pre><code class="pony">fun box drop_while(
+<pre><code class="language-pony">fun box drop_while(
   f: {(val-&gt;A): Bool}[A] box)
 : Nil[A] val
 </code></pre>
-
 <h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li>f: {(val-&gt;A): Bool}[A] box</li>
@@ -7852,11 +7830,10 @@ list.</p>
 <h3 id="take">take<a class="headerlink" href="#take" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L219">[Source]</a></span></p>
 <p>There are no elements to take from the empty list.</p>
-<pre><code class="pony">fun box take(
+<pre><code class="language-pony">fun box take(
   n: USize val)
 : Nil[A] val
 </code></pre>
-
 <h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li>n: <a href="../builtin-USize/">USize</a> val</li>
@@ -7869,11 +7846,10 @@ list.</p>
 <h3 id="take_while">take_while<a class="headerlink" href="#take_while" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L225">[Source]</a></span></p>
 <p>There are no elements to take from the empty list.</p>
-<pre><code class="pony">fun box take_while(
+<pre><code class="language-pony">fun box take_while(
   f: {(val-&gt;A): Bool}[A] box)
 : Nil[A] val
 </code></pre>
-
 <h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li>f: {(val-&gt;A): Bool}[A] box</li>
@@ -7885,11 +7861,10 @@ list.</p>
 <hr />
 <h3 id="containsoptional-t-a-haseqa-read">contains[optional T: (A &amp; <a href="../builtin-HasEq/">HasEq</a>[A!] #read)]<a class="headerlink" href="#containsoptional-t-a-haseqa-read" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L231">[Source]</a></span></p>
-<pre><code class="pony">fun val contains[optional T: (A &amp; HasEq[A!] #read)](
+<pre><code class="language-pony">fun val contains[optional T: (A &amp; HasEq[A!] #read)](
   a: val-&gt;T)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li>a: val-&gt;T</li>
@@ -7901,11 +7876,10 @@ list.</p>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L92">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: Nil[A] val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Nil</a>[A] val</li>
@@ -7917,11 +7891,10 @@ list.</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/list/#L92">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: Nil[A] val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_17">Parameters<a class="headerlink" href="#parameters_17" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Nil</a>[A] val</li>

@@ -7122,14 +7122,13 @@
 <p>Produces a decreasing range [max, min] with step <code>dec</code>, for any <code>Number</code> type.
 (i.e. the reverse of <code>Range</code>)</p>
 <p>Example program: </p>
-<pre><code class="pony">use &quot;collections&quot;
+<pre><code class="language-pony">use &quot;collections&quot;
 actor Main
   new create(env: Env) =&gt;
     for e in Reverse(10, 2, 2) do
       env.out.print(e.string())
     end 
 </code></pre>
-
 <p>Which outputs: </p>
 <pre><code>10
 8
@@ -7137,10 +7136,9 @@ actor Main
 4
 2
 </code></pre>
-
 <p>If <code>dec</code> is 0, produces an infinite series of <code>max</code>.</p>
 <p>If <code>dec</code> is negative, produces a range with <code>max</code> as the only value.</p>
-<pre><code class="pony">class ref Reverse[optional A: (Real[A] val &amp; (I8 val | I16 val | I32 val | 
+<pre><code class="language-pony">class ref Reverse[optional A: (Real[A] val &amp; (I8 val | I16 val | I32 val | 
     I64 val | I128 val | ILong val | 
     ISize val | U8 val | U16 val | 
     U32 val | U64 val | U128 val | 
@@ -7148,7 +7146,6 @@ actor Main
     F64 val))] is
   Iterator[A] ref
 </code></pre>
-
 <h4 id="implements">Implements<a class="headerlink" href="#implements" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Iterator/">Iterator</a>[A] ref</li>
@@ -7157,13 +7154,12 @@ actor Main
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/reverse/#L36">[Source]</a></span></p>
-<pre><code class="pony">new ref create(
+<pre><code class="language-pony">new ref create(
   max: A,
   min: A,
   dec: A = 1)
 : Reverse[A] ref^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>max: A</li>
@@ -7178,10 +7174,9 @@ actor Main
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="has_next">has_next<a class="headerlink" href="#has_next" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/reverse/#L42">[Source]</a></span></p>
-<pre><code class="pony">fun box has_next()
+<pre><code class="language-pony">fun box has_next()
 : Bool val
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7189,10 +7184,9 @@ actor Main
 <hr />
 <h3 id="next">next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/reverse/#L45">[Source]</a></span></p>
-<pre><code class="pony">fun ref next()
+<pre><code class="language-pony">fun ref next()
 : A
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -7200,10 +7194,9 @@ actor Main
 <hr />
 <h3 id="rewind">rewind<a class="headerlink" href="#rewind" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/reverse/#L52">[Source]</a></span></p>
-<pre><code class="pony">fun ref rewind()
+<pre><code class="language-pony">fun ref rewind()
 : None val
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>

@@ -7350,9 +7350,8 @@
 <p>A FilePath represents a capability to access a path. The path will be
 represented as an absolute path and a set of capabilities for operations on
 that path.</p>
-<pre><code class="pony">class val FilePath
+<pre><code class="language-pony">class val FilePath
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file_path/#L24">[Source]</a></span></p>
@@ -7363,13 +7362,12 @@ working directory. Otherwise, it will be relative to the existing FilePath,
 and the existing FilePath must be a prefix of the resulting path.</p>
 <p>The resulting FilePath will have capabilities that are the intersection of
 the supplied capabilities and the capabilities on the parent.</p>
-<pre><code class="pony">new val create(
+<pre><code class="language-pony">new val create(
   base: (FilePath val | AmbientAuth val),
   path': String val,
   caps': Flags[(FileCreate val | FileChmod val | FileChown val | FileLink val | FileLookup val | FileMkdir val | FileRead val | FileRemove val | FileRename val | FileSeek val | FileStat val | FileSync val | FileTime val | FileTruncate val | FileWrite val | FileExec val), U32 val] val = recover)
 : FilePath val^ ?
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>base: (<a href="./">FilePath</a> val | <a href="../builtin-AmbientAuth/">AmbientAuth</a> val)</li>
@@ -7391,13 +7389,12 @@ working directory. Otherwise, it will be relative to the existing
 FilePath, and the existing FilePath must be a prefix of the resulting path.</p>
 <p>The resulting FilePath will have capabilities that are the intersection of
 the supplied capabilities and the capabilities on the base.</p>
-<pre><code class="pony">new val mkdtemp(
+<pre><code class="language-pony">new val mkdtemp(
   base: (FilePath val | AmbientAuth val),
   prefix: String val = &quot;&quot;,
   caps': Flags[(FileCreate val | FileChmod val | FileChown val | FileLink val | FileLookup val | FileMkdir val | FileRead val | FileRemove val | FileRename val | FileSeek val | FileStat val | FileSync val | FileTime val | FileTruncate val | FileWrite val | FileExec val), U32 val] val = recover)
 : FilePath val^ ?
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>base: (<a href="./">FilePath</a> val | <a href="../builtin-AmbientAuth/">AmbientAuth</a> val)</li>
@@ -7422,12 +7419,11 @@ the supplied capabilities and the capabilities on the base.</p>
 <h3 id="join">join<a class="headerlink" href="#join" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file_path/#L102">[Source]</a></span></p>
 <p>Return a new path relative to this one.</p>
-<pre><code class="pony">fun val join(
+<pre><code class="language-pony">fun val join(
   path': String val,
   caps': Flags[(FileCreate val | FileChmod val | FileChown val | FileLink val | FileLookup val | FileMkdir val | FileRead val | FileRemove val | FileRename val | FileSeek val | FileStat val | FileSync val | FileTime val | FileTruncate val | FileWrite val | FileExec val), U32 val] val = recover)
 : FilePath val ?
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>path': <a href="../builtin-String/">String</a> val</li>
@@ -7444,12 +7440,11 @@ the supplied capabilities and the capabilities on the base.</p>
 <p><code>handler(dir_path, dir_entries)</code> will be called for each directory
 starting with this one. The handler can control which subdirectories are
 expanded by removing them from the <code>dir_entries</code> list.</p>
-<pre><code class="pony">fun val walk(
+<pre><code class="language-pony">fun val walk(
   handler: WalkHandler ref,
   follow_links: Bool val = false)
 : None val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>handler: <a href="../files-WalkHandler/">WalkHandler</a> ref</li>
@@ -7464,10 +7459,9 @@ expanded by removing them from the <code>dir_entries</code> list.</p>
 <p><span class="source-link"><a href="../src/files/file_path/#L136">[Source]</a></span></p>
 <p>Return the equivalent canonical absolute path. Raise an error if there
 isn't one.</p>
-<pre><code class="pony">fun val canonical()
+<pre><code class="language-pony">fun val canonical()
 : FilePath val ?
 </code></pre>
-
 <h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">FilePath</a> val ?</li>
@@ -7476,10 +7470,9 @@ isn't one.</p>
 <h3 id="exists">exists<a class="headerlink" href="#exists" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file_path/#L143">[Source]</a></span></p>
 <p>Returns true if the path exists. Returns false for a broken symlink.</p>
-<pre><code class="pony">fun val exists()
+<pre><code class="language-pony">fun val exists()
 : Bool val
 </code></pre>
-
 <h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7491,11 +7484,10 @@ isn't one.</p>
 if the directory exists when we're done, false if it does not. If we do not
 have the FileStat permission, this will return false even if the directory
 does exist.</p>
-<pre><code class="pony">fun val mkdir(
+<pre><code class="language-pony">fun val mkdir(
   must_create: Bool val = false)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>must_create: <a href="../builtin-Bool/">Bool</a> val = false</li>
@@ -7509,10 +7501,9 @@ does exist.</p>
 <p><span class="source-link"><a href="../src/files/file_path/#L200">[Source]</a></span></p>
 <p>Remove the file or directory. The directory contents will be removed as
 well, recursively. Symlinks will be removed but not traversed.</p>
-<pre><code class="pony">fun val remove()
+<pre><code class="language-pony">fun val remove()
 : Bool val
 </code></pre>
-
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7521,11 +7512,10 @@ well, recursively. Symlinks will be removed but not traversed.</p>
 <h3 id="rename">rename<a class="headerlink" href="#rename" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file_path/#L242">[Source]</a></span></p>
 <p>Rename a file or directory.</p>
-<pre><code class="pony">fun box rename(
+<pre><code class="language-pony">fun box rename(
   new_path: FilePath val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>new_path: <a href="./">FilePath</a> val</li>
@@ -7540,11 +7530,10 @@ well, recursively. Symlinks will be removed but not traversed.</p>
 <p>Create a symlink to a file or directory.</p>
 <p>Note that on Windows a program must be running with elevated priviledges to
 be able to create symlinks.</p>
-<pre><code class="pony">fun val symlink(
+<pre><code class="language-pony">fun val symlink(
   link_name: FilePath val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>link_name: <a href="./">FilePath</a> val</li>
@@ -7557,11 +7546,10 @@ be able to create symlinks.</p>
 <h3 id="chmod">chmod<a class="headerlink" href="#chmod" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file_path/#L325">[Source]</a></span></p>
 <p>Set the FileMode for a path.</p>
-<pre><code class="pony">fun box chmod(
+<pre><code class="language-pony">fun box chmod(
   mode: FileMode box)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>mode: <a href="../files-FileMode/">FileMode</a> box</li>
@@ -7574,12 +7562,11 @@ be able to create symlinks.</p>
 <h3 id="chown">chown<a class="headerlink" href="#chown" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file_path/#L341">[Source]</a></span></p>
 <p>Set the owner and group for a path. Does nothing on Windows.</p>
-<pre><code class="pony">fun box chown(
+<pre><code class="language-pony">fun box chown(
   uid: U32 val,
   gid: U32 val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>uid: <a href="../builtin-U32/">U32</a> val</li>
@@ -7593,10 +7580,9 @@ be able to create symlinks.</p>
 <h3 id="touch">touch<a class="headerlink" href="#touch" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file_path/#L355">[Source]</a></span></p>
 <p>Set the last access and modification times of a path to now.</p>
-<pre><code class="pony">fun box touch()
+<pre><code class="language-pony">fun box touch()
 : Bool val
 </code></pre>
-
 <h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7605,12 +7591,11 @@ be able to create symlinks.</p>
 <h3 id="set_time">set_time<a class="headerlink" href="#set_time" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file_path/#L361">[Source]</a></span></p>
 <p>Set the last access and modification times of a path to the given values.</p>
-<pre><code class="pony">fun box set_time(
+<pre><code class="language-pony">fun box set_time(
   atime: (I64 val , I64 val),
   mtime: (I64 val , I64 val))
 : Bool val
 </code></pre>
-
 <h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>atime: (<a href="../builtin-I64/">I64</a> val , <a href="../builtin-I64/">I64</a> val)</li>

@@ -7009,7 +7009,7 @@ writing and reading messages using common encodings. These classes are
 useful when dealing with things like network data and binary file
 formats.</p>
 <h2 id="example-program">Example program<a class="headerlink" href="#example-program" title="Permanent link">&para;</a></h2>
-<pre><code class="pony">use &quot;buffered&quot;
+<pre><code class="language-pony">use &quot;buffered&quot;
 
 actor Main
   new create(env: Env) =&gt;
@@ -7032,7 +7032,6 @@ actor Main
       env.out.print(reader.f32_be()?.string()) // prints 3.14
     end
 </code></pre>
-
 <h2 id="public-types">Public Types<a class="headerlink" href="#public-types" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../buffered-Writer/">class Writer</a></li>

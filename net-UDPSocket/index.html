@@ -7534,7 +7534,7 @@
 * a client that connects to the server, sends a message, and prints the
   message it receives in response</p>
 <p>The server is implemented like this:</p>
-<pre><code class="pony">use &quot;net&quot;
+<pre><code class="language-pony">use &quot;net&quot;
 
 class MyUDPNotify is UDPNotify
   fun ref received(
@@ -7554,9 +7554,8 @@ actor Main
         MyUDPNotify, &quot;&quot;, &quot;8989&quot;)
     end
 </code></pre>
-
 <p>The client is implemented like this:</p>
-<pre><code class="pony">use &quot;net&quot;
+<pre><code class="language-pony">use &quot;net&quot;
 
 class MyUDPNotify is UDPNotify
   let _out: OutStream
@@ -7592,15 +7591,13 @@ actor Main
         recover MyUDPNotify(env.out, consume destination) end)
     end
 </code></pre>
-
-<pre><code class="pony">actor tag UDPSocket
+<pre><code class="language-pony">actor tag UDPSocket
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L89">[Source]</a></span></p>
 <p>Listens for both IPv4 and IPv6 datagrams.</p>
-<pre><code class="pony">new tag create(
+<pre><code class="language-pony">new tag create(
   auth: (AmbientAuth val | NetAuth val | UDPAuth val),
   notify: UDPNotify iso,
   host: String val = &quot;&quot;,
@@ -7608,7 +7605,6 @@ actor Main
   size: USize val = 1024)
 : UDPSocket tag^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>auth: (<a href="../builtin-AmbientAuth/">AmbientAuth</a> val | <a href="../net-NetAuth/">NetAuth</a> val | <a href="../net-UDPAuth/">UDPAuth</a> val)</li>
@@ -7625,7 +7621,7 @@ actor Main
 <h3 id="ip4">ip4<a class="headerlink" href="#ip4" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L110">[Source]</a></span></p>
 <p>Listens for IPv4 datagrams.</p>
-<pre><code class="pony">new tag ip4(
+<pre><code class="language-pony">new tag ip4(
   auth: (AmbientAuth val | NetAuth val | UDPAuth val),
   notify: UDPNotify iso,
   host: String val = &quot;&quot;,
@@ -7633,7 +7629,6 @@ actor Main
   size: USize val = 1024)
 : UDPSocket tag^
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>auth: (<a href="../builtin-AmbientAuth/">AmbientAuth</a> val | <a href="../net-NetAuth/">NetAuth</a> val | <a href="../net-UDPAuth/">UDPAuth</a> val)</li>
@@ -7650,7 +7645,7 @@ actor Main
 <h3 id="ip6">ip6<a class="headerlink" href="#ip6" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L131">[Source]</a></span></p>
 <p>Listens for IPv6 datagrams.</p>
-<pre><code class="pony">new tag ip6(
+<pre><code class="language-pony">new tag ip6(
   auth: (AmbientAuth val | NetAuth val | UDPAuth val),
   notify: UDPNotify iso,
   host: String val = &quot;&quot;,
@@ -7658,7 +7653,6 @@ actor Main
   size: USize val = 1024)
 : UDPSocket tag^
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>auth: (<a href="../builtin-AmbientAuth/">AmbientAuth</a> val | <a href="../net-NetAuth/">NetAuth</a> val | <a href="../net-UDPAuth/">UDPAuth</a> val)</li>
@@ -7676,11 +7670,10 @@ actor Main
 <h3 id="write">write<a class="headerlink" href="#write" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L152">[Source]</a></span></p>
 <p>Write a single sequence of bytes.</p>
-<pre><code class="pony">be write(
+<pre><code class="language-pony">be write(
   data: (String val | Array[U8 val] val),
   to: NetAddress val)
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: (<a href="../builtin-String/">String</a> val | <a href="../builtin-Array/">Array</a>[<a href="../builtin-U8/">U8</a> val] val)</li>
@@ -7690,11 +7683,10 @@ actor Main
 <h3 id="writev">writev<a class="headerlink" href="#writev" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L158">[Source]</a></span></p>
 <p>Write a sequence of sequences of bytes.</p>
-<pre><code class="pony">be writev(
+<pre><code class="language-pony">be writev(
   data: ByteSeqIter val,
   to: NetAddress val)
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-ByteSeqIter/">ByteSeqIter</a> val</li>
@@ -7704,10 +7696,9 @@ actor Main
 <h3 id="set_notify">set_notify<a class="headerlink" href="#set_notify" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L166">[Source]</a></span></p>
 <p>Change the notifier.</p>
-<pre><code class="pony">be set_notify(
+<pre><code class="language-pony">be set_notify(
   notify: UDPNotify iso)
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>notify: <a href="../net-UDPNotify/">UDPNotify</a> iso</li>
@@ -7716,10 +7707,9 @@ actor Main
 <h3 id="set_broadcast">set_broadcast<a class="headerlink" href="#set_broadcast" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L172">[Source]</a></span></p>
 <p>Enable or disable broadcasting from this socket.</p>
-<pre><code class="pony">be set_broadcast(
+<pre><code class="language-pony">be set_broadcast(
   state: Bool val)
 </code></pre>
-
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>state: <a href="../builtin-Bool/">Bool</a> val</li>
@@ -7730,10 +7720,9 @@ actor Main
 <p>By default, the OS will choose which address is used to send packets bound
 for multicast addresses. This can be used to force a specific interface. To
 revert to allowing the OS to choose, call with an empty string.</p>
-<pre><code class="pony">be set_multicast_interface(
+<pre><code class="language-pony">be set_multicast_interface(
   from: String val = &quot;&quot;)
 </code></pre>
-
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>from: <a href="../builtin-String/">String</a> val = ""</li>
@@ -7744,10 +7733,9 @@ revert to allowing the OS to choose, call with an empty string.</p>
 <p>By default, packets sent to a multicast address will be received by the
 sending system if it has subscribed to that address. Disabling loopback
 prevents this.</p>
-<pre><code class="pony">be set_multicast_loopback(
+<pre><code class="language-pony">be set_multicast_loopback(
   loopback: Bool val)
 </code></pre>
-
 <h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>loopback: <a href="../builtin-Bool/">Bool</a> val</li>
@@ -7756,10 +7744,9 @@ prevents this.</p>
 <h3 id="set_multicast_ttl">set_multicast_ttl<a class="headerlink" href="#set_multicast_ttl" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L204">[Source]</a></span></p>
 <p>Set the TTL for multicast sends. Defaults to 1.</p>
-<pre><code class="pony">be set_multicast_ttl(
+<pre><code class="language-pony">be set_multicast_ttl(
   ttl: U8 val)
 </code></pre>
-
 <h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ttl: <a href="../builtin-U8/">U8</a> val</li>
@@ -7769,11 +7756,10 @@ prevents this.</p>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L212">[Source]</a></span></p>
 <p>Add a multicast group. This can be limited to packets arriving on a
 specific interface.</p>
-<pre><code class="pony">be multicast_join(
+<pre><code class="language-pony">be multicast_join(
   group: String val,
   to: String val = &quot;&quot;)
 </code></pre>
-
 <h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>group: <a href="../builtin-String/">String</a> val</li>
@@ -7785,11 +7771,10 @@ specific interface.</p>
 <p>Drop a multicast group. This can be limited to packets arriving on a
 specific interface. No attempt is made to check that this socket has
 previously added this group.</p>
-<pre><code class="pony">be multicast_leave(
+<pre><code class="language-pony">be multicast_leave(
   group: String val,
   to: String val = &quot;&quot;)
 </code></pre>
-
 <h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li>group: <a href="../builtin-String/">String</a> val</li>
@@ -7799,18 +7784,16 @@ previously added this group.</p>
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L231">[Source]</a></span></p>
 <p>Stop listening.</p>
-<pre><code class="pony">be dispose()
+<pre><code class="language-pony">be dispose()
 </code></pre>
-
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="local_address">local_address<a class="headerlink" href="#local_address" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L239">[Source]</a></span></p>
 <p>Return the bound IP address.</p>
-<pre><code class="pony">fun box local_address()
+<pre><code class="language-pony">fun box local_address()
 : NetAddress val
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../net-NetAddress/">NetAddress</a> val</li>
@@ -7831,7 +7814,7 @@ may return for the requested option.</p>
 1. The value of <code>errno</code>.
 2. An undefined value that must be ignored.</p>
 <p>Usage example:</p>
-<pre><code class="pony">// listening() is a callback function for class UDPNotify
+<pre><code class="language-pony">// listening() is a callback function for class UDPNotify
 fun ref listening(sock: UDPSocket ref) =&gt;
   match sock.getsockopt(OSSockOpt.sol_socket(), OSSockOpt.so_rcvbuf(), 4)
     | (0, let gbytes: Array[U8] iso) =&gt;
@@ -7847,14 +7830,12 @@ fun ref listening(sock: UDPSocket ref) =&gt;
       // System call failed
   end
 </code></pre>
-
-<pre><code class="pony">fun ref getsockopt(
+<pre><code class="language-pony">fun ref getsockopt(
   level: I32 val,
   option_name: I32 val,
   option_max_size: USize val = 4)
 : (U32 val , Array[U8 val] iso^)
 </code></pre>
-
 <h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li>level: <a href="../builtin-I32/">I32</a> val</li>
@@ -7877,12 +7858,11 @@ type <code>U32</code>.</p>
 <p>In case of system call failure, this function returns the 2-tuple:
 1. The value of <code>errno</code>.
 2. An undefined value that must be ignored.</p>
-<pre><code class="pony">fun ref getsockopt_u32(
+<pre><code class="language-pony">fun ref getsockopt_u32(
   level: I32 val,
   option_name: I32 val)
 : (U32 val , U32 val)
 </code></pre>
-
 <h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li>level: <a href="../builtin-I32/">I32</a> val</li>
@@ -7902,7 +7882,7 @@ including using the appropriate CPU endian byte order.</p>
 <p>This function returns <code>0</code> on success, else the value of <code>errno</code> on
 failure.</p>
 <p>Usage example:</p>
-<pre><code class="pony">// listening() is a callback function for class UDPNotify
+<pre><code class="language-pony">// listening() is a callback function for class UDPNotify
 fun ref listening(sock: UDPSocket ref) =&gt;
   let sb = Writer
 
@@ -7918,14 +7898,12 @@ fun ref listening(sock: UDPSocket ref) =&gt;
       // System call failed
   end
 </code></pre>
-
-<pre><code class="pony">fun ref setsockopt(
+<pre><code class="language-pony">fun ref setsockopt(
   level: I32 val,
   option_name: I32 val,
   option: Array[U8 val] ref)
 : U32 val
 </code></pre>
-
 <h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li>level: <a href="../builtin-I32/">I32</a> val</li>
@@ -7944,13 +7922,12 @@ the kernel expects an option value of a C <code>uint32_t</code> type / Pony
 type <code>U32</code>.</p>
 <p>This function returns <code>0</code> on success, else the value of <code>errno</code> on
 failure.</p>
-<pre><code class="pony">fun ref setsockopt_u32(
+<pre><code class="language-pony">fun ref setsockopt_u32(
   level: I32 val,
   option_name: I32 val,
   option: U32 val)
 : U32 val
 </code></pre>
-
 <h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li>level: <a href="../builtin-I32/">I32</a> val</li>
@@ -7965,10 +7942,9 @@ failure.</p>
 <h3 id="get_so_error">get_so_error<a class="headerlink" href="#get_so_error" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L511">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, SO_ERROR, ...)</code></p>
-<pre><code class="pony">fun ref get_so_error()
+<pre><code class="language-pony">fun ref get_so_error()
 : (U32 val , U32 val)
 </code></pre>
-
 <h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U32/">U32</a> val , <a href="../builtin-U32/">U32</a> val)</li>
@@ -7977,10 +7953,9 @@ failure.</p>
 <h3 id="get_so_rcvbuf">get_so_rcvbuf<a class="headerlink" href="#get_so_rcvbuf" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L517">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, SO_RCVBUF, ...)</code></p>
-<pre><code class="pony">fun ref get_so_rcvbuf()
+<pre><code class="language-pony">fun ref get_so_rcvbuf()
 : (U32 val , U32 val)
 </code></pre>
-
 <h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U32/">U32</a> val , <a href="../builtin-U32/">U32</a> val)</li>
@@ -7989,10 +7964,9 @@ failure.</p>
 <h3 id="get_so_sndbuf">get_so_sndbuf<a class="headerlink" href="#get_so_sndbuf" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L523">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, SO_SNDBUF, ...)</code></p>
-<pre><code class="pony">fun ref get_so_sndbuf()
+<pre><code class="language-pony">fun ref get_so_sndbuf()
 : (U32 val , U32 val)
 </code></pre>
-
 <h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U32/">U32</a> val , <a href="../builtin-U32/">U32</a> val)</li>
@@ -8001,11 +7975,10 @@ failure.</p>
 <h3 id="set_ip_multicast_loop">set_ip_multicast_loop<a class="headerlink" href="#set_ip_multicast_loop" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L530">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, IP_MULTICAST_LOOP, ...)</code></p>
-<pre><code class="pony">fun ref set_ip_multicast_loop(
+<pre><code class="language-pony">fun ref set_ip_multicast_loop(
   loopback: Bool val)
 : U32 val
 </code></pre>
-
 <h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
 <ul>
 <li>loopback: <a href="../builtin-Bool/">Bool</a> val</li>
@@ -8018,11 +7991,10 @@ failure.</p>
 <h3 id="set_ip_multicast_ttl">set_ip_multicast_ttl<a class="headerlink" href="#set_ip_multicast_ttl" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L538">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, IP_MULTICAST_TTL, ...)</code></p>
-<pre><code class="pony">fun ref set_ip_multicast_ttl(
+<pre><code class="language-pony">fun ref set_ip_multicast_ttl(
   ttl: U8 val)
 : U32 val
 </code></pre>
-
 <h4 id="parameters_17">Parameters<a class="headerlink" href="#parameters_17" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ttl: <a href="../builtin-U8/">U8</a> val</li>
@@ -8035,11 +8007,10 @@ failure.</p>
 <h3 id="set_so_broadcast">set_so_broadcast<a class="headerlink" href="#set_so_broadcast" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L545">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, SO_BROADCAST, ...)</code></p>
-<pre><code class="pony">fun ref set_so_broadcast(
+<pre><code class="language-pony">fun ref set_so_broadcast(
   state: Bool val)
 : U32 val
 </code></pre>
-
 <h4 id="parameters_18">Parameters<a class="headerlink" href="#parameters_18" title="Permanent link">&para;</a></h4>
 <ul>
 <li>state: <a href="../builtin-Bool/">Bool</a> val</li>
@@ -8052,11 +8023,10 @@ failure.</p>
 <h3 id="set_so_rcvbuf">set_so_rcvbuf<a class="headerlink" href="#set_so_rcvbuf" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L553">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, SO_RCVBUF, ...)</code></p>
-<pre><code class="pony">fun ref set_so_rcvbuf(
+<pre><code class="language-pony">fun ref set_so_rcvbuf(
   bufsize: U32 val)
 : U32 val
 </code></pre>
-
 <h4 id="parameters_19">Parameters<a class="headerlink" href="#parameters_19" title="Permanent link">&para;</a></h4>
 <ul>
 <li>bufsize: <a href="../builtin-U32/">U32</a> val</li>
@@ -8069,11 +8039,10 @@ failure.</p>
 <h3 id="set_so_sndbuf">set_so_sndbuf<a class="headerlink" href="#set_so_sndbuf" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L559">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, SO_SNDBUF, ...)</code></p>
-<pre><code class="pony">fun ref set_so_sndbuf(
+<pre><code class="language-pony">fun ref set_so_sndbuf(
   bufsize: U32 val)
 : U32 val
 </code></pre>
-
 <h4 id="parameters_20">Parameters<a class="headerlink" href="#parameters_20" title="Permanent link">&para;</a></h4>
 <ul>
 <li>bufsize: <a href="../builtin-U32/">U32</a> val</li>

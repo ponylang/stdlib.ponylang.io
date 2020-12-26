@@ -7102,16 +7102,14 @@
                 <h1 id="iniparse">IniParse<a class="headerlink" href="#iniparse" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/ini/ini_map/#L5">[Source]</a></span></p>
 <p>This is used to parse INI formatted text as a nested map of strings.</p>
-<pre><code class="pony">primitive val IniParse
+<pre><code class="language-pony">primitive val IniParse
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ini/ini_map/#L5">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : IniParse val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">IniParse</a> val^</li>
@@ -7122,11 +7120,10 @@
 <p><span class="source-link"><a href="../src/ini/ini_map/#L9">[Source]</a></span></p>
 <p>This accepts a string iterator and returns a nested map of strings. If
 parsing fails, an error is raised.</p>
-<pre><code class="pony">fun box apply(
+<pre><code class="language-pony">fun box apply(
   lines: Iterator[String val] ref)
 : HashMap[String val, HashMap[String val, String val, HashEq[String val] val] ref, HashEq[String val] val] ref^ ?
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>lines: <a href="../builtin-Iterator/">Iterator</a>[<a href="../builtin-String/">String</a> val] ref</li>
@@ -7138,11 +7135,10 @@ parsing fails, an error is raised.</p>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ini/ini_map/#L9">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: IniParse val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">IniParse</a> val</li>
@@ -7154,11 +7150,10 @@ parsing fails, an error is raised.</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ini/ini_map/#L9">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: IniParse val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">IniParse</a> val</li>

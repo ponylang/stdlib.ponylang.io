@@ -7191,16 +7191,14 @@
                 
                 <h1 id="base64">Base64<a class="headerlink" href="#base64" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/encode-base64/base64/#L26">[Source]</a></span></p>
-<pre><code class="pony">primitive val Base64
+<pre><code class="language-pony">primitive val Base64
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/encode-base64/base64/#L26">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : Base64 val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">Base64</a> val^</li>
@@ -7210,11 +7208,10 @@
 <h3 id="encode_pem">encode_pem<a class="headerlink" href="#encode_pem" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/encode-base64/base64/#L27">[Source]</a></span></p>
 <p>Encode for PEM (RFC 1421).</p>
-<pre><code class="pony">fun box encode_pem(
+<pre><code class="language-pony">fun box encode_pem(
   data: ReadSeq[U8 val] box)
 : String iso^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-ReadSeq/">ReadSeq</a>[<a href="../builtin-U8/">U8</a> val] box</li>
@@ -7227,11 +7224,10 @@
 <h3 id="encode_mime">encode_mime<a class="headerlink" href="#encode_mime" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/encode-base64/base64/#L33">[Source]</a></span></p>
 <p>Encode for MIME (RFC 2045).</p>
-<pre><code class="pony">fun box encode_mime(
+<pre><code class="language-pony">fun box encode_mime(
   data: ReadSeq[U8 val] box)
 : String iso^
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-ReadSeq/">ReadSeq</a>[<a href="../builtin-U8/">U8</a> val] box</li>
@@ -7244,12 +7240,11 @@
 <h3 id="encode_urloptional-a-sequ8-val-iso">encode_url[optional A: <a href="../builtin-Seq/">Seq</a>[<a href="../builtin-U8/">U8</a> val] iso]<a class="headerlink" href="#encode_urloptional-a-sequ8-val-iso" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/encode-base64/base64/#L39">[Source]</a></span></p>
 <p>Encode for URLs (RFC 4648). Padding characters are stripped by default.</p>
-<pre><code class="pony">fun box encode_url[optional A: Seq[U8 val] iso](
+<pre><code class="language-pony">fun box encode_url[optional A: Seq[U8 val] iso](
   data: ReadSeq[U8 val] box,
   pad: Bool val = false)
 : A^
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-ReadSeq/">ReadSeq</a>[<a href="../builtin-U8/">U8</a> val] box</li>
@@ -7263,7 +7258,7 @@
 <h3 id="encodeoptional-a-sequ8-val-iso">encode[optional A: <a href="../builtin-Seq/">Seq</a>[<a href="../builtin-U8/">U8</a> val] iso]<a class="headerlink" href="#encodeoptional-a-sequ8-val-iso" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/encode-base64/base64/#L50">[Source]</a></span></p>
 <p>Configurable encoding. The defaults are for RFC 4648.</p>
-<pre><code class="pony">fun box encode[optional A: Seq[U8 val] iso](
+<pre><code class="language-pony">fun box encode[optional A: Seq[U8 val] iso](
   data: ReadSeq[U8 val] box,
   at62: U8 val = 43,
   at63: U8 val = 47,
@@ -7273,7 +7268,6 @@
 &quot;)
 : A^
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-ReadSeq/">ReadSeq</a>[<a href="../builtin-U8/">U8</a> val] box</li>
@@ -7292,11 +7286,10 @@
 <h3 id="decode_urloptional-a-sequ8-val-iso">decode_url[optional A: <a href="../builtin-Seq/">Seq</a>[<a href="../builtin-U8/">U8</a> val] iso]<a class="headerlink" href="#decode_urloptional-a-sequ8-val-iso" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/encode-base64/base64/#L125">[Source]</a></span></p>
 <p>Decode for URLs (RFC 4648).</p>
-<pre><code class="pony">fun box decode_url[optional A: Seq[U8 val] iso](
+<pre><code class="language-pony">fun box decode_url[optional A: Seq[U8 val] iso](
   data: ReadSeq[U8 val] box)
 : A^ ?
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-ReadSeq/">ReadSeq</a>[<a href="../builtin-U8/">U8</a> val] box</li>
@@ -7311,14 +7304,13 @@
 <p>Configurable decoding. The defaults are for RFC 4648. Missing padding is
 not an error. Non-base64 data, other than whitespace (which can appear at
 any time), is an error.</p>
-<pre><code class="pony">fun box decode[optional A: Seq[U8 val] iso](
+<pre><code class="language-pony">fun box decode[optional A: Seq[U8 val] iso](
   data: ReadSeq[U8 val] box,
   at62: U8 val = 43,
   at63: U8 val = 47,
   pad: U8 val = 61)
 : A^ ?
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-ReadSeq/">ReadSeq</a>[<a href="../builtin-U8/">U8</a> val] box</li>
@@ -7333,11 +7325,10 @@ any time), is an error.</p>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/encode-base64/base64/#L27">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: Base64 val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Base64</a> val</li>
@@ -7349,11 +7340,10 @@ any time), is an error.</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/encode-base64/base64/#L27">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: Base64 val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Base64</a> val</li>

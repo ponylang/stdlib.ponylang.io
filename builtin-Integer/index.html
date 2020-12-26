@@ -8613,10 +8613,9 @@
                 
                 <h1 id="integera-integera-val">Integer[A: <a href="./">Integer</a>[A] val]<a class="headerlink" href="#integera-integera-val" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/builtin/real/#L213">[Source]</a></span></p>
-<pre><code class="pony">trait val Integer[A: Integer[A] val] is
+<pre><code class="language-pony">trait val Integer[A: Integer[A] val] is
   Real[A] val
 </code></pre>
-
 <h4 id="implements">Implements<a class="headerlink" href="#implements" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Real/">Real</a>[A] val</li>
@@ -8625,11 +8624,10 @@
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L135">[Source]</a></span></p>
-<pre><code class="pony">new val create(
+<pre><code class="language-pony">new val create(
   value: A)
 : Real[A] val^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>value: A</li>
@@ -8641,7 +8639,7 @@
 <hr />
 <h3 id="fromb-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-f32-val-f64-val-realb-val">from[B: ((<a href="../builtin-I8/">I8</a> val | <a href="../builtin-I16/">I16</a> val | <a href="../builtin-I32/">I32</a> val | <a href="../builtin-I64/">I64</a> val | <a href="../builtin-I128/">I128</a> val | <a href="../builtin-ILong/">ILong</a> val | <a href="../builtin-ISize/">ISize</a> val | <a href="../builtin-U8/">U8</a> val | <a href="../builtin-U16/">U16</a> val | <a href="../builtin-U32/">U32</a> val | <a href="../builtin-U64/">U64</a> val | <a href="../builtin-U128/">U128</a> val | <a href="../builtin-ULong/">ULong</a> val | <a href="../builtin-USize/">USize</a> val | <a href="../builtin-F32/">F32</a> val | <a href="../builtin-F64/">F64</a> val) &amp; <a href="../builtin-Real/">Real</a>[B] val)]<a class="headerlink" href="#fromb-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-f32-val-f64-val-realb-val" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L137">[Source]</a></span></p>
-<pre><code class="pony">new val from[B: ((I8 val | I16 val | I32 val | 
+<pre><code class="language-pony">new val from[B: ((I8 val | I16 val | I32 val | 
     I64 val | I128 val | ILong val | 
     ISize val | U8 val | U16 val | 
     U32 val | U64 val | U128 val | 
@@ -8650,7 +8648,6 @@
   a: B)
 : Real[A] val^
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>a: B</li>
@@ -8662,10 +8659,9 @@
 <hr />
 <h3 id="min_value">min_value<a class="headerlink" href="#min_value" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L138">[Source]</a></span></p>
-<pre><code class="pony">new val min_value()
+<pre><code class="language-pony">new val min_value()
 : Real[A] val^
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Real/">Real</a>[A] val^</li>
@@ -8673,10 +8669,9 @@
 <hr />
 <h3 id="max_value">max_value<a class="headerlink" href="#max_value" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L139">[Source]</a></span></p>
-<pre><code class="pony">new val max_value()
+<pre><code class="language-pony">new val max_value()
 : Real[A] val^
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Real/">Real</a>[A] val^</li>
@@ -8687,11 +8682,10 @@
 <p><span class="source-link"><a href="../src/builtin/real/#L214">[Source]</a></span></p>
 <p>Unsafe operation.
 If the operation overflows, the result is undefined.</p>
-<pre><code class="pony">fun box add_unsafe(
+<pre><code class="language-pony">fun box add_unsafe(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -8705,11 +8699,10 @@ If the operation overflows, the result is undefined.</p>
 <p><span class="source-link"><a href="../src/builtin/real/#L221">[Source]</a></span></p>
 <p>Unsafe operation.
 If the operation overflows, the result is undefined.</p>
-<pre><code class="pony">fun box sub_unsafe(
+<pre><code class="language-pony">fun box sub_unsafe(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -8723,11 +8716,10 @@ If the operation overflows, the result is undefined.</p>
 <p><span class="source-link"><a href="../src/builtin/real/#L228">[Source]</a></span></p>
 <p>Unsafe operation.
 If the operation overflows, the result is undefined.</p>
-<pre><code class="pony">fun box mul_unsafe(
+<pre><code class="language-pony">fun box mul_unsafe(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -8743,11 +8735,10 @@ If the operation overflows, the result is undefined.</p>
 <p>Unsafe operation.
 If y is 0, the result is undefined.
 If the operation overflows, the result is undefined.</p>
-<pre><code class="pony">fun box div_unsafe(
+<pre><code class="language-pony">fun box div_unsafe(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -8763,11 +8754,10 @@ If the operation overflows, the result is undefined.</p>
 <p>Unsafe operation.
 If y is 0, the result is undefined.
 If the operation overflows, the result is undefined.</p>
-<pre><code class="pony">fun box divrem_unsafe(
+<pre><code class="language-pony">fun box divrem_unsafe(
   y: A)
 : (A , A)
 </code></pre>
-
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -8783,11 +8773,10 @@ If the operation overflows, the result is undefined.</p>
 <p>Unsafe operation.
 If y is 0, the result is undefined.
 If the operation overflows, the result is undefined.</p>
-<pre><code class="pony">fun box rem_unsafe(
+<pre><code class="language-pony">fun box rem_unsafe(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -8804,11 +8793,10 @@ as opposed to <code>div</code> which rounds towards zero.</p>
 <p><em>Unsafe Operation</em></p>
 <p>If y is 0, the result is undefined.
 If the operation overflows, the result is undefined.</p>
-<pre><code class="pony">fun box fld_unsafe(
+<pre><code class="language-pony">fun box fld_unsafe(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -8824,11 +8812,10 @@ If the operation overflows, the result is undefined.</p>
 <p><em>Unsafe Operation.</em></p>
 <p>If y is 0, the result is undefined.
 If the operation overflows, the result is undefined.</p>
-<pre><code class="pony">fun box mod_unsafe(
+<pre><code class="language-pony">fun box mod_unsafe(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -8842,11 +8829,10 @@ If the operation overflows, the result is undefined.</p>
 <p><span class="source-link"><a href="../src/builtin/real/#L286">[Source]</a></span></p>
 <p>Add y to this number.</p>
 <p>If the operation overflows this function errors.</p>
-<pre><code class="pony">fun box add_partial(
+<pre><code class="language-pony">fun box add_partial(
   y: A)
 : A ?
 </code></pre>
-
 <h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -8860,11 +8846,10 @@ If the operation overflows, the result is undefined.</p>
 <p><span class="source-link"><a href="../src/builtin/real/#L293">[Source]</a></span></p>
 <p>Subtract y from this number.</p>
 <p>If the operation overflows/underflows this function errors.</p>
-<pre><code class="pony">fun box sub_partial(
+<pre><code class="language-pony">fun box sub_partial(
   y: A)
 : A ?
 </code></pre>
-
 <h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -8878,11 +8863,10 @@ If the operation overflows, the result is undefined.</p>
 <p><span class="source-link"><a href="../src/builtin/real/#L300">[Source]</a></span></p>
 <p>Multiply y with this number.</p>
 <p>If the operation overflows this function errors.</p>
-<pre><code class="pony">fun box mul_partial(
+<pre><code class="language-pony">fun box mul_partial(
   y: A)
 : A ?
 </code></pre>
-
 <h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -8896,11 +8880,10 @@ If the operation overflows, the result is undefined.</p>
 <p><span class="source-link"><a href="../src/builtin/real/#L307">[Source]</a></span></p>
 <p>Divides this number by <code>y</code>, rounds the result towards zero.</p>
 <p>If y is <code>0</code> or the operation overflows, this function errors.</p>
-<pre><code class="pony">fun box div_partial(
+<pre><code class="language-pony">fun box div_partial(
   y: A)
 : A ?
 </code></pre>
-
 <h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -8915,11 +8898,10 @@ If the operation overflows, the result is undefined.</p>
 <p>Calculates the remainder of this number divided by y.
 The result has the sign of the dividend.</p>
 <p>If y is <code>0</code> or the operation overflows, this function errors.</p>
-<pre><code class="pony">fun box rem_partial(
+<pre><code class="language-pony">fun box rem_partial(
   y: A)
 : A ?
 </code></pre>
-
 <h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -8933,11 +8915,10 @@ The result has the sign of the dividend.</p>
 <p><span class="source-link"><a href="../src/builtin/real/#L322">[Source]</a></span></p>
 <p>Divides this number by y and calculates the remainder of the operation.</p>
 <p>If y is <code>0</code> or the operation overflows, this function errors.</p>
-<pre><code class="pony">fun box divrem_partial(
+<pre><code class="language-pony">fun box divrem_partial(
   y: A)
 : (A , A) ?
 </code></pre>
-
 <h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -8951,11 +8932,10 @@ The result has the sign of the dividend.</p>
 <p><span class="source-link"><a href="../src/builtin/real/#L329">[Source]</a></span></p>
 <p>Floored integer division, rounded towards negative infinity.</p>
 <p>If y is <code>0</code> or the operation overflows, this function errors</p>
-<pre><code class="pony">fun box fld_partial(
+<pre><code class="language-pony">fun box fld_partial(
   y: A)
 : A ?
 </code></pre>
-
 <h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -8970,11 +8950,10 @@ The result has the sign of the dividend.</p>
 <p>Calculates the modulo of this number and <code>y</code> after floored division (<code>fld</code>).
 The result has the sign of the divisor.</p>
 <p>If y is <code>0</code> or the operation overflows, this function errors.</p>
-<pre><code class="pony">fun box mod_partial(
+<pre><code class="language-pony">fun box mod_partial(
   y: A)
 : A ?
 </code></pre>
-
 <h4 id="parameters_17">Parameters<a class="headerlink" href="#parameters_17" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -8988,10 +8967,9 @@ The result has the sign of the divisor.</p>
 <p><span class="source-link"><a href="../src/builtin/real/#L344">[Source]</a></span></p>
 <p>Unsafe operation.
 If the operation overflows, the result is undefined.</p>
-<pre><code class="pony">fun box neg_unsafe()
+<pre><code class="language-pony">fun box neg_unsafe()
 : A
 </code></pre>
-
 <h4 id="returns_20">Returns<a class="headerlink" href="#returns_20" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9000,11 +8978,10 @@ If the operation overflows, the result is undefined.</p>
 <h3 id="addc">addc<a class="headerlink" href="#addc" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L351">[Source]</a></span></p>
 <p>Add <code>y</code> to this integer and return the result and a flag indicating overflow.</p>
-<pre><code class="pony">fun box addc(
+<pre><code class="language-pony">fun box addc(
   y: A)
 : (A , Bool val)
 </code></pre>
-
 <h4 id="parameters_18">Parameters<a class="headerlink" href="#parameters_18" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9017,11 +8994,10 @@ If the operation overflows, the result is undefined.</p>
 <h3 id="subc">subc<a class="headerlink" href="#subc" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L355">[Source]</a></span></p>
 <p>Subtract <code>y</code> from this integer and return the result and a flag indicating overflow.</p>
-<pre><code class="pony">fun box subc(
+<pre><code class="language-pony">fun box subc(
   y: A)
 : (A , Bool val)
 </code></pre>
-
 <h4 id="parameters_19">Parameters<a class="headerlink" href="#parameters_19" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9034,11 +9010,10 @@ If the operation overflows, the result is undefined.</p>
 <h3 id="mulc">mulc<a class="headerlink" href="#mulc" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L359">[Source]</a></span></p>
 <p>Multiply <code>y</code> with this integer and return the result and a flag indicating overflow.</p>
-<pre><code class="pony">fun box mulc(
+<pre><code class="language-pony">fun box mulc(
   y: A)
 : (A , Bool val)
 </code></pre>
-
 <h4 id="parameters_20">Parameters<a class="headerlink" href="#parameters_20" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9051,11 +9026,10 @@ If the operation overflows, the result is undefined.</p>
 <h3 id="divc">divc<a class="headerlink" href="#divc" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L363">[Source]</a></span></p>
 <p>Divide this integer by <code>y</code> and return the result and a flag indicating overflow or division by zero.</p>
-<pre><code class="pony">fun box divc(
+<pre><code class="language-pony">fun box divc(
   y: A)
 : (A , Bool val)
 </code></pre>
-
 <h4 id="parameters_21">Parameters<a class="headerlink" href="#parameters_21" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9069,11 +9043,10 @@ If the operation overflows, the result is undefined.</p>
 <p><span class="source-link"><a href="../src/builtin/real/#L367">[Source]</a></span></p>
 <p>Calculate the remainder of this number divided by <code>y</code> and return the result and a flag indicating division by zero or overflow.</p>
 <p>The result will have the sign of the dividend.</p>
-<pre><code class="pony">fun box remc(
+<pre><code class="language-pony">fun box remc(
   y: A)
 : (A , Bool val)
 </code></pre>
-
 <h4 id="parameters_22">Parameters<a class="headerlink" href="#parameters_22" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9086,11 +9059,10 @@ If the operation overflows, the result is undefined.</p>
 <h3 id="fldc">fldc<a class="headerlink" href="#fldc" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L373">[Source]</a></span></p>
 <p>Divide this integer by <code>y</code> and return the result, rounded towards negative infinity and a flag indicating overflow or division by zero.</p>
-<pre><code class="pony">fun box fldc(
+<pre><code class="language-pony">fun box fldc(
   y: A)
 : (A , Bool val)
 </code></pre>
-
 <h4 id="parameters_23">Parameters<a class="headerlink" href="#parameters_23" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9104,11 +9076,10 @@ If the operation overflows, the result is undefined.</p>
 <p><span class="source-link"><a href="../src/builtin/real/#L377">[Source]</a></span></p>
 <p>Calculate the modulo of this number after floored division by <code>y</code> and return the result and a flag indicating division by zero or overflow.</p>
 <p>The result will have the sign of the divisor.</p>
-<pre><code class="pony">fun box modc(
+<pre><code class="language-pony">fun box modc(
   y: A)
 : (A , Bool val)
 </code></pre>
-
 <h4 id="parameters_24">Parameters<a class="headerlink" href="#parameters_24" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9120,11 +9091,10 @@ If the operation overflows, the result is undefined.</p>
 <hr />
 <h3 id="op_and">op_and<a class="headerlink" href="#op_and" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L384">[Source]</a></span></p>
-<pre><code class="pony">fun box op_and(
+<pre><code class="language-pony">fun box op_and(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_25">Parameters<a class="headerlink" href="#parameters_25" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9136,11 +9106,10 @@ If the operation overflows, the result is undefined.</p>
 <hr />
 <h3 id="op_or">op_or<a class="headerlink" href="#op_or" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L385">[Source]</a></span></p>
-<pre><code class="pony">fun box op_or(
+<pre><code class="language-pony">fun box op_or(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_26">Parameters<a class="headerlink" href="#parameters_26" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9152,11 +9121,10 @@ If the operation overflows, the result is undefined.</p>
 <hr />
 <h3 id="op_xor">op_xor<a class="headerlink" href="#op_xor" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L386">[Source]</a></span></p>
-<pre><code class="pony">fun box op_xor(
+<pre><code class="language-pony">fun box op_xor(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_27">Parameters<a class="headerlink" href="#parameters_27" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9168,10 +9136,9 @@ If the operation overflows, the result is undefined.</p>
 <hr />
 <h3 id="op_not">op_not<a class="headerlink" href="#op_not" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L387">[Source]</a></span></p>
-<pre><code class="pony">fun box op_not()
+<pre><code class="language-pony">fun box op_not()
 : A
 </code></pre>
-
 <h4 id="returns_31">Returns<a class="headerlink" href="#returns_31" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9181,10 +9148,9 @@ If the operation overflows, the result is undefined.</p>
 <p><span class="source-link"><a href="../src/builtin/real/#L389">[Source]</a></span></p>
 <p>Reverse the order of the bits within the integer.
 For example, 0b11101101 (237) would return 0b10110111 (183).</p>
-<pre><code class="pony">fun box bit_reverse()
+<pre><code class="language-pony">fun box bit_reverse()
 : A
 </code></pre>
-
 <h4 id="returns_32">Returns<a class="headerlink" href="#returns_32" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9192,10 +9158,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="bswap">bswap<a class="headerlink" href="#bswap" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L395">[Source]</a></span></p>
-<pre><code class="pony">fun box bswap()
+<pre><code class="language-pony">fun box bswap()
 : A
 </code></pre>
-
 <h4 id="returns_33">Returns<a class="headerlink" href="#returns_33" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9203,11 +9168,10 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="add">add<a class="headerlink" href="#add" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L141">[Source]</a></span></p>
-<pre><code class="pony">fun box add(
+<pre><code class="language-pony">fun box add(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_28">Parameters<a class="headerlink" href="#parameters_28" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9219,11 +9183,10 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="sub">sub<a class="headerlink" href="#sub" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L142">[Source]</a></span></p>
-<pre><code class="pony">fun box sub(
+<pre><code class="language-pony">fun box sub(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_29">Parameters<a class="headerlink" href="#parameters_29" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9235,11 +9198,10 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="mul">mul<a class="headerlink" href="#mul" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L143">[Source]</a></span></p>
-<pre><code class="pony">fun box mul(
+<pre><code class="language-pony">fun box mul(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_30">Parameters<a class="headerlink" href="#parameters_30" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9251,11 +9213,10 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="div">div<a class="headerlink" href="#div" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L144">[Source]</a></span></p>
-<pre><code class="pony">fun box div(
+<pre><code class="language-pony">fun box div(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_31">Parameters<a class="headerlink" href="#parameters_31" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9267,11 +9228,10 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="divrem">divrem<a class="headerlink" href="#divrem" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L150">[Source]</a></span></p>
-<pre><code class="pony">fun box divrem(
+<pre><code class="language-pony">fun box divrem(
   y: A)
 : (A , A)
 </code></pre>
-
 <h4 id="parameters_32">Parameters<a class="headerlink" href="#parameters_32" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9283,11 +9243,10 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="rem">rem<a class="headerlink" href="#rem" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L151">[Source]</a></span></p>
-<pre><code class="pony">fun box rem(
+<pre><code class="language-pony">fun box rem(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_33">Parameters<a class="headerlink" href="#parameters_33" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9299,10 +9258,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="neg">neg<a class="headerlink" href="#neg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L159">[Source]</a></span></p>
-<pre><code class="pony">fun box neg()
+<pre><code class="language-pony">fun box neg()
 : A
 </code></pre>
-
 <h4 id="returns_40">Returns<a class="headerlink" href="#returns_40" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9310,11 +9268,10 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="fld">fld<a class="headerlink" href="#fld" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L161">[Source]</a></span></p>
-<pre><code class="pony">fun box fld(
+<pre><code class="language-pony">fun box fld(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_34">Parameters<a class="headerlink" href="#parameters_34" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9326,11 +9283,10 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="mod">mod<a class="headerlink" href="#mod" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L165">[Source]</a></span></p>
-<pre><code class="pony">fun box mod(
+<pre><code class="language-pony">fun box mod(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_35">Parameters<a class="headerlink" href="#parameters_35" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9342,11 +9298,10 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L172">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_36">Parameters<a class="headerlink" href="#parameters_36" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -9358,11 +9313,10 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L173">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_37">Parameters<a class="headerlink" href="#parameters_37" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -9374,11 +9328,10 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="lt">lt<a class="headerlink" href="#lt" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L174">[Source]</a></span></p>
-<pre><code class="pony">fun box lt(
+<pre><code class="language-pony">fun box lt(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_38">Parameters<a class="headerlink" href="#parameters_38" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -9390,11 +9343,10 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="le">le<a class="headerlink" href="#le" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L175">[Source]</a></span></p>
-<pre><code class="pony">fun box le(
+<pre><code class="language-pony">fun box le(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_39">Parameters<a class="headerlink" href="#parameters_39" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -9406,11 +9358,10 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="ge">ge<a class="headerlink" href="#ge" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L176">[Source]</a></span></p>
-<pre><code class="pony">fun box ge(
+<pre><code class="language-pony">fun box ge(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_40">Parameters<a class="headerlink" href="#parameters_40" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -9422,11 +9373,10 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="gt">gt<a class="headerlink" href="#gt" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L177">[Source]</a></span></p>
-<pre><code class="pony">fun box gt(
+<pre><code class="language-pony">fun box gt(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_41">Parameters<a class="headerlink" href="#parameters_41" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -9438,11 +9388,10 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="min">min<a class="headerlink" href="#min" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L179">[Source]</a></span></p>
-<pre><code class="pony">fun box min(
+<pre><code class="language-pony">fun box min(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_42">Parameters<a class="headerlink" href="#parameters_42" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9454,11 +9403,10 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="max">max<a class="headerlink" href="#max" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L180">[Source]</a></span></p>
-<pre><code class="pony">fun box max(
+<pre><code class="language-pony">fun box max(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_43">Parameters<a class="headerlink" href="#parameters_43" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9470,10 +9418,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="hash">hash<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L182">[Source]</a></span></p>
-<pre><code class="pony">fun box hash()
+<pre><code class="language-pony">fun box hash()
 : USize val
 </code></pre>
-
 <h4 id="returns_51">Returns<a class="headerlink" href="#returns_51" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-USize/">USize</a> val</li>
@@ -9481,10 +9428,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="hash64">hash64<a class="headerlink" href="#hash64" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L198">[Source]</a></span></p>
-<pre><code class="pony">fun box hash64()
+<pre><code class="language-pony">fun box hash64()
 : U64 val
 </code></pre>
-
 <h4 id="returns_52">Returns<a class="headerlink" href="#returns_52" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9492,10 +9438,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="string">string<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/stringable/#L5">[Source]</a></span></p>
-<pre><code class="pony">fun box string()
+<pre><code class="language-pony">fun box string()
 : String iso^
 </code></pre>
-
 <h4 id="returns_53">Returns<a class="headerlink" href="#returns_53" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> iso^</li>
@@ -9503,10 +9448,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="i8">i8<a class="headerlink" href="#i8" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L2">[Source]</a></span></p>
-<pre><code class="pony">fun box i8()
+<pre><code class="language-pony">fun box i8()
 : I8 val
 </code></pre>
-
 <h4 id="returns_54">Returns<a class="headerlink" href="#returns_54" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I8/">I8</a> val</li>
@@ -9514,10 +9458,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="i16">i16<a class="headerlink" href="#i16" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L3">[Source]</a></span></p>
-<pre><code class="pony">fun box i16()
+<pre><code class="language-pony">fun box i16()
 : I16 val
 </code></pre>
-
 <h4 id="returns_55">Returns<a class="headerlink" href="#returns_55" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I16/">I16</a> val</li>
@@ -9525,10 +9468,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="i32">i32<a class="headerlink" href="#i32" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L4">[Source]</a></span></p>
-<pre><code class="pony">fun box i32()
+<pre><code class="language-pony">fun box i32()
 : I32 val
 </code></pre>
-
 <h4 id="returns_56">Returns<a class="headerlink" href="#returns_56" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I32/">I32</a> val</li>
@@ -9536,10 +9478,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="i64">i64<a class="headerlink" href="#i64" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L5">[Source]</a></span></p>
-<pre><code class="pony">fun box i64()
+<pre><code class="language-pony">fun box i64()
 : I64 val
 </code></pre>
-
 <h4 id="returns_57">Returns<a class="headerlink" href="#returns_57" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I64/">I64</a> val</li>
@@ -9547,10 +9488,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="i128">i128<a class="headerlink" href="#i128" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L6">[Source]</a></span></p>
-<pre><code class="pony">fun box i128()
+<pre><code class="language-pony">fun box i128()
 : I128 val
 </code></pre>
-
 <h4 id="returns_58">Returns<a class="headerlink" href="#returns_58" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I128/">I128</a> val</li>
@@ -9558,10 +9498,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="ilong">ilong<a class="headerlink" href="#ilong" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L7">[Source]</a></span></p>
-<pre><code class="pony">fun box ilong()
+<pre><code class="language-pony">fun box ilong()
 : ILong val
 </code></pre>
-
 <h4 id="returns_59">Returns<a class="headerlink" href="#returns_59" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ILong/">ILong</a> val</li>
@@ -9569,10 +9508,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="isize">isize<a class="headerlink" href="#isize" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L8">[Source]</a></span></p>
-<pre><code class="pony">fun box isize()
+<pre><code class="language-pony">fun box isize()
 : ISize val
 </code></pre>
-
 <h4 id="returns_60">Returns<a class="headerlink" href="#returns_60" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ISize/">ISize</a> val</li>
@@ -9580,10 +9518,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="u8">u8<a class="headerlink" href="#u8" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L10">[Source]</a></span></p>
-<pre><code class="pony">fun box u8()
+<pre><code class="language-pony">fun box u8()
 : U8 val
 </code></pre>
-
 <h4 id="returns_61">Returns<a class="headerlink" href="#returns_61" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U8/">U8</a> val</li>
@@ -9591,10 +9528,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="u16">u16<a class="headerlink" href="#u16" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L11">[Source]</a></span></p>
-<pre><code class="pony">fun box u16()
+<pre><code class="language-pony">fun box u16()
 : U16 val
 </code></pre>
-
 <h4 id="returns_62">Returns<a class="headerlink" href="#returns_62" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U16/">U16</a> val</li>
@@ -9602,10 +9538,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="u32">u32<a class="headerlink" href="#u32" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L12">[Source]</a></span></p>
-<pre><code class="pony">fun box u32()
+<pre><code class="language-pony">fun box u32()
 : U32 val
 </code></pre>
-
 <h4 id="returns_63">Returns<a class="headerlink" href="#returns_63" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -9613,10 +9548,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="u64">u64<a class="headerlink" href="#u64" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L13">[Source]</a></span></p>
-<pre><code class="pony">fun box u64()
+<pre><code class="language-pony">fun box u64()
 : U64 val
 </code></pre>
-
 <h4 id="returns_64">Returns<a class="headerlink" href="#returns_64" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9624,10 +9558,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="u128">u128<a class="headerlink" href="#u128" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L14">[Source]</a></span></p>
-<pre><code class="pony">fun box u128()
+<pre><code class="language-pony">fun box u128()
 : U128 val
 </code></pre>
-
 <h4 id="returns_65">Returns<a class="headerlink" href="#returns_65" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128/">U128</a> val</li>
@@ -9635,10 +9568,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="ulong">ulong<a class="headerlink" href="#ulong" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L15">[Source]</a></span></p>
-<pre><code class="pony">fun box ulong()
+<pre><code class="language-pony">fun box ulong()
 : ULong val
 </code></pre>
-
 <h4 id="returns_66">Returns<a class="headerlink" href="#returns_66" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ULong/">ULong</a> val</li>
@@ -9646,10 +9578,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="usize">usize<a class="headerlink" href="#usize" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L16">[Source]</a></span></p>
-<pre><code class="pony">fun box usize()
+<pre><code class="language-pony">fun box usize()
 : USize val
 </code></pre>
-
 <h4 id="returns_67">Returns<a class="headerlink" href="#returns_67" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-USize/">USize</a> val</li>
@@ -9657,10 +9588,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="f32">f32<a class="headerlink" href="#f32" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L18">[Source]</a></span></p>
-<pre><code class="pony">fun box f32()
+<pre><code class="language-pony">fun box f32()
 : F32 val
 </code></pre>
-
 <h4 id="returns_68">Returns<a class="headerlink" href="#returns_68" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-F32/">F32</a> val</li>
@@ -9668,10 +9598,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="f64">f64<a class="headerlink" href="#f64" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L19">[Source]</a></span></p>
-<pre><code class="pony">fun box f64()
+<pre><code class="language-pony">fun box f64()
 : F64 val
 </code></pre>
-
 <h4 id="returns_69">Returns<a class="headerlink" href="#returns_69" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-F64/">F64</a> val</li>
@@ -9679,10 +9608,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="i8_unsafe">i8_unsafe<a class="headerlink" href="#i8_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L21">[Source]</a></span></p>
-<pre><code class="pony">fun box i8_unsafe()
+<pre><code class="language-pony">fun box i8_unsafe()
 : I8 val
 </code></pre>
-
 <h4 id="returns_70">Returns<a class="headerlink" href="#returns_70" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I8/">I8</a> val</li>
@@ -9690,10 +9618,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="i16_unsafe">i16_unsafe<a class="headerlink" href="#i16_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L28">[Source]</a></span></p>
-<pre><code class="pony">fun box i16_unsafe()
+<pre><code class="language-pony">fun box i16_unsafe()
 : I16 val
 </code></pre>
-
 <h4 id="returns_71">Returns<a class="headerlink" href="#returns_71" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I16/">I16</a> val</li>
@@ -9701,10 +9628,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="i32_unsafe">i32_unsafe<a class="headerlink" href="#i32_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L35">[Source]</a></span></p>
-<pre><code class="pony">fun box i32_unsafe()
+<pre><code class="language-pony">fun box i32_unsafe()
 : I32 val
 </code></pre>
-
 <h4 id="returns_72">Returns<a class="headerlink" href="#returns_72" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I32/">I32</a> val</li>
@@ -9712,10 +9638,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="i64_unsafe">i64_unsafe<a class="headerlink" href="#i64_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L42">[Source]</a></span></p>
-<pre><code class="pony">fun box i64_unsafe()
+<pre><code class="language-pony">fun box i64_unsafe()
 : I64 val
 </code></pre>
-
 <h4 id="returns_73">Returns<a class="headerlink" href="#returns_73" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I64/">I64</a> val</li>
@@ -9723,10 +9648,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="i128_unsafe">i128_unsafe<a class="headerlink" href="#i128_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L49">[Source]</a></span></p>
-<pre><code class="pony">fun box i128_unsafe()
+<pre><code class="language-pony">fun box i128_unsafe()
 : I128 val
 </code></pre>
-
 <h4 id="returns_74">Returns<a class="headerlink" href="#returns_74" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I128/">I128</a> val</li>
@@ -9734,10 +9658,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="ilong_unsafe">ilong_unsafe<a class="headerlink" href="#ilong_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L56">[Source]</a></span></p>
-<pre><code class="pony">fun box ilong_unsafe()
+<pre><code class="language-pony">fun box ilong_unsafe()
 : ILong val
 </code></pre>
-
 <h4 id="returns_75">Returns<a class="headerlink" href="#returns_75" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ILong/">ILong</a> val</li>
@@ -9745,10 +9668,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="isize_unsafe">isize_unsafe<a class="headerlink" href="#isize_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L63">[Source]</a></span></p>
-<pre><code class="pony">fun box isize_unsafe()
+<pre><code class="language-pony">fun box isize_unsafe()
 : ISize val
 </code></pre>
-
 <h4 id="returns_76">Returns<a class="headerlink" href="#returns_76" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ISize/">ISize</a> val</li>
@@ -9756,10 +9678,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="u8_unsafe">u8_unsafe<a class="headerlink" href="#u8_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L70">[Source]</a></span></p>
-<pre><code class="pony">fun box u8_unsafe()
+<pre><code class="language-pony">fun box u8_unsafe()
 : U8 val
 </code></pre>
-
 <h4 id="returns_77">Returns<a class="headerlink" href="#returns_77" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U8/">U8</a> val</li>
@@ -9767,10 +9688,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="u16_unsafe">u16_unsafe<a class="headerlink" href="#u16_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L77">[Source]</a></span></p>
-<pre><code class="pony">fun box u16_unsafe()
+<pre><code class="language-pony">fun box u16_unsafe()
 : U16 val
 </code></pre>
-
 <h4 id="returns_78">Returns<a class="headerlink" href="#returns_78" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U16/">U16</a> val</li>
@@ -9778,10 +9698,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="u32_unsafe">u32_unsafe<a class="headerlink" href="#u32_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L84">[Source]</a></span></p>
-<pre><code class="pony">fun box u32_unsafe()
+<pre><code class="language-pony">fun box u32_unsafe()
 : U32 val
 </code></pre>
-
 <h4 id="returns_79">Returns<a class="headerlink" href="#returns_79" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -9789,10 +9708,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="u64_unsafe">u64_unsafe<a class="headerlink" href="#u64_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L91">[Source]</a></span></p>
-<pre><code class="pony">fun box u64_unsafe()
+<pre><code class="language-pony">fun box u64_unsafe()
 : U64 val
 </code></pre>
-
 <h4 id="returns_80">Returns<a class="headerlink" href="#returns_80" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9800,10 +9718,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="u128_unsafe">u128_unsafe<a class="headerlink" href="#u128_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L98">[Source]</a></span></p>
-<pre><code class="pony">fun box u128_unsafe()
+<pre><code class="language-pony">fun box u128_unsafe()
 : U128 val
 </code></pre>
-
 <h4 id="returns_81">Returns<a class="headerlink" href="#returns_81" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128/">U128</a> val</li>
@@ -9811,10 +9728,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="ulong_unsafe">ulong_unsafe<a class="headerlink" href="#ulong_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L105">[Source]</a></span></p>
-<pre><code class="pony">fun box ulong_unsafe()
+<pre><code class="language-pony">fun box ulong_unsafe()
 : ULong val
 </code></pre>
-
 <h4 id="returns_82">Returns<a class="headerlink" href="#returns_82" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ULong/">ULong</a> val</li>
@@ -9822,10 +9738,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="usize_unsafe">usize_unsafe<a class="headerlink" href="#usize_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L112">[Source]</a></span></p>
-<pre><code class="pony">fun box usize_unsafe()
+<pre><code class="language-pony">fun box usize_unsafe()
 : USize val
 </code></pre>
-
 <h4 id="returns_83">Returns<a class="headerlink" href="#returns_83" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-USize/">USize</a> val</li>
@@ -9833,10 +9748,9 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="f32_unsafe">f32_unsafe<a class="headerlink" href="#f32_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L119">[Source]</a></span></p>
-<pre><code class="pony">fun box f32_unsafe()
+<pre><code class="language-pony">fun box f32_unsafe()
 : F32 val
 </code></pre>
-
 <h4 id="returns_84">Returns<a class="headerlink" href="#returns_84" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-F32/">F32</a> val</li>
@@ -9844,21 +9758,19 @@ For example, 0b11101101 (237) would return 0b10110111 (183).</p>
 <hr />
 <h3 id="f64_unsafe">f64_unsafe<a class="headerlink" href="#f64_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L126">[Source]</a></span></p>
-<pre><code class="pony">fun box f64_unsafe()
+<pre><code class="language-pony">fun box f64_unsafe()
 : F64 val
 </code></pre>
-
 <h4 id="returns_85">Returns<a class="headerlink" href="#returns_85" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-F64/">F64</a> val</li>
 </ul>
 <hr />
 <h3 id="compare">compare<a class="headerlink" href="#compare" title="Permanent link">&para;</a></h3>
-<pre><code class="pony">fun box compare(
+<pre><code class="language-pony">fun box compare(
   that: box-&gt;A)
 : (Less val | Equal val | Greater val)
 </code></pre>
-
 <h4 id="parameters_44">Parameters<a class="headerlink" href="#parameters_44" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: box-&gt;A</li>

@@ -7131,18 +7131,16 @@
                 
                 <h1 id="jsonarray">JsonArray<a class="headerlink" href="#jsonarray" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/json/json_type/#L8">[Source]</a></span></p>
-<pre><code class="pony">class ref JsonArray
+<pre><code class="language-pony">class ref JsonArray
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/json/json_type/#L14">[Source]</a></span></p>
 <p>Create an array with zero elements, but space for len elements.</p>
-<pre><code class="pony">new ref create(
+<pre><code class="language-pony">new ref create(
   len: USize val = 0)
 : JsonArray ref^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>len: <a href="../builtin-USize/">USize</a> val = 0</li>
@@ -7155,11 +7153,10 @@
 <h3 id="from_array">from_array<a class="headerlink" href="#from_array" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/json/json_type/#L20">[Source]</a></span></p>
 <p>Create a Json array from an actual array.</p>
-<pre><code class="pony">new ref from_array(
+<pre><code class="language-pony">new ref from_array(
   data': Array[(F64 val | I64 val | Bool val | None val | String val | JsonArray ref | JsonObject ref)] ref)
 : JsonArray ref^
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data': <a href="../builtin-Array/">Array</a>[(<a href="../builtin-F64/">F64</a> val | <a href="../builtin-I64/">I64</a> val | <a href="../builtin-Bool/">Bool</a> val | <a href="../builtin-None/">None</a> val | <a href="../builtin-String/">String</a> val | <a href="./">JsonArray</a> ref | <a href="../json-JsonObject/">JsonObject</a> ref)] ref</li>
@@ -7178,12 +7175,11 @@
 <h3 id="string">string<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/json/json_type/#L26">[Source]</a></span></p>
 <p>Generate string representation of this array.</p>
-<pre><code class="pony">fun box string(
+<pre><code class="language-pony">fun box string(
   indent: String val = &quot;&quot;,
   pretty_print: Bool val = false)
 : String val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>indent: <a href="../builtin-String/">String</a> val = ""</li>

@@ -7286,7 +7286,6 @@ override the Pony runtime defaults via code compiled into the program.</p>
 <p>The way this is done is by adding the following function to your <code>Main</code> actor:</p>
 <pre><code>  fun @runtime_override_defaults(rto: RuntimeOptions) =&gt;
 </code></pre>
-
 <p>and then overriding the fields of <code>rto</code> (the <code>RuntimeOptions</code> instance) as
 needed.</p>
 <p>NOTE: Command line arguments still any values set via
@@ -7301,17 +7300,14 @@ the Pony runtime help:</p>
   fun @runtime_override_defaults(rto: RuntimeOptions) =&gt;
     rto.ponyhelp = true
 </code></pre>
-
-<pre><code class="pony">struct ref RuntimeOptions
+<pre><code class="language-pony">struct ref RuntimeOptions
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/runtime_options/#L1">[Source]</a></span></p>
-<pre><code class="pony">new iso create()
+<pre><code class="language-pony">new iso create()
 : RuntimeOptions iso^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">RuntimeOptions</a> iso^</li>

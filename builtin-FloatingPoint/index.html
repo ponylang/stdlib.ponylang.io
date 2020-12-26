@@ -9135,10 +9135,9 @@
                 
                 <h1 id="floatingpointa-floatingpointa-val">FloatingPoint[A: <a href="./">FloatingPoint</a>[A] val]<a class="headerlink" href="#floatingpointa-floatingpointa-val" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/builtin/real/#L516">[Source]</a></span></p>
-<pre><code class="pony">trait val FloatingPoint[A: FloatingPoint[A] val] is
+<pre><code class="language-pony">trait val FloatingPoint[A: FloatingPoint[A] val] is
   Real[A] val
 </code></pre>
-
 <h4 id="implements">Implements<a class="headerlink" href="#implements" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Real/">Real</a>[A] val</li>
@@ -9147,10 +9146,9 @@
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="min_normalised">min_normalised<a class="headerlink" href="#min_normalised" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L517">[Source]</a></span></p>
-<pre><code class="pony">new val min_normalised()
+<pre><code class="language-pony">new val min_normalised()
 : FloatingPoint[A] val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">FloatingPoint</a>[A] val^</li>
@@ -9158,10 +9156,9 @@
 <hr />
 <h3 id="epsilon">epsilon<a class="headerlink" href="#epsilon" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L518">[Source]</a></span></p>
-<pre><code class="pony">new val epsilon()
+<pre><code class="language-pony">new val epsilon()
 : FloatingPoint[A] val^
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">FloatingPoint</a>[A] val^</li>
@@ -9169,11 +9166,10 @@
 <hr />
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L135">[Source]</a></span></p>
-<pre><code class="pony">new val create(
+<pre><code class="language-pony">new val create(
   value: A)
 : Real[A] val^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>value: A</li>
@@ -9185,7 +9181,7 @@
 <hr />
 <h3 id="fromb-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-f32-val-f64-val-realb-val">from[B: ((<a href="../builtin-I8/">I8</a> val | <a href="../builtin-I16/">I16</a> val | <a href="../builtin-I32/">I32</a> val | <a href="../builtin-I64/">I64</a> val | <a href="../builtin-I128/">I128</a> val | <a href="../builtin-ILong/">ILong</a> val | <a href="../builtin-ISize/">ISize</a> val | <a href="../builtin-U8/">U8</a> val | <a href="../builtin-U16/">U16</a> val | <a href="../builtin-U32/">U32</a> val | <a href="../builtin-U64/">U64</a> val | <a href="../builtin-U128/">U128</a> val | <a href="../builtin-ULong/">ULong</a> val | <a href="../builtin-USize/">USize</a> val | <a href="../builtin-F32/">F32</a> val | <a href="../builtin-F64/">F64</a> val) &amp; <a href="../builtin-Real/">Real</a>[B] val)]<a class="headerlink" href="#fromb-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-f32-val-f64-val-realb-val" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L137">[Source]</a></span></p>
-<pre><code class="pony">new val from[B: ((I8 val | I16 val | I32 val | 
+<pre><code class="language-pony">new val from[B: ((I8 val | I16 val | I32 val | 
     I64 val | I128 val | ILong val | 
     ISize val | U8 val | U16 val | 
     U32 val | U64 val | U128 val | 
@@ -9194,7 +9190,6 @@
   a: B)
 : Real[A] val^
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>a: B</li>
@@ -9206,10 +9201,9 @@
 <hr />
 <h3 id="min_value">min_value<a class="headerlink" href="#min_value" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L138">[Source]</a></span></p>
-<pre><code class="pony">new val min_value()
+<pre><code class="language-pony">new val min_value()
 : Real[A] val^
 </code></pre>
-
 <h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Real/">Real</a>[A] val^</li>
@@ -9217,10 +9211,9 @@
 <hr />
 <h3 id="max_value">max_value<a class="headerlink" href="#max_value" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L139">[Source]</a></span></p>
-<pre><code class="pony">new val max_value()
+<pre><code class="language-pony">new val max_value()
 : Real[A] val^
 </code></pre>
-
 <h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Real/">Real</a>[A] val^</li>
@@ -9229,10 +9222,9 @@
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="radix">radix<a class="headerlink" href="#radix" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L519">[Source]</a></span></p>
-<pre><code class="pony">fun tag radix()
+<pre><code class="language-pony">fun tag radix()
 : U8 val
 </code></pre>
-
 <h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U8/">U8</a> val</li>
@@ -9240,10 +9232,9 @@
 <hr />
 <h3 id="precision2">precision2<a class="headerlink" href="#precision2" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L520">[Source]</a></span></p>
-<pre><code class="pony">fun tag precision2()
+<pre><code class="language-pony">fun tag precision2()
 : U8 val
 </code></pre>
-
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U8/">U8</a> val</li>
@@ -9251,10 +9242,9 @@
 <hr />
 <h3 id="precision10">precision10<a class="headerlink" href="#precision10" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L521">[Source]</a></span></p>
-<pre><code class="pony">fun tag precision10()
+<pre><code class="language-pony">fun tag precision10()
 : U8 val
 </code></pre>
-
 <h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U8/">U8</a> val</li>
@@ -9262,10 +9252,9 @@
 <hr />
 <h3 id="min_exp2">min_exp2<a class="headerlink" href="#min_exp2" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L522">[Source]</a></span></p>
-<pre><code class="pony">fun tag min_exp2()
+<pre><code class="language-pony">fun tag min_exp2()
 : I16 val
 </code></pre>
-
 <h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I16/">I16</a> val</li>
@@ -9273,10 +9262,9 @@
 <hr />
 <h3 id="min_exp10">min_exp10<a class="headerlink" href="#min_exp10" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L523">[Source]</a></span></p>
-<pre><code class="pony">fun tag min_exp10()
+<pre><code class="language-pony">fun tag min_exp10()
 : I16 val
 </code></pre>
-
 <h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I16/">I16</a> val</li>
@@ -9284,10 +9272,9 @@
 <hr />
 <h3 id="max_exp2">max_exp2<a class="headerlink" href="#max_exp2" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L524">[Source]</a></span></p>
-<pre><code class="pony">fun tag max_exp2()
+<pre><code class="language-pony">fun tag max_exp2()
 : I16 val
 </code></pre>
-
 <h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I16/">I16</a> val</li>
@@ -9295,10 +9282,9 @@
 <hr />
 <h3 id="max_exp10">max_exp10<a class="headerlink" href="#max_exp10" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L525">[Source]</a></span></p>
-<pre><code class="pony">fun tag max_exp10()
+<pre><code class="language-pony">fun tag max_exp10()
 : I16 val
 </code></pre>
-
 <h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I16/">I16</a> val</li>
@@ -9310,11 +9296,10 @@
 If any input or output of the operation is +/- infinity or NaN, the result
 is undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
-<pre><code class="pony">fun box add_unsafe(
+<pre><code class="language-pony">fun box add_unsafe(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9330,11 +9315,10 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 If any input or output of the operation is +/- infinity or NaN, the result
 is undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
-<pre><code class="pony">fun box sub_unsafe(
+<pre><code class="language-pony">fun box sub_unsafe(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9350,11 +9334,10 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 If any input or output of the operation is +/- infinity or NaN, the result
 is undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
-<pre><code class="pony">fun box mul_unsafe(
+<pre><code class="language-pony">fun box mul_unsafe(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9370,11 +9353,10 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 If any input or output of the operation is +/- infinity or NaN, the result
 is undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
-<pre><code class="pony">fun box div_unsafe(
+<pre><code class="language-pony">fun box div_unsafe(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9390,11 +9372,10 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 If any input or output of the operation is +/- infinity or NaN, the result
 is undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
-<pre><code class="pony">fun box fld_unsafe(
+<pre><code class="language-pony">fun box fld_unsafe(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9410,11 +9391,10 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 If any input or output of the operation is +/- infinity or NaN, the result
 is undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
-<pre><code class="pony">fun box divrem_unsafe(
+<pre><code class="language-pony">fun box divrem_unsafe(
   y: A)
 : (A , A)
 </code></pre>
-
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9430,11 +9410,10 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 If any input or output of the operation is +/- infinity or NaN, the result
 is undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
-<pre><code class="pony">fun box rem_unsafe(
+<pre><code class="language-pony">fun box rem_unsafe(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9450,11 +9429,10 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 If any input or output of the operation is +/- infinity or NaN, the result
 is undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
-<pre><code class="pony">fun box mod_unsafe(
+<pre><code class="language-pony">fun box mod_unsafe(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9470,10 +9448,9 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 If any input or output of the operation is +/- infinity or NaN, the result
 is undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
-<pre><code class="pony">fun box neg_unsafe()
+<pre><code class="language-pony">fun box neg_unsafe()
 : A
 </code></pre>
-
 <h4 id="returns_21">Returns<a class="headerlink" href="#returns_21" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9485,11 +9462,10 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 If any input of the operation is +/- infinity or NaN, the result is
 undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
-<pre><code class="pony">fun box eq_unsafe(
+<pre><code class="language-pony">fun box eq_unsafe(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -9505,11 +9481,10 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 If any input of the operation is +/- infinity or NaN, the result is
 undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
-<pre><code class="pony">fun box ne_unsafe(
+<pre><code class="language-pony">fun box ne_unsafe(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -9525,11 +9500,10 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 If any input of the operation is +/- infinity or NaN, the result is
 undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
-<pre><code class="pony">fun box lt_unsafe(
+<pre><code class="language-pony">fun box lt_unsafe(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -9545,11 +9519,10 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 If any input of the operation is +/- infinity or NaN, the result is
 undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
-<pre><code class="pony">fun box le_unsafe(
+<pre><code class="language-pony">fun box le_unsafe(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -9565,11 +9538,10 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 If any input of the operation is +/- infinity or NaN, the result is
 undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
-<pre><code class="pony">fun box ge_unsafe(
+<pre><code class="language-pony">fun box ge_unsafe(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -9585,11 +9557,10 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 If any input of the operation is +/- infinity or NaN, the result is
 undefined.
 The operation isn't required to fully comply to IEEE 754 semantics.</p>
-<pre><code class="pony">fun box gt_unsafe(
+<pre><code class="language-pony">fun box gt_unsafe(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -9601,10 +9572,9 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="abs">abs<a class="headerlink" href="#abs" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L660">[Source]</a></span></p>
-<pre><code class="pony">fun box abs()
+<pre><code class="language-pony">fun box abs()
 : A
 </code></pre>
-
 <h4 id="returns_28">Returns<a class="headerlink" href="#returns_28" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9612,10 +9582,9 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="ceil">ceil<a class="headerlink" href="#ceil" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L661">[Source]</a></span></p>
-<pre><code class="pony">fun box ceil()
+<pre><code class="language-pony">fun box ceil()
 : A
 </code></pre>
-
 <h4 id="returns_29">Returns<a class="headerlink" href="#returns_29" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9623,10 +9592,9 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="floor">floor<a class="headerlink" href="#floor" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L662">[Source]</a></span></p>
-<pre><code class="pony">fun box floor()
+<pre><code class="language-pony">fun box floor()
 : A
 </code></pre>
-
 <h4 id="returns_30">Returns<a class="headerlink" href="#returns_30" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9634,10 +9602,9 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="round">round<a class="headerlink" href="#round" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L663">[Source]</a></span></p>
-<pre><code class="pony">fun box round()
+<pre><code class="language-pony">fun box round()
 : A
 </code></pre>
-
 <h4 id="returns_31">Returns<a class="headerlink" href="#returns_31" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9645,10 +9612,9 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="trunc">trunc<a class="headerlink" href="#trunc" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L664">[Source]</a></span></p>
-<pre><code class="pony">fun box trunc()
+<pre><code class="language-pony">fun box trunc()
 : A
 </code></pre>
-
 <h4 id="returns_32">Returns<a class="headerlink" href="#returns_32" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9656,10 +9622,9 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="finite">finite<a class="headerlink" href="#finite" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L666">[Source]</a></span></p>
-<pre><code class="pony">fun box finite()
+<pre><code class="language-pony">fun box finite()
 : Bool val
 </code></pre>
-
 <h4 id="returns_33">Returns<a class="headerlink" href="#returns_33" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -9667,10 +9632,9 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="infinite">infinite<a class="headerlink" href="#infinite" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L667">[Source]</a></span></p>
-<pre><code class="pony">fun box infinite()
+<pre><code class="language-pony">fun box infinite()
 : Bool val
 </code></pre>
-
 <h4 id="returns_34">Returns<a class="headerlink" href="#returns_34" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -9678,10 +9642,9 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="nan">nan<a class="headerlink" href="#nan" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L668">[Source]</a></span></p>
-<pre><code class="pony">fun box nan()
+<pre><code class="language-pony">fun box nan()
 : Bool val
 </code></pre>
-
 <h4 id="returns_35">Returns<a class="headerlink" href="#returns_35" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -9689,12 +9652,11 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="ldexp">ldexp<a class="headerlink" href="#ldexp" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L670">[Source]</a></span></p>
-<pre><code class="pony">fun box ldexp(
+<pre><code class="language-pony">fun box ldexp(
   x: A,
   exponent: I32 val)
 : A
 </code></pre>
-
 <h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
 <ul>
 <li>x: A</li>
@@ -9707,10 +9669,9 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="frexp">frexp<a class="headerlink" href="#frexp" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L671">[Source]</a></span></p>
-<pre><code class="pony">fun box frexp()
+<pre><code class="language-pony">fun box frexp()
 : (A , U32 val)
 </code></pre>
-
 <h4 id="returns_37">Returns<a class="headerlink" href="#returns_37" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(A , <a href="../builtin-U32/">U32</a> val)</li>
@@ -9718,10 +9679,9 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="log">log<a class="headerlink" href="#log" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L672">[Source]</a></span></p>
-<pre><code class="pony">fun box log()
+<pre><code class="language-pony">fun box log()
 : A
 </code></pre>
-
 <h4 id="returns_38">Returns<a class="headerlink" href="#returns_38" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9729,10 +9689,9 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="log2">log2<a class="headerlink" href="#log2" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L673">[Source]</a></span></p>
-<pre><code class="pony">fun box log2()
+<pre><code class="language-pony">fun box log2()
 : A
 </code></pre>
-
 <h4 id="returns_39">Returns<a class="headerlink" href="#returns_39" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9740,10 +9699,9 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="log10">log10<a class="headerlink" href="#log10" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L674">[Source]</a></span></p>
-<pre><code class="pony">fun box log10()
+<pre><code class="language-pony">fun box log10()
 : A
 </code></pre>
-
 <h4 id="returns_40">Returns<a class="headerlink" href="#returns_40" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9751,10 +9709,9 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="logb">logb<a class="headerlink" href="#logb" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L675">[Source]</a></span></p>
-<pre><code class="pony">fun box logb()
+<pre><code class="language-pony">fun box logb()
 : A
 </code></pre>
-
 <h4 id="returns_41">Returns<a class="headerlink" href="#returns_41" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9762,11 +9719,10 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="pow">pow<a class="headerlink" href="#pow" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L677">[Source]</a></span></p>
-<pre><code class="pony">fun box pow(
+<pre><code class="language-pony">fun box pow(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_17">Parameters<a class="headerlink" href="#parameters_17" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9778,11 +9734,10 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="powi">powi<a class="headerlink" href="#powi" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L678">[Source]</a></span></p>
-<pre><code class="pony">fun box powi(
+<pre><code class="language-pony">fun box powi(
   y: I32 val)
 : A
 </code></pre>
-
 <h4 id="parameters_18">Parameters<a class="headerlink" href="#parameters_18" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: <a href="../builtin-I32/">I32</a> val</li>
@@ -9794,10 +9749,9 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <hr />
 <h3 id="sqrt">sqrt<a class="headerlink" href="#sqrt" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L680">[Source]</a></span></p>
-<pre><code class="pony">fun box sqrt()
+<pre><code class="language-pony">fun box sqrt()
 : A
 </code></pre>
-
 <h4 id="returns_44">Returns<a class="headerlink" href="#returns_44" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9807,10 +9761,9 @@ The operation isn't required to fully comply to IEEE 754 semantics.</p>
 <p><span class="source-link"><a href="../src/builtin/real/#L682">[Source]</a></span></p>
 <p>Unsafe operation.
 If this is negative, the result is undefined.</p>
-<pre><code class="pony">fun box sqrt_unsafe()
+<pre><code class="language-pony">fun box sqrt_unsafe()
 : A
 </code></pre>
-
 <h4 id="returns_45">Returns<a class="headerlink" href="#returns_45" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9818,10 +9771,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="cbrt">cbrt<a class="headerlink" href="#cbrt" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L688">[Source]</a></span></p>
-<pre><code class="pony">fun box cbrt()
+<pre><code class="language-pony">fun box cbrt()
 : A
 </code></pre>
-
 <h4 id="returns_46">Returns<a class="headerlink" href="#returns_46" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9829,10 +9781,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="exp">exp<a class="headerlink" href="#exp" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L689">[Source]</a></span></p>
-<pre><code class="pony">fun box exp()
+<pre><code class="language-pony">fun box exp()
 : A
 </code></pre>
-
 <h4 id="returns_47">Returns<a class="headerlink" href="#returns_47" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9840,10 +9791,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="exp2">exp2<a class="headerlink" href="#exp2" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L690">[Source]</a></span></p>
-<pre><code class="pony">fun box exp2()
+<pre><code class="language-pony">fun box exp2()
 : A
 </code></pre>
-
 <h4 id="returns_48">Returns<a class="headerlink" href="#returns_48" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9851,10 +9801,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="cos">cos<a class="headerlink" href="#cos" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L692">[Source]</a></span></p>
-<pre><code class="pony">fun box cos()
+<pre><code class="language-pony">fun box cos()
 : A
 </code></pre>
-
 <h4 id="returns_49">Returns<a class="headerlink" href="#returns_49" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9862,10 +9811,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="sin">sin<a class="headerlink" href="#sin" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L693">[Source]</a></span></p>
-<pre><code class="pony">fun box sin()
+<pre><code class="language-pony">fun box sin()
 : A
 </code></pre>
-
 <h4 id="returns_50">Returns<a class="headerlink" href="#returns_50" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9873,10 +9821,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="tan">tan<a class="headerlink" href="#tan" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L694">[Source]</a></span></p>
-<pre><code class="pony">fun box tan()
+<pre><code class="language-pony">fun box tan()
 : A
 </code></pre>
-
 <h4 id="returns_51">Returns<a class="headerlink" href="#returns_51" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9884,10 +9831,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="cosh">cosh<a class="headerlink" href="#cosh" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L696">[Source]</a></span></p>
-<pre><code class="pony">fun box cosh()
+<pre><code class="language-pony">fun box cosh()
 : A
 </code></pre>
-
 <h4 id="returns_52">Returns<a class="headerlink" href="#returns_52" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9895,10 +9841,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="sinh">sinh<a class="headerlink" href="#sinh" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L697">[Source]</a></span></p>
-<pre><code class="pony">fun box sinh()
+<pre><code class="language-pony">fun box sinh()
 : A
 </code></pre>
-
 <h4 id="returns_53">Returns<a class="headerlink" href="#returns_53" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9906,10 +9851,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="tanh">tanh<a class="headerlink" href="#tanh" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L698">[Source]</a></span></p>
-<pre><code class="pony">fun box tanh()
+<pre><code class="language-pony">fun box tanh()
 : A
 </code></pre>
-
 <h4 id="returns_54">Returns<a class="headerlink" href="#returns_54" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9917,10 +9861,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="acos">acos<a class="headerlink" href="#acos" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L700">[Source]</a></span></p>
-<pre><code class="pony">fun box acos()
+<pre><code class="language-pony">fun box acos()
 : A
 </code></pre>
-
 <h4 id="returns_55">Returns<a class="headerlink" href="#returns_55" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9928,10 +9871,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="asin">asin<a class="headerlink" href="#asin" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L701">[Source]</a></span></p>
-<pre><code class="pony">fun box asin()
+<pre><code class="language-pony">fun box asin()
 : A
 </code></pre>
-
 <h4 id="returns_56">Returns<a class="headerlink" href="#returns_56" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9939,10 +9881,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="atan">atan<a class="headerlink" href="#atan" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L702">[Source]</a></span></p>
-<pre><code class="pony">fun box atan()
+<pre><code class="language-pony">fun box atan()
 : A
 </code></pre>
-
 <h4 id="returns_57">Returns<a class="headerlink" href="#returns_57" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9950,11 +9891,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="atan2">atan2<a class="headerlink" href="#atan2" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L703">[Source]</a></span></p>
-<pre><code class="pony">fun box atan2(
+<pre><code class="language-pony">fun box atan2(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_19">Parameters<a class="headerlink" href="#parameters_19" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -9966,10 +9906,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="acosh">acosh<a class="headerlink" href="#acosh" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L705">[Source]</a></span></p>
-<pre><code class="pony">fun box acosh()
+<pre><code class="language-pony">fun box acosh()
 : A
 </code></pre>
-
 <h4 id="returns_59">Returns<a class="headerlink" href="#returns_59" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9977,10 +9916,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="asinh">asinh<a class="headerlink" href="#asinh" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L706">[Source]</a></span></p>
-<pre><code class="pony">fun box asinh()
+<pre><code class="language-pony">fun box asinh()
 : A
 </code></pre>
-
 <h4 id="returns_60">Returns<a class="headerlink" href="#returns_60" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9988,10 +9926,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="atanh">atanh<a class="headerlink" href="#atanh" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L707">[Source]</a></span></p>
-<pre><code class="pony">fun box atanh()
+<pre><code class="language-pony">fun box atanh()
 : A
 </code></pre>
-
 <h4 id="returns_61">Returns<a class="headerlink" href="#returns_61" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -9999,11 +9936,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="copysign">copysign<a class="headerlink" href="#copysign" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L709">[Source]</a></span></p>
-<pre><code class="pony">fun box copysign(
+<pre><code class="language-pony">fun box copysign(
   sign: A)
 : A
 </code></pre>
-
 <h4 id="parameters_20">Parameters<a class="headerlink" href="#parameters_20" title="Permanent link">&para;</a></h4>
 <ul>
 <li>sign: A</li>
@@ -10015,10 +9951,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="string">string<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L711">[Source]</a></span></p>
-<pre><code class="pony">fun box string()
+<pre><code class="language-pony">fun box string()
 : String iso^
 </code></pre>
-
 <h4 id="returns_63">Returns<a class="headerlink" href="#returns_63" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> iso^</li>
@@ -10026,11 +9961,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="add">add<a class="headerlink" href="#add" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L141">[Source]</a></span></p>
-<pre><code class="pony">fun box add(
+<pre><code class="language-pony">fun box add(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_21">Parameters<a class="headerlink" href="#parameters_21" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -10042,11 +9976,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="sub">sub<a class="headerlink" href="#sub" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L142">[Source]</a></span></p>
-<pre><code class="pony">fun box sub(
+<pre><code class="language-pony">fun box sub(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_22">Parameters<a class="headerlink" href="#parameters_22" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -10058,11 +9991,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="mul">mul<a class="headerlink" href="#mul" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L143">[Source]</a></span></p>
-<pre><code class="pony">fun box mul(
+<pre><code class="language-pony">fun box mul(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_23">Parameters<a class="headerlink" href="#parameters_23" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -10074,11 +10006,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="div">div<a class="headerlink" href="#div" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L144">[Source]</a></span></p>
-<pre><code class="pony">fun box div(
+<pre><code class="language-pony">fun box div(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_24">Parameters<a class="headerlink" href="#parameters_24" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -10090,11 +10021,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="divrem">divrem<a class="headerlink" href="#divrem" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L150">[Source]</a></span></p>
-<pre><code class="pony">fun box divrem(
+<pre><code class="language-pony">fun box divrem(
   y: A)
 : (A , A)
 </code></pre>
-
 <h4 id="parameters_25">Parameters<a class="headerlink" href="#parameters_25" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -10106,11 +10036,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="rem">rem<a class="headerlink" href="#rem" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L151">[Source]</a></span></p>
-<pre><code class="pony">fun box rem(
+<pre><code class="language-pony">fun box rem(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_26">Parameters<a class="headerlink" href="#parameters_26" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -10122,10 +10051,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="neg">neg<a class="headerlink" href="#neg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L159">[Source]</a></span></p>
-<pre><code class="pony">fun box neg()
+<pre><code class="language-pony">fun box neg()
 : A
 </code></pre>
-
 <h4 id="returns_70">Returns<a class="headerlink" href="#returns_70" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A</li>
@@ -10133,11 +10061,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="fld">fld<a class="headerlink" href="#fld" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L161">[Source]</a></span></p>
-<pre><code class="pony">fun box fld(
+<pre><code class="language-pony">fun box fld(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_27">Parameters<a class="headerlink" href="#parameters_27" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -10149,11 +10076,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="mod">mod<a class="headerlink" href="#mod" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L165">[Source]</a></span></p>
-<pre><code class="pony">fun box mod(
+<pre><code class="language-pony">fun box mod(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_28">Parameters<a class="headerlink" href="#parameters_28" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -10165,11 +10091,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L172">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_29">Parameters<a class="headerlink" href="#parameters_29" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -10181,11 +10106,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L173">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_30">Parameters<a class="headerlink" href="#parameters_30" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -10197,11 +10121,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="lt">lt<a class="headerlink" href="#lt" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L174">[Source]</a></span></p>
-<pre><code class="pony">fun box lt(
+<pre><code class="language-pony">fun box lt(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_31">Parameters<a class="headerlink" href="#parameters_31" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -10213,11 +10136,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="le">le<a class="headerlink" href="#le" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L175">[Source]</a></span></p>
-<pre><code class="pony">fun box le(
+<pre><code class="language-pony">fun box le(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_32">Parameters<a class="headerlink" href="#parameters_32" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -10229,11 +10151,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="ge">ge<a class="headerlink" href="#ge" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L176">[Source]</a></span></p>
-<pre><code class="pony">fun box ge(
+<pre><code class="language-pony">fun box ge(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_33">Parameters<a class="headerlink" href="#parameters_33" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -10245,11 +10166,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="gt">gt<a class="headerlink" href="#gt" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L177">[Source]</a></span></p>
-<pre><code class="pony">fun box gt(
+<pre><code class="language-pony">fun box gt(
   y: box-&gt;A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_34">Parameters<a class="headerlink" href="#parameters_34" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: box-&gt;A</li>
@@ -10261,11 +10181,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="min">min<a class="headerlink" href="#min" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L179">[Source]</a></span></p>
-<pre><code class="pony">fun box min(
+<pre><code class="language-pony">fun box min(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_35">Parameters<a class="headerlink" href="#parameters_35" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -10277,11 +10196,10 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="max">max<a class="headerlink" href="#max" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L180">[Source]</a></span></p>
-<pre><code class="pony">fun box max(
+<pre><code class="language-pony">fun box max(
   y: A)
 : A
 </code></pre>
-
 <h4 id="parameters_36">Parameters<a class="headerlink" href="#parameters_36" title="Permanent link">&para;</a></h4>
 <ul>
 <li>y: A</li>
@@ -10293,10 +10211,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="hash">hash<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L182">[Source]</a></span></p>
-<pre><code class="pony">fun box hash()
+<pre><code class="language-pony">fun box hash()
 : USize val
 </code></pre>
-
 <h4 id="returns_81">Returns<a class="headerlink" href="#returns_81" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-USize/">USize</a> val</li>
@@ -10304,10 +10221,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="hash64">hash64<a class="headerlink" href="#hash64" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L198">[Source]</a></span></p>
-<pre><code class="pony">fun box hash64()
+<pre><code class="language-pony">fun box hash64()
 : U64 val
 </code></pre>
-
 <h4 id="returns_82">Returns<a class="headerlink" href="#returns_82" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -10315,10 +10231,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="i8">i8<a class="headerlink" href="#i8" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L2">[Source]</a></span></p>
-<pre><code class="pony">fun box i8()
+<pre><code class="language-pony">fun box i8()
 : I8 val
 </code></pre>
-
 <h4 id="returns_83">Returns<a class="headerlink" href="#returns_83" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I8/">I8</a> val</li>
@@ -10326,10 +10241,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="i16">i16<a class="headerlink" href="#i16" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L3">[Source]</a></span></p>
-<pre><code class="pony">fun box i16()
+<pre><code class="language-pony">fun box i16()
 : I16 val
 </code></pre>
-
 <h4 id="returns_84">Returns<a class="headerlink" href="#returns_84" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I16/">I16</a> val</li>
@@ -10337,10 +10251,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="i32">i32<a class="headerlink" href="#i32" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L4">[Source]</a></span></p>
-<pre><code class="pony">fun box i32()
+<pre><code class="language-pony">fun box i32()
 : I32 val
 </code></pre>
-
 <h4 id="returns_85">Returns<a class="headerlink" href="#returns_85" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I32/">I32</a> val</li>
@@ -10348,10 +10261,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="i64">i64<a class="headerlink" href="#i64" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L5">[Source]</a></span></p>
-<pre><code class="pony">fun box i64()
+<pre><code class="language-pony">fun box i64()
 : I64 val
 </code></pre>
-
 <h4 id="returns_86">Returns<a class="headerlink" href="#returns_86" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I64/">I64</a> val</li>
@@ -10359,10 +10271,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="i128">i128<a class="headerlink" href="#i128" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L6">[Source]</a></span></p>
-<pre><code class="pony">fun box i128()
+<pre><code class="language-pony">fun box i128()
 : I128 val
 </code></pre>
-
 <h4 id="returns_87">Returns<a class="headerlink" href="#returns_87" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I128/">I128</a> val</li>
@@ -10370,10 +10281,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="ilong">ilong<a class="headerlink" href="#ilong" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L7">[Source]</a></span></p>
-<pre><code class="pony">fun box ilong()
+<pre><code class="language-pony">fun box ilong()
 : ILong val
 </code></pre>
-
 <h4 id="returns_88">Returns<a class="headerlink" href="#returns_88" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ILong/">ILong</a> val</li>
@@ -10381,10 +10291,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="isize">isize<a class="headerlink" href="#isize" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L8">[Source]</a></span></p>
-<pre><code class="pony">fun box isize()
+<pre><code class="language-pony">fun box isize()
 : ISize val
 </code></pre>
-
 <h4 id="returns_89">Returns<a class="headerlink" href="#returns_89" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ISize/">ISize</a> val</li>
@@ -10392,10 +10301,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="u8">u8<a class="headerlink" href="#u8" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L10">[Source]</a></span></p>
-<pre><code class="pony">fun box u8()
+<pre><code class="language-pony">fun box u8()
 : U8 val
 </code></pre>
-
 <h4 id="returns_90">Returns<a class="headerlink" href="#returns_90" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U8/">U8</a> val</li>
@@ -10403,10 +10311,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="u16">u16<a class="headerlink" href="#u16" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L11">[Source]</a></span></p>
-<pre><code class="pony">fun box u16()
+<pre><code class="language-pony">fun box u16()
 : U16 val
 </code></pre>
-
 <h4 id="returns_91">Returns<a class="headerlink" href="#returns_91" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U16/">U16</a> val</li>
@@ -10414,10 +10321,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="u32">u32<a class="headerlink" href="#u32" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L12">[Source]</a></span></p>
-<pre><code class="pony">fun box u32()
+<pre><code class="language-pony">fun box u32()
 : U32 val
 </code></pre>
-
 <h4 id="returns_92">Returns<a class="headerlink" href="#returns_92" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -10425,10 +10331,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="u64">u64<a class="headerlink" href="#u64" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L13">[Source]</a></span></p>
-<pre><code class="pony">fun box u64()
+<pre><code class="language-pony">fun box u64()
 : U64 val
 </code></pre>
-
 <h4 id="returns_93">Returns<a class="headerlink" href="#returns_93" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -10436,10 +10341,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="u128">u128<a class="headerlink" href="#u128" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L14">[Source]</a></span></p>
-<pre><code class="pony">fun box u128()
+<pre><code class="language-pony">fun box u128()
 : U128 val
 </code></pre>
-
 <h4 id="returns_94">Returns<a class="headerlink" href="#returns_94" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128/">U128</a> val</li>
@@ -10447,10 +10351,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="ulong">ulong<a class="headerlink" href="#ulong" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L15">[Source]</a></span></p>
-<pre><code class="pony">fun box ulong()
+<pre><code class="language-pony">fun box ulong()
 : ULong val
 </code></pre>
-
 <h4 id="returns_95">Returns<a class="headerlink" href="#returns_95" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ULong/">ULong</a> val</li>
@@ -10458,10 +10361,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="usize">usize<a class="headerlink" href="#usize" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L16">[Source]</a></span></p>
-<pre><code class="pony">fun box usize()
+<pre><code class="language-pony">fun box usize()
 : USize val
 </code></pre>
-
 <h4 id="returns_96">Returns<a class="headerlink" href="#returns_96" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-USize/">USize</a> val</li>
@@ -10469,10 +10371,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="f32">f32<a class="headerlink" href="#f32" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L18">[Source]</a></span></p>
-<pre><code class="pony">fun box f32()
+<pre><code class="language-pony">fun box f32()
 : F32 val
 </code></pre>
-
 <h4 id="returns_97">Returns<a class="headerlink" href="#returns_97" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-F32/">F32</a> val</li>
@@ -10480,10 +10381,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="f64">f64<a class="headerlink" href="#f64" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L19">[Source]</a></span></p>
-<pre><code class="pony">fun box f64()
+<pre><code class="language-pony">fun box f64()
 : F64 val
 </code></pre>
-
 <h4 id="returns_98">Returns<a class="headerlink" href="#returns_98" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-F64/">F64</a> val</li>
@@ -10491,10 +10391,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="i8_unsafe">i8_unsafe<a class="headerlink" href="#i8_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L21">[Source]</a></span></p>
-<pre><code class="pony">fun box i8_unsafe()
+<pre><code class="language-pony">fun box i8_unsafe()
 : I8 val
 </code></pre>
-
 <h4 id="returns_99">Returns<a class="headerlink" href="#returns_99" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I8/">I8</a> val</li>
@@ -10502,10 +10401,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="i16_unsafe">i16_unsafe<a class="headerlink" href="#i16_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L28">[Source]</a></span></p>
-<pre><code class="pony">fun box i16_unsafe()
+<pre><code class="language-pony">fun box i16_unsafe()
 : I16 val
 </code></pre>
-
 <h4 id="returns_100">Returns<a class="headerlink" href="#returns_100" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I16/">I16</a> val</li>
@@ -10513,10 +10411,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="i32_unsafe">i32_unsafe<a class="headerlink" href="#i32_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L35">[Source]</a></span></p>
-<pre><code class="pony">fun box i32_unsafe()
+<pre><code class="language-pony">fun box i32_unsafe()
 : I32 val
 </code></pre>
-
 <h4 id="returns_101">Returns<a class="headerlink" href="#returns_101" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I32/">I32</a> val</li>
@@ -10524,10 +10421,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="i64_unsafe">i64_unsafe<a class="headerlink" href="#i64_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L42">[Source]</a></span></p>
-<pre><code class="pony">fun box i64_unsafe()
+<pre><code class="language-pony">fun box i64_unsafe()
 : I64 val
 </code></pre>
-
 <h4 id="returns_102">Returns<a class="headerlink" href="#returns_102" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I64/">I64</a> val</li>
@@ -10535,10 +10431,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="i128_unsafe">i128_unsafe<a class="headerlink" href="#i128_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L49">[Source]</a></span></p>
-<pre><code class="pony">fun box i128_unsafe()
+<pre><code class="language-pony">fun box i128_unsafe()
 : I128 val
 </code></pre>
-
 <h4 id="returns_103">Returns<a class="headerlink" href="#returns_103" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I128/">I128</a> val</li>
@@ -10546,10 +10441,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="ilong_unsafe">ilong_unsafe<a class="headerlink" href="#ilong_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L56">[Source]</a></span></p>
-<pre><code class="pony">fun box ilong_unsafe()
+<pre><code class="language-pony">fun box ilong_unsafe()
 : ILong val
 </code></pre>
-
 <h4 id="returns_104">Returns<a class="headerlink" href="#returns_104" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ILong/">ILong</a> val</li>
@@ -10557,10 +10451,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="isize_unsafe">isize_unsafe<a class="headerlink" href="#isize_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L63">[Source]</a></span></p>
-<pre><code class="pony">fun box isize_unsafe()
+<pre><code class="language-pony">fun box isize_unsafe()
 : ISize val
 </code></pre>
-
 <h4 id="returns_105">Returns<a class="headerlink" href="#returns_105" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ISize/">ISize</a> val</li>
@@ -10568,10 +10461,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="u8_unsafe">u8_unsafe<a class="headerlink" href="#u8_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L70">[Source]</a></span></p>
-<pre><code class="pony">fun box u8_unsafe()
+<pre><code class="language-pony">fun box u8_unsafe()
 : U8 val
 </code></pre>
-
 <h4 id="returns_106">Returns<a class="headerlink" href="#returns_106" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U8/">U8</a> val</li>
@@ -10579,10 +10471,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="u16_unsafe">u16_unsafe<a class="headerlink" href="#u16_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L77">[Source]</a></span></p>
-<pre><code class="pony">fun box u16_unsafe()
+<pre><code class="language-pony">fun box u16_unsafe()
 : U16 val
 </code></pre>
-
 <h4 id="returns_107">Returns<a class="headerlink" href="#returns_107" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U16/">U16</a> val</li>
@@ -10590,10 +10481,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="u32_unsafe">u32_unsafe<a class="headerlink" href="#u32_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L84">[Source]</a></span></p>
-<pre><code class="pony">fun box u32_unsafe()
+<pre><code class="language-pony">fun box u32_unsafe()
 : U32 val
 </code></pre>
-
 <h4 id="returns_108">Returns<a class="headerlink" href="#returns_108" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -10601,10 +10491,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="u64_unsafe">u64_unsafe<a class="headerlink" href="#u64_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L91">[Source]</a></span></p>
-<pre><code class="pony">fun box u64_unsafe()
+<pre><code class="language-pony">fun box u64_unsafe()
 : U64 val
 </code></pre>
-
 <h4 id="returns_109">Returns<a class="headerlink" href="#returns_109" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -10612,10 +10501,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="u128_unsafe">u128_unsafe<a class="headerlink" href="#u128_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L98">[Source]</a></span></p>
-<pre><code class="pony">fun box u128_unsafe()
+<pre><code class="language-pony">fun box u128_unsafe()
 : U128 val
 </code></pre>
-
 <h4 id="returns_110">Returns<a class="headerlink" href="#returns_110" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U128/">U128</a> val</li>
@@ -10623,10 +10511,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="ulong_unsafe">ulong_unsafe<a class="headerlink" href="#ulong_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L105">[Source]</a></span></p>
-<pre><code class="pony">fun box ulong_unsafe()
+<pre><code class="language-pony">fun box ulong_unsafe()
 : ULong val
 </code></pre>
-
 <h4 id="returns_111">Returns<a class="headerlink" href="#returns_111" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ULong/">ULong</a> val</li>
@@ -10634,10 +10521,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="usize_unsafe">usize_unsafe<a class="headerlink" href="#usize_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L112">[Source]</a></span></p>
-<pre><code class="pony">fun box usize_unsafe()
+<pre><code class="language-pony">fun box usize_unsafe()
 : USize val
 </code></pre>
-
 <h4 id="returns_112">Returns<a class="headerlink" href="#returns_112" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-USize/">USize</a> val</li>
@@ -10645,10 +10531,9 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="f32_unsafe">f32_unsafe<a class="headerlink" href="#f32_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L119">[Source]</a></span></p>
-<pre><code class="pony">fun box f32_unsafe()
+<pre><code class="language-pony">fun box f32_unsafe()
 : F32 val
 </code></pre>
-
 <h4 id="returns_113">Returns<a class="headerlink" href="#returns_113" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-F32/">F32</a> val</li>
@@ -10656,21 +10541,19 @@ If this is negative, the result is undefined.</p>
 <hr />
 <h3 id="f64_unsafe">f64_unsafe<a class="headerlink" href="#f64_unsafe" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/real/#L126">[Source]</a></span></p>
-<pre><code class="pony">fun box f64_unsafe()
+<pre><code class="language-pony">fun box f64_unsafe()
 : F64 val
 </code></pre>
-
 <h4 id="returns_114">Returns<a class="headerlink" href="#returns_114" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-F64/">F64</a> val</li>
 </ul>
 <hr />
 <h3 id="compare">compare<a class="headerlink" href="#compare" title="Permanent link">&para;</a></h3>
-<pre><code class="pony">fun box compare(
+<pre><code class="language-pony">fun box compare(
   that: box-&gt;A)
 : (Less val | Equal val | Greater val)
 </code></pre>
-
 <h4 id="parameters_37">Parameters<a class="headerlink" href="#parameters_37" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: box-&gt;A</li>

@@ -7102,10 +7102,9 @@
                 <h1 id="listnodesa-a-n-listnodea-read">ListNodes[A: A, N: <a href="../collections-ListNode/">ListNode</a>[A] #read]<a class="headerlink" href="#listnodesa-a-n-listnodea-read" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/collections/list/#L677">[Source]</a></span></p>
 <p>Iterate over the nodes in a list.</p>
-<pre><code class="pony">class ref ListNodes[A: A, N: ListNode[A] #read] is
+<pre><code class="language-pony">class ref ListNodes[A: A, N: ListNode[A] #read] is
   Iterator[N] ref
 </code></pre>
-
 <h4 id="implements">Implements<a class="headerlink" href="#implements" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Iterator/">Iterator</a>[N] ref</li>
@@ -7115,12 +7114,11 @@
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/list/#L684">[Source]</a></span></p>
 <p>Keep the next list node to be examined.</p>
-<pre><code class="pony">new ref create(
+<pre><code class="language-pony">new ref create(
   head: (N | None val),
   reverse: Bool val = false)
 : ListNodes[A, N] ref^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>head: (N | <a href="../builtin-None/">None</a> val)</li>
@@ -7135,10 +7133,9 @@
 <h3 id="has_next">has_next<a class="headerlink" href="#has_next" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/list/#L691">[Source]</a></span></p>
 <p>If we have a list node, we have more values.</p>
-<pre><code class="pony">fun box has_next()
+<pre><code class="language-pony">fun box has_next()
 : Bool val
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7147,10 +7144,9 @@
 <h3 id="next">next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/list/#L697">[Source]</a></span></p>
 <p>Get the list node and replace it with the next one.</p>
-<pre><code class="pony">fun ref next()
+<pre><code class="language-pony">fun ref next()
 : N ?
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>N ?</li>

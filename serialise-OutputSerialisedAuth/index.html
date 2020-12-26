@@ -7089,17 +7089,15 @@ some output stream, such as a file or socket. A type with the SerialiseAuth
 capability should usually not also have OutputSerialisedAuth, as the
 combination gives the holder the ability to examine the bitwise contents of
 any object it has a reference to.</p>
-<pre><code class="pony">primitive val OutputSerialisedAuth
+<pre><code class="language-pony">primitive val OutputSerialisedAuth
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/serialise/serialise/#L65">[Source]</a></span></p>
-<pre><code class="pony">new val create(
+<pre><code class="language-pony">new val create(
   auth: AmbientAuth val)
 : OutputSerialisedAuth val^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>auth: <a href="../builtin-AmbientAuth/">AmbientAuth</a> val</li>
@@ -7112,11 +7110,10 @@ any object it has a reference to.</p>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/serialise/serialise/#L65">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: OutputSerialisedAuth val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">OutputSerialisedAuth</a> val</li>
@@ -7128,11 +7125,10 @@ any object it has a reference to.</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/serialise/serialise/#L65">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: OutputSerialisedAuth val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">OutputSerialisedAuth</a> val</li>

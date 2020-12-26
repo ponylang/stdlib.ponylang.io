@@ -7023,18 +7023,16 @@
 <li><code>loc</code> is the location log was called from</li>
 </ul>
 <p>See <code>DefaultLogFormatter</code> for an example of how to implement a LogFormatter.</p>
-<pre><code class="pony">interface val LogFormatter
+<pre><code class="language-pony">interface val LogFormatter
 </code></pre>
-
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/logger/logger/#L152">[Source]</a></span></p>
-<pre><code class="pony">fun box apply(
+<pre><code class="language-pony">fun box apply(
   msg: String val,
   loc: SourceLoc val)
 : String val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>msg: <a href="../builtin-String/">String</a> val</li>

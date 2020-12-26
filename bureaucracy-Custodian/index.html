@@ -7125,7 +7125,7 @@ it disposes of the actors in its set and then clears the set.</p>
 <p>Imagine you have a program with 3 actors that you need to shutdown when it
 receives a TERM signal. We can set up a Custodian that knows about each
 of our actors and when a TERM signal is received, is disposed of.</p>
-<pre><code class="pony">use &quot;bureaucracy&quot;
+<pre><code class="language-pony">use &quot;bureaucracy&quot;
 use &quot;signals&quot;
 
 actor Actor1
@@ -7160,17 +7160,14 @@ class TermHandler is SignalNotify
     _custodian.dispose()
     true
 </code></pre>
-
-<pre><code class="pony">actor tag Custodian
+<pre><code class="language-pony">actor tag Custodian
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/bureaucracy/custodian/#L21">[Source]</a></span></p>
-<pre><code class="pony">new tag create()
+<pre><code class="language-pony">new tag create()
 : Custodian tag^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">Custodian</a> tag^</li>
@@ -7180,10 +7177,9 @@ class TermHandler is SignalNotify
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/bureaucracy/custodian/#L71">[Source]</a></span></p>
 <p>Add an actor to be disposed of.</p>
-<pre><code class="pony">be apply(
+<pre><code class="language-pony">be apply(
   worker: DisposableActor tag)
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>worker: <a href="../builtin-DisposableActor/">DisposableActor</a> tag</li>
@@ -7192,10 +7188,9 @@ class TermHandler is SignalNotify
 <h3 id="remove">remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/bureaucracy/custodian/#L77">[Source]</a></span></p>
 <p>Removes an actor from the set of things to be disposed.</p>
-<pre><code class="pony">be remove(
+<pre><code class="language-pony">be remove(
   worker: DisposableActor tag)
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>worker: <a href="../builtin-DisposableActor/">DisposableActor</a> tag</li>
@@ -7204,9 +7199,8 @@ class TermHandler is SignalNotify
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/bureaucracy/custodian/#L83">[Source]</a></span></p>
 <p>Dispose of the actors in the set and then clear the set.</p>
-<pre><code class="pony">be dispose()
+<pre><code class="language-pony">be dispose()
 </code></pre>
-
 <hr />
                 
                   

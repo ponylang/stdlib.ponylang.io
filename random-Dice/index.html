@@ -7114,18 +7114,16 @@
                 <h1 id="dice">Dice<a class="headerlink" href="#dice" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/random/dice/#L1">[Source]</a></span></p>
 <p>A simple dice roller.</p>
-<pre><code class="pony">class ref Dice
+<pre><code class="language-pony">class ref Dice
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/random/dice/#L7">[Source]</a></span></p>
 <p>Initialise with a random number generator.</p>
-<pre><code class="pony">new ref create(
+<pre><code class="language-pony">new ref create(
   from: Random ref)
 : Dice ref^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>from: <a href="../random-Random/">Random</a> ref</li>
@@ -7145,12 +7143,11 @@
 <p>Return the sum of <code>count</code> rolls of a die with the given number of <code>sides</code>.
 The die is numbered from 1 to <code>sides</code>. For example, count = 2 and
 sides = 6 will return a value between 2 and 12.</p>
-<pre><code class="pony">fun ref apply(
+<pre><code class="language-pony">fun ref apply(
   count: U64 val,
   sides: U64 val)
 : U64 val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>count: <a href="../builtin-U64/">U64</a> val</li>

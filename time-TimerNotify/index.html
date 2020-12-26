@@ -7036,9 +7036,8 @@
                 <h1 id="timernotify">TimerNotify<a class="headerlink" href="#timernotify" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/time/timer_notify/#L1">[Source]</a></span></p>
 <p>Notifications for timer.</p>
-<pre><code class="pony">interface ref TimerNotify
+<pre><code class="language-pony">interface ref TimerNotify
 </code></pre>
-
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/time/timer_notify/#L5">[Source]</a></span></p>
@@ -7051,12 +7050,11 @@ last time your timer fired. Non 1 values for a timer are rare and indicate
 a system under heavy load.</p>
 <p>Return true to reschedule the timer (if it has an interval), or
 false to cancel the timer (even if it has an interval).</p>
-<pre><code class="pony">fun ref apply(
+<pre><code class="language-pony">fun ref apply(
   timer: Timer ref,
   count: U64 val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>timer: <a href="../time-Timer/">Timer</a> ref</li>
@@ -7071,11 +7069,10 @@ false to cancel the timer (even if it has an interval).</p>
 <p><span class="source-link"><a href="../src/time/timer_notify/#L21">[Source]</a></span></p>
 <p>Called if the timer is cancelled. This is also called if the notifier
 returns false from its <code>apply</code> method.</p>
-<pre><code class="pony">fun ref cancel(
+<pre><code class="language-pony">fun ref cancel(
   timer: Timer ref)
 : None val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>timer: <a href="../time-Timer/">Timer</a> ref</li>

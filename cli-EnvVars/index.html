@@ -7101,16 +7101,14 @@
                 
                 <h1 id="envvars">EnvVars<a class="headerlink" href="#envvars" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/cli/env_vars/#L3">[Source]</a></span></p>
-<pre><code class="pony">primitive val EnvVars
+<pre><code class="language-pony">primitive val EnvVars
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/env_vars/#L3">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : EnvVars val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">EnvVars</a> val^</li>
@@ -7124,16 +7122,15 @@ key=value, into a map of string to string. Can optionally filter for
 keys matching a 'prefix', and will squash resulting keys to lowercase
 iff 'squash' is true.</p>
 <p>So:
-  <PREFIX><KEY>=<VALUE>
+  <code>&lt;PREFIX&gt;&lt;KEY&gt;=&lt;VALUE&gt;</code>
 becomes:
-  {KEY, VALUE} or {key, VALUE}</p>
-<pre><code class="pony">fun box apply(
+  <code>{KEY, VALUE}</code> or <code>{key, VALUE}</code></p>
+<pre><code class="language-pony">fun box apply(
   envs: (Array[String val] box | None val),
   prefix: String val = &quot;&quot;,
   squash: Bool val = false)
 : HashMap[String val, String val, HashEq[String val] val] val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>envs: (<a href="../builtin-Array/">Array</a>[<a href="../builtin-String/">String</a> val] box | <a href="../builtin-None/">None</a> val)</li>
@@ -7147,11 +7144,10 @@ becomes:
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/env_vars/#L4">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: EnvVars val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">EnvVars</a> val</li>
@@ -7163,11 +7159,10 @@ becomes:
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/env_vars/#L4">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: EnvVars val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">EnvVars</a> val</li>

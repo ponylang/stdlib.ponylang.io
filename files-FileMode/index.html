@@ -7370,16 +7370,14 @@ operating systems, the mapping will be approximate. For example, on Windows,
 if the file is readable all the read Bools will be set, and if the file is
 writeable, all the write Bools will be set.</p>
 <p>The default mode is read/write for the owner, read-only for everyone else.</p>
-<pre><code class="pony">class ref FileMode
+<pre><code class="language-pony">class ref FileMode
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file_mode/#L1">[Source]</a></span></p>
-<pre><code class="pony">new iso create()
+<pre><code class="language-pony">new iso create()
 : FileMode iso^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">FileMode</a> iso^</li>
@@ -7438,10 +7436,9 @@ writeable, all the write Bools will be set.</p>
 <h3 id="exec">exec<a class="headerlink" href="#exec" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file_mode/#L46">[Source]</a></span></p>
 <p>Set the executable flag for everyone.</p>
-<pre><code class="pony">fun ref exec()
+<pre><code class="language-pony">fun ref exec()
 : None val
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
@@ -7450,10 +7447,9 @@ writeable, all the write Bools will be set.</p>
 <h3 id="shared">shared<a class="headerlink" href="#shared" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file_mode/#L54">[Source]</a></span></p>
 <p>Set the write flag for everyone to the same as owner_write.</p>
-<pre><code class="pony">fun ref shared()
+<pre><code class="language-pony">fun ref shared()
 : None val
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
@@ -7462,10 +7458,9 @@ writeable, all the write Bools will be set.</p>
 <h3 id="group">group<a class="headerlink" href="#group" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file_mode/#L61">[Source]</a></span></p>
 <p>Clear all of the any-user flags.</p>
-<pre><code class="pony">fun ref group()
+<pre><code class="language-pony">fun ref group()
 : None val
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
@@ -7474,10 +7469,9 @@ writeable, all the write Bools will be set.</p>
 <h3 id="private">private<a class="headerlink" href="#private" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file_mode/#L69">[Source]</a></span></p>
 <p>Clear all of the group and any-user flags.</p>
-<pre><code class="pony">fun ref private()
+<pre><code class="language-pony">fun ref private()
 : None val
 </code></pre>
-
 <h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>

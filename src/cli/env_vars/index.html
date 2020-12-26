@@ -6913,7 +6913,7 @@
                 
                   <h1>env_vars.pony</h1>
                 
-                <pre><code class="pony-full-source">use &quot;collections&quot;
+                <pre><code class="language-pony-full-source">use &quot;collections&quot;
 
 primitive EnvVars
   fun apply(
@@ -6929,9 +6929,9 @@ primitive EnvVars
     iff 'squash' is true.
 
     So:
-      &lt;PREFIX&gt;&lt;KEY&gt;=&lt;VALUE&gt;
+      `&lt;PREFIX&gt;&lt;KEY&gt;=&lt;VALUE&gt;`
     becomes:
-      {KEY, VALUE} or {key, VALUE}
+      `{KEY, VALUE}` or `{key, VALUE}`
     &quot;&quot;&quot;
     let envsmap = recover Map[String, String]() end
     match envs

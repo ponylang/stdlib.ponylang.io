@@ -7192,19 +7192,17 @@
                 <h1 id="option">Option<a class="headerlink" href="#option" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/cli/command/#L63">[Source]</a></span></p>
 <p>Option contains a spec and an effective value for a given option.</p>
-<pre><code class="pony">class val Option
+<pre><code class="language-pony">class val Option
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command/#L70">[Source]</a></span></p>
-<pre><code class="pony">new val create(
+<pre><code class="language-pony">new val create(
   spec': OptionSpec val,
   value': (Bool val | String val | I64 val | 
     U64 val | F64 val | _StringSeq val))
 : Option val^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>spec': <a href="../cli-OptionSpec/">OptionSpec</a> val</li>
@@ -7219,10 +7217,9 @@
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="spec">spec<a class="headerlink" href="#spec" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command/#L77">[Source]</a></span></p>
-<pre><code class="pony">fun box spec()
+<pre><code class="language-pony">fun box spec()
 : OptionSpec val
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../cli-OptionSpec/">OptionSpec</a> val</li>
@@ -7231,10 +7228,9 @@
 <h3 id="bool">bool<a class="headerlink" href="#bool" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command/#L79">[Source]</a></span></p>
 <p>Returns the option value as a Bool, defaulting to false.</p>
-<pre><code class="pony">fun box bool()
+<pre><code class="language-pony">fun box bool()
 : Bool val
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7243,10 +7239,9 @@
 <h3 id="string">string<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command/#L85">[Source]</a></span></p>
 <p>Returns the option value as a String, defaulting to empty.</p>
-<pre><code class="pony">fun box string()
+<pre><code class="language-pony">fun box string()
 : String val
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -7255,10 +7250,9 @@
 <h3 id="i64">i64<a class="headerlink" href="#i64" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command/#L91">[Source]</a></span></p>
 <p>Returns the option value as an I64, defaulting to 0.</p>
-<pre><code class="pony">fun box i64()
+<pre><code class="language-pony">fun box i64()
 : I64 val
 </code></pre>
-
 <h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I64/">I64</a> val</li>
@@ -7267,10 +7261,9 @@
 <h3 id="u64">u64<a class="headerlink" href="#u64" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command/#L97">[Source]</a></span></p>
 <p>Returns the option value as an U64, defaulting to 0.</p>
-<pre><code class="pony">fun box u64()
+<pre><code class="language-pony">fun box u64()
 : U64 val
 </code></pre>
-
 <h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -7279,10 +7272,9 @@
 <h3 id="f64">f64<a class="headerlink" href="#f64" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command/#L103">[Source]</a></span></p>
 <p>Returns the option value as an F64, defaulting to 0.0.</p>
-<pre><code class="pony">fun box f64()
+<pre><code class="language-pony">fun box f64()
 : F64 val
 </code></pre>
-
 <h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-F64/">F64</a> val</li>
@@ -7291,10 +7283,9 @@
 <h3 id="string_seq">string_seq<a class="headerlink" href="#string_seq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command/#L109">[Source]</a></span></p>
 <p>Returns the option value as a ReadSeq[String], defaulting to empty.</p>
-<pre><code class="pony">fun box string_seq()
+<pre><code class="language-pony">fun box string_seq()
 : ReadSeq[String val] val
 </code></pre>
-
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-ReadSeq/">ReadSeq</a>[<a href="../builtin-String/">String</a> val] val</li>
@@ -7302,10 +7293,9 @@
 <hr />
 <h3 id="deb_string">deb_string<a class="headerlink" href="#deb_string" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command/#L119">[Source]</a></span></p>
-<pre><code class="pony">fun box deb_string()
+<pre><code class="language-pony">fun box deb_string()
 : String val
 </code></pre>
-
 <h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>

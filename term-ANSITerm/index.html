@@ -7120,20 +7120,18 @@
                 <h1 id="ansiterm">ANSITerm<a class="headerlink" href="#ansiterm" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/term/ansi_term/#L45">[Source]</a></span></p>
 <p>Handles ANSI escape codes from stdin.</p>
-<pre><code class="pony">actor tag ANSITerm
+<pre><code class="language-pony">actor tag ANSITerm
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi_term/#L59">[Source]</a></span></p>
 <p>Create a new ANSI term.</p>
-<pre><code class="pony">new tag create(
+<pre><code class="language-pony">new tag create(
   notify: ANSINotify iso,
   source: DisposableActor tag,
   timers: Timers tag = reference)
 : ANSITerm tag^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>notify: <a href="../term-ANSINotify/">ANSINotify</a> iso</li>
@@ -7149,10 +7147,9 @@
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi_term/#L77">[Source]</a></span></p>
 <p>Receives input from stdin.</p>
-<pre><code class="pony">be apply(
+<pre><code class="language-pony">be apply(
   data: Array[U8 val] iso)
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-Array/">Array</a>[<a href="../builtin-U8/">U8</a> val] iso</li>
@@ -7161,10 +7158,9 @@
 <h3 id="prompt">prompt<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi_term/#L187">[Source]</a></span></p>
 <p>Pass a prompt along to the notifier.</p>
-<pre><code class="pony">be prompt(
+<pre><code class="language-pony">be prompt(
   value: String val)
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>value: <a href="../builtin-String/">String</a> val</li>
@@ -7172,17 +7168,15 @@
 <hr />
 <h3 id="size">size<a class="headerlink" href="#size" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi_term/#L193">[Source]</a></span></p>
-<pre><code class="pony">be size()
+<pre><code class="language-pony">be size()
 </code></pre>
-
 <hr />
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi_term/#L206">[Source]</a></span></p>
 <p>Stop accepting input, inform the notifier we have closed, and dispose of
 our source.</p>
-<pre><code class="pony">be dispose()
+<pre><code class="language-pony">be dispose()
 </code></pre>
-
 <hr />
                 
                   

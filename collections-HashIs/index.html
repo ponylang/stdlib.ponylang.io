@@ -7137,11 +7137,10 @@
                 
                 <h1 id="hashisa-a">HashIs[A: A]<a class="headerlink" href="#hashisa-a" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/collections/hashable/#L84">[Source]</a></span></p>
-<pre><code class="pony">primitive val HashIs[A: A] is
+<pre><code class="language-pony">primitive val HashIs[A: A] is
   HashFunction[A] val,
   HashFunction64[A] val
 </code></pre>
-
 <h4 id="implements">Implements<a class="headerlink" href="#implements" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../collections-HashFunction/">HashFunction</a>[A] val</li>
@@ -7151,10 +7150,9 @@
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/hashable/#L84">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : HashIs[A] val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">HashIs</a>[A] val^</li>
@@ -7164,11 +7162,10 @@
 <h3 id="hash">hash<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/hashable/#L85">[Source]</a></span></p>
 <p>Hash the identity rather than the contents.</p>
-<pre><code class="pony">fun box hash(
+<pre><code class="language-pony">fun box hash(
   x: box-&gt;A!)
 : USize val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>x: box-&gt;A!</li>
@@ -7181,11 +7178,10 @@
 <h3 id="hash64">hash64<a class="headerlink" href="#hash64" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/hashable/#L91">[Source]</a></span></p>
 <p>Hash the identity rather than the contents.</p>
-<pre><code class="pony">fun box hash64(
+<pre><code class="language-pony">fun box hash64(
   x: box-&gt;A!)
 : U64 val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>x: box-&gt;A!</li>
@@ -7198,12 +7194,11 @@
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/hashable/#L97">[Source]</a></span></p>
 <p>Determine equality by identity rather than structurally.</p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   x: box-&gt;A!,
   y: box-&gt;A!)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>x: box-&gt;A!</li>
@@ -7216,11 +7211,10 @@
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/hashable/#L85">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: HashIs[A] val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">HashIs</a>[A] val</li>

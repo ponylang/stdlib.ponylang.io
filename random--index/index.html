@@ -6993,10 +6993,9 @@ a trait for implementing your own random number generator.</p>
 <p>Seed values can contain up to 128 bits of randomness in the form of two U64s.
 A common non-cryptographically secure way to seed a generator is with
 <code>Time.now</code>.</p>
-<pre><code class="pony">let rand = Rand
+<pre><code class="language-pony">let rand = Rand
 let n = rand.next()
 </code></pre>
-
 <h2 id="public-types">Public Types<a class="headerlink" href="#public-types" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../random-XorShift128Plus/">class XorShift128Plus</a></li>

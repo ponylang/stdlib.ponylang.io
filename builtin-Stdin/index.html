@@ -7038,7 +7038,7 @@
 <p>Asynchronous access to stdin. The constructor is private to ensure that
 access is provided only via an environment.</p>
 <p>Reading from stdin is done by registering an <code>InputNotify</code>:</p>
-<pre><code class="pony">actor Main
+<pre><code class="language-pony">actor Main
   new create(env: Env) =&gt;
     // do not forget to call `env.input.dispose` at some point
     env.input(
@@ -7051,21 +7051,18 @@ access is provided only via an environment.</p>
       end,
       512)
 </code></pre>
-
 <p><strong>Note:</strong> For reading user input from a terminal, use the <a href="../term--index/">term</a> package.</p>
-<pre><code class="pony">actor tag Stdin
+<pre><code class="language-pony">actor tag Stdin
 </code></pre>
-
 <h2 id="public-behaviours">Public Behaviours<a class="headerlink" href="#public-behaviours" title="Permanent link">&para;</a></h2>
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/stdin/#L78">[Source]</a></span></p>
 <p>Set the notifier. Optionally, also sets the chunk size, dictating the
 maximum number of bytes of each chunk that will be passed to the notifier.</p>
-<pre><code class="pony">be apply(
+<pre><code class="language-pony">be apply(
   notify: (InputNotify iso | None val),
   chunk_size: USize val = 32)
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>notify: (<a href="../builtin-InputNotify/">InputNotify</a> iso | <a href="../builtin-None/">None</a> val)</li>
@@ -7075,9 +7072,8 @@ maximum number of bytes of each chunk that will be passed to the notifier.</p>
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/stdin/#L86">[Source]</a></span></p>
 <p>Clear the notifier in order to shut down input.</p>
-<pre><code class="pony">be dispose()
+<pre><code class="language-pony">be dispose()
 </code></pre>
-
 <hr />
                 
                   

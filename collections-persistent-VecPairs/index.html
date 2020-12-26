@@ -7083,17 +7083,15 @@
                 
                 <h1 id="vecpairsa-any-share">VecPairs[A: <a href="../builtin-Any/">Any</a> #share]<a class="headerlink" href="#vecpairsa-any-share" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/collections-persistent/vec/#L280">[Source]</a></span></p>
-<pre><code class="pony">class ref VecPairs[A: Any #share]
+<pre><code class="language-pony">class ref VecPairs[A: Any #share]
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/vec/#L285">[Source]</a></span></p>
-<pre><code class="pony">new ref create(
+<pre><code class="language-pony">new ref create(
   v: Vec[A] val)
 : VecPairs[A] ref^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>v: <a href="../collections-persistent-Vec/">Vec</a>[A] val</li>
@@ -7106,10 +7104,9 @@
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="has_next">has_next<a class="headerlink" href="#has_next" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/vec/#L288">[Source]</a></span></p>
-<pre><code class="pony">fun box has_next()
+<pre><code class="language-pony">fun box has_next()
 : Bool val
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7117,10 +7114,9 @@
 <hr />
 <h3 id="next">next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/vec/#L291">[Source]</a></span></p>
-<pre><code class="pony">fun ref next()
+<pre><code class="language-pony">fun ref next()
 : (USize val , A) ?
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-USize/">USize</a> val , A) ?</li>

@@ -7103,19 +7103,17 @@
 <p><span class="source-link"><a href="../src/serialise/serialise/#L78">[Source]</a></span></p>
 <p>This represents serialised data. How it can be used depends on the other
 capabilities a caller holds.</p>
-<pre><code class="pony">class val Serialised
+<pre><code class="language-pony">class val Serialised
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/serialise/serialise/#L85">[Source]</a></span></p>
 <p>A caller with SerialiseAuth can create serialised data from any object.</p>
-<pre><code class="pony">new ref create(
+<pre><code class="language-pony">new ref create(
   auth: SerialiseAuth val,
   data: Any box)
 : Serialised ref^ ?
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>auth: <a href="../serialise-SerialiseAuth/">SerialiseAuth</a> val</li>
@@ -7133,12 +7131,11 @@ arbitrary set of bytes. It is the caller's responsibility to ensure that
 the data is in fact well-formed serialised data. This is currently the most
 dangerous method, as there is currently no way to check validity at
 runtime.</p>
-<pre><code class="pony">new ref input(
+<pre><code class="language-pony">new ref input(
   auth: InputSerialisedAuth val,
   data: Array[U8 val] val)
 : Serialised ref^
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>auth: <a href="../serialise-InputSerialisedAuth/">InputSerialisedAuth</a> val</li>
@@ -7154,11 +7151,10 @@ runtime.</p>
 <p><span class="source-link"><a href="../src/serialise/serialise/#L109">[Source]</a></span></p>
 <p>A caller with DeserialiseAuth can create an object graph from serialised
 data.</p>
-<pre><code class="pony">fun box apply(
+<pre><code class="language-pony">fun box apply(
   auth: DeserialiseAuth val)
 : Any iso^ ?
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>auth: <a href="../serialise-DeserialiseAuth/">DeserialiseAuth</a> val</li>
@@ -7173,11 +7169,10 @@ data.</p>
 <p>A caller with OutputSerialisedAuth can gain access to the underlying bytes
 that contain the serialised data. This can be used to write those bytes to,
 for example, a file or socket.</p>
-<pre><code class="pony">fun box output(
+<pre><code class="language-pony">fun box output(
   auth: OutputSerialisedAuth val)
 : Array[U8 val] val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>auth: <a href="../serialise-OutputSerialisedAuth/">OutputSerialisedAuth</a> val</li>

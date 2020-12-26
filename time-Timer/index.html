@@ -7042,7 +7042,7 @@ when it was created.</p>
 <p>The following example waits 5 seconds and then fires every 2
 seconds, and when it fires the <code>TimerNotify</code> object prints how many
 times it has been called:</p>
-<pre><code class="pony">use &quot;time&quot;
+<pre><code class="language-pony">use &quot;time&quot;
 
 actor Main
   new create(env: Env) =&gt;
@@ -7060,22 +7060,19 @@ class Notify is TimerNotify
     _counter = _counter + 1
     true
 </code></pre>
-
-<pre><code class="pony">class ref Timer
+<pre><code class="language-pony">class ref Timer
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/time/timer/#L39">[Source]</a></span></p>
 <p>Create a new timer. The expiration time should be a nanosecond count
 until the first expiration. The interval should also be in nanoseconds.</p>
-<pre><code class="pony">new iso create(
+<pre><code class="language-pony">new iso create(
   notify: TimerNotify iso,
   expiration: U64 val,
   interval: U64 val = 0)
 : Timer iso^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>notify: <a href="../time-TimerNotify/">TimerNotify</a> iso</li>
@@ -7091,13 +7088,12 @@ until the first expiration. The interval should also be in nanoseconds.</p>
 <p><span class="source-link"><a href="../src/time/timer/#L54">[Source]</a></span></p>
 <p>Creates a new timer with an absolute expiration time rather than a relative
 time. The expiration time is wall-clock adjusted system time.</p>
-<pre><code class="pony">new ref abs(
+<pre><code class="language-pony">new ref abs(
   notify: TimerNotify ref,
   expiration: (I64 val , I64 val),
   interval: U64 val = 0)
 : Timer ref^
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>notify: <a href="../time-TimerNotify/">TimerNotify</a> ref</li>

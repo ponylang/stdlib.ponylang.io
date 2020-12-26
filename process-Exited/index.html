@@ -7138,11 +7138,10 @@
                 <h1 id="exited">Exited<a class="headerlink" href="#exited" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/process/_process/#L72">[Source]</a></span></p>
 <p>Process exit status: Process exited with an exit code.</p>
-<pre><code class="pony">class val Exited is
+<pre><code class="language-pony">class val Exited is
   Stringable box,
   Equatable[(Exited val | Signaled val)] ref
 </code></pre>
-
 <h4 id="implements">Implements<a class="headerlink" href="#implements" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Stringable/">Stringable</a> box</li>
@@ -7152,11 +7151,10 @@
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/process/_process/#L78">[Source]</a></span></p>
-<pre><code class="pony">new val create(
+<pre><code class="language-pony">new val create(
   code: I32 val)
 : Exited val^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>code: <a href="../builtin-I32/">I32</a> val</li>
@@ -7170,10 +7168,9 @@
 <h3 id="exit_code">exit_code<a class="headerlink" href="#exit_code" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/process/_process/#L81">[Source]</a></span></p>
 <p>Retrieve the exit code of the exited process.</p>
-<pre><code class="pony">fun box exit_code()
+<pre><code class="language-pony">fun box exit_code()
 : I32 val
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-I32/">I32</a> val</li>
@@ -7181,10 +7178,9 @@
 <hr />
 <h3 id="string">string<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/process/_process/#L87">[Source]</a></span></p>
-<pre><code class="pony">fun box string()
+<pre><code class="language-pony">fun box string()
 : String iso^
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> iso^</li>
@@ -7192,11 +7188,10 @@
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/process/_process/#L95">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   other: (Exited val | Signaled val))
 : Bool val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>other: (<a href="./">Exited</a> val | <a href="../process-Signaled/">Signaled</a> val)</li>
@@ -7208,11 +7203,10 @@
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/compare/#L20">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: (Exited val | Signaled val))
 : Bool val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: (<a href="./">Exited</a> val | <a href="../process-Signaled/">Signaled</a> val)</li>

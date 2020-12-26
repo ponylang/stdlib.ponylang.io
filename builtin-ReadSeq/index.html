@@ -7054,17 +7054,15 @@
                 <h1 id="readseqa-a">ReadSeq[A: A]<a class="headerlink" href="#readseqa-a" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/builtin/read_seq/#L1">[Source]</a></span></p>
 <p>The readable interface of a sequence.</p>
-<pre><code class="pony">interface box ReadSeq[A: A]
+<pre><code class="language-pony">interface box ReadSeq[A: A]
 </code></pre>
-
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="size">size<a class="headerlink" href="#size" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/read_seq/#L5">[Source]</a></span></p>
 <p>Returns the number of elements in the sequence.</p>
-<pre><code class="pony">fun box size()
+<pre><code class="language-pony">fun box size()
 : USize val
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-USize/">USize</a> val</li>
@@ -7074,11 +7072,10 @@
 <p><span class="source-link"><a href="../src/builtin/read_seq/#L10">[Source]</a></span></p>
 <p>Returns the i-th element of the sequence. Raises an error if the index
 is out of bounds. Note that this returns this-&gt;A, not A.</p>
-<pre><code class="pony">fun box apply(
+<pre><code class="language-pony">fun box apply(
   i: USize val)
 : this-&gt;A ?
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>i: <a href="../builtin-USize/">USize</a> val</li>
@@ -7092,10 +7089,9 @@ is out of bounds. Note that this returns this-&gt;A, not A.</p>
 <p><span class="source-link"><a href="../src/builtin/read_seq/#L16">[Source]</a></span></p>
 <p>Returns an iterator over the elements of the sequence. Note that this
 iterates over this-&gt;A, not A.</p>
-<pre><code class="pony">fun box values()
+<pre><code class="language-pony">fun box values()
 : Iterator[this-&gt;A] ref^
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Iterator/">Iterator</a>[this-&gt;A] ref^</li>

@@ -7083,17 +7083,15 @@
                 
                 <h1 id="mapvaluesk-any-share-v-any-share-h-hashfunctionk-val">MapValues[K: <a href="../builtin-Any/">Any</a> #share, V: <a href="../builtin-Any/">Any</a> #share, H: <a href="../collections-HashFunction/">HashFunction</a>[K] val]<a class="headerlink" href="#mapvaluesk-any-share-v-any-share-h-hashfunctionk-val" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/collections-persistent/map/#L145">[Source]</a></span></p>
-<pre><code class="pony">class ref MapValues[K: Any #share, V: Any #share, H: HashFunction[K] val]
+<pre><code class="language-pony">class ref MapValues[K: Any #share, V: Any #share, H: HashFunction[K] val]
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/map/#L148">[Source]</a></span></p>
-<pre><code class="pony">new ref create(
+<pre><code class="language-pony">new ref create(
   m: HashMap[K, V, H] val)
 : MapValues[K, V, H] ref^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>m: <a href="../collections-persistent-HashMap/">HashMap</a>[K, V, H] val</li>
@@ -7106,10 +7104,9 @@
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="has_next">has_next<a class="headerlink" href="#has_next" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/map/#L150">[Source]</a></span></p>
-<pre><code class="pony">fun box has_next()
+<pre><code class="language-pony">fun box has_next()
 : Bool val
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7117,10 +7114,9 @@
 <hr />
 <h3 id="next">next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections-persistent/map/#L152">[Source]</a></span></p>
-<pre><code class="pony">fun ref next()
+<pre><code class="language-pony">fun ref next()
 : val-&gt;V ?
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>val-&gt;V ?</li>

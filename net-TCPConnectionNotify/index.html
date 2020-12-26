@@ -7236,18 +7236,16 @@
 <p>Notifications for TCP connections.</p>
 <p>For an example of using this class please see the documentation for the
 <code>TCPConnection</code> and <code>TCPListener</code> actors.</p>
-<pre><code class="pony">interface ref TCPConnectionNotify
+<pre><code class="language-pony">interface ref TCPConnectionNotify
 </code></pre>
-
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="accepted">accepted<a class="headerlink" href="#accepted" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L8">[Source]</a></span></p>
 <p>Called when a TCPConnection is accepted by a TCPListener.</p>
-<pre><code class="pony">fun ref accepted(
+<pre><code class="language-pony">fun ref accepted(
   conn: TCPConnection ref)
 : None val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
@@ -7263,7 +7261,7 @@
 In order to connect via proxy, return the host &amp; service for the proxy
 server.</p>
 <p>An implementation of this function might look like:</p>
-<pre><code class="pony">let _proxy_host = &quot;some-proxy.example.com&quot;
+<pre><code class="language-pony">let _proxy_host = &quot;some-proxy.example.com&quot;
 let _proxy_service = &quot;80&quot;
 var _destination_host: ( None | String )
 var _destination_service: ( None | String )
@@ -7273,13 +7271,11 @@ fun ref proxy_via(host: String, service: String): (String, String) =&gt;
   _destination_service = service
   ( _proxy_host, _proxy_service )
 </code></pre>
-
-<pre><code class="pony">fun ref proxy_via(
+<pre><code class="language-pony">fun ref proxy_via(
   host: String val,
   service: String val)
 : (String val , String val)
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>host: <a href="../builtin-String/">String</a> val</li>
@@ -7296,12 +7292,11 @@ fun ref proxy_via(host: String, service: String): (String, String) =&gt;
 waiting for a connection to the server to succeed. The count is the number
 of connections we're trying. The notifier will be informed each time the
 count changes, until a connection is made or connect_failed() is called.</p>
-<pre><code class="pony">fun ref connecting(
+<pre><code class="language-pony">fun ref connecting(
   conn: TCPConnection ref,
   count: U32 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
@@ -7315,11 +7310,10 @@ count changes, until a connection is made or connect_failed() is called.</p>
 <h3 id="connected">connected<a class="headerlink" href="#connected" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L44">[Source]</a></span></p>
 <p>Called when we have successfully connected to the server.</p>
-<pre><code class="pony">fun ref connected(
+<pre><code class="language-pony">fun ref connected(
   conn: TCPConnection ref)
 : None val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
@@ -7335,15 +7329,13 @@ count changes, until a connection is made or connect_failed() is called.</p>
 server. At this point, the connection will never be established.</p>
 <p>It is expected to implement proper error handling. You need to opt in to
 ignoring errors, which can be implemented like this:</p>
-<pre><code class="pony">fun ref connect_failed(conn: TCPConnection ref) =&gt;
+<pre><code class="language-pony">fun ref connect_failed(conn: TCPConnection ref) =&gt;
   None
 </code></pre>
-
-<pre><code class="pony">fun ref connect_failed(
+<pre><code class="language-pony">fun ref connect_failed(
   conn: TCPConnection ref)
 : None val
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
@@ -7358,11 +7350,10 @@ ignoring errors, which can be implemented like this:</p>
 <p>A raw TCPConnection has no authentication mechanism. However, when
 protocols are wrapped in other protocols, this can be used to report an
 authentication failure in a lower level protocol (e.g. SSL).</p>
-<pre><code class="pony">fun ref auth_failed(
+<pre><code class="language-pony">fun ref auth_failed(
   conn: TCPConnection ref)
 : None val
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
@@ -7377,12 +7368,11 @@ authentication failure in a lower level protocol (e.g. SSL).</p>
 <p>Called when data is sent on the connection. This gives the notifier an
 opportunity to modify sent data before it is written. To swallow data,
 return an empty string.</p>
-<pre><code class="pony">fun ref sent(
+<pre><code class="language-pony">fun ref sent(
   conn: TCPConnection ref,
   data: (String val | Array[U8 val] val))
 : (String val | Array[U8 val] val)
 </code></pre>
-
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
@@ -7399,12 +7389,11 @@ return an empty string.</p>
 call. This gives the notifier an opportunity to modify the sent data chunks
 before they are written. To swallow the send, return an empty
 Array[String].</p>
-<pre><code class="pony">fun ref sentv(
+<pre><code class="language-pony">fun ref sentv(
   conn: TCPConnection ref,
   data: ByteSeqIter val)
 : ByteSeqIter val
 </code></pre>
-
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
@@ -7423,13 +7412,12 @@ max_size on the TCPConnection. Return false to cause the TCPConnection
 to yield now.</p>
 <p>Includes the number of times during the current behavior, that received has
 been called. This allows the notifier to end reads on a regular basis.</p>
-<pre><code class="pony">fun ref received(
+<pre><code class="language-pony">fun ref received(
   conn: TCPConnection ref,
   data: Array[U8 val] iso,
   times: USize val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
@@ -7446,12 +7434,11 @@ been called. This allows the notifier to end reads on a regular basis.</p>
 <p>Called when the connection has been told to expect a certain quantity of
 bytes. This allows nested notifiers to change the expected quantity, which
 allows a lower level protocol to handle any framing (e.g. SSL).</p>
-<pre><code class="pony">fun ref expect(
+<pre><code class="language-pony">fun ref expect(
   conn: TCPConnection ref,
   qty: USize val)
 : USize val
 </code></pre>
-
 <h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
@@ -7465,11 +7452,10 @@ allows a lower level protocol to handle any framing (e.g. SSL).</p>
 <h3 id="closed">closed<a class="headerlink" href="#closed" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/tcp_connection_notify/#L114">[Source]</a></span></p>
 <p>Called when the connection is closed.</p>
-<pre><code class="pony">fun ref closed(
+<pre><code class="language-pony">fun ref closed(
   conn: TCPConnection ref)
 : None val
 </code></pre>
-
 <h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
@@ -7486,11 +7472,10 @@ respond to this by pausing additional calls to <code>write</code> and <code>writ
 you are informed that pressure has been released. Failure to respond to
 the <code>throttled</code> notification will result in outgoing data queuing in the
 connection and increasing memory usage.</p>
-<pre><code class="pony">fun ref throttled(
+<pre><code class="language-pony">fun ref throttled(
   conn: TCPConnection ref)
 : None val
 </code></pre>
-
 <h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>
@@ -7505,11 +7490,10 @@ connection and increasing memory usage.</p>
 <p>Called when the connection stops experiencing TCP backpressure. Upon
 receiving this notification, you should feel free to start making calls to
 <code>write</code> and <code>writev</code> again.</p>
-<pre><code class="pony">fun ref unthrottled(
+<pre><code class="language-pony">fun ref unthrottled(
   conn: TCPConnection ref)
 : None val
 </code></pre>
-
 <h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li>conn: <a href="../net-TCPConnection/">TCPConnection</a> ref</li>

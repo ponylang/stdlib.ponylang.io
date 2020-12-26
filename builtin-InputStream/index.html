@@ -7036,19 +7036,17 @@
                 <h1 id="inputstream">InputStream<a class="headerlink" href="#inputstream" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/builtin/stdin/#L27">[Source]</a></span></p>
 <p>Asynchronous access to some input stream.</p>
-<pre><code class="pony">interface tag InputStream
+<pre><code class="language-pony">interface tag InputStream
 </code></pre>
-
 <h2 id="public-behaviours">Public Behaviours<a class="headerlink" href="#public-behaviours" title="Permanent link">&para;</a></h2>
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/stdin/#L31">[Source]</a></span></p>
 <p>Set the notifier. Optionally, also sets the chunk size, dictating the
 maximum number of bytes of each chunk that will be passed to the notifier.</p>
-<pre><code class="pony">be apply(
+<pre><code class="language-pony">be apply(
   notify: (InputNotify iso | None val),
   chunk_size: USize val = 32)
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>notify: (<a href="../builtin-InputNotify/">InputNotify</a> iso | <a href="../builtin-None/">None</a> val)</li>
@@ -7058,9 +7056,8 @@ maximum number of bytes of each chunk that will be passed to the notifier.</p>
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/stdin/#L37">[Source]</a></span></p>
 <p>Clear the notifier in order to shut down input.</p>
-<pre><code class="pony">be dispose()
+<pre><code class="language-pony">be dispose()
 </code></pre>
-
 <hr />
                 
                   

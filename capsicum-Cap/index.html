@@ -8542,16 +8542,14 @@
                 <h1 id="cap">Cap<a class="headerlink" href="#cap" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L1">[Source]</a></span></p>
 <p>The Capsicum rights.</p>
-<pre><code class="pony">primitive val Cap
+<pre><code class="language-pony">primitive val Cap
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L1">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : Cap val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">Cap</a> val^</li>
@@ -8564,10 +8562,9 @@
 in which processes may only issue system calls operating on file
 descriptors or reading limited global system state. Access to global name
 spaces, such as file system or IPC name spaces, is prevented.</p>
-<pre><code class="pony">fun box enter()
+<pre><code class="language-pony">fun box enter()
 : Bool val
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -8575,10 +8572,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="read">read<a class="headerlink" href="#read" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L18">[Source]</a></span></p>
-<pre><code class="pony">fun box read()
+<pre><code class="language-pony">fun box read()
 : U64 val
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8586,10 +8582,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="write">write<a class="headerlink" href="#write" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L19">[Source]</a></span></p>
-<pre><code class="pony">fun box write()
+<pre><code class="language-pony">fun box write()
 : U64 val
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8597,10 +8592,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="seek_tell">seek_tell<a class="headerlink" href="#seek_tell" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L20">[Source]</a></span></p>
-<pre><code class="pony">fun box seek_tell()
+<pre><code class="language-pony">fun box seek_tell()
 : U64 val
 </code></pre>
-
 <h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8608,10 +8602,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="seek">seek<a class="headerlink" href="#seek" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L21">[Source]</a></span></p>
-<pre><code class="pony">fun box seek()
+<pre><code class="language-pony">fun box seek()
 : U64 val
 </code></pre>
-
 <h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8619,10 +8612,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="pread">pread<a class="headerlink" href="#pread" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L22">[Source]</a></span></p>
-<pre><code class="pony">fun box pread()
+<pre><code class="language-pony">fun box pread()
 : U64 val
 </code></pre>
-
 <h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8630,10 +8622,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="pwrite">pwrite<a class="headerlink" href="#pwrite" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L23">[Source]</a></span></p>
-<pre><code class="pony">fun box pwrite()
+<pre><code class="language-pony">fun box pwrite()
 : U64 val
 </code></pre>
-
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8641,10 +8632,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="mmap">mmap<a class="headerlink" href="#mmap" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L25">[Source]</a></span></p>
-<pre><code class="pony">fun box mmap()
+<pre><code class="language-pony">fun box mmap()
 : U64 val
 </code></pre>
-
 <h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8652,10 +8642,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="mmap_r">mmap_r<a class="headerlink" href="#mmap_r" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L26">[Source]</a></span></p>
-<pre><code class="pony">fun box mmap_r()
+<pre><code class="language-pony">fun box mmap_r()
 : U64 val
 </code></pre>
-
 <h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8663,10 +8652,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="mmap_w">mmap_w<a class="headerlink" href="#mmap_w" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L27">[Source]</a></span></p>
-<pre><code class="pony">fun box mmap_w()
+<pre><code class="language-pony">fun box mmap_w()
 : U64 val
 </code></pre>
-
 <h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8674,10 +8662,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="mmap_x">mmap_x<a class="headerlink" href="#mmap_x" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L28">[Source]</a></span></p>
-<pre><code class="pony">fun box mmap_x()
+<pre><code class="language-pony">fun box mmap_x()
 : U64 val
 </code></pre>
-
 <h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8685,10 +8672,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="mmap_rw">mmap_rw<a class="headerlink" href="#mmap_rw" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L29">[Source]</a></span></p>
-<pre><code class="pony">fun box mmap_rw()
+<pre><code class="language-pony">fun box mmap_rw()
 : U64 val
 </code></pre>
-
 <h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8696,10 +8682,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="mmap_rx">mmap_rx<a class="headerlink" href="#mmap_rx" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L30">[Source]</a></span></p>
-<pre><code class="pony">fun box mmap_rx()
+<pre><code class="language-pony">fun box mmap_rx()
 : U64 val
 </code></pre>
-
 <h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8707,10 +8692,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="mmap_wx">mmap_wx<a class="headerlink" href="#mmap_wx" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L31">[Source]</a></span></p>
-<pre><code class="pony">fun box mmap_wx()
+<pre><code class="language-pony">fun box mmap_wx()
 : U64 val
 </code></pre>
-
 <h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8718,10 +8702,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="mmap_rwx">mmap_rwx<a class="headerlink" href="#mmap_rwx" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L32">[Source]</a></span></p>
-<pre><code class="pony">fun box mmap_rwx()
+<pre><code class="language-pony">fun box mmap_rwx()
 : U64 val
 </code></pre>
-
 <h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8729,10 +8712,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="creat">creat<a class="headerlink" href="#creat" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L34">[Source]</a></span></p>
-<pre><code class="pony">fun box creat()
+<pre><code class="language-pony">fun box creat()
 : U64 val
 </code></pre>
-
 <h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8740,10 +8722,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="fexecve">fexecve<a class="headerlink" href="#fexecve" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L35">[Source]</a></span></p>
-<pre><code class="pony">fun box fexecve()
+<pre><code class="language-pony">fun box fexecve()
 : U64 val
 </code></pre>
-
 <h4 id="returns_17">Returns<a class="headerlink" href="#returns_17" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8751,10 +8732,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="fsync">fsync<a class="headerlink" href="#fsync" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L36">[Source]</a></span></p>
-<pre><code class="pony">fun box fsync()
+<pre><code class="language-pony">fun box fsync()
 : U64 val
 </code></pre>
-
 <h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8762,10 +8742,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="ftruncate">ftruncate<a class="headerlink" href="#ftruncate" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L37">[Source]</a></span></p>
-<pre><code class="pony">fun box ftruncate()
+<pre><code class="language-pony">fun box ftruncate()
 : U64 val
 </code></pre>
-
 <h4 id="returns_19">Returns<a class="headerlink" href="#returns_19" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8773,10 +8752,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="lookup">lookup<a class="headerlink" href="#lookup" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L38">[Source]</a></span></p>
-<pre><code class="pony">fun box lookup()
+<pre><code class="language-pony">fun box lookup()
 : U64 val
 </code></pre>
-
 <h4 id="returns_20">Returns<a class="headerlink" href="#returns_20" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8784,10 +8762,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="fchdir">fchdir<a class="headerlink" href="#fchdir" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L39">[Source]</a></span></p>
-<pre><code class="pony">fun box fchdir()
+<pre><code class="language-pony">fun box fchdir()
 : U64 val
 </code></pre>
-
 <h4 id="returns_21">Returns<a class="headerlink" href="#returns_21" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8795,10 +8772,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="fchflags">fchflags<a class="headerlink" href="#fchflags" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L40">[Source]</a></span></p>
-<pre><code class="pony">fun box fchflags()
+<pre><code class="language-pony">fun box fchflags()
 : U64 val
 </code></pre>
-
 <h4 id="returns_22">Returns<a class="headerlink" href="#returns_22" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8806,10 +8782,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="chflagsat">chflagsat<a class="headerlink" href="#chflagsat" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L41">[Source]</a></span></p>
-<pre><code class="pony">fun box chflagsat()
+<pre><code class="language-pony">fun box chflagsat()
 : U64 val
 </code></pre>
-
 <h4 id="returns_23">Returns<a class="headerlink" href="#returns_23" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8817,10 +8792,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="fchmod">fchmod<a class="headerlink" href="#fchmod" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L42">[Source]</a></span></p>
-<pre><code class="pony">fun box fchmod()
+<pre><code class="language-pony">fun box fchmod()
 : U64 val
 </code></pre>
-
 <h4 id="returns_24">Returns<a class="headerlink" href="#returns_24" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8828,10 +8802,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="fchmodat">fchmodat<a class="headerlink" href="#fchmodat" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L43">[Source]</a></span></p>
-<pre><code class="pony">fun box fchmodat()
+<pre><code class="language-pony">fun box fchmodat()
 : U64 val
 </code></pre>
-
 <h4 id="returns_25">Returns<a class="headerlink" href="#returns_25" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8839,10 +8812,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="fchown">fchown<a class="headerlink" href="#fchown" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L44">[Source]</a></span></p>
-<pre><code class="pony">fun box fchown()
+<pre><code class="language-pony">fun box fchown()
 : U64 val
 </code></pre>
-
 <h4 id="returns_26">Returns<a class="headerlink" href="#returns_26" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8850,10 +8822,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="fchownat">fchownat<a class="headerlink" href="#fchownat" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L45">[Source]</a></span></p>
-<pre><code class="pony">fun box fchownat()
+<pre><code class="language-pony">fun box fchownat()
 : U64 val
 </code></pre>
-
 <h4 id="returns_27">Returns<a class="headerlink" href="#returns_27" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8861,10 +8832,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="fcntl">fcntl<a class="headerlink" href="#fcntl" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L46">[Source]</a></span></p>
-<pre><code class="pony">fun box fcntl()
+<pre><code class="language-pony">fun box fcntl()
 : U64 val
 </code></pre>
-
 <h4 id="returns_28">Returns<a class="headerlink" href="#returns_28" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8872,10 +8842,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="flock">flock<a class="headerlink" href="#flock" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L47">[Source]</a></span></p>
-<pre><code class="pony">fun box flock()
+<pre><code class="language-pony">fun box flock()
 : U64 val
 </code></pre>
-
 <h4 id="returns_29">Returns<a class="headerlink" href="#returns_29" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8883,10 +8852,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="fpathconf">fpathconf<a class="headerlink" href="#fpathconf" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L48">[Source]</a></span></p>
-<pre><code class="pony">fun box fpathconf()
+<pre><code class="language-pony">fun box fpathconf()
 : U64 val
 </code></pre>
-
 <h4 id="returns_30">Returns<a class="headerlink" href="#returns_30" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8894,10 +8862,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="fsck">fsck<a class="headerlink" href="#fsck" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L49">[Source]</a></span></p>
-<pre><code class="pony">fun box fsck()
+<pre><code class="language-pony">fun box fsck()
 : U64 val
 </code></pre>
-
 <h4 id="returns_31">Returns<a class="headerlink" href="#returns_31" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8905,10 +8872,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="fstat">fstat<a class="headerlink" href="#fstat" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L50">[Source]</a></span></p>
-<pre><code class="pony">fun box fstat()
+<pre><code class="language-pony">fun box fstat()
 : U64 val
 </code></pre>
-
 <h4 id="returns_32">Returns<a class="headerlink" href="#returns_32" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8916,10 +8882,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="fstatat">fstatat<a class="headerlink" href="#fstatat" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L51">[Source]</a></span></p>
-<pre><code class="pony">fun box fstatat()
+<pre><code class="language-pony">fun box fstatat()
 : U64 val
 </code></pre>
-
 <h4 id="returns_33">Returns<a class="headerlink" href="#returns_33" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8927,10 +8892,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="fstatfs">fstatfs<a class="headerlink" href="#fstatfs" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L52">[Source]</a></span></p>
-<pre><code class="pony">fun box fstatfs()
+<pre><code class="language-pony">fun box fstatfs()
 : U64 val
 </code></pre>
-
 <h4 id="returns_34">Returns<a class="headerlink" href="#returns_34" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8938,10 +8902,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="futimes">futimes<a class="headerlink" href="#futimes" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L53">[Source]</a></span></p>
-<pre><code class="pony">fun box futimes()
+<pre><code class="language-pony">fun box futimes()
 : U64 val
 </code></pre>
-
 <h4 id="returns_35">Returns<a class="headerlink" href="#returns_35" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8949,10 +8912,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="futimesat">futimesat<a class="headerlink" href="#futimesat" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L54">[Source]</a></span></p>
-<pre><code class="pony">fun box futimesat()
+<pre><code class="language-pony">fun box futimesat()
 : U64 val
 </code></pre>
-
 <h4 id="returns_36">Returns<a class="headerlink" href="#returns_36" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8960,10 +8922,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="linkat">linkat<a class="headerlink" href="#linkat" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L56">[Source]</a></span></p>
-<pre><code class="pony">fun box linkat()
+<pre><code class="language-pony">fun box linkat()
 : U64 val
 </code></pre>
-
 <h4 id="returns_37">Returns<a class="headerlink" href="#returns_37" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8971,10 +8932,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="mkdirat">mkdirat<a class="headerlink" href="#mkdirat" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L57">[Source]</a></span></p>
-<pre><code class="pony">fun box mkdirat()
+<pre><code class="language-pony">fun box mkdirat()
 : U64 val
 </code></pre>
-
 <h4 id="returns_38">Returns<a class="headerlink" href="#returns_38" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8982,10 +8942,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="mkfifoat">mkfifoat<a class="headerlink" href="#mkfifoat" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L58">[Source]</a></span></p>
-<pre><code class="pony">fun box mkfifoat()
+<pre><code class="language-pony">fun box mkfifoat()
 : U64 val
 </code></pre>
-
 <h4 id="returns_39">Returns<a class="headerlink" href="#returns_39" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -8993,10 +8952,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="mknodat">mknodat<a class="headerlink" href="#mknodat" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L59">[Source]</a></span></p>
-<pre><code class="pony">fun box mknodat()
+<pre><code class="language-pony">fun box mknodat()
 : U64 val
 </code></pre>
-
 <h4 id="returns_40">Returns<a class="headerlink" href="#returns_40" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9004,10 +8962,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="renameat">renameat<a class="headerlink" href="#renameat" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L60">[Source]</a></span></p>
-<pre><code class="pony">fun box renameat()
+<pre><code class="language-pony">fun box renameat()
 : U64 val
 </code></pre>
-
 <h4 id="returns_41">Returns<a class="headerlink" href="#returns_41" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9015,10 +8972,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="symlinkat">symlinkat<a class="headerlink" href="#symlinkat" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L61">[Source]</a></span></p>
-<pre><code class="pony">fun box symlinkat()
+<pre><code class="language-pony">fun box symlinkat()
 : U64 val
 </code></pre>
-
 <h4 id="returns_42">Returns<a class="headerlink" href="#returns_42" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9026,10 +8982,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="unlinkat">unlinkat<a class="headerlink" href="#unlinkat" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L62">[Source]</a></span></p>
-<pre><code class="pony">fun box unlinkat()
+<pre><code class="language-pony">fun box unlinkat()
 : U64 val
 </code></pre>
-
 <h4 id="returns_43">Returns<a class="headerlink" href="#returns_43" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9037,10 +8992,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="accept">accept<a class="headerlink" href="#accept" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L64">[Source]</a></span></p>
-<pre><code class="pony">fun box accept()
+<pre><code class="language-pony">fun box accept()
 : U64 val
 </code></pre>
-
 <h4 id="returns_44">Returns<a class="headerlink" href="#returns_44" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9048,10 +9002,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="bind">bind<a class="headerlink" href="#bind" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L65">[Source]</a></span></p>
-<pre><code class="pony">fun box bind()
+<pre><code class="language-pony">fun box bind()
 : U64 val
 </code></pre>
-
 <h4 id="returns_45">Returns<a class="headerlink" href="#returns_45" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9059,10 +9012,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="connect">connect<a class="headerlink" href="#connect" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L66">[Source]</a></span></p>
-<pre><code class="pony">fun box connect()
+<pre><code class="language-pony">fun box connect()
 : U64 val
 </code></pre>
-
 <h4 id="returns_46">Returns<a class="headerlink" href="#returns_46" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9070,10 +9022,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="getpeername">getpeername<a class="headerlink" href="#getpeername" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L67">[Source]</a></span></p>
-<pre><code class="pony">fun box getpeername()
+<pre><code class="language-pony">fun box getpeername()
 : U64 val
 </code></pre>
-
 <h4 id="returns_47">Returns<a class="headerlink" href="#returns_47" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9081,10 +9032,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="getsockname">getsockname<a class="headerlink" href="#getsockname" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L68">[Source]</a></span></p>
-<pre><code class="pony">fun box getsockname()
+<pre><code class="language-pony">fun box getsockname()
 : U64 val
 </code></pre>
-
 <h4 id="returns_48">Returns<a class="headerlink" href="#returns_48" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9092,10 +9042,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="getsockopt">getsockopt<a class="headerlink" href="#getsockopt" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L69">[Source]</a></span></p>
-<pre><code class="pony">fun box getsockopt()
+<pre><code class="language-pony">fun box getsockopt()
 : U64 val
 </code></pre>
-
 <h4 id="returns_49">Returns<a class="headerlink" href="#returns_49" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9103,10 +9052,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="listen">listen<a class="headerlink" href="#listen" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L70">[Source]</a></span></p>
-<pre><code class="pony">fun box listen()
+<pre><code class="language-pony">fun box listen()
 : U64 val
 </code></pre>
-
 <h4 id="returns_50">Returns<a class="headerlink" href="#returns_50" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9114,10 +9062,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="peeloff">peeloff<a class="headerlink" href="#peeloff" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L71">[Source]</a></span></p>
-<pre><code class="pony">fun box peeloff()
+<pre><code class="language-pony">fun box peeloff()
 : U64 val
 </code></pre>
-
 <h4 id="returns_51">Returns<a class="headerlink" href="#returns_51" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9125,10 +9072,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="recv">recv<a class="headerlink" href="#recv" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L72">[Source]</a></span></p>
-<pre><code class="pony">fun box recv()
+<pre><code class="language-pony">fun box recv()
 : U64 val
 </code></pre>
-
 <h4 id="returns_52">Returns<a class="headerlink" href="#returns_52" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9136,10 +9082,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="send">send<a class="headerlink" href="#send" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L73">[Source]</a></span></p>
-<pre><code class="pony">fun box send()
+<pre><code class="language-pony">fun box send()
 : U64 val
 </code></pre>
-
 <h4 id="returns_53">Returns<a class="headerlink" href="#returns_53" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9147,10 +9092,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="setsockopt">setsockopt<a class="headerlink" href="#setsockopt" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L74">[Source]</a></span></p>
-<pre><code class="pony">fun box setsockopt()
+<pre><code class="language-pony">fun box setsockopt()
 : U64 val
 </code></pre>
-
 <h4 id="returns_54">Returns<a class="headerlink" href="#returns_54" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9158,10 +9102,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="shutdown">shutdown<a class="headerlink" href="#shutdown" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L75">[Source]</a></span></p>
-<pre><code class="pony">fun box shutdown()
+<pre><code class="language-pony">fun box shutdown()
 : U64 val
 </code></pre>
-
 <h4 id="returns_55">Returns<a class="headerlink" href="#returns_55" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9169,10 +9112,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="bindat">bindat<a class="headerlink" href="#bindat" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L76">[Source]</a></span></p>
-<pre><code class="pony">fun box bindat()
+<pre><code class="language-pony">fun box bindat()
 : U64 val
 </code></pre>
-
 <h4 id="returns_56">Returns<a class="headerlink" href="#returns_56" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9180,10 +9122,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="connectat">connectat<a class="headerlink" href="#connectat" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L77">[Source]</a></span></p>
-<pre><code class="pony">fun box connectat()
+<pre><code class="language-pony">fun box connectat()
 : U64 val
 </code></pre>
-
 <h4 id="returns_57">Returns<a class="headerlink" href="#returns_57" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9191,10 +9132,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="sock_client">sock_client<a class="headerlink" href="#sock_client" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L79">[Source]</a></span></p>
-<pre><code class="pony">fun box sock_client()
+<pre><code class="language-pony">fun box sock_client()
 : U64 val
 </code></pre>
-
 <h4 id="returns_58">Returns<a class="headerlink" href="#returns_58" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9202,10 +9142,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="sock_server">sock_server<a class="headerlink" href="#sock_server" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L83">[Source]</a></span></p>
-<pre><code class="pony">fun box sock_server()
+<pre><code class="language-pony">fun box sock_server()
 : U64 val
 </code></pre>
-
 <h4 id="returns_59">Returns<a class="headerlink" href="#returns_59" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9213,10 +9152,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="mac_get">mac_get<a class="headerlink" href="#mac_get" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L87">[Source]</a></span></p>
-<pre><code class="pony">fun box mac_get()
+<pre><code class="language-pony">fun box mac_get()
 : U64 val
 </code></pre>
-
 <h4 id="returns_60">Returns<a class="headerlink" href="#returns_60" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9224,10 +9162,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="mac_set">mac_set<a class="headerlink" href="#mac_set" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L88">[Source]</a></span></p>
-<pre><code class="pony">fun box mac_set()
+<pre><code class="language-pony">fun box mac_set()
 : U64 val
 </code></pre>
-
 <h4 id="returns_61">Returns<a class="headerlink" href="#returns_61" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9235,10 +9172,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="sem_getvalue">sem_getvalue<a class="headerlink" href="#sem_getvalue" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L90">[Source]</a></span></p>
-<pre><code class="pony">fun box sem_getvalue()
+<pre><code class="language-pony">fun box sem_getvalue()
 : U64 val
 </code></pre>
-
 <h4 id="returns_62">Returns<a class="headerlink" href="#returns_62" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9246,10 +9182,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="sem_post">sem_post<a class="headerlink" href="#sem_post" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L91">[Source]</a></span></p>
-<pre><code class="pony">fun box sem_post()
+<pre><code class="language-pony">fun box sem_post()
 : U64 val
 </code></pre>
-
 <h4 id="returns_63">Returns<a class="headerlink" href="#returns_63" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9257,10 +9192,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="sem_wait">sem_wait<a class="headerlink" href="#sem_wait" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L92">[Source]</a></span></p>
-<pre><code class="pony">fun box sem_wait()
+<pre><code class="language-pony">fun box sem_wait()
 : U64 val
 </code></pre>
-
 <h4 id="returns_64">Returns<a class="headerlink" href="#returns_64" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9268,10 +9202,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="event">event<a class="headerlink" href="#event" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L94">[Source]</a></span></p>
-<pre><code class="pony">fun box event()
+<pre><code class="language-pony">fun box event()
 : U64 val
 </code></pre>
-
 <h4 id="returns_65">Returns<a class="headerlink" href="#returns_65" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9279,10 +9212,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="kqueue_event">kqueue_event<a class="headerlink" href="#kqueue_event" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L95">[Source]</a></span></p>
-<pre><code class="pony">fun box kqueue_event()
+<pre><code class="language-pony">fun box kqueue_event()
 : U64 val
 </code></pre>
-
 <h4 id="returns_66">Returns<a class="headerlink" href="#returns_66" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9290,10 +9222,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="ioctl">ioctl<a class="headerlink" href="#ioctl" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L96">[Source]</a></span></p>
-<pre><code class="pony">fun box ioctl()
+<pre><code class="language-pony">fun box ioctl()
 : U64 val
 </code></pre>
-
 <h4 id="returns_67">Returns<a class="headerlink" href="#returns_67" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9301,10 +9232,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="ttyhook">ttyhook<a class="headerlink" href="#ttyhook" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L97">[Source]</a></span></p>
-<pre><code class="pony">fun box ttyhook()
+<pre><code class="language-pony">fun box ttyhook()
 : U64 val
 </code></pre>
-
 <h4 id="returns_68">Returns<a class="headerlink" href="#returns_68" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9312,10 +9242,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="pdgetpid">pdgetpid<a class="headerlink" href="#pdgetpid" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L99">[Source]</a></span></p>
-<pre><code class="pony">fun box pdgetpid()
+<pre><code class="language-pony">fun box pdgetpid()
 : U64 val
 </code></pre>
-
 <h4 id="returns_69">Returns<a class="headerlink" href="#returns_69" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9323,10 +9252,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="pdwait">pdwait<a class="headerlink" href="#pdwait" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L100">[Source]</a></span></p>
-<pre><code class="pony">fun box pdwait()
+<pre><code class="language-pony">fun box pdwait()
 : U64 val
 </code></pre>
-
 <h4 id="returns_70">Returns<a class="headerlink" href="#returns_70" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9334,10 +9262,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="pdkill">pdkill<a class="headerlink" href="#pdkill" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L101">[Source]</a></span></p>
-<pre><code class="pony">fun box pdkill()
+<pre><code class="language-pony">fun box pdkill()
 : U64 val
 </code></pre>
-
 <h4 id="returns_71">Returns<a class="headerlink" href="#returns_71" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9345,10 +9272,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="exattr_delete">exattr_delete<a class="headerlink" href="#exattr_delete" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L103">[Source]</a></span></p>
-<pre><code class="pony">fun box exattr_delete()
+<pre><code class="language-pony">fun box exattr_delete()
 : U64 val
 </code></pre>
-
 <h4 id="returns_72">Returns<a class="headerlink" href="#returns_72" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9356,10 +9282,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="exattr_get">exattr_get<a class="headerlink" href="#exattr_get" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L104">[Source]</a></span></p>
-<pre><code class="pony">fun box exattr_get()
+<pre><code class="language-pony">fun box exattr_get()
 : U64 val
 </code></pre>
-
 <h4 id="returns_73">Returns<a class="headerlink" href="#returns_73" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9367,10 +9292,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="exattr_list">exattr_list<a class="headerlink" href="#exattr_list" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L105">[Source]</a></span></p>
-<pre><code class="pony">fun box exattr_list()
+<pre><code class="language-pony">fun box exattr_list()
 : U64 val
 </code></pre>
-
 <h4 id="returns_74">Returns<a class="headerlink" href="#returns_74" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9378,10 +9302,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="exattr_set">exattr_set<a class="headerlink" href="#exattr_set" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L106">[Source]</a></span></p>
-<pre><code class="pony">fun box exattr_set()
+<pre><code class="language-pony">fun box exattr_set()
 : U64 val
 </code></pre>
-
 <h4 id="returns_75">Returns<a class="headerlink" href="#returns_75" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9389,10 +9312,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="acl_check">acl_check<a class="headerlink" href="#acl_check" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L108">[Source]</a></span></p>
-<pre><code class="pony">fun box acl_check()
+<pre><code class="language-pony">fun box acl_check()
 : U64 val
 </code></pre>
-
 <h4 id="returns_76">Returns<a class="headerlink" href="#returns_76" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9400,10 +9322,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="acl_delete">acl_delete<a class="headerlink" href="#acl_delete" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L109">[Source]</a></span></p>
-<pre><code class="pony">fun box acl_delete()
+<pre><code class="language-pony">fun box acl_delete()
 : U64 val
 </code></pre>
-
 <h4 id="returns_77">Returns<a class="headerlink" href="#returns_77" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9411,10 +9332,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="acl_get">acl_get<a class="headerlink" href="#acl_get" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L110">[Source]</a></span></p>
-<pre><code class="pony">fun box acl_get()
+<pre><code class="language-pony">fun box acl_get()
 : U64 val
 </code></pre>
-
 <h4 id="returns_78">Returns<a class="headerlink" href="#returns_78" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9422,10 +9342,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="acl_set">acl_set<a class="headerlink" href="#acl_set" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L111">[Source]</a></span></p>
-<pre><code class="pony">fun box acl_set()
+<pre><code class="language-pony">fun box acl_set()
 : U64 val
 </code></pre>
-
 <h4 id="returns_79">Returns<a class="headerlink" href="#returns_79" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9433,10 +9352,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="kqueue_change">kqueue_change<a class="headerlink" href="#kqueue_change" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L113">[Source]</a></span></p>
-<pre><code class="pony">fun box kqueue_change()
+<pre><code class="language-pony">fun box kqueue_change()
 : U64 val
 </code></pre>
-
 <h4 id="returns_80">Returns<a class="headerlink" href="#returns_80" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9444,10 +9362,9 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="kqueue">kqueue<a class="headerlink" href="#kqueue" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L114">[Source]</a></span></p>
-<pre><code class="pony">fun box kqueue()
+<pre><code class="language-pony">fun box kqueue()
 : U64 val
 </code></pre>
-
 <h4 id="returns_81">Returns<a class="headerlink" href="#returns_81" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>
@@ -9455,11 +9372,10 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L5">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: Cap val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Cap</a> val</li>
@@ -9471,11 +9387,10 @@ spaces, such as file system or IPC name spaces, is prevented.</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap/#L5">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: Cap val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Cap</a> val</li>

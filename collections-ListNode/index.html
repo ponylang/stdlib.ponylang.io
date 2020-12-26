@@ -7267,7 +7267,7 @@ individual ListNode.</p>
   My node has the updated item value: My updated Node item
   Popped the item from the ListNode
   The ListNode has no (None) item.</p>
-<pre><code class="pony">  use &quot;collections&quot;
+<pre><code class="language-pony">  use &quot;collections&quot;
   actor Main
     new create(env:Env) =&gt;
 
@@ -7298,16 +7298,14 @@ individual ListNode.</p>
 ```pony
 class ref ListNode[A: A]
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/list_node/#L66">[Source]</a></span></p>
 <p>Create a node. Initially, it is not in any list.</p>
-<pre><code class="pony">new ref create(
+<pre><code class="language-pony">new ref create(
   item: (A | None val) = reference)
 : ListNode[A] ref^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>item: (A | <a href="../builtin-None/">None</a> val) = reference</li>
@@ -7321,10 +7319,9 @@ class ref ListNode[A: A]
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/list_node/#L72">[Source]</a></span></p>
 <p>Return the item, if we have one, otherwise raise an error.</p>
-<pre><code class="pony">fun box apply()
+<pre><code class="language-pony">fun box apply()
 : this-&gt;A ?
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>this-&gt;A ?</li>
@@ -7334,11 +7331,10 @@ class ref ListNode[A: A]
 <p><span class="source-link"><a href="../src/collections/list_node/#L78">[Source]</a></span></p>
 <p>Replace the item and return the previous one. Raise an error if we have no
 previous value.</p>
-<pre><code class="pony">fun ref update(
+<pre><code class="language-pony">fun ref update(
   value: (A | None val))
 : A^ ?
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>value: (A | <a href="../builtin-None/">None</a> val)</li>
@@ -7351,10 +7347,9 @@ previous value.</p>
 <h3 id="pop">pop<a class="headerlink" href="#pop" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/list_node/#L85">[Source]</a></span></p>
 <p>Remove the item from the node, if we have one, otherwise raise an error.</p>
-<pre><code class="pony">fun ref pop()
+<pre><code class="language-pony">fun ref pop()
 : A^ ?
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A^ ?</li>
@@ -7366,11 +7361,10 @@ previous value.</p>
 before it is prepended. Returns true if <code>that</code> was removed from another
 list.
 If the ListNode is not contained within a List the prepend will fail.</p>
-<pre><code class="pony">fun ref prepend(
+<pre><code class="language-pony">fun ref prepend(
   that: ListNode[A] ref)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">ListNode</a>[A] ref</li>
@@ -7386,11 +7380,10 @@ If the ListNode is not contained within a List the prepend will fail.</p>
 before it is appended. Returns true if <code>that</code> was removed from another
 list.</p>
 <p>If the ListNode is not contained within a List the append will fail.</p>
-<pre><code class="pony">fun ref append(
+<pre><code class="language-pony">fun ref append(
   that: ListNode[A] ref)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">ListNode</a>[A] ref</li>
@@ -7404,10 +7397,9 @@ list.</p>
 <p><span class="source-link"><a href="../src/collections/list_node/#L158">[Source]</a></span></p>
 <p>Remove a node from a list.</p>
 <p>The ListNode must be contained within a List for this to succeed.</p>
-<pre><code class="pony">fun ref remove()
+<pre><code class="language-pony">fun ref remove()
 : None val
 </code></pre>
-
 <h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
@@ -7416,10 +7408,9 @@ list.</p>
 <h3 id="has_prev">has_prev<a class="headerlink" href="#has_prev" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/list_node/#L193">[Source]</a></span></p>
 <p>Return true if there is a previous node.</p>
-<pre><code class="pony">fun box has_prev()
+<pre><code class="language-pony">fun box has_prev()
 : Bool val
 </code></pre>
-
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7428,10 +7419,9 @@ list.</p>
 <h3 id="has_next">has_next<a class="headerlink" href="#has_next" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/list_node/#L199">[Source]</a></span></p>
 <p>Return true if there is a next node.</p>
-<pre><code class="pony">fun box has_next()
+<pre><code class="language-pony">fun box has_next()
 : Bool val
 </code></pre>
-
 <h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7440,10 +7430,9 @@ list.</p>
 <h3 id="prev">prev<a class="headerlink" href="#prev" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/list_node/#L205">[Source]</a></span></p>
 <p>Return the previous node.</p>
-<pre><code class="pony">fun box prev()
+<pre><code class="language-pony">fun box prev()
 : (this-&gt;ListNode[A] ref | None val)
 </code></pre>
-
 <h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(this-&gt;<a href="./">ListNode</a>[A] ref | <a href="../builtin-None/">None</a> val)</li>
@@ -7452,10 +7441,9 @@ list.</p>
 <h3 id="next">next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/list_node/#L211">[Source]</a></span></p>
 <p>Return the next node.</p>
-<pre><code class="pony">fun box next()
+<pre><code class="language-pony">fun box next()
 : (this-&gt;ListNode[A] ref | None val)
 </code></pre>
-
 <h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(this-&gt;<a href="./">ListNode</a>[A] ref | <a href="../builtin-None/">None</a> val)</li>

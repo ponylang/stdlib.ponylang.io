@@ -7339,19 +7339,17 @@
 <p>A symlink will report information about itself, other than the size which
 will be the size of the target. A broken symlink will report as much as it
 can and will set the broken flag.</p>
-<pre><code class="pony">class val FileInfo
+<pre><code class="language-pony">class val FileInfo
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file_info/#L86">[Source]</a></span></p>
 <p>This will raise an error if the FileStat capability isn't available or the
 path doesn't exist.</p>
-<pre><code class="pony">new val create(
+<pre><code class="language-pony">new val create(
   from: FilePath val)
 : FileInfo val^ ?
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>from: <a href="../files-FilePath/">FilePath</a> val</li>
@@ -7399,25 +7397,22 @@ denoting the type of device and the instance of this type on the system.</p>
 <h3 id="let-access_time-i64-val-i64-val">let access_time: (<a href="../builtin-I64/">I64</a> val , <a href="../builtin-I64/">I64</a> val)<a class="headerlink" href="#let-access_time-i64-val-i64-val" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file_info/#L40">[Source]</a></span></p>
 <p>Time of last access as a tuple of seconds and nanoseconds since the epoch:</p>
-<pre><code class="pony">(let a_secs: I64, let a_nanos: I64) = file_info.access_time
+<pre><code class="language-pony">(let a_secs: I64, let a_nanos: I64) = file_info.access_time
 </code></pre>
-
 <hr />
 <h3 id="let-modified_time-i64-val-i64-val">let modified_time: (<a href="../builtin-I64/">I64</a> val , <a href="../builtin-I64/">I64</a> val)<a class="headerlink" href="#let-modified_time-i64-val-i64-val" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file_info/#L49">[Source]</a></span></p>
 <p>Time of last modification as tuple of seconds and nanoseconds since the epoch:</p>
-<pre><code class="pony">(let m_secs: I64, let m_nanos: I64) = file_info.modified_time
+<pre><code class="language-pony">(let m_secs: I64, let m_nanos: I64) = file_info.modified_time
 </code></pre>
-
 <hr />
 <h3 id="let-change_time-i64-val-i64-val">let change_time: (<a href="../builtin-I64/">I64</a> val , <a href="../builtin-I64/">I64</a> val)<a class="headerlink" href="#let-change_time-i64-val-i64-val" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/files/file_info/#L58">[Source]</a></span></p>
 <p>Time of the last change either the attributes (number of links, owner,
 group, file mode, ...) or the content of <code>filepath</code>
 as a tuple of seconds and nanoseconds since the epoch:</p>
-<pre><code class="pony">(let c_secs: I64, let c_nanos: I64) = file_info.change_time
+<pre><code class="language-pony">(let c_secs: I64, let c_nanos: I64) = file_info.change_time
 </code></pre>
-
 <p>On Windows this will be the file creation time.</p>
 <hr />
 <h3 id="let-file-bool-val">let file: <a href="../builtin-Bool/">Bool</a> val<a class="headerlink" href="#let-file-bool-val" title="Permanent link">&para;</a></h3>

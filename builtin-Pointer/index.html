@@ -7248,17 +7248,15 @@
 <p>A Pointer[A] is a raw memory pointer. It has no descriptor and thus can't be
 included in a union or intersection, or be a subtype of any interface. Most
 functions on a Pointer[A] are private to maintain memory safety.</p>
-<pre><code class="pony">struct ref Pointer[A: A]
+<pre><code class="language-pony">struct ref Pointer[A: A]
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/pointer/#L7">[Source]</a></span></p>
 <p>A null pointer.</p>
-<pre><code class="pony">new ref create()
+<pre><code class="language-pony">new ref create()
 : Pointer[A] ref^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">Pointer</a>[A] ref^</li>
@@ -7268,11 +7266,10 @@ functions on a Pointer[A] are private to maintain memory safety.</p>
 <h3 id="offset">offset<a class="headerlink" href="#offset" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/pointer/#L55">[Source]</a></span></p>
 <p>Return a tag pointer to the n-th element.</p>
-<pre><code class="pony">fun tag offset(
+<pre><code class="language-pony">fun tag offset(
   n: USize val)
 : Pointer[A] tag
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>n: <a href="../builtin-USize/">USize</a> val</li>
@@ -7285,10 +7282,9 @@ functions on a Pointer[A] are private to maintain memory safety.</p>
 <h3 id="usize">usize<a class="headerlink" href="#usize" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/pointer/#L89">[Source]</a></span></p>
 <p>Convert the pointer into an integer.</p>
-<pre><code class="pony">fun tag usize()
+<pre><code class="language-pony">fun tag usize()
 : USize val
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-USize/">USize</a> val</li>
@@ -7297,10 +7293,9 @@ functions on a Pointer[A] are private to maintain memory safety.</p>
 <h3 id="is_null">is_null<a class="headerlink" href="#is_null" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/pointer/#L95">[Source]</a></span></p>
 <p>Return true for a null pointer, false for anything else.</p>
-<pre><code class="pony">fun tag is_null()
+<pre><code class="language-pony">fun tag is_null()
 : Bool val
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7309,11 +7304,10 @@ functions on a Pointer[A] are private to maintain memory safety.</p>
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/pointer/#L101">[Source]</a></span></p>
 <p>Return true if this address is that address.</p>
-<pre><code class="pony">fun tag eq(
+<pre><code class="language-pony">fun tag eq(
   that: Pointer[A] tag)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Pointer</a>[A] tag</li>
@@ -7326,11 +7320,10 @@ functions on a Pointer[A] are private to maintain memory safety.</p>
 <h3 id="lt">lt<a class="headerlink" href="#lt" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/pointer/#L107">[Source]</a></span></p>
 <p>Return true if this address is less than that address.</p>
-<pre><code class="pony">fun tag lt(
+<pre><code class="language-pony">fun tag lt(
   that: Pointer[A] tag)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Pointer</a>[A] tag</li>
@@ -7342,11 +7335,10 @@ functions on a Pointer[A] are private to maintain memory safety.</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/pointer/#L113">[Source]</a></span></p>
-<pre><code class="pony">fun tag ne(
+<pre><code class="language-pony">fun tag ne(
   that: Pointer[A] tag)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Pointer</a>[A] tag</li>
@@ -7358,11 +7350,10 @@ functions on a Pointer[A] are private to maintain memory safety.</p>
 <hr />
 <h3 id="le">le<a class="headerlink" href="#le" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/pointer/#L114">[Source]</a></span></p>
-<pre><code class="pony">fun tag le(
+<pre><code class="language-pony">fun tag le(
   that: Pointer[A] tag)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Pointer</a>[A] tag</li>
@@ -7374,11 +7365,10 @@ functions on a Pointer[A] are private to maintain memory safety.</p>
 <hr />
 <h3 id="ge">ge<a class="headerlink" href="#ge" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/pointer/#L115">[Source]</a></span></p>
-<pre><code class="pony">fun tag ge(
+<pre><code class="language-pony">fun tag ge(
   that: Pointer[A] tag)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Pointer</a>[A] tag</li>
@@ -7390,11 +7380,10 @@ functions on a Pointer[A] are private to maintain memory safety.</p>
 <hr />
 <h3 id="gt">gt<a class="headerlink" href="#gt" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/pointer/#L116">[Source]</a></span></p>
-<pre><code class="pony">fun tag gt(
+<pre><code class="language-pony">fun tag gt(
   that: Pointer[A] tag)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Pointer</a>[A] tag</li>
@@ -7407,10 +7396,9 @@ functions on a Pointer[A] are private to maintain memory safety.</p>
 <h3 id="hash">hash<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/pointer/#L118">[Source]</a></span></p>
 <p>Returns a hash of the address.</p>
-<pre><code class="pony">fun tag hash()
+<pre><code class="language-pony">fun tag hash()
 : USize val
 </code></pre>
-
 <h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-USize/">USize</a> val</li>
@@ -7419,10 +7407,9 @@ functions on a Pointer[A] are private to maintain memory safety.</p>
 <h3 id="hash64">hash64<a class="headerlink" href="#hash64" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/pointer/#L124">[Source]</a></span></p>
 <p>Returns a 64-bit hash of the address.</p>
-<pre><code class="pony">fun tag hash64()
+<pre><code class="language-pony">fun tag hash64()
 : U64 val
 </code></pre>
-
 <h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U64/">U64</a> val</li>

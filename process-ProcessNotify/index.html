@@ -7108,18 +7108,16 @@
                 <h1 id="processnotify">ProcessNotify<a class="headerlink" href="#processnotify" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/process/process_notify/#L1">[Source]</a></span></p>
 <p>Notifications for Process connections.</p>
-<pre><code class="pony">interface ref ProcessNotify
+<pre><code class="language-pony">interface ref ProcessNotify
 </code></pre>
-
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="created">created<a class="headerlink" href="#created" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/process/process_notify/#L6">[Source]</a></span></p>
 <p>ProcessMonitor calls this when it is created.</p>
-<pre><code class="pony">fun ref created(
+<pre><code class="language-pony">fun ref created(
   process: ProcessMonitor ref)
 : None val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>process: <a href="../process-ProcessMonitor/">ProcessMonitor</a> ref</li>
@@ -7133,12 +7131,11 @@
 <p><span class="source-link"><a href="../src/process/process_notify/#L11">[Source]</a></span></p>
 <p>ProcessMonitor calls this when new data is received on STDOUT of the
 forked process</p>
-<pre><code class="pony">fun ref stdout(
+<pre><code class="language-pony">fun ref stdout(
   process: ProcessMonitor ref,
   data: Array[U8 val] iso)
 : None val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>process: <a href="../process-ProcessMonitor/">ProcessMonitor</a> ref</li>
@@ -7153,12 +7150,11 @@ forked process</p>
 <p><span class="source-link"><a href="../src/process/process_notify/#L17">[Source]</a></span></p>
 <p>ProcessMonitor calls this when new data is received on STDERR of the
 forked process</p>
-<pre><code class="pony">fun ref stderr(
+<pre><code class="language-pony">fun ref stderr(
   process: ProcessMonitor ref,
   data: Array[U8 val] iso)
 : None val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>process: <a href="../process-ProcessMonitor/">ProcessMonitor</a> ref</li>
@@ -7173,12 +7169,11 @@ forked process</p>
 <p><span class="source-link"><a href="../src/process/process_notify/#L23">[Source]</a></span></p>
 <p>ProcessMonitor calls this if we run into errors communicating with the
 forked process.</p>
-<pre><code class="pony">fun ref failed(
+<pre><code class="language-pony">fun ref failed(
   process: ProcessMonitor ref,
   err: ProcessError val)
 : None val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>process: <a href="../process-ProcessMonitor/">ProcessMonitor</a> ref</li>
@@ -7194,12 +7189,11 @@ forked process.</p>
 <p>Called when the process monitor has been told to expect a certain quantity
 of bytes. This allows nested notifiers to change the expected quantity,
 which allows a lower level protocol to handle any framing.</p>
-<pre><code class="pony">fun ref expect(
+<pre><code class="language-pony">fun ref expect(
   process: ProcessMonitor ref,
   qty: USize val)
 : USize val
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>process: <a href="../process-ProcessMonitor/">ProcessMonitor</a> ref</li>
@@ -7219,12 +7213,11 @@ using <a href="../process-Exited/#exit_code">Exited.exit_code()</a>.</p>
 <p>On Posix systems, if the process has been killed by a signal (e.g. through the <code>kill</code> command),
 <code>child_exit_status</code> will be an instance of <a href="../process-Signaled/">Signaled</a> with the signal number
 that terminated the process available via <a href="../process-Signaled/#signal">Signaled.signal()</a>.</p>
-<pre><code class="pony">fun ref dispose(
+<pre><code class="language-pony">fun ref dispose(
   process: ProcessMonitor ref,
   child_exit_status: (Exited val | Signaled val))
 : None val
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>process: <a href="../process-ProcessMonitor/">ProcessMonitor</a> ref</li>

@@ -7274,22 +7274,20 @@ command has the following attributes:</p>
 <li>a Map of child commands.</li>
 <li>an Array of arguments.</li>
 </ul>
-<pre><code class="pony">class ref CommandSpec
+<pre><code class="language-pony">class ref CommandSpec
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="parent">parent<a class="headerlink" href="#parent" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L33">[Source]</a></span></p>
 <p>Creates a command spec that can accept options and child commands, but not
 arguments.</p>
-<pre><code class="pony">new ref parent(
+<pre><code class="language-pony">new ref parent(
   name': String val,
   descr': String val = &quot;&quot;,
   options': Array[OptionSpec val] box = call,
   commands': Array[CommandSpec ref] box = call)
 : CommandSpec ref^ ?
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>name': <a href="../builtin-String/">String</a> val</li>
@@ -7306,14 +7304,13 @@ arguments.</p>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L53">[Source]</a></span></p>
 <p>Creates a command spec that can accept options and arguments, but not child
 commands.</p>
-<pre><code class="pony">new ref leaf(
+<pre><code class="language-pony">new ref leaf(
   name': String val,
   descr': String val = &quot;&quot;,
   options': Array[OptionSpec val] box = call,
   args': Array[ArgSpec val] box = call)
 : CommandSpec ref^ ?
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>name': <a href="../builtin-String/">String</a> val</li>
@@ -7330,11 +7327,10 @@ commands.</p>
 <h3 id="add_command">add_command<a class="headerlink" href="#add_command" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L84">[Source]</a></span></p>
 <p>Adds an additional child command to this parent command.</p>
-<pre><code class="pony">fun ref add_command(
+<pre><code class="language-pony">fun ref add_command(
   cmd: CommandSpec box)
 : None val ?
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>cmd: <a href="./">CommandSpec</a> box</li>
@@ -7347,12 +7343,11 @@ commands.</p>
 <h3 id="add_help">add_help<a class="headerlink" href="#add_help" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L91">[Source]</a></span></p>
 <p>Adds a standard help option and, optionally command, to a root command.</p>
-<pre><code class="pony">fun ref add_help(
+<pre><code class="language-pony">fun ref add_help(
   hname: String val = &quot;help&quot;,
   descr': String val = &quot;&quot;)
 : None val ?
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>hname: <a href="../builtin-String/">String</a> val = "help"</li>
@@ -7366,10 +7361,9 @@ commands.</p>
 <h3 id="name">name<a class="headerlink" href="#name" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L106">[Source]</a></span></p>
 <p>Returns the name of this command.</p>
-<pre><code class="pony">fun box name()
+<pre><code class="language-pony">fun box name()
 : String val
 </code></pre>
-
 <h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -7378,10 +7372,9 @@ commands.</p>
 <h3 id="descr">descr<a class="headerlink" href="#descr" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L112">[Source]</a></span></p>
 <p>Returns the description for this command.</p>
-<pre><code class="pony">fun box descr()
+<pre><code class="language-pony">fun box descr()
 : String val
 </code></pre>
-
 <h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -7390,10 +7383,9 @@ commands.</p>
 <h3 id="options">options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L118">[Source]</a></span></p>
 <p>Returns a map by name of the named options of this command.</p>
-<pre><code class="pony">fun box options()
+<pre><code class="language-pony">fun box options()
 : HashMap[String val, OptionSpec val, HashEq[String val] val] box
 </code></pre>
-
 <h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../collections-HashMap/">HashMap</a>[<a href="../builtin-String/">String</a> val, <a href="../cli-OptionSpec/">OptionSpec</a> val, <a href="../collections-HashEq/">HashEq</a>[<a href="../builtin-String/">String</a> val] val] box</li>
@@ -7402,10 +7394,9 @@ commands.</p>
 <h3 id="commands">commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L124">[Source]</a></span></p>
 <p>Returns a map by name of the child commands of this command.</p>
-<pre><code class="pony">fun box commands()
+<pre><code class="language-pony">fun box commands()
 : HashMap[String val, CommandSpec box, HashEq[String val] val] box
 </code></pre>
-
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../collections-HashMap/">HashMap</a>[<a href="../builtin-String/">String</a> val, <a href="./">CommandSpec</a> box, <a href="../collections-HashEq/">HashEq</a>[<a href="../builtin-String/">String</a> val] val] box</li>
@@ -7414,10 +7405,9 @@ commands.</p>
 <h3 id="args">args<a class="headerlink" href="#args" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L130">[Source]</a></span></p>
 <p>Returns an array of the positional arguments of this command.</p>
-<pre><code class="pony">fun box args()
+<pre><code class="language-pony">fun box args()
 : Array[ArgSpec val] box
 </code></pre>
-
 <h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Array/">Array</a>[<a href="../cli-ArgSpec/">ArgSpec</a> val] box</li>
@@ -7425,10 +7415,9 @@ commands.</p>
 <hr />
 <h3 id="is_leaf">is_leaf<a class="headerlink" href="#is_leaf" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L136">[Source]</a></span></p>
-<pre><code class="pony">fun box is_leaf()
+<pre><code class="language-pony">fun box is_leaf()
 : Bool val
 </code></pre>
-
 <h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7436,10 +7425,9 @@ commands.</p>
 <hr />
 <h3 id="is_parent">is_parent<a class="headerlink" href="#is_parent" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L138">[Source]</a></span></p>
-<pre><code class="pony">fun box is_parent()
+<pre><code class="language-pony">fun box is_parent()
 : Bool val
 </code></pre>
-
 <h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7448,10 +7436,9 @@ commands.</p>
 <h3 id="help_name">help_name<a class="headerlink" href="#help_name" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L140">[Source]</a></span></p>
 <p>Returns the name of the help command, which defaults to "help".</p>
-<pre><code class="pony">fun box help_name()
+<pre><code class="language-pony">fun box help_name()
 : String val
 </code></pre>
-
 <h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -7460,10 +7447,9 @@ commands.</p>
 <h3 id="help_string">help_string<a class="headerlink" href="#help_string" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L146">[Source]</a></span></p>
 <p>Returns a formated help string for this command and all of its arguments.</p>
-<pre><code class="pony">fun box help_string()
+<pre><code class="language-pony">fun box help_string()
 : String val
 </code></pre>
-
 <h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>

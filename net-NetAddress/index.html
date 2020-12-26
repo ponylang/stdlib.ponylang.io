@@ -7288,10 +7288,9 @@ scope field is the IPv6 scope, or invalid for an IPv4 address.</p>
 <p>This class is modelled after the C data structure for holding socket
 addresses for both IPv4 and IPv6 <code>sockaddr_storage</code>.</p>
 <p>Use the <code>name</code> method to obtain address/hostname and port/service as Strings.</p>
-<pre><code class="pony">class val NetAddress is
+<pre><code class="language-pony">class val NetAddress is
   Equatable[NetAddress val] ref
 </code></pre>
-
 <h4 id="implements">Implements<a class="headerlink" href="#implements" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Equatable/">Equatable</a>[<a href="./">NetAddress</a> val] ref</li>
@@ -7300,10 +7299,9 @@ addresses for both IPv4 and IPv6 <code>sockaddr_storage</code>.</p>
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/net_address/#L1">[Source]</a></span></p>
-<pre><code class="pony">new iso create()
+<pre><code class="language-pony">new iso create()
 : NetAddress iso^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">NetAddress</a> iso^</li>
@@ -7313,10 +7311,9 @@ addresses for both IPv4 and IPv6 <code>sockaddr_storage</code>.</p>
 <h3 id="ip4">ip4<a class="headerlink" href="#ip4" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/net_address/#L55">[Source]</a></span></p>
 <p>Returns true for an IPv4 address.</p>
-<pre><code class="pony">fun box ip4()
+<pre><code class="language-pony">fun box ip4()
 : Bool val
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7325,10 +7322,9 @@ addresses for both IPv4 and IPv6 <code>sockaddr_storage</code>.</p>
 <h3 id="ip6">ip6<a class="headerlink" href="#ip6" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/net_address/#L61">[Source]</a></span></p>
 <p>Returns true for an IPv6 address.</p>
-<pre><code class="pony">fun box ip6()
+<pre><code class="language-pony">fun box ip6()
 : Bool val
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7348,13 +7344,12 @@ as second element of the result tuple.
 If it is <code>true</code> the port is translated into its
 corresponding servicename (e.g. port 80 is returned as <code>"http"</code>).</p>
 <p>Internally this method uses the POSIX C function <code>getnameinfo</code>.</p>
-<pre><code class="pony">fun box name(
+<pre><code class="language-pony">fun box name(
   reversedns: (AmbientAuth val | NetAuth val | DNSAuth val | 
     None val) = reference,
   servicename: Bool val = false)
 : (String val , String val) ?
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>reversedns: (<a href="../builtin-AmbientAuth/">AmbientAuth</a> val | <a href="../net-NetAuth/">NetAuth</a> val | <a href="../net-DNSAuth/">DNSAuth</a> val | 
@@ -7368,11 +7363,10 @@ corresponding servicename (e.g. port 80 is returned as <code>"http"</code>).</p>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/net_address/#L103">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: NetAddress box)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">NetAddress</a> box</li>
@@ -7384,11 +7378,10 @@ corresponding servicename (e.g. port 80 is returned as <code>"http"</code>).</p>
 <hr />
 <h3 id="host_eq">host_eq<a class="headerlink" href="#host_eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/net_address/#L109">[Source]</a></span></p>
-<pre><code class="pony">fun box host_eq(
+<pre><code class="language-pony">fun box host_eq(
   that: NetAddress box)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">NetAddress</a> box</li>
@@ -7403,10 +7396,9 @@ corresponding servicename (e.g. port 80 is returned as <code>"http"</code>).</p>
 <p>For platforms (OSX/FreeBSD) with <code>length</code> field as part of 
 its <code>struct sockaddr</code> definition, returns the <code>length</code>. 
 Else (Linux/Windows) returns the size of <code>sockaddr_in</code> or <code>sockaddr_in6</code>.</p>
-<pre><code class="pony">fun box length()
+<pre><code class="language-pony">fun box length()
 : U8 val
 </code></pre>
-
 <h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U8/">U8</a> val</li>
@@ -7415,10 +7407,9 @@ Else (Linux/Windows) returns the size of <code>sockaddr_in</code> or <code>socka
 <h3 id="family">family<a class="headerlink" href="#family" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/net_address/#L136">[Source]</a></span></p>
 <p>Returns the <code>family</code>.</p>
-<pre><code class="pony">fun box family()
+<pre><code class="language-pony">fun box family()
 : U8 val
 </code></pre>
-
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U8/">U8</a> val</li>
@@ -7427,10 +7418,9 @@ Else (Linux/Windows) returns the size of <code>sockaddr_in</code> or <code>socka
 <h3 id="port">port<a class="headerlink" href="#port" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/net_address/#L155">[Source]</a></span></p>
 <p>Returns port number in host byte order.</p>
-<pre><code class="pony">fun box port()
+<pre><code class="language-pony">fun box port()
 : U16 val
 </code></pre>
-
 <h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U16/">U16</a> val</li>
@@ -7440,10 +7430,9 @@ Else (Linux/Windows) returns the size of <code>sockaddr_in</code> or <code>socka
 <p><span class="source-link"><a href="../src/net/net_address/#L161">[Source]</a></span></p>
 <p>Returns IPv6 scope identifier: Unicast, Anycast, Multicast and 
 unassigned scopes.</p>
-<pre><code class="pony">fun box scope()
+<pre><code class="language-pony">fun box scope()
 : U32 val
 </code></pre>
-
 <h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7453,10 +7442,9 @@ unassigned scopes.</p>
 <p><span class="source-link"><a href="../src/net/net_address/#L169">[Source]</a></span></p>
 <p>Returns IPV4 address (<code>_addr</code> field in the class) if <code>ip4()</code> is <code>True</code>.
 If <code>ip4()</code> is <code>False</code> then the contents are invalid.</p>
-<pre><code class="pony">fun box ipv4_addr()
+<pre><code class="language-pony">fun box ipv4_addr()
 : U32 val
 </code></pre>
-
 <h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-U32/">U32</a> val</li>
@@ -7469,11 +7457,10 @@ If <code>ip4()</code> is <code>False</code> then the contents are invalid.</p>
 <code>a._2 = _addr2  // Bits 33-64 of the IPv6 address in host byte order.</code>a._3 = _addr3  // Bits 65-96 of the IPv6 address in host byte order.
 `a._4 = _addr4  // Bits 97-128 of the IPv6 address in host byte order.</p>
 <p>The contents of the 4-tuple returned are valid only if <code>ip6()</code> is <code>True</code>.</p>
-<pre><code class="pony">fun box ipv6_addr()
+<pre><code class="language-pony">fun box ipv6_addr()
 : (U32 val , U32 val , U32 val , 
     U32 val)
 </code></pre>
-
 <h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../builtin-U32/">U32</a> val , <a href="../builtin-U32/">U32</a> val , <a href="../builtin-U32/">U32</a> val , 
@@ -7482,11 +7469,10 @@ If <code>ip4()</code> is <code>False</code> then the contents are invalid.</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/compare/#L20">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: NetAddress val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">NetAddress</a> val</li>

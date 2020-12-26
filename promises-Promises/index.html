@@ -7101,16 +7101,14 @@
                 
                 <h1 id="promisesa-any-share">Promises[A: <a href="../builtin-Any/">Any</a> #share]<a class="headerlink" href="#promisesa-any-share" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/promises/promise/#L284">[Source]</a></span></p>
-<pre><code class="pony">primitive val Promises[A: Any #share]
+<pre><code class="language-pony">primitive val Promises[A: Any #share]
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/promises/promise/#L284">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : Promises[A] val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">Promises</a>[A] val^</li>
@@ -7125,7 +7123,7 @@ promise is also rejected. The order that values appear in the final array
 is based on when each promise is fulfilled and not the order that they are
 given.</p>
 <p>Join three existing promises to make a fourth.</p>
-<pre><code class="pony">use &quot;promises&quot;
+<pre><code class="language-pony">use &quot;promises&quot;
 
 actor Main
   new create(env: Env) =&gt;
@@ -7145,12 +7143,10 @@ actor Main
     p3(&quot;third&quot;)
     p1(&quot;first&quot;)
 </code></pre>
-
-<pre><code class="pony">fun box join(
+<pre><code class="language-pony">fun box join(
   ps: Iterator[Promise[A] tag] ref)
 : Promise[Array[A] val] tag
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ps: <a href="../builtin-Iterator/">Iterator</a>[<a href="../promises-Promise/">Promise</a>[A] tag] ref</li>
@@ -7162,11 +7158,10 @@ actor Main
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/promises/promise/#L285">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: Promises[A] val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Promises</a>[A] val</li>
@@ -7178,11 +7173,10 @@ actor Main
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/promises/promise/#L285">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: Promises[A] val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Promises</a>[A] val</li>

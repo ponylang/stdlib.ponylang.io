@@ -7009,7 +7009,7 @@ We currently have support 3 encodings: PEM, MIME and URL.</p>
 <p>To learn more about Base64, we suggest you check out the
 <a href="https://en.wikipedia.org/wiki/Base64">wikipedia entry</a>.</p>
 <h2 id="example-code">Example code<a class="headerlink" href="#example-code" title="Permanent link">&para;</a></h2>
-<pre><code class="pony">use &quot;encode/base64&quot;
+<pre><code class="language-pony">use &quot;encode/base64&quot;
 
 actor Main
   new create(env: Env) =&gt;
@@ -7018,7 +7018,6 @@ actor Main
       env.out.print(Base64.decode[String iso](&quot;Zm9vYmFy&quot;)?)
     end
 </code></pre>
-
 <h2 id="public-types">Public Types<a class="headerlink" href="#public-types" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../encode-base64-Base64/">primitive Base64</a></li>

@@ -7035,17 +7035,15 @@
                 
                 <h1 id="parseerror">ParseError<a class="headerlink" href="#parseerror" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/options/options/#L98">[Source]</a></span></p>
-<pre><code class="pony">interface ref ParseError
+<pre><code class="language-pony">interface ref ParseError
 </code></pre>
-
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="reason">reason<a class="headerlink" href="#reason" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/options/options/#L99">[Source]</a></span></p>
-<pre><code class="pony">fun box reason()
+<pre><code class="language-pony">fun box reason()
 : (UnrecognisedOption val | MissingArgument val | InvalidArgument val | 
     AmbiguousMatch val)
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li>(<a href="../options-UnrecognisedOption/">UnrecognisedOption</a> val | <a href="../options-MissingArgument/">MissingArgument</a> val | <a href="../options-InvalidArgument/">InvalidArgument</a> val | 
@@ -7054,11 +7052,10 @@
 <hr />
 <h3 id="report">report<a class="headerlink" href="#report" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/options/options/#L100">[Source]</a></span></p>
-<pre><code class="pony">fun box report(
+<pre><code class="language-pony">fun box report(
   out: OutStream tag)
 : None val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>out: <a href="../builtin-OutStream/">OutStream</a> tag</li>

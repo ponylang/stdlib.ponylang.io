@@ -7119,10 +7119,9 @@
                 
                 <h1 id="arrayvaluesa-a-b-arraya-read">ArrayValues[A: A, B: <a href="../builtin-Array/">Array</a>[A] #read]<a class="headerlink" href="#arrayvaluesa-a-b-arraya-read" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/builtin/array/#L954">[Source]</a></span></p>
-<pre><code class="pony">class ref ArrayValues[A: A, B: Array[A] #read] is
+<pre><code class="language-pony">class ref ArrayValues[A: A, B: Array[A] #read] is
   Iterator[B-&gt;A] ref
 </code></pre>
-
 <h4 id="implements">Implements<a class="headerlink" href="#implements" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Iterator/">Iterator</a>[B-&gt;A] ref</li>
@@ -7131,11 +7130,10 @@
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/array/#L958">[Source]</a></span></p>
-<pre><code class="pony">new ref create(
+<pre><code class="language-pony">new ref create(
   array: B)
 : ArrayValues[A, B] ref^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>array: B</li>
@@ -7148,10 +7146,9 @@
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="has_next">has_next<a class="headerlink" href="#has_next" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/array/#L962">[Source]</a></span></p>
-<pre><code class="pony">fun box has_next()
+<pre><code class="language-pony">fun box has_next()
 : Bool val
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7159,10 +7156,9 @@
 <hr />
 <h3 id="next">next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/array/#L965">[Source]</a></span></p>
-<pre><code class="pony">fun ref next()
+<pre><code class="language-pony">fun ref next()
 : B-&gt;A ?
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>B-&gt;A ?</li>
@@ -7170,10 +7166,9 @@
 <hr />
 <h3 id="rewind">rewind<a class="headerlink" href="#rewind" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/array/#L968">[Source]</a></span></p>
-<pre><code class="pony">fun ref rewind()
+<pre><code class="language-pony">fun ref rewind()
 : ArrayValues[A, B] ref
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">ArrayValues</a>[A, B] ref</li>

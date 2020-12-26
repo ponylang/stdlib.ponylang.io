@@ -6913,7 +6913,7 @@
                 
                   <h1>file.pony</h1>
                 
-                <pre><code class="pony-full-source">use @_read[I32](fd: I32, buffer: Pointer[None], bytes_to_read: I32) if windows
+                <pre><code class="language-pony-full-source">use @_read[I32](fd: I32, buffer: Pointer[None], bytes_to_read: I32) if windows
 use @read[ISize](fd: I32, buffer: Pointer[None], bytes_to_read: USize)
   if not windows
 use @_write[I32](fd: I32, buffer: Pointer[None], bytes_to_send: I32) if windows

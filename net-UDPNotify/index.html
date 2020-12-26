@@ -7074,18 +7074,16 @@
 <p>Notifications for UDP connections.</p>
 <p>For an example of using this class please see the documentatoin for the
 <code>UDPSocket</code> actor.</p>
-<pre><code class="pony">interface ref UDPNotify
+<pre><code class="language-pony">interface ref UDPNotify
 </code></pre>
-
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="listening">listening<a class="headerlink" href="#listening" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_notify/#L8">[Source]</a></span></p>
 <p>Called when the socket has been bound to an address.</p>
-<pre><code class="pony">fun ref listening(
+<pre><code class="language-pony">fun ref listening(
   sock: UDPSocket ref)
 : None val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>sock: <a href="../net-UDPSocket/">UDPSocket</a> ref</li>
@@ -7100,15 +7098,13 @@
 <p>Called if it wasn't possible to bind the socket to an address.</p>
 <p>It is expected to implement proper error handling. You need to opt in to
 ignoring errors, which can be implemented like this:</p>
-<pre><code class="pony">fun ref not_listening(sock: UDPSocket ref) =&gt;
+<pre><code class="language-pony">fun ref not_listening(sock: UDPSocket ref) =&gt;
   None
 </code></pre>
-
-<pre><code class="pony">fun ref not_listening(
+<pre><code class="language-pony">fun ref not_listening(
   sock: UDPSocket ref)
 : None val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>sock: <a href="../net-UDPSocket/">UDPSocket</a> ref</li>
@@ -7121,13 +7117,12 @@ ignoring errors, which can be implemented like this:</p>
 <h3 id="received">received<a class="headerlink" href="#received" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_notify/#L27">[Source]</a></span></p>
 <p>Called when new data is received on the socket.</p>
-<pre><code class="pony">fun ref received(
+<pre><code class="language-pony">fun ref received(
   sock: UDPSocket ref,
   data: Array[U8 val] iso,
   from: NetAddress val)
 : None val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>sock: <a href="../net-UDPSocket/">UDPSocket</a> ref</li>
@@ -7142,11 +7137,10 @@ ignoring errors, which can be implemented like this:</p>
 <h3 id="closed">closed<a class="headerlink" href="#closed" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/net/udp_notify/#L37">[Source]</a></span></p>
 <p>Called when the socket is closed.</p>
-<pre><code class="pony">fun ref closed(
+<pre><code class="language-pony">fun ref closed(
   sock: UDPSocket ref)
 : None val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>sock: <a href="../net-UDPSocket/">UDPSocket</a> ref</li>

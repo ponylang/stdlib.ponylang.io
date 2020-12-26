@@ -7009,12 +7009,11 @@ only appear when the platform is debug configured. To create a binary with
 debug configured, pass the <code>-d</code> flag to <code>ponyc</code> when compiling e.g.:</p>
 <p><code>ponyc -d</code></p>
 <h2 id="example-code">Example code<a class="headerlink" href="#example-code" title="Permanent link">&para;</a></h2>
-<pre><code class="pony">actor Main
+<pre><code class="language-pony">actor Main
   new create(env: Env) =&gt;
     Debug.out(&quot;This will only be seen when configured for debug info&quot;)
     env.out.print(&quot;This will always be seen&quot;)
 </code></pre>
-
 <h2 id="public-types">Public Types<a class="headerlink" href="#public-types" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../debug-DebugOut/">primitive DebugOut</a></li>

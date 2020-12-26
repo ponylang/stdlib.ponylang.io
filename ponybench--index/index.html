@@ -7004,7 +7004,7 @@ the runtime of synchronous and asynchronous operations.</p>
 <h2 id="example-program">Example Program<a class="headerlink" href="#example-program" title="Permanent link">&para;</a></h2>
 <p>The following is a complete program with multiple trivial benchmarks followed
 by their output.</p>
-<pre><code class="pony">use &quot;time&quot;
+<pre><code class="language-pony">use &quot;time&quot;
 
 actor Main is BenchmarkList
   new create(env: Env) =&gt;
@@ -7067,7 +7067,6 @@ class iso _Timer is AsyncMicroBenchmark
       _ns))
 
 </code></pre>
-
 <p>By default, the results are printed to stdout like so:</p>
 <pre><code>Benchmark results will have their mean and median adjusted for overhead.
 You may disable this with --noadjust.
@@ -7079,7 +7078,6 @@ _Fib(10)                                  185 ns            184 ns      ±1.03% 
 _Fib(20)                                23943 ns          23898 ns      ±1.11%       10000
 _Timer (10000ns)                        10360 ns          10238 ns      ±3.25%       10000
 </code></pre>
-
 <p>The <code>--noadjust</code> option outputs results of the overhead measured prior to each
 benchmark run followed by the unadjusted benchmark result. An example of the
 output of this program with <code>--noadjust</code> is as follows:</p>
@@ -7095,7 +7093,6 @@ _Fib(20)                                30470 ns          30304 ns      ±1.55% 
 Benchmark Overhead                        552 ns            552 ns      ±0.39%      300000
 _Timer (10000 ns)                       10780 ns          10800 ns      ±3.60%       10000
 </code></pre>
-
 <p>It is recommended that a PonyBench program is compiled with the <code>--runtimebc</code>
 option, if possible, and run with the <code>--ponynoyield</code> option.</p>
 <h2 id="public-types">Public Types<a class="headerlink" href="#public-types" title="Permanent link">&para;</a></h2>

@@ -7049,7 +7049,7 @@ corresponding <code>ProcessNotify</code>'s method.</p>
 <p>The following program will spawn an external program and write to it's
 STDIN. Output received on STDOUT of the child process is forwarded to the
 ProcessNotify client and printed.</p>
-<pre><code class="pony">use &quot;process&quot;
+<pre><code class="language-pony">use &quot;process&quot;
 use &quot;files&quot;
 
 actor Main
@@ -7102,7 +7102,6 @@ class ProcessClient is ProcessNotify
       _env.out.print(&quot;Child terminated by signal: &quot; + signaled.signal().string())
     end
 </code></pre>
-
 <h2 id="process-portability">Process portability<a class="headerlink" href="#process-portability" title="Permanent link">&para;</a></h2>
 <p>The ProcessMonitor supports spawning processes on Linux, FreeBSD, OSX and Windows.</p>
 <h2 id="shutting-down-processmonitor-and-external-process">Shutting down ProcessMonitor and external process<a class="headerlink" href="#shutting-down-processmonitor-and-external-process" title="Permanent link">&para;</a></h2>

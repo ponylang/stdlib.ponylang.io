@@ -7282,18 +7282,16 @@
                 <h1 id="seqa-a">Seq[A: A]<a class="headerlink" href="#seqa-a" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/builtin/seq/#L1">[Source]</a></span></p>
 <p>A sequence of elements.</p>
-<pre><code class="pony">interface ref Seq[A: A]
+<pre><code class="language-pony">interface ref Seq[A: A]
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/seq/#L5">[Source]</a></span></p>
 <p>Create a sequence, reserving space for len elements.</p>
-<pre><code class="pony">new ref create(
+<pre><code class="language-pony">new ref create(
   len: USize val = 0)
 : Seq[A] ref^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>len: <a href="../builtin-USize/">USize</a> val = 0</li>
@@ -7307,11 +7305,10 @@
 <h3 id="reserve">reserve<a class="headerlink" href="#reserve" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/seq/#L10">[Source]</a></span></p>
 <p>Reserve space for len elements.</p>
-<pre><code class="pony">fun ref reserve(
+<pre><code class="language-pony">fun ref reserve(
   len: USize val)
 : None val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>len: <a href="../builtin-USize/">USize</a> val</li>
@@ -7324,10 +7321,9 @@
 <h3 id="size">size<a class="headerlink" href="#size" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/seq/#L15">[Source]</a></span></p>
 <p>Returns the number of elements in the sequence.</p>
-<pre><code class="pony">fun box size()
+<pre><code class="language-pony">fun box size()
 : USize val
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-USize/">USize</a> val</li>
@@ -7337,11 +7333,10 @@
 <p><span class="source-link"><a href="../src/builtin/seq/#L20">[Source]</a></span></p>
 <p>Returns the i-th element of the sequence. Raises an error if the index
 is out of bounds.</p>
-<pre><code class="pony">fun box apply(
+<pre><code class="language-pony">fun box apply(
   i: USize val)
 : this-&gt;A ?
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>i: <a href="../builtin-USize/">USize</a> val</li>
@@ -7355,12 +7350,11 @@ is out of bounds.</p>
 <p><span class="source-link"><a href="../src/builtin/seq/#L26">[Source]</a></span></p>
 <p>Replaces the i-th element of the sequence. Returns the previous value.
 Raises an error if the index is out of bounds.</p>
-<pre><code class="pony">fun ref update(
+<pre><code class="language-pony">fun ref update(
   i: USize val,
   value: A)
 : A^ ?
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>i: <a href="../builtin-USize/">USize</a> val</li>
@@ -7374,10 +7368,9 @@ Raises an error if the index is out of bounds.</p>
 <h3 id="clear">clear<a class="headerlink" href="#clear" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/seq/#L32">[Source]</a></span></p>
 <p>Removes all elements from the sequence.</p>
-<pre><code class="pony">fun ref clear()
+<pre><code class="language-pony">fun ref clear()
 : None val
 </code></pre>
-
 <h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
@@ -7386,11 +7379,10 @@ Raises an error if the index is out of bounds.</p>
 <h3 id="push">push<a class="headerlink" href="#push" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/seq/#L37">[Source]</a></span></p>
 <p>Adds an element to the end of the sequence.</p>
-<pre><code class="pony">fun ref push(
+<pre><code class="language-pony">fun ref push(
   value: A)
 : None val
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>value: A</li>
@@ -7403,10 +7395,9 @@ Raises an error if the index is out of bounds.</p>
 <h3 id="pop">pop<a class="headerlink" href="#pop" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/seq/#L42">[Source]</a></span></p>
 <p>Removes an element from the end of the sequence.</p>
-<pre><code class="pony">fun ref pop()
+<pre><code class="language-pony">fun ref pop()
 : A^ ?
 </code></pre>
-
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A^ ?</li>
@@ -7415,11 +7406,10 @@ Raises an error if the index is out of bounds.</p>
 <h3 id="unshift">unshift<a class="headerlink" href="#unshift" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/seq/#L47">[Source]</a></span></p>
 <p>Adds an element to the beginning of the sequence.</p>
-<pre><code class="pony">fun ref unshift(
+<pre><code class="language-pony">fun ref unshift(
   value: A)
 : None val
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>value: A</li>
@@ -7432,10 +7422,9 @@ Raises an error if the index is out of bounds.</p>
 <h3 id="shift">shift<a class="headerlink" href="#shift" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/seq/#L52">[Source]</a></span></p>
 <p>Removes an element from the beginning of the sequence.</p>
-<pre><code class="pony">fun ref shift()
+<pre><code class="language-pony">fun ref shift()
 : A^ ?
 </code></pre>
-
 <h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>A^ ?</li>
@@ -7445,13 +7434,12 @@ Raises an error if the index is out of bounds.</p>
 <p><span class="source-link"><a href="../src/builtin/seq/#L57">[Source]</a></span></p>
 <p>Add len elements to the end of the list, starting from the given
 offset.</p>
-<pre><code class="pony">fun ref append(
+<pre><code class="language-pony">fun ref append(
   seq: (ReadSeq[A] box &amp; ReadElement[A^] box),
   offset: USize val = 0,
   len: USize val = call)
 : None val
 </code></pre>
-
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>seq: (<a href="../builtin-ReadSeq/">ReadSeq</a>[A] box &amp; <a href="../builtin-ReadElement/">ReadElement</a>[A^] box)</li>
@@ -7467,13 +7455,12 @@ offset.</p>
 <p><span class="source-link"><a href="../src/builtin/seq/#L66">[Source]</a></span></p>
 <p>Add len iterated elements to the end of the list, starting from the given
 offset.</p>
-<pre><code class="pony">fun ref concat(
+<pre><code class="language-pony">fun ref concat(
   iter: Iterator[A^] ref,
   offset: USize val = 0,
   len: USize val = call)
 : None val
 </code></pre>
-
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>iter: <a href="../builtin-Iterator/">Iterator</a>[A^] ref</li>
@@ -7489,11 +7476,10 @@ offset.</p>
 <p><span class="source-link"><a href="../src/builtin/seq/#L72">[Source]</a></span></p>
 <p>Truncate the sequence to the given length, discarding excess elements.
 If the sequence is already smaller than len, do nothing.</p>
-<pre><code class="pony">fun ref truncate(
+<pre><code class="language-pony">fun ref truncate(
   len: USize val)
 : None val
 </code></pre>
-
 <h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>len: <a href="../builtin-USize/">USize</a> val</li>
@@ -7506,10 +7492,9 @@ If the sequence is already smaller than len, do nothing.</p>
 <h3 id="values">values<a class="headerlink" href="#values" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/seq/#L78">[Source]</a></span></p>
 <p>Returns an iterator over the elements of the sequence.</p>
-<pre><code class="pony">fun box values()
+<pre><code class="language-pony">fun box values()
 : Iterator[this-&gt;A] ref^
 </code></pre>
-
 <h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Iterator/">Iterator</a>[this-&gt;A] ref^</li>

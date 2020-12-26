@@ -7094,7 +7094,7 @@ public field <code>JsonDoc.data</code>, which is <a href="../builtin-None/">None
 not been called yet.</p>
 <p>Every call to <a href="../json-JsonDoc/#parse">parse</a> overwrites the <code>data</code> field, so one
 JsonDoc instance can be used to parse multiple JSON Strings one by one.</p>
-<pre><code class="pony">let doc = JsonDoc
+<pre><code class="language-pony">let doc = JsonDoc
 // parsing
 doc.parse(&quot;{\&quot;key\&quot;:\&quot;value\&quot;, \&quot;property\&quot;: true, \&quot;array\&quot;:[1, 2.5, false]}&quot;)?
 
@@ -7107,14 +7107,13 @@ let first: I64        = array.data(0)? as I64
 let second: F64       = array.data(1)? as F64
 let last: Bool        = array.data(2)? as Bool
 </code></pre>
-
 <h3 id="sending-json">Sending JSON<a class="headerlink" href="#sending-json" title="Permanent link">&para;</a></h3>
 <p><a href="../json-JsonDoc/">JsonDoc</a> has the <code>ref</code> reference capability, which means it is
 not sendable by default. If you need to send it to another actor you need to
 recover it to a sendable reference capability (either <code>val</code> or <code>iso</code>). For the
 sake of simplicity it is recommended to do the parsing already in the recover
 block:</p>
-<pre><code class="pony">// sending an iso doc
+<pre><code class="language-pony">// sending an iso doc
 let json_string = &quot;{\&quot;array\&quot;:[1, true, null]}&quot;
 let sendable_doc: JsonDoc iso = recover iso JsonDoc.&gt;parse(json_string)? end
 some_actor.send(consume sendable_doc)
@@ -7123,14 +7122,13 @@ some_actor.send(consume sendable_doc)
 let val_doc: JsonDoc val = recover val JsonDoc.&gt;parse(json_string)? end
 some_actor.send_val(val_doc)
 </code></pre>
-
 <p>When sending an <code>iso</code> JsonDoc it is important to recover it to a <code>ref</code> on the
 receiving side in order to be able to properly access the json structures in
 <code>data</code>.</p>
 <h2 id="writing-json">Writing JSON<a class="headerlink" href="#writing-json" title="Permanent link">&para;</a></h2>
 <p>JSON is written using the <a href="../json-JsonDoc/#string">JsonDoc.string</a> method. This
 will serialize the contents of the <code>data</code> field to <a href="../builtin-String/">String</a>.</p>
-<pre><code class="pony">// building up the JSON data structure
+<pre><code class="language-pony">// building up the JSON data structure
 let doc = JsonDoc
 let obj = JsonObject
 obj.data(&quot;key&quot;) = &quot;value&quot;
@@ -7144,7 +7142,6 @@ env.out.print(
 )
 
 </code></pre>
-
 <h2 id="public-types">Public Types<a class="headerlink" href="#public-types" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../json-JsonType/">type JsonType</a></li>

@@ -7016,37 +7016,33 @@ one as needed. Lazy methods return Iter types.</p>
 <p>For example, the following code creates an Iter from the values of an array
 containing the numbers 1 through 5, increments each number by one, filters out
 any odd numbers, and prints the rest.</p>
-<pre><code class="pony">let xs = Iter[I64]([1; 2; 3; 4; 5].values())
+<pre><code class="language-pony">let xs = Iter[I64]([1; 2; 3; 4; 5].values())
   .map[I64]({(x) =&gt; x + 1 })
   .filter({(x) =&gt; (x % 2) == 0 })
   .map[None]({(x) =&gt; env.out.print(x.string()) })
 </code></pre>
-
 <p>This will result in an iterator that prints the numbers 2, 4, and 6. However,
 due to the lazy nature of the map and filter, no iteration has actually occurred
 and nothing will be printed. One solution to this would be to loop over the
 resulting Iter as so:</p>
-<pre><code class="pony">for x in xs do
+<pre><code class="language-pony">for x in xs do
   None
 end
 </code></pre>
-
 <p>This will trigger the iteration and print out the values 2, 4, and 6. This is
 where the <code>run</code> method comes in handy by doing the iteration without the need
 for a loop. So the final code would be as follows:</p>
-<pre><code class="pony">Iter[I64]([1; 2; 3; 4; 5].values())
+<pre><code class="language-pony">Iter[I64]([1; 2; 3; 4; 5].values())
   .map[I64]({(x) =&gt; x + 1 })
   .filter({(x) =&gt; (x % 2) == 0 })
   .map[None]({(x) =&gt; env.out.print(x.string()) })
   .run()
 </code></pre>
-
 <p>Output:</p>
 <pre><code>2
 4
 6
 </code></pre>
-
 <h2 id="public-types">Public Types<a class="headerlink" href="#public-types" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../itertools-Iter/">class Iter</a></li>

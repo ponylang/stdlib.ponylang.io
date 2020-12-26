@@ -7085,20 +7085,18 @@
 <p><span class="source-link"><a href="../src/signals/signal_handler/#L10">[Source]</a></span></p>
 <p>Listen for a specific signal.
 If the wait parameter is true, the program will not terminate until the SignalHandler's dispose method is called, or if the SignalNotify returns false, after handling the signal as this also disposes the SignalHandler and unsubscribes it.</p>
-<pre><code class="pony">actor tag SignalHandler
+<pre><code class="language-pony">actor tag SignalHandler
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/signal_handler/#L20">[Source]</a></span></p>
 <p>Create a signal handler.</p>
-<pre><code class="pony">new tag create(
+<pre><code class="language-pony">new tag create(
   notify: SignalNotify iso,
   sig: U32 val,
   wait: Bool val = false)
 : SignalHandler tag^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>notify: <a href="../signals-SignalNotify/">SignalNotify</a> iso</li>
@@ -7114,16 +7112,14 @@ If the wait parameter is true, the program will not terminate until the SignalHa
 <h3 id="raise">raise<a class="headerlink" href="#raise" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/signal_handler/#L29">[Source]</a></span></p>
 <p>Raise the signal.</p>
-<pre><code class="pony">be raise()
+<pre><code class="language-pony">be raise()
 </code></pre>
-
 <hr />
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/signals/signal_handler/#L35">[Source]</a></span></p>
 <p>Dispose of the signal handler.</p>
-<pre><code class="pony">be dispose()
+<pre><code class="language-pony">be dispose()
 </code></pre>
-
 <hr />
                 
                   

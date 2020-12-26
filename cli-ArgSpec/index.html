@@ -7232,9 +7232,8 @@ name, descr(iption), a typ(e), and a default value when they are not
 required.</p>
 <p>Args always come after a leaf command, and are assigned in their positional
 order.</p>
-<pre><code class="pony">class val ArgSpec
+<pre><code class="language-pony">class val ArgSpec
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="bool">bool<a class="headerlink" href="#bool" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L366">[Source]</a></span></p>
@@ -7242,13 +7241,12 @@ order.</p>
   <code>&lt;cmd&gt; true</code>
 to yield an arg value like
   <code>cmd.arg("opt").bool() == true</code>.</p>
-<pre><code class="pony">new val bool(
+<pre><code class="language-pony">new val bool(
   name': String val,
   descr': String val = &quot;&quot;,
   default': (Bool val | None val) = reference)
 : ArgSpec val^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>name': <a href="../builtin-String/">String</a> val</li>
@@ -7266,13 +7264,12 @@ to yield an arg value like
   <code>&lt;cmd&gt; filename</code>
 to yield an arg value
   <code>cmd.arg("file").string() == "filename"</code>.</p>
-<pre><code class="pony">new val string(
+<pre><code class="language-pony">new val string(
   name': String val,
   descr': String val = &quot;&quot;,
   default': (String val | None val) = reference)
 : ArgSpec val^
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>name': <a href="../builtin-String/">String</a> val</li>
@@ -7290,13 +7287,12 @@ to yield an arg value
   <code>&lt;cmd&gt; 42</code>
 to yield an arg value like
   <code>cmd.arg("count").i64() == I64(42)</code>.</p>
-<pre><code class="pony">new val i64(
+<pre><code class="language-pony">new val i64(
   name': String val,
   descr': String val = &quot;&quot;,
   default': (I64 val | None val) = reference)
 : ArgSpec val^
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>name': <a href="../builtin-String/">String</a> val</li>
@@ -7314,13 +7310,12 @@ to yield an arg value like
   <code>&lt;cmd&gt; 47</code>
 to yield an arg value like
   <code>cmd.arg("count").u64() == U64(47)</code>.</p>
-<pre><code class="pony">new val u64(
+<pre><code class="language-pony">new val u64(
   name': String val,
   descr': String val = &quot;&quot;,
   default': (U64 val | None val) = reference)
 : ArgSpec val^
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>name': <a href="../builtin-String/">String</a> val</li>
@@ -7338,13 +7333,12 @@ to yield an arg value like
   <code>&lt;cmd&gt; 1.039</code>
 to yield an arg value like
   <code>cmd.arg("ratio").f64() == F64(1.039)</code>.</p>
-<pre><code class="pony">new val f64(
+<pre><code class="language-pony">new val f64(
   name': String val,
   descr': String val = &quot;&quot;,
   default': (F64 val | None val) = reference)
 : ArgSpec val^
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>name': <a href="../builtin-String/">String</a> val</li>
@@ -7362,12 +7356,11 @@ to yield an arg value like
   <code>&lt;cmd&gt; file1 file2 file3</code>
 to yield a sequence of three strings equivalent to
   <code>cmd.arg("file").string_seq() (equiv) ["file1"; "file2"; "file3"]</code>.</p>
-<pre><code class="pony">new val string_seq(
+<pre><code class="language-pony">new val string_seq(
   name': String val,
   descr': String val = &quot;&quot;)
 : ArgSpec val^
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>name': <a href="../builtin-String/">String</a> val</li>
@@ -7382,10 +7375,9 @@ to yield a sequence of three strings equivalent to
 <h3 id="name">name<a class="headerlink" href="#name" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L452">[Source]</a></span></p>
 <p>Returns the name of this arg.</p>
-<pre><code class="pony">fun box name()
+<pre><code class="language-pony">fun box name()
 : String val
 </code></pre>
-
 <h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -7394,10 +7386,9 @@ to yield a sequence of three strings equivalent to
 <h3 id="descr">descr<a class="headerlink" href="#descr" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L458">[Source]</a></span></p>
 <p>Returns the description for this arg.</p>
-<pre><code class="pony">fun box descr()
+<pre><code class="language-pony">fun box descr()
 : String val
 </code></pre>
-
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -7406,10 +7397,9 @@ to yield a sequence of three strings equivalent to
 <h3 id="required">required<a class="headerlink" href="#required" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L468">[Source]</a></span></p>
 <p>Returns true iff this arg is required to be present in the command line.</p>
-<pre><code class="pony">fun box required()
+<pre><code class="language-pony">fun box required()
 : Bool val
 </code></pre>
-
 <h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7418,10 +7408,9 @@ to yield a sequence of three strings equivalent to
 <h3 id="help_string">help_string<a class="headerlink" href="#help_string" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L474">[Source]</a></span></p>
 <p>Returns a formated help string for this arg.</p>
-<pre><code class="pony">fun box help_string()
+<pre><code class="language-pony">fun box help_string()
 : String val
 </code></pre>
-
 <h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -7429,10 +7418,9 @@ to yield a sequence of three strings equivalent to
 <hr />
 <h3 id="deb_string">deb_string<a class="headerlink" href="#deb_string" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L480">[Source]</a></span></p>
-<pre><code class="pony">fun box deb_string()
+<pre><code class="language-pony">fun box deb_string()
 : String val
 </code></pre>
-
 <h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>

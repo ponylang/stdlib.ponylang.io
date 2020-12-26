@@ -6988,10 +6988,9 @@
                 <h1 id="mapk-hashable-val-equatablek-v-any-share">Map[K: (<a href="../collections-Hashable/">Hashable</a> val &amp; <a href="../builtin-Equatable/">Equatable</a>[K]), V: <a href="../builtin-Any/">Any</a> #share]<a class="headerlink" href="#mapk-hashable-val-equatablek-v-any-share" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/collections-persistent/map/#L3">[Source]</a></span></p>
 <p>A map that uses structural equality on the key.</p>
-<pre><code class="pony">type Map[K: (Hashable val &amp; Equatable[K]), V: Any #share] is
+<pre><code class="language-pony">type Map[K: (Hashable val &amp; Equatable[K]), V: Any #share] is
   HashMap[K, V, HashEq[K] val] val
 </code></pre>
-
 <h4 id="type-alias-for">Type Alias For<a class="headerlink" href="#type-alias-for" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../collections-persistent-HashMap/">HashMap</a>[K, V, <a href="../collections-HashEq/">HashEq</a>[K] val] val</li>

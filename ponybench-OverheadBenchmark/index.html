@@ -7210,10 +7210,9 @@
                 <h1 id="overheadbenchmark">OverheadBenchmark<a class="headerlink" href="#overheadbenchmark" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/ponybench/benchmark/#L79">[Source]</a></span></p>
 <p>Default benchmark for measuring synchronous overhead.</p>
-<pre><code class="pony">class iso OverheadBenchmark is
+<pre><code class="language-pony">class iso OverheadBenchmark is
   MicroBenchmark iso
 </code></pre>
-
 <h4 id="implements">Implements<a class="headerlink" href="#implements" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../ponybench-MicroBenchmark/">MicroBenchmark</a> iso</li>
@@ -7222,10 +7221,9 @@
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ponybench/benchmark/#L79">[Source]</a></span></p>
-<pre><code class="pony">new iso create()
+<pre><code class="language-pony">new iso create()
 : OverheadBenchmark iso^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">OverheadBenchmark</a> iso^</li>
@@ -7234,10 +7232,9 @@
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="name">name<a class="headerlink" href="#name" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ponybench/benchmark/#L83">[Source]</a></span></p>
-<pre><code class="pony">fun box name()
+<pre><code class="language-pony">fun box name()
 : String val
 </code></pre>
-
 <h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -7245,10 +7242,9 @@
 <hr />
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ponybench/benchmark/#L86">[Source]</a></span></p>
-<pre><code class="pony">fun ref apply()
+<pre><code class="language-pony">fun ref apply()
 : None val
 </code></pre>
-
 <h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
@@ -7256,10 +7252,9 @@
 <hr />
 <h3 id="config">config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ponybench/benchmark/#L20">[Source]</a></span></p>
-<pre><code class="pony">fun box config()
+<pre><code class="language-pony">fun box config()
 : BenchConfig val
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../ponybench-BenchConfig/">BenchConfig</a> val</li>
@@ -7267,10 +7262,9 @@
 <hr />
 <h3 id="overhead">overhead<a class="headerlink" href="#overhead" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ponybench/benchmark/#L21">[Source]</a></span></p>
-<pre><code class="pony">fun box overhead()
+<pre><code class="language-pony">fun box overhead()
 : MicroBenchmark iso^
 </code></pre>
-
 <h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../ponybench-MicroBenchmark/">MicroBenchmark</a> iso^</li>
@@ -7278,10 +7272,9 @@
 <hr />
 <h3 id="before">before<a class="headerlink" href="#before" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ponybench/benchmark/#L22">[Source]</a></span></p>
-<pre><code class="pony">fun ref before()
+<pre><code class="language-pony">fun ref before()
 : None val ?
 </code></pre>
-
 <h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val ?</li>
@@ -7289,10 +7282,9 @@
 <hr />
 <h3 id="before_iteration">before_iteration<a class="headerlink" href="#before_iteration" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ponybench/benchmark/#L23">[Source]</a></span></p>
-<pre><code class="pony">fun ref before_iteration()
+<pre><code class="language-pony">fun ref before_iteration()
 : None val ?
 </code></pre>
-
 <h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val ?</li>
@@ -7300,10 +7292,9 @@
 <hr />
 <h3 id="after">after<a class="headerlink" href="#after" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ponybench/benchmark/#L25">[Source]</a></span></p>
-<pre><code class="pony">fun ref after()
+<pre><code class="language-pony">fun ref after()
 : None val ?
 </code></pre>
-
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val ?</li>
@@ -7311,10 +7302,9 @@
 <hr />
 <h3 id="after_iteration">after_iteration<a class="headerlink" href="#after_iteration" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ponybench/benchmark/#L26">[Source]</a></span></p>
-<pre><code class="pony">fun ref after_iteration()
+<pre><code class="language-pony">fun ref after_iteration()
 : None val ?
 </code></pre>
-
 <h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val ?</li>

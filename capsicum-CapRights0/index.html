@@ -7210,17 +7210,15 @@
                 <h1 id="caprights0">CapRights0<a class="headerlink" href="#caprights0" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/capsicum/cap_rights/#L5">[Source]</a></span></p>
 <p>Version 0 of the capsicum cap_rights_t structure.</p>
-<pre><code class="pony">class ref CapRights0
+<pre><code class="language-pony">class ref CapRights0
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap_rights/#L12">[Source]</a></span></p>
 <p>Initialises with no rights.</p>
-<pre><code class="pony">new ref create()
+<pre><code class="language-pony">new ref create()
 : CapRights0 ref^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">CapRights0</a> ref^</li>
@@ -7229,11 +7227,10 @@
 <h3 id="from">from<a class="headerlink" href="#from" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap_rights/#L18">[Source]</a></span></p>
 <p>Initialises with the rights from a FileCaps.</p>
-<pre><code class="pony">new ref from(
+<pre><code class="language-pony">new ref from(
   caps: Flags[(FileCreate val | FileChmod val | FileChown val | FileLink val | FileLookup val | FileMkdir val | FileRead val | FileRemove val | FileRename val | FileSeek val | FileStat val | FileSync val | FileTime val | FileTruncate val | FileWrite val | FileExec val), U32 val] box)
 : CapRights0 ref^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>caps: <a href="../collections-Flags/">Flags</a>[(<a href="../files-FileCreate/">FileCreate</a> val | <a href="../files-FileChmod/">FileChmod</a> val | <a href="../files-FileChown/">FileChown</a> val | <a href="../files-FileLink/">FileLink</a> val | <a href="../files-FileLookup/">FileLookup</a> val | <a href="../files-FileMkdir/">FileMkdir</a> val | <a href="../files-FileRead/">FileRead</a> val | <a href="../files-FileRemove/">FileRemove</a> val | <a href="../files-FileRename/">FileRename</a> val | <a href="../files-FileSeek/">FileSeek</a> val | <a href="../files-FileStat/">FileStat</a> val | <a href="../files-FileSync/">FileSync</a> val | <a href="../files-FileTime/">FileTime</a> val | <a href="../files-FileTruncate/">FileTruncate</a> val | <a href="../files-FileWrite/">FileWrite</a> val | <a href="../files-FileExec/">FileExec</a> val), <a href="../builtin-U32/">U32</a> val] box</li>
@@ -7246,11 +7243,10 @@
 <h3 id="descriptor">descriptor<a class="headerlink" href="#descriptor" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap_rights/#L52">[Source]</a></span></p>
 <p>Initialises with the rights on the given file descriptor.</p>
-<pre><code class="pony">new ref descriptor(
+<pre><code class="language-pony">new ref descriptor(
   fd: I32 val)
 : CapRights0 ref^
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>fd: <a href="../builtin-I32/">I32</a> val</li>
@@ -7263,11 +7259,10 @@
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="set">set<a class="headerlink" href="#set" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap_rights/#L60">[Source]</a></span></p>
-<pre><code class="pony">fun ref set(
+<pre><code class="language-pony">fun ref set(
   cap: U64 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>cap: <a href="../builtin-U64/">U64</a> val</li>
@@ -7279,11 +7274,10 @@
 <hr />
 <h3 id="unset">unset<a class="headerlink" href="#unset" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap_rights/#L65">[Source]</a></span></p>
-<pre><code class="pony">fun ref unset(
+<pre><code class="language-pony">fun ref unset(
   cap: U64 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>cap: <a href="../builtin-U64/">U64</a> val</li>
@@ -7296,11 +7290,10 @@
 <h3 id="limit">limit<a class="headerlink" href="#limit" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap_rights/#L70">[Source]</a></span></p>
 <p>Limits the fd to the encoded rights.</p>
-<pre><code class="pony">fun box limit(
+<pre><code class="language-pony">fun box limit(
   fd: I32 val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>fd: <a href="../builtin-I32/">I32</a> val</li>
@@ -7313,11 +7306,10 @@
 <h3 id="merge">merge<a class="headerlink" href="#merge" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap_rights/#L80">[Source]</a></span></p>
 <p>Merge the rights in that into this.</p>
-<pre><code class="pony">fun ref merge(
+<pre><code class="language-pony">fun ref merge(
   that: CapRights0 ref)
 : None val
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">CapRights0</a> ref</li>
@@ -7330,11 +7322,10 @@
 <h3 id="remove">remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap_rights/#L88">[Source]</a></span></p>
 <p>Remove the rights in that from this.</p>
-<pre><code class="pony">fun ref remove(
+<pre><code class="language-pony">fun ref remove(
   that: CapRights0 ref)
 : None val
 </code></pre>
-
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">CapRights0</a> ref</li>
@@ -7347,10 +7338,9 @@
 <h3 id="clear">clear<a class="headerlink" href="#clear" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap_rights/#L96">[Source]</a></span></p>
 <p>Clear all rights.</p>
-<pre><code class="pony">fun ref clear()
+<pre><code class="language-pony">fun ref clear()
 : None val
 </code></pre>
-
 <h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
@@ -7359,11 +7349,10 @@
 <h3 id="contains">contains<a class="headerlink" href="#contains" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/capsicum/cap_rights/#L104">[Source]</a></span></p>
 <p>Check that this is a superset of the rights in that.</p>
-<pre><code class="pony">fun box contains(
+<pre><code class="language-pony">fun box contains(
   that: CapRights0 ref)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">CapRights0</a> ref</li>

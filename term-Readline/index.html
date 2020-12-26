@@ -7336,10 +7336,9 @@
                 <h1 id="readline">Readline<a class="headerlink" href="#readline" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/term/readline/#L6">[Source]</a></span></p>
 <p>Line editing, history, and tab completion.</p>
-<pre><code class="pony">class ref Readline is
+<pre><code class="language-pony">class ref Readline is
   ANSINotify ref
 </code></pre>
-
 <h4 id="implements">Implements<a class="headerlink" href="#implements" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../term-ANSINotify/">ANSINotify</a> ref</li>
@@ -7350,14 +7349,13 @@
 <p><span class="source-link"><a href="../src/term/readline/#L23">[Source]</a></span></p>
 <p>Create a readline handler to be passed to stdin. It begins blocked. Set an
 initial prompt on the ANSITerm to begin processing.</p>
-<pre><code class="pony">new iso create(
+<pre><code class="language-pony">new iso create(
   notify: ReadlineNotify iso,
   out: OutStream tag,
   path: (FilePath val | None val) = reference,
   maxlen: USize val = 0)
 : Readline iso^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>notify: <a href="../term-ReadlineNotify/">ReadlineNotify</a> iso</li>
@@ -7374,12 +7372,11 @@ initial prompt on the ANSITerm to begin processing.</p>
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/readline/#L41">[Source]</a></span></p>
 <p>Receives input.</p>
-<pre><code class="pony">fun ref apply(
+<pre><code class="language-pony">fun ref apply(
   term: ANSITerm ref,
   input: U8 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>term: <a href="../term-ANSITerm/">ANSITerm</a> ref</li>
@@ -7393,12 +7390,11 @@ initial prompt on the ANSITerm to begin processing.</p>
 <h3 id="prompt">prompt<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/readline/#L83">[Source]</a></span></p>
 <p>Set a new prompt, unblock, and handle the pending queue.</p>
-<pre><code class="pony">fun ref prompt(
+<pre><code class="language-pony">fun ref prompt(
   term: ANSITerm ref,
   value: String val)
 : None val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>term: <a href="../term-ANSITerm/">ANSITerm</a> ref</li>
@@ -7412,10 +7408,9 @@ initial prompt on the ANSITerm to begin processing.</p>
 <h3 id="closed">closed<a class="headerlink" href="#closed" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/readline/#L99">[Source]</a></span></p>
 <p>No more input is available.</p>
-<pre><code class="pony">fun ref closed()
+<pre><code class="language-pony">fun ref closed()
 : None val
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-None/">None</a> val</li>
@@ -7424,13 +7419,12 @@ initial prompt on the ANSITerm to begin processing.</p>
 <h3 id="up">up<a class="headerlink" href="#up" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/readline/#L105">[Source]</a></span></p>
 <p>Previous line.</p>
-<pre><code class="pony">fun ref up(
+<pre><code class="language-pony">fun ref up(
   ctrl: Bool val = false,
   alt: Bool val = false,
   shift: Bool val = false)
 : None val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ctrl: <a href="../builtin-Bool/">Bool</a> val = false</li>
@@ -7445,13 +7439,12 @@ initial prompt on the ANSITerm to begin processing.</p>
 <h3 id="down">down<a class="headerlink" href="#down" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/readline/#L117">[Source]</a></span></p>
 <p>Next line.</p>
-<pre><code class="pony">fun ref down(
+<pre><code class="language-pony">fun ref down(
   ctrl: Bool val = false,
   alt: Bool val = false,
   shift: Bool val = false)
 : None val
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ctrl: <a href="../builtin-Bool/">Bool</a> val = false</li>
@@ -7466,13 +7459,12 @@ initial prompt on the ANSITerm to begin processing.</p>
 <h3 id="left">left<a class="headerlink" href="#left" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/readline/#L133">[Source]</a></span></p>
 <p>Move left.</p>
-<pre><code class="pony">fun ref left(
+<pre><code class="language-pony">fun ref left(
   ctrl: Bool val = false,
   alt: Bool val = false,
   shift: Bool val = false)
 : None val
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ctrl: <a href="../builtin-Bool/">Bool</a> val = false</li>
@@ -7487,13 +7479,12 @@ initial prompt on the ANSITerm to begin processing.</p>
 <h3 id="right">right<a class="headerlink" href="#right" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/readline/#L152">[Source]</a></span></p>
 <p>Move right.</p>
-<pre><code class="pony">fun ref right(
+<pre><code class="language-pony">fun ref right(
   ctrl: Bool val = false,
   alt: Bool val = false,
   shift: Bool val = false)
 : None val
 </code></pre>
-
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ctrl: <a href="../builtin-Bool/">Bool</a> val = false</li>
@@ -7508,13 +7499,12 @@ initial prompt on the ANSITerm to begin processing.</p>
 <h3 id="home">home<a class="headerlink" href="#home" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/readline/#L171">[Source]</a></span></p>
 <p>Beginning of the line.</p>
-<pre><code class="pony">fun ref home(
+<pre><code class="language-pony">fun ref home(
   ctrl: Bool val = false,
   alt: Bool val = false,
   shift: Bool val = false)
 : None val
 </code></pre>
-
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ctrl: <a href="../builtin-Bool/">Bool</a> val = false</li>
@@ -7529,13 +7519,12 @@ initial prompt on the ANSITerm to begin processing.</p>
 <h3 id="end_key">end_key<a class="headerlink" href="#end_key" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/readline/#L178">[Source]</a></span></p>
 <p>End of the line.</p>
-<pre><code class="pony">fun ref end_key(
+<pre><code class="language-pony">fun ref end_key(
   ctrl: Bool val = false,
   alt: Bool val = false,
   shift: Bool val = false)
 : None val
 </code></pre>
-
 <h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ctrl: <a href="../builtin-Bool/">Bool</a> val = false</li>
@@ -7550,13 +7539,12 @@ initial prompt on the ANSITerm to begin processing.</p>
 <h3 id="delete">delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/readline/#L211">[Source]</a></span></p>
 <p>Forward delete.</p>
-<pre><code class="pony">fun ref delete(
+<pre><code class="language-pony">fun ref delete(
   ctrl: Bool val = false,
   alt: Bool val = false,
   shift: Bool val = false)
 : None val
 </code></pre>
-
 <h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ctrl: <a href="../builtin-Bool/">Bool</a> val = false</li>
@@ -7569,13 +7557,12 @@ initial prompt on the ANSITerm to begin processing.</p>
 </ul>
 <hr />
 <h3 id="insert">insert<a class="headerlink" href="#insert" title="Permanent link">&para;</a></h3>
-<pre><code class="pony">fun ref insert(
+<pre><code class="language-pony">fun ref insert(
   ctrl: Bool val,
   alt: Bool val,
   shift: Bool val)
 : None val
 </code></pre>
-
 <h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ctrl: <a href="../builtin-Bool/">Bool</a> val</li>
@@ -7588,13 +7575,12 @@ initial prompt on the ANSITerm to begin processing.</p>
 </ul>
 <hr />
 <h3 id="page_up">page_up<a class="headerlink" href="#page_up" title="Permanent link">&para;</a></h3>
-<pre><code class="pony">fun ref page_up(
+<pre><code class="language-pony">fun ref page_up(
   ctrl: Bool val,
   alt: Bool val,
   shift: Bool val)
 : None val
 </code></pre>
-
 <h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ctrl: <a href="../builtin-Bool/">Bool</a> val</li>
@@ -7607,13 +7593,12 @@ initial prompt on the ANSITerm to begin processing.</p>
 </ul>
 <hr />
 <h3 id="page_down">page_down<a class="headerlink" href="#page_down" title="Permanent link">&para;</a></h3>
-<pre><code class="pony">fun ref page_down(
+<pre><code class="language-pony">fun ref page_down(
   ctrl: Bool val,
   alt: Bool val,
   shift: Bool val)
 : None val
 </code></pre>
-
 <h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li>ctrl: <a href="../builtin-Bool/">Bool</a> val</li>
@@ -7626,14 +7611,13 @@ initial prompt on the ANSITerm to begin processing.</p>
 </ul>
 <hr />
 <h3 id="fn_key">fn_key<a class="headerlink" href="#fn_key" title="Permanent link">&para;</a></h3>
-<pre><code class="pony">fun ref fn_key(
+<pre><code class="language-pony">fun ref fn_key(
   i: U8 val,
   ctrl: Bool val,
   alt: Bool val,
   shift: Bool val)
 : None val
 </code></pre>
-
 <h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li>i: <a href="../builtin-U8/">U8</a> val</li>
@@ -7647,12 +7631,11 @@ initial prompt on the ANSITerm to begin processing.</p>
 </ul>
 <hr />
 <h3 id="size">size<a class="headerlink" href="#size" title="Permanent link">&para;</a></h3>
-<pre><code class="pony">fun ref size(
+<pre><code class="language-pony">fun ref size(
   rows: U16 val,
   cols: U16 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li>rows: <a href="../builtin-U16/">U16</a> val</li>

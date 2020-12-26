@@ -7175,14 +7175,13 @@
 <p><span class="source-link"><a href="../src/builtin/env/#L1">[Source]</a></span></p>
 <p>An environment holds the command line and other values injected into the
 program by default by the runtime.</p>
-<pre><code class="pony">class val Env
+<pre><code class="language-pony">class val Env
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/env/#L57">[Source]</a></span></p>
 <p>Build an artificial environment. A root capability may be supplied.</p>
-<pre><code class="pony">new val create(
+<pre><code class="language-pony">new val create(
   root': (AmbientAuth val | None val),
   input': InputStream tag,
   out': OutStream tag,
@@ -7192,7 +7191,6 @@ program by default by the runtime.</p>
   exitcode': {(I32)} val)
 : Env val^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>root': (<a href="../builtin-AmbientAuth/">AmbientAuth</a> val | <a href="../builtin-None/">None</a> val)</li>

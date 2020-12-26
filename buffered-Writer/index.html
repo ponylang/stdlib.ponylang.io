@@ -7556,10 +7556,9 @@ messages consist of the following:</p>
 <p>A message would be something like this:</p>
 <pre><code>[message_length][list_size][float1][string1][float2][string2]...
 </code></pre>
-
 <p>The following program uses a write buffer to encode an array of
 tuples as a message of this type:</p>
-<pre><code class="pony">use &quot;buffered&quot;
+<pre><code class="language-pony">use &quot;buffered&quot;
 
 actor Main
   new create(env: Env) =&gt;
@@ -7579,17 +7578,14 @@ actor Main
       env.out.writev(wb_msg.done())
     end
 </code></pre>
-
-<pre><code class="pony">class ref Writer
+<pre><code class="language-pony">class ref Writer
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L1">[Source]</a></span></p>
-<pre><code class="pony">new iso create()
+<pre><code class="language-pony">new iso create()
 : Writer iso^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">Writer</a> iso^</li>
@@ -7601,11 +7597,10 @@ actor Main
 <p>Reserve space for size' chunks.</p>
 <p>This needs to be recalled after every call to <code>done</code>
 as <code>done</code> resets the chunks.</p>
-<pre><code class="pony">fun ref reserve_chunks(
+<pre><code class="language-pony">fun ref reserve_chunks(
   size': USize val)
 : None val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>size': <a href="../builtin-USize/">USize</a> val</li>
@@ -7618,11 +7613,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="reserve_current">reserve_current<a class="headerlink" href="#reserve_current" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L69">[Source]</a></span></p>
 <p>Reserve space for size bytes in <code>_current</code>.</p>
-<pre><code class="pony">fun ref reserve_current(
+<pre><code class="language-pony">fun ref reserve_current(
   size': USize val)
 : None val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>size': <a href="../builtin-USize/">USize</a> val</li>
@@ -7634,10 +7628,9 @@ as <code>done</code> resets the chunks.</p>
 <hr />
 <h3 id="size">size<a class="headerlink" href="#size" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L75">[Source]</a></span></p>
-<pre><code class="pony">fun box size()
+<pre><code class="language-pony">fun box size()
 : USize val
 </code></pre>
-
 <h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-USize/">USize</a> val</li>
@@ -7646,11 +7639,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="u8">u8<a class="headerlink" href="#u8" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L78">[Source]</a></span></p>
 <p>Write a byte to the buffer.</p>
-<pre><code class="pony">fun ref u8(
+<pre><code class="language-pony">fun ref u8(
   data: U8 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-U8/">U8</a> val</li>
@@ -7663,11 +7655,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="u16_le">u16_le<a class="headerlink" href="#u16_le" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L86">[Source]</a></span></p>
 <p>Write a U16 to the buffer in little-endian byte order.</p>
-<pre><code class="pony">fun ref u16_le(
+<pre><code class="language-pony">fun ref u16_le(
   data: U16 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-U16/">U16</a> val</li>
@@ -7680,11 +7671,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="u16_be">u16_be<a class="headerlink" href="#u16_be" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L98">[Source]</a></span></p>
 <p>Write a U16 to the buffer in big-endian byte order.</p>
-<pre><code class="pony">fun ref u16_be(
+<pre><code class="language-pony">fun ref u16_be(
   data: U16 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-U16/">U16</a> val</li>
@@ -7697,11 +7687,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="i16_le">i16_le<a class="headerlink" href="#i16_le" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L110">[Source]</a></span></p>
 <p>Write an I16 to the buffer in little-endian byte order.</p>
-<pre><code class="pony">fun ref i16_le(
+<pre><code class="language-pony">fun ref i16_le(
   data: I16 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-I16/">I16</a> val</li>
@@ -7714,11 +7703,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="i16_be">i16_be<a class="headerlink" href="#i16_be" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L116">[Source]</a></span></p>
 <p>Write an I16 to the buffer in big-endian byte order.</p>
-<pre><code class="pony">fun ref i16_be(
+<pre><code class="language-pony">fun ref i16_be(
   data: I16 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-I16/">I16</a> val</li>
@@ -7731,11 +7719,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="u32_le">u32_le<a class="headerlink" href="#u32_le" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L122">[Source]</a></span></p>
 <p>Write a U32 to the buffer in little-endian byte order.</p>
-<pre><code class="pony">fun ref u32_le(
+<pre><code class="language-pony">fun ref u32_le(
   data: U32 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-U32/">U32</a> val</li>
@@ -7748,11 +7735,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="u32_be">u32_be<a class="headerlink" href="#u32_be" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L134">[Source]</a></span></p>
 <p>Write a U32 to the buffer in big-endian byte order.</p>
-<pre><code class="pony">fun ref u32_be(
+<pre><code class="language-pony">fun ref u32_be(
   data: U32 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-U32/">U32</a> val</li>
@@ -7765,11 +7751,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="i32_le">i32_le<a class="headerlink" href="#i32_le" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L146">[Source]</a></span></p>
 <p>Write an I32 to the buffer in little-endian byte order.</p>
-<pre><code class="pony">fun ref i32_le(
+<pre><code class="language-pony">fun ref i32_le(
   data: I32 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-I32/">I32</a> val</li>
@@ -7782,11 +7767,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="i32_be">i32_be<a class="headerlink" href="#i32_be" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L152">[Source]</a></span></p>
 <p>Write an I32 to the buffer in big-endian byte order.</p>
-<pre><code class="pony">fun ref i32_be(
+<pre><code class="language-pony">fun ref i32_be(
   data: I32 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-I32/">I32</a> val</li>
@@ -7799,11 +7783,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="f32_le">f32_le<a class="headerlink" href="#f32_le" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L158">[Source]</a></span></p>
 <p>Write an F32 to the buffer in little-endian byte order.</p>
-<pre><code class="pony">fun ref f32_le(
+<pre><code class="language-pony">fun ref f32_le(
   data: F32 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-F32/">F32</a> val</li>
@@ -7816,11 +7799,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="f32_be">f32_be<a class="headerlink" href="#f32_be" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L164">[Source]</a></span></p>
 <p>Write an F32 to the buffer in big-endian byte order.</p>
-<pre><code class="pony">fun ref f32_be(
+<pre><code class="language-pony">fun ref f32_be(
   data: F32 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-F32/">F32</a> val</li>
@@ -7833,11 +7815,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="u64_le">u64_le<a class="headerlink" href="#u64_le" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L170">[Source]</a></span></p>
 <p>Write a U64 to the buffer in little-endian byte order.</p>
-<pre><code class="pony">fun ref u64_le(
+<pre><code class="language-pony">fun ref u64_le(
   data: U64 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-U64/">U64</a> val</li>
@@ -7850,11 +7831,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="u64_be">u64_be<a class="headerlink" href="#u64_be" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L182">[Source]</a></span></p>
 <p>Write a U64 to the buffer in big-endian byte order.</p>
-<pre><code class="pony">fun ref u64_be(
+<pre><code class="language-pony">fun ref u64_be(
   data: U64 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-U64/">U64</a> val</li>
@@ -7867,11 +7847,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="i64_le">i64_le<a class="headerlink" href="#i64_le" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L194">[Source]</a></span></p>
 <p>Write an I64 to the buffer in little-endian byte order.</p>
-<pre><code class="pony">fun ref i64_le(
+<pre><code class="language-pony">fun ref i64_le(
   data: I64 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-I64/">I64</a> val</li>
@@ -7884,11 +7863,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="i64_be">i64_be<a class="headerlink" href="#i64_be" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L200">[Source]</a></span></p>
 <p>Write an I64 to the buffer in big-endian byte order.</p>
-<pre><code class="pony">fun ref i64_be(
+<pre><code class="language-pony">fun ref i64_be(
   data: I64 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-I64/">I64</a> val</li>
@@ -7901,11 +7879,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="f64_le">f64_le<a class="headerlink" href="#f64_le" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L206">[Source]</a></span></p>
 <p>Write an F64 to the buffer in little-endian byte order.</p>
-<pre><code class="pony">fun ref f64_le(
+<pre><code class="language-pony">fun ref f64_le(
   data: F64 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_17">Parameters<a class="headerlink" href="#parameters_17" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-F64/">F64</a> val</li>
@@ -7918,11 +7895,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="f64_be">f64_be<a class="headerlink" href="#f64_be" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L212">[Source]</a></span></p>
 <p>Write an F64 to the buffer in big-endian byte order.</p>
-<pre><code class="pony">fun ref f64_be(
+<pre><code class="language-pony">fun ref f64_be(
   data: F64 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_18">Parameters<a class="headerlink" href="#parameters_18" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-F64/">F64</a> val</li>
@@ -7935,11 +7911,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="u128_le">u128_le<a class="headerlink" href="#u128_le" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L218">[Source]</a></span></p>
 <p>Write a U128 to the buffer in little-endian byte order.</p>
-<pre><code class="pony">fun ref u128_le(
+<pre><code class="language-pony">fun ref u128_le(
   data: U128 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_19">Parameters<a class="headerlink" href="#parameters_19" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-U128/">U128</a> val</li>
@@ -7952,11 +7927,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="u128_be">u128_be<a class="headerlink" href="#u128_be" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L230">[Source]</a></span></p>
 <p>Write a U128 to the buffer in big-endian byte order.</p>
-<pre><code class="pony">fun ref u128_be(
+<pre><code class="language-pony">fun ref u128_be(
   data: U128 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_20">Parameters<a class="headerlink" href="#parameters_20" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-U128/">U128</a> val</li>
@@ -7969,11 +7943,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="i128_le">i128_le<a class="headerlink" href="#i128_le" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L242">[Source]</a></span></p>
 <p>Write an I128 to the buffer in little-endian byte order.</p>
-<pre><code class="pony">fun ref i128_le(
+<pre><code class="language-pony">fun ref i128_le(
   data: I128 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_21">Parameters<a class="headerlink" href="#parameters_21" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-I128/">I128</a> val</li>
@@ -7986,11 +7959,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="i128_be">i128_be<a class="headerlink" href="#i128_be" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L248">[Source]</a></span></p>
 <p>Write an I128 to the buffer in big-endian byte order.</p>
-<pre><code class="pony">fun ref i128_be(
+<pre><code class="language-pony">fun ref i128_be(
   data: I128 val)
 : None val
 </code></pre>
-
 <h4 id="parameters_22">Parameters<a class="headerlink" href="#parameters_22" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-I128/">I128</a> val</li>
@@ -8003,11 +7975,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="write">write<a class="headerlink" href="#write" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L254">[Source]</a></span></p>
 <p>Write a ByteSeq to the buffer.</p>
-<pre><code class="pony">fun ref write(
+<pre><code class="language-pony">fun ref write(
   data: (String val | Array[U8 val] val))
 : None val
 </code></pre>
-
 <h4 id="parameters_23">Parameters<a class="headerlink" href="#parameters_23" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: (<a href="../builtin-String/">String</a> val | <a href="../builtin-Array/">Array</a>[<a href="../builtin-U8/">U8</a> val] val)</li>
@@ -8020,11 +7991,10 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="writev">writev<a class="headerlink" href="#writev" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L277">[Source]</a></span></p>
 <p>Write ByteSeqs to the buffer.</p>
-<pre><code class="pony">fun ref writev(
+<pre><code class="language-pony">fun ref writev(
   data: ByteSeqIter val)
 : None val
 </code></pre>
-
 <h4 id="parameters_24">Parameters<a class="headerlink" href="#parameters_24" title="Permanent link">&para;</a></h4>
 <ul>
 <li>data: <a href="../builtin-ByteSeqIter/">ByteSeqIter</a> val</li>
@@ -8037,10 +8007,9 @@ as <code>done</code> resets the chunks.</p>
 <h3 id="done">done<a class="headerlink" href="#done" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/buffered/writer/#L285">[Source]</a></span></p>
 <p>Return an array of buffered ByteSeqs and reset the Writer's buffer.</p>
-<pre><code class="pony">fun ref done()
+<pre><code class="language-pony">fun ref done()
 : Array[(String val | Array[U8 val] val)] iso^
 </code></pre>
-
 <h4 id="returns_27">Returns<a class="headerlink" href="#returns_27" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Array/">Array</a>[(<a href="../builtin-String/">String</a> val | <a href="../builtin-Array/">Array</a>[<a href="../builtin-U8/">U8</a> val] val)] iso^</li>

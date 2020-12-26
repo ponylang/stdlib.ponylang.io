@@ -6988,10 +6988,9 @@
                 <h1 id="mapisk-any-share-v-any-share">MapIs[K: <a href="../builtin-Any/">Any</a> #share, V: <a href="../builtin-Any/">Any</a> #share]<a class="headerlink" href="#mapisk-any-share-v-any-share" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/collections-persistent/map/#L9">[Source]</a></span></p>
 <p>A map that uses identity comparison on the key.</p>
-<pre><code class="pony">type MapIs[K: Any #share, V: Any #share] is
+<pre><code class="language-pony">type MapIs[K: Any #share, V: Any #share] is
   HashMap[K, V, HashIs[K] val] val
 </code></pre>
-
 <h4 id="type-alias-for">Type Alias For<a class="headerlink" href="#type-alias-for" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../collections-persistent-HashMap/">HashMap</a>[K, V, <a href="../collections-HashIs/">HashIs</a>[K] val] val</li>

@@ -7065,18 +7065,16 @@
                 
                 <h1 id="ponybench">PonyBench<a class="headerlink" href="#ponybench" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/ponybench/pony_bench/#L108">[Source]</a></span></p>
-<pre><code class="pony">actor tag PonyBench
+<pre><code class="language-pony">actor tag PonyBench
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ponybench/pony_bench/#L114">[Source]</a></span></p>
-<pre><code class="pony">new tag create(
+<pre><code class="language-pony">new tag create(
   env: Env val,
   list: BenchmarkList tag)
 : PonyBench tag^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>env: <a href="../builtin-Env/">Env</a> val</li>
@@ -7090,10 +7088,9 @@
 <h2 id="public-behaviours">Public Behaviours<a class="headerlink" href="#public-behaviours" title="Permanent link">&para;</a></h2>
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ponybench/pony_bench/#L128">[Source]</a></span></p>
-<pre><code class="pony">be apply(
+<pre><code class="language-pony">be apply(
   bench: (MicroBenchmark iso | AsyncMicroBenchmark iso))
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>bench: (<a href="../ponybench-MicroBenchmark/">MicroBenchmark</a> iso | <a href="../ponybench-AsyncMicroBenchmark/">AsyncMicroBenchmark</a> iso)</li>

@@ -7102,16 +7102,14 @@
                 <h1 id="ini">Ini<a class="headerlink" href="#ini" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/ini/ini/#L63">[Source]</a></span></p>
 <p>A streaming parser for INI formatted lines of test.</p>
-<pre><code class="pony">primitive val Ini
+<pre><code class="language-pony">primitive val Ini
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ini/ini/#L63">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : Ini val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">Ini</a> val^</li>
@@ -7123,12 +7121,11 @@
 <p>This accepts a string iterator and calls the IniNotify for each new entry.
 If any errors are encountered, this will return false. Otherwise, it
 returns true.</p>
-<pre><code class="pony">fun box apply(
+<pre><code class="language-pony">fun box apply(
   lines: Iterator[String box] ref,
   f: IniNotify ref)
 : Bool val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>lines: <a href="../builtin-Iterator/">Iterator</a>[<a href="../builtin-String/">String</a> box] ref</li>
@@ -7141,11 +7138,10 @@ returns true.</p>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ini/ini/#L67">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: Ini val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Ini</a> val</li>
@@ -7157,11 +7153,10 @@ returns true.</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ini/ini/#L67">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: Ini val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">Ini</a> val</li>

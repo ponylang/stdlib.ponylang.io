@@ -7232,9 +7232,8 @@ descr(iption), a short-name, a typ(e), and a default value when they are not
 required.</p>
 <p>Options can be placed anywhere before or after commands, and can be thought
 of as named arguments.</p>
-<pre><code class="pony">class val OptionSpec
+<pre><code class="language-pony">class val OptionSpec
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="bool">bool<a class="headerlink" href="#bool" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L183">[Source]</a></span></p>
@@ -7242,14 +7241,13 @@ of as named arguments.</p>
   <code>--opt</code> or <code>-O</code> or <code>--opt=true</code> or <code>-O=true</code>
 to yield an option value like
   <code>cmd.option("opt").bool() == true</code>.</p>
-<pre><code class="pony">new val bool(
+<pre><code class="language-pony">new val bool(
   name': String val,
   descr': String val = &quot;&quot;,
   short': (U8 val | None val) = reference,
   default': (Bool val | None val) = reference)
 : OptionSpec val^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>name': <a href="../builtin-String/">String</a> val</li>
@@ -7268,14 +7266,13 @@ to yield an option value like
   <code>--file=dir/filename</code> or <code>-F=dir/filename</code> or <code>-Fdir/filename</code>
 to yield an option value like
   <code>cmd.option("file").string() == "dir/filename"</code>.</p>
-<pre><code class="pony">new val string(
+<pre><code class="language-pony">new val string(
   name': String val,
   descr': String val = &quot;&quot;,
   short': (U8 val | None val) = reference,
   default': (String val | None val) = reference)
 : OptionSpec val^
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>name': <a href="../builtin-String/">String</a> val</li>
@@ -7294,14 +7291,13 @@ to yield an option value like
   <code>--count=42 -C=42</code>
 to yield an option value like
   <code>cmd.option("count").i64() == I64(42)</code>.</p>
-<pre><code class="pony">new val i64(
+<pre><code class="language-pony">new val i64(
   name': String val,
   descr': String val = &quot;&quot;,
   short': (U8 val | None val) = reference,
   default': (I64 val | None val) = reference)
 : OptionSpec val^
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>name': <a href="../builtin-String/">String</a> val</li>
@@ -7320,14 +7316,13 @@ to yield an option value like
   <code>--count=47 -C=47</code>
 to yield an option value like
   <code>cmd.option("count").u64() == U64(47)</code>.</p>
-<pre><code class="pony">new val u64(
+<pre><code class="language-pony">new val u64(
   name': String val,
   descr': String val = &quot;&quot;,
   short': (U8 val | None val) = reference,
   default': (U64 val | None val) = reference)
 : OptionSpec val^
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>name': <a href="../builtin-String/">String</a> val</li>
@@ -7346,14 +7341,13 @@ to yield an option value like
   <code>--ratio=1.039</code> or <code>-R=1.039</code>
 to yield an option value like
   <code>cmd.option("ratio").f64() == F64(1.039)</code>.</p>
-<pre><code class="pony">new val f64(
+<pre><code class="language-pony">new val f64(
   name': String val,
   descr': String val = &quot;&quot;,
   short': (U8 val | None val) = reference,
   default': (F64 val | None val) = reference)
 : OptionSpec val^
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>name': <a href="../builtin-String/">String</a> val</li>
@@ -7372,13 +7366,12 @@ to yield an option value like
   <code>--files=file1 --files=files2 --files=files2</code>
 to yield a sequence of three strings equivalent to
   <code>cmd.option("ratio").string_seq() (equiv) ["file1"; "file2"; "file3"]</code>.</p>
-<pre><code class="pony">new val string_seq(
+<pre><code class="language-pony">new val string_seq(
   name': String val,
   descr': String val = &quot;&quot;,
   short': (U8 val | None val) = reference)
 : OptionSpec val^
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>name': <a href="../builtin-String/">String</a> val</li>
@@ -7394,10 +7387,9 @@ to yield a sequence of three strings equivalent to
 <h3 id="name">name<a class="headerlink" href="#name" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L281">[Source]</a></span></p>
 <p>Returns the name of this option.</p>
-<pre><code class="pony">fun box name()
+<pre><code class="language-pony">fun box name()
 : String val
 </code></pre>
-
 <h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -7406,10 +7398,9 @@ to yield a sequence of three strings equivalent to
 <h3 id="descr">descr<a class="headerlink" href="#descr" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L287">[Source]</a></span></p>
 <p>Returns the description for this option.</p>
-<pre><code class="pony">fun box descr()
+<pre><code class="language-pony">fun box descr()
 : String val
 </code></pre>
-
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -7418,10 +7409,9 @@ to yield a sequence of three strings equivalent to
 <h3 id="required">required<a class="headerlink" href="#required" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L297">[Source]</a></span></p>
 <p>Returns true iff this option is required to be present in the command line.</p>
-<pre><code class="pony">fun box required()
+<pre><code class="language-pony">fun box required()
 : Bool val
 </code></pre>
-
 <h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
@@ -7430,10 +7420,9 @@ to yield a sequence of three strings equivalent to
 <h3 id="help_string">help_string<a class="headerlink" href="#help_string" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L326">[Source]</a></span></p>
 <p>Returns a formated help string for this option.</p>
-<pre><code class="pony">fun box help_string()
+<pre><code class="language-pony">fun box help_string()
 : String val
 </code></pre>
-
 <h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -7441,10 +7430,9 @@ to yield a sequence of three strings equivalent to
 <hr />
 <h3 id="deb_string">deb_string<a class="headerlink" href="#deb_string" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_spec/#L339">[Source]</a></span></p>
-<pre><code class="pony">fun box deb_string()
+<pre><code class="language-pony">fun box deb_string()
 : String val
 </code></pre>
-
 <h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>

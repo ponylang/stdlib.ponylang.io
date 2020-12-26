@@ -7877,16 +7877,14 @@
 <p><span class="source-link"><a href="../src/term/ansi/#L1">[Source]</a></span></p>
 <p>These strings can be embedded in text when writing to a StdStream to create
 a text-based UI.</p>
-<pre><code class="pony">primitive val ANSI
+<pre><code class="language-pony">primitive val ANSI
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L1">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : ANSI val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">ANSI</a> val^</li>
@@ -7896,11 +7894,10 @@ a text-based UI.</p>
 <h3 id="up">up<a class="headerlink" href="#up" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L6">[Source]</a></span></p>
 <p>Move the cursor up n lines. 0 is the same as 1.</p>
-<pre><code class="pony">fun box up(
+<pre><code class="language-pony">fun box up(
   n: U32 val = 0)
 : String val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>n: <a href="../builtin-U32/">U32</a> val = 0</li>
@@ -7913,11 +7910,10 @@ a text-based UI.</p>
 <h3 id="down">down<a class="headerlink" href="#down" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L16">[Source]</a></span></p>
 <p>Move the cursor down n lines. 0 is the same as 1.</p>
-<pre><code class="pony">fun box down(
+<pre><code class="language-pony">fun box down(
   n: U32 val = 0)
 : String val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>n: <a href="../builtin-U32/">U32</a> val = 0</li>
@@ -7930,11 +7926,10 @@ a text-based UI.</p>
 <h3 id="right">right<a class="headerlink" href="#right" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L26">[Source]</a></span></p>
 <p>Move the cursor right n columns. 0 is the same as 1.</p>
-<pre><code class="pony">fun box right(
+<pre><code class="language-pony">fun box right(
   n: U32 val = 0)
 : String val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>n: <a href="../builtin-U32/">U32</a> val = 0</li>
@@ -7947,11 +7942,10 @@ a text-based UI.</p>
 <h3 id="left">left<a class="headerlink" href="#left" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L36">[Source]</a></span></p>
 <p>Move the cursor left n columns. 0 is the same as 1.</p>
-<pre><code class="pony">fun box left(
+<pre><code class="language-pony">fun box left(
   n: U32 val = 0)
 : String val
 </code></pre>
-
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>n: <a href="../builtin-U32/">U32</a> val = 0</li>
@@ -7965,12 +7959,11 @@ a text-based UI.</p>
 <p><span class="source-link"><a href="../src/term/ansi/#L46">[Source]</a></span></p>
 <p>Move the cursor to line y, column x. 0 is the same as 1. This indexes from
 the top left corner of the screen.</p>
-<pre><code class="pony">fun box cursor(
+<pre><code class="language-pony">fun box cursor(
   x: U32 val = 0,
   y: U32 val = 0)
 : String val
 </code></pre>
-
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>x: <a href="../builtin-U32/">U32</a> val = 0</li>
@@ -7984,10 +7977,9 @@ the top left corner of the screen.</p>
 <h3 id="clear">clear<a class="headerlink" href="#clear" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L57">[Source]</a></span></p>
 <p>Clear the screen and move the cursor to the top left corner.</p>
-<pre><code class="pony">fun box clear()
+<pre><code class="language-pony">fun box clear()
 : String val
 </code></pre>
-
 <h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -7996,10 +7988,9 @@ the top left corner of the screen.</p>
 <h3 id="erase">erase<a class="headerlink" href="#erase" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L63">[Source]</a></span></p>
 <p>Erases everything to the left of the cursor on the line the cursor is on.</p>
-<pre><code class="pony">fun box erase()
+<pre><code class="language-pony">fun box erase()
 : String val
 </code></pre>
-
 <h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8008,10 +7999,9 @@ the top left corner of the screen.</p>
 <h3 id="reset">reset<a class="headerlink" href="#reset" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L69">[Source]</a></span></p>
 <p>Resets all colours and text styles to the default.</p>
-<pre><code class="pony">fun box reset()
+<pre><code class="language-pony">fun box reset()
 : String val
 </code></pre>
-
 <h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8020,11 +8010,10 @@ the top left corner of the screen.</p>
 <h3 id="bold">bold<a class="headerlink" href="#bold" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L75">[Source]</a></span></p>
 <p>Bold text. Does nothing on Windows.</p>
-<pre><code class="pony">fun box bold(
+<pre><code class="language-pony">fun box bold(
   state: Bool val = true)
 : String val
 </code></pre>
-
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>state: <a href="../builtin-Bool/">Bool</a> val = true</li>
@@ -8037,11 +8026,10 @@ the top left corner of the screen.</p>
 <h3 id="underline">underline<a class="headerlink" href="#underline" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L81">[Source]</a></span></p>
 <p>Underlined text. Does nothing on Windows.</p>
-<pre><code class="pony">fun box underline(
+<pre><code class="language-pony">fun box underline(
   state: Bool val = true)
 : String val
 </code></pre>
-
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>state: <a href="../builtin-Bool/">Bool</a> val = true</li>
@@ -8054,11 +8042,10 @@ the top left corner of the screen.</p>
 <h3 id="blink">blink<a class="headerlink" href="#blink" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L87">[Source]</a></span></p>
 <p>Blinking text. Does nothing on Windows.</p>
-<pre><code class="pony">fun box blink(
+<pre><code class="language-pony">fun box blink(
   state: Bool val = true)
 : String val
 </code></pre>
-
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>state: <a href="../builtin-Bool/">Bool</a> val = true</li>
@@ -8071,11 +8058,10 @@ the top left corner of the screen.</p>
 <h3 id="reverse">reverse<a class="headerlink" href="#reverse" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L93">[Source]</a></span></p>
 <p>Swap foreground and background colour.</p>
-<pre><code class="pony">fun box reverse(
+<pre><code class="language-pony">fun box reverse(
   state: Bool val = true)
 : String val
 </code></pre>
-
 <h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>state: <a href="../builtin-Bool/">Bool</a> val = true</li>
@@ -8088,10 +8074,9 @@ the top left corner of the screen.</p>
 <h3 id="black">black<a class="headerlink" href="#black" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L99">[Source]</a></span></p>
 <p>Black text.</p>
-<pre><code class="pony">fun box black()
+<pre><code class="language-pony">fun box black()
 : String val
 </code></pre>
-
 <h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8100,10 +8085,9 @@ the top left corner of the screen.</p>
 <h3 id="red">red<a class="headerlink" href="#red" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L105">[Source]</a></span></p>
 <p>Red text.</p>
-<pre><code class="pony">fun box red()
+<pre><code class="language-pony">fun box red()
 : String val
 </code></pre>
-
 <h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8112,10 +8096,9 @@ the top left corner of the screen.</p>
 <h3 id="green">green<a class="headerlink" href="#green" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L111">[Source]</a></span></p>
 <p>Green text.</p>
-<pre><code class="pony">fun box green()
+<pre><code class="language-pony">fun box green()
 : String val
 </code></pre>
-
 <h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8124,10 +8107,9 @@ the top left corner of the screen.</p>
 <h3 id="yellow">yellow<a class="headerlink" href="#yellow" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L117">[Source]</a></span></p>
 <p>Yellow text.</p>
-<pre><code class="pony">fun box yellow()
+<pre><code class="language-pony">fun box yellow()
 : String val
 </code></pre>
-
 <h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8136,10 +8118,9 @@ the top left corner of the screen.</p>
 <h3 id="blue">blue<a class="headerlink" href="#blue" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L123">[Source]</a></span></p>
 <p>Blue text.</p>
-<pre><code class="pony">fun box blue()
+<pre><code class="language-pony">fun box blue()
 : String val
 </code></pre>
-
 <h4 id="returns_17">Returns<a class="headerlink" href="#returns_17" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8148,10 +8129,9 @@ the top left corner of the screen.</p>
 <h3 id="magenta">magenta<a class="headerlink" href="#magenta" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L129">[Source]</a></span></p>
 <p>Magenta text.</p>
-<pre><code class="pony">fun box magenta()
+<pre><code class="language-pony">fun box magenta()
 : String val
 </code></pre>
-
 <h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8160,10 +8140,9 @@ the top left corner of the screen.</p>
 <h3 id="cyan">cyan<a class="headerlink" href="#cyan" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L135">[Source]</a></span></p>
 <p>Cyan text.</p>
-<pre><code class="pony">fun box cyan()
+<pre><code class="language-pony">fun box cyan()
 : String val
 </code></pre>
-
 <h4 id="returns_19">Returns<a class="headerlink" href="#returns_19" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8172,10 +8151,9 @@ the top left corner of the screen.</p>
 <h3 id="grey">grey<a class="headerlink" href="#grey" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L141">[Source]</a></span></p>
 <p>Grey text.</p>
-<pre><code class="pony">fun box grey()
+<pre><code class="language-pony">fun box grey()
 : String val
 </code></pre>
-
 <h4 id="returns_20">Returns<a class="headerlink" href="#returns_20" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8184,10 +8162,9 @@ the top left corner of the screen.</p>
 <h3 id="white">white<a class="headerlink" href="#white" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L147">[Source]</a></span></p>
 <p>White text.</p>
-<pre><code class="pony">fun box white()
+<pre><code class="language-pony">fun box white()
 : String val
 </code></pre>
-
 <h4 id="returns_21">Returns<a class="headerlink" href="#returns_21" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8196,10 +8173,9 @@ the top left corner of the screen.</p>
 <h3 id="bright_red">bright_red<a class="headerlink" href="#bright_red" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L153">[Source]</a></span></p>
 <p>Bright red text.</p>
-<pre><code class="pony">fun box bright_red()
+<pre><code class="language-pony">fun box bright_red()
 : String val
 </code></pre>
-
 <h4 id="returns_22">Returns<a class="headerlink" href="#returns_22" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8208,10 +8184,9 @@ the top left corner of the screen.</p>
 <h3 id="bright_green">bright_green<a class="headerlink" href="#bright_green" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L159">[Source]</a></span></p>
 <p>Bright green text.</p>
-<pre><code class="pony">fun box bright_green()
+<pre><code class="language-pony">fun box bright_green()
 : String val
 </code></pre>
-
 <h4 id="returns_23">Returns<a class="headerlink" href="#returns_23" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8220,10 +8195,9 @@ the top left corner of the screen.</p>
 <h3 id="bright_yellow">bright_yellow<a class="headerlink" href="#bright_yellow" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L165">[Source]</a></span></p>
 <p>Bright yellow text.</p>
-<pre><code class="pony">fun box bright_yellow()
+<pre><code class="language-pony">fun box bright_yellow()
 : String val
 </code></pre>
-
 <h4 id="returns_24">Returns<a class="headerlink" href="#returns_24" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8232,10 +8206,9 @@ the top left corner of the screen.</p>
 <h3 id="bright_blue">bright_blue<a class="headerlink" href="#bright_blue" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L171">[Source]</a></span></p>
 <p>Bright blue text.</p>
-<pre><code class="pony">fun box bright_blue()
+<pre><code class="language-pony">fun box bright_blue()
 : String val
 </code></pre>
-
 <h4 id="returns_25">Returns<a class="headerlink" href="#returns_25" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8244,10 +8217,9 @@ the top left corner of the screen.</p>
 <h3 id="bright_magenta">bright_magenta<a class="headerlink" href="#bright_magenta" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L177">[Source]</a></span></p>
 <p>Bright magenta text.</p>
-<pre><code class="pony">fun box bright_magenta()
+<pre><code class="language-pony">fun box bright_magenta()
 : String val
 </code></pre>
-
 <h4 id="returns_26">Returns<a class="headerlink" href="#returns_26" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8256,10 +8228,9 @@ the top left corner of the screen.</p>
 <h3 id="bright_cyan">bright_cyan<a class="headerlink" href="#bright_cyan" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L183">[Source]</a></span></p>
 <p>Bright cyan text.</p>
-<pre><code class="pony">fun box bright_cyan()
+<pre><code class="language-pony">fun box bright_cyan()
 : String val
 </code></pre>
-
 <h4 id="returns_27">Returns<a class="headerlink" href="#returns_27" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8268,10 +8239,9 @@ the top left corner of the screen.</p>
 <h3 id="bright_grey">bright_grey<a class="headerlink" href="#bright_grey" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L189">[Source]</a></span></p>
 <p>Bright grey text.</p>
-<pre><code class="pony">fun box bright_grey()
+<pre><code class="language-pony">fun box bright_grey()
 : String val
 </code></pre>
-
 <h4 id="returns_28">Returns<a class="headerlink" href="#returns_28" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8280,10 +8250,9 @@ the top left corner of the screen.</p>
 <h3 id="black_bg">black_bg<a class="headerlink" href="#black_bg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L195">[Source]</a></span></p>
 <p>Black background.</p>
-<pre><code class="pony">fun box black_bg()
+<pre><code class="language-pony">fun box black_bg()
 : String val
 </code></pre>
-
 <h4 id="returns_29">Returns<a class="headerlink" href="#returns_29" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8292,10 +8261,9 @@ the top left corner of the screen.</p>
 <h3 id="red_bg">red_bg<a class="headerlink" href="#red_bg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L201">[Source]</a></span></p>
 <p>Red background.</p>
-<pre><code class="pony">fun box red_bg()
+<pre><code class="language-pony">fun box red_bg()
 : String val
 </code></pre>
-
 <h4 id="returns_30">Returns<a class="headerlink" href="#returns_30" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8304,10 +8272,9 @@ the top left corner of the screen.</p>
 <h3 id="green_bg">green_bg<a class="headerlink" href="#green_bg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L207">[Source]</a></span></p>
 <p>Green background.</p>
-<pre><code class="pony">fun box green_bg()
+<pre><code class="language-pony">fun box green_bg()
 : String val
 </code></pre>
-
 <h4 id="returns_31">Returns<a class="headerlink" href="#returns_31" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8316,10 +8283,9 @@ the top left corner of the screen.</p>
 <h3 id="yellow_bg">yellow_bg<a class="headerlink" href="#yellow_bg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L213">[Source]</a></span></p>
 <p>Yellow background.</p>
-<pre><code class="pony">fun box yellow_bg()
+<pre><code class="language-pony">fun box yellow_bg()
 : String val
 </code></pre>
-
 <h4 id="returns_32">Returns<a class="headerlink" href="#returns_32" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8328,10 +8294,9 @@ the top left corner of the screen.</p>
 <h3 id="blue_bg">blue_bg<a class="headerlink" href="#blue_bg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L219">[Source]</a></span></p>
 <p>Blue background.</p>
-<pre><code class="pony">fun box blue_bg()
+<pre><code class="language-pony">fun box blue_bg()
 : String val
 </code></pre>
-
 <h4 id="returns_33">Returns<a class="headerlink" href="#returns_33" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8340,10 +8305,9 @@ the top left corner of the screen.</p>
 <h3 id="magenta_bg">magenta_bg<a class="headerlink" href="#magenta_bg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L225">[Source]</a></span></p>
 <p>Magenta background.</p>
-<pre><code class="pony">fun box magenta_bg()
+<pre><code class="language-pony">fun box magenta_bg()
 : String val
 </code></pre>
-
 <h4 id="returns_34">Returns<a class="headerlink" href="#returns_34" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8352,10 +8316,9 @@ the top left corner of the screen.</p>
 <h3 id="cyan_bg">cyan_bg<a class="headerlink" href="#cyan_bg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L231">[Source]</a></span></p>
 <p>Cyan background.</p>
-<pre><code class="pony">fun box cyan_bg()
+<pre><code class="language-pony">fun box cyan_bg()
 : String val
 </code></pre>
-
 <h4 id="returns_35">Returns<a class="headerlink" href="#returns_35" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8364,10 +8327,9 @@ the top left corner of the screen.</p>
 <h3 id="grey_bg">grey_bg<a class="headerlink" href="#grey_bg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L237">[Source]</a></span></p>
 <p>Grey background.</p>
-<pre><code class="pony">fun box grey_bg()
+<pre><code class="language-pony">fun box grey_bg()
 : String val
 </code></pre>
-
 <h4 id="returns_36">Returns<a class="headerlink" href="#returns_36" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8376,10 +8338,9 @@ the top left corner of the screen.</p>
 <h3 id="white_bg">white_bg<a class="headerlink" href="#white_bg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L243">[Source]</a></span></p>
 <p>White background.</p>
-<pre><code class="pony">fun box white_bg()
+<pre><code class="language-pony">fun box white_bg()
 : String val
 </code></pre>
-
 <h4 id="returns_37">Returns<a class="headerlink" href="#returns_37" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8388,10 +8349,9 @@ the top left corner of the screen.</p>
 <h3 id="bright_red_bg">bright_red_bg<a class="headerlink" href="#bright_red_bg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L249">[Source]</a></span></p>
 <p>Bright red background.</p>
-<pre><code class="pony">fun box bright_red_bg()
+<pre><code class="language-pony">fun box bright_red_bg()
 : String val
 </code></pre>
-
 <h4 id="returns_38">Returns<a class="headerlink" href="#returns_38" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8400,10 +8360,9 @@ the top left corner of the screen.</p>
 <h3 id="bright_green_bg">bright_green_bg<a class="headerlink" href="#bright_green_bg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L255">[Source]</a></span></p>
 <p>Bright green background.</p>
-<pre><code class="pony">fun box bright_green_bg()
+<pre><code class="language-pony">fun box bright_green_bg()
 : String val
 </code></pre>
-
 <h4 id="returns_39">Returns<a class="headerlink" href="#returns_39" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8412,10 +8371,9 @@ the top left corner of the screen.</p>
 <h3 id="bright_yellow_bg">bright_yellow_bg<a class="headerlink" href="#bright_yellow_bg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L261">[Source]</a></span></p>
 <p>Bright yellow background.</p>
-<pre><code class="pony">fun box bright_yellow_bg()
+<pre><code class="language-pony">fun box bright_yellow_bg()
 : String val
 </code></pre>
-
 <h4 id="returns_40">Returns<a class="headerlink" href="#returns_40" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8424,10 +8382,9 @@ the top left corner of the screen.</p>
 <h3 id="bright_blue_bg">bright_blue_bg<a class="headerlink" href="#bright_blue_bg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L267">[Source]</a></span></p>
 <p>Bright blue background.</p>
-<pre><code class="pony">fun box bright_blue_bg()
+<pre><code class="language-pony">fun box bright_blue_bg()
 : String val
 </code></pre>
-
 <h4 id="returns_41">Returns<a class="headerlink" href="#returns_41" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8436,10 +8393,9 @@ the top left corner of the screen.</p>
 <h3 id="bright_magenta_bg">bright_magenta_bg<a class="headerlink" href="#bright_magenta_bg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L273">[Source]</a></span></p>
 <p>Bright magenta background.</p>
-<pre><code class="pony">fun box bright_magenta_bg()
+<pre><code class="language-pony">fun box bright_magenta_bg()
 : String val
 </code></pre>
-
 <h4 id="returns_42">Returns<a class="headerlink" href="#returns_42" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8448,10 +8404,9 @@ the top left corner of the screen.</p>
 <h3 id="bright_cyan_bg">bright_cyan_bg<a class="headerlink" href="#bright_cyan_bg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L279">[Source]</a></span></p>
 <p>Bright cyan background.</p>
-<pre><code class="pony">fun box bright_cyan_bg()
+<pre><code class="language-pony">fun box bright_cyan_bg()
 : String val
 </code></pre>
-
 <h4 id="returns_43">Returns<a class="headerlink" href="#returns_43" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8460,10 +8415,9 @@ the top left corner of the screen.</p>
 <h3 id="bright_grey_bg">bright_grey_bg<a class="headerlink" href="#bright_grey_bg" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L285">[Source]</a></span></p>
 <p>Bright grey background.</p>
-<pre><code class="pony">fun box bright_grey_bg()
+<pre><code class="language-pony">fun box bright_grey_bg()
 : String val
 </code></pre>
-
 <h4 id="returns_44">Returns<a class="headerlink" href="#returns_44" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-String/">String</a> val</li>
@@ -8471,11 +8425,10 @@ the top left corner of the screen.</p>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L6">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: ANSI val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">ANSI</a> val</li>
@@ -8487,11 +8440,10 @@ the top left corner of the screen.</p>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/term/ansi/#L6">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: ANSI val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">ANSI</a> val</li>

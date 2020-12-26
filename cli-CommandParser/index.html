@@ -7065,18 +7065,16 @@
                 
                 <h1 id="commandparser">CommandParser<a class="headerlink" href="#commandparser" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/cli/command_parser/#L3">[Source]</a></span></p>
-<pre><code class="pony">class ref CommandParser
+<pre><code class="language-pony">class ref CommandParser
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/cli/command_parser/#L7">[Source]</a></span></p>
 <p>Creates a new parser for a given command spec.</p>
-<pre><code class="pony">new box create(
+<pre><code class="language-pony">new box create(
   spec': CommandSpec box)
 : CommandParser box^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>spec': <a href="../cli-CommandSpec/">CommandSpec</a> box</li>
@@ -7091,12 +7089,11 @@
 <p><span class="source-link"><a href="../src/cli/command_parser/#L18">[Source]</a></span></p>
 <p>Parses all of the command line tokens and env vars and returns a Command,
 or the first SyntaxError.</p>
-<pre><code class="pony">fun box parse(
+<pre><code class="language-pony">fun box parse(
   argv: Array[String val] box,
   envs: (Array[String val] box | None val) = reference)
 : (Command box | CommandHelp box | SyntaxError val)
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>argv: <a href="../builtin-Array/">Array</a>[<a href="../builtin-String/">String</a> val] box</li>

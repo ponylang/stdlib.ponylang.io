@@ -7134,16 +7134,14 @@
 <p>A Registrar keeps a map of lookup string to anything. Generally, this is used
 to keep a directory of long-lived service-providing actors that can be
 looked up name.</p>
-<pre><code class="pony">actor tag Registrar
+<pre><code class="language-pony">actor tag Registrar
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/bureaucracy/registrar/#L4">[Source]</a></span></p>
-<pre><code class="pony">new tag create()
+<pre><code class="language-pony">new tag create()
 : Registrar tag^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">Registrar</a> tag^</li>
@@ -7153,11 +7151,10 @@ looked up name.</p>
 <h3 id="update">update<a class="headerlink" href="#update" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/bureaucracy/registrar/#L12">[Source]</a></span></p>
 <p>Add, or change, a lookup mapping.</p>
-<pre><code class="pony">be update(
+<pre><code class="language-pony">be update(
   key: String val,
   value: Any tag)
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>key: <a href="../builtin-String/">String</a> val</li>
@@ -7169,11 +7166,10 @@ looked up name.</p>
 <p>Remove a mapping. This only takes effect if provided key currently maps to
 the provided value. If the key maps to some other value (perhaps after
 updating), the mapping won't be removed.</p>
-<pre><code class="pony">be remove(
+<pre><code class="language-pony">be remove(
   key: String val,
   value: Any tag)
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>key: <a href="../builtin-String/">String</a> val</li>
@@ -7186,11 +7182,10 @@ updating), the mapping won't be removed.</p>
 <p>Lookup by name. Returns a promise that will be fulfilled with the mapped
 value if it exists and is a subtype of A. Otherwise, the promise will be
 rejected.</p>
-<pre><code class="pony">fun tag apply[optional A: Any tag](
+<pre><code class="language-pony">fun tag apply[optional A: Any tag](
   key: String val)
 : Promise[A] tag
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>key: <a href="../builtin-String/">String</a> val</li>

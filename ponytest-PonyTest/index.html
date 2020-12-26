@@ -7067,20 +7067,18 @@
 <p><span class="source-link"><a href="../src/ponytest/pony_test/#L245">[Source]</a></span></p>
 <p>Main test framework actor that organises tests, collates information and
 prints results.</p>
-<pre><code class="pony">actor tag PonyTest
+<pre><code class="language-pony">actor tag PonyTest
 </code></pre>
-
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ponytest/pony_test/#L270">[Source]</a></span></p>
 <p>Create a PonyTest object and use it to run the tests from the given
 TestList</p>
-<pre><code class="pony">new tag create(
+<pre><code class="language-pony">new tag create(
   env: Env val,
   list: TestList tag)
 : PonyTest tag^
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>env: <a href="../builtin-Env/">Env</a> val</li>
@@ -7095,10 +7093,9 @@ TestList</p>
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ponytest/pony_test/#L282">[Source]</a></span></p>
 <p>Run the given test, subject to our filters and options.</p>
-<pre><code class="pony">be apply(
+<pre><code class="language-pony">be apply(
   test: UnitTest iso)
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>test: <a href="../ponytest-UnitTest/">UnitTest</a> iso</li>

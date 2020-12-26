@@ -7119,10 +7119,9 @@
                 
                 <h1 id="minheapprioritya-comparablea-read">MinHeapPriority[A: <a href="../builtin-Comparable/">Comparable</a>[A] #read]<a class="headerlink" href="#minheapprioritya-comparablea-read" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/collections/heap/#L139">[Source]</a></span></p>
-<pre><code class="pony">primitive val MinHeapPriority[A: Comparable[A] #read] is
+<pre><code class="language-pony">primitive val MinHeapPriority[A: Comparable[A] #read] is
   _BinaryHeapPriority[A] val
 </code></pre>
-
 <h4 id="implements">Implements<a class="headerlink" href="#implements" title="Permanent link">&para;</a></h4>
 <ul>
 <li>_BinaryHeapPriority[A] val</li>
@@ -7131,10 +7130,9 @@
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/heap/#L139">[Source]</a></span></p>
-<pre><code class="pony">new val create()
+<pre><code class="language-pony">new val create()
 : MinHeapPriority[A] val^
 </code></pre>
-
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="./">MinHeapPriority</a>[A] val^</li>
@@ -7143,12 +7141,11 @@
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/heap/#L140">[Source]</a></span></p>
-<pre><code class="pony">fun box apply(
+<pre><code class="language-pony">fun box apply(
   x: A,
   y: A)
 : Bool val
 </code></pre>
-
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>x: A</li>
@@ -7161,11 +7158,10 @@
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/heap/#L140">[Source]</a></span></p>
-<pre><code class="pony">fun box eq(
+<pre><code class="language-pony">fun box eq(
   that: MinHeapPriority[A] val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">MinHeapPriority</a>[A] val</li>
@@ -7177,11 +7173,10 @@
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/heap/#L140">[Source]</a></span></p>
-<pre><code class="pony">fun box ne(
+<pre><code class="language-pony">fun box ne(
   that: MinHeapPriority[A] val)
 : Bool val
 </code></pre>
-
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="./">MinHeapPriority</a>[A] val</li>
