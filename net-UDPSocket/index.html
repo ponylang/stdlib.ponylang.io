@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-ponylang-0.2.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-ponylang-0.2.7">
     
     
       
@@ -7528,11 +7528,13 @@
                 <h1 id="udpsocket">UDPSocket<a class="headerlink" href="#udpsocket" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/net/udp_socket/#L5">[Source]</a></span></p>
 <p>Creates a UDP socket that can be used for sending and receiving UDP messages.</p>
-<p>The following examples create:
-* an echo server that listens for connections and returns whatever message it
-  receives
-* a client that connects to the server, sends a message, and prints the
-  message it receives in response</p>
+<p>The following examples create:</p>
+<ul>
+<li>an echo server that listens for connections and returns whatever message it
+  receives</li>
+<li>a client that connects to the server, sends a message, and prints the
+  message it receives in response</li>
+</ul>
 <p>The server is implemented like this:</p>
 <pre><code class="language-pony">use &quot;net&quot;
 
@@ -7595,7 +7597,7 @@ actor Main
 </code></pre>
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L89">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L90">[Source]</a></span></p>
 <p>Listens for both IPv4 and IPv6 datagrams.</p>
 <pre><code class="language-pony">new tag create(
   auth: (AmbientAuth val | NetAuth val | UDPAuth val),
@@ -7619,7 +7621,7 @@ actor Main
 </ul>
 <hr />
 <h3 id="ip4">ip4<a class="headerlink" href="#ip4" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L110">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L111">[Source]</a></span></p>
 <p>Listens for IPv4 datagrams.</p>
 <pre><code class="language-pony">new tag ip4(
   auth: (AmbientAuth val | NetAuth val | UDPAuth val),
@@ -7643,7 +7645,7 @@ actor Main
 </ul>
 <hr />
 <h3 id="ip6">ip6<a class="headerlink" href="#ip6" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L131">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L132">[Source]</a></span></p>
 <p>Listens for IPv6 datagrams.</p>
 <pre><code class="language-pony">new tag ip6(
   auth: (AmbientAuth val | NetAuth val | UDPAuth val),
@@ -7668,7 +7670,7 @@ actor Main
 <hr />
 <h2 id="public-behaviours">Public Behaviours<a class="headerlink" href="#public-behaviours" title="Permanent link">&para;</a></h2>
 <h3 id="write">write<a class="headerlink" href="#write" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L152">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L153">[Source]</a></span></p>
 <p>Write a single sequence of bytes.</p>
 <pre><code class="language-pony">be write(
   data: (String val | Array[U8 val] val),
@@ -7681,7 +7683,7 @@ actor Main
 </ul>
 <hr />
 <h3 id="writev">writev<a class="headerlink" href="#writev" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L158">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L159">[Source]</a></span></p>
 <p>Write a sequence of sequences of bytes.</p>
 <pre><code class="language-pony">be writev(
   data: ByteSeqIter val,
@@ -7694,7 +7696,7 @@ actor Main
 </ul>
 <hr />
 <h3 id="set_notify">set_notify<a class="headerlink" href="#set_notify" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L166">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L167">[Source]</a></span></p>
 <p>Change the notifier.</p>
 <pre><code class="language-pony">be set_notify(
   notify: UDPNotify iso)
@@ -7705,7 +7707,7 @@ actor Main
 </ul>
 <hr />
 <h3 id="set_broadcast">set_broadcast<a class="headerlink" href="#set_broadcast" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L172">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L173">[Source]</a></span></p>
 <p>Enable or disable broadcasting from this socket.</p>
 <pre><code class="language-pony">be set_broadcast(
   state: Bool val)
@@ -7716,7 +7718,7 @@ actor Main
 </ul>
 <hr />
 <h3 id="set_multicast_interface">set_multicast_interface<a class="headerlink" href="#set_multicast_interface" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L184">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L185">[Source]</a></span></p>
 <p>By default, the OS will choose which address is used to send packets bound
 for multicast addresses. This can be used to force a specific interface. To
 revert to allowing the OS to choose, call with an empty string.</p>
@@ -7729,7 +7731,7 @@ revert to allowing the OS to choose, call with an empty string.</p>
 </ul>
 <hr />
 <h3 id="set_multicast_loopback">set_multicast_loopback<a class="headerlink" href="#set_multicast_loopback" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L194">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L195">[Source]</a></span></p>
 <p>By default, packets sent to a multicast address will be received by the
 sending system if it has subscribed to that address. Disabling loopback
 prevents this.</p>
@@ -7742,7 +7744,7 @@ prevents this.</p>
 </ul>
 <hr />
 <h3 id="set_multicast_ttl">set_multicast_ttl<a class="headerlink" href="#set_multicast_ttl" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L204">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L205">[Source]</a></span></p>
 <p>Set the TTL for multicast sends. Defaults to 1.</p>
 <pre><code class="language-pony">be set_multicast_ttl(
   ttl: U8 val)
@@ -7753,7 +7755,7 @@ prevents this.</p>
 </ul>
 <hr />
 <h3 id="multicast_join">multicast_join<a class="headerlink" href="#multicast_join" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L212">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L213">[Source]</a></span></p>
 <p>Add a multicast group. This can be limited to packets arriving on a
 specific interface.</p>
 <pre><code class="language-pony">be multicast_join(
@@ -7767,7 +7769,7 @@ specific interface.</p>
 </ul>
 <hr />
 <h3 id="multicast_leave">multicast_leave<a class="headerlink" href="#multicast_leave" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L221">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L222">[Source]</a></span></p>
 <p>Drop a multicast group. This can be limited to packets arriving on a
 specific interface. No attempt is made to check that this socket has
 previously added this group.</p>
@@ -7782,14 +7784,14 @@ previously added this group.</p>
 </ul>
 <hr />
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L231">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L232">[Source]</a></span></p>
 <p>Stop listening.</p>
 <pre><code class="language-pony">be dispose()
 </code></pre>
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="local_address">local_address<a class="headerlink" href="#local_address" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L239">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L240">[Source]</a></span></p>
 <p>Return the bound IP address.</p>
 <pre><code class="language-pony">fun box local_address()
 : NetAddress val
@@ -7800,7 +7802,7 @@ previously added this group.</p>
 </ul>
 <hr />
 <h3 id="getsockopt">getsockopt<a class="headerlink" href="#getsockopt" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L410">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L411">[Source]</a></span></p>
 <p>General wrapper for UDP sockets to the <code>getsockopt(2)</code> system call.</p>
 <p>The caller must provide an array that is pre-allocated to be
 at least as large as the largest data structure that the kernel
@@ -7848,7 +7850,7 @@ fun ref listening(sock: UDPSocket ref) =&gt;
 </ul>
 <hr />
 <h3 id="getsockopt_u32">getsockopt_u32<a class="headerlink" href="#getsockopt_u32" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L450">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L451">[Source]</a></span></p>
 <p>Wrapper for UDP sockets to the <code>getsockopt(2)</code> system call where
 the kernel's returned option value is a C <code>uint32_t</code> type / Pony
 type <code>U32</code>.</p>
@@ -7874,7 +7876,7 @@ type <code>U32</code>.</p>
 </ul>
 <hr />
 <h3 id="setsockopt">setsockopt<a class="headerlink" href="#setsockopt" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L466">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L467">[Source]</a></span></p>
 <p>General wrapper for UDP sockets to the <code>setsockopt(2)</code> system call.</p>
 <p>The caller is responsible for the correct size and byte contents of
 the <code>option</code> array for the requested <code>level</code> and <code>option_name</code>,
@@ -7916,7 +7918,7 @@ fun ref listening(sock: UDPSocket ref) =&gt;
 </ul>
 <hr />
 <h3 id="setsockopt_u32">setsockopt_u32<a class="headerlink" href="#setsockopt_u32" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L499">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L500">[Source]</a></span></p>
 <p>Wrapper for UDP sockets to the <code>setsockopt(2)</code> system call where
 the kernel expects an option value of a C <code>uint32_t</code> type / Pony
 type <code>U32</code>.</p>
@@ -7940,7 +7942,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="get_so_error">get_so_error<a class="headerlink" href="#get_so_error" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L511">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L512">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, SO_ERROR, ...)</code></p>
 <pre><code class="language-pony">fun ref get_so_error()
 : (U32 val , U32 val)
@@ -7951,7 +7953,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="get_so_rcvbuf">get_so_rcvbuf<a class="headerlink" href="#get_so_rcvbuf" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L517">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L518">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, SO_RCVBUF, ...)</code></p>
 <pre><code class="language-pony">fun ref get_so_rcvbuf()
 : (U32 val , U32 val)
@@ -7962,7 +7964,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="get_so_sndbuf">get_so_sndbuf<a class="headerlink" href="#get_so_sndbuf" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L523">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L524">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, SO_SNDBUF, ...)</code></p>
 <pre><code class="language-pony">fun ref get_so_sndbuf()
 : (U32 val , U32 val)
@@ -7973,7 +7975,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="set_ip_multicast_loop">set_ip_multicast_loop<a class="headerlink" href="#set_ip_multicast_loop" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L530">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L531">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, IP_MULTICAST_LOOP, ...)</code></p>
 <pre><code class="language-pony">fun ref set_ip_multicast_loop(
   loopback: Bool val)
@@ -7989,7 +7991,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="set_ip_multicast_ttl">set_ip_multicast_ttl<a class="headerlink" href="#set_ip_multicast_ttl" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L538">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L539">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, IP_MULTICAST_TTL, ...)</code></p>
 <pre><code class="language-pony">fun ref set_ip_multicast_ttl(
   ttl: U8 val)
@@ -8005,7 +8007,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="set_so_broadcast">set_so_broadcast<a class="headerlink" href="#set_so_broadcast" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L545">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L546">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, SO_BROADCAST, ...)</code></p>
 <pre><code class="language-pony">fun ref set_so_broadcast(
   state: Bool val)
@@ -8021,7 +8023,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="set_so_rcvbuf">set_so_rcvbuf<a class="headerlink" href="#set_so_rcvbuf" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L553">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L554">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, SO_RCVBUF, ...)</code></p>
 <pre><code class="language-pony">fun ref set_so_rcvbuf(
   bufsize: U32 val)
@@ -8037,7 +8039,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="set_so_sndbuf">set_so_sndbuf<a class="headerlink" href="#set_so_sndbuf" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/udp_socket/#L559">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/udp_socket/#L560">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, SO_SNDBUF, ...)</code></p>
 <pre><code class="language-pony">fun ref set_so_sndbuf(
   bufsize: U32 val)
@@ -8123,7 +8125,7 @@ failure.</p>
       
     </div>
     
-    <script src="../assets/javascripts/application.c1ad9e36.js"></script>
+    <script src="../assets/javascripts/application.cb37bb38.js"></script>
       
       <script>app.initialize({version:"1.1.2",url:{base:".."}})</script>
       

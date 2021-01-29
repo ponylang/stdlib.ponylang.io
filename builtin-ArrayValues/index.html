@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-ponylang-0.2.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-ponylang-0.2.7">
     
     
       
@@ -7118,7 +7118,7 @@
                 
                 
                 <h1 id="arrayvaluesa-a-b-arraya-read">ArrayValues[A: A, B: <a href="../builtin-Array/">Array</a>[A] #read]<a class="headerlink" href="#arrayvaluesa-a-b-arraya-read" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/builtin/array/#L954">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L958">[Source]</a></span></p>
 <pre><code class="language-pony">class ref ArrayValues[A: A, B: Array[A] #read] is
   Iterator[B-&gt;A] ref
 </code></pre>
@@ -7129,7 +7129,7 @@
 <hr />
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L958">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L962">[Source]</a></span></p>
 <pre><code class="language-pony">new ref create(
   array: B)
 : ArrayValues[A, B] ref^
@@ -7145,7 +7145,7 @@
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="has_next">has_next<a class="headerlink" href="#has_next" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L962">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L966">[Source]</a></span></p>
 <pre><code class="language-pony">fun box has_next()
 : Bool val
 </code></pre>
@@ -7155,7 +7155,7 @@
 </ul>
 <hr />
 <h3 id="next">next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L965">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L969">[Source]</a></span></p>
 <pre><code class="language-pony">fun ref next()
 : B-&gt;A ?
 </code></pre>
@@ -7165,7 +7165,7 @@
 </ul>
 <hr />
 <h3 id="rewind">rewind<a class="headerlink" href="#rewind" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L968">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L972">[Source]</a></span></p>
 <pre><code class="language-pony">fun ref rewind()
 : ArrayValues[A, B] ref
 </code></pre>
@@ -7245,7 +7245,7 @@
       
     </div>
     
-    <script src="../assets/javascripts/application.c1ad9e36.js"></script>
+    <script src="../assets/javascripts/application.cb37bb38.js"></script>
       
       <script>app.initialize({version:"1.1.2",url:{base:".."}})</script>
       

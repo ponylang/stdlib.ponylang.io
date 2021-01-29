@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-ponylang-0.2.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-ponylang-0.2.7">
     
     
       
@@ -7041,12 +7041,16 @@
     Create an array from a C-style pointer and length. The contents are not
     copied.
     &quot;&quot;&quot;
-    _size = len
-
-    if alloc &gt; len then
-      _alloc = alloc
+    if ptr.is_null() then
+      _size = 0
+      _alloc = 0
     else
-      _alloc = len
+      _size = len
+      if alloc &gt; len then
+        _alloc = alloc
+      else
+        _alloc = len
+      end
     end
 
     _ptr = ptr
@@ -7970,7 +7974,7 @@ class ArrayPairs[A, B: Array[A] #read] is Iterator[(USize, B-&gt;A)]
       
     </div>
     
-    <script src="../../../assets/javascripts/application.c1ad9e36.js"></script>
+    <script src="../../../assets/javascripts/application.cb37bb38.js"></script>
       
       <script>app.initialize({version:"1.1.2",url:{base:"../../.."}})</script>
       
