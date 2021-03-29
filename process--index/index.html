@@ -7103,20 +7103,26 @@ class ProcessClient is ProcessNotify
     end
 </code></pre>
 <h2 id="process-portability">Process portability<a class="headerlink" href="#process-portability" title="Permanent link">&para;</a></h2>
-<p>The ProcessMonitor supports spawning processes on Linux, FreeBSD, OSX and Windows.</p>
+<p>The ProcessMonitor supports spawning processes on Linux, FreeBSD, OSX and
+Windows.</p>
 <h2 id="shutting-down-processmonitor-and-external-process">Shutting down ProcessMonitor and external process<a class="headerlink" href="#shutting-down-processmonitor-and-external-process" title="Permanent link">&para;</a></h2>
-<p>When a process is spawned using ProcessMonitor, and it is not necessary to communicate to it any further
-using <code>stdin</code> and <code>stdout</code> or <code>stderr</code>, calling <a href="../process-ProcessMonitor/#done_writing">done_writing()</a>
-will close stdin to the child process. Processes expecting input will be notified of an <code>EOF</code> on their <code>stdin</code>
-and can terminate.</p>
-<p>If a running program needs to be canceled and the <a href="../process-ProcessMonitor/">ProcessMonitor</a> should be shut down,
-calling <a href="../process-ProcessMonitor/#dispose">dispose</a> will terminate the child
-process and clean up all resources.</p>
-<p>Once the child process is detected to be closed, the process exit status is retrieved and
-<a href="../process-ProcessNotify/#dispose">ProcessNotify.dispose</a> is called.</p>
-<p>The process exit status can be either an instance of <a href="../process-Exited/">Exited</a> containing
-the process exit code in case the program exited on its own,
-or (only on posix systems like linux, osx or bsd) an instance of <a href="../process-Signaled/">Signaled</a> containing the signal number that terminated the process.</p>
+<p>When a process is spawned using ProcessMonitor, and it is not necessary to
+communicate to it any further using <code>stdin</code> and <code>stdout</code> or <code>stderr</code>, calling
+<a href="../process-ProcessMonitor/#done_writing">done_writing()</a> will close stdin to
+the child process. Processes expecting input will be notified of an <code>EOF</code> on
+their <code>stdin</code> and can terminate.</p>
+<p>If a running program needs to be canceled and the
+<a href="../process-ProcessMonitor/">ProcessMonitor</a> should be shut down, calling
+<a href="../process-ProcessMonitor/#dispose">dispose</a> will terminate the child process
+and clean up all resources.</p>
+<p>Once the child process is detected to be closed, the process exit status is
+retrieved and <a href="../process-ProcessNotify/#dispose">ProcessNotify.dispose</a> is
+called.</p>
+<p>The process exit status can be either an instance of
+<a href="../process-Exited/">Exited</a> containing the process exit code in case the
+program exited on its own, or (only on posix systems like linux, osx or bsd) an
+instance of <a href="../process-Signaled/">Signaled</a> containing the signal number that
+terminated the process.</p>
 <h2 id="public-types">Public Types<a class="headerlink" href="#public-types" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../process-ProcessNotify/">interface ProcessNotify</a></li>

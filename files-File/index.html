@@ -7616,13 +7616,13 @@
                 
                 
                 <h1 id="file">File<a class="headerlink" href="#file" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/files/file/#L78">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L80">[Source]</a></span></p>
 <p>Operations on a file.</p>
 <pre><code class="language-pony">class ref File
 </code></pre>
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L101">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L103">[Source]</a></span></p>
 <p>Attempt to open for read/write, creating if it doesn't exist, preserving
 the contents if it does exist.
 Set errno according to result.</p>
@@ -7640,7 +7640,7 @@ Set errno according to result.</p>
 </ul>
 <hr />
 <h3 id="open">open<a class="headerlink" href="#open" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L141">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L143">[Source]</a></span></p>
 <p>Open for read only.
 Set _errno according to result.</p>
 <pre><code class="language-pony">new ref open(
@@ -7658,17 +7658,17 @@ Set _errno according to result.</p>
 <hr />
 <h2 id="public-fields">Public fields<a class="headerlink" href="#public-fields" title="Permanent link">&para;</a></h2>
 <h3 id="let-path-filepath-val">let path: <a href="../files-FilePath/">FilePath</a> val<a class="headerlink" href="#let-path-filepath-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L82">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L84">[Source]</a></span></p>
 <p>This is the filesystem path locating this file on the file system
 and an object capability granting access to operate on this file.</p>
 <hr />
 <h3 id="let-writeable-bool-val">let writeable: <a href="../builtin-Bool/">Bool</a> val<a class="headerlink" href="#let-writeable-bool-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L88">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L90">[Source]</a></span></p>
 <p><code>true</code> if the underlying file descriptor has been opened as writeable.</p>
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="errno">errno<a class="headerlink" href="#errno" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L192">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L194">[Source]</a></span></p>
 <p>Returns the last error code set for this File</p>
 <pre><code class="language-pony">fun box errno()
 : (FileOK val | FileError val | FileEOF val | 
@@ -7681,7 +7681,7 @@ and an object capability granting access to operate on this file.</p>
 </ul>
 <hr />
 <h3 id="clear_errno">clear_errno<a class="headerlink" href="#clear_errno" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L198">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L200">[Source]</a></span></p>
 <p>Clears the last error code set for this File.
 Clears the error indicator for the stream.</p>
 <pre><code class="language-pony">fun ref clear_errno()
@@ -7693,7 +7693,7 @@ Clears the error indicator for the stream.</p>
 </ul>
 <hr />
 <h3 id="valid">valid<a class="headerlink" href="#valid" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L219">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L221">[Source]</a></span></p>
 <p>Returns true if the file is currently open.</p>
 <pre><code class="language-pony">fun box valid()
 : Bool val
@@ -7704,7 +7704,7 @@ Clears the error indicator for the stream.</p>
 </ul>
 <hr />
 <h3 id="read">read<a class="headerlink" href="#read" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L226">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L228">[Source]</a></span></p>
 <p>Returns up to len bytes.</p>
 <pre><code class="language-pony">fun ref read(
   len: USize val)
@@ -7720,7 +7720,7 @@ Clears the error indicator for the stream.</p>
 </ul>
 <hr />
 <h3 id="read_string">read_string<a class="headerlink" href="#read_string" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L252">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L254">[Source]</a></span></p>
 <p>Returns up to len bytes. The resulting string may have internal null
 characters.</p>
 <pre><code class="language-pony">fun ref read_string(
@@ -7737,7 +7737,7 @@ characters.</p>
 </ul>
 <hr />
 <h3 id="print">print<a class="headerlink" href="#print" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L277">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L279">[Source]</a></span></p>
 <p>Same as write, buts adds a newline.</p>
 <pre><code class="language-pony">fun ref print(
   data: (String box | Array[U8 val] box))
@@ -7753,7 +7753,7 @@ characters.</p>
 </ul>
 <hr />
 <h3 id="printv">printv<a class="headerlink" href="#printv" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L286">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L288">[Source]</a></span></p>
 <p>Print an iterable collection of ByteSeqs.</p>
 <pre><code class="language-pony">fun ref printv(
   data: ByteSeqIter box)
@@ -7769,7 +7769,7 @@ characters.</p>
 </ul>
 <hr />
 <h3 id="write">write<a class="headerlink" href="#write" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L297">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L299">[Source]</a></span></p>
 <p>Returns false if the file wasn't opened with write permission.
 Returns false and closes the file if not all the bytes were written.</p>
 <pre><code class="language-pony">fun ref write(
@@ -7786,7 +7786,7 @@ Returns false and closes the file if not all the bytes were written.</p>
 </ul>
 <hr />
 <h3 id="writev">writev<a class="headerlink" href="#writev" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L306">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L308">[Source]</a></span></p>
 <p>Write an iterable collection of ByteSeqs.</p>
 <pre><code class="language-pony">fun ref writev(
   data: ByteSeqIter box)
@@ -7802,7 +7802,7 @@ Returns false and closes the file if not all the bytes were written.</p>
 </ul>
 <hr />
 <h3 id="queue">queue<a class="headerlink" href="#queue" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L316">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L318">[Source]</a></span></p>
 <p>Queue data to be written
 NOTE: Queue'd data will always be written before normal print/write
 requested data</p>
@@ -7820,7 +7820,7 @@ requested data</p>
 </ul>
 <hr />
 <h3 id="queuev">queuev<a class="headerlink" href="#queuev" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L325">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L327">[Source]</a></span></p>
 <p>Queue an iterable collection of ByteSeqs to be written
 NOTE: Queue'd data will always be written before normal print/write
 requested data</p>
@@ -7838,7 +7838,7 @@ requested data</p>
 </ul>
 <hr />
 <h3 id="flush">flush<a class="headerlink" href="#flush" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L335">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L337">[Source]</a></span></p>
 <p>Flush any queued data</p>
 <pre><code class="language-pony">fun ref flush()
 : Bool val
@@ -7849,7 +7849,7 @@ requested data</p>
 </ul>
 <hr />
 <h3 id="position">position<a class="headerlink" href="#position" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L432">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L434">[Source]</a></span></p>
 <p>Return the current cursor position in the file.</p>
 <pre><code class="language-pony">fun ref position()
 : USize val
@@ -7860,7 +7860,7 @@ requested data</p>
 </ul>
 <hr />
 <h3 id="size">size<a class="headerlink" href="#size" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L457">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L459">[Source]</a></span></p>
 <p>Return the total length of the file.</p>
 <pre><code class="language-pony">fun ref size()
 : USize val
@@ -7871,7 +7871,7 @@ requested data</p>
 </ul>
 <hr />
 <h3 id="seek_start">seek_start<a class="headerlink" href="#seek_start" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L467">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L469">[Source]</a></span></p>
 <p>Set the cursor position relative to the start of the file.</p>
 <pre><code class="language-pony">fun ref seek_start(
   offset: USize val)
@@ -7887,7 +7887,7 @@ requested data</p>
 </ul>
 <hr />
 <h3 id="seek_end">seek_end<a class="headerlink" href="#seek_end" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L475">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L477">[Source]</a></span></p>
 <p>Set the cursor position relative to the end of the file.</p>
 <pre><code class="language-pony">fun ref seek_end(
   offset: USize val)
@@ -7903,7 +7903,7 @@ requested data</p>
 </ul>
 <hr />
 <h3 id="seek">seek<a class="headerlink" href="#seek" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L483">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L485">[Source]</a></span></p>
 <p>Move the cursor position.</p>
 <pre><code class="language-pony">fun ref seek(
   offset: ISize val)
@@ -7919,7 +7919,7 @@ requested data</p>
 </ul>
 <hr />
 <h3 id="sync">sync<a class="headerlink" href="#sync" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L491">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L493">[Source]</a></span></p>
 <p>Sync the file contents to physical storage.</p>
 <pre><code class="language-pony">fun ref sync()
 : None val
@@ -7930,7 +7930,7 @@ requested data</p>
 </ul>
 <hr />
 <h3 id="datasync">datasync<a class="headerlink" href="#datasync" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L511">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L513">[Source]</a></span></p>
 <p>Sync the file contents to physical storage.</p>
 <pre><code class="language-pony">fun ref datasync()
 : None val
@@ -7941,7 +7941,7 @@ requested data</p>
 </ul>
 <hr />
 <h3 id="set_length">set_length<a class="headerlink" href="#set_length" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L530">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L532">[Source]</a></span></p>
 <p>Change the file size. If it is made larger, the new contents are undefined.</p>
 <pre><code class="language-pony">fun ref set_length(
   len: USize val)
@@ -7957,7 +7957,7 @@ requested data</p>
 </ul>
 <hr />
 <h3 id="info">info<a class="headerlink" href="#info" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L560">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L562">[Source]</a></span></p>
 <p>Return a FileInfo for this directory. Raise an error if the fd is invalid
 or if we don't have FileStat permission.</p>
 <pre><code class="language-pony">fun box info()
@@ -7969,7 +7969,7 @@ or if we don't have FileStat permission.</p>
 </ul>
 <hr />
 <h3 id="chmod">chmod<a class="headerlink" href="#chmod" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L567">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L569">[Source]</a></span></p>
 <p>Set the FileMode for this directory.</p>
 <pre><code class="language-pony">fun box chmod(
   mode: FileMode box)
@@ -7985,7 +7985,7 @@ or if we don't have FileStat permission.</p>
 </ul>
 <hr />
 <h3 id="chown">chown<a class="headerlink" href="#chown" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L573">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L575">[Source]</a></span></p>
 <p>Set the owner and group for this directory. Does nothing on Windows.</p>
 <pre><code class="language-pony">fun box chown(
   uid: U32 val,
@@ -8003,7 +8003,7 @@ or if we don't have FileStat permission.</p>
 </ul>
 <hr />
 <h3 id="touch">touch<a class="headerlink" href="#touch" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L579">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L581">[Source]</a></span></p>
 <p>Set the last access and modification times of the directory to now.</p>
 <pre><code class="language-pony">fun box touch()
 : Bool val
@@ -8014,7 +8014,7 @@ or if we don't have FileStat permission.</p>
 </ul>
 <hr />
 <h3 id="set_time">set_time<a class="headerlink" href="#set_time" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L585">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L587">[Source]</a></span></p>
 <p>Set the last access and modification times of the directory to the given
 values.</p>
 <pre><code class="language-pony">fun box set_time(
@@ -8033,7 +8033,7 @@ values.</p>
 </ul>
 <hr />
 <h3 id="lines">lines<a class="headerlink" href="#lines" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L592">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L594">[Source]</a></span></p>
 <p>Returns an iterator for reading lines from the file.</p>
 <pre><code class="language-pony">fun ref lines()
 : FileLines ref
@@ -8044,7 +8044,7 @@ values.</p>
 </ul>
 <hr />
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file/#L598">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file/#L600">[Source]</a></span></p>
 <p>Close the file. Future operations will do nothing.</p>
 <pre><code class="language-pony">fun ref dispose()
 : None val

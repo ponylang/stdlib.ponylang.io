@@ -7220,14 +7220,14 @@
                 
                 
                 <h1 id="processmonitor">ProcessMonitor<a class="headerlink" href="#processmonitor" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L102">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L107">[Source]</a></span></p>
 <p>Fork+execs / creates a child process and monitors it. Notifies a client about
 STDOUT / STDERR events.</p>
 <pre><code class="language-pony">actor tag ProcessMonitor
 </code></pre>
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L128">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L133">[Source]</a></span></p>
 <p>Create infrastructure to communicate with a forked child process and
 register the asio events. Fork child process and notify our user about
 incoming data via the notifier.</p>
@@ -7260,7 +7260,7 @@ incoming data via the notifier.</p>
 <hr />
 <h2 id="public-behaviours">Public Behaviours<a class="headerlink" href="#public-behaviours" title="Permanent link">&para;</a></h2>
 <h3 id="print">print<a class="headerlink" href="#print" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L243">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L248">[Source]</a></span></p>
 <p>Print some bytes and append a newline.</p>
 <pre><code class="language-pony">be print(
   data: (String val | Array[U8 val] val))
@@ -7271,7 +7271,7 @@ incoming data via the notifier.</p>
 </ul>
 <hr />
 <h3 id="write">write<a class="headerlink" href="#write" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L252">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L257">[Source]</a></span></p>
 <p>Write to STDIN of the child process.</p>
 <pre><code class="language-pony">be write(
   data: (String val | Array[U8 val] val))
@@ -7282,7 +7282,7 @@ incoming data via the notifier.</p>
 </ul>
 <hr />
 <h3 id="printv">printv<a class="headerlink" href="#printv" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L260">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L265">[Source]</a></span></p>
 <p>Print an iterable collection of ByteSeqs.</p>
 <pre><code class="language-pony">be printv(
   data: ByteSeqIter val)
@@ -7293,7 +7293,7 @@ incoming data via the notifier.</p>
 </ul>
 <hr />
 <h3 id="writev">writev<a class="headerlink" href="#writev" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L269">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L274">[Source]</a></span></p>
 <p>Write an iterable collection of ByteSeqs.</p>
 <pre><code class="language-pony">be writev(
   data: ByteSeqIter val)
@@ -7304,27 +7304,27 @@ incoming data via the notifier.</p>
 </ul>
 <hr />
 <h3 id="done_writing">done_writing<a class="headerlink" href="#done_writing" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L277">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L282">[Source]</a></span></p>
 <p>Set the _done_writing flag to true. If _pending is empty we can close the
 _stdin pipe.</p>
 <pre><code class="language-pony">be done_writing()
 </code></pre>
 <hr />
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L288">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L293">[Source]</a></span></p>
 <p>Terminate child and close down everything.</p>
 <pre><code class="language-pony">be dispose()
 </code></pre>
 <hr />
 <h3 id="timer_notify">timer_notify<a class="headerlink" href="#timer_notify" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L336">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L341">[Source]</a></span></p>
 <p>Windows IO polling timer has fired</p>
 <pre><code class="language-pony">be timer_notify()
 </code></pre>
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="expect">expect<a class="headerlink" href="#expect" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/process_monitor/#L296">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/process_monitor/#L301">[Source]</a></span></p>
 <p>A <code>stdout</code> call on the notifier must contain exactly <code>qty</code> bytes. If
 <code>qty</code> is zero, the call can contain any amount of data.</p>
 <pre><code class="language-pony">fun ref expect(
