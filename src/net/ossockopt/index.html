@@ -3638,6 +3638,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../math-IsPrime/" title="primitive IsPrime" class="md-nav__link">
+      primitive IsPrime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../math-Fibonacci/" title="class Fibonacci" class="md-nav__link">
       class Fibonacci
     </a>
@@ -6292,6 +6304,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../math/is_prime/" title="is_prime.pony" class="md-nav__link">
+      is_prime.pony
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../math/fibonacci/" title="fibonacci.pony" class="md-nav__link">
       fibonacci.pony
     </a>
@@ -6966,7 +6990,7 @@ primitive OSSockOpt
 
   /* In Pony */
   var option: I32 = 4455;
-  @pony_os_setsockopt[I32](fd, OSSockOpt.sol_socket(), OSSockOpt.so_rcvbuf(),
+  @setsockopt[I32](fd, OSSockOpt.sol_socket(), OSSockOpt.so_rcvbuf(),
     addressof option, I32(4))
   ```
   &quot;&quot;&quot;
