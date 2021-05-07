@@ -6938,6 +6938,8 @@
                   <h1>path.pony</h1>
                 
                 <pre><code class="language-pony-full-source">use &quot;time&quot;
+use @pony_os_realpath[Pointer[U8] iso^](path: Pointer[U8] tag)
+use @pony_os_cwd[Pointer[U8]]()
 
 primitive _PathSep
 primitive _PathDot
@@ -7141,7 +7143,7 @@ primitive Path
     Returns the program's working directory. Setting the working directory is
     not supported, as it is not concurrency-safe.
     &quot;&quot;&quot;
-    recover String.from_cstring(@pony_os_cwd[Pointer[U8]]()) end
+    recover String.from_cstring(@pony_os_cwd()) end
 
   fun abs(path: String): String =&gt;
     &quot;&quot;&quot;
@@ -7430,8 +7432,7 @@ primitive Path
     Return the equivalent canonical absolute path. Raise an error if there
     isn't one.
     &quot;&quot;&quot;
-    let cstring = @pony_os_realpath[Pointer[U8] iso^](
-      path.cstring())
+    let cstring = @pony_os_realpath(path.cstring())
 
     if cstring.is_null() then
       error

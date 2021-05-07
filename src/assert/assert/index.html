@@ -6945,6 +6945,7 @@ when your code was compiled with the `debug` flag, check out `Assert`. For
 assertions that are always enabled, check out `Fact`.
 &quot;&quot;&quot;
 
+use @pony_os_stderr[Pointer[U8]]()
 use @fprintf[I32](stream: Pointer[U8] tag, fmt: Pointer[U8] tag, ...)
 
 primitive Assert
@@ -6965,8 +6966,7 @@ primitive Fact
   fun apply(test: Bool, msg: String = &quot;&quot;) ? =&gt;
     if not test then
       if msg.size() &gt; 0 then
-        @fprintf(@pony_os_stderr[Pointer[U8]](), &quot;%s\n&quot;.cstring(),
-          msg.cstring())
+        @fprintf(@pony_os_stderr(), &quot;%s\n&quot;.cstring(), msg.cstring())
       end
       error
     end

@@ -7160,7 +7160,7 @@
                 
                 
                 <h1 id="signaled">Signaled<a class="headerlink" href="#signaled" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/process/_process/#L103">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/_process/#L119">[Source]</a></span></p>
 <p>Process exit status: Process was terminated by a signal.</p>
 <pre><code class="language-pony">class val Signaled is
   Stringable box,
@@ -7174,7 +7174,7 @@
 <hr />
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/_process/#L109">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/_process/#L125">[Source]</a></span></p>
 <pre><code class="language-pony">new val create(
   sig: U32 val)
 : Signaled val^
@@ -7190,7 +7190,7 @@
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="signal">signal<a class="headerlink" href="#signal" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/_process/#L112">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/_process/#L128">[Source]</a></span></p>
 <p>Retrieve the signal number that exited the process.</p>
 <pre><code class="language-pony">fun box signal()
 : U32 val
@@ -7201,7 +7201,7 @@
 </ul>
 <hr />
 <h3 id="string">string<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/_process/#L118">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/_process/#L134">[Source]</a></span></p>
 <pre><code class="language-pony">fun box string()
 : String iso^
 </code></pre>
@@ -7211,7 +7211,7 @@
 </ul>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/process/_process/#L126">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/process/_process/#L142">[Source]</a></span></p>
 <pre><code class="language-pony">fun box eq(
   other: (Exited val | Signaled val))
 : Bool val

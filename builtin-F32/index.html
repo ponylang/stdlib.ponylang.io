@@ -9230,7 +9230,7 @@
                 
                 
                 <h1 id="f32">F32<a class="headerlink" href="#f32" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/builtin/float/#L1">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L63">[Source]</a></span></p>
 <pre><code class="language-pony">primitive val F32 is
   FloatingPoint[F32 val] val
 </code></pre>
@@ -9241,7 +9241,7 @@
 <hr />
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L2">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L64">[Source]</a></span></p>
 <pre><code class="language-pony">new val create(
   value: F32 val = 0)
 : F32 val^
@@ -9256,7 +9256,7 @@
 </ul>
 <hr />
 <h3 id="pi">pi<a class="headerlink" href="#pi" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L3">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L65">[Source]</a></span></p>
 <pre><code class="language-pony">new val pi()
 : F32 val^
 </code></pre>
@@ -9266,7 +9266,7 @@
 </ul>
 <hr />
 <h3 id="e">e<a class="headerlink" href="#e" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L4">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L66">[Source]</a></span></p>
 <pre><code class="language-pony">new val e()
 : F32 val^
 </code></pre>
@@ -9276,7 +9276,7 @@
 </ul>
 <hr />
 <h3 id="from_bits">from_bits<a class="headerlink" href="#from_bits" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L9">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L71">[Source]</a></span></p>
 <pre><code class="language-pony">new val from_bits(
   i: U32 val)
 : F32 val^
@@ -9291,7 +9291,7 @@
 </ul>
 <hr />
 <h3 id="fromb-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-f32-val-f64-val-realb-val">from[B: ((<a href="../builtin-I8/">I8</a> val | <a href="../builtin-I16/">I16</a> val | <a href="../builtin-I32/">I32</a> val | <a href="../builtin-I64/">I64</a> val | <a href="../builtin-I128/">I128</a> val | <a href="../builtin-ILong/">ILong</a> val | <a href="../builtin-ISize/">ISize</a> val | <a href="../builtin-U8/">U8</a> val | <a href="../builtin-U16/">U16</a> val | <a href="../builtin-U32/">U32</a> val | <a href="../builtin-U64/">U64</a> val | <a href="../builtin-U128/">U128</a> val | <a href="../builtin-ULong/">ULong</a> val | <a href="../builtin-USize/">USize</a> val | <a href="./">F32</a> val | <a href="../builtin-F64/">F64</a> val) &amp; <a href="../builtin-Real/">Real</a>[B] val)]<a class="headerlink" href="#fromb-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-f32-val-f64-val-realb-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L11">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L73">[Source]</a></span></p>
 <pre><code class="language-pony">new val from[B: ((I8 val | I16 val | I32 val | 
     I64 val | I128 val | ILong val | 
     ISize val | U8 val | U16 val | 
@@ -9311,7 +9311,7 @@
 </ul>
 <hr />
 <h3 id="min_value">min_value<a class="headerlink" href="#min_value" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L13">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L75">[Source]</a></span></p>
 <p>Minimum negative value representable.</p>
 <pre><code class="language-pony">new val min_value()
 : F32 val^
@@ -9322,7 +9322,7 @@
 </ul>
 <hr />
 <h3 id="max_value">max_value<a class="headerlink" href="#max_value" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L19">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L81">[Source]</a></span></p>
 <p>Maximum positive value representable.</p>
 <pre><code class="language-pony">new val max_value()
 : F32 val^
@@ -9333,7 +9333,7 @@
 </ul>
 <hr />
 <h3 id="min_normalised">min_normalised<a class="headerlink" href="#min_normalised" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L25">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L87">[Source]</a></span></p>
 <p>Minimum positive value representable at full precision (ie a normalised
 number).</p>
 <pre><code class="language-pony">new val min_normalised()
@@ -9345,7 +9345,7 @@ number).</p>
 </ul>
 <hr />
 <h3 id="epsilon">epsilon<a class="headerlink" href="#epsilon" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L32">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L94">[Source]</a></span></p>
 <p>Minimum positive value such that (1 + epsilon) != 1.</p>
 <pre><code class="language-pony">new val epsilon()
 : F32 val^
@@ -9357,7 +9357,7 @@ number).</p>
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="bits">bits<a class="headerlink" href="#bits" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L10">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L72">[Source]</a></span></p>
 <pre><code class="language-pony">fun box bits()
 : U32 val
 </code></pre>
@@ -9367,7 +9367,7 @@ number).</p>
 </ul>
 <hr />
 <h3 id="radix">radix<a class="headerlink" href="#radix" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L38">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L100">[Source]</a></span></p>
 <p>Exponent radix.</p>
 <pre><code class="language-pony">fun tag radix()
 : U8 val
@@ -9378,7 +9378,7 @@ number).</p>
 </ul>
 <hr />
 <h3 id="precision2">precision2<a class="headerlink" href="#precision2" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L44">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L106">[Source]</a></span></p>
 <p>Mantissa precision in bits.</p>
 <pre><code class="language-pony">fun tag precision2()
 : U8 val
@@ -9389,7 +9389,7 @@ number).</p>
 </ul>
 <hr />
 <h3 id="precision10">precision10<a class="headerlink" href="#precision10" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L50">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L112">[Source]</a></span></p>
 <p>Mantissa precision in decimal digits.</p>
 <pre><code class="language-pony">fun tag precision10()
 : U8 val
@@ -9400,7 +9400,7 @@ number).</p>
 </ul>
 <hr />
 <h3 id="min_exp2">min_exp2<a class="headerlink" href="#min_exp2" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L56">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L118">[Source]</a></span></p>
 <p>Minimum exponent value such that (2^exponent) - 1 is representable at full
 precision (ie a normalised number).</p>
 <pre><code class="language-pony">fun tag min_exp2()
@@ -9412,7 +9412,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="min_exp10">min_exp10<a class="headerlink" href="#min_exp10" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L63">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L125">[Source]</a></span></p>
 <p>Minimum exponent value such that (10^exponent) - 1 is representable at full
 precision (ie a normalised number).</p>
 <pre><code class="language-pony">fun tag min_exp10()
@@ -9424,7 +9424,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="max_exp2">max_exp2<a class="headerlink" href="#max_exp2" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L70">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L132">[Source]</a></span></p>
 <p>Maximum exponent value such that (2^exponent) - 1 is representable.</p>
 <pre><code class="language-pony">fun tag max_exp2()
 : I16 val
@@ -9435,7 +9435,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="max_exp10">max_exp10<a class="headerlink" href="#max_exp10" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L76">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L138">[Source]</a></span></p>
 <p>Maximum exponent value such that (10^exponent) - 1 is representable.</p>
 <pre><code class="language-pony">fun tag max_exp10()
 : I16 val
@@ -9446,7 +9446,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="abs">abs<a class="headerlink" href="#abs" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L82">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L144">[Source]</a></span></p>
 <pre><code class="language-pony">fun box abs()
 : F32 val
 </code></pre>
@@ -9456,7 +9456,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="ceil">ceil<a class="headerlink" href="#ceil" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L83">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L145">[Source]</a></span></p>
 <pre><code class="language-pony">fun box ceil()
 : F32 val
 </code></pre>
@@ -9466,7 +9466,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="floor">floor<a class="headerlink" href="#floor" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L84">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L146">[Source]</a></span></p>
 <pre><code class="language-pony">fun box floor()
 : F32 val
 </code></pre>
@@ -9476,7 +9476,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="round">round<a class="headerlink" href="#round" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L85">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L147">[Source]</a></span></p>
 <pre><code class="language-pony">fun box round()
 : F32 val
 </code></pre>
@@ -9486,7 +9486,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="trunc">trunc<a class="headerlink" href="#trunc" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L86">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L148">[Source]</a></span></p>
 <pre><code class="language-pony">fun box trunc()
 : F32 val
 </code></pre>
@@ -9496,7 +9496,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="min">min<a class="headerlink" href="#min" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L88">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L150">[Source]</a></span></p>
 <pre><code class="language-pony">fun box min(
   y: F32 val)
 : F32 val
@@ -9511,7 +9511,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="max">max<a class="headerlink" href="#max" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L89">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L151">[Source]</a></span></p>
 <pre><code class="language-pony">fun box max(
   y: F32 val)
 : F32 val
@@ -9526,7 +9526,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="fld">fld<a class="headerlink" href="#fld" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L91">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L153">[Source]</a></span></p>
 <pre><code class="language-pony">fun box fld(
   y: F32 val)
 : F32 val
@@ -9541,7 +9541,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="fld_unsafe">fld_unsafe<a class="headerlink" href="#fld_unsafe" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L94">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L156">[Source]</a></span></p>
 <pre><code class="language-pony">fun box fld_unsafe(
   y: F32 val)
 : F32 val
@@ -9556,7 +9556,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="mod">mod<a class="headerlink" href="#mod" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L97">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L159">[Source]</a></span></p>
 <pre><code class="language-pony">fun box mod(
   y: F32 val)
 : F32 val
@@ -9571,7 +9571,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="mod_unsafe">mod_unsafe<a class="headerlink" href="#mod_unsafe" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L107">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L169">[Source]</a></span></p>
 <pre><code class="language-pony">fun box mod_unsafe(
   y: F32 val)
 : F32 val
@@ -9586,7 +9586,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="finite">finite<a class="headerlink" href="#finite" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L117">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L179">[Source]</a></span></p>
 <p>Check whether this number is finite, ie not +/-infinity and not NaN.</p>
 <pre><code class="language-pony">fun box finite()
 : Bool val
@@ -9597,7 +9597,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="infinite">infinite<a class="headerlink" href="#infinite" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L124">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L186">[Source]</a></span></p>
 <p>Check whether this number is +/-infinity</p>
 <pre><code class="language-pony">fun box infinite()
 : Bool val
@@ -9608,7 +9608,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="nan">nan<a class="headerlink" href="#nan" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L132">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L194">[Source]</a></span></p>
 <p>Check whether this number is NaN.</p>
 <pre><code class="language-pony">fun box nan()
 : Bool val
@@ -9619,7 +9619,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="ldexp">ldexp<a class="headerlink" href="#ldexp" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L140">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L202">[Source]</a></span></p>
 <pre><code class="language-pony">fun box ldexp(
   x: F32 val,
   exponent: I32 val)
@@ -9636,7 +9636,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="frexp">frexp<a class="headerlink" href="#frexp" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L143">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L205">[Source]</a></span></p>
 <pre><code class="language-pony">fun box frexp()
 : (F32 val , U32 val)
 </code></pre>
@@ -9646,7 +9646,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="log">log<a class="headerlink" href="#log" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L148">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L210">[Source]</a></span></p>
 <pre><code class="language-pony">fun box log()
 : F32 val
 </code></pre>
@@ -9656,7 +9656,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="log2">log2<a class="headerlink" href="#log2" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L149">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L211">[Source]</a></span></p>
 <pre><code class="language-pony">fun box log2()
 : F32 val
 </code></pre>
@@ -9666,7 +9666,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="log10">log10<a class="headerlink" href="#log10" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L150">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L212">[Source]</a></span></p>
 <pre><code class="language-pony">fun box log10()
 : F32 val
 </code></pre>
@@ -9676,7 +9676,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="logb">logb<a class="headerlink" href="#logb" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L151">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L213">[Source]</a></span></p>
 <pre><code class="language-pony">fun box logb()
 : F32 val
 </code></pre>
@@ -9686,7 +9686,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="pow">pow<a class="headerlink" href="#pow" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L153">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L215">[Source]</a></span></p>
 <pre><code class="language-pony">fun box pow(
   y: F32 val)
 : F32 val
@@ -9701,7 +9701,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="powi">powi<a class="headerlink" href="#powi" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L154">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L216">[Source]</a></span></p>
 <pre><code class="language-pony">fun box powi(
   y: I32 val)
 : F32 val
@@ -9716,7 +9716,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="sqrt">sqrt<a class="headerlink" href="#sqrt" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L161">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L223">[Source]</a></span></p>
 <pre><code class="language-pony">fun box sqrt()
 : F32 val
 </code></pre>
@@ -9726,7 +9726,7 @@ precision (ie a normalised number).</p>
 </ul>
 <hr />
 <h3 id="sqrt_unsafe">sqrt_unsafe<a class="headerlink" href="#sqrt_unsafe" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L168">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L230">[Source]</a></span></p>
 <p>Unsafe operation.
 If this is negative, the result is undefined.</p>
 <pre><code class="language-pony">fun box sqrt_unsafe()
@@ -9738,7 +9738,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="cbrt">cbrt<a class="headerlink" href="#cbrt" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L175">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L237">[Source]</a></span></p>
 <pre><code class="language-pony">fun box cbrt()
 : F32 val
 </code></pre>
@@ -9748,7 +9748,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="exp">exp<a class="headerlink" href="#exp" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L176">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L238">[Source]</a></span></p>
 <pre><code class="language-pony">fun box exp()
 : F32 val
 </code></pre>
@@ -9758,7 +9758,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="exp2">exp2<a class="headerlink" href="#exp2" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L177">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L239">[Source]</a></span></p>
 <pre><code class="language-pony">fun box exp2()
 : F32 val
 </code></pre>
@@ -9768,7 +9768,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="cos">cos<a class="headerlink" href="#cos" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L179">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L241">[Source]</a></span></p>
 <pre><code class="language-pony">fun box cos()
 : F32 val
 </code></pre>
@@ -9778,7 +9778,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="sin">sin<a class="headerlink" href="#sin" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L180">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L242">[Source]</a></span></p>
 <pre><code class="language-pony">fun box sin()
 : F32 val
 </code></pre>
@@ -9788,7 +9788,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="tan">tan<a class="headerlink" href="#tan" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L181">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L243">[Source]</a></span></p>
 <pre><code class="language-pony">fun box tan()
 : F32 val
 </code></pre>
@@ -9798,7 +9798,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="cosh">cosh<a class="headerlink" href="#cosh" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L183">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L245">[Source]</a></span></p>
 <pre><code class="language-pony">fun box cosh()
 : F32 val
 </code></pre>
@@ -9808,7 +9808,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="sinh">sinh<a class="headerlink" href="#sinh" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L184">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L246">[Source]</a></span></p>
 <pre><code class="language-pony">fun box sinh()
 : F32 val
 </code></pre>
@@ -9818,7 +9818,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="tanh">tanh<a class="headerlink" href="#tanh" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L185">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L247">[Source]</a></span></p>
 <pre><code class="language-pony">fun box tanh()
 : F32 val
 </code></pre>
@@ -9828,7 +9828,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="acos">acos<a class="headerlink" href="#acos" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L187">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L249">[Source]</a></span></p>
 <pre><code class="language-pony">fun box acos()
 : F32 val
 </code></pre>
@@ -9838,7 +9838,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="asin">asin<a class="headerlink" href="#asin" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L188">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L250">[Source]</a></span></p>
 <pre><code class="language-pony">fun box asin()
 : F32 val
 </code></pre>
@@ -9848,7 +9848,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="atan">atan<a class="headerlink" href="#atan" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L189">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L251">[Source]</a></span></p>
 <pre><code class="language-pony">fun box atan()
 : F32 val
 </code></pre>
@@ -9858,7 +9858,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="atan2">atan2<a class="headerlink" href="#atan2" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L190">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L252">[Source]</a></span></p>
 <pre><code class="language-pony">fun box atan2(
   y: F32 val)
 : F32 val
@@ -9873,7 +9873,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="acosh">acosh<a class="headerlink" href="#acosh" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L192">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L254">[Source]</a></span></p>
 <pre><code class="language-pony">fun box acosh()
 : F32 val
 </code></pre>
@@ -9883,7 +9883,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="asinh">asinh<a class="headerlink" href="#asinh" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L193">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L255">[Source]</a></span></p>
 <pre><code class="language-pony">fun box asinh()
 : F32 val
 </code></pre>
@@ -9893,7 +9893,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="atanh">atanh<a class="headerlink" href="#atanh" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L194">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L256">[Source]</a></span></p>
 <pre><code class="language-pony">fun box atanh()
 : F32 val
 </code></pre>
@@ -9903,7 +9903,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="copysign">copysign<a class="headerlink" href="#copysign" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L196">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L258">[Source]</a></span></p>
 <pre><code class="language-pony">fun box copysign(
   sign: F32 val)
 : F32 val
@@ -9918,7 +9918,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="hash">hash<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L198">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L260">[Source]</a></span></p>
 <pre><code class="language-pony">fun box hash()
 : USize val
 </code></pre>
@@ -9928,7 +9928,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="hash64">hash64<a class="headerlink" href="#hash64" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L199">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L261">[Source]</a></span></p>
 <pre><code class="language-pony">fun box hash64()
 : U64 val
 </code></pre>
@@ -9938,7 +9938,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="i128">i128<a class="headerlink" href="#i128" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L201">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L263">[Source]</a></span></p>
 <pre><code class="language-pony">fun box i128()
 : I128 val
 </code></pre>
@@ -9948,7 +9948,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="u128">u128<a class="headerlink" href="#u128" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L202">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L264">[Source]</a></span></p>
 <pre><code class="language-pony">fun box u128()
 : U128 val
 </code></pre>
@@ -9958,7 +9958,7 @@ If this is negative, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="i128_unsafe">i128_unsafe<a class="headerlink" href="#i128_unsafe" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L204">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L266">[Source]</a></span></p>
 <p>Unsafe operation.
 If the value doesn't fit in the destination type, the result is undefined.</p>
 <pre><code class="language-pony">fun box i128_unsafe()
@@ -9970,7 +9970,7 @@ If the value doesn't fit in the destination type, the result is undefined.</p>
 </ul>
 <hr />
 <h3 id="u128_unsafe">u128_unsafe<a class="headerlink" href="#u128_unsafe" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/float/#L211">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/float/#L273">[Source]</a></span></p>
 <p>Unsafe operation.
 If the value doesn't fit in the destination type, the result is undefined.</p>
 <pre><code class="language-pony">fun box u128_unsafe()

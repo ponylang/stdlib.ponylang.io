@@ -7232,13 +7232,13 @@
                 
                 
                 <h1 id="dns">DNS<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/net/dns/#L3">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/dns/#L11">[Source]</a></span></p>
 <p>Helper functions for resolving DNS queries.</p>
 <pre><code class="language-pony">primitive val DNS
 </code></pre>
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/dns/#L3">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/dns/#L11">[Source]</a></span></p>
 <pre><code class="language-pony">new val create()
 : DNS val^
 </code></pre>
@@ -7249,7 +7249,7 @@
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/dns/#L7">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/dns/#L15">[Source]</a></span></p>
 <p>Gets all IPv4 and IPv6 addresses for a host and service.</p>
 <pre><code class="language-pony">fun box apply(
   auth: (AmbientAuth val | NetAuth val | DNSAuth val),
@@ -7269,7 +7269,7 @@
 </ul>
 <hr />
 <h3 id="ip4">ip4<a class="headerlink" href="#ip4" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/dns/#L15">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/dns/#L23">[Source]</a></span></p>
 <p>Gets all IPv4 addresses for a host and service.</p>
 <pre><code class="language-pony">fun box ip4(
   auth: (AmbientAuth val | NetAuth val | DNSAuth val),
@@ -7289,7 +7289,7 @@
 </ul>
 <hr />
 <h3 id="ip6">ip6<a class="headerlink" href="#ip6" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/dns/#L23">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/dns/#L31">[Source]</a></span></p>
 <p>Gets all IPv6 addresses for a host and service.</p>
 <pre><code class="language-pony">fun box ip6(
   auth: (AmbientAuth val | NetAuth val | DNSAuth val),
@@ -7309,7 +7309,7 @@
 </ul>
 <hr />
 <h3 id="broadcast_ip4">broadcast_ip4<a class="headerlink" href="#broadcast_ip4" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/dns/#L31">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/dns/#L39">[Source]</a></span></p>
 <p>Link-local IP4 broadcast address.</p>
 <pre><code class="language-pony">fun box broadcast_ip4(
   auth: (AmbientAuth val | NetAuth val | DNSAuth val),
@@ -7327,7 +7327,7 @@
 </ul>
 <hr />
 <h3 id="broadcast_ip6">broadcast_ip6<a class="headerlink" href="#broadcast_ip6" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/dns/#L39">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/dns/#L47">[Source]</a></span></p>
 <p>Link-local IP6 broadcast address.</p>
 <pre><code class="language-pony">fun box broadcast_ip6(
   auth: (AmbientAuth val | NetAuth val | DNSAuth val),
@@ -7345,7 +7345,7 @@
 </ul>
 <hr />
 <h3 id="is_ip4">is_ip4<a class="headerlink" href="#is_ip4" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/dns/#L47">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/dns/#L55">[Source]</a></span></p>
 <p>Returns true if the host is a literal IPv4 address.</p>
 <pre><code class="language-pony">fun box is_ip4(
   host: String val)
@@ -7361,7 +7361,7 @@
 </ul>
 <hr />
 <h3 id="is_ip6">is_ip6<a class="headerlink" href="#is_ip6" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/dns/#L53">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/dns/#L61">[Source]</a></span></p>
 <p>Returns true if the host is a literal IPv6 address.</p>
 <pre><code class="language-pony">fun box is_ip6(
   host: String val)
@@ -7377,7 +7377,7 @@
 </ul>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/dns/#L7">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/dns/#L15">[Source]</a></span></p>
 <pre><code class="language-pony">fun box eq(
   that: DNS val)
 : Bool val
@@ -7392,7 +7392,7 @@
 </ul>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/dns/#L7">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/dns/#L15">[Source]</a></span></p>
 <pre><code class="language-pony">fun box ne(
   that: DNS val)
 : Bool val

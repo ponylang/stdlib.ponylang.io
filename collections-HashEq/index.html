@@ -7142,7 +7142,7 @@
                 
                 
                 <h1 id="hasheqa-hashable-read-equatablea-read">HashEq[A: (<a href="../collections-Hashable/">Hashable</a> #read &amp; <a href="../builtin-Equatable/">Equatable</a>[A] #read)]<a class="headerlink" href="#hasheqa-hashable-read-equatablea-read" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/collections/hashable/#L57">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/hashable/#L61">[Source]</a></span></p>
 <pre><code class="language-pony">primitive val HashEq[A: (Hashable #read &amp; Equatable[A] #read)] is
   HashFunction[A] val
 </code></pre>
@@ -7153,7 +7153,7 @@
 <hr />
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/hashable/#L57">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/hashable/#L61">[Source]</a></span></p>
 <pre><code class="language-pony">new val create()
 : HashEq[A] val^
 </code></pre>
@@ -7164,7 +7164,7 @@
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="hash">hash<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/hashable/#L58">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/hashable/#L62">[Source]</a></span></p>
 <p>Use the hash function from the type parameter.</p>
 <pre><code class="language-pony">fun box hash(
   x: box-&gt;A)
@@ -7180,7 +7180,7 @@
 </ul>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/hashable/#L64">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/hashable/#L68">[Source]</a></span></p>
 <p>Use the structural equality function from the type parameter.</p>
 <pre><code class="language-pony">fun box eq(
   x: box-&gt;A,
@@ -7198,7 +7198,7 @@
 </ul>
 <hr />
 <h3 id="ne">ne<a class="headerlink" href="#ne" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/hashable/#L58">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/hashable/#L62">[Source]</a></span></p>
 <pre><code class="language-pony">fun box ne(
   that: HashEq[A] val)
 : Bool val

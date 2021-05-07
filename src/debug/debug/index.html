@@ -6956,6 +6956,8 @@ actor Main
 ```
 &quot;&quot;&quot;
 use @fprintf[I32](stream: Pointer[U8] tag, fmt: Pointer[U8] tag, ...)
+use @pony_os_stdout[Pointer[U8]]()
+use @pony_os_stderr[Pointer[U8]]()
 
 primitive DebugOut
 primitive DebugErr
@@ -7004,8 +7006,8 @@ primitive Debug
 
   fun _stream(stream: DebugStream): Pointer[U8] =&gt;
     match stream
-    | DebugOut =&gt; @pony_os_stdout[Pointer[U8]]()
-    | DebugErr =&gt; @pony_os_stderr[Pointer[U8]]()
+    | DebugOut =&gt; @pony_os_stdout()
+    | DebugErr =&gt; @pony_os_stderr()
     end
 
 </code></pre>

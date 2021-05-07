@@ -7316,7 +7316,7 @@
                 
                 
                 <h1 id="posixdate">PosixDate<a class="headerlink" href="#posixdate" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/time/posix_date/#L1">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L5">[Source]</a></span></p>
 <p>Represents a proleptic Gregorian date and time, without specifying a
 time zone. The day of month, month, day of week, and day of year are all
 indexed from 1, i.e. January is 1, Monday is 1.</p>
@@ -7324,7 +7324,7 @@ indexed from 1, i.e. January is 1, Monday is 1.</p>
 </code></pre>
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/posix_date/#L17">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L21">[Source]</a></span></p>
 <p>Create a date from a POSIX time. Negative arguments will be changed to zero.</p>
 <pre><code class="language-pony">new ref create(
   seconds: I64 val = 0,
@@ -7343,35 +7343,35 @@ indexed from 1, i.e. January is 1, Monday is 1.</p>
 <hr />
 <h2 id="public-fields">Public fields<a class="headerlink" href="#public-fields" title="Permanent link">&para;</a></h2>
 <h3 id="var-nsec-i32-val">var nsec: <a href="../builtin-I32/">I32</a> val<a class="headerlink" href="#var-nsec-i32-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/posix_date/#L7">[Source]</a></span></p>
-<hr />
-<h3 id="var-sec-i32-val">var sec: <a href="../builtin-I32/">I32</a> val<a class="headerlink" href="#var-sec-i32-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/posix_date/#L8">[Source]</a></span></p>
-<hr />
-<h3 id="var-min-i32-val">var min: <a href="../builtin-I32/">I32</a> val<a class="headerlink" href="#var-min-i32-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/posix_date/#L9">[Source]</a></span></p>
-<hr />
-<h3 id="var-hour-i32-val">var hour: <a href="../builtin-I32/">I32</a> val<a class="headerlink" href="#var-hour-i32-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/posix_date/#L10">[Source]</a></span></p>
-<hr />
-<h3 id="var-day_of_month-i32-val">var day_of_month: <a href="../builtin-I32/">I32</a> val<a class="headerlink" href="#var-day_of_month-i32-val" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/time/posix_date/#L11">[Source]</a></span></p>
 <hr />
-<h3 id="var-month-i32-val">var month: <a href="../builtin-I32/">I32</a> val<a class="headerlink" href="#var-month-i32-val" title="Permanent link">&para;</a></h3>
+<h3 id="var-sec-i32-val">var sec: <a href="../builtin-I32/">I32</a> val<a class="headerlink" href="#var-sec-i32-val" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/time/posix_date/#L12">[Source]</a></span></p>
 <hr />
-<h3 id="var-year-i32-val">var year: <a href="../builtin-I32/">I32</a> val<a class="headerlink" href="#var-year-i32-val" title="Permanent link">&para;</a></h3>
+<h3 id="var-min-i32-val">var min: <a href="../builtin-I32/">I32</a> val<a class="headerlink" href="#var-min-i32-val" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/time/posix_date/#L13">[Source]</a></span></p>
 <hr />
-<h3 id="var-day_of_week-i32-val">var day_of_week: <a href="../builtin-I32/">I32</a> val<a class="headerlink" href="#var-day_of_week-i32-val" title="Permanent link">&para;</a></h3>
+<h3 id="var-hour-i32-val">var hour: <a href="../builtin-I32/">I32</a> val<a class="headerlink" href="#var-hour-i32-val" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/time/posix_date/#L14">[Source]</a></span></p>
 <hr />
-<h3 id="var-day_of_year-i32-val">var day_of_year: <a href="../builtin-I32/">I32</a> val<a class="headerlink" href="#var-day_of_year-i32-val" title="Permanent link">&para;</a></h3>
+<h3 id="var-day_of_month-i32-val">var day_of_month: <a href="../builtin-I32/">I32</a> val<a class="headerlink" href="#var-day_of_month-i32-val" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/time/posix_date/#L15">[Source]</a></span></p>
+<hr />
+<h3 id="var-month-i32-val">var month: <a href="../builtin-I32/">I32</a> val<a class="headerlink" href="#var-month-i32-val" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/time/posix_date/#L16">[Source]</a></span></p>
+<hr />
+<h3 id="var-year-i32-val">var year: <a href="../builtin-I32/">I32</a> val<a class="headerlink" href="#var-year-i32-val" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/time/posix_date/#L17">[Source]</a></span></p>
+<hr />
+<h3 id="var-day_of_week-i32-val">var day_of_week: <a href="../builtin-I32/">I32</a> val<a class="headerlink" href="#var-day_of_week-i32-val" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/time/posix_date/#L18">[Source]</a></span></p>
+<hr />
+<h3 id="var-day_of_year-i32-val">var day_of_year: <a href="../builtin-I32/">I32</a> val<a class="headerlink" href="#var-day_of_year-i32-val" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/time/posix_date/#L19">[Source]</a></span></p>
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="time">time<a class="headerlink" href="#time" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/posix_date/#L25">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L29">[Source]</a></span></p>
 <p>Return a POSIX time. Treats the date as UTC.</p>
 <pre><code class="language-pony">fun box time()
 : I64 val
@@ -7382,7 +7382,7 @@ indexed from 1, i.e. January is 1, Monday is 1.</p>
 </ul>
 <hr />
 <h3 id="normal">normal<a class="headerlink" href="#normal" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/posix_date/#L31">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L35">[Source]</a></span></p>
 <p>Normalise all the fields of the date. For example, if the hour is 24, it is
 set to 0 and the day is advanced. This allows fields to be changed naively,
 eg. adding 1000 to hours to advance the time by 1000 hours, and then
@@ -7396,7 +7396,7 @@ normalising the date.</p>
 </ul>
 <hr />
 <h3 id="format">format<a class="headerlink" href="#format" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/time/posix_date/#L40">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/time/posix_date/#L44">[Source]</a></span></p>
 <p>Format the time as for strftime.</p>
 <pre><code class="language-pony">fun box format(
   fmt: String val)

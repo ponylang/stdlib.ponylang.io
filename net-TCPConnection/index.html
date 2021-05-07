@@ -7700,7 +7700,7 @@
                 
                 
                 <h1 id="tcpconnection">TCPConnection<a class="headerlink" href="#tcpconnection" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L16">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L33">[Source]</a></span></p>
 <p>A TCP connection. When connecting, the Happy Eyeballs algorithm is used.</p>
 <p>The following code creates a client that connects to port 8989 of
 the local host, writes "hello world", and listens for a response,
@@ -7929,7 +7929,7 @@ class iso ExampleProxyNotify is TCPConnectionNotify
 </code></pre>
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L300">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L317">[Source]</a></span></p>
 <p>Connect via IPv4 or IPv6. If <code>from</code> is a non-empty string, the connection
 will be made from the specified interface.</p>
 <pre><code class="language-pony">new tag create(
@@ -7962,7 +7962,7 @@ will be made from the specified interface.</p>
 </ul>
 <hr />
 <h3 id="ip4">ip4<a class="headerlink" href="#ip4" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L331">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L348">[Source]</a></span></p>
 <p>Connect via IPv4.</p>
 <pre><code class="language-pony">new tag ip4(
   auth: (AmbientAuth val | NetAuth val | TCPAuth val | 
@@ -7994,7 +7994,7 @@ will be made from the specified interface.</p>
 </ul>
 <hr />
 <h3 id="ip6">ip6<a class="headerlink" href="#ip6" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L361">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L378">[Source]</a></span></p>
 <p>Connect via IPv6.</p>
 <pre><code class="language-pony">new tag ip6(
   auth: (AmbientAuth val | NetAuth val | TCPAuth val | 
@@ -8027,7 +8027,7 @@ will be made from the specified interface.</p>
 <hr />
 <h2 id="public-behaviours">Public Behaviours<a class="headerlink" href="#public-behaviours" title="Permanent link">&para;</a></h2>
 <h3 id="write_1">write<a class="headerlink" href="#write_1" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L429">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L446">[Source]</a></span></p>
 <p>Write a single sequence of bytes. Data will be silently discarded if the
 connection has not yet been established though.</p>
 <pre><code class="language-pony">be write(
@@ -8039,7 +8039,7 @@ connection has not yet been established though.</p>
 </ul>
 <hr />
 <h3 id="writev">writev<a class="headerlink" href="#writev" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L440">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L457">[Source]</a></span></p>
 <p>Write a sequence of sequences of bytes. Data will be silently discarded if
 the connection has not yet been established though.</p>
 <pre><code class="language-pony">be writev(
@@ -8051,20 +8051,20 @@ the connection has not yet been established though.</p>
 </ul>
 <hr />
 <h3 id="mute">mute<a class="headerlink" href="#mute" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L497">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L514">[Source]</a></span></p>
 <p>Temporarily suspend reading off this TCPConnection until such time as
 <code>unmute</code> is called.</p>
 <pre><code class="language-pony">be mute()
 </code></pre>
 <hr />
 <h3 id="unmute">unmute<a class="headerlink" href="#unmute" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L504">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L521">[Source]</a></span></p>
 <p>Start reading off this TCPConnection again after having been muted.</p>
 <pre><code class="language-pony">be unmute()
 </code></pre>
 <hr />
 <h3 id="set_notify">set_notify<a class="headerlink" href="#set_notify" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L513">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L530">[Source]</a></span></p>
 <p>Change the notifier.</p>
 <pre><code class="language-pony">be set_notify(
   notify: TCPConnectionNotify iso)
@@ -8075,14 +8075,14 @@ the connection has not yet been established though.</p>
 </ul>
 <hr />
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L519">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L536">[Source]</a></span></p>
 <p>Close the connection gracefully once all writes are sent.</p>
 <pre><code class="language-pony">be dispose()
 </code></pre>
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="local_address">local_address<a class="headerlink" href="#local_address" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L525">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L542">[Source]</a></span></p>
 <p>Return the local IP address. If this TCPConnection is closed then the
 address returned is invalid.</p>
 <pre><code class="language-pony">fun box local_address()
@@ -8094,7 +8094,7 @@ address returned is invalid.</p>
 </ul>
 <hr />
 <h3 id="remote_address">remote_address<a class="headerlink" href="#remote_address" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L534">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L551">[Source]</a></span></p>
 <p>Return the remote IP address. If this TCPConnection is closed then the
 address returned is invalid.</p>
 <pre><code class="language-pony">fun box remote_address()
@@ -8106,7 +8106,7 @@ address returned is invalid.</p>
 </ul>
 <hr />
 <h3 id="expect">expect<a class="headerlink" href="#expect" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L543">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L560">[Source]</a></span></p>
 <p>A <code>received</code> call on the notifier must contain exactly <code>qty</code> bytes. If
 <code>qty</code> is zero, the call can contain any amount of data. This has no effect
 if called in the <code>sent</code> notifier callback.</p>
@@ -8126,7 +8126,7 @@ if called in the <code>sent</code> notifier callback.</p>
 </ul>
 <hr />
 <h3 id="set_nodelay">set_nodelay<a class="headerlink" href="#set_nodelay" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L562">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L579">[Source]</a></span></p>
 <p>Turn Nagle on/off. Defaults to on. This can only be set on a connected
 socket.</p>
 <pre><code class="language-pony">fun ref set_nodelay(
@@ -8143,7 +8143,7 @@ socket.</p>
 </ul>
 <hr />
 <h3 id="set_keepalive">set_keepalive<a class="headerlink" href="#set_keepalive" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L571">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L588">[Source]</a></span></p>
 <p>Sets the TCP keepalive timeout to approximately <code>secs</code> seconds. Exact
 timing is OS dependent. If <code>secs</code> is zero, TCP keepalive is disabled. TCP
 keepalive is disabled by default. This can only be set on a connected
@@ -8162,7 +8162,7 @@ socket.</p>
 </ul>
 <hr />
 <h3 id="write_final">write_final<a class="headerlink" href="#write_final" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L673">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L690">[Source]</a></span></p>
 <p>Write as much as possible to the socket. Set <code>_writeable</code> to <code>false</code> if not
 everything was written. On an error, close the connection. This is for data
 that has already been transformed by the notifier. Data will be silently
@@ -8181,7 +8181,7 @@ discarded if the connection has not yet been established though.</p>
 </ul>
 <hr />
 <h3 id="close">close<a class="headerlink" href="#close" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1017">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1034">[Source]</a></span></p>
 <p>Attempt to perform a graceful shutdown. Don't accept new writes. If the
 connection isn't muted then we won't finish closing until we get a zero
 length read. If the connection is muted, perform a hard close and shut
@@ -8195,7 +8195,7 @@ down immediately.</p>
 </ul>
 <hr />
 <h3 id="hard_close">hard_close<a class="headerlink" href="#hard_close" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1073">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1090">[Source]</a></span></p>
 <p>When an error happens, do a non-graceful close.</p>
 <pre><code class="language-pony">fun ref hard_close()
 : None val
@@ -8206,7 +8206,7 @@ down immediately.</p>
 </ul>
 <hr />
 <h3 id="getsockopt">getsockopt<a class="headerlink" href="#getsockopt" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1139">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1156">[Source]</a></span></p>
 <p>General wrapper for TCP sockets to the <code>getsockopt(2)</code> system call.</p>
 <p>The caller must provide an array that is pre-allocated to be
 at least as large as the largest data structure that the kernel
@@ -8254,7 +8254,7 @@ fun ref connected(conn: TCPConnection ref) =&gt;
 </ul>
 <hr />
 <h3 id="getsockopt_u32">getsockopt_u32<a class="headerlink" href="#getsockopt_u32" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1180">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1197">[Source]</a></span></p>
 <p>Wrapper for TCP sockets to the <code>getsockopt(2)</code> system call where
 the kernel's returned option value is a C <code>uint32_t</code> type / Pony
 type <code>U32</code>.</p>
@@ -8280,7 +8280,7 @@ type <code>U32</code>.</p>
 </ul>
 <hr />
 <h3 id="setsockopt">setsockopt<a class="headerlink" href="#setsockopt" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1196">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1213">[Source]</a></span></p>
 <p>General wrapper for TCP sockets to the <code>setsockopt(2)</code> system call.</p>
 <p>The caller is responsible for the correct size and byte contents of
 the <code>option</code> array for the requested <code>level</code> and <code>option_name</code>,
@@ -8322,7 +8322,7 @@ fun ref connected(conn: TCPConnection ref) =&gt;
 </ul>
 <hr />
 <h3 id="setsockopt_u32">setsockopt_u32<a class="headerlink" href="#setsockopt_u32" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1229">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1246">[Source]</a></span></p>
 <p>General wrapper for TCP sockets to the <code>setsockopt(2)</code> system call where
 the kernel expects an option value of a C <code>uint32_t</code> type / Pony
 type <code>U32</code>.</p>
@@ -8346,7 +8346,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="get_so_error">get_so_error<a class="headerlink" href="#get_so_error" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1241">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1258">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, SO_ERROR, ...)</code></p>
 <pre><code class="language-pony">fun ref get_so_error()
 : (U32 val , U32 val)
@@ -8357,7 +8357,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="get_so_rcvbuf">get_so_rcvbuf<a class="headerlink" href="#get_so_rcvbuf" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1247">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1264">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, SO_RCVBUF, ...)</code></p>
 <pre><code class="language-pony">fun ref get_so_rcvbuf()
 : (U32 val , U32 val)
@@ -8368,7 +8368,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="get_so_sndbuf">get_so_sndbuf<a class="headerlink" href="#get_so_sndbuf" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1253">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1270">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, SO_SNDBUF, ...)</code></p>
 <pre><code class="language-pony">fun ref get_so_sndbuf()
 : (U32 val , U32 val)
@@ -8379,7 +8379,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="get_tcp_nodelay">get_tcp_nodelay<a class="headerlink" href="#get_tcp_nodelay" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1259">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1276">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>getsockopt(fd, SOL_SOCKET, TCP_NODELAY, ...)</code></p>
 <pre><code class="language-pony">fun ref get_tcp_nodelay()
 : (U32 val , U32 val)
@@ -8390,7 +8390,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="set_so_rcvbuf">set_so_rcvbuf<a class="headerlink" href="#set_so_rcvbuf" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1266">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1283">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, SO_RCVBUF, ...)</code></p>
 <pre><code class="language-pony">fun ref set_so_rcvbuf(
   bufsize: U32 val)
@@ -8406,7 +8406,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="set_so_sndbuf">set_so_sndbuf<a class="headerlink" href="#set_so_sndbuf" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1272">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1289">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, SO_SNDBUF, ...)</code></p>
 <pre><code class="language-pony">fun ref set_so_sndbuf(
   bufsize: U32 val)
@@ -8422,7 +8422,7 @@ failure.</p>
 </ul>
 <hr />
 <h3 id="set_tcp_nodelay">set_tcp_nodelay<a class="headerlink" href="#set_tcp_nodelay" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_connection/#L1278">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_connection/#L1295">[Source]</a></span></p>
 <p>Wrapper for the FFI call <code>setsockopt(fd, SOL_SOCKET, TCP_NODELAY, ...)</code></p>
 <pre><code class="language-pony">fun ref set_tcp_nodelay(
   state: Bool val)

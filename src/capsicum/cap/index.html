@@ -6937,7 +6937,9 @@
                 
                   <h1>cap.pony</h1>
                 
-                <pre><code class="language-pony-full-source">primitive Cap
+                <pre><code class="language-pony-full-source">use @cap_enter[I32]() if freebsd or &quot;capsicum&quot;
+
+primitive Cap
   &quot;&quot;&quot;
   The Capsicum rights.
   &quot;&quot;&quot;
@@ -6949,7 +6951,7 @@
     spaces, such as file system or IPC name spaces, is prevented.
     &quot;&quot;&quot;
     ifdef freebsd or &quot;capsicum&quot; then
-      @cap_enter[I32]() == 0
+      @cap_enter() == 0
     else
       false
     end

@@ -7370,7 +7370,7 @@
                 
                 
                 <h1 id="filepath">FilePath<a class="headerlink" href="#filepath" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/files/file_path/#L9">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file_path/#L41">[Source]</a></span></p>
 <p>A FilePath represents a capability to access a path. The path will be
 represented as an absolute path and a set of capabilities for operations on
 that path.</p>
@@ -7378,7 +7378,7 @@ that path.</p>
 </code></pre>
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file_path/#L24">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file_path/#L56">[Source]</a></span></p>
 <p>Create a new path. The caller must either provide the root capability or an
 existing FilePath.</p>
 <p>If the root capability is provided, path' will be relative to the program's
@@ -7404,7 +7404,7 @@ the supplied capabilities and the capabilities on the parent.</p>
 </ul>
 <hr />
 <h3 id="mkdtemp">mkdtemp<a class="headerlink" href="#mkdtemp" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file_path/#L60">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file_path/#L92">[Source]</a></span></p>
 <p>Create a temporary directory and returns a path to it. The directory's name
 will begin with <code>prefix</code>. The caller must either provide the root
 capability or an existing FilePath.</p>
@@ -7432,16 +7432,16 @@ the supplied capabilities and the capabilities on the base.</p>
 <hr />
 <h2 id="public-fields">Public fields<a class="headerlink" href="#public-fields" title="Permanent link">&para;</a></h2>
 <h3 id="let-path-string-val">let path: <a href="../builtin-String/">String</a> val<a class="headerlink" href="#let-path-string-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file_path/#L15">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file_path/#L47">[Source]</a></span></p>
 <p>Absolute filesystem path.</p>
 <hr />
 <h3 id="let-caps-flagsfilecreate-val-filechmod-val-filechown-val-filelink-val-filelookup-val-filemkdir-val-fileread-val-fileremove-val-filerename-val-fileseek-val-filestat-val-filesync-val-filetime-val-filetruncate-val-filewrite-val-fileexec-val-u32-val-ref">let caps: <a href="../collections-Flags/">Flags</a>[(<a href="../files-FileCreate/">FileCreate</a> val | <a href="../files-FileChmod/">FileChmod</a> val | <a href="../files-FileChown/">FileChown</a> val | <a href="../files-FileLink/">FileLink</a> val | <a href="../files-FileLookup/">FileLookup</a> val | <a href="../files-FileMkdir/">FileMkdir</a> val | <a href="../files-FileRead/">FileRead</a> val | <a href="../files-FileRemove/">FileRemove</a> val | <a href="../files-FileRename/">FileRename</a> val | <a href="../files-FileSeek/">FileSeek</a> val | <a href="../files-FileStat/">FileStat</a> val | <a href="../files-FileSync/">FileSync</a> val | <a href="../files-FileTime/">FileTime</a> val | <a href="../files-FileTruncate/">FileTruncate</a> val | <a href="../files-FileWrite/">FileWrite</a> val | <a href="../files-FileExec/">FileExec</a> val), <a href="../builtin-U32/">U32</a> val] ref<a class="headerlink" href="#let-caps-flagsfilecreate-val-filechmod-val-filechown-val-filelink-val-filelookup-val-filemkdir-val-fileread-val-fileremove-val-filerename-val-fileseek-val-filestat-val-filesync-val-filetime-val-filetruncate-val-filewrite-val-fileexec-val-u32-val-ref" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file_path/#L19">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file_path/#L51">[Source]</a></span></p>
 <p>Set of capabilities for operations on <code>path</code>.</p>
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="join">join<a class="headerlink" href="#join" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file_path/#L102">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file_path/#L134">[Source]</a></span></p>
 <p>Return a new path relative to this one.</p>
 <pre><code class="language-pony">fun val join(
   path': String val,
@@ -7459,7 +7459,7 @@ the supplied capabilities and the capabilities on the base.</p>
 </ul>
 <hr />
 <h3 id="walk">walk<a class="headerlink" href="#walk" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file_path/#L112">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file_path/#L144">[Source]</a></span></p>
 <p>Walks a directory structure starting at this.</p>
 <p><code>handler(dir_path, dir_entries)</code> will be called for each directory
 starting with this one. The handler can control which subdirectories are
@@ -7480,7 +7480,7 @@ expanded by removing them from the <code>dir_entries</code> list.</p>
 </ul>
 <hr />
 <h3 id="canonical">canonical<a class="headerlink" href="#canonical" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file_path/#L136">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file_path/#L168">[Source]</a></span></p>
 <p>Return the equivalent canonical absolute path. Raise an error if there
 isn't one.</p>
 <pre><code class="language-pony">fun val canonical()
@@ -7492,7 +7492,7 @@ isn't one.</p>
 </ul>
 <hr />
 <h3 id="exists">exists<a class="headerlink" href="#exists" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file_path/#L143">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file_path/#L175">[Source]</a></span></p>
 <p>Returns true if the path exists. Returns false for a broken symlink.</p>
 <pre><code class="language-pony">fun val exists()
 : Bool val
@@ -7503,7 +7503,7 @@ isn't one.</p>
 </ul>
 <hr />
 <h3 id="mkdir">mkdir<a class="headerlink" href="#mkdir" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file_path/#L153">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file_path/#L185">[Source]</a></span></p>
 <p>Creates the directory. Will recursively create each element. Returns true
 if the directory exists when we're done, false if it does not. If we do not
 have the FileStat permission, this will return false even if the directory
@@ -7522,7 +7522,7 @@ does exist.</p>
 </ul>
 <hr />
 <h3 id="remove">remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file_path/#L200">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file_path/#L232">[Source]</a></span></p>
 <p>Remove the file or directory. The directory contents will be removed as
 well, recursively. Symlinks will be removed but not traversed.</p>
 <pre><code class="language-pony">fun val remove()
@@ -7534,7 +7534,7 @@ well, recursively. Symlinks will be removed but not traversed.</p>
 </ul>
 <hr />
 <h3 id="rename">rename<a class="headerlink" href="#rename" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file_path/#L242">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file_path/#L274">[Source]</a></span></p>
 <p>Rename a file or directory.</p>
 <pre><code class="language-pony">fun box rename(
   new_path: FilePath val)
@@ -7550,7 +7550,7 @@ well, recursively. Symlinks will be removed but not traversed.</p>
 </ul>
 <hr />
 <h3 id="symlink">symlink<a class="headerlink" href="#symlink" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file_path/#L252">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file_path/#L284">[Source]</a></span></p>
 <p>Create a symlink to a file or directory.</p>
 <p>Note that on Windows a program must be running with elevated priviledges to
 be able to create symlinks.</p>
@@ -7568,7 +7568,7 @@ be able to create symlinks.</p>
 </ul>
 <hr />
 <h3 id="chmod">chmod<a class="headerlink" href="#chmod" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file_path/#L325">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file_path/#L350">[Source]</a></span></p>
 <p>Set the FileMode for a path.</p>
 <pre><code class="language-pony">fun box chmod(
   mode: FileMode box)
@@ -7584,7 +7584,7 @@ be able to create symlinks.</p>
 </ul>
 <hr />
 <h3 id="chown">chown<a class="headerlink" href="#chown" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file_path/#L341">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file_path/#L366">[Source]</a></span></p>
 <p>Set the owner and group for a path. Does nothing on Windows.</p>
 <pre><code class="language-pony">fun box chown(
   uid: U32 val,
@@ -7602,7 +7602,7 @@ be able to create symlinks.</p>
 </ul>
 <hr />
 <h3 id="touch">touch<a class="headerlink" href="#touch" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file_path/#L355">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file_path/#L380">[Source]</a></span></p>
 <p>Set the last access and modification times of a path to now.</p>
 <pre><code class="language-pony">fun box touch()
 : Bool val
@@ -7613,7 +7613,7 @@ be able to create symlinks.</p>
 </ul>
 <hr />
 <h3 id="set_time">set_time<a class="headerlink" href="#set_time" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/file_path/#L361">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/file_path/#L386">[Source]</a></span></p>
 <p>Set the last access and modification times of a path to the given values.</p>
 <pre><code class="language-pony">fun box set_time(
   atime: (I64 val , I64 val),

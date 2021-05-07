@@ -7058,13 +7058,13 @@
                 
                 
                 <h1 id="signalnotify">SignalNotify<a class="headerlink" href="#signalnotify" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/signals/signal_notify/#L1">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/signals/signal_notify/#L5">[Source]</a></span></p>
 <p>Notifications for a signal.</p>
 <pre><code class="language-pony">interface ref SignalNotify
 </code></pre>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/signals/signal_notify/#L5">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/signals/signal_notify/#L9">[Source]</a></span></p>
 <p>Called with the the number of times the signal has fired since this was
 last called. Return false to stop listening for the signal.</p>
 <pre><code class="language-pony">fun ref apply(
@@ -7081,7 +7081,7 @@ last called. Return false to stop listening for the signal.</p>
 </ul>
 <hr />
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/signals/signal_notify/#L12">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/signals/signal_notify/#L16">[Source]</a></span></p>
 <p>Called if the signal is disposed. This is also called if the notifier
 returns false.</p>
 <pre><code class="language-pony">fun ref dispose()

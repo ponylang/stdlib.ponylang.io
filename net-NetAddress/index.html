@@ -7304,7 +7304,7 @@
                 
                 
                 <h1 id="netaddress">NetAddress<a class="headerlink" href="#netaddress" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/net/net_address/#L1">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/net_address/#L10">[Source]</a></span></p>
 <p>Represents an IPv4 or IPv6 address. The family field indicates the address
 type. The addr field is either the IPv4 address or the IPv6 flow info. The
 addr1-4 fields are the IPv6 address, or invalid for an IPv4 address. The
@@ -7322,7 +7322,7 @@ addresses for both IPv4 and IPv6 <code>sockaddr_storage</code>.</p>
 <hr />
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/net_address/#L1">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/net_address/#L10">[Source]</a></span></p>
 <pre><code class="language-pony">new iso create()
 : NetAddress iso^
 </code></pre>
@@ -7333,7 +7333,7 @@ addresses for both IPv4 and IPv6 <code>sockaddr_storage</code>.</p>
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="ip4">ip4<a class="headerlink" href="#ip4" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/net_address/#L55">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/net_address/#L64">[Source]</a></span></p>
 <p>Returns true for an IPv4 address.</p>
 <pre><code class="language-pony">fun box ip4()
 : Bool val
@@ -7344,7 +7344,7 @@ addresses for both IPv4 and IPv6 <code>sockaddr_storage</code>.</p>
 </ul>
 <hr />
 <h3 id="ip6">ip6<a class="headerlink" href="#ip6" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/net_address/#L61">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/net_address/#L70">[Source]</a></span></p>
 <p>Returns true for an IPv6 address.</p>
 <pre><code class="language-pony">fun box ip6()
 : Bool val
@@ -7355,7 +7355,7 @@ addresses for both IPv4 and IPv6 <code>sockaddr_storage</code>.</p>
 </ul>
 <hr />
 <h3 id="name">name<a class="headerlink" href="#name" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/net_address/#L67">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/net_address/#L76">[Source]</a></span></p>
 <p>Returns the host and service name.</p>
 <p>If <code>reversedns</code> is an instance of <code>DNSLookupAuth</code>
 a DNS lookup will be executed and the hostname
@@ -7386,7 +7386,7 @@ corresponding servicename (e.g. port 80 is returned as <code>"http"</code>).</p>
 </ul>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/net_address/#L103">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/net_address/#L112">[Source]</a></span></p>
 <pre><code class="language-pony">fun box eq(
   that: NetAddress box)
 : Bool val
@@ -7401,7 +7401,7 @@ corresponding servicename (e.g. port 80 is returned as <code>"http"</code>).</p>
 </ul>
 <hr />
 <h3 id="host_eq">host_eq<a class="headerlink" href="#host_eq" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/net_address/#L109">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/net_address/#L118">[Source]</a></span></p>
 <pre><code class="language-pony">fun box host_eq(
   that: NetAddress box)
 : Bool val
@@ -7416,7 +7416,7 @@ corresponding servicename (e.g. port 80 is returned as <code>"http"</code>).</p>
 </ul>
 <hr />
 <h3 id="length">length<a class="headerlink" href="#length" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/net_address/#L119">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/net_address/#L128">[Source]</a></span></p>
 <p>For platforms (OSX/FreeBSD) with <code>length</code> field as part of 
 its <code>struct sockaddr</code> definition, returns the <code>length</code>. 
 Else (Linux/Windows) returns the size of <code>sockaddr_in</code> or <code>sockaddr_in6</code>.</p>
@@ -7429,7 +7429,7 @@ Else (Linux/Windows) returns the size of <code>sockaddr_in</code> or <code>socka
 </ul>
 <hr />
 <h3 id="family">family<a class="headerlink" href="#family" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/net_address/#L136">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/net_address/#L145">[Source]</a></span></p>
 <p>Returns the <code>family</code>.</p>
 <pre><code class="language-pony">fun box family()
 : U8 val
@@ -7440,7 +7440,7 @@ Else (Linux/Windows) returns the size of <code>sockaddr_in</code> or <code>socka
 </ul>
 <hr />
 <h3 id="port">port<a class="headerlink" href="#port" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/net_address/#L155">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/net_address/#L164">[Source]</a></span></p>
 <p>Returns port number in host byte order.</p>
 <pre><code class="language-pony">fun box port()
 : U16 val
@@ -7451,7 +7451,7 @@ Else (Linux/Windows) returns the size of <code>sockaddr_in</code> or <code>socka
 </ul>
 <hr />
 <h3 id="scope">scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/net_address/#L161">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/net_address/#L170">[Source]</a></span></p>
 <p>Returns IPv6 scope identifier: Unicast, Anycast, Multicast and 
 unassigned scopes.</p>
 <pre><code class="language-pony">fun box scope()
@@ -7463,7 +7463,7 @@ unassigned scopes.</p>
 </ul>
 <hr />
 <h3 id="ipv4_addr">ipv4_addr<a class="headerlink" href="#ipv4_addr" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/net_address/#L169">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/net_address/#L178">[Source]</a></span></p>
 <p>Returns IPV4 address (<code>_addr</code> field in the class) if <code>ip4()</code> is <code>True</code>.
 If <code>ip4()</code> is <code>False</code> then the contents are invalid.</p>
 <pre><code class="language-pony">fun box ipv4_addr()
@@ -7475,7 +7475,7 @@ If <code>ip4()</code> is <code>False</code> then the contents are invalid.</p>
 </ul>
 <hr />
 <h3 id="ipv6_addr">ipv6_addr<a class="headerlink" href="#ipv6_addr" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/net_address/#L176">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/net_address/#L185">[Source]</a></span></p>
 <p>Returns IPV6 address as the 4-tuple (say <code>a</code>). 
 <code>a._1 = _addr1</code> // Bits 0-32 of the IPv6 address in host byte order.
 <code>a._2 = _addr2  // Bits 33-64 of the IPv6 address in host byte order.</code>a._3 = _addr3  // Bits 65-96 of the IPv6 address in host byte order.

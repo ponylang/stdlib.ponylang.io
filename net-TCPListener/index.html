@@ -7208,7 +7208,7 @@
                 
                 
                 <h1 id="tcplistener">TCPListener<a class="headerlink" href="#tcplistener" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/net/tcp_listener/#L3">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_listener/#L11">[Source]</a></span></p>
 <p>Listens for new network connections.</p>
 <p>The following program creates an echo server that listens for
 connections on port 8989 and echoes back any data it receives.</p>
@@ -7245,7 +7245,7 @@ actor Main
 </code></pre>
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_listener/#L52">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_listener/#L60">[Source]</a></span></p>
 <p>Listens for both IPv4 and IPv6 connections.</p>
 <pre><code class="language-pony">new tag create(
   auth: (AmbientAuth val | NetAuth val | TCPAuth val | 
@@ -7277,7 +7277,7 @@ actor Main
 </ul>
 <hr />
 <h3 id="ip4">ip4<a class="headerlink" href="#ip4" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_listener/#L76">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_listener/#L83">[Source]</a></span></p>
 <p>Listens for IPv4 connections.</p>
 <pre><code class="language-pony">new tag ip4(
   auth: (AmbientAuth val | NetAuth val | TCPAuth val | 
@@ -7309,7 +7309,7 @@ actor Main
 </ul>
 <hr />
 <h3 id="ip6">ip6<a class="headerlink" href="#ip6" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_listener/#L100">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_listener/#L106">[Source]</a></span></p>
 <p>Listens for IPv6 connections.</p>
 <pre><code class="language-pony">new tag ip6(
   auth: (AmbientAuth val | NetAuth val | TCPAuth val | 
@@ -7342,7 +7342,7 @@ actor Main
 <hr />
 <h2 id="public-behaviours">Public Behaviours<a class="headerlink" href="#public-behaviours" title="Permanent link">&para;</a></h2>
 <h3 id="set_notify">set_notify<a class="headerlink" href="#set_notify" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_listener/#L124">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_listener/#L129">[Source]</a></span></p>
 <p>Change the notifier.</p>
 <pre><code class="language-pony">be set_notify(
   notify: TCPListenNotify iso)
@@ -7353,14 +7353,14 @@ actor Main
 </ul>
 <hr />
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_listener/#L130">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_listener/#L135">[Source]</a></span></p>
 <p>Stop listening.</p>
 <pre><code class="language-pony">be dispose()
 </code></pre>
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="local_address">local_address<a class="headerlink" href="#local_address" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_listener/#L136">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_listener/#L141">[Source]</a></span></p>
 <p>Return the bound IP address.</p>
 <pre><code class="language-pony">fun box local_address()
 : NetAddress val
@@ -7371,7 +7371,7 @@ actor Main
 </ul>
 <hr />
 <h3 id="close">close<a class="headerlink" href="#close" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/net/tcp_listener/#L245">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/net/tcp_listener/#L250">[Source]</a></span></p>
 <p>Dispose of resources.</p>
 <pre><code class="language-pony">fun ref close()
 : None val

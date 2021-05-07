@@ -7460,7 +7460,7 @@
                 
                 
                 <h1 id="directory">Directory<a class="headerlink" href="#directory" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/files/directory/#L17">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L42">[Source]</a></span></p>
 <p>Operations on a directory.</p>
 <p>The directory-relative functions (open, etc) use the *at interface on FreeBSD
 and Linux. This isn't available on OS X prior to 10.10, so it is not used. On
@@ -7470,7 +7470,7 @@ Capsicum.</p>
 </code></pre>
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L39">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L64">[Source]</a></span></p>
 <p>This will raise an error if the path doesn't exist or it is not a
 directory, or if FileRead or FileStat permission isn't available.</p>
 <pre><code class="language-pony">new ref create(
@@ -7488,13 +7488,13 @@ directory, or if FileRead or FileStat permission isn't available.</p>
 <hr />
 <h2 id="public-fields">Public fields<a class="headerlink" href="#public-fields" title="Permanent link">&para;</a></h2>
 <h3 id="let-path-filepath-val">let path: <a href="../files-FilePath/">FilePath</a> val<a class="headerlink" href="#let-path-filepath-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L26">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L51">[Source]</a></span></p>
 <p>This is the filesystem path locating this directory on the file system
 and an object capability granting access to operate on this directory.</p>
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="entries">entries<a class="headerlink" href="#entries" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L79">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L104">[Source]</a></span></p>
 <p>The entries will include everything in the directory, but it is not
 recursive. The path for the entry will be relative to the directory, so it
 will contain no directory separators. The entries will not include "." or
@@ -7508,7 +7508,7 @@ will contain no directory separators. The entries will not include "." or
 </ul>
 <hr />
 <h3 id="open">open<a class="headerlink" href="#open" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L151">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L175">[Source]</a></span></p>
 <p>Open a directory relative to this one. Raises an error if the path is not
 within this directory hierarchy.</p>
 <pre><code class="language-pony">fun box open(
@@ -7525,7 +7525,7 @@ within this directory hierarchy.</p>
 </ul>
 <hr />
 <h3 id="mkdir">mkdir<a class="headerlink" href="#mkdir" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L173">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L197">[Source]</a></span></p>
 <p>Creates a directory relative to this one. Returns false if the path is
 not within this directory hierarchy or if FileMkdir permission is missing.</p>
 <pre><code class="language-pony">fun box mkdir(
@@ -7542,7 +7542,7 @@ not within this directory hierarchy or if FileMkdir permission is missing.</p>
 </ul>
 <hr />
 <h3 id="create_file">create_file<a class="headerlink" href="#create_file" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L212">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L236">[Source]</a></span></p>
 <p>Open for read/write, creating if it doesn't exist, preserving the contents
 if it does exist.</p>
 <pre><code class="language-pony">fun box create_file(
@@ -7559,7 +7559,7 @@ if it does exist.</p>
 </ul>
 <hr />
 <h3 id="open_file">open_file<a class="headerlink" href="#open_file" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L240">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L264">[Source]</a></span></p>
 <p>Open for read only, failing if it doesn't exist.</p>
 <pre><code class="language-pony">fun box open_file(
   target: String val)
@@ -7575,7 +7575,7 @@ if it does exist.</p>
 </ul>
 <hr />
 <h3 id="info">info<a class="headerlink" href="#info" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L263">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L287">[Source]</a></span></p>
 <p>Return a FileInfo for this directory. Raise an error if the fd is invalid
 or if we don't have FileStat permission.</p>
 <pre><code class="language-pony">fun box info()
@@ -7587,7 +7587,7 @@ or if we don't have FileStat permission.</p>
 </ul>
 <hr />
 <h3 id="chmod">chmod<a class="headerlink" href="#chmod" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L270">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L294">[Source]</a></span></p>
 <p>Set the FileMode for this directory.</p>
 <pre><code class="language-pony">fun box chmod(
   mode: FileMode box)
@@ -7603,7 +7603,7 @@ or if we don't have FileStat permission.</p>
 </ul>
 <hr />
 <h3 id="chown">chown<a class="headerlink" href="#chown" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L276">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L300">[Source]</a></span></p>
 <p>Set the owner and group for this directory. Does nothing on Windows.</p>
 <pre><code class="language-pony">fun box chown(
   uid: U32 val,
@@ -7621,7 +7621,7 @@ or if we don't have FileStat permission.</p>
 </ul>
 <hr />
 <h3 id="touch">touch<a class="headerlink" href="#touch" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L282">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L306">[Source]</a></span></p>
 <p>Set the last access and modification times of the directory to now.</p>
 <pre><code class="language-pony">fun box touch()
 : Bool val
@@ -7632,7 +7632,7 @@ or if we don't have FileStat permission.</p>
 </ul>
 <hr />
 <h3 id="set_time">set_time<a class="headerlink" href="#set_time" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L288">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L312">[Source]</a></span></p>
 <p>Set the last access and modification times of the directory to the given
 values.</p>
 <pre><code class="language-pony">fun box set_time(
@@ -7651,7 +7651,7 @@ values.</p>
 </ul>
 <hr />
 <h3 id="infoat">infoat<a class="headerlink" href="#infoat" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L295">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L319">[Source]</a></span></p>
 <p>Return a FileInfo for some path relative to this directory.</p>
 <pre><code class="language-pony">fun box infoat(
   target: String val)
@@ -7667,7 +7667,7 @@ values.</p>
 </ul>
 <hr />
 <h3 id="chmodat">chmodat<a class="headerlink" href="#chmodat" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L315">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L339">[Source]</a></span></p>
 <p>Set the FileMode for some path relative to this directory.</p>
 <pre><code class="language-pony">fun box chmodat(
   target: String val,
@@ -7685,7 +7685,7 @@ values.</p>
 </ul>
 <hr />
 <h3 id="chownat">chownat<a class="headerlink" href="#chownat" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L339">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L363">[Source]</a></span></p>
 <p>Set the FileMode for some path relative to this directory.</p>
 <pre><code class="language-pony">fun box chownat(
   target: String val,
@@ -7705,7 +7705,7 @@ values.</p>
 </ul>
 <hr />
 <h3 id="touchat">touchat<a class="headerlink" href="#touchat" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L363">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L387">[Source]</a></span></p>
 <p>Set the last access and modification times of the directory to now.</p>
 <pre><code class="language-pony">fun box touchat(
   target: String val)
@@ -7721,7 +7721,7 @@ values.</p>
 </ul>
 <hr />
 <h3 id="set_time_at">set_time_at<a class="headerlink" href="#set_time_at" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L369">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L393">[Source]</a></span></p>
 <p>Set the last access and modification times of the directory to the given
 values.</p>
 <pre><code class="language-pony">fun box set_time_at(
@@ -7742,7 +7742,7 @@ values.</p>
 </ul>
 <hr />
 <h3 id="symlink">symlink<a class="headerlink" href="#symlink" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L403">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L427">[Source]</a></span></p>
 <p>Link the source path to the link_name, where the link_name is relative to
 this directory.</p>
 <pre><code class="language-pony">fun box symlink(
@@ -7761,7 +7761,7 @@ this directory.</p>
 </ul>
 <hr />
 <h3 id="remove">remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L430">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L454">[Source]</a></span></p>
 <p>Remove the file or directory. The directory contents will be removed as
 well, recursively. Symlinks will be removed but not traversed.</p>
 <pre><code class="language-pony">fun box remove(
@@ -7778,7 +7778,7 @@ well, recursively. Symlinks will be removed but not traversed.</p>
 </ul>
 <hr />
 <h3 id="rename">rename<a class="headerlink" href="#rename" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L469">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L493">[Source]</a></span></p>
 <p>Rename source (which is relative to this directory) to target (which is
 relative to the <code>to</code> directory).</p>
 <pre><code class="language-pony">fun box rename(
@@ -7799,7 +7799,7 @@ relative to the <code>to</code> directory).</p>
 </ul>
 <hr />
 <h3 id="dispose">dispose<a class="headerlink" href="#dispose" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/files/directory/#L498">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/files/directory/#L522">[Source]</a></span></p>
 <p>Close the directory.</p>
 <pre><code class="language-pony">fun ref dispose()
 : None val

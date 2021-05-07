@@ -6937,7 +6937,14 @@
                 
                   <h1>std_stream.pony</h1>
                 
-                <pre><code class="language-pony-full-source">type ByteSeq is (String | Array[U8] val)
+                <pre><code class="language-pony-full-source">use @pony_os_stdout[Pointer[U8]]()
+use @pony_os_stderr[Pointer[U8]]()
+use @pony_os_std_flush[None](file: Pointer[None] tag)
+use @pony_os_std_print[None](file: Pointer[None] tag, buffer: Pointer[U8] tag,
+  size: USize)
+use @pony_os_std_write[None](file: Pointer[None] tag, buffer: Pointer[U8] tag,
+  size: USize)
+type ByteSeq is (String | Array[U8] val)
 
 interface val ByteSeqIter
   &quot;&quot;&quot;
@@ -6979,19 +6986,19 @@ actor StdStream
   Asynchronous access to stdout and stderr. The constructors are private to
   ensure that access is provided only via an environment.
   &quot;&quot;&quot;
-  var _stream: Pointer[None]
+  var _stream: Pointer[U8]
 
   new _out() =&gt;
     &quot;&quot;&quot;
     Create an async stream for stdout.
     &quot;&quot;&quot;
-    _stream = @pony_os_stdout[Pointer[None]]()
+    _stream = @pony_os_stdout()
 
   new _err() =&gt;
     &quot;&quot;&quot;
     Create an async stream for stderr.
     &quot;&quot;&quot;
-    _stream = @pony_os_stderr[Pointer[None]]()
+    _stream = @pony_os_stderr()
 
   be print(data: ByteSeq) =&gt;
     &quot;&quot;&quot;
@@ -7025,19 +7032,19 @@ actor StdStream
     &quot;&quot;&quot;
     Flush any data out to the os (ignoring failures).
     &quot;&quot;&quot;
-    @pony_os_std_flush[None](_stream)
+    @pony_os_std_flush(_stream)
 
   fun ref _write(data: ByteSeq) =&gt;
     &quot;&quot;&quot;
     Write the bytes without explicitly flushing.
     &quot;&quot;&quot;
-    @pony_os_std_write[None](_stream, data.cpointer(), data.size())
+    @pony_os_std_write(_stream, data.cpointer(), data.size())
 
   fun ref _print(data: ByteSeq) =&gt;
     &quot;&quot;&quot;
     Write the bytes and a newline without explicitly flushing.
     &quot;&quot;&quot;
-    @pony_os_std_print[None](_stream, data.cpointer(), data.size())
+    @pony_os_std_print(_stream, data.cpointer(), data.size())
 
 </code></pre>
                 

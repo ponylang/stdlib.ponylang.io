@@ -6937,7 +6937,11 @@
                 
                   <h1>posix_date.pony</h1>
                 
-                <pre><code class="language-pony-full-source">class PosixDate
+                <pre><code class="language-pony-full-source">use @ponyint_gmtime[None](date: PosixDate, sec: I64, nsec: I64)
+use @ponyint_timegm[I64](date: PosixDate tag)
+use @ponyint_formattime[Pointer[U8]](date: PosixDate tag, fmt: Pointer[U8] tag) ?
+
+class PosixDate
   &quot;&quot;&quot;
   Represents a proleptic Gregorian date and time, without specifying a
   time zone. The day of month, month, day of week, and day of year are all
@@ -6957,7 +6961,7 @@
     &quot;&quot;&quot;
     Create a date from a POSIX time. Negative arguments will be changed to zero.
     &quot;&quot;&quot;
-    @ponyint_gmtime[None](this,
+    @ponyint_gmtime(this,
       _negative_to_zero(seconds),
       _negative_to_zero(nanoseconds))
 
@@ -6965,7 +6969,7 @@
     &quot;&quot;&quot;
     Return a POSIX time. Treats the date as UTC.
     &quot;&quot;&quot;
-    @ponyint_timegm[I64](this)
+    @ponyint_timegm(this)
 
   fun ref normal() =&gt;
     &quot;&quot;&quot;
@@ -6974,15 +6978,14 @@
     eg. adding 1000 to hours to advance the time by 1000 hours, and then
     normalising the date.
     &quot;&quot;&quot;
-    @ponyint_gmtime[None](this, time(), nsec)
+    @ponyint_gmtime(this, time(), nsec.i64())
 
   fun format(fmt: String): String ? =&gt;
     &quot;&quot;&quot;
     Format the time as for strftime.
     &quot;&quot;&quot;
     recover
-      String.from_cstring(@ponyint_formattime[Pointer[U8]](this,
-        fmt.cstring())?)
+      String.from_cstring(@ponyint_formattime(this, fmt.cstring())?)
     end
 
   fun _negative_to_zero(value: I64): I64 =&gt;

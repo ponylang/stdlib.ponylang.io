@@ -6937,7 +6937,69 @@
                 
                   <h1>float.pony</h1>
                 
-                <pre><code class="language-pony-full-source">primitive F32 is FloatingPoint[F32]
+                <pre><code class="language-pony-full-source">use @&quot;llvm.fabs.f32&quot;[F32](x: F32)
+use @&quot;llvm.fabs.f64&quot;[F64](x: F64)
+use @&quot;llvm.ceil.f32&quot;[F32](x: F32)
+use @&quot;llvm.ceil.f64&quot;[F64](x: F64)
+use @&quot;llvm.floor.f32&quot;[F32](x: F32)
+use @&quot;llvm.floor.f64&quot;[F64](x: F64)
+use @&quot;llvm.round.f32&quot;[F32](x: F32)
+use @&quot;llvm.round.f64&quot;[F64](x: F64)
+use @&quot;llvm.trunc.f32&quot;[F32](x: F32)
+use @&quot;llvm.trunc.f64&quot;[F64](x: F64)
+use @&quot;llvm.log.f32&quot;[F32](x: F32)
+use @&quot;llvm.log.f64&quot;[F64](x: F64)
+use @&quot;llvm.log2.f32&quot;[F32](x: F32)
+use @&quot;llvm.log2.f64&quot;[F64](x: F64)
+use @&quot;llvm.log10.f32&quot;[F32](x: F32)
+use @&quot;llvm.log10.f64&quot;[F64](x: F64)
+use @logbf[F32](x: F32)
+use @logb[F64](x: F64)
+use @&quot;llvm.pow.f32&quot;[F32](x: F32, y: F32)
+use @&quot;llvm.pow.f64&quot;[F64](x: F64, y: F64)
+use @&quot;llvm.powi.f32&quot;[F32](x: F32, y: I32) if not windows
+use @&quot;llvm.powi.f64&quot;[F64](x: F64, y: I32) if not windows
+use @&quot;llvm.sqrt.f32&quot;[F32](x: F32)
+use @&quot;llvm.sqrt.f64&quot;[F64](x: F64)
+use @cbrtf[F32](x: F32)
+use @cbrt[F64](x: F64)
+use @&quot;llvm.exp.f32&quot;[F32](x: F32)
+use @&quot;llvm.exp.f64&quot;[F64](x: F64)
+use @&quot;llvm.exp2.f32&quot;[F32](x: F32)
+use @&quot;llvm.exp2.f64&quot;[F64](x: F64)
+use @&quot;llvm.cos.f32&quot;[F32](x: F32)
+use @&quot;llvm.cos.f64&quot;[F64](x: F64)
+use @&quot;llvm.sin.f32&quot;[F32](x: F32)
+use @&quot;llvm.sin.f64&quot;[F64](x: F64)
+use @tanf[F32](x: F32)
+use @coshf[F32](x: F32)
+use @sinhf[F32](x: F32)
+use @tanhf[F32](x: F32)
+use @acosf[F32](x: F32)
+use @asinf[F32](x: F32)
+use @atanf[F32](x: F32)
+use @atan2f[F32](x: F32, y: F32)
+use @acoshf[F32](x: F32)
+use @asinhf[F32](x: F32)
+use @atanhf[F32](x: F32)
+use @tan[F64](x: F64)
+use @cosh[F64](x: F64)
+use @sinh[F64](x: F64)
+use @tanh[F64](x: F64)
+use @acos[F64](x: F64)
+use @asin[F64](x: F64)
+use @atan[F64](x: F64)
+use @atan2[F64](x: F64, y: F64)
+use @acosh[F64](x: F64)
+use @asinh[F64](x: F64)
+use @atanh[F64](x: F64)
+use @&quot;llvm.copysign.f32&quot;[F32](x: F32, sign: F32)
+use @&quot;llvm.copysign.f64&quot;[F64](x: F64, sign: F64)
+use @frexp[F64](value: F64, exponent: Pointer[U32])
+use @ldexpf[F32](value: F32, exponent: I32)
+use @ldexp[F64](value: F64, exponent: I32)
+
+primitive F32 is FloatingPoint[F32]
   new create(value: F32 = 0) =&gt; value
   new pi() =&gt; 3.14159265358979323846
   new e() =&gt; 2.71828182845904523536
@@ -7018,11 +7080,11 @@
     &quot;&quot;&quot;
     38
 
-  fun abs(): F32 =&gt; @&quot;llvm.fabs.f32&quot;[F32](this)
-  fun ceil(): F32 =&gt; @&quot;llvm.ceil.f32&quot;[F32](this)
-  fun floor(): F32 =&gt; @&quot;llvm.floor.f32&quot;[F32](this)
-  fun round(): F32 =&gt; @&quot;llvm.round.f32&quot;[F32](this)
-  fun trunc(): F32 =&gt; @&quot;llvm.trunc.f32&quot;[F32](this)
+  fun abs(): F32 =&gt; @&quot;llvm.fabs.f32&quot;(this)
+  fun ceil(): F32 =&gt; @&quot;llvm.ceil.f32&quot;(this)
+  fun floor(): F32 =&gt; @&quot;llvm.floor.f32&quot;(this)
+  fun round(): F32 =&gt; @&quot;llvm.round.f32&quot;(this)
+  fun trunc(): F32 =&gt; @&quot;llvm.trunc.f32&quot;(this)
 
   fun min(y: F32): F32 =&gt; if this &lt; y then this else y end
   fun max(y: F32): F32 =&gt; if this &gt; y then this else y end
@@ -7077,31 +7139,31 @@
     ((bits() and 0x007FFFFF) != 0)  // mantissa
 
   fun ldexp(x: F32, exponent: I32): F32 =&gt;
-    @ldexpf[F32](x, exponent)
+    @ldexpf(x, exponent)
 
   fun frexp(): (F32, U32) =&gt;
     var exponent: U32 = 0
-    var mantissa = @frexp[F64](f64(), addressof exponent)
+    var mantissa = @frexp(f64(), addressof exponent)
     (mantissa.f32(), exponent)
 
-  fun log(): F32 =&gt; @&quot;llvm.log.f32&quot;[F32](this)
-  fun log2(): F32 =&gt; @&quot;llvm.log2.f32&quot;[F32](this)
-  fun log10(): F32 =&gt; @&quot;llvm.log10.f32&quot;[F32](this)
-  fun logb(): F32 =&gt; @logbf[F32](this)
+  fun log(): F32 =&gt; @&quot;llvm.log.f32&quot;(this)
+  fun log2(): F32 =&gt; @&quot;llvm.log2.f32&quot;(this)
+  fun log10(): F32 =&gt; @&quot;llvm.log10.f32&quot;(this)
+  fun logb(): F32 =&gt; @logbf(this)
 
-  fun pow(y: F32): F32 =&gt; @&quot;llvm.pow.f32&quot;[F32](this, y)
+  fun pow(y: F32): F32 =&gt; @&quot;llvm.pow.f32&quot;(this, y)
   fun powi(y: I32): F32 =&gt;
     ifdef windows then
       pow(y.f32())
     else
-      @&quot;llvm.powi.f32&quot;[F32](this, y)
+      @&quot;llvm.powi.f32&quot;(this, y)
     end
 
   fun sqrt(): F32 =&gt;
     if this &lt; 0.0 then
       _nan()
     else
-      @&quot;llvm.sqrt.f32&quot;[F32](this)
+      @&quot;llvm.sqrt.f32&quot;(this)
     end
 
   fun sqrt_unsafe(): F32 =&gt;
@@ -7109,30 +7171,30 @@
     Unsafe operation.
     If this is negative, the result is undefined.
     &quot;&quot;&quot;
-    @&quot;llvm.sqrt.f32&quot;[F32](this)
+    @&quot;llvm.sqrt.f32&quot;(this)
 
-  fun cbrt(): F32 =&gt; @cbrtf[F32](this)
-  fun exp(): F32 =&gt; @&quot;llvm.exp.f32&quot;[F32](this)
-  fun exp2(): F32 =&gt; @&quot;llvm.exp2.f32&quot;[F32](this)
+  fun cbrt(): F32 =&gt; @cbrtf(this)
+  fun exp(): F32 =&gt; @&quot;llvm.exp.f32&quot;(this)
+  fun exp2(): F32 =&gt; @&quot;llvm.exp2.f32&quot;(this)
 
-  fun cos(): F32 =&gt; @&quot;llvm.cos.f32&quot;[F32](this)
-  fun sin(): F32 =&gt; @&quot;llvm.sin.f32&quot;[F32](this)
-  fun tan(): F32 =&gt; @tanf[F32](this)
+  fun cos(): F32 =&gt; @&quot;llvm.cos.f32&quot;(this)
+  fun sin(): F32 =&gt; @&quot;llvm.sin.f32&quot;(this)
+  fun tan(): F32 =&gt; @tanf(this)
 
-  fun cosh(): F32 =&gt; @coshf[F32](this)
-  fun sinh(): F32 =&gt; @sinhf[F32](this)
-  fun tanh(): F32 =&gt; @tanhf[F32](this)
+  fun cosh(): F32 =&gt; @coshf(this)
+  fun sinh(): F32 =&gt; @sinhf(this)
+  fun tanh(): F32 =&gt; @tanhf(this)
 
-  fun acos(): F32 =&gt; @acosf[F32](this)
-  fun asin(): F32 =&gt; @asinf[F32](this)
-  fun atan(): F32 =&gt; @atanf[F32](this)
-  fun atan2(y: F32): F32 =&gt; @atan2f[F32](this, y)
+  fun acos(): F32 =&gt; @acosf(this)
+  fun asin(): F32 =&gt; @asinf(this)
+  fun atan(): F32 =&gt; @atanf(this)
+  fun atan2(y: F32): F32 =&gt; @atan2f(this, y)
 
-  fun acosh(): F32 =&gt; @acoshf[F32](this)
-  fun asinh(): F32 =&gt; @asinhf[F32](this)
-  fun atanh(): F32 =&gt; @atanhf[F32](this)
+  fun acosh(): F32 =&gt; @acoshf(this)
+  fun asinh(): F32 =&gt; @asinhf(this)
+  fun atanh(): F32 =&gt; @atanhf(this)
 
-  fun copysign(sign: F32): F32 =&gt; @&quot;llvm.copysign.f32&quot;[F32](this, sign)
+  fun copysign(sign: F32): F32 =&gt; @&quot;llvm.copysign.f32&quot;(this, sign)
 
   fun hash(): USize =&gt; bits().hash()
   fun hash64(): U64 =&gt; bits().hash64()
@@ -7235,11 +7297,11 @@ primitive F64 is FloatingPoint[F64]
     &quot;&quot;&quot;
     308
 
-  fun abs(): F64 =&gt; @&quot;llvm.fabs.f64&quot;[F64](this)
-  fun ceil(): F64 =&gt; @&quot;llvm.ceil.f64&quot;[F64](this)
-  fun floor(): F64 =&gt; @&quot;llvm.floor.f64&quot;[F64](this)
-  fun round(): F64 =&gt; @&quot;llvm.round.f64&quot;[F64](this)
-  fun trunc(): F64 =&gt; @&quot;llvm.trunc.f64&quot;[F64](this)
+  fun abs(): F64 =&gt; @&quot;llvm.fabs.f64&quot;(this)
+  fun ceil(): F64 =&gt; @&quot;llvm.ceil.f64&quot;(this)
+  fun floor(): F64 =&gt; @&quot;llvm.floor.f64&quot;(this)
+  fun round(): F64 =&gt; @&quot;llvm.round.f64&quot;(this)
+  fun trunc(): F64 =&gt; @&quot;llvm.trunc.f64&quot;(this)
 
   fun min(y: F64): F64 =&gt; if this &lt; y then this else y end
   fun max(y: F64): F64 =&gt; if this &gt; y then this else y end
@@ -7294,31 +7356,31 @@ primitive F64 is FloatingPoint[F64]
     ((bits() and 0x000F_FFFF_FFFF_FFFF) != 0)  // mantissa
 
   fun ldexp(x: F64, exponent: I32): F64 =&gt;
-    @ldexp[F64](x, exponent)
+    @ldexp(x, exponent)
 
   fun frexp(): (F64, U32) =&gt;
     var exponent: U32 = 0
-    var mantissa = @frexp[F64](this, addressof exponent)
+    var mantissa = @frexp(this, addressof exponent)
     (mantissa, exponent)
 
-  fun log(): F64 =&gt; @&quot;llvm.log.f64&quot;[F64](this)
-  fun log2(): F64 =&gt; @&quot;llvm.log2.f64&quot;[F64](this)
-  fun log10(): F64 =&gt; @&quot;llvm.log10.f64&quot;[F64](this)
-  fun logb(): F64 =&gt; @logb[F64](this)
+  fun log(): F64 =&gt; @&quot;llvm.log.f64&quot;(this)
+  fun log2(): F64 =&gt; @&quot;llvm.log2.f64&quot;(this)
+  fun log10(): F64 =&gt; @&quot;llvm.log10.f64&quot;(this)
+  fun logb(): F64 =&gt; @logb(this)
 
-  fun pow(y: F64): F64 =&gt; @&quot;llvm.pow.f64&quot;[F64](this, y)
+  fun pow(y: F64): F64 =&gt; @&quot;llvm.pow.f64&quot;(this, y)
   fun powi(y: I32): F64 =&gt;
     ifdef windows then
       pow(y.f64())
     else
-      @&quot;llvm.powi.f64&quot;[F64](this, y)
+      @&quot;llvm.powi.f64&quot;(this, y)
     end
 
   fun sqrt(): F64 =&gt;
     if this &lt; 0.0 then
       _nan()
     else
-      @&quot;llvm.sqrt.f64&quot;[F64](this)
+      @&quot;llvm.sqrt.f64&quot;(this)
     end
 
   fun sqrt_unsafe(): F64 =&gt;
@@ -7326,30 +7388,30 @@ primitive F64 is FloatingPoint[F64]
     Unsafe operation.
     If this is negative, the result is undefined.
     &quot;&quot;&quot;
-    @&quot;llvm.sqrt.f64&quot;[F64](this)
+    @&quot;llvm.sqrt.f64&quot;(this)
 
-  fun cbrt(): F64 =&gt; @cbrt[F64](this)
-  fun exp(): F64 =&gt; @&quot;llvm.exp.f64&quot;[F64](this)
-  fun exp2(): F64 =&gt; @&quot;llvm.exp2.f64&quot;[F64](this)
+  fun cbrt(): F64 =&gt; @cbrt(this)
+  fun exp(): F64 =&gt; @&quot;llvm.exp.f64&quot;(this)
+  fun exp2(): F64 =&gt; @&quot;llvm.exp2.f64&quot;(this)
 
-  fun cos(): F64 =&gt; @&quot;llvm.cos.f64&quot;[F64](this)
-  fun sin(): F64 =&gt; @&quot;llvm.sin.f64&quot;[F64](this)
-  fun tan(): F64 =&gt; @tan[F64](this)
+  fun cos(): F64 =&gt; @&quot;llvm.cos.f64&quot;(this)
+  fun sin(): F64 =&gt; @&quot;llvm.sin.f64&quot;(this)
+  fun tan(): F64 =&gt; @tan(this)
 
-  fun cosh(): F64 =&gt; @cosh[F64](this)
-  fun sinh(): F64 =&gt; @sinh[F64](this)
-  fun tanh(): F64 =&gt; @tanh[F64](this)
+  fun cosh(): F64 =&gt; @cosh(this)
+  fun sinh(): F64 =&gt; @sinh(this)
+  fun tanh(): F64 =&gt; @tanh(this)
 
-  fun acos(): F64 =&gt; @acos[F64](this)
-  fun asin(): F64 =&gt; @asin[F64](this)
-  fun atan(): F64 =&gt; @atan[F64](this)
-  fun atan2(y: F64): F64 =&gt; @atan2[F64](this, y)
+  fun acos(): F64 =&gt; @acos(this)
+  fun asin(): F64 =&gt; @asin(this)
+  fun atan(): F64 =&gt; @atan(this)
+  fun atan2(y: F64): F64 =&gt; @atan2(this, y)
 
-  fun acosh(): F64 =&gt; @acosh[F64](this)
-  fun asinh(): F64 =&gt; @asinh[F64](this)
-  fun atanh(): F64 =&gt; @atanh[F64](this)
+  fun acosh(): F64 =&gt; @acosh(this)
+  fun asinh(): F64 =&gt; @asinh(this)
+  fun atanh(): F64 =&gt; @atanh(this)
 
-  fun copysign(sign: F64): F64 =&gt; @&quot;llvm.copysign.f64&quot;[F64](this, sign)
+  fun copysign(sign: F64): F64 =&gt; @&quot;llvm.copysign.f64&quot;(this, sign)
 
   fun hash(): USize =&gt; bits().hash()
   fun hash64(): U64 =&gt; bits().hash64()

@@ -7112,14 +7112,14 @@
                 
                 
                 <h1 id="stdstream">StdStream<a class="headerlink" href="#stdstream" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/builtin/std_stream/#L38">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/std_stream/#L45">[Source]</a></span></p>
 <p>Asynchronous access to stdout and stderr. The constructors are private to
 ensure that access is provided only via an environment.</p>
 <pre><code class="language-pony">actor tag StdStream
 </code></pre>
 <h2 id="public-behaviours">Public Behaviours<a class="headerlink" href="#public-behaviours" title="Permanent link">&para;</a></h2>
 <h3 id="print">print<a class="headerlink" href="#print" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/std_stream/#L57">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/std_stream/#L64">[Source]</a></span></p>
 <p>Print some bytes and insert a newline afterwards.</p>
 <pre><code class="language-pony">be print(
   data: (String val | Array[U8 val] val))
@@ -7130,7 +7130,7 @@ ensure that access is provided only via an environment.</p>
 </ul>
 <hr />
 <h3 id="write">write<a class="headerlink" href="#write" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/std_stream/#L63">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/std_stream/#L70">[Source]</a></span></p>
 <p>Print some bytes without inserting a newline afterwards.</p>
 <pre><code class="language-pony">be write(
   data: (String val | Array[U8 val] val))
@@ -7141,7 +7141,7 @@ ensure that access is provided only via an environment.</p>
 </ul>
 <hr />
 <h3 id="printv">printv<a class="headerlink" href="#printv" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/std_stream/#L69">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/std_stream/#L76">[Source]</a></span></p>
 <p>Print an iterable collection of ByteSeqs.</p>
 <pre><code class="language-pony">be printv(
   data: ByteSeqIter val)
@@ -7152,7 +7152,7 @@ ensure that access is provided only via an environment.</p>
 </ul>
 <hr />
 <h3 id="writev">writev<a class="headerlink" href="#writev" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/std_stream/#L77">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/std_stream/#L84">[Source]</a></span></p>
 <p>Write an iterable collection of ByteSeqs.</p>
 <pre><code class="language-pony">be writev(
   data: ByteSeqIter val)
@@ -7163,7 +7163,7 @@ ensure that access is provided only via an environment.</p>
 </ul>
 <hr />
 <h3 id="flush">flush<a class="headerlink" href="#flush" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/std_stream/#L85">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/std_stream/#L92">[Source]</a></span></p>
 <p>Flush any data out to the os (ignoring failures).</p>
 <pre><code class="language-pony">be flush()
 </code></pre>

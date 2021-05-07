@@ -6937,15 +6937,14 @@
                 
                   <h1>stdin.pony</h1>
                 
-                <pre><code class="language-pony-full-source">use @pony_asio_event_create[AsioEventID](
-  owner: AsioEventNotify,
-  fd: U32,
-  flags: U32,
-  nsec: U64,
-  noisy: Bool)
-
+                <pre><code class="language-pony-full-source">use @pony_asio_event_create[AsioEventID](owner: AsioEventNotify, fd: U32,
+  flags: U32, nsec: U64, noisy: Bool)
 use @pony_asio_event_unsubscribe[None](event: AsioEventID)
 use @pony_asio_event_destroy[None](event: AsioEventID)
+use @pony_os_stdin_read[USize](
+  buffer: Pointer[U8] tag,
+  size: USize,
+  out_again: Pointer[Bool])
 
 interface InputNotify
   &quot;&quot;&quot;
@@ -7090,7 +7089,7 @@ actor Stdin
         var again: Bool = false
 
         let len =
-          @pony_os_stdin_read[USize](data.cpointer(), data.size(),
+          @pony_os_stdin_read(data.cpointer(), data.size(),
             addressof again)
 
         match len

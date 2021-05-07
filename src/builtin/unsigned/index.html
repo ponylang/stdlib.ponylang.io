@@ -6937,7 +6937,48 @@
                 
                   <h1>unsigned.pony</h1>
                 
-                <pre><code class="language-pony-full-source">primitive U8 is UnsignedInteger[U8]
+                <pre><code class="language-pony-full-source">use @&quot;llvm.bitreverse.i8&quot;[U8](src: U8)
+use @&quot;llvm.bitreverse.i16&quot;[U16](src: U16)
+use @&quot;llvm.bitreverse.i32&quot;[U32](src: U32)
+use @&quot;llvm.bitreverse.i64&quot;[U64](src: U64)
+use @&quot;llvm.bitreverse.i128&quot;[U128](src: U128)
+use @&quot;llvm.bswap.i8&quot;[U16](src: U8)
+use @&quot;llvm.bswap.i16&quot;[U16](src: U16)
+use @&quot;llvm.bswap.i32&quot;[U32](src: U32)
+use @&quot;llvm.bswap.i64&quot;[U64](src: U64)
+use @&quot;llvm.bswap.i128&quot;[U128](src: U128)
+use @&quot;llvm.ctpop.i8&quot;[U8](src: U8)
+use @&quot;llvm.ctpop.i16&quot;[U16](src: U16)
+use @&quot;llvm.ctpop.i32&quot;[U32](src: U32)
+use @&quot;llvm.ctpop.i64&quot;[U64](src: U64)
+use @&quot;llvm.ctpop.i128&quot;[U128](src: U128)
+use @&quot;llvm.ctlz.i8&quot;[U8](src: U8, is_zero_undef: Bool)
+use @&quot;llvm.ctlz.i16&quot;[U16](src: U16, is_zero_undef: Bool)
+use @&quot;llvm.ctlz.i32&quot;[U32](src: U32, is_zero_undef: Bool)
+use @&quot;llvm.ctlz.i64&quot;[U64](src: U64, is_zero_undef: Bool)
+use @&quot;llvm.ctlz.i128&quot;[U128](src: U128, is_zero_undef: Bool)
+use @&quot;llvm.cttz.i8&quot;[U8](src: U8, zero_undef: Bool)
+use @&quot;llvm.cttz.i16&quot;[U16](src: U16, zero_undef: Bool)
+use @&quot;llvm.cttz.i32&quot;[U32](src: U32, zero_undef: Bool)
+use @&quot;llvm.cttz.i64&quot;[U64](src: U64, zero_undef: Bool)
+use @&quot;llvm.cttz.i128&quot;[U128](src: U128, zero_undef: Bool)
+use @&quot;llvm.uadd.with.overflow.i8&quot;[(U8, Bool)](a: U8, b: U8)
+use @&quot;llvm.uadd.with.overflow.i16&quot;[(U16, Bool)](a: U16, b: U16)
+use @&quot;llvm.uadd.with.overflow.i32&quot;[(U32, Bool)](a: U32, b: U32)
+use @&quot;llvm.uadd.with.overflow.i64&quot;[(U64, Bool)](a: U64, b: U64)
+use @&quot;llvm.uadd.with.overflow.i128&quot;[(U128, Bool)](a: U128, b: U128)
+use @&quot;llvm.usub.with.overflow.i8&quot;[(U8, Bool)](a: U8, b: U8)
+use @&quot;llvm.usub.with.overflow.i16&quot;[(U16, Bool)](a: U16, b: U16)
+use @&quot;llvm.usub.with.overflow.i32&quot;[(U32, Bool)](a: U32, b: U32)
+use @&quot;llvm.usub.with.overflow.i64&quot;[(U64, Bool)](a: U64, b: U64)
+use @&quot;llvm.usub.with.overflow.i128&quot;[(U128, Bool)](a: U128, b: U128)
+use @&quot;llvm.umul.with.overflow.i8&quot;[(U8, Bool)](a: U8, b: U8)
+use @&quot;llvm.umul.with.overflow.i16&quot;[(U16, Bool)](a: U16, b: U16)
+use @&quot;llvm.umul.with.overflow.i32&quot;[(U32, Bool)](a: U32, b: U32)
+use @&quot;llvm.umul.with.overflow.i64&quot;[(U64, Bool)](a: U64, b: U64)
+use @&quot;llvm.umul.with.overflow.i128&quot;[(U128, Bool)](a: U128, b: U128)
+
+primitive U8 is UnsignedInteger[U8]
   new create(value: U8) =&gt; value
   new from[B: (Number &amp; Real[B] val)](a: B) =&gt; a.u8()
 
@@ -6949,25 +6990,25 @@
     1 &lt;&lt; (if x == 0 then 0 else bitwidth() - x end)
 
   fun abs(): U8 =&gt; this
-  fun bit_reverse(): U8 =&gt; @&quot;llvm.bitreverse.i8&quot;[U8](this)
+  fun bit_reverse(): U8 =&gt; @&quot;llvm.bitreverse.i8&quot;(this)
   fun bswap(): U8 =&gt; this
-  fun popcount(): U8 =&gt; @&quot;llvm.ctpop.i8&quot;[U8](this)
-  fun clz(): U8 =&gt; @&quot;llvm.ctlz.i8&quot;[U8](this, false)
-  fun ctz(): U8 =&gt; @&quot;llvm.cttz.i8&quot;[U8](this, false)
+  fun popcount(): U8 =&gt; @&quot;llvm.ctpop.i8&quot;(this)
+  fun clz(): U8 =&gt; @&quot;llvm.ctlz.i8&quot;(this, false)
+  fun ctz(): U8 =&gt; @&quot;llvm.cttz.i8&quot;(this, false)
 
   fun clz_unsafe(): U8 =&gt;
     &quot;&quot;&quot;
     Unsafe operation.
     If this is 0, the result is undefined.
     &quot;&quot;&quot;
-    @&quot;llvm.ctlz.i8&quot;[U8](this, true)
+    @&quot;llvm.ctlz.i8&quot;(this, true)
 
   fun ctz_unsafe(): U8 =&gt;
     &quot;&quot;&quot;
     Unsafe operation.
     If this is 0, the result is undefined.
     &quot;&quot;&quot;
-    @&quot;llvm.cttz.i8&quot;[U8](this, true)
+    @&quot;llvm.cttz.i8&quot;(this, true)
 
   fun bitwidth(): U8 =&gt; 8
 
@@ -6977,13 +7018,13 @@
   fun max(y: U8): U8 =&gt; if this &gt; y then this else y end
 
   fun addc(y: U8): (U8, Bool) =&gt;
-    @&quot;llvm.uadd.with.overflow.i8&quot;[(U8, Bool)](this, y)
+    @&quot;llvm.uadd.with.overflow.i8&quot;(this, y)
 
   fun subc(y: U8): (U8, Bool) =&gt;
-    @&quot;llvm.usub.with.overflow.i8&quot;[(U8, Bool)](this, y)
+    @&quot;llvm.usub.with.overflow.i8&quot;(this, y)
 
   fun mulc(y: U8): (U8, Bool) =&gt;
-    @&quot;llvm.umul.with.overflow.i8&quot;[(U8, Bool)](this, y)
+    @&quot;llvm.umul.with.overflow.i8&quot;(this, y)
 
   fun divc(y: U8): (U8, Bool) =&gt;
     _UnsignedCheckedArithmetic.div_checked[U8](this, y)
@@ -7021,25 +7062,25 @@ primitive U16 is UnsignedInteger[U16]
     1 &lt;&lt; (if x == 0 then 0 else bitwidth() - x end)
 
   fun abs(): U16 =&gt; this
-  fun bit_reverse(): U16 =&gt; @&quot;llvm.bitreverse.i16&quot;[U16](this)
-  fun bswap(): U16 =&gt; @&quot;llvm.bswap.i16&quot;[U16](this)
-  fun popcount(): U16 =&gt; @&quot;llvm.ctpop.i16&quot;[U16](this)
-  fun clz(): U16 =&gt; @&quot;llvm.ctlz.i16&quot;[U16](this, false)
-  fun ctz(): U16 =&gt; @&quot;llvm.cttz.i16&quot;[U16](this, false)
+  fun bit_reverse(): U16 =&gt; @&quot;llvm.bitreverse.i16&quot;(this)
+  fun bswap(): U16 =&gt; @&quot;llvm.bswap.i16&quot;(this)
+  fun popcount(): U16 =&gt; @&quot;llvm.ctpop.i16&quot;(this)
+  fun clz(): U16 =&gt; @&quot;llvm.ctlz.i16&quot;(this, false)
+  fun ctz(): U16 =&gt; @&quot;llvm.cttz.i16&quot;(this, false)
 
   fun clz_unsafe(): U16 =&gt;
     &quot;&quot;&quot;
     Unsafe operation.
     If this is 0, the result is undefined.
     &quot;&quot;&quot;
-    @&quot;llvm.ctlz.i16&quot;[U16](this, true)
+    @&quot;llvm.ctlz.i16&quot;(this, true)
 
   fun ctz_unsafe(): U16 =&gt;
     &quot;&quot;&quot;
     Unsafe operation.
     If this is 0, the result is undefined.
     &quot;&quot;&quot;
-    @&quot;llvm.cttz.i16&quot;[U16](this, true)
+    @&quot;llvm.cttz.i16&quot;(this, true)
 
   fun bitwidth(): U16 =&gt; 16
 
@@ -7049,13 +7090,13 @@ primitive U16 is UnsignedInteger[U16]
   fun max(y: U16): U16 =&gt; if this &gt; y then this else y end
 
   fun addc(y: U16): (U16, Bool) =&gt;
-    @&quot;llvm.uadd.with.overflow.i16&quot;[(U16, Bool)](this, y)
+    @&quot;llvm.uadd.with.overflow.i16&quot;(this, y)
 
   fun subc(y: U16): (U16, Bool) =&gt;
-    @&quot;llvm.usub.with.overflow.i16&quot;[(U16, Bool)](this, y)
+    @&quot;llvm.usub.with.overflow.i16&quot;(this, y)
 
   fun mulc(y: U16): (U16, Bool) =&gt;
-    @&quot;llvm.umul.with.overflow.i16&quot;[(U16, Bool)](this, y)
+    @&quot;llvm.umul.with.overflow.i16&quot;(this, y)
 
   fun divc(y: U16): (U16, Bool) =&gt;
     _UnsignedCheckedArithmetic.div_checked[U16](this, y)
@@ -7093,25 +7134,25 @@ primitive U32 is UnsignedInteger[U32]
     1 &lt;&lt; (if x == 0 then 0 else bitwidth() - x end)
 
   fun abs(): U32 =&gt; this
-  fun bit_reverse(): U32 =&gt; @&quot;llvm.bitreverse.i32&quot;[U32](this)
-  fun bswap(): U32 =&gt; @&quot;llvm.bswap.i32&quot;[U32](this)
-  fun popcount(): U32 =&gt; @&quot;llvm.ctpop.i32&quot;[U32](this)
-  fun clz(): U32 =&gt; @&quot;llvm.ctlz.i32&quot;[U32](this, false)
-  fun ctz(): U32 =&gt; @&quot;llvm.cttz.i32&quot;[U32](this, false)
+  fun bit_reverse(): U32 =&gt; @&quot;llvm.bitreverse.i32&quot;(this)
+  fun bswap(): U32 =&gt; @&quot;llvm.bswap.i32&quot;(this)
+  fun popcount(): U32 =&gt; @&quot;llvm.ctpop.i32&quot;(this)
+  fun clz(): U32 =&gt; @&quot;llvm.ctlz.i32&quot;(this, false)
+  fun ctz(): U32 =&gt; @&quot;llvm.cttz.i32&quot;(this, false)
 
   fun clz_unsafe(): U32 =&gt;
     &quot;&quot;&quot;
     Unsafe operation.
     If this is 0, the result is undefined.
     &quot;&quot;&quot;
-    @&quot;llvm.ctlz.i32&quot;[U32](this, true)
+    @&quot;llvm.ctlz.i32&quot;(this, true)
 
   fun ctz_unsafe(): U32 =&gt;
     &quot;&quot;&quot;
     Unsafe operation.
     If this is 0, the result is undefined.
     &quot;&quot;&quot;
-    @&quot;llvm.cttz.i32&quot;[U32](this, true)
+    @&quot;llvm.cttz.i32&quot;(this, true)
 
   fun bitwidth(): U32 =&gt; 32
 
@@ -7121,13 +7162,13 @@ primitive U32 is UnsignedInteger[U32]
   fun max(y: U32): U32 =&gt; if this &gt; y then this else y end
 
   fun addc(y: U32): (U32, Bool) =&gt;
-    @&quot;llvm.uadd.with.overflow.i32&quot;[(U32, Bool)](this, y)
+    @&quot;llvm.uadd.with.overflow.i32&quot;(this, y)
 
   fun subc(y: U32): (U32, Bool) =&gt;
-    @&quot;llvm.usub.with.overflow.i32&quot;[(U32, Bool)](this, y)
+    @&quot;llvm.usub.with.overflow.i32&quot;(this, y)
 
   fun mulc(y: U32): (U32, Bool) =&gt;
-    @&quot;llvm.umul.with.overflow.i32&quot;[(U32, Bool)](this, y)
+    @&quot;llvm.umul.with.overflow.i32&quot;(this, y)
 
   fun divc(y: U32): (U32, Bool) =&gt;
     _UnsignedCheckedArithmetic.div_checked[U32](this, y)
@@ -7165,25 +7206,25 @@ primitive U64 is UnsignedInteger[U64]
     1 &lt;&lt; (if x == 0 then 0 else bitwidth() - x end)
 
   fun abs(): U64 =&gt; this
-  fun bit_reverse(): U64 =&gt; @&quot;llvm.bitreverse.i64&quot;[U64](this)
-  fun bswap(): U64 =&gt; @&quot;llvm.bswap.i64&quot;[U64](this)
-  fun popcount(): U64 =&gt; @&quot;llvm.ctpop.i64&quot;[U64](this)
-  fun clz(): U64 =&gt; @&quot;llvm.ctlz.i64&quot;[U64](this, false)
-  fun ctz(): U64 =&gt; @&quot;llvm.cttz.i64&quot;[U64](this, false)
+  fun bit_reverse(): U64 =&gt; @&quot;llvm.bitreverse.i64&quot;(this)
+  fun bswap(): U64 =&gt; @&quot;llvm.bswap.i64&quot;(this)
+  fun popcount(): U64 =&gt; @&quot;llvm.ctpop.i64&quot;(this)
+  fun clz(): U64 =&gt; @&quot;llvm.ctlz.i64&quot;(this, false)
+  fun ctz(): U64 =&gt; @&quot;llvm.cttz.i64&quot;(this, false)
 
   fun clz_unsafe(): U64 =&gt;
     &quot;&quot;&quot;
     Unsafe operation.
     If this is 0, the result is undefined.
     &quot;&quot;&quot;
-    @&quot;llvm.ctlz.i64&quot;[U64](this, true)
+    @&quot;llvm.ctlz.i64&quot;(this, true)
 
   fun ctz_unsafe(): U64 =&gt;
     &quot;&quot;&quot;
     Unsafe operation.
     If this is 0, the result is undefined.
     &quot;&quot;&quot;
-    @&quot;llvm.cttz.i64&quot;[U64](this, true)
+    @&quot;llvm.cttz.i64&quot;(this, true)
 
   fun bitwidth(): U64 =&gt; 64
 
@@ -7200,13 +7241,13 @@ primitive U64 is UnsignedInteger[U64]
     end
 
   fun addc(y: U64): (U64, Bool) =&gt;
-    @&quot;llvm.uadd.with.overflow.i64&quot;[(U64, Bool)](this, y)
+    @&quot;llvm.uadd.with.overflow.i64&quot;(this, y)
 
   fun subc(y: U64): (U64, Bool) =&gt;
-    @&quot;llvm.usub.with.overflow.i64&quot;[(U64, Bool)](this, y)
+    @&quot;llvm.usub.with.overflow.i64&quot;(this, y)
 
   fun mulc(y: U64): (U64, Bool) =&gt;
-    @&quot;llvm.umul.with.overflow.i64&quot;[(U64, Bool)](this, y)
+    @&quot;llvm.umul.with.overflow.i64&quot;(this, y)
 
   fun divc(y: U64): (U64, Bool) =&gt;
     _UnsignedCheckedArithmetic.div_checked[U64](this, y)
@@ -7253,37 +7294,37 @@ primitive ULong is UnsignedInteger[ULong]
 
   fun bit_reverse(): ULong =&gt;
     ifdef ilp32 or llp64 then
-      @&quot;llvm.bitreverse.i32&quot;[ULong](this)
+      @&quot;llvm.bitreverse.i32&quot;(this.u32()).ulong()
     else
-      @&quot;llvm.bitreverse.i64&quot;[ULong](this)
+      @&quot;llvm.bitreverse.i64&quot;(this.u64()).ulong()
     end
 
   fun bswap(): ULong =&gt;
     ifdef ilp32 or llp64 then
-      @&quot;llvm.bswap.i32&quot;[ULong](this)
+      @&quot;llvm.bswap.i32&quot;(this.u32()).ulong()
     else
-      @&quot;llvm.bswap.i64&quot;[ULong](this)
+      @&quot;llvm.bswap.i64&quot;(this.u64()).ulong()
     end
 
   fun popcount(): ULong =&gt;
     ifdef ilp32 or llp64 then
-      @&quot;llvm.ctpop.i32&quot;[ULong](this)
+      @&quot;llvm.ctpop.i32&quot;(this.u32()).ulong()
     else
-      @&quot;llvm.ctpop.i64&quot;[ULong](this)
+      @&quot;llvm.ctpop.i64&quot;(this.u64()).ulong()
     end
 
   fun clz(): ULong =&gt;
     ifdef ilp32 or llp64 then
-      @&quot;llvm.ctlz.i32&quot;[ULong](this, false)
+      @&quot;llvm.ctlz.i32&quot;(this.u32(), false).ulong()
     else
-      @&quot;llvm.ctlz.i64&quot;[ULong](this, false)
+      @&quot;llvm.ctlz.i64&quot;(this.u64(), false).ulong()
     end
 
   fun ctz(): ULong =&gt;
     ifdef ilp32 or llp64 then
-      @&quot;llvm.cttz.i32&quot;[ULong](this, false)
+      @&quot;llvm.cttz.i32&quot;(this.u32(), false).ulong()
     else
-      @&quot;llvm.cttz.i64&quot;[ULong](this, false)
+      @&quot;llvm.cttz.i64&quot;(this.u64(), false).ulong()
     end
 
   fun clz_unsafe(): ULong =&gt;
@@ -7292,9 +7333,9 @@ primitive ULong is UnsignedInteger[ULong]
     If this is 0, the result is undefined.
     &quot;&quot;&quot;
     ifdef ilp32 or llp64 then
-      @&quot;llvm.ctlz.i32&quot;[ULong](this, true)
+      @&quot;llvm.ctlz.i32&quot;(this.u32(), true).ulong()
     else
-      @&quot;llvm.ctlz.i64&quot;[ULong](this, true)
+      @&quot;llvm.ctlz.i64&quot;(this.u64(), true).ulong()
     end
 
   fun ctz_unsafe(): ULong =&gt;
@@ -7303,9 +7344,9 @@ primitive ULong is UnsignedInteger[ULong]
     If this is 0, the result is undefined.
     &quot;&quot;&quot;
     ifdef ilp32 or llp64 then
-      @&quot;llvm.cttz.i32&quot;[ULong](this, false)
+      @&quot;llvm.cttz.i32&quot;(this.u32(), false).ulong()
     else
-      @&quot;llvm.cttz.i64&quot;[ULong](this, true)
+      @&quot;llvm.cttz.i64&quot;(this.u64(), true).ulong()
     end
 
   fun bitwidth(): ULong =&gt; ifdef ilp32 or llp64 then 32 else 64 end
@@ -7324,23 +7365,35 @@ primitive ULong is UnsignedInteger[ULong]
 
   fun addc(y: ULong): (ULong, Bool) =&gt;
     ifdef ilp32 or llp64 then
-      @&quot;llvm.uadd.with.overflow.i32&quot;[(ULong, Bool)](this, y)
+      (let r, let o) =
+        @&quot;llvm.uadd.with.overflow.i32&quot;(this.u32(), y.u32())
+      (r.ulong(), o)
     else
-      @&quot;llvm.uadd.with.overflow.i64&quot;[(ULong, Bool)](this, y)
+      (let r, let o) =
+        @&quot;llvm.uadd.with.overflow.i64&quot;(this.u64(), y.u64())
+      (r.ulong(), o)
     end
 
   fun subc(y: ULong): (ULong, Bool) =&gt;
     ifdef ilp32 or llp64 then
-      @&quot;llvm.usub.with.overflow.i32&quot;[(ULong, Bool)](this, y)
+      (let r, let o) =
+        @&quot;llvm.usub.with.overflow.i32&quot;(this.u32(), y.u32())
+      (r.ulong(), o)
     else
-      @&quot;llvm.usub.with.overflow.i64&quot;[(ULong, Bool)](this, y)
+      (let r, let o) =
+        @&quot;llvm.usub.with.overflow.i64&quot;(this.u64(), y.u64())
+      (r.ulong(), o)
     end
 
   fun mulc(y: ULong): (ULong, Bool) =&gt;
     ifdef ilp32 or llp64 then
-      @&quot;llvm.umul.with.overflow.i32&quot;[(ULong, Bool)](this, y)
+      (let r, let o) =
+        @&quot;llvm.umul.with.overflow.i32&quot;(this.u32(), y.u32())
+      (r.ulong(), o)
     else
-      @&quot;llvm.umul.with.overflow.i64&quot;[(ULong, Bool)](this, y)
+      (let r, let o) =
+        @&quot;llvm.umul.with.overflow.i64&quot;(this.u64(), y.u64())
+      (r.ulong(), o)
     end
 
   fun divc(y: ULong): (ULong, Bool) =&gt;
@@ -7388,37 +7441,37 @@ primitive USize is UnsignedInteger[USize]
 
   fun bit_reverse(): USize =&gt;
     ifdef ilp32 then
-      @&quot;llvm.bitreverse.i32&quot;[USize](this)
+      @&quot;llvm.bitreverse.i32&quot;(this.u32()).usize()
     else
-      @&quot;llvm.bitreverse.i64&quot;[USize](this)
+      @&quot;llvm.bitreverse.i64&quot;(this.u64()).usize()
     end
 
   fun bswap(): USize =&gt;
     ifdef ilp32 then
-      @&quot;llvm.bswap.i32&quot;[USize](this)
+      @&quot;llvm.bswap.i32&quot;(this.u32()).usize()
     else
-      @&quot;llvm.bswap.i64&quot;[USize](this)
+      @&quot;llvm.bswap.i64&quot;(this.u64()).usize()
     end
 
   fun popcount(): USize =&gt;
     ifdef ilp32 then
-      @&quot;llvm.ctpop.i32&quot;[USize](this)
+      @&quot;llvm.ctpop.i32&quot;(this.u32()).usize()
     else
-      @&quot;llvm.ctpop.i64&quot;[USize](this)
+      @&quot;llvm.ctpop.i64&quot;(this.u64()).usize()
     end
 
   fun clz(): USize =&gt;
     ifdef ilp32 then
-      @&quot;llvm.ctlz.i32&quot;[USize](this, false)
+      @&quot;llvm.ctlz.i32&quot;(this.u32(), false).usize()
     else
-      @&quot;llvm.ctlz.i64&quot;[USize](this, false)
+      @&quot;llvm.ctlz.i64&quot;(this.u64(), false).usize()
     end
 
   fun ctz(): USize =&gt;
     ifdef ilp32 then
-      @&quot;llvm.cttz.i32&quot;[USize](this, false)
+      @&quot;llvm.cttz.i32&quot;(this.u32(), false).usize()
     else
-      @&quot;llvm.cttz.i64&quot;[USize](this, false)
+      @&quot;llvm.cttz.i64&quot;(this.u64(), false).usize()
     end
 
   fun clz_unsafe(): USize =&gt;
@@ -7427,9 +7480,9 @@ primitive USize is UnsignedInteger[USize]
     If this is 0, the result is undefined.
     &quot;&quot;&quot;
     ifdef ilp32 then
-      @&quot;llvm.ctlz.i32&quot;[USize](this, true)
+      @&quot;llvm.ctlz.i32&quot;(this.u32(), true).usize()
     else
-      @&quot;llvm.ctlz.i64&quot;[USize](this, true)
+      @&quot;llvm.ctlz.i64&quot;(this.u64(), true).usize()
     end
 
   fun ctz_unsafe(): USize =&gt;
@@ -7438,9 +7491,9 @@ primitive USize is UnsignedInteger[USize]
     If this is 0, the result is undefined.
     &quot;&quot;&quot;
     ifdef ilp32 then
-      @&quot;llvm.cttz.i32&quot;[USize](this, true)
+      @&quot;llvm.cttz.i32&quot;(this.u32(), true).usize()
     else
-      @&quot;llvm.cttz.i64&quot;[USize](this, true)
+      @&quot;llvm.cttz.i64&quot;(this.u64(), true).usize()
     end
 
   fun bitwidth(): USize =&gt; ifdef ilp32 then 32 else 64 end
@@ -7452,23 +7505,35 @@ primitive USize is UnsignedInteger[USize]
 
   fun addc(y: USize): (USize, Bool) =&gt;
     ifdef ilp32 then
-      @&quot;llvm.uadd.with.overflow.i32&quot;[(USize, Bool)](this, y)
+      (let r, let o) =
+        @&quot;llvm.uadd.with.overflow.i32&quot;(this.u32(), y.u32())
+      (r.usize(), o)
     else
-      @&quot;llvm.uadd.with.overflow.i64&quot;[(USize, Bool)](this, y)
+      (let r, let o) =
+        @&quot;llvm.uadd.with.overflow.i64&quot;(this.u64(), y.u64())
+      (r.usize(), o)
     end
 
   fun subc(y: USize): (USize, Bool) =&gt;
     ifdef ilp32 then
-      @&quot;llvm.usub.with.overflow.i32&quot;[(USize, Bool)](this, y)
+      (let r, let o) =
+        @&quot;llvm.usub.with.overflow.i32&quot;(this.u32(), y.u32())
+      (r.usize(), o)
     else
-      @&quot;llvm.usub.with.overflow.i64&quot;[(USize, Bool)](this, y)
+      (let r, let o) =
+        @&quot;llvm.usub.with.overflow.i64&quot;(this.u64(), y.u64())
+      (r.usize(), o)
     end
 
   fun mulc(y: USize): (USize, Bool) =&gt;
     ifdef ilp32 then
-      @&quot;llvm.umul.with.overflow.i32&quot;[(USize, Bool)](this, y)
+      (let r, let o) =
+        @&quot;llvm.umul.with.overflow.i32&quot;(this.u32(), y.u32())
+      (r.usize(), o)
     else
-      @&quot;llvm.umul.with.overflow.i64&quot;[(USize, Bool)](this, y)
+      (let r, let o) =
+        @&quot;llvm.umul.with.overflow.i64&quot;(this.u64(), y.u64())
+      (r.usize(), o)
     end
 
   fun divc(y: USize): (USize, Bool) =&gt;
@@ -7507,25 +7572,25 @@ primitive U128 is UnsignedInteger[U128]
     1 &lt;&lt; (if x == 0 then 0 else bitwidth() - x end)
 
   fun abs(): U128 =&gt; this
-  fun bit_reverse(): U128 =&gt; @&quot;llvm.bitreverse.i128&quot;[U128](this)
-  fun bswap(): U128 =&gt; @&quot;llvm.bswap.i128&quot;[U128](this)
-  fun popcount(): U128 =&gt; @&quot;llvm.ctpop.i128&quot;[U128](this)
-  fun clz(): U128 =&gt; @&quot;llvm.ctlz.i128&quot;[U128](this, false)
-  fun ctz(): U128 =&gt; @&quot;llvm.cttz.i128&quot;[U128](this, false)
+  fun bit_reverse(): U128 =&gt; @&quot;llvm.bitreverse.i128&quot;(this)
+  fun bswap(): U128 =&gt; @&quot;llvm.bswap.i128&quot;(this)
+  fun popcount(): U128 =&gt; @&quot;llvm.ctpop.i128&quot;(this)
+  fun clz(): U128 =&gt; @&quot;llvm.ctlz.i128&quot;(this, false)
+  fun ctz(): U128 =&gt; @&quot;llvm.cttz.i128&quot;(this, false)
 
   fun clz_unsafe(): U128 =&gt;
     &quot;&quot;&quot;
     Unsafe operation.
     If this is 0, the result is undefined.
     &quot;&quot;&quot;
-    @&quot;llvm.ctlz.i128&quot;[U128](this, true)
+    @&quot;llvm.ctlz.i128&quot;(this, true)
 
   fun ctz_unsafe(): U128 =&gt;
     &quot;&quot;&quot;
     Unsafe operation.
     If this is 0, the result is undefined.
     &quot;&quot;&quot;
-    @&quot;llvm.cttz.i128&quot;[U128](this, true)
+    @&quot;llvm.cttz.i128&quot;(this, true)
 
   fun bitwidth(): U128 =&gt; 128
 
@@ -7730,7 +7795,7 @@ primitive U128 is UnsignedInteger[U128]
 
   fun addc(y: U128): (U128, Bool) =&gt;
     ifdef native128 then
-      @&quot;llvm.uadd.with.overflow.i128&quot;[(U128, Bool)](this, y)
+      @&quot;llvm.uadd.with.overflow.i128&quot;(this, y)
     else
       let overflow = this &gt; (max_value() - y)
       (this + y, overflow)
@@ -7738,7 +7803,7 @@ primitive U128 is UnsignedInteger[U128]
 
   fun subc(y: U128): (U128, Bool) =&gt;
     ifdef native128 then
-      @&quot;llvm.usub.with.overflow.i128&quot;[(U128, Bool)](this, y)
+      @&quot;llvm.usub.with.overflow.i128&quot;(this, y)
     else
       let overflow = this &lt; y
       (this - y, overflow)
@@ -7746,7 +7811,7 @@ primitive U128 is UnsignedInteger[U128]
 
   fun mulc(y: U128): (U128, Bool) =&gt;
     ifdef native128 then
-      @&quot;llvm.umul.with.overflow.i128&quot;[(U128, Bool)](this, y)
+      @&quot;llvm.umul.with.overflow.i128&quot;(this, y)
     else
       let result = this * y
       let overflow = (this != 0) and ((result / this) != y)

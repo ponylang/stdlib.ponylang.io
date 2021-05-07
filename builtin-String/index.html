@@ -8874,9 +8874,9 @@
       let count = str_new.count(&quot;l&quot;)
 
       // find first occurrence of letter &quot;w&quot;
-      let first_w = str_new.find(&quot;w&quot;)
+      let first_w = str_new.find(&quot;w&quot;) ?
       // find first occurrence of letter &quot;d&quot;
-      let first_d = str_new.find(&quot;d&quot;)
+      let first_d = str_new.find(&quot;d&quot;) ?
 
       // get substring capturing &quot;world&quot;
       let substr = str_new.substring(first_w, first_d+1)
@@ -10040,7 +10040,7 @@ leading whitespace is removed.</p>
 <p>Return a string that is a concatenation of this and that.</p>
 <pre><code class="language-pony">fun box add(
   that: String box)
-: String val
+: String iso^
 </code></pre>
 <h4 id="parameters_47">Parameters<a class="headerlink" href="#parameters_47" title="Permanent link">&para;</a></h4>
 <ul>
@@ -10048,7 +10048,7 @@ leading whitespace is removed.</p>
 </ul>
 <h4 id="returns_65">Returns<a class="headerlink" href="#returns_65" title="Permanent link">&para;</a></h4>
 <ul>
-<li><a href="./">String</a> val</li>
+<li><a href="./">String</a> iso^</li>
 </ul>
 <hr />
 <h3 id="join">join<a class="headerlink" href="#join" title="Permanent link">&para;</a></h3>
