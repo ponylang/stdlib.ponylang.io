@@ -7561,10 +7561,17 @@ a union type for type parameter A. For example:</p>
 <hr />
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L9">[Source]</a></span></p>
-<pre><code class="language-pony">new iso create()
+<p><span class="source-link"><a href="src/collections/flag.html#L30">[Source]</a></span></p>
+<p>Create a Flags instance with an optional initial value.
+Default is 0 (no flags set).</p>
+<pre><code class="language-pony">new iso create(
+  value': B = 0)
 : Flags[A, B] iso^
 </code></pre>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li>value': B = 0</li>
+</ul>
 <h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="collections-Flags.html">Flags</a>[A, B] iso^</li>
@@ -7572,7 +7579,7 @@ a union type for type parameter A. For example:</p>
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="value">value<a class="headerlink" href="#value" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L30">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L37">[Source]</a></span></p>
 <p>Returns the bit encoding of the set flags.</p>
 <pre><code class="language-pony">fun box value()
 : B
@@ -7583,13 +7590,13 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L36">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L43">[Source]</a></span></p>
 <p>Returns true if the flag is set.</p>
 <pre><code class="language-pony">fun box apply(
   flag: A)
 : Bool val
 </code></pre>
-<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>flag: A</li>
 </ul>
@@ -7599,7 +7606,7 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="all">all<a class="headerlink" href="#all" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L42">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L49">[Source]</a></span></p>
 <p>Sets all bits, including undefined flags.</p>
 <pre><code class="language-pony">fun ref all()
 : None val
@@ -7610,7 +7617,7 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="clear">clear<a class="headerlink" href="#clear" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L48">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L55">[Source]</a></span></p>
 <p>Unsets all flags.</p>
 <pre><code class="language-pony">fun ref clear()
 : None val
@@ -7621,13 +7628,13 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="set">set<a class="headerlink" href="#set" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L54">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L61">[Source]</a></span></p>
 <p>Sets the flag.</p>
 <pre><code class="language-pony">fun ref set(
   flag: A)
 : None val
 </code></pre>
-<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>flag: A</li>
 </ul>
@@ -7637,13 +7644,13 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="unset">unset<a class="headerlink" href="#unset" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L60">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L67">[Source]</a></span></p>
 <p>Unsets the flag.</p>
 <pre><code class="language-pony">fun ref unset(
   flag: A)
 : None val
 </code></pre>
-<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>flag: A</li>
 </ul>
@@ -7653,13 +7660,13 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="flip">flip<a class="headerlink" href="#flip" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L66">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L73">[Source]</a></span></p>
 <p>Sets the flag if it is unset, unsets the flag if it is set.</p>
 <pre><code class="language-pony">fun ref flip(
   flag: A)
 : None val
 </code></pre>
-<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>flag: A</li>
 </ul>
@@ -7669,13 +7676,13 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="union">union<a class="headerlink" href="#union" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L72">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L79">[Source]</a></span></p>
 <p>The union of this and that.</p>
 <pre><code class="language-pony">fun ref union(
   that: Flags[A, B] box)
 : None val
 </code></pre>
-<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="collections-Flags.html">Flags</a>[A, B] box</li>
 </ul>
@@ -7685,13 +7692,13 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="intersect">intersect<a class="headerlink" href="#intersect" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L78">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L85">[Source]</a></span></p>
 <p>The intersection of this and that.</p>
 <pre><code class="language-pony">fun ref intersect(
   that: Flags[A, B] box)
 : None val
 </code></pre>
-<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="collections-Flags.html">Flags</a>[A, B] box</li>
 </ul>
@@ -7701,13 +7708,13 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="difference">difference<a class="headerlink" href="#difference" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L84">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L91">[Source]</a></span></p>
 <p>The symmetric difference of this and that.</p>
 <pre><code class="language-pony">fun ref difference(
   that: Flags[A, B] box)
 : None val
 </code></pre>
-<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="collections-Flags.html">Flags</a>[A, B] box</li>
 </ul>
@@ -7717,13 +7724,13 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="remove">remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L90">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L97">[Source]</a></span></p>
 <p>Unset flags that are set in that.</p>
 <pre><code class="language-pony">fun ref remove(
   that: Flags[A, B] box)
 : None val
 </code></pre>
-<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="collections-Flags.html">Flags</a>[A, B] box</li>
 </ul>
@@ -7733,13 +7740,13 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="add">add<a class="headerlink" href="#add" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L96">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L103">[Source]</a></span></p>
 <p>This with the flag set.</p>
 <pre><code class="language-pony">fun box add(
   flag: A)
 : Flags[A, B] iso^
 </code></pre>
-<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
 <ul>
 <li>flag: A</li>
 </ul>
@@ -7749,13 +7756,13 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="sub">sub<a class="headerlink" href="#sub" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L104">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L111">[Source]</a></span></p>
 <p>This with the flag unset.</p>
 <pre><code class="language-pony">fun box sub(
   flag: A)
 : Flags[A, B] iso^
 </code></pre>
-<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>flag: A</li>
 </ul>
@@ -7765,13 +7772,13 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="op_or">op_or<a class="headerlink" href="#op_or" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L112">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L119">[Source]</a></span></p>
 <p>The union of this and that.</p>
 <pre><code class="language-pony">fun box op_or(
   that: Flags[A, B] box)
 : Flags[A, B] iso^
 </code></pre>
-<h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="collections-Flags.html">Flags</a>[A, B] box</li>
 </ul>
@@ -7781,13 +7788,13 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="op_and">op_and<a class="headerlink" href="#op_and" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L120">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L127">[Source]</a></span></p>
 <p>The intersection of this and that.</p>
 <pre><code class="language-pony">fun box op_and(
   that: Flags[A, B] box)
 : Flags[A, B] iso^
 </code></pre>
-<h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="collections-Flags.html">Flags</a>[A, B] box</li>
 </ul>
@@ -7797,13 +7804,13 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="op_xor">op_xor<a class="headerlink" href="#op_xor" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L128">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L135">[Source]</a></span></p>
 <p>The symmetric difference of this and that.</p>
 <pre><code class="language-pony">fun box op_xor(
   that: Flags[A, B] box)
 : Flags[A, B] iso^
 </code></pre>
-<h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="collections-Flags.html">Flags</a>[A, B] box</li>
 </ul>
@@ -7813,13 +7820,13 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="without">without<a class="headerlink" href="#without" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L136">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L143">[Source]</a></span></p>
 <p>The flags in this that are not in that.</p>
 <pre><code class="language-pony">fun box without(
   that: Flags[A, B] box)
 : Flags[A, B] iso^
 </code></pre>
-<h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="collections-Flags.html">Flags</a>[A, B] box</li>
 </ul>
@@ -7829,7 +7836,7 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="clone">clone<a class="headerlink" href="#clone" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L144">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L151">[Source]</a></span></p>
 <p>Create a clone.</p>
 <pre><code class="language-pony">fun box clone()
 : Flags[A, B] iso^
@@ -7840,13 +7847,13 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="eq">eq<a class="headerlink" href="#eq" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L152">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L159">[Source]</a></span></p>
 <p>Returns true if this has the same flags set as that.</p>
 <pre><code class="language-pony">fun box eq(
   that: Flags[A, B] box)
 : Bool val
 </code></pre>
-<h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="collections-Flags.html">Flags</a>[A, B] box</li>
 </ul>
@@ -7856,14 +7863,14 @@ a union type for type parameter A. For example:</p>
 </ul>
 <hr />
 <h3 id="lt">lt<a class="headerlink" href="#lt" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L158">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L165">[Source]</a></span></p>
 <p>Returns true if the flags set on this are a strict subset of the flags set
 on that. Flags is only partially ordered, so lt is not the opposite of ge.</p>
 <pre><code class="language-pony">fun box lt(
   that: Flags[A, B] box)
 : Bool val
 </code></pre>
-<h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="collections-Flags.html">Flags</a>[A, B] box</li>
 </ul>
@@ -7873,7 +7880,7 @@ on that. Flags is only partially ordered, so lt is not the opposite of ge.</p>
 </ul>
 <hr />
 <h3 id="le">le<a class="headerlink" href="#le" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L165">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L172">[Source]</a></span></p>
 <p>Returns true if the flags set on this are a subset of the flags set on
 that or they are the same. Flags is only partially ordered, so le is not
 the opposite of te.</p>
@@ -7881,7 +7888,7 @@ the opposite of te.</p>
   that: Flags[A, B] box)
 : Bool val
 </code></pre>
-<h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_17">Parameters<a class="headerlink" href="#parameters_17" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="collections-Flags.html">Flags</a>[A, B] box</li>
 </ul>
@@ -7891,7 +7898,7 @@ the opposite of te.</p>
 </ul>
 <hr />
 <h3 id="gt">gt<a class="headerlink" href="#gt" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L173">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L180">[Source]</a></span></p>
 <p>Returns true if the flags set on this are a struct superset of the flags
 set on that. Flags is only partially ordered, so gt is not the opposite of
 le.</p>
@@ -7899,7 +7906,7 @@ le.</p>
   that: Flags[A, B] box)
 : Bool val
 </code></pre>
-<h4 id="parameters_17">Parameters<a class="headerlink" href="#parameters_17" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_18">Parameters<a class="headerlink" href="#parameters_18" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="collections-Flags.html">Flags</a>[A, B] box</li>
 </ul>
@@ -7909,7 +7916,7 @@ le.</p>
 </ul>
 <hr />
 <h3 id="ge">ge<a class="headerlink" href="#ge" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/collections/flag.html#L181">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/collections/flag.html#L188">[Source]</a></span></p>
 <p>Returns true if the flags set on this are a superset of the flags set on
 that or they are the same. Flags is only partially ordered, so ge is not
 the opposite of lt.</p>
@@ -7917,7 +7924,7 @@ the opposite of lt.</p>
   that: Flags[A, B] box)
 : Bool val
 </code></pre>
-<h4 id="parameters_18">Parameters<a class="headerlink" href="#parameters_18" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_19">Parameters<a class="headerlink" href="#parameters_19" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="collections-Flags.html">Flags</a>[A, B] box</li>
 </ul>
@@ -7932,7 +7939,7 @@ the opposite of lt.</p>
   that: Flags[A, B] box)
 : (Less val | Equal val | Greater val)
 </code></pre>
-<h4 id="parameters_19">Parameters<a class="headerlink" href="#parameters_19" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_20">Parameters<a class="headerlink" href="#parameters_20" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="collections-Flags.html">Flags</a>[A, B] box</li>
 </ul>
@@ -7947,7 +7954,7 @@ the opposite of lt.</p>
   that: Flags[A, B] box)
 : Bool val
 </code></pre>
-<h4 id="parameters_20">Parameters<a class="headerlink" href="#parameters_20" title="Permanent link">&para;</a></h4>
+<h4 id="parameters_21">Parameters<a class="headerlink" href="#parameters_21" title="Permanent link">&para;</a></h4>
 <ul>
 <li>that: <a href="collections-Flags.html">Flags</a>[A, B] box</li>
 </ul>

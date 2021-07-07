@@ -6966,6 +6966,13 @@ class Flags[A: Flag[B] val, B: (Unsigned &amp; Integer[B] val) = U64] is
   &quot;&quot;&quot;
   var _value: B = 0
 
+  new iso create(value': B = 0) =&gt;
+    &quot;&quot;&quot;
+    Create a Flags instance with an optional initial value.
+    Default is 0 (no flags set).
+    &quot;&quot;&quot;
+    _value = value'
+
   fun value(): B =&gt;
     &quot;&quot;&quot;
     Returns the bit encoding of the set flags.
@@ -7030,7 +7037,7 @@ class Flags[A: Flag[B] val, B: (Unsigned &amp; Integer[B] val) = U64] is
     &quot;&quot;&quot;
     Unset flags that are set in that.
     &quot;&quot;&quot;
-    _value = this._value xor that._value
+    _value = this._value and not that._value
 
   fun add(flag: A): Flags[A, B] iso^ =&gt;
     &quot;&quot;&quot;
