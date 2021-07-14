@@ -7126,9 +7126,9 @@
                 <h1 id="isprimea-unsignedintegera-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val">IsPrime[A: (<a href="builtin-UnsignedInteger.html">UnsignedInteger</a>[A] val &amp; (<a href="builtin-U8.html">U8</a> val | <a href="builtin-U16.html">U16</a> val | <a href="builtin-U32.html">U32</a> val | <a href="builtin-U64.html">U64</a> val | <a href="builtin-U128.html">U128</a> val | <a href="builtin-ULong.html">ULong</a> val | <a href="builtin-USize.html">USize</a> val))]<a class="headerlink" href="#isprimea-unsignedintegera-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="src/math/is_prime.html#L1">[Source]</a></span></p>
 <p>Primality test using 6k ± 1 method.</p>
-<p>All integers (excluding 2 and 3), can be expressed as (6k + i), 
-where i = −1, 0, 1, 2, 3, or 4. Since 2 divides (6k + 0), (6k + 2), 
-and (6k + 4), while 3 divides (6k + 3) that leaves only (6k - 1) and (6k + 1) 
+<p>All integers (excluding 2 and 3), can be expressed as (6k + i),
+where i = −1, 0, 1, 2, 3, or 4. Since 2 divides (6k + 0), (6k + 2),
+and (6k + 4), while 3 divides (6k + 3) that leaves only (6k - 1) and (6k + 1)
 for expressing primes.</p>
 <pre><code class="language-pony">primitive val IsPrime[A: (UnsignedInteger[A] val &amp; (U8 val | U16 val | U32 val | 
     U64 val | U128 val | ULong val | 
@@ -7147,7 +7147,7 @@ for expressing primes.</p>
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="src/math/is_prime.html#L72">[Source]</a></span></p>
+<p><span class="source-link"><a href="src/math/is_prime.html#L74">[Source]</a></span></p>
 <pre><code class="language-pony">fun box apply(
   n: A)
 : Bool val

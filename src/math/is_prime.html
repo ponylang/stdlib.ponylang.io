@@ -6941,9 +6941,9 @@
   &quot;&quot;&quot;
   Primality test using 6k ± 1 method.
 
-  All integers (excluding 2 and 3), can be expressed as (6k + i), 
-  where i = −1, 0, 1, 2, 3, or 4. Since 2 divides (6k + 0), (6k + 2), 
-  and (6k + 4), while 3 divides (6k + 3) that leaves only (6k - 1) and (6k + 1) 
+  All integers (excluding 2 and 3), can be expressed as (6k + i),
+  where i = −1, 0, 1, 2, 3, or 4. Since 2 divides (6k + 0), (6k + 2),
+  and (6k + 4), while 3 divides (6k + 3) that leaves only (6k - 1) and (6k + 1)
   for expressing primes.
   &quot;&quot;&quot;
 
@@ -6951,10 +6951,10 @@
   // to allocate static globals rather than stack or heap allocation.
   fun _low_prime_table(index: USize): A val =&gt;
     match index
-    | 0 =&gt; 2 | 1 =&gt; 3 | 2 =&gt; 5 | 3 =&gt; 7 | 4 =&gt; 11 
-    | 5 =&gt; 13 | 6 =&gt; 17 | 7 =&gt; 19 | 8 =&gt; 23 | 9 =&gt; 29 
-    | 10 =&gt; 31 | 11 =&gt; 37 | 12 =&gt; 41 | 13 =&gt; 43 | 14 =&gt; 47 
-    | 15 =&gt; 53 | 16 =&gt; 59 | 17 =&gt; 61 | 18 =&gt; 67 | 19 =&gt; 71 
+    | 0 =&gt; 2 | 1 =&gt; 3 | 2 =&gt; 5 | 3 =&gt; 7 | 4 =&gt; 11
+    | 5 =&gt; 13 | 6 =&gt; 17 | 7 =&gt; 19 | 8 =&gt; 23 | 9 =&gt; 29
+    | 10 =&gt; 31 | 11 =&gt; 37 | 12 =&gt; 41 | 13 =&gt; 43 | 14 =&gt; 47
+    | 15 =&gt; 53 | 16 =&gt; 59 | 17 =&gt; 61 | 18 =&gt; 67 | 19 =&gt; 71
     | 20 =&gt; 73 | 21 =&gt; 79 | 22 =&gt; 83 | 23 =&gt; 89 | 24 =&gt; 97
     | 25 =&gt; 101 | 26 =&gt; 103 | 27 =&gt; 107 | 28 =&gt; 109 | 29 =&gt; 113
     | 30 =&gt; 127 | 31 =&gt; 131 | 32 =&gt; 137 | 33 =&gt; 139 | 34 =&gt; 149
@@ -6994,7 +6994,7 @@
     | 200 =&gt; 1229 | 201 =&gt; 1231 | 202 =&gt; 1237 | 203 =&gt; 1249 | 204 =&gt; 1259
     | 205 =&gt; 1277 | 206 =&gt; 1279 | 207 =&gt; 1283 | 208 =&gt; 1289 | 209 =&gt; 1291
     | 210 =&gt; 1297 | 211 =&gt; 1301 | 212 =&gt; 1303 | 213 =&gt; 1307 | 214 =&gt; 1319
-    | 215 =&gt; 1321 | 215 =&gt; 1327 | 217 =&gt; 1361 | 218 =&gt; 1367 | 219 =&gt; 1373
+    | 215 =&gt; 1321 | 216 =&gt; 1327 | 217 =&gt; 1361 | 218 =&gt; 1367 | 219 =&gt; 1373
     | 220 =&gt; 1381 | 221 =&gt; 1399 | 222 =&gt; 1409 | 223 =&gt; 1423 | 224 =&gt; 1427
     | 225 =&gt; 1429 | 226 =&gt; 1433 | 227 =&gt; 1439 | 228 =&gt; 1447 | 229 =&gt; 1451
     | 230 =&gt; 1453 | 231 =&gt; 1459 | 232 =&gt; 1471 | 233 =&gt; 1481 | 234 =&gt; 1483
@@ -7008,28 +7008,35 @@
 
   fun _low_prime_table_size(): USize =&gt; 256
 
+  fun _u8_prime_table_size():  USize =&gt; 54
+
   fun apply(n: A): Bool =&gt;
+    if n &lt;= 3 then return n &gt; 1 end
+
+    let table_end: USize =
+      iftype A &lt;: U8 then
+        _u8_prime_table_size()
+      else
+        _low_prime_table_size()
+      end
+
+    var table_index: USize = 0
+    while table_index &lt; table_end do
+      let prime = _low_prime_table(table_index)
+      table_index = table_index + 1
+      if n == prime then return true end
+      if (n %% prime) == 0 then return false end
+    end
+
     iftype A &lt;: U8 then
       None
     else
-      var table_index: USize = 0
-      while table_index &lt; _low_prime_table_size() do
-        let prime = _low_prime_table(table_index)
-        table_index = table_index + 1
-        if n == prime then return true end
-        if (n %% prime) == 0 then return false end
+      var i: A = _low_prime_table(table_end - 1)
+      while (i * i) &lt;= n do
+        if (n %% i) == 0 then return false end
+        if (n %% (i + 2)) == 0 then return false end
+        i = i + 6
       end
-    end
-
-    if n &lt;= 3 then return n &gt; 1 end
-    if (n %% 2) == 0 then return false end 
-    if (n %% 3) == 0 then return false end
-
-    var i: A = 5
-    while (i * i) &lt;= n do
-      if (n %% i) == 0 then return false end
-      if (n %% (i + 2)) == 0 then return false end
-      i = i + 6
     end
     true
 
