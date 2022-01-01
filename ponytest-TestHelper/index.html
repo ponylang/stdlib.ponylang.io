@@ -7479,7 +7479,9 @@ The timeout is specified in nanseconds.</p>
 <h3 id="complete">complete<a class="headerlink" href="#complete" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/ponytest/test_helper/#L385">[Source]</a></span></p>
 <p>MUST be called by each long test to indicate the test has finished, unless
-a timeout occurs.</p>
+a timeout occurs. If you are using expect_action() then complete(true) will
+be called once the last expected action has been completed via
+complete_action().</p>
 <p>The "success" parameter specifies whether the test succeeded. However if
 any asserts fail the test will be considered a failure, regardless of the
 value of this parameter.</p>
@@ -7498,7 +7500,7 @@ value of this parameter.</p>
 </ul>
 <hr />
 <h3 id="expect_action">expect_action<a class="headerlink" href="#expect_action" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/ponytest/test_helper/#L398">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/ponytest/test_helper/#L400">[Source]</a></span></p>
 <p>Can be called in a long test to set up expectations for one or more actions
 that, when all completed, will complete the test.</p>
 <p>This pattern is useful for cases where you have multiple things that need
@@ -7520,7 +7522,7 @@ completed in any other order to complete the test.</p>
 </ul>
 <hr />
 <h3 id="complete_action">complete_action<a class="headerlink" href="#complete_action" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/ponytest/test_helper/#L412">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/ponytest/test_helper/#L414">[Source]</a></span></p>
 <p>MUST be called for each action expectation that was set up in a long test
 to fulfill the expectations. Any expectations that are still outstanding
 when the long test timeout runs out will be printed by name when it fails.</p>
@@ -7542,7 +7544,7 @@ waiting for any outstanding actions to be completed.</p>
 </ul>
 <hr />
 <h3 id="fail_action">fail_action<a class="headerlink" href="#fail_action" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/ponytest/test_helper/#L426">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/ponytest/test_helper/#L428">[Source]</a></span></p>
 <p>Call to fail an action, which will also cause the entire test to fail
 immediately, without waiting the rest of the outstanding actions.</p>
 <p>The name of the failed action will be included in the failure output.</p>
@@ -7562,7 +7564,7 @@ expect_action, but failing unexpected actions will also fail the test.</p>
 </ul>
 <hr />
 <h3 id="dispose_when_done">dispose_when_done<a class="headerlink" href="#dispose_when_done" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/ponytest/test_helper/#L438">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/ponytest/test_helper/#L440">[Source]</a></span></p>
 <p>Pass a disposable actor to be disposed of when the test is complete.
 The actor will be disposed no matter whether the test succeeds or fails.</p>
 <p>If the test is already tearing down, the actor will be disposed immediately.</p>
