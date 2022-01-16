@@ -6854,22 +6854,18 @@ actor Main
     let client = ProcessClient(env)
     let notifier: ProcessNotify iso = consume client
     // define the binary to run
-    try
-      let path = FilePath(env.root as AmbientAuth, &quot;/bin/cat&quot;)
-      // define the arguments; first arg is always the binary name
-      let args: Array[String] val = [&quot;cat&quot;]
-      // define the environment variable for the execution
-      let vars: Array[String] val = [&quot;HOME=/&quot;; &quot;PATH=/bin&quot;]
-      // create a ProcessMonitor and spawn the child process
-      let auth = env.root as AmbientAuth
-      let pm: ProcessMonitor = ProcessMonitor(auth, auth, consume notifier,
-      path, args, vars)
-      // write to STDIN of the child process
-      pm.write(&quot;one, two, three&quot;)
-      pm.done_writing() // closing stdin allows cat to terminate
-    else
-      env.out.print(&quot;Could not create FilePath!&quot;)
-    end
+    let path = FilePath(env.root, &quot;/bin/cat&quot;)
+    // define the arguments; first arg is always the binary name
+    let args: Array[String] val = [&quot;cat&quot;]
+    // define the environment variable for the execution
+    let vars: Array[String] val = [&quot;HOME=/&quot;; &quot;PATH=/bin&quot;]
+    // create a ProcessMonitor and spawn the child process
+    let auth = env.root
+    let pm: ProcessMonitor = ProcessMonitor(auth, auth, consume notifier,
+    path, args, vars)
+    // write to STDIN of the child process
+    pm.write(&quot;one, two, three&quot;)
+    pm.done_writing() // closing stdin allows cat to terminate
 
 // define a client that implements the ProcessNotify interface
 class ProcessClient is ProcessNotify

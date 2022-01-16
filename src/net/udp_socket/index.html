@@ -6759,7 +6759,7 @@ actor UDPSocket
   actor Main
     new create(env: Env) =&gt;
       try
-        UDPSocket(env.root as AmbientAuth,
+        UDPSocket(env.root,
           MyUDPNotify, &quot;&quot;, &quot;8989&quot;)
       end
   ```
@@ -6798,8 +6798,8 @@ actor UDPSocket
     new create(env: Env) =&gt;
       try
         let destination =
-          DNS.ip4(env.root as AmbientAuth, &quot;localhost&quot;, &quot;8989&quot;)(0)?
-        UDPSocket(env.root as AmbientAuth,
+          DNS.ip4(env.root, &quot;localhost&quot;, &quot;8989&quot;)(0)?
+        UDPSocket(env.root,
           recover MyUDPNotify(env.out, consume destination) end)
       end
   ```

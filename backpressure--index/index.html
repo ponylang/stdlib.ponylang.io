@@ -6878,11 +6878,8 @@ class SlowDown is TCPConnectionNotify
 
 actor Main
   new create(env: Env) =&gt;
-    try
-      let auth = env.root as AmbientAuth
-      let socket = TCPConnection(auth, recover SlowDown(auth, env.out) end,
-        &quot;&quot;, &quot;7669&quot;)
-    end
+    let socket = TCPConnection(env.root,
+    recover SlowDown(env.root, env.out) end, &quot;&quot;, &quot;7669&quot;)
 </code></pre>
 <h2 id="caveat">Caveat<a class="headerlink" href="#caveat" title="Permanent link">&para;</a></h2>
 <p>The runtime backpressure is a powerful system. By intervening, programmers can

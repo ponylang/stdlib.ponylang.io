@@ -7147,7 +7147,7 @@ class iso TempDirTest
   fun name(): String =&gt; &quot;temp-dir&quot;
 
   fun ref set_up(h: TestHelper)? =&gt;
-    tmp_dir = FilePath.mkdtemp(h.env.root as AmbientAuth, &quot;temp-dir&quot;)?
+    tmp_dir = FilePath.mkdtemp(h.env.root, &quot;temp-dir&quot;)?
 
   fun ref tear_down(h: TestHelper) =&gt;
     try

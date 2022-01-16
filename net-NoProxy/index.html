@@ -6883,7 +6883,7 @@
 <pre><code class="language-pony">actor MyClient
   new create(host: String, service: String, proxy: Proxy = NoProxy) =&gt;
     let conn: TCPConnection = TCPConnection.create(
-      env.root as AmbientAuth,
+      env.root,
       proxy.apply(MyConnectionNotify.create()),
       &quot;localhost&quot;,
       &quot;80&quot;)
