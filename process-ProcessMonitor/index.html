@@ -1146,8 +1146,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../builtin-AsioEventNotify/" title="interface AsioEventNotify" class="md-nav__link">
-      interface AsioEventNotify
+    <a href="../builtin-AsioEventNotify/" title="trait AsioEventNotify" class="md-nav__link">
+      trait AsioEventNotify
     </a>
   </li>
 
@@ -2216,18 +2216,6 @@
   <li class="md-nav__item">
     <a href="../collections-persistent-Cons/" title="class Cons" class="md-nav__link">
       class Cons
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../collections-persistent-CollisionHash/" title="primitive CollisionHash" class="md-nav__link">
-      primitive CollisionHash
     </a>
   </li>
 
@@ -4298,6 +4286,15 @@
       
         
           <li class="md-nav__item">
+    <a href="#implements" title="Implements" class="md-nav__link">
+    Implements
+  </a>
+  
+</li>
+        
+      
+        
+          <li class="md-nav__item">
     <a href="#constructors" title="Constructors" class="md-nav__link">
     Constructors
   </a>
@@ -5987,18 +5984,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/collections-persistent/_test/" title="_test.pony" class="md-nav__link">
-      _test.pony
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../src/debug/debug/" title="debug.pony" class="md-nav__link">
       debug.pony
     </a>
@@ -6874,6 +6859,15 @@
       
         
           <li class="md-nav__item">
+    <a href="#implements" title="Implements" class="md-nav__link">
+    Implements
+  </a>
+  
+</li>
+        
+      
+        
+          <li class="md-nav__item">
     <a href="#constructors" title="Constructors" class="md-nav__link">
     Constructors
   </a>
@@ -7019,8 +7013,14 @@
 <p><span class="source-link"><a href="../src/process/process_monitor/#L9">[Source]</a></span></p>
 <p>Fork+execs / creates a child process and monitors it. Notifies a client about
 STDOUT / STDERR events.</p>
-<pre><code class="language-pony">actor tag ProcessMonitor
+<pre><code class="language-pony">actor tag ProcessMonitor is
+  AsioEventNotify tag
 </code></pre>
+<h4 id="implements">Implements<a class="headerlink" href="#implements" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../builtin-AsioEventNotify/">AsioEventNotify</a> tag</li>
+</ul>
+<hr />
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/process/process_monitor/#L38">[Source]</a></span></p>

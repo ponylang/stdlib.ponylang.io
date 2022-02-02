@@ -1142,8 +1142,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../builtin-AsioEventNotify/" title="interface AsioEventNotify" class="md-nav__link">
-      interface AsioEventNotify
+    <a href="../../../builtin-AsioEventNotify/" title="trait AsioEventNotify" class="md-nav__link">
+      trait AsioEventNotify
     </a>
   </li>
 
@@ -2212,18 +2212,6 @@
   <li class="md-nav__item">
     <a href="../../../collections-persistent-Cons/" title="class Cons" class="md-nav__link">
       class Cons
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../collections-persistent-CollisionHash/" title="primitive CollisionHash" class="md-nav__link">
-      primitive CollisionHash
     </a>
   </li>
 
@@ -5824,18 +5812,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../collections-persistent/_test/" title="_test.pony" class="md-nav__link">
-      _test.pony
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../debug/debug/" title="debug.pony" class="md-nav__link">
       debug.pony
     </a>
@@ -6718,7 +6694,7 @@
 use @pony_asio_event_unsubscribe[None](event: AsioEventID)
 use @pony_asio_event_destroy[None](event: AsioEventID)
 
-actor SignalHandler
+actor SignalHandler is AsioEventNotify
   &quot;&quot;&quot;
   Listen for a specific signal.
   If the wait parameter is true, the program will not terminate until the SignalHandler's dispose method is called, or if the SignalNotify returns false, after handling the signal as this also disposes the SignalHandler and unsubscribes it.

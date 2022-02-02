@@ -1146,8 +1146,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../builtin-AsioEventNotify/" title="interface AsioEventNotify" class="md-nav__link">
-      interface AsioEventNotify
+    <a href="../builtin-AsioEventNotify/" title="trait AsioEventNotify" class="md-nav__link">
+      trait AsioEventNotify
     </a>
   </li>
 
@@ -2317,18 +2317,6 @@
   <li class="md-nav__item">
     <a href="../collections-persistent-Cons/" title="class Cons" class="md-nav__link">
       class Cons
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../collections-persistent-CollisionHash/" title="primitive CollisionHash" class="md-nav__link">
-      primitive CollisionHash
     </a>
   </li>
 
@@ -5927,18 +5915,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/collections-persistent/_test/" title="_test.pony" class="md-nav__link">
-      _test.pony
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../src/debug/debug/" title="debug.pony" class="md-nav__link">
       debug.pony
     </a>
@@ -6896,8 +6872,8 @@
                 
                 
                 <h1 id="listvaluesa-a-n-listnodea-read">ListValues[A: A, N: <a href="../collections-ListNode/">ListNode</a>[A] #read]<a class="headerlink" href="#listvaluesa-a-n-listnodea-read" title="Permanent link">&para;</a></h1>
-<p><span class="source-link"><a href="../src/collections/list/#L714">[Source]</a></span></p>
-<p>Iterate over the values in a list.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L941">[Source]</a></span></p>
+<p>Iterate over the values in a <code>List</code>.</p>
 <pre><code class="language-pony">class ref ListValues[A: A, N: ListNode[A] #read] is
   Iterator[N-&gt;A] ref
 </code></pre>
@@ -6908,8 +6884,10 @@
 <hr />
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L721">[Source]</a></span></p>
-<p>Keep the next list node to be examined.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L948">[Source]</a></span></p>
+<p>Build the iterator over values.</p>
+<p><code>reverse</code> of <code>false</code> iterates forward, while
+<code>reverse</code> of <code>true</code> iterates in reverse.</p>
 <pre><code class="language-pony">new ref create(
   head: (N | None val),
   reverse: Bool val = false)
@@ -6927,8 +6905,8 @@
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="has_next">has_next<a class="headerlink" href="#has_next" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L728">[Source]</a></span></p>
-<p>If we have a list node, we have more values.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L958">[Source]</a></span></p>
+<p>Indicates whether there are any values remaining in the iterator.</p>
 <pre><code class="language-pony">fun box has_next()
 : Bool val
 </code></pre>
@@ -6938,8 +6916,9 @@
 </ul>
 <hr />
 <h3 id="next">next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L734">[Source]</a></span></p>
-<p>Get the value of the list node and replace it with the next one.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L964">[Source]</a></span></p>
+<p>Return the next node in the iterator, advancing the iterator by one element.</p>
+<p>Order of return is determined by <code>reverse</code> argument during creation.</p>
 <pre><code class="language-pony">fun ref next()
 : N-&gt;A ?
 </code></pre>

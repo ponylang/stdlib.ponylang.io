@@ -1142,8 +1142,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../builtin-AsioEventNotify/" title="interface AsioEventNotify" class="md-nav__link">
-      interface AsioEventNotify
+    <a href="../../../builtin-AsioEventNotify/" title="trait AsioEventNotify" class="md-nav__link">
+      trait AsioEventNotify
     </a>
   </li>
 
@@ -2212,18 +2212,6 @@
   <li class="md-nav__item">
     <a href="../../../collections-persistent-Cons/" title="class Cons" class="md-nav__link">
       class Cons
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../collections-persistent-CollisionHash/" title="primitive CollisionHash" class="md-nav__link">
-      primitive CollisionHash
     </a>
   </li>
 
@@ -5831,18 +5819,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../collections-persistent/_test/" title="_test.pony" class="md-nav__link">
-      _test.pony
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../debug/debug/" title="debug.pony" class="md-nav__link">
       debug.pony
     </a>
@@ -6713,12 +6689,12 @@
   &quot;&quot;&quot;
   A doubly linked list.
 
-  (The following is paraphrased from [Wikipedia](https://en.wikipedia.org/wiki/Doubly_linked_list).)
+  The following is paraphrased from [Wikipedia](https://en.wikipedia.org/wiki/Doubly_linked_list).
 
   A doubly linked list is a linked data structure that consists of a set of sequentially
-  linked records called nodes. (Implemented in Ponylang via the collections.ListNode class.) Each
+  linked records called nodes (implemented in Pony via the collections.ListNode class). Each
   node contains four fields: two link fields (references to the previous and to the next node in
-  the sequence of nodes), one data field, and the reference to the in which it resides.  A doubly
+  the sequence of nodes), one data field, and the reference to the List in which it resides. A doubly
   linked list can be conceptualized as two singly linked lists formed from the same data items, but
   in opposite sequential orders.
 
@@ -6833,19 +6809,32 @@
 
   new create(len: USize = 0) =&gt;
     &quot;&quot;&quot;
-    Do nothing, but be compatible with Seq.
+    Always creates an empty list with 0 nodes, `len` is ignored.
+
+    Required method for `List` to satisfy the `Seq` interface.
+    ```pony
+    let my_list = List[String]
+    ```
     &quot;&quot;&quot;
     None
 
   new unit(a: A) =&gt;
     &quot;&quot;&quot;
-    Builds a new list from an element.
+    Creates a list with 1 node of element.
+
+    ```pony
+    let my_list = List[String].unit(&quot;element&quot;)
+    ```
     &quot;&quot;&quot;
     push(consume a)
 
   new from(seq: Array[A^]) =&gt;
     &quot;&quot;&quot;
-    Builds a new list from the sequence passed in.
+    Creates a list equivalent to the provided Array (both node number and order are preserved).
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    ```
     &quot;&quot;&quot;
     for value in seq.values() do
       push(consume value)
@@ -6853,33 +6842,54 @@
 
   fun ref reserve(len: USize) =&gt;
     &quot;&quot;&quot;
-    Do nothing, but be compatible with Seq.
+    Do nothing
+
+    Required method for `List` to satisfy the `Seq` interface.
     &quot;&quot;&quot;
     None
 
   fun size(): USize =&gt;
     &quot;&quot;&quot;
     Returns the number of items in the list.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    my_list.size() // 3
+    ```
     &quot;&quot;&quot;
     _size
 
   fun apply(i: USize = 0): this-&gt;A ? =&gt;
     &quot;&quot;&quot;
     Get the i-th element, raising an error if the index is out of bounds.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    try my_list.apply(1)? end // &quot;b&quot;
+    ```
     &quot;&quot;&quot;
     index(i)?()?
 
   fun ref update(i: USize, value: A): A^ ? =&gt;
     &quot;&quot;&quot;
-    Change the i-th element, raising an error if the index is out of bounds.
-    Returns the previous value, which may be None if the node has been popped
-    but left on the list.
+    Change the i-th element, raising an error if the index is out of bounds, and
+    returning the previous value.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    try my_list.update(1, &quot;z&quot;)? end // Returns &quot;b&quot; and List now contains [&quot;a&quot;; &quot;z&quot;; &quot;c&quot;]
+    ```
     &quot;&quot;&quot;
     index(i)?()? = consume value
 
   fun index(i: USize): this-&gt;ListNode[A] ? =&gt;
     &quot;&quot;&quot;
     Gets the i-th node, raising an error if the index is out of bounds.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    try my_list.index(0)? end // Returns a ListNode[String] containing &quot;a&quot;
+    ```
     &quot;&quot;&quot;
     if i &gt;= _size then
       error
@@ -6897,8 +6907,13 @@
 
   fun ref remove(i: USize): ListNode[A] ? =&gt;
     &quot;&quot;&quot;
-    Remove the i-th node, raising an error if the index is out of bounds.
-    The removed node is returned.
+    Remove the i-th node, raising an error if the index is out of bounds, and
+    returning the removed node.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    try my_list.remove(0)? end // Returns a ListNode[String] containing &quot;a&quot; and List now contains [&quot;b&quot;; &quot;c&quot;]
+    ```
     &quot;&quot;&quot;
     index(i)? .&gt; remove()
 
@@ -6912,19 +6927,35 @@
 
   fun head(): this-&gt;ListNode[A] ? =&gt;
     &quot;&quot;&quot;
-    Get the head of the list.
+    Show the head of the list, raising an error if the head is empty.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    try my_list.head()? end // Returns a ListNode[String] containing &quot;a&quot;
+    ```
     &quot;&quot;&quot;
     _head as this-&gt;ListNode[A]
 
   fun tail(): this-&gt;ListNode[A] ? =&gt;
     &quot;&quot;&quot;
-    Get the tail of the list.
+    Show the tail of the list, raising an error if the tail is empty.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    try my_list.tail()? end // Returns a ListNode[String] containing &quot;c&quot;
+    ```
     &quot;&quot;&quot;
     _tail as this-&gt;ListNode[A]
 
   fun ref prepend_node(node: ListNode[A]) =&gt;
     &quot;&quot;&quot;
     Adds a node to the head of the list.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let new_head = ListNode[String](&quot;0&quot;)
+    my_list.prepend_node(new_head) // [&quot;0&quot;, &quot;a&quot;; &quot;b&quot;; &quot;c&quot;]
+    ```
     &quot;&quot;&quot;
     match _head
     | let head': ListNode[A] =&gt;
@@ -6936,6 +6967,12 @@
   fun ref append_node(node: ListNode[A]) =&gt;
     &quot;&quot;&quot;
     Adds a node to the tail of the list.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let new_tail = ListNode[String](&quot;0&quot;)
+    my_list.append_node(new_head) // [&quot;a&quot;; &quot;b&quot;; &quot;c&quot;, &quot;0&quot;]
+    ```
     &quot;&quot;&quot;
     match _tail
     | let tail': ListNode[A] =&gt;
@@ -6946,7 +6983,13 @@
 
   fun ref append_list(that: List[A]) =&gt;
     &quot;&quot;&quot;
-    Remove all nodes from that and append them to this.
+    Empties the provided List by appending all elements onto the receiving List.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let other_list = List[String].from([&quot;d&quot;; &quot;e&quot;; &quot;f&quot;])
+    my_list.append_list(other_list)  // my_list is [&quot;a&quot;; &quot;b&quot;; &quot;c&quot;; &quot;d&quot;; &quot;e&quot;; &quot;f&quot;], other_list is empty
+    ```
     &quot;&quot;&quot;
     if this isnt that then
       while that._size &gt; 0 do
@@ -6956,7 +6999,13 @@
 
   fun ref prepend_list(that: List[A]) =&gt;
     &quot;&quot;&quot;
-    Remove all nodes from that and prepend them to this.
+    Empties the provided List by prepending all elements onto the receiving List.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let other_list = List[String].from([&quot;d&quot;; &quot;e&quot;; &quot;f&quot;])
+    my_list.prepend_list(other_list)  // my_list is [&quot;d&quot;; &quot;e&quot;; &quot;f&quot;; &quot;a&quot;; &quot;b&quot;; &quot;c&quot;], other_list is empty
+    ```
     &quot;&quot;&quot;
     if this isnt that then
       while that._size &gt; 0 do
@@ -6966,25 +7015,45 @@
 
   fun ref push(a: A) =&gt;
     &quot;&quot;&quot;
-    Adds a value to the tail of the list.
+    Adds a new tail value.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    my_list.push(&quot;d&quot;)  // my_list is [&quot;a&quot;; &quot;b&quot;; &quot;c&quot;; &quot;d&quot;]
+    ```
     &quot;&quot;&quot;
     append_node(ListNode[A](consume a))
 
   fun ref pop(): A^ ? =&gt;
     &quot;&quot;&quot;
-    Removes a value from the tail of the list.
+    Removes the tail value, raising an error if the tail is empty.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    try my_list.pop() end  // Returns &quot;c&quot; and my_list is [&quot;a&quot;; &quot;b&quot;]
+    ```
     &quot;&quot;&quot;
     tail()? .&gt; remove().pop()?
 
   fun ref unshift(a: A) =&gt;
     &quot;&quot;&quot;
-    Adds a value to the head of the list.
+    Adds a new head value.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    my_list.unshift(&quot;d&quot;)  // my_list is [&quot;d&quot;; &quot;a&quot;; &quot;b&quot;; &quot;c&quot;]
+    ```
     &quot;&quot;&quot;
     prepend_node(ListNode[A](consume a))
 
   fun ref shift(): A^ ? =&gt;
     &quot;&quot;&quot;
-    Removes a value from the head of the list.
+    Removes the head value, raising an error if the head is empty.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    try my_list.shift() end  // Returns &quot;a&quot; and my_list is [&quot;b&quot;; &quot;c&quot;]
+    ```
     &quot;&quot;&quot;
     head()? .&gt; remove().pop()?
 
@@ -6995,6 +7064,16 @@
   =&gt;
     &quot;&quot;&quot;
     Append len elements from a sequence, starting from the given offset.
+
+    When len is -1, all elements of sequence are pushed.
+
+    Does not remove elements from sequence.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let other_list = List[String].from([&quot;d&quot;; &quot;e&quot;; &quot;f&quot;])
+    my_list.append(other_list)  // my_list is [&quot;a&quot;; &quot;b&quot;; &quot;c&quot;; &quot;d&quot;; &quot;e&quot;; &quot;f&quot;], other_list is unchanged
+    ```
     &quot;&quot;&quot;
     if offset &gt;= seq.size() then
       return
@@ -7015,8 +7094,18 @@
 
   fun ref concat(iter: Iterator[A^], offset: USize = 0, len: USize = -1) =&gt;
     &quot;&quot;&quot;
-    Add len iterated elements to the end of the list, starting from the given
+    Add len iterated elements to the tail of the list, starting from the given
     offset.
+
+    When len is -1, all elements of iterator are pushed.
+
+    Does not remove elements from iterator.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let other_list = List[String].from([&quot;d&quot;; &quot;e&quot;; &quot;f&quot;])
+    my_list.concat(other_list.values())  // my_list is [&quot;a&quot;; &quot;b&quot;; &quot;c&quot;; &quot;d&quot;; &quot;e&quot;; &quot;f&quot;], other_list is unchanged
+    ```
     &quot;&quot;&quot;
     try
       for i in Range(0, offset) do
@@ -7038,8 +7127,13 @@
 
   fun ref truncate(len: USize) =&gt;
     &quot;&quot;&quot;
-    Truncate the list to the given length, discarding excess elements.
+    Pop tail elements until the list is len size.
     If the list is already smaller than len, do nothing.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    my_list.truncate(1)  // my_list is [&quot;a&quot;]
+    ```
     &quot;&quot;&quot;
     try
       while _size &gt; len do
@@ -7049,7 +7143,14 @@
 
   fun clone(): List[this-&gt;A!]^ =&gt;
     &quot;&quot;&quot;
-    Clone the list.
+    Clone all elements into a new List.
+
+    Note: elements are not copied, an additional reference to each element is created in the new List.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let other_list = my_list.clone()  // my_list is [&quot;a&quot;; &quot;b&quot;; &quot;c&quot;], other_list is [&quot;a&quot;; &quot;b&quot;; &quot;c&quot;]
+    ```
     &quot;&quot;&quot;
     let out = List[this-&gt;A!]
 
@@ -7060,7 +7161,12 @@
 
   fun map[B](f: {(this-&gt;A!): B^} box): List[B]^ =&gt;
     &quot;&quot;&quot;
-    Builds a new list by applying a function to every member of the list.
+    Builds a new `List` by applying a function to every element of the `List`.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let other_list = my_list.map[String]( {(s: String): String =&gt; &quot;m: &quot; + s } )  // other_list is [&quot;m: a&quot;; &quot;m: b&quot;; &quot;m: c&quot;]
+    ```
     &quot;&quot;&quot;
     try
       _map[B](head()?, f, List[B])
@@ -7075,7 +7181,7 @@
     : List[B]^
   =&gt;
     &quot;&quot;&quot;
-    Private helper for map, recursively working with ListNodes.
+    Private helper for `map`, recursively working with `ListNode`s.
     &quot;&quot;&quot;
     try acc.push(f(ln()?)) end
 
@@ -7087,8 +7193,13 @@
 
   fun flat_map[B](f: {(this-&gt;A!): List[B]} box): List[B]^ =&gt;
     &quot;&quot;&quot;
-    Builds a new list by applying a function to every member of the list and
-    using the elements of the resulting lists.
+    Builds a new `List` by applying a function to every element of the `List`, 
+    producing a new `List` for each element, then flattened into a single `List`.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let other_list = my_list.flat_map[String]( {(s: String): List[String] =&gt; List[String].from( [&quot;m&quot;; s] )} )  // other_list is [&quot;m&quot;; &quot;a&quot;; &quot;m&quot;; &quot;b&quot;; &quot;m&quot;; c&quot;]
+    ```
     &quot;&quot;&quot;
     try
       _flat_map[B](head()?, f, List[B])
@@ -7102,7 +7213,7 @@
     acc: List[B]): List[B]^
   =&gt;
     &quot;&quot;&quot;
-    Private helper for flat_map, recursively working with ListNodes.
+    Private helper for `flat_map`, recursively working with `ListNode`s.
     &quot;&quot;&quot;
     try acc.append_list(f(ln()?)) end
 
@@ -7114,7 +7225,12 @@
 
   fun filter(f: {(this-&gt;A!): Bool} box): List[this-&gt;A!]^ =&gt;
     &quot;&quot;&quot;
-    Builds a new list with those elements that satisfy a provided predicate.
+    Builds a new `List` with those elements that satisfy the predicate.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let other_list = my_list.filter( {(s: String): Bool =&gt; s == &quot;b&quot; } )  // other_list is [&quot;b&quot;]
+    ```
     &quot;&quot;&quot;
     try
       _filter(head()?, f, List[this-&gt;A!])
@@ -7128,7 +7244,7 @@
     acc: List[this-&gt;A!]): List[this-&gt;A!]
   =&gt;
     &quot;&quot;&quot;
-    Private helper for filter, recursively working with ListNodes.
+    Private helper for `filter`, recursively working with `ListNode`s.
     &quot;&quot;&quot;
     try
       let cur = ln()?
@@ -7143,7 +7259,16 @@
 
   fun fold[B](f: {(B!, this-&gt;A!): B^} box, acc: B): B =&gt;
     &quot;&quot;&quot;
-    Folds the elements of the list using the supplied function.
+    Folds the elements of the `List` using the supplied function.
+
+    On the first iteration, the `B` argument in `f` is the value `acc`, 
+    on the second iteration `B` is the result of the first iteration,
+    on the third iteration `B` is the result of the second iteration, and so on.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let folded = my_list.fold[String]( {(str: String, s: String): String =&gt; str + s }, &quot;z&quot;)  // &quot;zabc&quot;
+    ```
     &quot;&quot;&quot;
     let h = try
       head()?
@@ -7160,7 +7285,7 @@
     : B
   =&gt;
     &quot;&quot;&quot;
-    Private helper for fold, recursively working with ListNodes.
+    Private helper for `fold`, recursively working with `ListNode`s.
     &quot;&quot;&quot;
     let nextAcc: B = try f(acc, ln()?) else consume acc end
     let h = try
@@ -7173,8 +7298,12 @@
 
   fun every(f: {(this-&gt;A!): Bool} box): Bool =&gt;
     &quot;&quot;&quot;
-    Returns true if every element satisfies the provided predicate, false
-    otherwise.
+    Returns `true` if every element satisfies the predicate, otherwise returns `false`.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let all_z = my_list.every( {(s: String): Bool =&gt; s == &quot;z&quot;} ) // false
+    ```
     &quot;&quot;&quot;
     try
       _every(head()?, f)
@@ -7184,7 +7313,7 @@
 
   fun _every(ln: this-&gt;ListNode[A], f: {(this-&gt;A!): Bool} box): Bool =&gt;
     &quot;&quot;&quot;
-    Private helper for every, recursively working with ListNodes.
+    Private helper for `every`, recursively working with `ListNode`s.
     &quot;&quot;&quot;
     try
       if not(f(ln()?)) then
@@ -7198,8 +7327,12 @@
 
   fun exists(f: {(this-&gt;A!): Bool} box): Bool =&gt;
     &quot;&quot;&quot;
-    Returns true if at least one element satisfies the provided predicate,
-    false otherwise.
+    Returns `true` if at least one element satisfies the predicate, otherwise returns `false`.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let b_exists = my_list.exists( {(s: String): Bool =&gt; s == &quot;b&quot;} ) // true
+    ```
     &quot;&quot;&quot;
     try
       _exists(head()?, f)
@@ -7209,7 +7342,7 @@
 
   fun _exists(ln: this-&gt;ListNode[A], f: {(this-&gt;A!): Bool} box): Bool =&gt;
     &quot;&quot;&quot;
-    Private helper for exists, recursively working with ListNodes.
+    Private helper for `exists`, recursively working with `ListNode`s.
     &quot;&quot;&quot;
     try
       if f(ln()?) then
@@ -7226,9 +7359,14 @@
     : (List[this-&gt;A!]^, List[this-&gt;A!]^)
   =&gt;
     &quot;&quot;&quot;
-    Builds a pair of lists, the first of which is made up of the elements
-    satisfying the supplied predicate and the second of which is made up of
+    Builds a pair of `List`s, the first of which is made up of the elements
+    satisfying the predicate and the second of which is made up of
     those that do not.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    (let lt_b, let gt_b) = my_list.partition( {(s: String): Bool =&gt; s &lt; &quot;b&quot;} )  // lt_b is [&quot;a&quot;], while gt_b is [&quot;b&quot;; &quot;c&quot;]
+    ```
     &quot;&quot;&quot;
     let l1 = List[this-&gt;A!]
     let l2 = List[this-&gt;A!]
@@ -7239,7 +7377,12 @@
 
   fun drop(n: USize): List[this-&gt;A!]^ =&gt;
     &quot;&quot;&quot;
-    Builds a list by dropping the first n elements.
+    Builds a `List` by dropping the first `n` elements.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let other_list = my_list.drop(1)  // [&quot;b&quot;; &quot;c&quot;]
+    ```
     &quot;&quot;&quot;
     let l = List[this-&gt;A!]
 
@@ -7257,7 +7400,12 @@
 
   fun take(n: USize): List[this-&gt;A!] =&gt;
     &quot;&quot;&quot;
-    Builds a list of the first n elements.
+    Builds a `List` by keeping the first `n` elements.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let other_list = my_list.drop(1)  // [&quot;a&quot;]
+    ```
     &quot;&quot;&quot;
     let l = List[this-&gt;A!]
 
@@ -7275,8 +7423,12 @@
 
   fun take_while(f: {(this-&gt;A!): Bool} box): List[this-&gt;A!]^ =&gt;
     &quot;&quot;&quot;
-    Builds a list of elements satisfying the provided predicate until one does
-    not.
+    Builds a `List` of elements satisfying the predicate, stopping at the first `false` return.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let other_list = my_list.take_while( {(s: String): Bool =&gt; s &lt; &quot;b&quot;} )  // [&quot;a&quot;]
+    ```
     &quot;&quot;&quot;
     let l = List[this-&gt;A!]
 
@@ -7295,7 +7447,12 @@
 
   fun reverse(): List[this-&gt;A!]^ =&gt;
     &quot;&quot;&quot;
-    Builds a new list by reversing the elements in the list.
+    Builds a new `List` by reversing the elements in the `List`.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let other_list = my_list.reverse() // [&quot;c&quot;; &quot;b&quot;; &quot;a&quot;]
+    ```
     &quot;&quot;&quot;
     try
       _reverse(head()?, List[this-&gt;A!])
@@ -7305,7 +7462,7 @@
 
   fun _reverse(ln: this-&gt;ListNode[A], acc: List[this-&gt;A!]): List[this-&gt;A!]^ =&gt;
     &quot;&quot;&quot;
-    Private helper for reverse, recursively working with ListNodes.
+    Private helper for `reverse`, recursively working with `ListNode`s.
     &quot;&quot;&quot;
     try acc.unshift(ln()?) end
 
@@ -7317,7 +7474,12 @@
 
   fun contains[B: (A &amp; HasEq[A!] #read) = A](a: box-&gt;B): Bool =&gt;
     &quot;&quot;&quot;
-    Returns true if the list contains the provided element, false otherwise.
+    Returns `true` if the `List` contains the provided element, otherwise returns `false`.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let contains_b = my_list.contains[String](&quot;b&quot;) // true
+    ```
     &quot;&quot;&quot;
     try
       _contains[B](head()?, a)
@@ -7331,7 +7493,7 @@
     : Bool
   =&gt;
     &quot;&quot;&quot;
-    Private helper for contains, recursively working with ListNodes.
+    Private helper for `contains`, recursively working with `ListNode`s.
     &quot;&quot;&quot;
     try
       if a == ln()? then
@@ -7345,41 +7507,77 @@
 
   fun nodes(): ListNodes[A, this-&gt;ListNode[A]]^ =&gt;
     &quot;&quot;&quot;
-    Return an iterator on the nodes in the list.
+    Return an iterator on the nodes in the `List` in forward order.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let nodes = my_list.nodes()  // node with &quot;a&quot; is before node with &quot;c&quot;
+    ```
     &quot;&quot;&quot;
     ListNodes[A, this-&gt;ListNode[A]](_head)
 
   fun rnodes(): ListNodes[A, this-&gt;ListNode[A]]^ =&gt;
     &quot;&quot;&quot;
-    Return an iterator on the nodes in the list.
+    Return an iterator on the nodes in the `List` in reverse order.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let rnodes = my_list.rnodes()  // node with &quot;c&quot; is before node with &quot;a&quot;
+    ```
     &quot;&quot;&quot;
     ListNodes[A, this-&gt;ListNode[A]](_head, true)
 
   fun values(): ListValues[A, this-&gt;ListNode[A]]^ =&gt;
     &quot;&quot;&quot;
-    Return an iterator on the values in the list.
+    Return an iterator on the values in the `List` in forward order.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let values = my_list.values()  // value &quot;a&quot; is before value &quot;c&quot;
+    ```
     &quot;&quot;&quot;
     ListValues[A, this-&gt;ListNode[A]](_head)
 
   fun rvalues(): ListValues[A, this-&gt;ListNode[A]]^ =&gt;
     &quot;&quot;&quot;
-    Return an iterator on the values in the list.
+    Return an iterator on the values in the `List` in reverse order.
+
+    ```pony
+    let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+    let rvalues = my_list.rvalues()  // value &quot;c&quot; is before value &quot;a&quot;
+    ```
     &quot;&quot;&quot;
     ListValues[A, this-&gt;ListNode[A]](_head, true)
 
   fun ref _increment() =&gt;
+    &quot;&quot;&quot;
+    Private method to control mutating `_size` field.
+    &quot;&quot;&quot;
     _size = _size + 1
 
   fun ref _decrement() =&gt;
+    &quot;&quot;&quot;
+    Private method to control mutating `_size` field.
+    &quot;&quot;&quot;
     _size = _size - 1
 
   fun ref _set_head(head': (ListNode[A] | None)) =&gt;
+    &quot;&quot;&quot;
+    Private method to control mutating `_head` field.
+    &quot;&quot;&quot;
     _head = head'
 
   fun ref _set_tail(tail': (ListNode[A] | None)) =&gt;
+    &quot;&quot;&quot;
+    Private method to control mutating `_tail` field.
+    &quot;&quot;&quot;
     _tail = tail'
 
   fun ref _set_both(node: ListNode[A]) =&gt;
+    &quot;&quot;&quot;
+    Private method to set both `_head` and `_tail` to the same node,
+    creating a `List` with a `_size` of 1.
+    &quot;&quot;&quot;
     node._set_list(this)
     _head = node
     _tail = node
@@ -7387,27 +7585,32 @@
 
 class ListNodes[A, N: ListNode[A] #read] is Iterator[N]
   &quot;&quot;&quot;
-  Iterate over the nodes in a list.
+  Iterate over the nodes in a `List`.
   &quot;&quot;&quot;
   var _next: (N | None)
   let _reverse: Bool
 
   new create(head: (N | None), reverse: Bool = false) =&gt;
     &quot;&quot;&quot;
-    Keep the next list node to be examined.
+    Build the iterator over nodes.
+
+    `reverse` of `false` iterates forward, while
+    `reverse` of `true` iterates in reverse.
     &quot;&quot;&quot;
     _next = head
     _reverse = reverse
 
   fun has_next(): Bool =&gt;
     &quot;&quot;&quot;
-    If we have a list node, we have more values.
+    Indicates whether there are any nodes remaining in the iterator.
     &quot;&quot;&quot;
     _next isnt None
 
   fun ref next(): N ? =&gt;
     &quot;&quot;&quot;
-    Get the list node and replace it with the next one.
+    Return the next node in the iterator, advancing the iterator by one element.
+
+    Order of return is determined by `reverse` argument during creation.
     &quot;&quot;&quot;
     match _next
     | let next': N =&gt;
@@ -7424,27 +7627,32 @@ class ListNodes[A, N: ListNode[A] #read] is Iterator[N]
 
 class ListValues[A, N: ListNode[A] #read] is Iterator[N-&gt;A]
   &quot;&quot;&quot;
-  Iterate over the values in a list.
+  Iterate over the values in a `List`.
   &quot;&quot;&quot;
   var _next: (N | None)
   let _reverse: Bool
 
   new create(head: (N | None), reverse: Bool = false) =&gt;
     &quot;&quot;&quot;
-    Keep the next list node to be examined.
+    Build the iterator over values.
+
+    `reverse` of `false` iterates forward, while
+    `reverse` of `true` iterates in reverse.
     &quot;&quot;&quot;
     _next = head
     _reverse = reverse
 
   fun has_next(): Bool =&gt;
     &quot;&quot;&quot;
-    If we have a list node, we have more values.
+    Indicates whether there are any values remaining in the iterator.
     &quot;&quot;&quot;
     _next isnt None
 
   fun ref next(): N-&gt;A ? =&gt;
     &quot;&quot;&quot;
-    Get the value of the list node and replace it with the next one.
+    Return the next node in the iterator, advancing the iterator by one element.
+
+    Order of return is determined by `reverse` argument during creation.
     &quot;&quot;&quot;
     match _next
     | let next': N =&gt;

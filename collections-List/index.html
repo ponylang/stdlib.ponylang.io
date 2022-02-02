@@ -1146,8 +1146,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../builtin-AsioEventNotify/" title="interface AsioEventNotify" class="md-nav__link">
-      interface AsioEventNotify
+    <a href="../builtin-AsioEventNotify/" title="trait AsioEventNotify" class="md-nav__link">
+      trait AsioEventNotify
     </a>
   </li>
 
@@ -2665,18 +2665,6 @@
   <li class="md-nav__item">
     <a href="../collections-persistent-Cons/" title="class Cons" class="md-nav__link">
       class Cons
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../collections-persistent-CollisionHash/" title="primitive CollisionHash" class="md-nav__link">
-      primitive CollisionHash
     </a>
   </li>
 
@@ -6275,18 +6263,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../src/collections-persistent/_test/" title="_test.pony" class="md-nav__link">
-      _test.pony
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../src/debug/debug/" title="debug.pony" class="md-nav__link">
       debug.pony
     </a>
@@ -7594,11 +7570,11 @@
                 <h1 id="lista-a">List[A: A]<a class="headerlink" href="#lista-a" title="Permanent link">&para;</a></h1>
 <p><span class="source-link"><a href="../src/collections/list/#L1">[Source]</a></span></p>
 <p>A doubly linked list.</p>
-<p>(The following is paraphrased from <a href="https://en.wikipedia.org/wiki/Doubly_linked_list">Wikipedia</a>.)</p>
+<p>The following is paraphrased from <a href="https://en.wikipedia.org/wiki/Doubly_linked_list">Wikipedia</a>.</p>
 <p>A doubly linked list is a linked data structure that consists of a set of sequentially
-linked records called nodes. (Implemented in Ponylang via the collections.ListNode class.) Each
+linked records called nodes (implemented in Pony via the collections.ListNode class). Each
 node contains four fields: two link fields (references to the previous and to the next node in
-the sequence of nodes), one data field, and the reference to the in which it resides.  A doubly
+the sequence of nodes), one data field, and the reference to the List in which it resides. A doubly
 linked list can be conceptualized as two singly linked lists formed from the same data items, but
 in opposite sequential orders.</p>
 <p>As you would expect. functions are provided to perform all the common list operations such as
@@ -7711,7 +7687,10 @@ Our matching partition elements are:
 <h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
 <h3 id="create">create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/collections/list/#L123">[Source]</a></span></p>
-<p>Do nothing, but be compatible with Seq.</p>
+<p>Always creates an empty list with 0 nodes, <code>len</code> is ignored.</p>
+<p>Required method for <code>List</code> to satisfy the <code>Seq</code> interface.</p>
+<pre><code class="language-pony">let my_list = List[String]
+</code></pre>
 <pre><code class="language-pony">new ref create(
   len: USize val = 0)
 : List[A] ref^
@@ -7726,8 +7705,10 @@ Our matching partition elements are:
 </ul>
 <hr />
 <h3 id="unit">unit<a class="headerlink" href="#unit" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L129">[Source]</a></span></p>
-<p>Builds a new list from an element.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L134">[Source]</a></span></p>
+<p>Creates a list with 1 node of element.</p>
+<pre><code class="language-pony">let my_list = List[String].unit(&quot;element&quot;)
+</code></pre>
 <pre><code class="language-pony">new ref unit(
   a: A)
 : List[A] ref^
@@ -7742,8 +7723,10 @@ Our matching partition elements are:
 </ul>
 <hr />
 <h3 id="from">from<a class="headerlink" href="#from" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L135">[Source]</a></span></p>
-<p>Builds a new list from the sequence passed in.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L144">[Source]</a></span></p>
+<p>Creates a list equivalent to the provided Array (both node number and order are preserved).</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+</code></pre>
 <pre><code class="language-pony">new ref from(
   seq: Array[A^] ref)
 : List[A] ref^
@@ -7759,8 +7742,9 @@ Our matching partition elements are:
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="reserve">reserve<a class="headerlink" href="#reserve" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L143">[Source]</a></span></p>
-<p>Do nothing, but be compatible with Seq.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L156">[Source]</a></span></p>
+<p>Do nothing</p>
+<p>Required method for <code>List</code> to satisfy the <code>Seq</code> interface.</p>
 <pre><code class="language-pony">fun ref reserve(
   len: USize val)
 : None val
@@ -7775,8 +7759,11 @@ Our matching partition elements are:
 </ul>
 <hr />
 <h3 id="size">size<a class="headerlink" href="#size" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L149">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/list/#L164">[Source]</a></span></p>
 <p>Returns the number of items in the list.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+my_list.size() // 3
+</code></pre>
 <pre><code class="language-pony">fun box size()
 : USize val
 </code></pre>
@@ -7786,8 +7773,11 @@ Our matching partition elements are:
 </ul>
 <hr />
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L155">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/list/#L175">[Source]</a></span></p>
 <p>Get the i-th element, raising an error if the index is out of bounds.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+try my_list.apply(1)? end // &quot;b&quot;
+</code></pre>
 <pre><code class="language-pony">fun box apply(
   i: USize val = 0)
 : this-&gt;A ?
@@ -7802,10 +7792,12 @@ Our matching partition elements are:
 </ul>
 <hr />
 <h3 id="update">update<a class="headerlink" href="#update" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L161">[Source]</a></span></p>
-<p>Change the i-th element, raising an error if the index is out of bounds.
-Returns the previous value, which may be None if the node has been popped
-but left on the list.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L186">[Source]</a></span></p>
+<p>Change the i-th element, raising an error if the index is out of bounds, and
+returning the previous value.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+try my_list.update(1, &quot;z&quot;)? end // Returns &quot;b&quot; and List now contains [&quot;a&quot;; &quot;z&quot;; &quot;c&quot;]
+</code></pre>
 <pre><code class="language-pony">fun ref update(
   i: USize val,
   value: A)
@@ -7822,8 +7814,11 @@ but left on the list.</p>
 </ul>
 <hr />
 <h3 id="index">index<a class="headerlink" href="#index" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L169">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/list/#L198">[Source]</a></span></p>
 <p>Gets the i-th node, raising an error if the index is out of bounds.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+try my_list.index(0)? end // Returns a ListNode[String] containing &quot;a&quot;
+</code></pre>
 <pre><code class="language-pony">fun box index(
   i: USize val)
 : this-&gt;ListNode[A] ref ?
@@ -7838,9 +7833,12 @@ but left on the list.</p>
 </ul>
 <hr />
 <h3 id="remove">remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L187">[Source]</a></span></p>
-<p>Remove the i-th node, raising an error if the index is out of bounds.
-The removed node is returned.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L221">[Source]</a></span></p>
+<p>Remove the i-th node, raising an error if the index is out of bounds, and
+returning the removed node.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+try my_list.remove(0)? end // Returns a ListNode[String] containing &quot;a&quot; and List now contains [&quot;b&quot;; &quot;c&quot;]
+</code></pre>
 <pre><code class="language-pony">fun ref remove(
   i: USize val)
 : ListNode[A] ref ?
@@ -7855,7 +7853,7 @@ The removed node is returned.</p>
 </ul>
 <hr />
 <h3 id="clear">clear<a class="headerlink" href="#clear" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L194">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/list/#L233">[Source]</a></span></p>
 <p>Empties the list.</p>
 <pre><code class="language-pony">fun ref clear()
 : None val
@@ -7866,8 +7864,11 @@ The removed node is returned.</p>
 </ul>
 <hr />
 <h3 id="head">head<a class="headerlink" href="#head" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L202">[Source]</a></span></p>
-<p>Get the head of the list.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L241">[Source]</a></span></p>
+<p>Show the head of the list, raising an error if the head is empty.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+try my_list.head()? end // Returns a ListNode[String] containing &quot;a&quot;
+</code></pre>
 <pre><code class="language-pony">fun box head()
 : this-&gt;ListNode[A] ref ?
 </code></pre>
@@ -7877,8 +7878,11 @@ The removed node is returned.</p>
 </ul>
 <hr />
 <h3 id="tail">tail<a class="headerlink" href="#tail" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L208">[Source]</a></span></p>
-<p>Get the tail of the list.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L252">[Source]</a></span></p>
+<p>Show the tail of the list, raising an error if the tail is empty.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+try my_list.tail()? end // Returns a ListNode[String] containing &quot;c&quot;
+</code></pre>
 <pre><code class="language-pony">fun box tail()
 : this-&gt;ListNode[A] ref ?
 </code></pre>
@@ -7888,8 +7892,12 @@ The removed node is returned.</p>
 </ul>
 <hr />
 <h3 id="prepend_node">prepend_node<a class="headerlink" href="#prepend_node" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L214">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/list/#L263">[Source]</a></span></p>
 <p>Adds a node to the head of the list.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let new_head = ListNode[String](&quot;0&quot;)
+my_list.prepend_node(new_head) // [&quot;0&quot;, &quot;a&quot;; &quot;b&quot;; &quot;c&quot;]
+</code></pre>
 <pre><code class="language-pony">fun ref prepend_node(
   node: ListNode[A] ref)
 : None val
@@ -7904,8 +7912,12 @@ The removed node is returned.</p>
 </ul>
 <hr />
 <h3 id="append_node">append_node<a class="headerlink" href="#append_node" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L225">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/list/#L280">[Source]</a></span></p>
 <p>Adds a node to the tail of the list.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let new_tail = ListNode[String](&quot;0&quot;)
+my_list.append_node(new_head) // [&quot;a&quot;; &quot;b&quot;; &quot;c&quot;, &quot;0&quot;]
+</code></pre>
 <pre><code class="language-pony">fun ref append_node(
   node: ListNode[A] ref)
 : None val
@@ -7920,8 +7932,12 @@ The removed node is returned.</p>
 </ul>
 <hr />
 <h3 id="append_list">append_list<a class="headerlink" href="#append_list" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L236">[Source]</a></span></p>
-<p>Remove all nodes from that and append them to this.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L297">[Source]</a></span></p>
+<p>Empties the provided List by appending all elements onto the receiving List.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let other_list = List[String].from([&quot;d&quot;; &quot;e&quot;; &quot;f&quot;])
+my_list.append_list(other_list)  // my_list is [&quot;a&quot;; &quot;b&quot;; &quot;c&quot;; &quot;d&quot;; &quot;e&quot;; &quot;f&quot;], other_list is empty
+</code></pre>
 <pre><code class="language-pony">fun ref append_list(
   that: List[A] ref)
 : None val
@@ -7936,8 +7952,12 @@ The removed node is returned.</p>
 </ul>
 <hr />
 <h3 id="prepend_list">prepend_list<a class="headerlink" href="#prepend_list" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L246">[Source]</a></span></p>
-<p>Remove all nodes from that and prepend them to this.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L313">[Source]</a></span></p>
+<p>Empties the provided List by prepending all elements onto the receiving List.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let other_list = List[String].from([&quot;d&quot;; &quot;e&quot;; &quot;f&quot;])
+my_list.prepend_list(other_list)  // my_list is [&quot;d&quot;; &quot;e&quot;; &quot;f&quot;; &quot;a&quot;; &quot;b&quot;; &quot;c&quot;], other_list is empty
+</code></pre>
 <pre><code class="language-pony">fun ref prepend_list(
   that: List[A] ref)
 : None val
@@ -7952,8 +7972,11 @@ The removed node is returned.</p>
 </ul>
 <hr />
 <h3 id="push">push<a class="headerlink" href="#push" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L256">[Source]</a></span></p>
-<p>Adds a value to the tail of the list.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L329">[Source]</a></span></p>
+<p>Adds a new tail value.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+my_list.push(&quot;d&quot;)  // my_list is [&quot;a&quot;; &quot;b&quot;; &quot;c&quot;; &quot;d&quot;]
+</code></pre>
 <pre><code class="language-pony">fun ref push(
   a: A)
 : None val
@@ -7968,8 +7991,11 @@ The removed node is returned.</p>
 </ul>
 <hr />
 <h3 id="pop">pop<a class="headerlink" href="#pop" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L262">[Source]</a></span></p>
-<p>Removes a value from the tail of the list.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L340">[Source]</a></span></p>
+<p>Removes the tail value, raising an error if the tail is empty.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+try my_list.pop() end  // Returns &quot;c&quot; and my_list is [&quot;a&quot;; &quot;b&quot;]
+</code></pre>
 <pre><code class="language-pony">fun ref pop()
 : A^ ?
 </code></pre>
@@ -7979,8 +8005,11 @@ The removed node is returned.</p>
 </ul>
 <hr />
 <h3 id="unshift">unshift<a class="headerlink" href="#unshift" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L268">[Source]</a></span></p>
-<p>Adds a value to the head of the list.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L351">[Source]</a></span></p>
+<p>Adds a new head value.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+my_list.unshift(&quot;d&quot;)  // my_list is [&quot;d&quot;; &quot;a&quot;; &quot;b&quot;; &quot;c&quot;]
+</code></pre>
 <pre><code class="language-pony">fun ref unshift(
   a: A)
 : None val
@@ -7995,8 +8024,11 @@ The removed node is returned.</p>
 </ul>
 <hr />
 <h3 id="shift">shift<a class="headerlink" href="#shift" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L274">[Source]</a></span></p>
-<p>Removes a value from the head of the list.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L362">[Source]</a></span></p>
+<p>Removes the head value, raising an error if the head is empty.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+try my_list.shift() end  // Returns &quot;a&quot; and my_list is [&quot;b&quot;; &quot;c&quot;]
+</code></pre>
 <pre><code class="language-pony">fun ref shift()
 : A^ ?
 </code></pre>
@@ -8006,8 +8038,14 @@ The removed node is returned.</p>
 </ul>
 <hr />
 <h3 id="append">append<a class="headerlink" href="#append" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L280">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/collections/list/#L373">[Source]</a></span></p>
 <p>Append len elements from a sequence, starting from the given offset.</p>
+<p>When len is -1, all elements of sequence are pushed.</p>
+<p>Does not remove elements from sequence.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let other_list = List[String].from([&quot;d&quot;; &quot;e&quot;; &quot;f&quot;])
+my_list.append(other_list)  // my_list is [&quot;a&quot;; &quot;b&quot;; &quot;c&quot;; &quot;d&quot;; &quot;e&quot;; &quot;f&quot;], other_list is unchanged
+</code></pre>
 <pre><code class="language-pony">fun ref append(
   seq: (ReadSeq[A] box &amp; ReadElement[A^] box),
   offset: USize val = 0,
@@ -8026,9 +8064,15 @@ The removed node is returned.</p>
 </ul>
 <hr />
 <h3 id="concat">concat<a class="headerlink" href="#concat" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L305">[Source]</a></span></p>
-<p>Add len iterated elements to the end of the list, starting from the given
+<p><span class="source-link"><a href="../src/collections/list/#L408">[Source]</a></span></p>
+<p>Add len iterated elements to the tail of the list, starting from the given
 offset.</p>
+<p>When len is -1, all elements of iterator are pushed.</p>
+<p>Does not remove elements from iterator.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let other_list = List[String].from([&quot;d&quot;; &quot;e&quot;; &quot;f&quot;])
+my_list.concat(other_list.values())  // my_list is [&quot;a&quot;; &quot;b&quot;; &quot;c&quot;; &quot;d&quot;; &quot;e&quot;; &quot;f&quot;], other_list is unchanged
+</code></pre>
 <pre><code class="language-pony">fun ref concat(
   iter: Iterator[A^] ref,
   offset: USize val = 0,
@@ -8047,9 +8091,12 @@ offset.</p>
 </ul>
 <hr />
 <h3 id="truncate">truncate<a class="headerlink" href="#truncate" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L328">[Source]</a></span></p>
-<p>Truncate the list to the given length, discarding excess elements.
+<p><span class="source-link"><a href="../src/collections/list/#L441">[Source]</a></span></p>
+<p>Pop tail elements until the list is len size.
 If the list is already smaller than len, do nothing.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+my_list.truncate(1)  // my_list is [&quot;a&quot;]
+</code></pre>
 <pre><code class="language-pony">fun ref truncate(
   len: USize val)
 : None val
@@ -8064,8 +8111,12 @@ If the list is already smaller than len, do nothing.</p>
 </ul>
 <hr />
 <h3 id="clone">clone<a class="headerlink" href="#clone" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L339">[Source]</a></span></p>
-<p>Clone the list.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L457">[Source]</a></span></p>
+<p>Clone all elements into a new List.</p>
+<p>Note: elements are not copied, an additional reference to each element is created in the new List.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let other_list = my_list.clone()  // my_list is [&quot;a&quot;; &quot;b&quot;; &quot;c&quot;], other_list is [&quot;a&quot;; &quot;b&quot;; &quot;c&quot;]
+</code></pre>
 <pre><code class="language-pony">fun box clone()
 : List[this-&gt;A!] ref^
 </code></pre>
@@ -8075,8 +8126,11 @@ If the list is already smaller than len, do nothing.</p>
 </ul>
 <hr />
 <h3 id="mapb-b">map[B: B]<a class="headerlink" href="#mapb-b" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L350">[Source]</a></span></p>
-<p>Builds a new list by applying a function to every member of the list.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L475">[Source]</a></span></p>
+<p>Builds a new <code>List</code> by applying a function to every element of the <code>List</code>.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let other_list = my_list.map[String]( {(s: String): String =&gt; &quot;m: &quot; + s } )  // other_list is [&quot;m: a&quot;; &quot;m: b&quot;; &quot;m: c&quot;]
+</code></pre>
 <pre><code class="language-pony">fun box map[B: B](
   f: {(this-&gt;A!): B^}[A, B] box)
 : List[B] ref^
@@ -8091,9 +8145,12 @@ If the list is already smaller than len, do nothing.</p>
 </ul>
 <hr />
 <h3 id="flat_mapb-b">flat_map[B: B]<a class="headerlink" href="#flat_mapb-b" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L377">[Source]</a></span></p>
-<p>Builds a new list by applying a function to every member of the list and
-using the elements of the resulting lists.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L507">[Source]</a></span></p>
+<p>Builds a new <code>List</code> by applying a function to every element of the <code>List</code>, 
+producing a new <code>List</code> for each element, then flattened into a single <code>List</code>.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let other_list = my_list.flat_map[String]( {(s: String): List[String] =&gt; List[String].from( [&quot;m&quot;; s] )} )  // other_list is [&quot;m&quot;; &quot;a&quot;; &quot;m&quot;; &quot;b&quot;; &quot;m&quot;; c&quot;]
+</code></pre>
 <pre><code class="language-pony">fun box flat_map[B: B](
   f: {(this-&gt;A!): List[B]}[A, B] box)
 : List[B] ref^
@@ -8108,8 +8165,11 @@ using the elements of the resulting lists.</p>
 </ul>
 <hr />
 <h3 id="filter">filter<a class="headerlink" href="#filter" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L404">[Source]</a></span></p>
-<p>Builds a new list with those elements that satisfy a provided predicate.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L539">[Source]</a></span></p>
+<p>Builds a new <code>List</code> with those elements that satisfy the predicate.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let other_list = my_list.filter( {(s: String): Bool =&gt; s == &quot;b&quot; } )  // other_list is [&quot;b&quot;]
+</code></pre>
 <pre><code class="language-pony">fun box filter(
   f: {(this-&gt;A!): Bool}[A] box)
 : List[this-&gt;A!] ref^
@@ -8124,8 +8184,14 @@ using the elements of the resulting lists.</p>
 </ul>
 <hr />
 <h3 id="foldb-b">fold[B: B]<a class="headerlink" href="#foldb-b" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L433">[Source]</a></span></p>
-<p>Folds the elements of the list using the supplied function.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L573">[Source]</a></span></p>
+<p>Folds the elements of the <code>List</code> using the supplied function.</p>
+<p>On the first iteration, the <code>B</code> argument in <code>f</code> is the value <code>acc</code>, 
+on the second iteration <code>B</code> is the result of the first iteration,
+on the third iteration <code>B</code> is the result of the second iteration, and so on.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let folded = my_list.fold[String]( {(str: String, s: String): String =&gt; str + s }, &quot;z&quot;)  // &quot;zabc&quot;
+</code></pre>
 <pre><code class="language-pony">fun box fold[B: B](
   f: {(B!, this-&gt;A!): B^}[A, B] box,
   acc: B)
@@ -8142,9 +8208,11 @@ using the elements of the resulting lists.</p>
 </ul>
 <hr />
 <h3 id="every">every<a class="headerlink" href="#every" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L463">[Source]</a></span></p>
-<p>Returns true if every element satisfies the provided predicate, false
-otherwise.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L612">[Source]</a></span></p>
+<p>Returns <code>true</code> if every element satisfies the predicate, otherwise returns <code>false</code>.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let all_z = my_list.every( {(s: String): Bool =&gt; s == &quot;z&quot;} ) // false
+</code></pre>
 <pre><code class="language-pony">fun box every(
   f: {(this-&gt;A!): Bool}[A] box)
 : Bool val
@@ -8159,9 +8227,11 @@ otherwise.</p>
 </ul>
 <hr />
 <h3 id="exists">exists<a class="headerlink" href="#exists" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L488">[Source]</a></span></p>
-<p>Returns true if at least one element satisfies the provided predicate,
-false otherwise.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L641">[Source]</a></span></p>
+<p>Returns <code>true</code> if at least one element satisfies the predicate, otherwise returns <code>false</code>.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let b_exists = my_list.exists( {(s: String): Bool =&gt; s == &quot;b&quot;} ) // true
+</code></pre>
 <pre><code class="language-pony">fun box exists(
   f: {(this-&gt;A!): Bool}[A] box)
 : Bool val
@@ -8176,10 +8246,13 @@ false otherwise.</p>
 </ul>
 <hr />
 <h3 id="partition">partition<a class="headerlink" href="#partition" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L513">[Source]</a></span></p>
-<p>Builds a pair of lists, the first of which is made up of the elements
-satisfying the supplied predicate and the second of which is made up of
+<p><span class="source-link"><a href="../src/collections/list/#L670">[Source]</a></span></p>
+<p>Builds a pair of <code>List</code>s, the first of which is made up of the elements
+satisfying the predicate and the second of which is made up of
 those that do not.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+(let lt_b, let gt_b) = my_list.partition( {(s: String): Bool =&gt; s &lt; &quot;b&quot;} )  // lt_b is [&quot;a&quot;], while gt_b is [&quot;b&quot;; &quot;c&quot;]
+</code></pre>
 <pre><code class="language-pony">fun box partition(
   f: {(this-&gt;A!): Bool}[A] box)
 : (List[this-&gt;A!] ref^ , List[this-&gt;A!] ref^)
@@ -8194,8 +8267,11 @@ those that do not.</p>
 </ul>
 <hr />
 <h3 id="drop">drop<a class="headerlink" href="#drop" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L529">[Source]</a></span></p>
-<p>Builds a list by dropping the first n elements.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L691">[Source]</a></span></p>
+<p>Builds a <code>List</code> by dropping the first <code>n</code> elements.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let other_list = my_list.drop(1)  // [&quot;b&quot;; &quot;c&quot;]
+</code></pre>
 <pre><code class="language-pony">fun box drop(
   n: USize val)
 : List[this-&gt;A!] ref^
@@ -8210,8 +8286,11 @@ those that do not.</p>
 </ul>
 <hr />
 <h3 id="take">take<a class="headerlink" href="#take" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L547">[Source]</a></span></p>
-<p>Builds a list of the first n elements.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L714">[Source]</a></span></p>
+<p>Builds a <code>List</code> by keeping the first <code>n</code> elements.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let other_list = my_list.drop(1)  // [&quot;a&quot;]
+</code></pre>
 <pre><code class="language-pony">fun box take(
   n: USize val)
 : List[this-&gt;A!] ref
@@ -8226,9 +8305,11 @@ those that do not.</p>
 </ul>
 <hr />
 <h3 id="take_while">take_while<a class="headerlink" href="#take_while" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L565">[Source]</a></span></p>
-<p>Builds a list of elements satisfying the provided predicate until one does
-not.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L737">[Source]</a></span></p>
+<p>Builds a <code>List</code> of elements satisfying the predicate, stopping at the first <code>false</code> return.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let other_list = my_list.take_while( {(s: String): Bool =&gt; s &lt; &quot;b&quot;} )  // [&quot;a&quot;]
+</code></pre>
 <pre><code class="language-pony">fun box take_while(
   f: {(this-&gt;A!): Bool}[A] box)
 : List[this-&gt;A!] ref^
@@ -8243,8 +8324,11 @@ not.</p>
 </ul>
 <hr />
 <h3 id="reverse">reverse<a class="headerlink" href="#reverse" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L585">[Source]</a></span></p>
-<p>Builds a new list by reversing the elements in the list.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L761">[Source]</a></span></p>
+<p>Builds a new <code>List</code> by reversing the elements in the <code>List</code>.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let other_list = my_list.reverse() // [&quot;c&quot;; &quot;b&quot;; &quot;a&quot;]
+</code></pre>
 <pre><code class="language-pony">fun box reverse()
 : List[this-&gt;A!] ref^
 </code></pre>
@@ -8254,8 +8338,11 @@ not.</p>
 </ul>
 <hr />
 <h3 id="containsoptional-b-a-haseqa-read">contains[optional B: (A &amp; <a href="../builtin-HasEq/">HasEq</a>[A!] #read)]<a class="headerlink" href="#containsoptional-b-a-haseqa-read" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L607">[Source]</a></span></p>
-<p>Returns true if the list contains the provided element, false otherwise.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L788">[Source]</a></span></p>
+<p>Returns <code>true</code> if the <code>List</code> contains the provided element, otherwise returns <code>false</code>.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let contains_b = my_list.contains[String](&quot;b&quot;) // true
+</code></pre>
 <pre><code class="language-pony">fun box contains[optional B: (A &amp; HasEq[A!] #read)](
   a: box-&gt;B)
 : Bool val
@@ -8270,8 +8357,11 @@ not.</p>
 </ul>
 <hr />
 <h3 id="nodes">nodes<a class="headerlink" href="#nodes" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L635">[Source]</a></span></p>
-<p>Return an iterator on the nodes in the list.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L821">[Source]</a></span></p>
+<p>Return an iterator on the nodes in the <code>List</code> in forward order.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let nodes = my_list.nodes()  // node with &quot;a&quot; is before node with &quot;c&quot;
+</code></pre>
 <pre><code class="language-pony">fun box nodes()
 : ListNodes[A, this-&gt;ListNode[A] ref] ref^
 </code></pre>
@@ -8281,8 +8371,11 @@ not.</p>
 </ul>
 <hr />
 <h3 id="rnodes">rnodes<a class="headerlink" href="#rnodes" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L641">[Source]</a></span></p>
-<p>Return an iterator on the nodes in the list.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L832">[Source]</a></span></p>
+<p>Return an iterator on the nodes in the <code>List</code> in reverse order.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let rnodes = my_list.rnodes()  // node with &quot;c&quot; is before node with &quot;a&quot;
+</code></pre>
 <pre><code class="language-pony">fun box rnodes()
 : ListNodes[A, this-&gt;ListNode[A] ref] ref^
 </code></pre>
@@ -8292,8 +8385,11 @@ not.</p>
 </ul>
 <hr />
 <h3 id="values">values<a class="headerlink" href="#values" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L647">[Source]</a></span></p>
-<p>Return an iterator on the values in the list.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L843">[Source]</a></span></p>
+<p>Return an iterator on the values in the <code>List</code> in forward order.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let values = my_list.values()  // value &quot;a&quot; is before value &quot;c&quot;
+</code></pre>
 <pre><code class="language-pony">fun box values()
 : ListValues[A, this-&gt;ListNode[A] ref] ref^
 </code></pre>
@@ -8303,8 +8399,11 @@ not.</p>
 </ul>
 <hr />
 <h3 id="rvalues">rvalues<a class="headerlink" href="#rvalues" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/collections/list/#L653">[Source]</a></span></p>
-<p>Return an iterator on the values in the list.</p>
+<p><span class="source-link"><a href="../src/collections/list/#L854">[Source]</a></span></p>
+<p>Return an iterator on the values in the <code>List</code> in reverse order.</p>
+<pre><code class="language-pony">let my_list = List[String].from([&quot;a&quot;; &quot;b&quot;; &quot;c&quot;])
+let rvalues = my_list.rvalues()  // value &quot;c&quot; is before value &quot;a&quot;
+</code></pre>
 <pre><code class="language-pony">fun box rvalues()
 : ListValues[A, this-&gt;ListNode[A] ref] ref^
 </code></pre>
