@@ -6728,17 +6728,15 @@ and prints their contents.</p>
 
 actor Main
   new create(env: Env) =&gt;
-    try
-      for file_name in env.args.slice(1).values() do
-        let path = FilePath(env.root, file_name)
-        match OpenFile(path)
-        | let file: File =&gt;
-          while file.errno() is FileOK do
-            env.out.write(file.read(1024))
-          end
-        else
-          env.err.print(&quot;Error opening file '&quot; + file_name + &quot;'&quot;)
+    for file_name in env.args.slice(1).values() do
+      let path = FilePath(env.root, file_name)
+      match OpenFile(path)
+      | let file: File =&gt;
+        while file.errno() is FileOK do
+          env.out.write(file.read(1024))
         end
+      else
+        env.err.print(&quot;Error opening file '&quot; + file_name + &quot;'&quot;)
       end
     end
 </code></pre>
