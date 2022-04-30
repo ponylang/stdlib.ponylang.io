@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-ponylang-0.2.8">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-ponylang-0.2.8">
     
     
       
@@ -7253,10 +7253,8 @@ actor TCPListener is AsioEventNotify
 
   actor Main
     new create(env: Env) =&gt;
-      try
-        TCPListener(TCPListenAuth(env.root),
-          recover MyTCPListenNotify end, &quot;&quot;, &quot;8989&quot;)
-      end
+      TCPListener(TCPListenAuth(env.root),
+        recover MyTCPListenNotify end, &quot;&quot;, &quot;8989&quot;)
   ```
   &quot;&quot;&quot;
   var _notify: TCPListenNotify
@@ -7553,7 +7551,7 @@ actor TCPListener is AsioEventNotify
     
     <script src="../../../assets/javascripts/application.cb37bb38.js"></script>
       
-      <script>app.initialize({version:"1.2.3",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"1.3.0",url:{base:"../../.."}})</script>
       
     
     
