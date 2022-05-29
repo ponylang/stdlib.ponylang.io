@@ -7263,16 +7263,16 @@ class box CommandHelp
     _parent = parent'
     _spec = spec'
 
-  fun box fullname(): String =&gt;
+  fun fullname(): String =&gt;
     match _parent
     | let p: CommandHelp =&gt; p.fullname() + &quot; &quot; + _spec.name()
     else
       _spec.name()
     end
 
-  fun box string(): String =&gt; fullname()
+  fun string(): String =&gt; fullname()
 
-  fun box help_string(): String =&gt;
+  fun help_string(): String =&gt;
     &quot;&quot;&quot;
     Renders the help message as a String.
     &quot;&quot;&quot;
@@ -7282,7 +7282,7 @@ class box CommandHelp
     for bytes in w.done().values() do str.append(bytes) end
     str
 
-  fun box print_help(os: OutStream) =&gt;
+  fun print_help(os: OutStream) =&gt;
     &quot;&quot;&quot;
     Prints the help message to an OutStream.
     &quot;&quot;&quot;
@@ -7290,7 +7290,7 @@ class box CommandHelp
     _write_help(w)
     os.writev(w.done())
 
-  fun box _write_help(w: Writer) =&gt;
+  fun _write_help(w: Writer) =&gt;
     _write_usage(w)
     if _spec.descr().size() &gt; 0 then
       w.write(&quot;\n&quot;)
@@ -7312,7 +7312,7 @@ class box CommandHelp
       _write_args(w, args)
     end
 
-  fun box _write_usage(w: Writer) =&gt;
+  fun _write_usage(w: Writer) =&gt;
     w.write(&quot;usage: &quot; + fullname())
     if _any_options() then
       w.write(&quot; [&lt;options&gt;]&quot;)
@@ -7329,19 +7329,19 @@ class box CommandHelp
     end
     w.write(&quot;\n&quot;)
 
-  fun box _write_options(w: Writer, options: Array[OptionSpec box] box) =&gt;
+  fun _write_options(w: Writer, options: Array[OptionSpec box] box) =&gt;
     let cols = Array[(USize,String,String)]()
     for o in options.values() do
       cols.push((2, o.help_string(), o.descr()))
     end
     _Columns.write(w, cols)
 
-  fun box _write_commands(w: Writer) =&gt;
+  fun _write_commands(w: Writer) =&gt;
     let cols = Array[(USize,String,String)]()
     _list_commands(_spec, cols, 1)
     _Columns.write(w, cols)
 
-  fun box _list_commands(
+  fun _list_commands(
     cs: CommandSpec box,
     cols: Array[(USize,String,String)],
     level: USize)
@@ -7351,14 +7351,14 @@ class box CommandHelp
       _list_commands(c, cols, level + 1)
     end
 
-  fun box _write_args(w: Writer, args: Array[ArgSpec] box) =&gt;
+  fun _write_args(w: Writer, args: Array[ArgSpec] box) =&gt;
     let cols = Array[(USize,String,String)]()
     for a in args.values() do
       cols.push((2, a.help_string(), a.descr()))
     end
     _Columns.write(w, cols)
 
-  fun box _any_options(): Bool =&gt;
+  fun _any_options(): Bool =&gt;
     if _spec.options().size() &gt; 0 then
       true
     else
@@ -7369,12 +7369,12 @@ class box CommandHelp
       end
     end
 
-  fun box _all_options(): Array[OptionSpec box] =&gt;
+  fun _all_options(): Array[OptionSpec box] =&gt;
     let options = Array[OptionSpec box]()
     _all_options_fill(options)
     options
 
-  fun box _all_options_fill(options: Array[OptionSpec box]) =&gt;
+  fun _all_options_fill(options: Array[OptionSpec box]) =&gt;
     match _parent
     | let p: CommandHelp =&gt; p._all_options_fill(options)
     end

@@ -7339,7 +7339,9 @@
   new from_cpointer(ptr: Pointer[A], len: USize, alloc: USize = 0) =&gt;
     &quot;&quot;&quot;
     Create an array from a C-style pointer and length. The contents are not
-    copied.
+    copied. This must be done only with C-FFI functions that return
+    pony_alloc'd memory. If a null pointer is given then an empty array
+    is returned.
     &quot;&quot;&quot;
     if ptr.is_null() then
       _size = 0
@@ -7394,7 +7396,7 @@
       _ptr = _ptr._realloc(_alloc)
     end
 
-  fun box _element_size(): USize =&gt;
+  fun _element_size(): USize =&gt;
     &quot;&quot;&quot;
     Element size in bytes for an element.
     &quot;&quot;&quot;
@@ -7425,7 +7427,7 @@
     reserve(len)
     _size = len
 
-  fun box read_u8[B: (A &amp; Real[B] val &amp; U8) = A](offset: USize): U8 ? =&gt;
+  fun read_u8[B: (A &amp; Real[B] val &amp; U8) = A](offset: USize): U8 ? =&gt;
     &quot;&quot;&quot;
     Reads a U8 from offset. This is only allowed for an array of U8s.
     &quot;&quot;&quot;
@@ -7435,7 +7437,7 @@
       error
     end
 
-  fun box read_u16[B: (A &amp; Real[B] val &amp; U8) = A](offset: USize): U16 ? =&gt;
+  fun read_u16[B: (A &amp; Real[B] val &amp; U8) = A](offset: USize): U16 ? =&gt;
     &quot;&quot;&quot;
     Reads a U16 from offset. This is only allowed for an array of U8s.
     &quot;&quot;&quot;
@@ -7446,7 +7448,7 @@
       error
     end
 
-  fun box read_u32[B: (A &amp; Real[B] val &amp; U8) = A](offset: USize): U32 ? =&gt;
+  fun read_u32[B: (A &amp; Real[B] val &amp; U8) = A](offset: USize): U32 ? =&gt;
     &quot;&quot;&quot;
     Reads a U32 from offset. This is only allowed for an array of U8s.
     &quot;&quot;&quot;
@@ -7457,7 +7459,7 @@
       error
     end
 
-  fun box read_u64[B: (A &amp; Real[B] val &amp; U8) = A](offset: USize): U64 ? =&gt;
+  fun read_u64[B: (A &amp; Real[B] val &amp; U8) = A](offset: USize): U64 ? =&gt;
     &quot;&quot;&quot;
     Reads a U64 from offset. This is only allowed for an array of U8s.
     &quot;&quot;&quot;
@@ -7468,7 +7470,7 @@
       error
     end
 
-  fun box read_u128[B: (A &amp; Real[B] val &amp; U8) = A](offset: USize): U128 ? =&gt;
+  fun read_u128[B: (A &amp; Real[B] val &amp; U8) = A](offset: USize): U128 ? =&gt;
     &quot;&quot;&quot;
     Reads a U128 from offset. This is only allowed for an array of U8s.
     &quot;&quot;&quot;

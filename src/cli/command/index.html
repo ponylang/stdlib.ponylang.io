@@ -7263,13 +7263,13 @@ class box Command
     &quot;&quot;&quot;
     _fullname
 
-  fun box option(name: String): Option =&gt;
+  fun option(name: String): Option =&gt;
     &quot;&quot;&quot;
     Returns the Option by name, defaulting to a fake Option if unknown.
     &quot;&quot;&quot;
     try _options(name)? else Option(OptionSpec.bool(name), false) end
 
-  fun box arg(name: String): Arg =&gt;
+  fun arg(name: String): Arg =&gt;
     &quot;&quot;&quot;
     Returns the Arg by name, defaulting to a fake Arg if unknown.
     &quot;&quot;&quot;

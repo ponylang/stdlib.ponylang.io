@@ -7289,7 +7289,7 @@
 <p>This package provides support for serialising and deserialising arbitrary data
 structures.</p>
 <p>The API is designed to require capability tokens, as otherwise serialising
-would leak the bit patterns of all private information in a type (since the
+would leak the bit patterns of all private information in a type if the
 resulting Array[U8] could be examined.</p>
 <p>Deserialisation is fundamentally unsafe currently: there isn't yet a
 verification pass to check that the resulting object graph maintains a
@@ -7301,11 +7301,11 @@ well-formed heap and all object invariants.</p>
 due to the use of type identifiers rather than a heavy-weight self-describing
 serialisation schema. This also means it isn't safe to deserialise something
 serialised by the same program compiled for a different platform.</p>
-<p>The Serialise.signature method is provided for the purposes of comparing
-communicating Pony binaries to determine if they are the same. Confirming this
-before deserialising data can help mitigate the risk of accidental serialisation
-across different Pony binaries, but does not on its own address the security
-issues of accepting data from untrusted sources.</p>
+<p>The <a href="../serialise-Serialise/#signature">Serialise.signature</a> method is provided
+for the purposes of comparing communicating Pony binaries to determine if they
+are the same. Confirming this before deserialising data can help mitigate the
+risk of accidental serialisation across different Pony binaries, but does not on
+its own address the security issues of accepting data from untrusted sources.</p>
 <h2 id="public-types">Public Types<a class="headerlink" href="#public-types" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../serialise-Serialise/">primitive Serialise</a></li>

@@ -7217,9 +7217,9 @@
 type Benchmark is (MicroBenchmark | AsyncMicroBenchmark)
 
 // interface iso _IBenchmark
-//   fun box name(): String
-//   fun box config(): BenchConfig
-//   fun box overhead(): _IBenchmark^
+//   fun name(): String
+//   fun config(): BenchConfig
+//   fun overhead(): _IBenchmark^
 
 trait iso MicroBenchmark
   &quot;&quot;&quot;
@@ -7231,9 +7231,9 @@ trait iso MicroBenchmark
   each iteration of the benchmark, then you can use `before_iteration` and
   `after_iteration` methods respectively that run before/after each iteration.
   &quot;&quot;&quot;
-  fun box name(): String
-  fun box config(): BenchConfig =&gt; BenchConfig
-  fun box overhead(): MicroBenchmark^ =&gt; OverheadBenchmark
+  fun name(): String
+  fun config(): BenchConfig =&gt; BenchConfig
+  fun overhead(): MicroBenchmark^ =&gt; OverheadBenchmark
   fun ref before() ? =&gt; None
   fun ref before_iteration() ? =&gt; None
   fun ref apply() ?
@@ -7252,9 +7252,9 @@ trait iso AsyncMicroBenchmark
   you can use `before_iteration` and `after_iteration` methods respectively
   that run before/after each iteration.
   &quot;&quot;&quot;
-  fun box name(): String
-  fun box config(): BenchConfig =&gt; BenchConfig
-  fun box overhead(): AsyncMicroBenchmark^ =&gt; AsyncOverheadBenchmark
+  fun name(): String
+  fun config(): BenchConfig =&gt; BenchConfig
+  fun overhead(): AsyncMicroBenchmark^ =&gt; AsyncOverheadBenchmark
   fun ref before(c: AsyncBenchContinue) =&gt; c.complete()
   fun ref before_iteration(c: AsyncBenchContinue) =&gt; c.complete()
   fun ref apply(c: AsyncBenchContinue) ?

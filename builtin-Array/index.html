@@ -8520,7 +8520,9 @@ no guarantees that the GC will actually reclaim any space.</p>
 <h3 id="from_cpointer">from_cpointer<a class="headerlink" href="#from_cpointer" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/array/#L124">[Source]</a></span></p>
 <p>Create an array from a C-style pointer and length. The contents are not
-copied.</p>
+copied. This must be done only with C-FFI functions that return
+pony_alloc'd memory. If a null pointer is given then an empty array
+is returned.</p>
 <pre><code class="language-pony">new ref from_cpointer(
   ptr: Pointer[A] ref,
   len: USize val,
@@ -8540,7 +8542,7 @@ copied.</p>
 <hr />
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <h3 id="cpointer">cpointer<a class="headerlink" href="#cpointer" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L154">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L156">[Source]</a></span></p>
 <p>Return the underlying C-style pointer.</p>
 <pre><code class="language-pony">fun box cpointer(
   offset: USize val = 0)
@@ -8556,7 +8558,7 @@ copied.</p>
 </ul>
 <hr />
 <h3 id="size">size<a class="headerlink" href="#size" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L160">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L162">[Source]</a></span></p>
 <p>The number of elements in the array.</p>
 <pre><code class="language-pony">fun box size()
 : USize val
@@ -8567,7 +8569,7 @@ copied.</p>
 </ul>
 <hr />
 <h3 id="space">space<a class="headerlink" href="#space" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L166">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L168">[Source]</a></span></p>
 <p>The available space in the array.</p>
 <pre><code class="language-pony">fun box space()
 : USize val
@@ -8578,7 +8580,7 @@ copied.</p>
 </ul>
 <hr />
 <h3 id="reserve">reserve<a class="headerlink" href="#reserve" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L172">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L174">[Source]</a></span></p>
 <p>Reserve space for len elements, including whatever elements are already in
 the array. Array space grows geometrically.</p>
 <pre><code class="language-pony">fun ref reserve(
@@ -8595,7 +8597,7 @@ the array. Array space grows geometrically.</p>
 </ul>
 <hr />
 <h3 id="compact">compact<a class="headerlink" href="#compact" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L188">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L190">[Source]</a></span></p>
 <p>Try to remove unused space, making it available for garbage collection. The
 request may be ignored.</p>
 <pre><code class="language-pony">fun ref compact()
@@ -8607,7 +8609,7 @@ request may be ignored.</p>
 </ul>
 <hr />
 <h3 id="undefinedoptional-b-a-realb-val-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-f32-val-f64-val">undefined[optional B: (A &amp; <a href="../builtin-Real/">Real</a>[B] val &amp; (<a href="../builtin-I8/">I8</a> val | <a href="../builtin-I16/">I16</a> val | <a href="../builtin-I32/">I32</a> val | <a href="../builtin-I64/">I64</a> val | <a href="../builtin-I128/">I128</a> val | <a href="../builtin-ILong/">ILong</a> val | <a href="../builtin-ISize/">ISize</a> val | <a href="../builtin-U8/">U8</a> val | <a href="../builtin-U16/">U16</a> val | <a href="../builtin-U32/">U32</a> val | <a href="../builtin-U64/">U64</a> val | <a href="../builtin-U128/">U128</a> val | <a href="../builtin-ULong/">ULong</a> val | <a href="../builtin-USize/">USize</a> val | <a href="../builtin-F32/">F32</a> val | <a href="../builtin-F64/">F64</a> val))]<a class="headerlink" href="#undefinedoptional-b-a-realb-val-i8-val-i16-val-i32-val-i64-val-i128-val-ilong-val-isize-val-u8-val-u16-val-u32-val-u64-val-u128-val-ulong-val-usize-val-f32-val-f64-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L205">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L207">[Source]</a></span></p>
 <p>Resize to len elements, populating previously empty elements with random
 memory. This is only allowed for an array of numbers.</p>
 <pre><code class="language-pony">fun ref undefined[optional B: (A &amp; Real[B] val &amp; (I8 val | I16 val | I32 val | 
@@ -8629,7 +8631,7 @@ memory. This is only allowed for an array of numbers.</p>
 </ul>
 <hr />
 <h3 id="read_u8optional-b-a-realb-val-u8-val">read_u8[optional B: (A &amp; <a href="../builtin-Real/">Real</a>[B] val &amp; <a href="../builtin-U8/">U8</a> val)]<a class="headerlink" href="#read_u8optional-b-a-realb-val-u8-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L213">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L215">[Source]</a></span></p>
 <p>Reads a U8 from offset. This is only allowed for an array of U8s.</p>
 <pre><code class="language-pony">fun box read_u8[optional B: (A &amp; Real[B] val &amp; U8 val)](
   offset: USize val)
@@ -8645,7 +8647,7 @@ memory. This is only allowed for an array of numbers.</p>
 </ul>
 <hr />
 <h3 id="read_u16optional-b-a-realb-val-u8-val">read_u16[optional B: (A &amp; <a href="../builtin-Real/">Real</a>[B] val &amp; <a href="../builtin-U8/">U8</a> val)]<a class="headerlink" href="#read_u16optional-b-a-realb-val-u8-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L223">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L225">[Source]</a></span></p>
 <p>Reads a U16 from offset. This is only allowed for an array of U8s.</p>
 <pre><code class="language-pony">fun box read_u16[optional B: (A &amp; Real[B] val &amp; U8 val)](
   offset: USize val)
@@ -8661,7 +8663,7 @@ memory. This is only allowed for an array of numbers.</p>
 </ul>
 <hr />
 <h3 id="read_u32optional-b-a-realb-val-u8-val">read_u32[optional B: (A &amp; <a href="../builtin-Real/">Real</a>[B] val &amp; <a href="../builtin-U8/">U8</a> val)]<a class="headerlink" href="#read_u32optional-b-a-realb-val-u8-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L234">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L236">[Source]</a></span></p>
 <p>Reads a U32 from offset. This is only allowed for an array of U8s.</p>
 <pre><code class="language-pony">fun box read_u32[optional B: (A &amp; Real[B] val &amp; U8 val)](
   offset: USize val)
@@ -8677,7 +8679,7 @@ memory. This is only allowed for an array of numbers.</p>
 </ul>
 <hr />
 <h3 id="read_u64optional-b-a-realb-val-u8-val">read_u64[optional B: (A &amp; <a href="../builtin-Real/">Real</a>[B] val &amp; <a href="../builtin-U8/">U8</a> val)]<a class="headerlink" href="#read_u64optional-b-a-realb-val-u8-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L245">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L247">[Source]</a></span></p>
 <p>Reads a U64 from offset. This is only allowed for an array of U8s.</p>
 <pre><code class="language-pony">fun box read_u64[optional B: (A &amp; Real[B] val &amp; U8 val)](
   offset: USize val)
@@ -8693,7 +8695,7 @@ memory. This is only allowed for an array of numbers.</p>
 </ul>
 <hr />
 <h3 id="read_u128optional-b-a-realb-val-u8-val">read_u128[optional B: (A &amp; <a href="../builtin-Real/">Real</a>[B] val &amp; <a href="../builtin-U8/">U8</a> val)]<a class="headerlink" href="#read_u128optional-b-a-realb-val-u8-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L256">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L258">[Source]</a></span></p>
 <p>Reads a U128 from offset. This is only allowed for an array of U8s.</p>
 <pre><code class="language-pony">fun box read_u128[optional B: (A &amp; Real[B] val &amp; U8 val)](
   offset: USize val)
@@ -8709,7 +8711,7 @@ memory. This is only allowed for an array of numbers.</p>
 </ul>
 <hr />
 <h3 id="apply">apply<a class="headerlink" href="#apply" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L267">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L269">[Source]</a></span></p>
 <p>Get the i-th element, raising an error if the index is out of bounds.</p>
 <pre><code class="language-pony">fun box apply(
   i: USize val)
@@ -8725,7 +8727,7 @@ memory. This is only allowed for an array of numbers.</p>
 </ul>
 <hr />
 <h3 id="update_u8optional-b-a-realb-val-u8-val">update_u8[optional B: (A &amp; <a href="../builtin-Real/">Real</a>[B] val &amp; <a href="../builtin-U8/">U8</a> val)]<a class="headerlink" href="#update_u8optional-b-a-realb-val-u8-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L277">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L279">[Source]</a></span></p>
 <p>Write a U8 at offset. This is only allowed for an array of U8s.</p>
 <pre><code class="language-pony">fun ref update_u8[optional B: (A &amp; Real[B] val &amp; U8 val)](
   offset: USize val,
@@ -8743,7 +8745,7 @@ memory. This is only allowed for an array of numbers.</p>
 </ul>
 <hr />
 <h3 id="update_u16optional-b-a-realb-val-u8-val">update_u16[optional B: (A &amp; <a href="../builtin-Real/">Real</a>[B] val &amp; <a href="../builtin-U8/">U8</a> val)]<a class="headerlink" href="#update_u16optional-b-a-realb-val-u8-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L287">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L289">[Source]</a></span></p>
 <p>Write a U16 at offset. This is only allowed for an array of U8s.</p>
 <pre><code class="language-pony">fun ref update_u16[optional B: (A &amp; Real[B] val &amp; U8 val)](
   offset: USize val,
@@ -8761,7 +8763,7 @@ memory. This is only allowed for an array of numbers.</p>
 </ul>
 <hr />
 <h3 id="update_u32optional-b-a-realb-val-u8-val">update_u32[optional B: (A &amp; <a href="../builtin-Real/">Real</a>[B] val &amp; <a href="../builtin-U8/">U8</a> val)]<a class="headerlink" href="#update_u32optional-b-a-realb-val-u8-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L298">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L300">[Source]</a></span></p>
 <p>Write a U32 at offset. This is only allowed for an array of U8s.</p>
 <pre><code class="language-pony">fun ref update_u32[optional B: (A &amp; Real[B] val &amp; U8 val)](
   offset: USize val,
@@ -8779,7 +8781,7 @@ memory. This is only allowed for an array of numbers.</p>
 </ul>
 <hr />
 <h3 id="update_u64optional-b-a-realb-val-u8-val">update_u64[optional B: (A &amp; <a href="../builtin-Real/">Real</a>[B] val &amp; <a href="../builtin-U8/">U8</a> val)]<a class="headerlink" href="#update_u64optional-b-a-realb-val-u8-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L309">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L311">[Source]</a></span></p>
 <p>Write a U64 at offset. This is only allowed for an array of U8s.</p>
 <pre><code class="language-pony">fun ref update_u64[optional B: (A &amp; Real[B] val &amp; U8 val)](
   offset: USize val,
@@ -8797,7 +8799,7 @@ memory. This is only allowed for an array of numbers.</p>
 </ul>
 <hr />
 <h3 id="update_u128optional-b-a-realb-val-u8-val">update_u128[optional B: (A &amp; <a href="../builtin-Real/">Real</a>[B] val &amp; <a href="../builtin-U8/">U8</a> val)]<a class="headerlink" href="#update_u128optional-b-a-realb-val-u8-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L320">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L322">[Source]</a></span></p>
 <p>Write a U128 at offset. This is only allowed for an array of U8s.</p>
 <pre><code class="language-pony">fun ref update_u128[optional B: (A &amp; Real[B] val &amp; U8 val)](
   offset: USize val,
@@ -8815,7 +8817,7 @@ memory. This is only allowed for an array of numbers.</p>
 </ul>
 <hr />
 <h3 id="update">update<a class="headerlink" href="#update" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L331">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L333">[Source]</a></span></p>
 <p>Change the i-th element, raising an error if the index is out of bounds.</p>
 <pre><code class="language-pony">fun ref update(
   i: USize val,
@@ -8833,7 +8835,7 @@ memory. This is only allowed for an array of numbers.</p>
 </ul>
 <hr />
 <h3 id="insert">insert<a class="headerlink" href="#insert" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L341">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L343">[Source]</a></span></p>
 <p>Insert an element into the array. Elements after this are moved up by one
 index, extending the array.</p>
 <p>When inserting right beyond the last element, at index <code>this.size()</code>,
@@ -8862,7 +8864,7 @@ array.insert(array.size() + 1, 0xEF)? // error
 </ul>
 <hr />
 <h3 id="delete">delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L368">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L370">[Source]</a></span></p>
 <p>Delete an element from the array. Elements after this are moved down by one
 index, compacting the array.
 An out of bounds index raises an error.
@@ -8881,7 +8883,7 @@ The deleted element is returned.</p>
 </ul>
 <hr />
 <h3 id="truncate">truncate<a class="headerlink" href="#truncate" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L382">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L384">[Source]</a></span></p>
 <p>Truncate an array to the given length, discarding excess elements. If the
 array is already smaller than len, do nothing.</p>
 <pre><code class="language-pony">fun ref truncate(
@@ -8898,7 +8900,7 @@ array is already smaller than len, do nothing.</p>
 </ul>
 <hr />
 <h3 id="trim_in_place">trim_in_place<a class="headerlink" href="#trim_in_place" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L389">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L391">[Source]</a></span></p>
 <p>Trim the array to a portion of itself, covering <code>from</code> until <code>to</code>.
 Unlike slice, the operation does not allocate a new array nor copy elements.</p>
 <pre><code class="language-pony">fun ref trim_in_place(
@@ -8917,7 +8919,7 @@ Unlike slice, the operation does not allocate a new array nor copy elements.</p>
 </ul>
 <hr />
 <h3 id="trim">trim<a class="headerlink" href="#trim" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L416">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L418">[Source]</a></span></p>
 <p>Return a shared portion of this array, covering <code>from</code> until <code>to</code>.
 Both the original and the new array are immutable, as they share memory.
 The operation does not allocate a new array pointer nor copy elements.</p>
@@ -8937,7 +8939,7 @@ The operation does not allocate a new array pointer nor copy elements.</p>
 </ul>
 <hr />
 <h3 id="chopoptional-b-a-any-send">chop[optional B: (A &amp; <a href="../builtin-Any/">Any</a> #send)]<a class="headerlink" href="#chopoptional-b-a-any-send" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L440">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L442">[Source]</a></span></p>
 <p>Chops the array in half at the split point requested and returns both
 the left and right portions. The original array is trimmed in place and
 returned as the left portion. If the split point is larger than the
@@ -8972,7 +8974,7 @@ or even to each other, such as in the code below:</p>
 </ul>
 <hr />
 <h3 id="unchop">unchop<a class="headerlink" href="#unchop" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L483">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L485">[Source]</a></span></p>
 <p>Unchops two iso arrays to return the original array they were chopped from.
 Both input arrays are isolated and mutable and were originally chopped from
 a single array. This function checks that they are indeed two arrays chopped
@@ -8994,7 +8996,7 @@ The operation does not allocate a new array pointer nor copy elements.</p>
 </ul>
 <hr />
 <h3 id="copy_fromoptional-b-a-realb-val-u8-val">copy_from[optional B: (A &amp; <a href="../builtin-Real/">Real</a>[B] val &amp; <a href="../builtin-U8/">U8</a> val)]<a class="headerlink" href="#copy_fromoptional-b-a-realb-val-u8-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L527">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L529">[Source]</a></span></p>
 <p>Copy len elements from src(src_idx) to this(dst_idx).
 Only works for Array[U8].</p>
 <pre><code class="language-pony">fun ref copy_from[optional B: (A &amp; Real[B] val &amp; U8 val)](
@@ -9017,7 +9019,7 @@ Only works for Array[U8].</p>
 </ul>
 <hr />
 <h3 id="copy_to">copy_to<a class="headerlink" href="#copy_to" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L544">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L546">[Source]</a></span></p>
 <p>Copy len elements from this(src_idx) to dst(dst_idx).</p>
 <pre><code class="language-pony">fun box copy_to(
   dst: Array[this-&gt;A!] ref,
@@ -9039,7 +9041,7 @@ Only works for Array[U8].</p>
 </ul>
 <hr />
 <h3 id="remove">remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L560">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L562">[Source]</a></span></p>
 <p>Remove n elements from the array, beginning at index i.</p>
 <pre><code class="language-pony">fun ref remove(
   i: USize val,
@@ -9057,7 +9059,7 @@ Only works for Array[U8].</p>
 </ul>
 <hr />
 <h3 id="clear">clear<a class="headerlink" href="#clear" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L570">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L572">[Source]</a></span></p>
 <p>Remove all elements from the array.</p>
 <pre><code class="language-pony">fun ref clear()
 : None val
@@ -9068,7 +9070,7 @@ Only works for Array[U8].</p>
 </ul>
 <hr />
 <h3 id="push_u8optional-b-a-realb-val-u8-val">push_u8[optional B: (A &amp; <a href="../builtin-Real/">Real</a>[B] val &amp; <a href="../builtin-U8/">U8</a> val)]<a class="headerlink" href="#push_u8optional-b-a-realb-val-u8-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L576">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L578">[Source]</a></span></p>
 <p>Add a U8 to the end of the array. This is only allowed for an array of U8s.</p>
 <pre><code class="language-pony">fun ref push_u8[optional B: (A &amp; Real[B] val &amp; U8 val)](
   value: U8 val)
@@ -9084,7 +9086,7 @@ Only works for Array[U8].</p>
 </ul>
 <hr />
 <h3 id="push_u16optional-b-a-realb-val-u8-val">push_u16[optional B: (A &amp; <a href="../builtin-Real/">Real</a>[B] val &amp; <a href="../builtin-U8/">U8</a> val)]<a class="headerlink" href="#push_u16optional-b-a-realb-val-u8-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L585">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L587">[Source]</a></span></p>
 <p>Add a U16 to the end of the array. This is only allowed for an array of U8s.</p>
 <pre><code class="language-pony">fun ref push_u16[optional B: (A &amp; Real[B] val &amp; U8 val)](
   value: U16 val)
@@ -9100,7 +9102,7 @@ Only works for Array[U8].</p>
 </ul>
 <hr />
 <h3 id="push_u32optional-b-a-realb-val-u8-val">push_u32[optional B: (A &amp; <a href="../builtin-Real/">Real</a>[B] val &amp; <a href="../builtin-U8/">U8</a> val)]<a class="headerlink" href="#push_u32optional-b-a-realb-val-u8-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L594">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L596">[Source]</a></span></p>
 <p>Add a U32 to the end of the array. This is only allowed for an array of U8s.</p>
 <pre><code class="language-pony">fun ref push_u32[optional B: (A &amp; Real[B] val &amp; U8 val)](
   value: U32 val)
@@ -9116,7 +9118,7 @@ Only works for Array[U8].</p>
 </ul>
 <hr />
 <h3 id="push_u64optional-b-a-realb-val-u8-val">push_u64[optional B: (A &amp; <a href="../builtin-Real/">Real</a>[B] val &amp; <a href="../builtin-U8/">U8</a> val)]<a class="headerlink" href="#push_u64optional-b-a-realb-val-u8-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L603">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L605">[Source]</a></span></p>
 <p>Add a U64 to the end of the array. This is only allowed for an array of U8s.</p>
 <pre><code class="language-pony">fun ref push_u64[optional B: (A &amp; Real[B] val &amp; U8 val)](
   value: U64 val)
@@ -9132,7 +9134,7 @@ Only works for Array[U8].</p>
 </ul>
 <hr />
 <h3 id="push_u128optional-b-a-realb-val-u8-val">push_u128[optional B: (A &amp; <a href="../builtin-Real/">Real</a>[B] val &amp; <a href="../builtin-U8/">U8</a> val)]<a class="headerlink" href="#push_u128optional-b-a-realb-val-u8-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L612">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L614">[Source]</a></span></p>
 <p>Add a U128 to the end of the array. This is only allowed for an array of U8s.</p>
 <pre><code class="language-pony">fun ref push_u128[optional B: (A &amp; Real[B] val &amp; U8 val)](
   value: U128 val)
@@ -9148,7 +9150,7 @@ Only works for Array[U8].</p>
 </ul>
 <hr />
 <h3 id="push">push<a class="headerlink" href="#push" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L621">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L623">[Source]</a></span></p>
 <p>Add an element to the end of the array.</p>
 <pre><code class="language-pony">fun ref push(
   value: A)
@@ -9164,7 +9166,7 @@ Only works for Array[U8].</p>
 </ul>
 <hr />
 <h3 id="pop">pop<a class="headerlink" href="#pop" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L629">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L631">[Source]</a></span></p>
 <p>Remove an element from the end of the array.
 The removed element is returned.</p>
 <pre><code class="language-pony">fun ref pop()
@@ -9176,7 +9178,7 @@ The removed element is returned.</p>
 </ul>
 <hr />
 <h3 id="unshift">unshift<a class="headerlink" href="#unshift" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L636">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L638">[Source]</a></span></p>
 <p>Add an element to the beginning of the array.</p>
 <pre><code class="language-pony">fun ref unshift(
   value: A)
@@ -9192,7 +9194,7 @@ The removed element is returned.</p>
 </ul>
 <hr />
 <h3 id="shift">shift<a class="headerlink" href="#shift" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L644">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L646">[Source]</a></span></p>
 <p>Remove an element from the beginning of the array.
 The removed element is returned.</p>
 <pre><code class="language-pony">fun ref shift()
@@ -9204,7 +9206,7 @@ The removed element is returned.</p>
 </ul>
 <hr />
 <h3 id="append">append<a class="headerlink" href="#append" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L651">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L653">[Source]</a></span></p>
 <p>Append the elements from a sequence, starting from the given offset.</p>
 <pre><code class="language-pony">fun ref append(
   seq: (ReadSeq[A] box &amp; ReadElement[A^] box),
@@ -9224,7 +9226,7 @@ The removed element is returned.</p>
 </ul>
 <hr />
 <h3 id="concat">concat<a class="headerlink" href="#concat" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L678">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L680">[Source]</a></span></p>
 <p>Add len iterated elements to the end of the array, starting from the given
 offset.</p>
 <pre><code class="language-pony">fun ref concat(
@@ -9245,7 +9247,7 @@ offset.</p>
 </ul>
 <hr />
 <h3 id="find">find<a class="headerlink" href="#find" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L734">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L736">[Source]</a></span></p>
 <p>Find the <code>nth</code> appearance of <code>value</code> from the beginning of the array,
 starting at <code>offset</code> and examining higher indices, and using the supplied
 <code>predicate</code> for comparisons. Returns the index of the value, or raise an
@@ -9273,7 +9275,7 @@ comparison.</p>
 </ul>
 <hr />
 <h3 id="contains">contains<a class="headerlink" href="#contains" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L768">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L770">[Source]</a></span></p>
 <p>Returns true if the array contains <code>value</code>, false otherwise.</p>
 <p>The default predicate checks for matches by identity. To search for matches
 by structural equality, pass an object literal such as <code>{(l, r) =&gt; l == r}</code>.</p>
@@ -9293,7 +9295,7 @@ by structural equality, pass an object literal such as <code>{(l, r) =&gt; l == 
 </ul>
 <hr />
 <h3 id="rfind">rfind<a class="headerlink" href="#rfind" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L791">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L793">[Source]</a></span></p>
 <p>Find the <code>nth</code> appearance of <code>value</code> from the end of the array, starting at
 <code>offset</code> and examining lower indices, and using the supplied <code>predicate</code> for
 comparisons. Returns the index of the value, or raise an error if the value
@@ -9320,7 +9322,7 @@ first instance of <code>value</code> found, and uses object identity for compari
 </ul>
 <hr />
 <h3 id="clone">clone<a class="headerlink" href="#clone" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L826">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L828">[Source]</a></span></p>
 <p>Clone the array.
 The new array contains references to the same elements that the old array
 contains, the elements themselves are not cloned.</p>
@@ -9333,7 +9335,7 @@ contains, the elements themselves are not cloned.</p>
 </ul>
 <hr />
 <h3 id="slice">slice<a class="headerlink" href="#slice" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L837">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L839">[Source]</a></span></p>
 <p>Create a new array that is a clone of a portion of this array. The range is
 exclusive and saturated.
 The new array contains references to the same elements that the old array
@@ -9356,7 +9358,7 @@ contains, the elements themselves are not cloned.</p>
 </ul>
 <hr />
 <h3 id="permute">permute<a class="headerlink" href="#permute" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L872">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L874">[Source]</a></span></p>
 <p>Create a new array with the elements permuted.
 Permute to an arbitrary order that may include duplicates. An out of bounds
 index raises an error.
@@ -9376,7 +9378,7 @@ contains, the elements themselves are not copied.</p>
 </ul>
 <hr />
 <h3 id="reverse">reverse<a class="headerlink" href="#reverse" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L886">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L888">[Source]</a></span></p>
 <p>Create a new array with the elements in reverse order.
 The new array contains references to the same elements that the old array
 contains, the elements themselves are not copied.</p>
@@ -9389,7 +9391,7 @@ contains, the elements themselves are not copied.</p>
 </ul>
 <hr />
 <h3 id="reverse_in_place">reverse_in_place<a class="headerlink" href="#reverse_in_place" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L894">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L896">[Source]</a></span></p>
 <p>Reverse the array in place.</p>
 <pre><code class="language-pony">fun ref reverse_in_place()
 : None val
@@ -9400,7 +9402,7 @@ contains, the elements themselves are not copied.</p>
 </ul>
 <hr />
 <h3 id="swap_elements">swap_elements<a class="headerlink" href="#swap_elements" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L911">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L913">[Source]</a></span></p>
 <p>Swap the element at index i with the element at index j.
 If either i or j are out of bounds, an error is raised.</p>
 <pre><code class="language-pony">fun ref swap_elements(
@@ -9419,7 +9421,7 @@ If either i or j are out of bounds, an error is raised.</p>
 </ul>
 <hr />
 <h3 id="keys">keys<a class="headerlink" href="#keys" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L922">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L924">[Source]</a></span></p>
 <p>Return an iterator over the indices in the array.</p>
 <pre><code class="language-pony">fun box keys()
 : ArrayKeys[A, this-&gt;Array[A] ref] ref^
@@ -9430,7 +9432,7 @@ If either i or j are out of bounds, an error is raised.</p>
 </ul>
 <hr />
 <h3 id="values">values<a class="headerlink" href="#values" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L928">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L930">[Source]</a></span></p>
 <p>Return an iterator over the values in the array.</p>
 <pre><code class="language-pony">fun box values()
 : ArrayValues[A, this-&gt;Array[A] ref] ref^
@@ -9441,7 +9443,7 @@ If either i or j are out of bounds, an error is raised.</p>
 </ul>
 <hr />
 <h3 id="pairs">pairs<a class="headerlink" href="#pairs" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/array/#L934">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/array/#L936">[Source]</a></span></p>
 <p>Return an iterator over the (index, value) pairs in the array.</p>
 <pre><code class="language-pony">fun box pairs()
 : ArrayPairs[A, this-&gt;Array[A] ref] ref^
