@@ -7308,6 +7308,9 @@
         or ((_min &gt; _max) and (_inc &gt; 0))
 
   fun has_next(): Bool =&gt;
+    if _infinite then
+      return true
+    end
     if _forward then
       _idx &lt; _max
     else
