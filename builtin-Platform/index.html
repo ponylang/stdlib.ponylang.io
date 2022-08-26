@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-ponylang-0.2.8">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-ponylang-0.2.8">
     
     
       
@@ -1061,6 +1061,15 @@
         
           
             <li class="md-nav__item">
+    <a href="#riscv" title="riscv" class="md-nav__link">
+    riscv
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
     <a href="#lp64" title="lp64" class="md-nav__link">
     lp64
   </a>
@@ -1117,6 +1126,24 @@
             <li class="md-nav__item">
     <a href="#debug" title="debug" class="md-nav__link">
     debug
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+    <a href="#runtimestats" title="runtimestats" class="md-nav__link">
+    runtimestats
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+    <a href="#runtimestatsmessages" title="runtimestatsmessages" class="md-nav__link">
+    runtimestatsmessages
   </a>
   
 </li>
@@ -7585,6 +7612,15 @@
         
           
             <li class="md-nav__item">
+    <a href="#riscv" title="riscv" class="md-nav__link">
+    riscv
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
     <a href="#lp64" title="lp64" class="md-nav__link">
     lp64
   </a>
@@ -7641,6 +7677,24 @@
             <li class="md-nav__item">
     <a href="#debug" title="debug" class="md-nav__link">
     debug
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+    <a href="#runtimestats" title="runtimestats" class="md-nav__link">
+    runtimestats
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+    <a href="#runtimestatsmessages" title="runtimestatsmessages" class="md-nav__link">
+    runtimestatsmessages
   </a>
   
 </li>
@@ -7803,9 +7857,9 @@
 <li><a href="../builtin-Bool/">Bool</a> val</li>
 </ul>
 <hr />
-<h3 id="lp64">lp64<a class="headerlink" href="#lp64" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/platform/#L14">[Source]</a></span></p>
-<pre><code class="language-pony">fun box lp64()
+<h3 id="riscv">riscv<a class="headerlink" href="#riscv" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/builtin/platform/#L13">[Source]</a></span></p>
+<pre><code class="language-pony">fun box riscv()
 : Bool val
 </code></pre>
 <h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
@@ -7813,9 +7867,9 @@
 <li><a href="../builtin-Bool/">Bool</a> val</li>
 </ul>
 <hr />
-<h3 id="llp64">llp64<a class="headerlink" href="#llp64" title="Permanent link">&para;</a></h3>
+<h3 id="lp64">lp64<a class="headerlink" href="#lp64" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/platform/#L15">[Source]</a></span></p>
-<pre><code class="language-pony">fun box llp64()
+<pre><code class="language-pony">fun box lp64()
 : Bool val
 </code></pre>
 <h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
@@ -7823,9 +7877,9 @@
 <li><a href="../builtin-Bool/">Bool</a> val</li>
 </ul>
 <hr />
-<h3 id="ilp32">ilp32<a class="headerlink" href="#ilp32" title="Permanent link">&para;</a></h3>
+<h3 id="llp64">llp64<a class="headerlink" href="#llp64" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/platform/#L16">[Source]</a></span></p>
-<pre><code class="language-pony">fun box ilp32()
+<pre><code class="language-pony">fun box llp64()
 : Bool val
 </code></pre>
 <h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
@@ -7833,9 +7887,9 @@
 <li><a href="../builtin-Bool/">Bool</a> val</li>
 </ul>
 <hr />
-<h3 id="bigendian">bigendian<a class="headerlink" href="#bigendian" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/platform/#L18">[Source]</a></span></p>
-<pre><code class="language-pony">fun box bigendian()
+<h3 id="ilp32">ilp32<a class="headerlink" href="#ilp32" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/builtin/platform/#L17">[Source]</a></span></p>
+<pre><code class="language-pony">fun box ilp32()
 : Bool val
 </code></pre>
 <h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
@@ -7843,9 +7897,9 @@
 <li><a href="../builtin-Bool/">Bool</a> val</li>
 </ul>
 <hr />
-<h3 id="littleendian">littleendian<a class="headerlink" href="#littleendian" title="Permanent link">&para;</a></h3>
+<h3 id="bigendian">bigendian<a class="headerlink" href="#bigendian" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/platform/#L19">[Source]</a></span></p>
-<pre><code class="language-pony">fun box littleendian()
+<pre><code class="language-pony">fun box bigendian()
 : Bool val
 </code></pre>
 <h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
@@ -7853,9 +7907,9 @@
 <li><a href="../builtin-Bool/">Bool</a> val</li>
 </ul>
 <hr />
-<h3 id="native128">native128<a class="headerlink" href="#native128" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/platform/#L21">[Source]</a></span></p>
-<pre><code class="language-pony">fun box native128()
+<h3 id="littleendian">littleendian<a class="headerlink" href="#littleendian" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/builtin/platform/#L20">[Source]</a></span></p>
+<pre><code class="language-pony">fun box littleendian()
 : Bool val
 </code></pre>
 <h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
@@ -7863,12 +7917,42 @@
 <li><a href="../builtin-Bool/">Bool</a> val</li>
 </ul>
 <hr />
-<h3 id="debug">debug<a class="headerlink" href="#debug" title="Permanent link">&para;</a></h3>
+<h3 id="native128">native128<a class="headerlink" href="#native128" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/platform/#L22">[Source]</a></span></p>
-<pre><code class="language-pony">fun box debug()
+<pre><code class="language-pony">fun box native128()
 : Bool val
 </code></pre>
 <h4 id="returns_17">Returns<a class="headerlink" href="#returns_17" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../builtin-Bool/">Bool</a> val</li>
+</ul>
+<hr />
+<h3 id="debug">debug<a class="headerlink" href="#debug" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/builtin/platform/#L23">[Source]</a></span></p>
+<pre><code class="language-pony">fun box debug()
+: Bool val
+</code></pre>
+<h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../builtin-Bool/">Bool</a> val</li>
+</ul>
+<hr />
+<h3 id="runtimestats">runtimestats<a class="headerlink" href="#runtimestats" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/builtin/platform/#L24">[Source]</a></span></p>
+<pre><code class="language-pony">fun box runtimestats()
+: Bool val
+</code></pre>
+<h4 id="returns_19">Returns<a class="headerlink" href="#returns_19" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../builtin-Bool/">Bool</a> val</li>
+</ul>
+<hr />
+<h3 id="runtimestatsmessages">runtimestatsmessages<a class="headerlink" href="#runtimestatsmessages" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/builtin/platform/#L25">[Source]</a></span></p>
+<pre><code class="language-pony">fun box runtimestatsmessages()
+: Bool val
+</code></pre>
+<h4 id="returns_20">Returns<a class="headerlink" href="#returns_20" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
 </ul>
@@ -7883,7 +7967,7 @@
 <ul>
 <li>that: <a href="./">Platform</a> val</li>
 </ul>
-<h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
+<h4 id="returns_21">Returns<a class="headerlink" href="#returns_21" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
 </ul>
@@ -7898,7 +7982,7 @@
 <ul>
 <li>that: <a href="./">Platform</a> val</li>
 </ul>
-<h4 id="returns_19">Returns<a class="headerlink" href="#returns_19" title="Permanent link">&para;</a></h4>
+<h4 id="returns_22">Returns<a class="headerlink" href="#returns_22" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="../builtin-Bool/">Bool</a> val</li>
 </ul>
@@ -7976,7 +8060,7 @@
     
     <script src="../assets/javascripts/application.cb37bb38.js"></script>
       
-      <script>app.initialize({version:"1.3.0",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.3.1",url:{base:".."}})</script>
       
     
     

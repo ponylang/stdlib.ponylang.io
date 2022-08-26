@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/logo.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-ponylang-0.2.8">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-ponylang-0.2.8">
     
     
       
@@ -931,6 +931,15 @@
             <li class="md-nav__item">
     <a href="#var-ponypinasio-bool-val" title="var ponypinasio: Bool val" class="md-nav__link">
     var ponypinasio: Bool val
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
+    <a href="#var-ponyprintstatsinterval-u32-val" title="var ponyprintstatsinterval: U32 val" class="md-nav__link">
+    var ponyprintstatsinterval: U32 val
   </a>
   
 </li>
@@ -7540,6 +7549,15 @@
         
           
             <li class="md-nav__item">
+    <a href="#var-ponyprintstatsinterval-u32-val" title="var ponyprintstatsinterval: U32 val" class="md-nav__link">
+    var ponyprintstatsinterval: U32 val
+  </a>
+  
+</li>
+          
+        
+          
+            <li class="md-nav__item">
     <a href="#var-ponyversion-bool-val" title="var ponyversion: Bool val" class="md-nav__link">
     var ponyversion: Bool val
   </a>
@@ -7673,12 +7691,17 @@ current value. This is a floating point value. Defaults to 2.0.</p>
 <p>Pin the ASIO thread to a CPU the way scheduler threads are pinned to CPUs.
 Requires <code>--ponypin</code> to be set to have any effect.</p>
 <hr />
-<h3 id="var-ponyversion-bool-val">var ponyversion: <a href="../builtin-Bool/">Bool</a> val<a class="headerlink" href="#var-ponyversion-bool-val" title="Permanent link">&para;</a></h3>
+<h3 id="var-ponyprintstatsinterval-u32-val">var ponyprintstatsinterval: <a href="../builtin-U32/">U32</a> val<a class="headerlink" href="#var-ponyprintstatsinterval-u32-val" title="Permanent link">&para;</a></h3>
 <p><span class="source-link"><a href="../src/builtin/runtime_options/#L107">[Source]</a></span></p>
+<p>Print actor stats before an actor is destroyed and print scheduler stats
+every X seconds. Defaults to -1 (never).</p>
+<hr />
+<h3 id="var-ponyversion-bool-val">var ponyversion: <a href="../builtin-Bool/">Bool</a> val<a class="headerlink" href="#var-ponyversion-bool-val" title="Permanent link">&para;</a></h3>
+<p><span class="source-link"><a href="../src/builtin/runtime_options/#L113">[Source]</a></span></p>
 <p>Print the version of the compiler and exit.</p>
 <hr />
 <h3 id="var-ponyhelp-bool-val">var ponyhelp: <a href="../builtin-Bool/">Bool</a> val<a class="headerlink" href="#var-ponyhelp-bool-val" title="Permanent link">&para;</a></h3>
-<p><span class="source-link"><a href="../src/builtin/runtime_options/#L112">[Source]</a></span></p>
+<p><span class="source-link"><a href="../src/builtin/runtime_options/#L118">[Source]</a></span></p>
 <p>Print the runtime usage options and exit.</p>
 <hr />
                 
@@ -7754,7 +7777,7 @@ Requires <code>--ponypin</code> to be set to have any effect.</p>
     
     <script src="../assets/javascripts/application.cb37bb38.js"></script>
       
-      <script>app.initialize({version:"1.3.0",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.3.1",url:{base:".."}})</script>
       
     
     
