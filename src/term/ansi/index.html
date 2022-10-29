@@ -7277,9 +7277,9 @@
 
   fun erase(): String =&gt;
     &quot;&quot;&quot;
-    Erases everything to the left of the cursor on the line the cursor is on.
+    Erases everything to the right of the cursor on the line the cursor is on.
     &quot;&quot;&quot;
-    &quot;\x1B[1K&quot;
+    &quot;\x1B[0K&quot;
 
   fun reset(): String =&gt;
     &quot;&quot;&quot;
